@@ -207,34 +207,55 @@ Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers
 Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
-We define the function the $F$ by
+We define the function $G$ by
 \begin{equation}\label{eq:inversa-gral}
-F(s)=\sup\{|x|:\Phi(x)\leq s\},
+G(s)=\min\{\Phi(x):|x|=s\},
 \end{equation}
 where $\Phi$ is a Young's function. 
 
+We point out that the function $G$ is the greatest radial minorant of $\Phi$, then $G(|x|)\leq \Phi (x)$. 
 
-As $\alpha \Phi(\frac{x}{\alpha})$ is decreasing with respect to $\alpha$, 
-we get that the function $\alpha F(\frac{x}{\alpha})$ is increasing 
-with respect to $\alpha$. That is,
+We can see that $G$ is monotonous, continuous and $G(s) \to \infty$ as $s \to \infty$.
+{\color{red}Agregar algunas pruebas de lo anterior, c\'omo sale la monoton\'ia ????}
+
+Therefore, there exists its inverse function $G^{-1}$ and
+ we get that $G^{-1}(\Phi(x))\geq |x|$.
+
+As $\frac{\Phi(\alpha x)}{\alpha}$ is increasing with respect to $\alpha$, 
+$\frac{G(\alpha s)}{\alpha}$ is also increasing 
+with respect to $\alpha$.
+In fact, 
 if $0<\alpha \leq \beta$, we have
 \[
 \begin{split}
-\alpha F\left(\frac{s}{\alpha}\right)=
-\alpha\sup\left\{|x|:\Phi(x)\leq \frac{s}{\alpha}\right\}=\sup\left\{\alpha|x|:\alpha\Phi(x)\leq s\right\}=
+ \frac{G(\alpha s)}{\alpha}=
+\frac{\min\{\Phi(x):|x|=\alpha s\}}{\alpha}=
+\min 
+\left\{\frac{\Phi(x)}{\alpha}:\frac{|x|}{\alpha}=s \right\}=
 \\
-\sup\left\{|y|:\alpha\Phi\left(\frac{y}{\alpha}\right)\leq s\right\}
-\leq \sup\left\{|y|:\beta\Phi\left(\frac{y}{\beta}\right)\leq s\right\}=
+\min\left\{\frac{\Phi(\alpha y)}{\alpha}:|y|=s \right\}
+\leq \min \left\{\frac{\Phi(\beta y)}{\beta}: |y|=s \right\}=
 \\
-\sup\left\{\beta|x|:\beta \Phi(x)\leq s\}=\sup\beta \{|x|:\Phi(x)\leq\frac{x}{\beta} \right\}=
-\\
-\beta F\left(\frac{x}{\beta}\right).
+%\frac{\min\{\Phi(\beta y): |y|=s\}}{\beta}=
+\min \left\{ \frac{\Phi(x)}{\beta}: \frac{|x|}{\beta}=s\right\}=
+\frac{\min\{\Phi(x): |x|=\beta s\}}{\beta}=
+\frac{G(\beta s)}{\beta}.
 \end{split}
 \]
 
-We note that  for every $K>0$, if $|x|>F(K)$ 
-then $\Phi(x)> K$ and therefore we see that  $|x|\leq F(\Phi(x))$. If $d=1$ 
-then $F=\Phi^{-1}$.
+
+
+Performing the change of variables $\alpha s=G^{-1}(\frac{t}{\beta})$ on $\frac{G(\alpha s)}{\alpha}$, 
+we can see that $\beta G^{-1}(\frac{t}{\beta})$ is an increasing function with respect to 
+$\beta$. {\color{red}(en las cuentas, usamos que $G$ es creciente??????)}
+
+And, in the event that $\Phi$ is an N-function, we obtain that $\frac{G(\alpha s)}{\alpha}\to \infty$
+as $\alpha \to \infty$.
+
+
+%We note that  for every $K>0$, if $|x|>F(K)$ 
+%then $\Phi(x)> K$ and therefore we see that  $|x|\leq F(\Phi(x))$. If $d=1$ 
+%then $F=\Phi^{-1}$.
 
 
 
@@ -246,8 +267,7 @@ if there exist  constants $K>0$ and  $M\geq 0$ such that
 \end{equation}
 for every $|x|\geq M$.
 
-
-If $\Phi$ is a Young function we define its \emph{Fenchel conjugate}   $\Phi^*:\mathbb{R}^d\to \mathbb{R}_+ $by:
+If $\Phi$ is a Young's function we define its \emph{Fenchel conjugate}   $\Phi^*:\mathbb{R}^d\to \mathbb{R}^+ $ by:
 \begin{equation}\label{eq:conjugada}
  \Phi^*(y)=\sup\limits_{x\in\mathbb{R}^d} x\cdot y-\Phi(x)
 \end{equation}
@@ -361,16 +381,16 @@ $F: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. Then
 \item\label{inclusion orlicz_item1} For every $s,t\in [0,T]$, $s\neq t$,
 \begin{align}
  &|u(t)-u(s)| \leq
- \|u'\orlnor |s-t|F\left(\frac{1}{|s-t|}\right)\tag{Morrey's inequality}\label{in-sob-cont}
+ \|u'\orlnor |s-t|G^{-1}\left(\frac{1}{|s-t|}\right)\tag{Morrey's inequality}\label{in-sob-cont}
 \\
-& \| u\linf \leq F\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{sobolev}
+& \| u\linf \leq G^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{sobolev}
 \end{align}
 \item We have $\widetilde{u}\in L^{\infty}([0,T],\rr^d)$ and
 \[
-\|\widetilde u \linf \leq T F\left(\frac{1}{T}\right)\|u'\orlnor
+\|\widetilde u \linf \leq T G^{-1}\left(\frac{1}{T}\right)\|u'\orlnor
 \tag{Sobolev-Wirtinger's inequality}\label{wirtinger}
 \]
-\item\label{it:embeding} The space $\wphi([0,T],\rr^d)$ is compactly embedded in the space of continuous functions $C([0,T],\rr^d)$.
+\item\label{it:embeding} If $\Phi$ is coercive then the space $\wphi([0,T],\rr^d)$ is compactly embedded in the space of continuous functions $C([0,T],\rr^d)$.
 \end{enumerate}
 \end{lem}
 
@@ -384,17 +404,17 @@ the Luxemburg norm, we have
     \leq \frac{1}{ |s-t|}.
  \end{split}
 \]
-By \eqref{eq:inversa-gral} we get
+By \eqref{eq:inversa-gral}????? we get
 \[
     \frac{|u(t)-u(s)|}{\|u'\orlnor |s-t|} 
-    \leq  F\left(\frac{1}{ |s-t|}\right),
+    \leq  G^{-1}\left(\frac{1}{ |s-t|}\right),
 \]
 then  \ref{inclusion orlicz_item1} holds.
 
 \ref{in-sob-cont}  implies \ref{wirtinger} according to the following argument.  
-Taking into account that $\alpha F(1/\alpha)$ is an increasing function 
+Taking into account that $\alpha G^{-1}(1/\alpha)$ is an increasing ???? function
 with respect to $\alpha\in [0,\infty)$ we have
-\[|u(t)-\overline{u}|\leq  \|u'\orlnor T F\left(\frac{1}{T}\right),\]
+\[|u(t)-\overline{u}|\leq  \|u'\orlnor T G^{-1}\left(\frac{1}{T}\right),\]
 and Sobolev-Wirtinger's inequality follows easily.
 
 In order to prove the Sobolev's inequality, we note that, using Jensen's inequality and 
@@ -403,14 +423,14 @@ the definition of $\|u\orlnor$, we obtain
 \frac{1}{T}\int_0^T\Phi\left(\frac{u(s)}{\|u\orlnor}\right)ds\leq\frac{1}{T}
 \]
 Then
-\[|\overline{u}|\leq F\left(\frac{1}{T}\right) \|u\orlnor.\]
+\[|\overline{u}|\leq G^{-1}\left(\frac{1}{T}\right) \|u\orlnor.\]
 Therefore, from this and \eqref{wirtinger} we get
 
 \[\begin{split}
  \|u\linf &\leq |\overline{u}|+\|\tilde{u}\linf\\
  &\leq  
- F\left(\frac{1}{T}\right) \|u\orlnor+T F\left(\frac{1}{T}\right)\|u'\orlnor\\
- &\leq F\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor
+ G^{-1}\left(\frac{1}{T}\right) \|u\orlnor+T G^{-1}\left(\frac{1}{T}\right)\|u'\orlnor\\
+ &\leq G^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor
  \end{split}
  \]
  
@@ -419,7 +439,7 @@ Therefore, from this and \eqref{wirtinger} we get
 
 We take a bounded sequence
 $u_n$ in $\wphi([0,T],\rr^d)$ and suppose that $u_n$ has not convergent subsequence.
-
+From \eqref{in-sob-cont} and ???????   we infer that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C([0,T],\rr^d)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C([0,T],\rr^d)$ with $u_{n_k}\to u$ in $C([0,T],\rr^d)$.
 
 \end{proof}
 
@@ -428,7 +448,6 @@ $u_n$ in $\wphi([0,T],\rr^d)$ and suppose that $u_n$ has not convergent subseque
 
 \section{Superposition operators in anisotropic Orlicz spaces}
 
-Vamos escribiendo lo que queremos...(de acuerdo a mis apuntes y sin ver las hojitas de la semana pasada)
 
 For $f:[0,T]\times \rr^d\to\rr$  we denote by $\mathfrak{f}$ the Nemytskii (o superposition) operator defined for functions $u:[0,T]\to\rr^d$ by 
 \[\mathfrak{f}u(t)=f(t,u(t))\]
