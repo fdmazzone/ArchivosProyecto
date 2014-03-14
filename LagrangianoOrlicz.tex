@@ -409,8 +409,7 @@ We recall that the definition of a strictly convex function, that is a function 
 \[
 f\left(\frac{x+y}{2}\right)< \frac{1}{2} \left(f\left( x\right)+f\left( y\right)\right).
 \]
-It is well known that the strictly convexity of $f$ implies the injectivity of the gradient $\nabla f$ (see, for instance \cite[Theorem
-12.17]{rockafellar2009variational}).
+
 
 In this paper, we will consider the following problem
 
@@ -450,11 +449,13 @@ equivalent to $\dot{u}(0)=\dot{u}(T)$.
 \ref{teorema_acotacion} we have
 
 \[\int_0^TD_yL(t,u(t),\dot{u}(t))\cdot \dot{v}(t)dt=-\int_0^TD_xL(t,u(t),\dot{u}(t))\cdot v(t)dt \]
-Using \cite[pag. 6]{mawhin2010critical} we obtain that $D_yL(t,u(t),\dot{u}(t))$ is absolutely continuous, therefore it is differentiable a.e.on $[0,T]$ and that the first equality of \ref{ecualagran} holds true. Moreover the same reference says that $D_yL(t,u(t),\dot{u}(t))$ is $T$-periodic. 
+Using \cite[pag. 6]{mawhin2010critical} we obtain that $D_yL(t,u(t),\dot{u}(t))$ is absolutely continuous, therefore it is differentiable a.e.on $[0,T]$ and that the first equality 
+of \ref{ecualagran} holds true. Moreover the same reference says that $D_yL(t,u(t),\dot{u}(t))$ is $T$-periodic. 
 This complete the proof of 1. implies 2. The converse is still easier than the previous one, we omit the proof of it. 
 
-The last part of the Corollary is a consequence of that $D_yL(T,u(T),\dot{u}(T))=D_yL(0,u(0),\dot{u}(0))=D_yL(T,u(T),\dot{u}(0))$ and the inyectivity of 
-$D_yL(T,u(T),\cdot)$.
+The last part of the Corollary is a consequence of that $D_yL(T,u(T),\dot{u}(T))=D_yL(0,u(0),\dot{u}(0))=D_yL(T,u(T),\dot{u}(0))$ and the well known fact
+strictly convexity implies inyectivity (see, for instance \cite[Theorem
+12.17]{rockafellar2009variational}).
 
 \end{proof}
 
