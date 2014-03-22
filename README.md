@@ -1,4 +1,4 @@
 ArchivosProyecto
 ================
 
-Repositorio dek proyecto de investigación ecuaciones diferenciales 
+Repositorio del proyecto de investigación ecuaciones diferenciales 
