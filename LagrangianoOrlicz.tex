@@ -401,7 +401,7 @@ Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and pr
 |\langle I'(u), v \rangle| \leq c \|v\linf + c \|\dot{v}\orlnor \leq c \|v\sobnor.
 \]
 This complete the proof of the G\^ateaux differentiability of $I$. Finally, the continuity of $I': \left(\domi, \|\cdot \sobnor\right) \to \left(\left[\wphi
-\right]^*, w^* \right)$ is a consequence of item \ref{T1item2}. \textcolor{red}{Erica desarrollará este punto}
+\right]^*, w^* \right)$ is a consequence of item \ref{T1item2}. \textcolor{red}{Erica desarrollara este punto}
 \end{proof}
 
 \begin{lem}\label{lema_conv_may}
@@ -441,6 +441,22 @@ from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\r
 The last relation is consequence of $\Psi\in\Delta_2$. Therefore, invoking  Lemma \ref{lema_conv_may}, we have proved that 
   of all sequence $u_n$ which converge to $u$ in $\wphi$ we can 
 extract a subsequence with $\|D_yL(t,u_{n_k},\dot{u}_{n_k})-D_yL(t,u,\dot{u})\|_{\lpsi}\to 0$. From a standard argument follows the desidered result. 
+
+\[
+  \begin{split} 
+    \|I'(u)-I'(u_0)\|_{\left[\wphi\right]^*}&=\sup_{v\in \wphi,\|v\sobnor\leq 1} \langle I'(u)-I'(u_0),v \rangle\\
+      &=\sup_{v\in \wphi, \|v\sobnor\leq 1} \int_0^T \left\{ \left(D_xL(t,u(t),\dot{u}(t))-D_xL(t,u_0(t),\dot{u_0}(t))\right)\cdot v(t)\right.\\
+      &\quad\left.+
+      \left(D_yL(t,u(t),\dot{u}(t))-D_yL(t,u_0(t),\dot{u_0}(t))\right)\cdot \dot{v}(t)\right\}dt \\
+      &\leq \sup_{v\in \wphi, \|v\sobnor\leq 1} \left\{\| D_xL(\cdot,u(\cdot),\dot{u}(\cdot))-D_xL(\cdot,u_0(\cdot),\dot{u_0}(\cdot))\|_{L^1}\|v\|_{L^{\infty}}\right.\\
+      &\quad+\left.
+       \| D_yL(\cdot,u(\cdot),\dot{u}(\cdot))-D_yL(\cdot,u_0(\cdot),\dot{u_0}(\cdot))\|_{\lpsi}\|\dot{v}\|_{\lphi}\right\}\\
+       &\leq C\left(\| D_xL(\cdot,u(\cdot),\dot{u}(\cdot))-D_xL(\cdot,u_0(\cdot),\dot{u_0}(\cdot))\|_{L^1}\right.\\
+       &\left. \quad +
+       \| D_yL(\cdot,u(\cdot),\dot{u}(\cdot))-D_yL(\cdot,u_0(\cdot),\dot{u_0}(\cdot))\|_{\lpsi}\right)
+  \end{split} 
+\]
+Therefore the results follows  of the  previously stablished continuity for $D_xL$ and $D_yL$.
 
 \end{proof}
 
