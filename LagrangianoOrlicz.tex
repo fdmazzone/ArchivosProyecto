@@ -14,7 +14,7 @@
 \usepackage{times}
 %\usepackage{theorem}
 \usepackage[latin1]{inputenc}
-\usepackage{showkeys}
+%\usepackage{showkeys}
 \usepackage{comment}
 
 
@@ -401,10 +401,10 @@ Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and pr
 |\langle I'(u), v \rangle| \leq c \|v\linf + c \|\dot{v}\orlnor \leq c \|v\sobnor.
 \]
 This complete the proof of the G\^ateaux differentiability of $I$. Finally, the continuity of $I': \left(\domi, \|\cdot \sobnor\right) \to \left(\left[\wphi
-\right]^*, w^* \right)$ is a consequence of item \ref{T1item2}.
+\right]^*, w^* \right)$ is a consequence of item \ref{T1item2}. \textcolor{red}{Erica desarrollará este punto}
 \end{proof}
 
-\begin{lem}
+\begin{lem}\label{lema_conv_may}
 Suppose that $\Phi$ is a $\Delta_2$ function.  If $u_n \in\lphi$ is a sequence such that $u_n\to 0$ a.e. and suppose that there exist $M\in\lphi$ with $|u_n|\leq M$
 then $\|u_n\orlnor\to 0$. 
 \end{lem}
@@ -421,7 +421,27 @@ then $\|u_n\orlnor\to 0$.
 \end{cor}
 
 \begin{proof}
+Let us see that the maps $u\mapsto D_xL(\cdot,u(\cdot),\dot{u}(\cdot))$  and $u\mapsto D_yL(\cdot,u(\cdot),\dot{u}(\cdot))$  are continuous 
+from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\right)$ and 
+ $\left(\lpsi,\|\cdot\|_{L^{\Psi}}\right)$ respectively.
  
+ The continuity of the first map is an inmediate consequence of Theorem \ref{teorema_acotacion}(item \ref{T1item2}) and the fact that $\Pi(\ephi,1) =\lphi$ 
+ when $\Phi\in\Delta_2$. 
+ 
+ We consider $u_n$ and $u$ with $\|u_n- u\sobnor\to 0$.  Let $h$ and $n_k$, $k=1,2,\ldots$, as in Lemma \ref{segundo lema}. Then  since $L$ is a Caratheodory function
+ we have $ D_yL(t,u_{n_k}(t),\dot{u}_{n_k}(t))\to D_yL(t,u(t),\dot{u}(t))$ a.e. $t\in [0,T]$.  From Lemma \ref{inclusion orlicz} and the fact that $\|u_{n_k}\sobnor$ are uniformly bounded, we get that there exists $N>0$ such that 
+ $\|u_{n_k}\|_{L^{\infty}}\leq N$. Therefore
+  \[a(|u_{n_k}(t)|)\leq \sup_{0\leq s\leq N} a(s)=:C<\infty.\]
+ By using \eqref{cotaDyL} we get $h\in\lphi$ and a subsequence $n_k$ with $u_{n_k}\to u$ a.e., $\dot{u}_{n_k}\to \dot{u}$ a.e. and  $|\dot{u}_{n_k}|\leq h$. Then
+ \[\begin{split}
+    |D_yL(t,u_{n_k}(t),\dot{u}_{n_k}(t))| &\leq a(|u_{n_k}|)\left( c(t) + \varphi (|\dot{u}_{n_k}(t)|)\right)\\
+    &\leq C\left( c(t) + \varphi (|h|)\right)\in \lpsi
+   \end{split}
+\]
+The last relation is consequence of $\Psi\in\Delta_2$. Therefore, invoking  Lemma \ref{lema_conv_may}, we have proved that 
+  of all sequence $u_n$ which converge to $u$ in $\wphi$ we can 
+extract a subsequence with $\|D_yL(t,u_{n_k},\dot{u}_{n_k})-D_yL(t,u,\dot{u})\|_{\lpsi}\to 0$. From a standard argument follows the desidered result. 
+
 \end{proof}
 
 
@@ -482,7 +502,6 @@ convexity implies injectivity (see, for instance \cite[Theorem 12.17]{rockafella
 
 
 
-Hola
 
 \end{proof}
  
