@@ -54,8 +54,8 @@ Universidad Nacional de R\'{i}o Cuarto\\
 fmazzone@exa.unrc.edu.ar\\[3mm]
 Erica L. Schwindt\thanks{ANR. AVENTURES - ANR-12-BLAN-BS01-0001-01}\\
 Universit\'e d'Orl\'eans, Laboratoire MAPMO, CNRS, UMR 7349, \\
-F\'edération Denis Poisson, FR 2964,\\
-Bâtiment de Math\'ematiques, BP 6759, 45067 Orl\'eans Cedex 2, France,\\
+F\'edÃ©ration Denis Poisson, FR 2964,\\
+BÃ¢timent de Math\'ematiques, BP 6759, 45067 Orl\'eans Cedex 2, France,\\
 leris98@gmail.com}
 
 \date{}
@@ -258,9 +258,9 @@ exists $a \in C(\mathbb{R}^+, \mathbb{R}^+)$, $b \in L^1$, $c \in \lpsi$ such th
 Then the following statements hold
 \begin{enumerate}
 \item \label{T1item1} \label{A1} The function $I: W^{1}(\lphi,\claseor) \rightarrow \mathbb{R}$ defined by
-\[
+\begin{equation}\label{integral_accion}
 I(u)=\int_{0}^T L(t,u(t),\dot{u}(t))\ dt
-\]
+\end{equation}
 is everywhere finite.
 \item\label{T1item2}  The mapping
 \[
@@ -514,11 +514,20 @@ This complete the proof of 1. implies 2. The converse is still easier than the p
 
 The last part of the Corollary is a consequence of that $D_yL(T,u(T),\dot{u}(T))=D_yL(0,u(0),\dot{u}(0))=D_yL(T,u(T),\dot{u}(0))$ and the well known fact strictly
 convexity implies injectivity (see, for instance \cite[Theorem 12.17]{rockafellar2009variational}).
-
-
-
-
 \end{proof}
+
+\begin{lem}
+We suppose that $L(t,x,y)=\Phi(|y|)+F(t,x)$, where $F(t,x)$ is a Charateodory function and $|F(t,x)|\leq a(|x|)b(t)$, where $a\in C(\mathbb{R}_+,\mathbb{R}_+)$
+and $b\in L^1([0,T])$. We suppose that $\Phi\in\Delta_2$.  Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
+\end{lem}
+
+\begin{proof}
+ 
+\end{proof}
+
+
+
+
 
 
 
