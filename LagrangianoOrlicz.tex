@@ -52,11 +52,10 @@ Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y
 Universidad Nacional de R\'{i}o Cuarto\\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
 fmazzone@exa.unrc.edu.ar\\[3mm]
-Erica L. Schwindt\\
-Universit\'e de Lorraine, Institut Elie Cartan de Lorraine, UMR 7502\\
-Vandoeuvre-l\`es-Nancy, F-54506, France.\\
-CNRS, Institut Elie Cartan de Lorraine, UMR 7502 \\
-Vandoeuvre-l\`es-Nancy, F-54506, France.\\
+Erica L. Schwindt\thanks{ANR. AVENTURES - ANR-12-BLAN-BS01-0001-01}\\
+Universit\'e d'Orl\'eans, Laboratoire MAPMO, CNRS, UMR 7349, \\
+F\'edération Denis Poisson, FR 2964,\\
+Bâtiment de Math\'ematiques, BP 6759, 45067 Orl\'eans Cedex 2, France,\\
 leris98@gmail.com}
 
 \date{}
@@ -115,7 +114,7 @@ leris98@gmail.com}
 \section{Preliminaries}
 
 %\subsection{$N$-functions}
-For reader convenience, a short introduction to Orlicz and Orcliz Sobolev spaces is given, we refer to \cite{adams_sobolev,KR} for additional details and proofs.
+For reader convenience, a short introduction to Orlicz and Orlicz Sobolev spaces is given, we refer to \cite{adams_sobolev,KR} for additional details and proofs.
 
 A function $\Phi:[0,+\infty)\to [0,+\infty)$ is called an $N$-function if it has the form
 \[
@@ -365,15 +364,15 @@ We conclude that $D_yL(t,u_{n_k}(t),\dot{u}_{n_k}(t))\cdot v$ is dominated by a 
 \eqref{conv_debil} for the subsequence $n_k$, which would contradict the inequality \eqref{cota_eps}.
 
 Finally we prove \ref{T1item3}. The proof follows the similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $u\in \domi$ and $v\in\wphi$ we define the function
-\[f(s,t)=L(t,u(t)+sv(t),\dot{u}+s\dot{v}).\]
+\[f(s,t)=L(t,u(t)+sv(t),\dot{u}(t)+s\dot{v}(t)).\]
 We remark that by \ref{T1item1}
 \[I(u+sv)=\int_0^Tf(s,t)\ dt\]
 is well defined and it is finite valued for $t\in [0,T]$ and  $|s|\leq s_0:=\left(1-d(\dot{u},\ephi)\right)/\|v\sobnor$ ($v\neq 0$).
 
-Appliyng the chain rule and the inequalities \eqref{cotaDxL}-\eqref{cotaDyL} we obtain
+Applying the chain rule and the inequalities \eqref{cotaDxL}-\eqref{cotaDyL} we obtain
 \begin{equation}\label{ctg}
 \begin{split}
-|D_s f(s,t)|&=|D_x(t,u+sv,\dot{u}+s\dot{v})\cdot v + D_y(t,u+sv,\dot{u}+s\dot{v})\cdot \dot{v}| \\
+|D_s f(s,t)|&=|D_xL(t,u+sv,\dot{u}+s\dot{v})\cdot v + D_yL(t,u+sv,\dot{u}+s\dot{v})\cdot \dot{v}| \\
 &\leq a(|u+sv|)\left[(b(t)+\Phi(|\dot{u}+s\dot{v}|))|v|+ (c(t)+ \varphi(|\dot{u}+s\dot{v}|))|\dot{v}|\right]\\
 & \leq a_0 \left[(b(t)+\Phi(|\dot{u}|+s_0|\dot{v}|))|v|+ (c(t)+ \varphi(|\dot{u}|+s_0|\dot{v}|))|\dot{v}|  \right]
 \end{split}
@@ -406,30 +405,30 @@ This complete the proof of the G\^ateaux differentiability of $I$. Finally, the 
 
 \begin{lem}\label{lema_conv_may}
 Suppose that $\Phi$ is a $\Delta_2$ function.  If $u_n \in\lphi$ is a sequence such that $u_n\to 0$ a.e. and suppose that there exist $M\in\lphi$ with $|u_n|\leq M$
-then $\|u_n\orlnor\to 0$. 
+then $\|u_n\orlnor\to 0$.
 \end{lem}
 \begin{proof}
  According to \cite[Theorem 9.4]{KR} it is sufficient to prove that
  \[\int_0^T\Phi(|u_n|)dt\to 0,\quad\text{for }n\to\infty.\]
- This is an inmediate consequence of $\Phi(|u_n|)\leq \Phi(M)\in L^1$ and the Dominated Convergence Theorem. 
+ This is an inmediate consequence of $\Phi(|u_n|)\leq \Phi(M)\in L^1$ and the Dominated Convergence Theorem.
 \end{proof}
 
 
 \begin{cor}
   In the particular case that $\Phi$ and $\Psi$ are $\Delta_2$ functions we have
-  $I'$ is continuous from $(\wphi,\|\cdot\sobnor)$ into $(W^{1}L^{\Psi},\|\cdot \|_{W^{1}L^{\Psi}})$. 
+  $I'$ is continuous from $(\wphi,\|\cdot\sobnor)$ into $(W^{1}L^{\Psi},\|\cdot \|_{W^{1}L^{\Psi}})$.
 \end{cor}
 
 \begin{proof}
-Let us see that the maps $u\mapsto D_xL(\cdot,u(\cdot),\dot{u}(\cdot))$  and $u\mapsto D_yL(\cdot,u(\cdot),\dot{u}(\cdot))$  are continuous 
-from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\right)$ and 
+Let us see that the maps $u\mapsto D_xL(\cdot,u(\cdot),\dot{u}(\cdot))$  and $u\mapsto D_yL(\cdot,u(\cdot),\dot{u}(\cdot))$  are continuous
+from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\right)$ and
  $\left(\lpsi,\|\cdot\|_{L^{\Psi}}\right)$ respectively.
- 
- The continuity of the first map is an inmediate consequence of Theorem \ref{teorema_acotacion}(item \ref{T1item2}) and the fact that $\Pi(\ephi,1) =\lphi$ 
- when $\Phi\in\Delta_2$. 
- 
+
+ The continuity of the first map is an inmediate consequence of Theorem \ref{teorema_acotacion}(item \ref{T1item2}) and the fact that $\Pi(\ephi,1) =\lphi$
+ when $\Phi\in\Delta_2$.
+
  We consider $u_n$ and $u$ with $\|u_n- u\sobnor\to 0$.  Let $h$ and $n_k$, $k=1,2,\ldots$, as in Lemma \ref{segundo lema}. Then  since $L$ is a Caratheodory function
- we have $ D_yL(t,u_{n_k}(t),\dot{u}_{n_k}(t))\to D_yL(t,u(t),\dot{u}(t))$ a.e. $t\in [0,T]$.  From Lemma \ref{inclusion orlicz} and the fact that $\|u_{n_k}\sobnor$ are uniformly bounded, we get that there exists $N>0$ such that 
+ we have $ D_yL(t,u_{n_k}(t),\dot{u}_{n_k}(t))\to D_yL(t,u(t),\dot{u}(t))$ a.e. $t\in [0,T]$.  From Lemma \ref{inclusion orlicz} and the fact that $\|u_{n_k}\sobnor$ are uniformly bounded, we get that there exists $N>0$ such that
  $\|u_{n_k}\|_{L^{\infty}}\leq N$. Therefore
   \[a(|u_{n_k}(t)|)\leq \sup_{0\leq s\leq N} a(s)=:C<\infty.\]
  By using \eqref{cotaDyL} we get $h\in\lphi$ and a subsequence $n_k$ with $u_{n_k}\to u$ a.e., $\dot{u}_{n_k}\to \dot{u}$ a.e. and  $|\dot{u}_{n_k}|\leq h$. Then
@@ -438,12 +437,12 @@ from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\r
     &\leq C\left( c(t) + \varphi (|h|)\right)\in \lpsi
    \end{split}
 \]
-The last relation is consequence of $\Psi\in\Delta_2$. Therefore, invoking  Lemma \ref{lema_conv_may}, we have proved that 
-  of all sequence $u_n$ which converge to $u$ in $\wphi$ we can 
-extract a subsequence with $\|D_yL(t,u_{n_k},\dot{u}_{n_k})-D_yL(t,u,\dot{u})\|_{\lpsi}\to 0$. From a standard argument follows the desidered result. 
+The last relation is consequence of $\Psi\in\Delta_2$. Therefore, invoking  Lemma \ref{lema_conv_may}, we have proved that
+  of all sequence $u_n$ which converge to $u$ in $\wphi$ we can
+extract a subsequence with $\|D_yL(t,u_{n_k},\dot{u}_{n_k})-D_yL(t,u,\dot{u})\|_{\lpsi}\to 0$. From a standard argument follows the desidered result.
 
 \[
-  \begin{split} 
+  \begin{split}
     \|I'(u)-I'(u_0)\|_{\left[\wphi\right]^*}&=\sup_{v\in \wphi,\|v\sobnor\leq 1} \langle I'(u)-I'(u_0),v \rangle\\
       &=\sup_{v\in \wphi, \|v\sobnor\leq 1} \int_0^T \left\{ \left(D_xL(t,u(t),\dot{u}(t))-D_xL(t,u_0(t),\dot{u_0}(t))\right)\cdot v(t)\right.\\
       &\quad\left.+
@@ -454,7 +453,7 @@ extract a subsequence with $\|D_yL(t,u_{n_k},\dot{u}_{n_k})-D_yL(t,u,\dot{u})\|_
        &\leq C\left(\| D_xL(\cdot,u(\cdot),\dot{u}(\cdot))-D_xL(\cdot,u_0(\cdot),\dot{u_0}(\cdot))\|_{L^1}\right.\\
        &\left. \quad +
        \| D_yL(\cdot,u(\cdot),\dot{u}(\cdot))-D_yL(\cdot,u_0(\cdot),\dot{u_0}(\cdot))\|_{\lpsi}\right)
-  \end{split} 
+  \end{split}
 \]
 Therefore the results follows  of the  previously established continuity for $D_xL$ and $D_yL$.
 
@@ -520,8 +519,8 @@ convexity implies injectivity (see, for instance \cite[Theorem 12.17]{rockafella
 
 
 \end{proof}
- 
- 
+
+
 
 \bibliographystyle{plain}
 \bibliography{biblio}
