@@ -517,12 +517,58 @@ convexity implies injectivity (see, for instance \cite[Theorem 12.17]{rockafella
 \end{proof}
 
 \begin{lem}
-We suppose that $L(t,x,y)=\Phi(|y|)+F(t,x)$, where $F(t,x)$ is a Charateodory function and $|F(t,x)|\leq a(|x|)b(t)$, where $a\in C(\mathbb{R}_+,\mathbb{R}_+)$
-and $b\in L^1([0,T])$. We suppose that $\Phi\in\Delta_2$.  Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
+We suppose that $L(t,x,y)$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}. We suppose that $\Phi,\Psi\in\Delta_2$.  
+Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
 \end{lem}
 
-\begin{proof}
+\begin{proof} 
+
+\textcolor{red}{Necesito la proposicion 1.2 de Mawhin y Willem pero para espacios de Orlicz. Quien se le anima?}
+
+We fix any $u\in\wphi$. What we must prove that for any sequence $\{u_n\}$ with $u_n\rightharpoonup u$ in $\wphi$ we have that $I(u)\leq \limsup_n I(u_n)$. We write
+\[
+\begin{split}I(v)&=\int_0^TL(t,v(t),\dot{v}(t))dt\\
+ &=\int_0^TL(t,v(t),\dot{v}(t))-L(t,u(t),\dot{v}(t))dt +\int_0^TL(t,u(t),\dot{v}(t))dt\\
+ &=:J(v)+H(v).
+\end{split}
+\]
+ As $\{u_n\}$ is a weakly convergent sequence,  by the Lemma XXX  we have that $u_n\to u$ in $L^{\infty}$. By the mean value theorem for derivatives, we obtain 
+ a function $\xi_n(t)$, with $\xi_n(t)$ belonging to line segment joyning $u_n(t)$ and $u(t)$, such that
+ \[J(u_n)=\left|  L(t,u_n(t),\dot{u}_n(t))-L(t,u(t),\dot{u}_n(t))\right|=|D_xL(t,\xi_n(t),\dot{u}_n(t))||u_n(t)-u(t)|.\]
+The functions $u_n$, and therefore the functions $\xi_n$, are uniformly bounded in $L^{\infty}$. Thus, there exists $C>0$ such that $a(|\xi_n(t)|)\leq C $. Then, 
+using \eqref{cotaDxL} we get
+\begin{equation}\label{acot_Dx}
+ D_xL(t,\xi_n(t),\dot{u}_n(t))|\leq C \left(b(t)+\Phi(|\dot{u}_n(t))|)\right)
+\end{equation}
+Since $\Phi\in\Delta_2$ we have that the operator $v\mapsto\Phi(v)$  acts from $\lphi$ in $L^1$. Therefore, by 
+\cite[Lemma 17.4]{KR} we have that $\{\Phi(v): \|v\|\leq r\}$ is bounded in $ L^1$ for any $r>0$. This fact implies that
+there exists a constant $C>0$ such that $\|\Phi(|\dot{u}_n(t))|)\|_{L^1}\leq C$. Then, from 
+\eqref{descomposicion}, \eqref{acot_Dx} and since $\|u_n-u\|\to 0$ and $b\in L^1$ we get $\|J(u_n)\|_{L^1}\to 0 	$
+
+Now we will prove that $H(v)$ is w.l.s.c. Since $H(v)$ is convex it is sufficient to prove that $H$ is l.s.c (see
+\cite[Theorem 1.2]{mawhin2010critical}). We suppose that  $\|u_n- u\|\to 0$. Then, there exists $s=s_{n,t}\in[0,1]$
+such that
+\[|H(u_n)-H(u)|=|D_yL(t,u(t),(1-s)\dot{u}_n(t)+s \dot{u}(t))||u_n-u|.\]
+Let $\mathfrak{G}$ be the set $\{|u_n(t)|\leq |u(t)|\}$. Then
+\[|(1-s)\dot{u}_n(t)+ \dot{u}(t)|\leq \max\{|\dot{u}_n(t)|,|\dot{u}(t)|\}=\chi_{\mathfrak{G}}|\dot{u}_n(t)|+
+ \chi_{\mathfrak{G}^c}|\dot{u}(t)|
+\]
+Therefore, using \eqref{cotaDyL} and by the uniform boundedness of $a(|u_n(t)|)$ we get
+\[\begin{split}|H(u_n)-H(u)|&\leq C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\dot{u}_n(t)|+
+ \chi_{\mathfrak{G}^c}|\dot{u}(t)|)\right)|u_n-u|\\
+ &=C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\dot{u}_n(t)|)+\varphi(
+ \chi_{\mathfrak{G}^c}|\dot{u}(t)|)\right)|u_n-u|\\
+ &\leq C\left(c(t)+\varphi(|\dot{u}_n(t)|)+\varphi(
+ |\dot{u}(t)|)\right)|u_n-u|.
+ \end{split}
+ \]
  
+ Now, in virtue of \cite[Lemma 18.2]{KR}, \cite[Lemma 18.2]{KR} and the uniform boundedness of $\dot{u}_n$ in 
+ $\lphi$ we have
+ \[\|H(u_n)-H(u)|_{\lpsi}\leq C\|u_n-u\orlnor\to 0.\]
+ 
+ 
+
 \end{proof}
 
 
