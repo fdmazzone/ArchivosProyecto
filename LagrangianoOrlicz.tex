@@ -517,7 +517,7 @@ convexity implies injectivity (see, for instance \cite[Theorem 12.17]{rockafella
 \end{proof}
 
 \begin{lem}
-We suppose that $L(t,x,y)$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}. We suppose that $\Phi,\Psi\in\Delta_2$.  
+We suppose that $L(t,x,y)$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}. Moreover we assume $L(t,x,\cdot)$ is convex for each $t,x$. We suppose that $\Phi,\Psi\in\Delta_2$.  
 Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
 \end{lem}
 
@@ -526,7 +526,7 @@ Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.
 
 \textcolor{red}{Necesito la proposicion 1.2 de Mawhin y Willem pero para espacios de Orlicz. Quien se le anima?}
 
-We fix any $u\in\wphi$. What we must prove that for any sequence $\{u_n\}$ with $u_n\rightharpoonup u$ in $\wphi$ we have that $I(u)\leq \limsup_n I(u_n)$. We write
+We fix any $u\in\wphi$. What we must prove that for any sequence $\{u_n\}$ with $u_n\rightharpoonup u$ in $\wphi$ we have that $I(u)\leq \liminf_n I(u_n)$. We write
 \[
 \begin{split}I(v)&=\int_0^TL(t,v(t),\dot{v}(t))dt\\
  &=\int_0^TL(t,v(t),\dot{v}(t))-L(t,u(t),\dot{v}(t))dt +\int_0^TL(t,u(t),\dot{v}(t))dt\\
@@ -538,7 +538,7 @@ We fix any $u\in\wphi$. What we must prove that for any sequence $\{u_n\}$ with 
  \begin{equation}\label{opJ}
  \begin{split}
    &\left|  L(t,u_n(t),\dot{u}_n(t))-L(t,u(t),\dot{u}_n(t))\right|\\
-  &=|D_xL(t,\xi_n(t),\dot{u}_n(t))||u_n(t)-u(t)|.
+  &\leq|D_xL(t,\xi_n(t),\dot{u}_n(t))||u_n(t)-u(t)|.
   \end{split}
  \end{equation}
 
@@ -554,28 +554,28 @@ there exists a constant $C>0$ such that $\|\Phi(|\dot{u}_n(t))|)\|_{L^1}\leq C$.
 \eqref{opJ}, \eqref{acot_Dx}, H\"older inequality and since $\|u_n-u\|_{L^{\infty}}\to 0$ and $b\in L^1$ we get $J(u_n)\to 0 	$
 
 Now we will prove that $H(v)$ is w.l.s.c. Since $H(v)$ is convex it is sufficient to prove that $H$ is l.s.c (see
-\cite[Theorem 1.2]{mawhin2010critical}). We suppose that  $\|u_n- u\sobnor\to 0$. 
+\cite[Theorem 1.2]{mawhin2010critical}). We suppose that  $\|u_n- u\sobnor\to 0$. \textcolor{r}{Deber Fernando: v_n tiende a v}.
 
 There exists $s=s_{n,t}\in[0,1]$
 such that
-\[|L(t,u(t),\dot{u}_n(t))-L(t,u(t),\dot{u}(t))|=|D_yL(t,u(t),(1-s)\dot{u}_n(t)+s \dot{u}(t))||u_n-u|.\]
-Let $\mathfrak{G}$ be the set $\{|u_n(t)|\geq |u(t)|\}$. Then
-\[|(1-s)\dot{u}_n(t)+ \dot{u}(t)|\leq \max\{|\dot{u}_n(t)|,|\dot{u}(t)|\}=\chi_{\mathfrak{G}}|\dot{u}_n(t)|+
- \chi_{\mathfrak{G}^c}|\dot{u}(t)|
+\[|L(t,u(t),\dot{u}_n(t))-L(t,u(t),\dot{u}(t))|\leq|D_yL(t,u(t),(1-s)\dot{u}_n(t)+s \dot{u}(t))||\dot{u}_n-\dot{u}|.\]
+Let $\mathfrak{G}$ be the set $\{|\dot{u}_n(t)|\geq |\dot{u}(t)|\}$. Then
+\[|(1-s)\dot{u}_n(t)+ s\dot{u}(t)|\leq \max\{|\dot{u}_n(t)|,|\dot{u}(t)|\}=\chi_{\mathfrak{G}}(t)|\dot{u}_n(t)|+
+ \chi_{\mathfrak{G}^c}(t)|\dot{u}(t)|
 \]
 Therefore, using \eqref{cotaDyL} and by the uniform boundedness of $a(|u_n(t)|)$ we get
 \[\begin{split}|L(t,u(t),\dot{u}_n(t))-L(t,u(t),\dot{u}(t))|&\leq C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\dot{u}_n(t)|+
- \chi_{\mathfrak{G}^c}|\dot{u}(t)|)\right)|u_n-u|\\
+ \chi_{\mathfrak{G}^c}|\dot{u}(t)|)\right)|\dot{u}_n-\dot{u}|\\
  &=C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\dot{u}_n(t)|)+\varphi(
- \chi_{\mathfrak{G}^c}|\dot{u}(t)|)\right)|u_n-u|\\
+ \chi_{\mathfrak{G}^c}|\dot{u}(t)|)\right)|\dot{u}_n-\dot{u}|\\
  &\leq C\left(c(t)+\varphi(|\dot{u}_n(t)|)+\varphi(
- |\dot{u}(t)|)\right)|u_n-u|.
+ |\dot{u}(t)|)\right)|\dot{u}_n-\dot{u}|.
  \end{split}
  \]
  
- Now, in virtue of \cite[Lemma 18.2]{KR}, \cite[Lemma 18.2]{KR} and the uniform boundedness of $\dot{u}_n$ in 
+ Now, in virtue of \cite[Lemma 9.1]{KR}, \cite[Lemma 17.1]{KR}, \cite[Theorem 17.4]{KR} and the uniform boundedness of $\dot{u}_n$ in 
  $\lphi$ we have
- \[|H(u_n)-H(u)|\leq C\|u_n-u\orlnor\to 0.\]
+ \[|H(u_n)-H(u)|\leq C\|\dot{u}_n-\dot{u}\orlnor\to 0.\]
  Which completes the proof (o eso me gustaría creer a mi)
  
 
