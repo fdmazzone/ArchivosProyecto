@@ -516,6 +516,17 @@ The last part of the Corollary is a consequence of that $D_yL(T,u(T),\dot{u}(T))
 convexity implies injectivity (see, for instance \cite[Theorem 12.17]{rockafellar2009variational}).
 \end{proof}
 
+
+ \begin{lem}\label{unif_conv}
+{\color{red} Proposicion 1.2 de Mawhin y Willem, Ejercicio Erica} If the sequence $\{u_{n}\}_{n \geq 1}$ converges weakly to $u$ in $\wphi$, then $\{u_{n}\}_{n\geq 1}$ converges
+uniformly to $u$ on $[0,T]$.
+\end{lem}
+\begin{proof}
+By Lemma \ref{inclusion orlicz}, the injection of $\wphi$ in $L^{\infty}$ is continuous. Since $u_{n}\rightharpoonup u$ in $\wphi$ it follows that
+$u_{k}\rightharpoonup u$ in $L^{\infty}$ ($\langle u_{n}-u, f\rangle_{L^{\infty},[L^{\infty}]^*} \leq \|u_{n}-u\|_{L^{\infty}} \|f\|_{[L^{\infty}]^*} \leq C
+\|u_{n}-u\|_{\wphi}\|f\|_{[L^{\infty}]^*} \rightarrow 0$)
+\end{proof}
+
 \begin{lem}
 We suppose that $L(t,x,y)$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}. Moreover we assume $L(t,x,\cdot)$ is convex for each $t,x$. We suppose that $\Phi,\Psi\in\Delta_2$.  
 Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
@@ -549,12 +560,12 @@ using \eqref{cotaDxL} we get
  \left|D_xL(t,\xi_n(t),\dot{u}_n(t))\right|\leq C \left(b(t)+\Phi(|\dot{u}_n(t))|)\right)
 \end{equation}
 Since $\Phi\in\Delta_2$ we have that the operator $v\mapsto\Phi(v)$  acts from $\lphi$ in $L^1$. Therefore, by 
-\cite[Lemma 17.4]{KR} we have that $\{\Phi(v): \|v\|\leq r\}$ is bounded in $ L^1$ for any $r>0$. This fact implies that
+\cite[Lemma 17.4]{KR} we have that $\{\Phi(v): \|v\|_{\lphi}\leq r\}$ is bounded in $ L^1$ for any $r>0$. This fact implies that
 there exists a constant $C>0$ such that $\|\Phi(|\dot{u}_n(t))|)\|_{L^1}\leq C$. Then, from 
 \eqref{opJ}, \eqref{acot_Dx}, H\"older inequality and since $\|u_n-u\|_{L^{\infty}}\to 0$ and $b\in L^1$ we get $J(u_n)\to 0 	$
 
 Now we will prove that $H(v)$ is w.l.s.c. Since $H(v)$ is convex it is sufficient to prove that $H$ is l.s.c (see
-\cite[Theorem 1.2]{mawhin2010critical}). We suppose that  $\|u_n- u\sobnor\to 0$. \textcolor{r}{Deber Fernando: v_n tiende a v}.
+\cite[Theorem 1.2]{mawhin2010critical}). We suppose that  $\|u_n- u\sobnor\to 0$. \textcolor{red}{Deber Fernando: $v_n$ tiende a v}.
 
 There exists $s=s_{n,t}\in[0,1]$
 such that
