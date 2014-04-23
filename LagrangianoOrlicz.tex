@@ -159,7 +159,7 @@ The space $\ephi=\ephi([0,T],\mathbb{R}^n)$ is defined as the closure in $\lphi$
 Orlicz class $\claseor$. It is known that $\left[\ephi\right]^*=\lpsi$.
 
 
-We will use the set
+Likes in \cite{KR}, we utilize the subset $\Pi(\ephi,r)=\Pi\left(\ephi\left([0,T],\mathbb{R}^n\right),r\right)$ of $\lphi([0,T],\mtahbb{R}^n)$ defined by
 \[\Pi(\ephi,r):=\{u\in\lphi: d(u,\ephi)<r\}.\]
 This set is related to the Orlicz class $\claseor$ by means of inclusions
 \[\Pi(\ephi,1)\subset \claseor \subset\overline{\Pi(\ephi,1)}.\]
@@ -209,21 +209,26 @@ $u_{n_k}$ and {\color{red}$h\in\Pi(\ephi,1)$} such that
 \[u_{n_k}\rightarrow u \quad\text{a.e.}\]
 \[|u_{n_k}|\leq h\quad\text{a.e.}\]
 \end{lem}
+
+
+
 \begin{proof}
-Let $r:=d(u_1,\ephi)$. Because $u_n$ is a Cauchy sequence, for
+Let $r:=d(u,\ephi)$, $r<1$. Because $u_n$ converges to $u$, for
 each $k\in\mathbb{N}$ there exists $n_k$ such that
-\[\|u_m-u_s\|_{\Phi}<2^{-k-1}(1-r)\quad m,s\geq n_k\].
-We consider the subsequence $u_{n_k}$ with $n_1=1$. Let
-$S_k=u_1+(u_{n_2}-u_{n_1})+\ldots+(u_{n_k}-u_{n_{k-1}})$, and let
+\[\|u_{n_k}-u\|_{\Phi}<\frac{1-r}{2}\quad \text{ and }\quad \|u_{n_k}-u_{n_{k+1}}\|_{\Phi}<2^{-k-1}(1-r)\]
+Let
+$S_k=u_{n_1}+(u_{n_2}-u_{n_1})+\ldots+(u_{n_k}-u_{n_{k-1}})$, and let
 $h:[0,T]\rightarrow\mathbb{R}$ defined by
-\[ h(x)=|u_1(x)|+\sum_{k=2}^{\infty}|u_{n_k}(x)-u_{n_{k-1}}(x)|.\]
-By previous conditions, $h\in\Pi(\ephi,1)$. From
-$\Pi(\ephi,1)\subset \claseor$, we can see that $\int_{[0,T]}
+\[ h(x)=|u_{n_1}(x)|+\sum_{k=2}^{\infty}|u_{n_k}(x)-u_{n_{k-1}}(x)|.\]
+From $d(u_{n_1},\ephi)\leq d(u_{n_1},u)+d(u,\ephi)<\frac{1+r}{2}$, we can see that
+$h\in\Pi(\ephi,1)$. Because
+$\Pi(\ephi,1)\subset \claseor$, we know that $\int_{[0,T]}
 \Phi(h)\ dx < \infty$ and so, $h<\infty$ a.e. Moreover, from \[
 |u_{n_k}|=|S_k|\leq h\]we conclude that
 $u_1(x)+\sum_{k=2}^{\infty}(u_{n_k}(x)-u_{n_{k-1}}(x))$ converges
 absolutely a.e. Then $u_{n_k}\rightarrow u \quad\text{a.e.}$
 \end{proof}
+
 
 We recall the definition of Gate\^{a}ux derivative, see \cite{ambrosetti} for details. Given a function $I:U\to\mathbb{R}$ where $U$ is an open set of a Banach space $X$,
 we say that $I$ has a G\^ateaux derivative en $u \in U$ if there exists $A\in X^*$ such that for every $v \in X$
