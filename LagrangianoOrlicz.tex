@@ -201,12 +201,12 @@ From \eqref{desigualdad1} and \eqref{desigualdad2} we obtain
 \]
 \end{proof}
 We will use repeatedly the following elementary consequence of the previous theorem. Hereafter we denote  by $\mathbb{R}^+$ to the set of all non negative real numbers. 
-\begin{cor}\label{a_bound} Let $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ and we define the composition operator $\b{a}$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$. Then $a:\wphi\to L^{\infty}([0,T],\mathbb{R})$ is bounded. 
+\begin{cor}\label{a_bound} Let $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ and we define the composition operator $\b{a}$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$. Then $a:\wphi\to L^{\infty}([0,T],\mathbb{R})$ is bounded, which is there exists a non decreasing function $c:\mathbb{R}^+\to\mathbb{R}^+$ such that 
+ $\|\b{a}(\b{u})\|_{L^{\infty}}\leq c(\|\b{u}\|_{\wphi})$.
 \end{cor}
 \begin{proof}  If $\b{u}\in \wphi$ then, by Lemma \ref{inclusion orlicz} ,
  $\b{u}\in L^{\infty}$ and $\|\b{u}\|_{L^{\infty}}\leq C(T)\|\b{u}\|_{\wphi}=:A$.   By hypothesis
- $a:[0,A]\rightarrow\mathbb{R}$ is bounded by a constant $c=c(A)$, i.e. Therefore, there exists $c>0$ depending on $\|\b{u}\|_{\wphi}$  such that $a(|\b{u}(t)|)\leq c$, i.e. $\|\b{a}(\b{u})\|_{L^{\infty}}\leq c$.
-  
+ $a:[0,A]\rightarrow\mathbb{R}$ is bounded, hence the supremum $c(A):=\sup_{[0,A]}a$ is well defined. Clearly $c$ satisfies the statement of Corollary.
 \end{proof}
 
 
@@ -333,7 +333,14 @@ Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theor
 \[f(s,t)=\mathcal{L}(t,\b{u}(t)+s\b{v}(t),\b{\dot{u}}(t)+s\b{\dot{v}}(t)).\]
 We remark that by \ref{T1item1}
 \[I(\b{u}+s\b{v})=\int_0^Tf(s,t)\ dt\]
-is well defined and it is finite valued for $t\in [0,T]$ and  $|s|\leq s_0:=\left(1-d(\dot{\b{u}},\ephi)\right)/\|\b{v}\sobnor$ ($\b{v}\neq 0$). Applying the chain rule and the inequalities \eqref{cotaDxL}-\eqref{cotaDyL} we obtain
+is well defined and it is finite valued for $t\in [0,T]$ and  $|s|\leq s_0:=\left(1-d(\dot{\b{u}},\ephi)\right)/\|\b{v}\sobnor$ ($\b{v}\neq 0$). Using  Corollary \ref{a_bound} we have
+where
+\[ \|a(|\b{u}+s\b{v}|)\|_{L^{\infty}}\leq  c(\|\b{u}+s\b{v}\sobnor)\leq
+ c(\|\b{u}\sobnor+s_0\|\b{v}\sobnor).
+\]
+Consequently, 
+
+Applying the chain rule,  inequalities \eqref{cotaDxL}-\eqref{cotaDyL}, Corollary \ref{a_bound} we obtain
 \begin{equation}\label{ctg}
 \begin{split}
 |D_s f(s,t)|&=|\langle D_x\mathcal{L}(t,\b{u}+s\b{v},\b{\dot{u}}+s\b{\dot{v}}), \b{v}\rangle + \langle D_y\mathcal{L}(t,\b{u}+s\b{v},\dot{\b{u}}+s\b{\dot{v}}), \b{\dot{v}}\rangle | \\
@@ -341,10 +348,7 @@ is well defined and it is finite valued for $t\in [0,T]$ and  $|s|\leq s_0:=\lef
 & \leq a_0 \left[(b(t)+\Phi(|\b{\dot{u}}|+s_0|\b{\dot{v}}|))|\b{v}|+ (c(t)+ \varphi(|\b{\dot{u}}|+s_0|\b{\dot{v}}|))|\b{\dot{v}}|  \right]
 \end{split}
 \end{equation}
-where
-\[
- a_0 = \max \left\{ a(\xi): \xi\in \left[0, \|\b{u} \linf + s_0 \|v \linf \right] \right\}.
-\]
+
 
 It is easy to show that $d(w,\ephi)\leq d(|w|,\ephi)$ for every $w \in \lphi$
 \[
