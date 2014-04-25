@@ -201,7 +201,7 @@ From \eqref{desigualdad1} and \eqref{desigualdad2} we obtain
 \]
 \end{proof}
 We will use repeatedly the following elementary consequence of the previous theorem. Hereafter we denote  by $\mathbb{R}^+$ to the set of all non negative real numbers. 
-\begin{cor}\label{a_bound} Let $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ and we define the composition operator $\b{a}$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$. Then $a:\wphi\to L^{\infty}([0,T],\mathbb{R})$ is bounded, which is there exists a non decreasing function $c:\mathbb{R}^+\to\mathbb{R}^+$ such that 
+\begin{cor}\label{a_bound} Let $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ and we define the composition operator $\b{a}$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$. Then $\b{a}:\wphi\to L^{\infty}([0,T],\mathbb{R})$ is bounded, which is there exists a non decreasing function $c:\mathbb{R}^+\to\mathbb{R}^+$ such that 
  $\|\b{a}(\b{u})\|_{L^{\infty}}\leq c(\|\b{u}\|_{\wphi})$.
 \end{cor}
 \begin{proof}  If $\b{u}\in \wphi$ then, by Lemma \ref{inclusion orlicz} ,
@@ -309,7 +309,7 @@ is finite for every $\b{u}\in W^{1}(\lphi,\claseor)$.
 
  We split the proof of  \ref{T1item3} in three steps. 
 
-\noindent\textbf{Step 1.} We prove that $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ into $\mathcal{L}^{1}([0,T])$ whith the strong topology on both sets. We take   $\{\b{u}_n\}_{n\in \mathbb{N}}$ a sequence of  functions in $W^{1}(\lphi,\Pi(\ephi,1))$, and $\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$ such that $\b{u}_n\rightarrow \b{u}$ in $\wphi$.
+\noindent\textbf{Step 1.} We prove that $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ into $L^{1}([0,T])$ whith the strong topology on both sets. We take   $\{\b{u}_n\}_{n\in \mathbb{N}}$ a sequence of  functions in $W^{1}(\lphi,\Pi(\ephi,1))$, and $\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$ such that $\b{u}_n\rightarrow \b{u}$ in $\wphi$.
 Then $\b{u}_n\rightarrow \b{u}$ in $\lphi$ and $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi$. By Lemma \ref{segundo lema} there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi,1))$
 such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.  Since $\b{u}_{n_k}$, $k=1,2,\ldots$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wphi$. According to Lemmas \ref{inclusion orlicz} and Corollary \ref{a_bound} there exists $M>0$ such that $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  From the previous facts and \eqref{cotaDxL} we get
 \begin{equation}\label{DxL1}
@@ -413,7 +413,7 @@ Therefore the results follows  of the  previously established continuity for $D_
 
 
 
-
+\section{Critical point of actions integrals}
 
 
 We recall that the definition of a strictly convex function, that is a function $f: \mathbb{R}^n \to \mathbb{R}$ such that
