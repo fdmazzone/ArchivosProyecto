@@ -17,7 +17,8 @@
 %\usepackage{showkeys}
 \usepackage{comment}
 
-
+\usepackage{biblatex}
+\bibliography{biblio.bib}
 %Teorema y similes
 
 
@@ -400,26 +401,20 @@ Now we are  in conditions of  to prove the continuity of $I'$. Let $\b{u}, \b{u_
       &\leq \left\{\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\|\b{v}\|_{L^{\infty}}\right.\\
       &\quad+\left.
        \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\|\b{\dot{v}}\|_{\lphi}\right\}\\
-       &\leq C\left(\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\right.\\
-       &\left. \quad +
-       \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\right)
   \end{split}
 \]
-Taking supremum on $\b{v}$ with $\|\b{v}\sobnor\leq 1$ and 
-
+Taking supremum on $\b{v}$ with $\|\b{v}\sobnor\leq 1$ in the previous inequality and using Lemma \ref{inclusion orlicz} we obtain
+\[\begin{split}
+   \|I'(\b{u})-I'(\b{u}_0)\|_{\wphi} &\leq  C\bigg(\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\right.\\
+     & + \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\bigg)
+  \end{split}
+  \] 
 Therefore the results follows  of the  previously established continuity for $D_{\b{x}}\mathcal{L}$ and $D_{\b{y}}\mathcal{L}$.
-
 \end{proof}
 
 
 
 \section{Critical point of actions integrals}
-
-
-We recall that the definition of a strictly convex function, that is a function $f: \mathbb{R}^n \to \mathbb{R}$ such that
-\[
-f\left(\frac{x+y}{2}\right)< \frac{1}{2} \left(f\left( x\right)+f\left( y\right)\right).
-\]
 
 
 In this paper, we will consider the following problem
@@ -542,12 +537,16 @@ Therefore, using \eqref{cotaDyL} and by the uniform boundedness of $a(|u_n(t)|)$
  Which completes the proof (o eso me gustara creer a mi)
  
 
+\begin{defin} We said that a function $f: \mathbb{R}^n \to \mathbb{R}$ is \emph{strictly convex function} 
+\[
+f\left(\frac{x+y}{2}\right)< \frac{1}{2} \left(f\left( x\right)+f\left( y\right)\right).
+\]
+
+
 \end{proof}
 
 
 
+\printbibliography
 
-
-\bibliographystyle{plain}
-\bibliography{biblio}
 \end{document}
