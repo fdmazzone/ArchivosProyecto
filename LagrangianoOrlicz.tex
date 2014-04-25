@@ -164,7 +164,7 @@ Likes in \cite{KR}, we will consider the subset $\Pi(\ephi,r)=\Pi\left(\ephi\lef
 This set is related to the Orlicz class $\claseor$ by means of inclusions
 \begin{equation}\label{inclusiones}\Pi(\ephi,1)\subset \claseor \subset\overline{\Pi(\ephi,1)}.\end{equation}
 The proof of this fact, and similar ones, is given by real valued function in \cite{KR}, 
-the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty.
+the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty. When the function $\Phi$ is of the $\Delta_2$ class then the four sets $\lphi$, $\ephi$ $\Pi(\ephi,1)$ and $\claseor$ are equal.
 
 Let $X$ and $Y$ be subsets of certain vector spaces of $\mathbb{R}^n$-valued measurable functions defined in $[0,T]$.   We denote by  $W^1(X,Y)$ to the set defined by
 \[W^1(X,Y):=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{u}\in X, \b{\dot{u}}\in Y\}.\]
@@ -241,7 +241,6 @@ we have
 Therefore, $h\in\Pi(\ephi,1)$.  In particular,  $|h|<\infty$ a.e. We conclude that la serie $\b{u}_1(x)+\sum_{k=2}^{\infty}(\b{u}_{n_k}(x)-\b{u}_{n_{k-1}}(x))$ 
 is absolutely convergent a.e.  This imply that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$. The inequality $|\b{u}_{n_k}|\leq h$ is clear from the definition of $h$.
 \end{proof}
-
 The following simple result will be useful.
 \begin{lem}\label{lema_conv_may}
 Suppose that $\Phi$ is a $\Delta_2$ function.  If $u_n \in\lphi$ is a sequence such that $u_n\to 0$ a.e. and suppose that there exist $M\in\lphi$ with $|u_n|\leq M$
@@ -380,7 +379,7 @@ from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\r
  $\left(\lpsi,\|\cdot\|_{L^{\Psi}}\right)$ respectively.  The continuity of the first map is an immediate consequence of the step 1 in the proof of item \ref{T1item3} and the fact that $\Pi(\ephi,1) =\lphi$  when $\Phi$ is of the $\Delta_2$ class. We will prove the continuity of the second map.  We consider $\b{u}_n$ and $\b{u}$ with $\|\b{u}_n- \b{u}\sobnor\to 0$.
 By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \lphi$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.
  Then  since $\mathcal{L}$ is a Caratheodory function
- we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$.  From Lemma \ref{inclusion orlicz} Corollary \ref{a_bound} and the fact that $\|\b{u}_{n_k}\sobnor$ are uniformly bounded, we get a constant $C>0$ such that  $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}}\leq C$. 
+ we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$.  From Corollary \ref{a_bound} and the fact that $\|\b{u}_{n_k}\sobnor$ are uniformly bounded, we get a constant $C>0$ such that  $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}}\leq C$. 
  By using \eqref{cotaDyL} and as $\Psi$ is of the $\Delta_2$ class, we obtain 
  \[\begin{split}
     |D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))| &\leq a(|\b{u}_{n_k}|)\left( c(t) + \varphi (|\b{\dot{u}}_{n_k}(t)|)\right)\\
@@ -389,15 +388,16 @@ By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \
 \]
 Therefore, invoking  Lemma \ref{lema_conv_may}, we have proved that
   of all sequence $\b{u}_n$ which converge to $\b{u}$ in $\wphi$ we can
-extract a subsequence with $\|D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})-D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\|_{\lpsi}\to 0$. The desired result follows from a standard argument.
+extract a subsequence with $D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})\to D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ in the strong topology. The desired result follows from a standard argument.
 
+Now we are  in conditions of  to prove the continuity of $I'$. Let $\b{u}, \b{u_0},\b{v}\in\lphi$. Then
 \[
   \begin{split}
-    \|I'(\b{u})&-I'(\b{u}_0)\|_{\left[\wphi\right]^*}=\sup_{v\in \wphi,\|v\sobnor\leq 1} \langle I'(\b{u})-I'(\b{u}_0),v \rangle\\
-      &=\sup_{v\in \wphi, \|v\sobnor\leq 1} \int_0^T \left\{ \left(D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))-D_{\b{x}}\mathcal{L}(t,\b{u}_0(t),\dot{\b{u}_0}(t))\right)\cdot v(t)\right.\\
+   \langle I'(\b{u})-I'(\b{u}_0),\b{v} \rangle
+      &= \int_0^T \left\{ \left(D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))-D_{\b{x}}\mathcal{L}(t,\b{u}_0(t),\dot{\b{u}_0}(t))\right)\cdot v(t)\right.\\
       &\quad\left.+
       \left(D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))-D_{\b{y}}\mathcal{L}(t,\b{u}_0(t),\dot{\b{u}_0}(t))\right)\cdot \b{\dot{v}}(t)\right\}dt \\
-      &\leq \sup_{v\in \wphi, \|v\sobnor\leq 1} \left\{\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\|v\|_{L^{\infty}}\right.\\
+      &\leq \left\{\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\|\b{v}\|_{L^{\infty}}\right.\\
       &\quad+\left.
        \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\|\b{\dot{v}}\|_{\lphi}\right\}\\
        &\leq C\left(\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\right.\\
@@ -405,6 +405,8 @@ extract a subsequence with $\|D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_
        \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\right)
   \end{split}
 \]
+Taking supremum on $\b{v}$ with $\|\b{v}\sobnor\leq 1$ and 
+
 Therefore the results follows  of the  previously established continuity for $D_{\b{x}}\mathcal{L}$ and $D_{\b{y}}\mathcal{L}$.
 
 \end{proof}
