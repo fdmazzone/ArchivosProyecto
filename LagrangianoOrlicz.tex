@@ -414,28 +414,28 @@ Therefore the results follows  of the  previously established continuity for $D_
 
 
 
-\section{Critical point of actions integrals}
+\section{Critical points and Euler-Lagrange equations}
 
 
-In this paper, we will consider the following problem
+In this section we derive the Euler-Lagrange equations associated to critical points of action integrals. 
 
 
-\begin{equation}\label{ecualagran}
-    \left\{%
-\begin{array}{ll}
-   \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0.
-\end{array}%
-\right.
-\end{equation}
+% \begin{equation}\label{ecualagran}
+%     \left\{%
+% \begin{array}{ll}
+%    \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+%     \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0.
+% \end{array}%
+% \right.
+% \end{equation}
 
 We denote by $\wphi_T$ the subspace of $\wphi$ of all functions $T$-periodic. Similarly we consider the subspaces $\ephi_T$, $\lphi_T$. As is usual, when $Y$ is a subspace of
-the Banach space $X$, we denote by $Y^{\perp}$ the subspace of $X^*$ of all the functions which are identically zero on $Y$.
+the Banach space $X$, we denote by $Y^{\perp}$ the subspace of $X^*$ of all the bounded linear functions which are identically zero on $Y$.
 
-\begin{defi} We said that a function $f: \mathbb{R}^n \to \mathbb{R}$ is \emph{strictly convex} if $f\left(\tfrac{x+y}{2}\right)< \tfrac{1}{2} \left(f\left( x\right)+f\left( y\right)\right)$.
-\]
-\end{defi}
-\begin{cor} The following statements are equivalent
+We reacall that  a function $f: \mathbb{R}^n \to \mathbb{R}$ is called \emph{strictly convex} if $f\left(\tfrac{\b{x}+\b{y}}{2}\right)< \tfrac{1}{2} \left(f\left( \b{x}\right)+f\left( \b{y}\right)\right)$.  It is a well known that if $f$ is a strickly convex and differentiable functions then $D_{\b{x}}f:\mathbb{R}^n\to\mathbb{R}^n$ is a one-to-one map  (see, for instance \cite[Theorem 12.17]{rockafellar2009variational}).  
+
+
+\begin{thm} The following statements are equivalent
 \begin{enumerate}
  \item $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$
  \item  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))dt$ is an absolutely continuous function and $\b{u}$ solve the following boundary value problem
@@ -447,23 +447,19 @@ the Banach space $X$, we denote by $Y^{\perp}$ the subspace of $X^*$ of all the 
 \end{array}%
 \right.
 \end{equation}
-
 \end{enumerate}
-Moreover if $D_{\b{y}}\mathcal{L}(t,x,y)$ is $T$-periodic with respect to the variable $t$ and strictly convex with respect to $y$, then
+Moreover if $D_{\b{y}}\mathcal{L}(t,x,y)$ is $T$-periodic with respect to the variable $t$ and strictly convex with respect to $\b{y}$, then
 $D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\b{\dot{\b{u}}}}(0))-D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=0$ is equivalent to $\b{\dot{u}}(0)=\b{\dot{u}}(T)$.
+\end{thm}
 
-\end{cor}
-
-\begin{proof} The condition $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$ means that for every $v\in \wphi_T$ we have $\langle I'(\b{u}),v\rangle=0$. According to Theorem
+\begin{proof} The condition $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$ means that for every $\b{v}\in \wphi_T$ we have $\langle \b{v}, I'(\b{u})\rangle=0$. According to Theorem
 \ref{teorema_acotacion} we have
 
-\[\int_0^TD_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\cdot \b{\dot{v}}(t)dt=-\int_0^TD_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\cdot v(t)dt \]
-Using \cite[pag. 6]{mawhin2010critical} we obtain that $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is absolutely continuous, therefore it is differentiable a.e.on $[0,T]$ and that the first equality
-of \ref{ecualagran} holds true. Moreover the same reference says that $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is $T$-periodic.
-This complete the proof of 1. implies 2. The converse is still easier than the previous one, we omit the proof of it.
+\[\int_0^T\langle D_{\b{y}} \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)), \b{\dot{v}}(t)\rangle dt=-\int_0^T \langle D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)),\b{ v}(t)\rangle dt \]
+Using \cite[pag. 6]{mawhin2010critical} we obtain that  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is absolutely continuous and $T$-periodic, therefore it is differentiable a.e.on $[0,T]$ and the first equality of \eqref{ecualagran2} holds true.
+This complete the proof  1. implies 2. The proof of 2.implies 1.  is still easier and so  we will omit it.
 
-The last part of the Corollary is a consequence of that $D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\dot{u}}(0))=D_{\b{y}}\mathcal{L}(T,u(T),\b{\dot{u}}(0))$ and the well known fact strictly
-convexity implies injectivity (see, for instance \cite[Theorem 12.17]{rockafellar2009variational}).
+The last part of the Corollary is a consequence of that $D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\dot{u}}(0))=D_{\b{y}}\mathcal{L}(T,u(T),\b{\dot{u}}(0))$ and the injectivity of $D_{\b{y}}\mathcal{L}(T,u(T),\cdot)$.
 \end{proof}
 
 
@@ -478,69 +474,58 @@ $\b{u}_{k}\rightharpoonup \b{u}$ in $L^{\infty}$ ($\langle \b{u}_{n}-\b{u}, f\ra
 \end{proof}
 
 \begin{lem}
-We suppose that $\mathcal{L}(t,x,y)$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}. Moreover we assume $\mathcal{L}(t,x,\cdot)$ is convex for each $t,x$. We suppose that $\Phi,\Psi\in\Delta_2$.  
-Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
+We suppose that $\mathcal{L}(t,\b{x},\b{y})$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}. Moreover we assume $\mathcal{L}(t,\b{x},\cdot)$ is convex for each $t,\b{x}$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions. Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
 \end{lem}
 
 
-\begin{proof} 
-
-\textcolor{red}{Necesito la proposicion 1.2 de Mawhin y Willem pero para espacios de Orlicz. Quien se le anima?}
-
-We fix any $\b{u}\in\wphi$. What we must prove that for any sequence $\{\b{u}_n\}$ with $\b{u}_n\rightharpoonup \b{u}$ in $\wphi$ we have that $I(\b{u})\leq \liminf_n I(\b{u}_n)$. We write
+\begin{proof} We fix any $\b{u}\in\wphi$. What we must prove that for any sequence $\{\b{u}_n\}$ with $\b{u}_n\rightharpoonup \b{u}$ in $\wphi$ we have that $I(\b{u})\leq \liminf_n I(\b{u}_n)$. We write
 \[
-\begin{split}I(v)&=\int_0^T\mathcal{L}(t,v(t),\b{\dot{v}}(t))dt\\
- &=\int_0^T\mathcal{L}(t,v(t),\b{\dot{v}}(t))-\mathcal{L}(t,\b{u}(t),\b{\dot{v}}(t))dt +\int_0^T\mathcal{L}(t,\b{u}(t),\b{\dot{v}}(t))dt\\
- &=:J(v)+H(v).
+\begin{split}I(\b{v})&=\int_0^T\mathcal{L}(t,\b{v}(t),\b{\dot{v}}(t))dt\\
+ &=\int_0^T\mathcal{L}(t,\b{v}(t),\b{\dot{v}}(t))-\mathcal{L}(t,\b{u}(t),\b{\dot{v}}(t))dt +\int_0^T\mathcal{L}(t,\b{u}(t),\b{\dot{v}}(t))dt\\
+ &=:J(\b{v})+H(\b{v}).
 \end{split}
 \]
- As $\{\b{u}_n\}$ is a weakly convergent sequence,  by the Lemma XXX  we have that $\b{u}_n\to \b{u}$ in $L^{\infty}$. By the mean value theorem for derivatives, we obtain 
- a function $\xi_n(t)$, with $\xi_n(t)$ belonging to line segment joyning $\b{u}_n(t)$ and $\b{u}(t)$, such that
+ As $\{\b{u}_n\}$ is a weakly convergent sequence,  by the Lemma \ref{unif_conv}  we have that $\b{u}_n\to \b{u}$ in $L^{\infty}$. By the mean value theorem for derivatives, we obtain 
+ a function $\b{\xi_n}(t)$, with $\b{\xi_n}(t)$ belonging to line segment joyning $\b{u}_n(t)$ and $\b{u}(t)$, such that
  \begin{equation}\label{opJ}
  \begin{split}
    &\left|  \mathcal{L}(t,\b{u}_n(t),\b{\dot{u}}_n(t))-\mathcal{L}(t,\b{u}(t),\b{\dot{u}}_n(t))\right|\\
-  &\leq|D_{\b{x}}\mathcal{L}(t,\xi_n(t),\b{\dot{u}}_n(t))||u_n(t)-u(t)|.
+  &\leq|D_{\b{x}}\mathcal{L}(t,\b{\xi_n}(t),\b{\dot{u}}_n(t))||\b{u_n}(t)-\b{u}(t)|.
   \end{split}
  \end{equation}
-
-The functions $u_n$, and therefore the functions $\xi_n$, are uniformly bounded in $L^{\infty}$. Thus, there exists $C>0$ such that $a(|\xi_n(t)|)\leq C $. Then, 
+The functions $\b{u_n}$, and therefore the functions $\b{\xi_n}$, are uniformly bounded in $L^{\infty}$. Thus, there exists $C>0$ such that $a(|\b{\xi_n}(t)|)\leq C $. Then, 
 using \eqref{cotaDxL} we get
-
 \begin{equation}\label{acot_Dx}
- \left|D_{\b{x}}\mathcal{L}(t,\xi_n(t),\b{\dot{u}}_n(t))\right|\leq C \left(b(t)+\Phi(|\b{\dot{u}}_n(t))|)\right)
+ \left|D_{\b{x}}\mathcal{L}(t,\b{\xi_n}(t),\b{\dot{u}}_n(t))\right|\leq C \left(b(t)+\Phi(|\b{\dot{u}}_n(t))|)\right)
 \end{equation}
-Since $\Phi\in\Delta_2$ we have that the operator $v\mapsto\Phi(v)$  acts from $\lphi$ in $L^1$. Therefore, by 
-\cite[Lemma 17.4]{KR} we have that $\{\Phi(v): \|v\|_{\lphi}\leq r\}$ is bounded in $ L^1$ for any $r>0$. This fact implies that
+Since $\Phi$ is a function of the $\Delta_2$ class, we have that the operator $\b{v}\mapsto\Phi(|\b{v}|)$  acts from $\lphi$ in $L^1$. Therefore, by 
+\cite[Lemma 17.4]{KR} we have that $\{\Phi(|\b{v}|): \|\b{v}\|_{\lphi}\leq r\}$ is bounded in $ L^1$ for any $r>0$. Hence
 there exists a constant $C>0$ such that $\|\Phi(|\b{\dot{u}}_n(t))|)\|_{L^1}\leq C$. Then, from 
-\eqref{opJ}, \eqref{acot_Dx}, H\"older inequality and since $\|u_n-u\|_{L^{\infty}}\to 0$ and $b\in L^1$ we get $J(u_n)\to 0 	$
+\eqref{opJ}, \eqref{acot_Dx}, H\"older inequality and since $\|\b{u}_n-\b{u}\|_{L^{\infty}}\to 0$ and $b\in L^1$ we get $J(\b{u}_n)\to 0 	$.
 
-Now we will prove that $H(v)$ is w.l.s.c. Since $H(v)$ is convex it is sufficient to prove that $H$ is l.s.c (see
-\cite[Theorem 1.2]{mawhin2010critical}). We suppose that  $\|u_n- u\sobnor\to 0$. \textcolor{red}{Deber Fernando: $v_n$ tiende a v}.
+Now we will prove that $H(\b{v})$ is w.l.s.c. Since $H(\b{v})$ is convex it is sufficient to prove that $H$ is l.s.c (see \cite[Proposition 4.26]{fonseca2007modern}).  We suppose that  $\|\b{v_n}- \b{v}\sobnor\to 0$.
 
 There exists $s=s_{n,t}\in[0,1]$
 such that
-\[|\mathcal{L}(t,u(t),\b{\dot{u}}_n(t))-\mathcal{L}(t,u(t),\b{\dot{u}}(t))|\leq|D_{\b{y}}\mathcal{L}(t,u(t),(1-s)\b{\dot{u}}_n(t)+s \b{\dot{u}}(t))||\b{\dot{u}}_n-\b{\dot{u}}|.\]
-Let $\mathfrak{G}$ be the set $\{|\b{\dot{u}}_n(t)|\geq |\b{\dot{u}}(t)|\}$. Then
-\[|(1-s)\b{\dot{u}}_n(t)+ s\b{\dot{u}}(t)|\leq \max\{|\b{\dot{u}}_n(t)|,|\b{\dot{u}}(t)|\}=\chi_{\mathfrak{G}}(t)|\b{\dot{u}}_n(t)|+
- \chi_{\mathfrak{G}^c}(t)|\b{\dot{u}}(t)|
+\[|\mathcal{L}(t,\b{u}(t),\b{\dot{v}}_n(t))-\mathcal{L}(t,\b{u}(t),\b{\dot{v}}(t))|\leq|D_{\b{y}}\mathcal{L}(t,\b{u}(t),(1-s)\b{\dot{v}}_n(t)+s \b{\dot{v}}(t))||\b{\dot{v}}_n-\b{\dot{v}}|.\]
+Let $\mathfrak{G}_n$ be the set $\{|\b{\dot{v}}_n(t)|\geq |\b{\dot{v}}(t)|\}$. Then
+\[|(1-s)\b{\dot{v}}_n(t)+ s\b{\dot{v}}(t)|\leq \max\{|\b{\dot{v}}_n(t)|,|\b{\dot{v}}(t)|\}=\chi_{\mathfrak{G}_n}(t)|\b{\dot{v}}_n(t)|+
+ \chi_{\mathfrak{G}_n^c}(t)|\b{\dot{v}}(t)|
 \]
-Therefore, using \eqref{cotaDyL} and by the uniform boundedness of $a(|u_n(t)|)$ we get
-\[\begin{split}|\mathcal{L}(t,u(t),\b{\dot{u}}_n(t))-\mathcal{L}(t,u(t),\b{\dot{u}}(t))|&\leq C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\b{\dot{u}}_n(t)|+
- \chi_{\mathfrak{G}^c}|\b{\dot{u}}(t)|)\right)|\b{\dot{u}}_n-\b{\dot{u}}|\\
- &=C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\b{\dot{u}}_n(t)|)+\varphi(
- \chi_{\mathfrak{G}^c}|\b{\dot{u}}(t)|)\right)|\b{\dot{u}}_n-\b{\dot{u}}|\\
- &\leq C\left(c(t)+\varphi(|\b{\dot{u}}_n(t)|)+\varphi(
- |\b{\dot{u}}(t)|)\right)|\b{\dot{u}}_n-\b{\dot{u}}|.
+Therefore, using \eqref{cotaDyL} and taking account that $a(|\b{u}(t)|)\in L^{\infty}$ we get
+\[\begin{split}|\mathcal{L}(t,\b{u}(t),\b{\dot{v}}_n(t))-\mathcal{L}(t,\b{u}(t),\b{\dot{v}}(t))|&\leq C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\b{\dot{v}}_n(t)|+
+ \chi_{\mathfrak{G}^c}|\b{\dot{v}}(t)|)\right)|\b{\dot{v}}_n-\b{\dot{v}}|\\
+ &=C\left(c(t)+\varphi(\chi_{\mathfrak{G}}|\b{\dot{v}}_n(t)|)+\varphi(
+ \chi_{\mathfrak{G}^c}|\b{\dot{v}}(t)|)\right)|\b{\dot{v}}_n-\b{\dot{v}}|\\
+ &\leq C\left(c(t)+\varphi(|\b{\dot{v}}_n(t)|)+\varphi(
+ |\b{\dot{v}}(t)|)\right)|\b{\dot{v}}_n-\b{\dot{v}}|.
  \end{split}
  \]
  
  Now, in virtue of \cite[Lemma 9.1]{KR}, \cite[Lemma 17.1]{KR}, \cite[Theorem 17.4]{KR} and the uniform boundedness of $\b{\dot{u}}_n$ in 
  $\lphi$ we have
- \[|H(u_n)-H(u)|\leq C\|\b{\dot{u}}_n-\b{\dot{u}}\orlnor\to 0.\]
- Which completes the proof (o eso me gustara creer a mi)
- 
-
-
+ \[|H(\b{v}_n)-H(\b{v})|\leq C\|\b{\dot{v}}_n-\b{\dot{v}}\orlnor\to 0.\]
+ Which completes the proof.
 \end{proof}
 
 
