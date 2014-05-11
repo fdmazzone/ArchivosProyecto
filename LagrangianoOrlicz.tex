@@ -203,7 +203,7 @@ From \eqref{desigualdad1} and \eqref{desigualdad2} we obtain
 \end{proof}
 We will use repeatedly the following elementary consequence of the previous theorem. Hereafter we denote  by $\mathbb{R}^+$ to the set of all non negative real numbers. 
 \begin{cor}\label{a_bound} Let $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ and we define the composition operator $\b{a}$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$. Then $\b{a}:\wphi\to L^{\infty}([0,T],\mathbb{R})$ is bounded, which is there exists a non decreasing function $c:\mathbb{R}^+\to\mathbb{R}^+$ such that 
- $\|\b{a}(\b{u})\|_{L^{\infty}}\leq c(\|\b{u}\|_{\wphi})$.
+ $\|\b{a}(\b{u})\|_{L^{\infty}([0,T])}\leq c(\|\b{u}\|_{\wphi})$.
 \end{cor}
 \begin{proof}  If $\b{u}\in \wphi$ then, by Lemma \ref{inclusion orlicz} ,
  $\b{u}\in L^{\infty}$ and $\|\b{u}\|_{L^{\infty}}\leq C(T)\|\b{u}\|_{\wphi}=:A$.   By hypothesis
@@ -337,7 +337,7 @@ $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi$. By Lemma \ref{segundo lema}, 
   \left |\langle D_y\mathcal{L}(t,\b{u}_n(t),\b{\dot{u}}_n(t)) ,\b{ v}\rangle \right| \leq C\left(c(t)|\b{v}(t)|+\varphi(|h(t)|)|\b{v}(t)|\right).
 \]
 We have that $c(t),\varphi(h(t))\in\lpsi$ and $|\b{v}|\in\lphi$. Then,  H\"older inequality for Orlicz spaces implies that  $\langle D_y\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t)), \b{v}\rangle$ is dominated by a function in $L^1$. Thus, from the Lebesgue dominated convergence Theorem we deduce
-\begin{equation}\label{conv_debil} \langle D_y\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t)),\b{ v} \rangle \to \langle D_y\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)),\b{ v} \rangle. \end{equation}
+\begin{equation}\label{conv_debil}\int_0^T \langle D_y\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t)),\b{ v}(t) \rangle dt \to \int_0^T\langle D_y\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)),\b{ v}(t) \rangle dt \end{equation}
 which contradict the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
 \textbf{Step 3.} Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $\b{u}\in \domi$ and $\b{v}\in\wphi$ we define the function
