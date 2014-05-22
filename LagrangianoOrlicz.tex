@@ -7,21 +7,28 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{color}
 \usepackage{ esint }
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{subfigure}
+%\usepackage{graphicx}
+%\usepackage{wrapfig}
+%\usepackage{subfigure}
 \usepackage{fancyhdr}
 \usepackage{times}
 %\usepackage{theorem}
 \usepackage[latin1]{inputenc}
 %\usepackage{showkeys}
 \usepackage{comment}
+\usepackage{url}
 
-\usepackage{biblatex}
-\bibliography{biblio.bib}
 %Teorema y similes
 
+\definecolor{rosa}{rgb}{1,0.3,0.9}
+\definecolor{violeta1}{rgb}{0.5,0.3,0.5}
+\definecolor{violeta}{rgb}{0.5,0.1,0.5}
 
+\definecolor{negro}{rgb}{0.5,0.2,0.4}
+
+\definecolor{celeste}{rgb}{0.1,0.4,1}
+
+\definecolor{naranja}{rgb}{1,0.5,0}
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{cor}[thm]{Corollary}
@@ -29,35 +36,36 @@
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{defi}[thm]{Definition}
 \newtheorem{prop}[thm]{Proposition}
+\theoremstyle{remark}
+\newtheorem{comentario}{Remark}
 
 
-
-\title{Propuesta de trabajo 07-08 de noviembre 2013}
+\title{Euler-Lagragian equations in an Orlicz-Sobolev space setting}
 \author{Sonia Acinas \thanks{SECyT-UNRC}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
 Universidad Nacional de La Pampa\\
 (6300) Santa Rosa, La Pampa, Argentina\\
-sonia.acinas@gmail.com\\[3mm]
+\url{sonia.acinas@gmail.com}\\[3mm]
 Leopoldo Buri \thanks{SECyT-UNRC}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-lburi@exa.unrc.edu.ar\\[3mm]
+\url{lburi@exa.unrc.edu.ar}\\[3mm]
 Graciela Giubergia \thanks{SECyT-UNRC and CONICET}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-ggiubergia@exa.unrc.edu.ar\\[3mm]
+\url{ggiubergia@exa.unrc.edu.ar}\\[3mm]
 Fernando D. Mazzone \thanks{SECyT-UNRC and CONICET}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-fmazzone@exa.unrc.edu.ar\\[3mm]
+\url{fmazzone@exa.unrc.edu.ar}\\[3mm]
 Erica L. Schwindt\thanks{ANR. AVENTURES - ANR-12-BLAN-BS01-0001-01}\\
 Universit\'{e} d'{O}rl\'{e}ans, Laboratoire MAPMO, CNRS, UMR 7349, \\
 F\'ed\'eration Denis Poisson, FR 2964,\\
 B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
-leris98@gmail.com}
+\url{leris98@gmail.com}}
 
 \date{}
 
@@ -72,6 +80,10 @@ leris98@gmail.com}
 \newcommand{\sobnor}{\|_{W^{1}\lphi}}
 \newcommand{\domi}{W^{1}\left(\lphi,\Pi\left(\ephi,1\right)\right)}
 \renewcommand{\b}[1]{\boldsymbol{#1}}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+
+
 
 \begin{document}
 
@@ -164,7 +176,7 @@ Likes in \cite{KR}, we will consider the subset $\Pi(\ephi,r)=\Pi\left(\ephi\lef
 \[\Pi(\ephi,r):=\{\b{u}\in\lphi: d(\b{u},\ephi)<r\}.\]
 This set is related to the Orlicz class $\claseor$ by means of inclusions
 \begin{equation}\label{inclusiones}\Pi(\ephi,1)\subset \claseor \subset\overline{\Pi(\ephi,1)}.\end{equation}
-The proof of this fact, and similar ones, is given by real valued function in \cite{KR}, 
+The proof of this fact, and similar ones, is given by real valued function in \cite{KR},
 the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty. When the function $\Phi$ is of the $\Delta_2$ class then the four sets $\lphi$, $\ephi$ $\Pi(\ephi,1)$ and $\claseor$ are equal.
 
 Let $X$ and $Y$ be subsets of certain vector spaces of $\mathbb{R}^n$-valued measurable functions defined in $[0,T]$.   We denote by  $W^1(X,Y)$ to the set defined by
@@ -177,7 +189,7 @@ If $X=Y$ we simply write $W^1(X,X)=W^1X$. In this paper $X$ and $Y$ will be some
 
  An important aspect of the theory of Sobolev spaces is related to embedding theorems. There is an extensive literature on this question in the setting of Orlicz-Sobolev spaces, see for example
  \cite{cianchi1999some,cianchi2000fully,claverooptimal,edmunds2000optimal,kerman2006optimal}.
-For this reason the following simple  Lemma, which we will use systematically, it is well known. We include a brief proof for sake of completeness. As is usual, if $X$ and $Y$ are normed spaces, with $X\subset Y$,  we write $X\hookrightarrow Y$ when the identity map is an bounded operator between $X$ and $Y$. 
+For this reason the following simple  Lemma, which we will use systematically, it is well known. We include a brief proof for sake of completeness. As is usual, if $X$ and $Y$ are normed spaces, with $X\subset Y$,  we write $X\hookrightarrow Y$ when the identity map is an bounded operator between $X$ and $Y$.
 
 
 \begin{lem}\label{inclusion orlicz}$\wphi\hookrightarrow L^{\infty}$.
@@ -197,12 +209,23 @@ Moreover
 \end{split}
 \end{equation}
 From \eqref{desigualdad1} and \eqref{desigualdad2} we obtain
-\[
+\begin{equation}\label{estimacion}
 \|\b{u}\|_{L^{\infty}}\leq C(T)\|\b{u}\|_{\wphi}.
-\]
+\end{equation}
 \end{proof}
-We will use repeatedly the following elementary consequence of the previous theorem. Hereafter we denote  by $\mathbb{R}^+$ to the set of all non negative real numbers. 
-\begin{cor}\label{a_bound} Let $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ and we define the composition operator $\b{a}$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$. Then $\b{a}:\wphi\to L^{\infty}([0,T],\mathbb{R})$ is bounded, which is there exists a non decreasing function $c:\mathbb{R}^+\to\mathbb{R}^+$ such that 
+
+
+\begin{comentario}
+If $\frac{1}{T}\int\limits_{0}^{T}\b{u}(s)ds=0$, from \eqref{desigualdad1} we have
+\begin{equation}\label{estimacion2}
+\|\b{u}\|_{L^{\infty}}\leq C(T)\|\dot{\b{u}}\|_{\lphi}.
+\end{equation}
+with $C(T)=\|1\|_{L^{\Psi}}$
+\end{comentario}
+
+
+We will use repeatedly the following elementary consequence of the previous theorem. Hereafter we denote  by $\mathbb{R}^+$ to the set of all non negative real numbers.
+\begin{cor}\label{a_bound} Let $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ and we define the composition operator $\b{a}$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$. Then $\b{a}:\wphi\to L^{\infty}([0,T],\mathbb{R})$ is bounded, which is there exists a non decreasing function $c:\mathbb{R}^+\to\mathbb{R}^+$ such that
  $\|\b{a}(\b{u})\|_{L^{\infty}([0,T])}\leq c(\|\b{u}\|_{\wphi})$.
 \end{cor}
 \begin{proof}  If $\b{u}\in \wphi$ then, by Lemma \ref{inclusion orlicz} ,
@@ -211,14 +234,14 @@ We will use repeatedly the following elementary consequence of the previous theo
 \end{proof}
 
 
-The following lemma is an easy consequence of more general principles  related to  operators of Nemitskii type, see \cite[§17]{KR}. 
+The following lemma is an easy consequence of more general principles  related to  operators of Nemitskii type, see \cite[§17]{KR}.
 
 \begin{lem}\label{phi_comp}   Let $\boldsymbol{\varphi}$ be the  composition operator
  defined by $\boldsymbol{\varphi}(\b{u})(t)= \varphi(|\b{u}(t)|)$. Then  $\boldsymbol{\varphi}$ acts from $\Pi(\ephi,1)$ into $\tilde{L}^{\Psi}$.
 \end{lem}
 \begin{proof}
   As consequence of \cite[Lemma 9.1]{KR} we have that  $\boldsymbol{\varphi}\left(B_{\lphi}(0,1)\right)\subset \tilde{L}^{\Psi}$, where
-$B_{\lphi}(\b{u}_0,r)$ is the open ball with center $\b{u}_0$ and radius $r>0$. Therefore, applying \cite[Lemma 17.1]{KR} we deduce that $\boldsymbol{\varphi}$ acts from $\Pi(\ephi,1)$ into $\tilde{L}^{\Psi}$. 
+$B_{\lphi}(\b{u}_0,r)$ is the open ball with center $\b{u}_0$ and radius $r>0$. Therefore, applying \cite[Lemma 17.1]{KR} we deduce that $\boldsymbol{\varphi}$ acts from $\Pi(\ephi,1)$ into $\tilde{L}^{\Psi}$.
 \end{proof}
 
 We need also the following technical lemma.
@@ -235,11 +258,11 @@ Let $r:=d(\b{u},\ephi)$, $r<1$. Because $\b{u}_n$ converges to $\b{u}$, there ex
 Let $h:[0,T]\rightarrow\mathbb{R}$ defined by
 \begin{equation}\label{serie} h(x)=|\b{u}_{n_1}(x)|+\sum_{k=2}^{\infty}|\b{u}_{n_k}(x)-\b{u}_{n_{k-1}}(x)|.
 \end{equation}
-Since 
-\[d(|\b{u}_{n_1}|,\ephi)\leq d(\b{u}_{n_1},\ephi)\leq d(\b{u}_{n_1},\b{u})+d(\b{u},\ephi)<\frac{1+r}{2},\] 
+Since
+\[d(|\b{u}_{n_1}|,\ephi)\leq d(\b{u}_{n_1},\ephi)\leq d(\b{u}_{n_1},\b{u})+d(\b{u},\ephi)<\frac{1+r}{2},\]
 we have
 \[d(h,\ephi)\leq d(h,|\b{u}_{n_1}|)+d(|\b{u}_{n_1}|,\ephi)< 1.\]
-Therefore, $h\in\Pi(\ephi,1)$.  In particular,  $|h|<\infty$ a.e. We conclude that la serie $\b{u}_1(x)+\sum_{k=2}^{\infty}(\b{u}_{n_k}(x)-\b{u}_{n_{k-1}}(x))$ 
+Therefore, $h\in\Pi(\ephi,1)$.  In particular,  $|h|<\infty$ a.e. We conclude that la serie $\b{u}_1(x)+\sum_{k=2}^{\infty}(\b{u}_{n_k}(x)-\b{u}_{n_{k-1}}(x))$
 is absolutely convergent a.e.  This imply that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$. The inequality $|\b{u}_{n_k}|\leq h$ is clear from the definition of $h$.
 \end{proof}
 The following simple result will be useful.
@@ -262,7 +285,7 @@ we say that $I$ has a G\^ateaux derivative en $\b{u} \in U$ if there exists $\b{
 
 
 
-\section{Action integrals on Orlicz spaces}
+\section{Differetiability of action integrals on Orlicz spaces}
 
 \begin{defi} We said that a function $\mathcal{L}:[0,T]\times \mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}$ is a Caratheodory function if for fixed $(\b{x},\b{y})$
 the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuously differentiable for almost everywhere $t\in [0,T]$.
@@ -299,7 +322,7 @@ is finite for every $\b{u}\in W^{1}(\lphi,\claseor)$.
 
 \item\label{T1item4}  If $\Phi$ and $\Psi$ are $\Delta_2$ functions,
   $I'$ is continuous from $\wphi$ into $\left[\wphi\right]^*$ when both spaces are equipped with the strong topology.
- 
+
 
 \end{enumerate}
 \end{thm}
@@ -308,7 +331,7 @@ is finite for every $\b{u}\in W^{1}(\lphi,\claseor)$.
  \[|\mathcal{L}(t,\b{u},\b{\dot{u}})| \leq M\left(b(t)+ \Phi(|\b{\dot{u}}|)  \right)\in
  L^1.\]
 
- We split the proof of  \ref{T1item3} in three steps. 
+ We split the proof of  \ref{T1item3} in three steps.
 
 \noindent\textbf{Step 1.} We prove that $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ into $L^{1}([0,T])$ whith the strong topology on both sets. We take   $\{\b{u}_n\}_{n\in \mathbb{N}}$ a sequence of  functions in $W^{1}(\lphi,\Pi(\ephi,1))$, and $\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$ such that $\b{u}_n\rightarrow \b{u}$ in $\wphi$.
 Then $\b{u}_n\rightarrow \b{u}$ in $\lphi$ and $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi$. By Lemma \ref{segundo lema} there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi,1))$
@@ -321,7 +344,7 @@ By the Caratheodory condition
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
 \noindent\textbf{Step 2.} We will prove that the mapping  $\b{u}
- \mapsto  D_{y}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ with the strong topology  into $\left[\lphi\right]^*$  with the weak$^*$ topology. Let $\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$.  It follows from Lemma \ref{phi_comp} and Corollary \ref{a_bound} that $\varphi(\b{u}(t))\in\tilde{L}^{\Psi}$ and $a(|\b{u}(t)|)\in L^{\infty}$ respectively. Therefore, in virtue of  \eqref{cotaDyL} we get 
+ \mapsto  D_{y}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ with the strong topology  into $\left[\lphi\right]^*$  with the weak$^*$ topology. Let $\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$.  It follows from Lemma \ref{phi_comp} and Corollary \ref{a_bound} that $\varphi(\b{u}(t))\in\tilde{L}^{\Psi}$ and $a(|\b{u}(t)|)\in L^{\infty}$ respectively. Therefore, in virtue of  \eqref{cotaDyL} we get
 \begin{equation}\label{DyLpsi}
    \left\|D_y\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\right\|_{L^{\Psi}}\leq  c(\|\b{u}\|_{\wphi} )\left(\|c\|_{L^{\Psi}}+\|\boldsymbol{\varphi}(\b{u})\|_{L^{\Psi}} \right)
 \end{equation}
@@ -373,15 +396,28 @@ Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and pr
 |\langle I'(\b{u}), \b{v} \rangle| \leq c \|v\linf + c \|\b{\dot{v}}\orlnor \leq c \|\b{v}\sobnor.
 \]
 This complete the proof of the G\^ateaux differentiability of $I$. Finally, the continuity of $I': \left(\domi, \|\cdot \sobnor\right) \to \left(\left[\wphi
-\right]^*, w^* \right)$ is a consequence of item \ref{T1item2}. \textcolor{red}{Erica desarrollara este punto}
+\right]^*, w^* \right)$ is a consequence of the continuity of the mappings $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ and $\b{u} \mapsto
+D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$. Indeed, we set $\b{u}_n,\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$ with $\b{u}_n\to \b{u}$ in the norm of $\wphi$ and $\b{v} \in
+\wphi$ , then
+\[
+\begin{split}
+\left\langle \b{v}, I'(\b{u}_{n}) \right\rangle &= \int_0^T \left\{\left\langle D_{\b{x}}\mathcal{L}\left(t,\b{u}_n(t),\b{\dot{u}}_n(t)\right),
+\b{v}(t)\right\rangle+
+\left\langle D_{y}\mathcal{L}\left(t,\b{u}_n(t),\b{\dot{u}}_n(t)\right),\dot{\b{v}}(t)\right\rangle\right\} \ dt\\
+&\rightarrow \int_0^T \left\{\left\langle D_{\b{x}}\mathcal{L}\left(t,\b{u}(t),\b{\dot{u}}(t)\right), \b{v}(t)\right\rangle+ \left\langle
+D_{y}\mathcal{L}\left(t,\b{u}(t),\b{\dot{u}}(t)\right),\dot{\b{v}}(t)\right\rangle\right\} \ dt\\
+&=\left\langle \b{v}, I'(\b{u}) \right\rangle.
+\end{split}
+\]
+
 
 In order to prove  \ref{T1item4}, let us see that the maps $\b{u}\mapsto D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  and $\b{u}\mapsto D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  are continuous
 from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\right)$ and
  $\left(\lpsi,\|\cdot\|_{L^{\Psi}}\right)$ respectively.  The continuity of the first map is an immediate consequence of the step 1 in the proof of item \ref{T1item3} and the fact that $\Pi(\ephi,1) =\lphi$  when $\Phi$ is of the $\Delta_2$ class. We will prove the continuity of the second map.  We consider $\b{u}_n$ and $\b{u}$ with $\|\b{u}_n- \b{u}\sobnor\to 0$.
 By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \lphi$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.
  Then  since $\mathcal{L}$ is a Caratheodory function
- we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$.  From Corollary \ref{a_bound} and the fact that $\|\b{u}_{n_k}\sobnor$ are uniformly bounded, we get a constant $C>0$ such that  $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}}\leq C$. 
- By using \eqref{cotaDyL} and as $\Psi$ is of the $\Delta_2$ class, we obtain 
+ we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$.  From Corollary \ref{a_bound} and the fact that $\|\b{u}_{n_k}\sobnor$ are uniformly bounded, we get a constant $C>0$ such that  $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}}\leq C$.
+ By using \eqref{cotaDyL} and as $\Psi$ is of the $\Delta_2$ class, we obtain
  \[\begin{split}
     |D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))| &\leq a(|\b{u}_{n_k}|)\left( c(t) + \varphi (|\b{\dot{u}}_{n_k}(t)|)\right)\\
     &\leq C\left( c(t) + \varphi (|h|)\right)\in \lpsi
@@ -408,7 +444,7 @@ Taking supremum on $\b{v}$ with $\|\b{v}\sobnor\leq 1$ in the previous inequalit
 %    \|I'(\b{u})-I'(\b{u}_0)\|_{\wphi} &\leq  C\bigg(\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\right.\\
 %      & + \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\bigg)
 %   \end{split}
-%   \] 
+%   \]
 Therefore the results follows  of the  previously established continuity for $D_{\b{x}}\mathcal{L}$ and $D_{\b{y}}\mathcal{L}$.
 \end{proof}
 
@@ -417,7 +453,7 @@ Therefore the results follows  of the  previously established continuity for $D_
 \section{Critical points and Euler-Lagrange equations}
 
 
-In this section we derive the Euler-Lagrange equations associated to critical points of action integrals. 
+In this section we derive the Euler-Lagrange equations associated to critical points of action integrals.
 
 
 % \begin{equation}\label{ecualagran}
@@ -432,13 +468,15 @@ In this section we derive the Euler-Lagrange equations associated to critical po
 We denote by $\wphi_T$ the subspace of $\wphi$ of all functions $T$-periodic. Similarly we consider the subspaces $\ephi_T$, $\lphi_T$. As is usual, when $Y$ is a subspace of
 the Banach space $X$, we denote by $Y^{\perp}$ the subspace of $X^*$ of all the bounded linear functions which are identically zero on $Y$.
 
-We reacall that  a function $f: \mathbb{R}^n \to \mathbb{R}$ is called \emph{strictly convex} if $f\left(\tfrac{\b{x}+\b{y}}{2}\right)< \tfrac{1}{2} \left(f\left( \b{x}\right)+f\left( \b{y}\right)\right)$.  It is a well known that if $f$ is a strickly convex and differentiable functions then $D_{\b{x}}f:\mathbb{R}^n\to\mathbb{R}^n$ is a one-to-one map  (see, for instance \cite[Theorem 12.17]{rockafellar2009variational}).  
+We recall that  a function $f: \mathbb{R}^n \to \mathbb{R}$ is called \emph{strictly convex} if $f\left(\tfrac{\b{x}+\b{y}}{2}\right)< \tfrac{1}{2} \left(f\left(
+\b{x}\right)+f\left( \b{y}\right)\right)$.  It is a well known that if $f$ is a strictly convex and differentiable functions then
+$D_{\b{x}}f:\mathbb{R}^n\to\mathbb{R}^n$ is a one-to-one map  (see, for instance \cite[Theorem 12.17]{rockafellar2009variational}).
 
 
 \begin{thm} The following statements are equivalent
 \begin{enumerate}
  \item $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$
- \item  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))dt$ is an absolutely continuous function and $\b{u}$ solve the following boundary value problem
+ \item  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is an absolutely continuous function and $\b{u}$ solve the following boundary value problem
  \begin{equation}\label{ecualagran2}
     \left\{%
 \begin{array}{ll}
@@ -462,20 +500,31 @@ This complete the proof  1. implies 2. The proof of 2.implies 1.  is still easie
 The last part of the Corollary is a consequence of that $D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\dot{u}}(0))=D_{\b{y}}\mathcal{L}(T,u(T),\b{\dot{u}}(0))$ and the injectivity of $D_{\b{y}}\mathcal{L}(T,u(T),\cdot)$.
 \end{proof}
 
+\section{Weak lower semicontinuity of actions integrals}
 
  \begin{lem}\label{unif_conv}
-{\color{red} Proposicion 1.2 de Mawhin y Willem, Ejercicio Erica} If the sequence $\{\b{u}_{n}\}_{n \geq 1}$ converges weakly to $\b{u}$ in $\wphi$, then $\{\b{u}_{n}\}_{n\geq 1}$ converges
-uniformly to $\b{u}$ on $[0,T]$.
+If the sequence $\{\b{u}_{k}\}_{k \geq 1}$ converges weakly to $\b{u}$ in $\wphi$, then $\{\b{u}_{k}\}_{k\geq 1}$ converges uniformly to $\b{u}$ on $[0,T]$.
 \end{lem}
 \begin{proof}
-By Lemma \ref{inclusion orlicz}, the injection of $\wphi$ in $L^{\infty}$ is continuous. Since $\b{u}_{n}\rightharpoonup \b{u}$ in $\wphi$ it follows that
-$\b{u}_{k}\rightharpoonup \b{u}$ in $L^{\infty}$ ($\langle \b{u}_{n}-\b{u}, f\rangle_{L^{\infty},[L^{\infty}]^*} \leq \|\b{u}_{n}-\b{u}\|_{L^{\infty}} \|f\|_{[L^{\infty}]^*} \leq C
-\|\b{u}_{n}-\b{u}\|_{\wphi}\|f\|_{[L^{\infty}]^*} \rightarrow 0$)
+By Lemma \ref{inclusion orlicz}, the injection of $\wphi$ in $L^{\infty}$ is continuous. Since $\b{u}_{k}\rightharpoonup \b{u}$ in $\wphi$ it follows that
+$\b{u}_{k}\rightharpoonup \b{u}$ in $C(0,T;\mathbb{R}^n)$. Since $\b{u}_{k}\rightharpoonup \b{u}$ in $\wphi$, we know that $\{\b{u}_{k}\}_{k \geq 1}$ is bounded in
+$\wphi$ and, hence by \eqref{estimacion} in $C(0,T;\mathbb{R}^n)$. Moreover, the sequence $\{\b{u}_{k}\}_{k \geq 1}$ is equi-uniformly continuous since, for $0 \leq
+s\leq t \leq T $, we have
+\[
+\begin{split}
+\left|\b{u}_{k}(t)-\b{u}_{k}(s) \right|&\leq \int_{s}^t \left| \dot{\b{u}}_{k}(\tau)\right|\ \ d\tau \leq \| t-s\|_{\lpsi}\|\dot{\b{u}}_{k}\|_{\lphi}\\
+&\leq \| t-s\|_{\lpsi}\|\b{u}_{k}\|_{\wphi} \leq C \| t-s\|_{\lpsi}.
+\end{split}
+\]
+By Arzela-Ascoli theorem, $\{\b{u}_{k}\}_{k \geq 1}$ is relatively compact in $C(0,T;\mathbb{R}^n)$. By the uniqueness of the weak limit in $C(0,T;\mathbb{R}^n)$,
+every uniformly convergent subsequence of $\{\b{u}_{k}\}_{k \geq 1}$ converges to $\b{u}$. Thus, $\{\b{u}_{k}\}_{k \geq 1}$ converges uniformly on $[0,T]$.
+
 \end{proof}
 
-\begin{lem}
-We suppose that $\mathcal{L}(t,\b{x},\b{y})$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}. Moreover we assume $\mathcal{L}(t,\b{x},\cdot)$ is convex for each $t,\b{x}$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions. Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.). 
-\end{lem}
+\begin{thm}
+We suppose that $\mathcal{L}(t,\b{x},\b{y})$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}.
+Moreover we assume $\mathcal{L}(t,\b{x},\cdot)$ is convex for each $t,\b{x}$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions. Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.).
+\end{thm}
 
 
 \begin{proof} We fix any $\b{u}\in\wphi$. What we must prove that for any sequence $\{\b{u}_n\}$ with $\b{u}_n\rightharpoonup \b{u}$ in $\wphi$ we have that $I(\b{u})\leq \liminf_n I(\b{u}_n)$. We write
@@ -485,23 +534,23 @@ We suppose that $\mathcal{L}(t,\b{x},\b{y})$ is a Charateodory functions satisfy
  &=:J(\b{v})+H(\b{v}).
 \end{split}
 \]
- As $\{\b{u}_n\}$ is a weakly convergent sequence,  by the Lemma \ref{unif_conv}  we have that $\b{u}_n\to \b{u}$ in $L^{\infty}$. By the mean value theorem for derivatives, we obtain 
- a function $\b{\xi_n}(t)$, with $\b{\xi_n}(t)$ belonging to line segment joyning $\b{u}_n(t)$ and $\b{u}(t)$, such that
+ As $\{\b{u}_n\}$ is a weakly convergent sequence,  by the Lemma \ref{unif_conv}  we have that $\b{u}_n\to \b{u}$ in $L^{\infty}$. By the mean value theorem for derivatives, we obtain
+ a function $\b{\xi_n}(t)$, with $\b{\xi_n}(t)$ belonging to line segment joining $\b{u}_n(t)$ and $\b{u}(t)$, such that
  \begin{equation}\label{opJ}
  \begin{split}
    &\left|  \mathcal{L}(t,\b{u}_n(t),\b{\dot{u}}_n(t))-\mathcal{L}(t,\b{u}(t),\b{\dot{u}}_n(t))\right|\\
   &\leq|D_{\b{x}}\mathcal{L}(t,\b{\xi_n}(t),\b{\dot{u}}_n(t))||\b{u_n}(t)-\b{u}(t)|.
   \end{split}
  \end{equation}
-The functions $\b{u_n}$, and therefore the functions $\b{\xi_n}$, are uniformly bounded in $L^{\infty}$. Thus, there exists $C>0$ such that $a(|\b{\xi_n}(t)|)\leq C $. Then, 
+The functions $\b{u_n}$, and therefore the functions $\b{\xi_n}$, are uniformly bounded in $L^{\infty}$. Thus, there exists $C>0$ such that $a(|\b{\xi_n}(t)|)\leq C $. Then,
 using \eqref{cotaDxL} we get
 \begin{equation}\label{acot_Dx}
  \left|D_{\b{x}}\mathcal{L}(t,\b{\xi_n}(t),\b{\dot{u}}_n(t))\right|\leq C \left(b(t)+\Phi(|\b{\dot{u}}_n(t))|)\right)
 \end{equation}
-Since $\Phi$ is a function of the $\Delta_2$ class, we have that the operator $\b{v}\mapsto\Phi(|\b{v}|)$  acts from $\lphi$ in $L^1$. Therefore, by 
+Since $\Phi$ is a function of the $\Delta_2$ class, we have that the operator $\b{v}\mapsto\Phi(|\b{v}|)$  acts from $\lphi$ in $L^1$. Therefore, by
 \cite[Lemma 17.4]{KR} we have that $\{\Phi(|\b{v}|): \|\b{v}\|_{\lphi}\leq r\}$ is bounded in $ L^1$ for any $r>0$. Hence
-there exists a constant $C>0$ such that $\|\Phi(|\b{\dot{u}}_n(t))|)\|_{L^1}\leq C$. Then, from 
-\eqref{opJ}, \eqref{acot_Dx}, H\"older inequality and since $\|\b{u}_n-\b{u}\|_{L^{\infty}}\to 0$ and $b\in L^1$ we get $J(\b{u}_n)\to 0 	$.
+there exists a constant $C>0$ such that $\|\Phi(|\b{\dot{u}}_n(t))|)\|_{L^1}\leq C$. Then, from
+\eqref{opJ}, \eqref{acot_Dx}, H\"older inequality and since $\|\b{u}_n-\b{u}\|_{L^{\infty}}\to 0$ and $b\in L^1$ we get $J(\b{u}_n)\to 0    $.
 
 Now we will prove that $H(\b{v})$ is w.l.s.c. Since $H(\b{v})$ is convex it is sufficient to prove that $H$ is l.s.c (see \cite[Proposition 4.26]{fonseca2007modern}).  We suppose that  $\|\b{v_n}- \b{v}\sobnor\to 0$.
 
@@ -521,17 +570,414 @@ Therefore, using \eqref{cotaDyL} and taking account that $a(|\b{u}(t)|)\in L^{\i
  |\b{\dot{v}}(t)|)\right)|\b{\dot{v}}_n-\b{\dot{v}}|.
  \end{split}
  \]
- 
- Now, in virtue of \cite[Lemma 9.1]{KR}, \cite[Lemma 17.1]{KR}, \cite[Theorem 17.4]{KR} and the uniform boundedness of $\b{\dot{u}}_n$ in 
+
+ Now, in virtue of \cite[Lemma 9.1]{KR}, \cite[Lemma 17.1]{KR}, \cite[Theorem 17.4]{KR} and the uniform boundedness of $\b{\dot{u}}_n$ in
  $\lphi$ we have
  \[|H(\b{v}_n)-H(\b{v})|\leq C\|\b{\dot{v}}_n-\b{\dot{v}}\orlnor\to 0.\]
  Which completes the proof.
 \end{proof}
 
+\section{Coercivity discussion}
+{\color{rosa}ERICA -----------------------------------------------------------------------------------Inicio}
 
-%\bibliographystyle{plain}
-%\bibliography{biblio}
+%Sea $\mathcal{L}(t, \b{x}, \b{y})=F(t,\b{x})+\Phi(|\b{y}|)$.
 
-\printbibliography
+We consider the problem   (introduced in \eqref{ecualagran2}):
+\begin{equation}\label{ecualagran3}
+\frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T).
+\end{equation}
+
+
+\begin{thm}[Theorem 1.5 M-W]
+Sea $\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x})$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions and that there exists $f \in L^1$  such that
+\[
+\left|\nabla F(t,\b{x}) \right|\leq f(t)
+\]
+for a.e. $t \in [0,T]$ and all $\b{x}\in \mathbb{R}^n $ with $f$ satisfying
+\begin{equation}\label{cota}
+\|f\|_{L^1([0,T])}\leq\frac{1}{2\|1\|_{\lpsi([0,T])}}.
+\end{equation}
+If
+\begin{equation}\label{propiedad1coercividad}
+\int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
+\end{equation}
+then problem \eqref{ecualagran3} has at least one solution which minimizes the functional $I$ given by \eqref{integral_accion} on $\wphi$.
+\end{thm}
+
+\begin{proof}
+For $\b{w} \in \wphi$, we write $\b{w}=\overline{\b{w}}+\widetilde{\b{w}}$ where $\overline{\b{w}} =\int_0^T \b{w}(t)\ dt$.
+
+
+\begin{comment}
+\textbf{Case 1}:
+\[
+\begin{split}
+I(\b{u})=&\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
+=& \int_{0}^T (\mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))- \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)))\ dt + \int_{0}^T
+(\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))-\mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}}))\ dt\\
+&+ \int_0^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt\\
+=&\int_{0}^T \int_{0}^{1} \langle D_{\b{x}}\mathcal{L}(t,\overline{\b{u}}+s\widetilde{\b{u}}(t),\dot{\b{u}}(t)),\widetilde{\b{u}}(t)\rangle\ ds \ dt +
+\int_{0}^T \int_{0}^{1} \langle D_{\b{y}}\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)+s\widetilde{\dot{\b{u}}}(t)),\widetilde{\dot{\b{u}}}(t)\rangle\ ds \ dt\\
+&+  \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt  \\
+\geq &-C_1\|f\|_{L^1}\|\widetilde{\b{u}}\|_{L^{\infty}}-C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} +  \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt  \\
+\geq &-C_1\|f\|_{L^1}\|\widetilde{\b{u}}\sobnor-C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} +  \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt  \\
+\geq & -C_1\|f\|_{L^1}\|\dot{\widetilde{\b{u}}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} +  \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt\\
+\geq & -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} + {\color{celeste}\int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt}.
+\end{split}
+\]
+\end{comment}
+
+
+
+
+\[
+\begin{split}
+I(\b{u})=&\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
+=& \int_{0}^T (\mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))- \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)))\ dt + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+=&\int_{0}^T \int_{0}^{1} \langle D_{\b{x}}\mathcal{L}(t,\overline{\b{u}}+s\widetilde{\b{u}}(t),\dot{\b{u}}(t)),\widetilde{\b{u}}(t)\rangle\ ds \ dt + + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+\geq &-\|f\|_{L^1}\|\widetilde{\b{u}}\|_{L^{\infty}} + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+\geq & -C_1\|f\|_{L^1}\|\dot{\widetilde{\b{u}}}\|_{\lphi} + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+\geq & -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} {\color{celeste}+ \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt}.
+\end{split}
+\]
+
+Cuando tomamos $\mathcal{L}$
+\[
+\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x}).
+\]
+
+\begin{comment}
+Para caso 1:
+\[
+I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi}+\int_{0}^T
+\Phi(|\overline{\dot{\b{u}}}|)+F(t,\overline{\b{u}}).
+\]
+\end{comment}
+
+Tenemos
+\[
+I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}}).
+\]
+Para $\b{w}$ denotemos por $\|| \b{w} \||_{\lphi}$ la norma de Luxembourg de $\b{w}$.
+
+Es sabido que que si $\|| \b{w} \||_{\lphi} \geq 1$ entonces $\int_{0}^T \Phi(|\b{w}|) \geq \|| \b{w} \||_{\lphi}$ y que $\|| \b{w}\||_{\lphi} \leq
+\|\b{w}\|_{\lphi}\leq 2\|| \b{w}\||_{\lphi}$. Entonces se tiene para $\||\b{u}\|| \geq 1$
+
+\[
+\begin{split}
+I(\b{u})&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}})\\
+&\geq -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\|| \dot{\b{u}} \||_{\lphi}+\int_{0}^TF(t,\overline{\b{u}})\\
+&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\frac{1}{2}\| \dot{\b{u}} \|_{\lphi}+\int_0^TF(t,\overline{\b{u}})\\
+&= \left(-C_1\|f\|_{L^1}+\frac{1}{2}\right)\|\dot{\b{u}}\|_{\lphi}+\int_{0}^{T}F(t,\overline{\b{u}}).
+\end{split}
+\]
+Therefore, if $\|\b{u}\sobnor \rightarrow \infty$ then $(|\overline{\b{u}}|^2+ \|\dot{\b{u}}\|_{\lphi})\rightarrow \infty$. If $|\overline{\b{u}}|^2 \rightarrow
+\infty$ by \eqref{propiedad1coercividad} we have $I(\b{u}) \rightarrow \infty$. If $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$ usamos \eqref{cota}. En efecto,
+
+Si $-C_1\|f\|_{L^1}+\frac{1}{2} \geq 0$, entonces $I(\b{u}) \rightarrow \infty$ cuando $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$. Pero $-C_1\|f\|_{L^1}+\frac{1}{2}
+\geq 0$ si y solamente si $\|f\|_{L^1([0,T])}\leq\frac{1}{2 C_1}=\frac{1}{2\|1\|_{\lpsi([0,T])}}$, lo cual es justamente \eqref{cota}.
+ ($C_1=\|1\|_{\lpsi([0,T])}$ por \eqref{estimacion2}).
+\end{proof}
+
+
+
+
+
+In the sequel, we will discuss  the  conditions that guarantee the coercivity of  the functional $u \to \int_0^T \Phi(|u|)\,dx$ in $L^{\Phi}$.
+
+
+We know that  $\Phi\in \Delta_2$ if and only if 
+for every $\epsilon>0$ there exists $C_\epsilon>0$ such that
+\begin{equation}\label{delta2-control-potencia}
+C^{-1}_\epsilon \min\{\lambda^{\alpha-\epsilon},\lambda^{\beta+\epsilon}\} \Phi(x)
+\leq \Phi(\lambda x)\leq
+C_\epsilon \max\{\lambda^{\alpha-\epsilon},\lambda^{\beta+\epsilon}\} \Phi(x)
+\end{equation}
+for every $x,\lambda>0$.
+
+Recall that by Theorem 11.11 in \cite{M} we have $p\leq \alpha\leq \beta\leq q$ where $\alpha,\beta$ are lower and upper Orlicz indices, and $p,q$ are lower and upper Simonenko indices.
+We also have that $\Phi,\Psi\in \Delta_2$ implies that $\Phi(x)\sim x\varphi(x)\sim \Psi(\varphi(x))$.
+
+By Theorem 4.3 in \cite{KR} or Corollary 4.4 in \cite{rao1991theory} we know that $p>1$ if and only if $\Phi \in \nabla_2$ and by  Theorem 11.7 in \cite{M} we have that $\beta<\infty$ if and only if $\Phi \in \Delta_2$.
+
+Theorem 10.4 in \cite{KR} says that if there exists $k^*$ such that $\int \Psi[\varphi(k^*|u|)]\,dx=1$, then $\|u{\orlnor}=\int \varphi(k^*|u|)|u|\,dx$.
+
+\begin{comentario}
+If $\varphi$ is a continuous function, then there exists $k^*$ in Theorem 4.3 of \cite{KR}. See \cite[pages 89, 90]{KR}.
+\end{comentario}
+
+
+
+
+
+
+
+
+
+
+
+\begin{lem}\label{kn_0} Let $\Phi\in \nabla_2\cap\Delta_2$ and  $\{k_n\}$ such that $\int \Psi[\varphi(k_n|u_n|)]\,dx=1$.
+\\
+If
+$\|u_n{\orlnor}\to\infty $ as $n \to \infty$, then $k_n \to 0$ as $n \to \infty$.
+\end{lem}
+
+
+\begin{proof}
+Since $\Phi\in \nabla_2\cap\Delta_2$, then $\Psi \circ \varphi\in \Delta_2$ and \eqref{delta2-control-potencia} holds.
+\\
+Now, for such a sequence $k_n$ we have
+\begin{equation}
+1=\int \Psi[\varphi(k_n|u_n|)]\,dx\geq 
+C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\int \Psi(\varphi(|u_n|))\,dx
+\end{equation}
+for every $\epsilon>0$.
+\\
+Due to $\Phi \in \Delta_2$, there exists $C_{\Lambda}>0$ such that 
+\begin{equation}
+C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\int \Psi(\varphi(|u_n|))\,dx
+\geq 
+C_{\Lambda}C^{-1}_{\epsilon}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}
+\int \Phi(|u_n|)\,dx
+\end{equation}
+for every $\epsilon>0$. 
+\\
+As $\|u_n{\orlnor}\to\infty $ as $n \to \infty$, there exists $N\in \nn$ such that $\|u_n{\orlnor}\geq 1$ for every $n> N$
+and consequently 
+$\int \Phi(|u_n|)\,dx\geq \||u_n\||_{\lphi}$ for every $n> N$. 
+\\
+In that way, we have 
+\begin{equation}
+1 \geq C_{\Lambda}C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}
+\||u_n\||_{\lphi}
+\end{equation}
+for every $\epsilon>0$ and for every $n>N$. 
+\\
+In addition, $\alpha>1$ because $\Phi \in \nabla_2$, then $\alpha-	\epsilon>0$ for every $0<\epsilon<1$.
+\\
+Now, we have 
+\begin{equation}
+\frac{1}{C_{\Lambda}C_{\epsilon}^{-1} \|| u_n\||_{ \lphi}}\geq \min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}
+\end{equation}
+for every $n>N$ and provided that $\alpha-\epsilon>0$.
+\\
+Because of the 
+equivalence between Orlicz and Luxemburg norms, we have 
+$\||u_n\||_{\lphi}\to \infty$ as $n \to \infty$, 
+then
+\begin{equation}
+\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\to 0\;\;\mbox{as}\;\;n\to \infty
+\end{equation}
+where $\alpha-\epsilon>0$ and $\beta+\epsilon>0$; therefore,  $k_n \to  0$ as $n \to \infty$.
+\end{proof}
+
+
+
+
+{\bf El resultado que sigue es v\'alido para cualquier funci\'on u?????}
+
+\begin{thm}
+If $\Phi\in \Delta_2\cap \nabla_2$, then 
+the functional $u \to \int_0^t \Phi(|u|)\,dx$ is  coercive in $L^\Phi$.
+\end{thm}
+
+\begin{proof}
+Assume $\|u_n{\orlnor}\to\infty $ when $n\to \infty$ and 
+suppose that there exists $\{k_n\}$ such that 
+%\linebreak 
+$\int \Psi[\varphi(k_n|u_n|)]\,dx=1$.
+\\
+In that way, by Theorem 10.4 in \cite{KR}, we have
+\begin{equation}
+\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}=
+\int \Phi(|u_n|)\,dx-C\int \varphi(k_n|u_n|)|u_n|\,dx
+\end{equation}
+As $\Phi \in \Delta_2$, there exists $\Lambda_{\Phi}>0$ such that
+\begin{equation}
+\int \Phi(|u_n|)\,dx-\frac{C}{k_n}\int \varphi(k_n|u_n|)|u_n|k_n\,dx\geq 
+\int \Phi(|u_n|)\,dx-\frac{C\Lambda_{\Phi}}{k_n}\int \Phi(k_n|u_n|)\,dx\
+\end{equation}
+%%
+Since $\Phi\in \nabla_2$, then $\alpha>1$ \cite{KR,rao1991theory};
+now, we choose $\epsilon>0$ such that $\alpha-\epsilon>1$.
+\\
+In addition,  by Lemma \ref{kn_0},   
+there exists $N \in \nn$ such that $k_n<1$ for every $n>N$ and therefore
+\begin{equation}
+\Phi(k_n |u_n|) \leq C_\epsilon k_n^{\alpha-\epsilon}\Phi(|u_n|)
+\end{equation}
+for every $n>N$ and where $\alpha-\epsilon>1$.
+\\
+Now, 
+\begin{equation}
+\int \Phi(|u_n|)\,dx-\frac{C\Lambda_{\Phi}}{k_n}
+\int \Phi(k_n|u_n|)\,dx
+\geq
+\left(1-C\Lambda_{\Phi}C_\epsilon k_n^{\alpha-\epsilon-1}\right)\int \Phi(|u_n|)\,dx
+\end{equation}
+with $\alpha-\epsilon-1>0$.
+\\
+As $\|u_n{\orlnor}\to\infty $, there exists $N_2\in \nn$ such  $\|u_n\orlnor>1$ for every $n>N_2$, then
+\begin{equation}
+\left(1-C\Lambda_{\Phi}C_\epsilon k_n^{\alpha-\epsilon-1}\right)\int \Phi(|u_n|)\,dx
+\geq 
+\left(1-C\Lambda_{\Phi}C_\epsilon k_n^{\alpha-\epsilon-1}\right)\|| u_n|\|_{\lphi}
+\end{equation}
+with $\alpha-\epsilon-1>0$.
+\\
+Finally, due to $\|u_n{\orlnor}\to\infty $, 
+we have $k_n^{\alpha-\epsilon-1}\to 0$, $\|| u_n|\|_{\lphi}\to \infty$ and consequently
+$\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}\to \infty$ for every $C>0$; that is, 
+the functional $u \to \int_0^t \Phi(|u|)\,dx$ is coercive in $L^\Phi$.
+\end{proof}
+
+
+
+\begin{prop}
+Let $u$ be a characteristic function.
+\\
+If $\Phi \in \Delta_2\cap\nabla'$, then the functional $u \to \int_0^t \Phi(|u|)\,dx$ is coercive in $L^\Phi$.
+\\
+If $\Phi \in \nabla_3$, then the functional $u \to \int_0^t \Phi(|u|)\,dx$ is not coercive in $L^\Phi$.
+\end{prop}
+
+\begin{proof}
+Let  $u=\alpha \chi_A$ with $\alpha \in \rr$  and where $A$ is a subset of $[0,T]$.
+\\
+Assume that 
+$\|u\orlnor \to \infty$ then $\|u\orlnor=\alpha\|\chi_A\orlnor=\alpha m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right) \to \infty$ and consequently $m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right)\to  \infty$ as $m(A)\to 0$.
+\\
+On the other hand, we have
+\begin{equation}
+\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)m(A)}{\alpha m(A) \Phi^{-1}(\frac{1}{m(A)})}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(\frac{1}{m(A)})}.
+\end{equation}
+Let $r=\frac{1}{m(A)}\geq \frac{1}{T}$, then $\alpha \frac{\Psi^{-1}(r)}{r}\to \infty$ as $\alpha, r\to \infty$ and
+\begin{equation}
+\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(r)}
+\end{equation}
+As $\Phi \in \nabla '$, there exists  $C_1>0$ such that $\Phi(xy)\geq C_1\Phi(x)\Phi(y)$ for every $x,y>0$.
+Taking $y=\frac{\alpha}{x}$, we have 
+$
+\Phi(\alpha)\geq C_1\Phi(x)\Phi(\frac{\alpha}{x})$ and choosing
+$x=\Phi^{-1}(r)$ we get 
+\begin{equation}\label{Phi-r-1}
+\frac{\Phi(\alpha)}{r}\geq C_1 \Phi\left(\frac{\alpha}{\Phi^{-1}(r)}\right).
+\end{equation}
+\\
+As $\Phi \in \Delta_2$, there exists $C_2>0$ such that 
+\begin{equation}\label{Phi-r-2}
+\Phi\left(\frac{\alpha}{\Phi^{-1}(r)}\right)\geq C_2 \frac{\alpha}{\Phi^{-1}(r)}\varphi\left(\frac{\alpha}{\Phi^{-1}(r)}\right).
+\end{equation}
+We also have that $r \leq \Phi^{-1}(r)\Psi^{-1}(r)\leq 2r$ for every $r>0$, then 
+\begin{equation}\label{Phi-r-3}
+C_2 \frac{\alpha}{\Phi^{-1}(r)}\varphi\left(\frac{\alpha}{\Phi^{-1}(r)}\right)\geq 
+C_2\frac{\alpha \Psi^{-1}(r)}{2r}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right).
+\end{equation}
+Thus, from \eqref{Phi-r-1}-\eqref{Phi-r-3},
+\begin{equation}
+\frac{\Phi(\alpha)}{r}\geq C_1 C_2\frac{\alpha \Psi^{-1}(r)}{2r}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right);
+\end{equation}
+and then ({\bf Ac\'a ten\'ia que despejar y no irme por la ramas!!!)}
+\begin{equation}
+\frac{\Phi(\alpha)}{\alpha\Psi^{-1}(r)}\geq \frac{C_1 C_2}{2}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right).
+\end{equation}
+Due to $\alpha\frac{\Psi^{-1}(r)}{r}\to \infty$ as $\alpha,r\to \infty$ and 
+the fact that $\varphi(x) \to \infty$ as $x \to \infty$, we obtain
+\begin{equation}
+\frac{C_1 C_2}{2}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right)\to \infty
+\end{equation}
+and consequently
+\begin{equation}
+\frac{\Phi(\alpha)}{\alpha\Psi^{-1}(r)}\to  \infty\;\;\mbox{as}\;\;\alpha,r\to \infty;
+\end{equation}
+that is, 
+\begin{equation}
+\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}\to\infty\;\;\mbox{as}\;\;\|u\orlnor\to \infty.
+\end{equation}
+Now, we will see that  $\nabla_3$ functions do not imply the wished coercivity
+in case of $u$ being a characteristic function.
+\\
+To do so, suppose there exists a function  $\Phi \in \nabla_3$ such that 
+\begin{equation}
+\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(r)}\to \infty\;\;\mbox{as}\;\;\|u\orlnor\to \infty,
+\end{equation}
+then 
+\begin{equation}\label{Phi-r-nabla3-1}
+\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(r)} 
+\leq 
+\frac{\Phi(\alpha)\Phi^{-1}(r)}{\alpha r}\to \infty \;\mbox{as}\;\;\|u\orlnor\to \infty
+\end{equation} 
+for any $\alpha>0$.
+\\
+However,  $\Phi \in \nabla_3$ if and only if there exists $C_3>0$ such that
+ \begin{equation}
+ \frac {\Phi(r)\Phi^{-1}(r)} {r^2} \leq C_3\;\;\mbox{for every}\;\;r>0
+ \end{equation}
+ which contradicts \eqref{Phi-r-nabla3-1} choosing $\alpha=r$.
+ \\
+ Therefore,  if $\Phi\in \nabla_3$ then the functional $u \to \int_0^t \Phi(|u|)\,dx$ 
+is not coercive in $L^{\Phi}$.
+\end{proof}
+
+
+
+
+
+\begin{rem}
+$\nabla'$ functions are a subset of $\nabla_2$ functions and 
+$\nabla_3$ functions belong to  the set of  $\Delta_2$ functions \cite[Chapter 2]{ rao1991theory}.
+\end{rem}
+
+We have just proved that 
+coercivity  in $L^\Phi$ for characteristic functions holds when
+$\Phi$ belongs  to a subclass of $\Delta_2$ functions.
+\\
+Nevertheless,  $\Delta_2$ condition is not sufficient  to get the wished coercivity in $L^\Phi$;
+in fact, $\nabla_3$ functions, which belong to the set of $\Delta_2$ functions, do not imply coercivity in $L^\Phi$.
+
+We can also see that $\Delta_2$ condition is not sufficient  to have coercivity in $L^\Phi$  providing a counterexample.
+ \\
+ In fact, suppose that $\Phi(r)=(r+1)\log(r+1)-r$  then $\Phi\in\Delta_2$; and, we also have $\Psi(r)=e^r-r-1$
+which is not a $\Delta_2$ function \cite[Chapter 1, pp 22]{rao1991theory}.
+\\
+Let $u_n=\frac{1}{m(A_n)}\chi_{A_n}$ where $A_n \subset[0,T]$ such that $m(A_n)\to 0$.
+\\
+If $r_n=\frac{1}{m(A_n)}$, we have
+\begin{equation}
+\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}=\frac{\Phi(r_n)}{r_n}-C\Psi^{-1}(r_n)
+\end{equation}
+then 
+\begin{equation}
+\begin{split}
+  \frac{\Phi(r_n)}{r_n}-C\Psi^{-1}(r_n) \leq \left(1+\frac{1}{r_n}\right)\log(r_n+1)-C\log(r_n+1)=
+	\\
+  \left(1+\frac{1}{r_n}-C\right)\log (r_n+1) 
+	\end{split}
+  \end{equation}
+Now, as $r_n$ goes to $\infty$, we get 
+ \begin{equation}
+  \lim\limits_{r_n \to \infty}
+	\left(\frac{\Phi(r_n)}{r_n}-C\Psi^{-1}(r_n)\right)  \leq  \left(1-C\right) \infty.
+  \end{equation}
+In that way, 
+$\int \Phi(|u_n|)\,dx-C\|u_n {\orlnor} $ is an  upper bounded function provided that $C>1$, which means that the functional
+ $u \to \int_0^t \Phi(|u|)\,dx$ is not coercive in $L^\Phi$ for such a particular $\Delta_2$ function
+$\Phi$.
+
+{\bf Porque para tener coercividad, la expresi\'on no deber\'ia estar acotada para $C$ grande, es as\'i????}
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+%\printbibliography
 
 \end{document}
