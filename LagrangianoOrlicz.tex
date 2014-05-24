@@ -17,18 +17,27 @@
 %\usepackage{showkeys}
 \usepackage{comment}
 \usepackage{url}
-
+\usepackage{xcolor}
+\usepackage{adjustbox}
 %Teorema y similes
 
 \definecolor{rosa}{rgb}{1,0.3,0.9}
 \definecolor{violeta1}{rgb}{0.5,0.3,0.5}
 \definecolor{violeta}{rgb}{0.5,0.1,0.5}
-
 \definecolor{negro}{rgb}{0.5,0.2,0.4}
-
 \definecolor{celeste}{rgb}{0.1,0.4,1}
-
 \definecolor{naranja}{rgb}{1,0.5,0}
+\definecolor{color_nota_fer}{HTML}{DEBFDB}
+
+
+\newenvironment{colbox}[2]{%
+    \begin{adjustbox}{minipage={\linewidth},margin=1ex,bgcolor=#1,env=center}
+        #2}{%
+    \end{adjustbox}%
+}
+\newcounter{nota_fer_cont}
+\newenvironment{nota_fer}[1]{\refstepcounter{nota_fer_cont}\begin{colbox}{color_nota_fer}{\textbf{Comentario Leo-Graciela-Fernando \arabic{nota_fer_cont}.} #1}}{\end{colbox}}
+
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{cor}[thm]{Corollary}
@@ -578,7 +587,9 @@ Therefore, using \eqref{cotaDyL} and taking account that $a(|\b{u}(t)|)\in L^{\i
 \end{proof}
 
 \section{Coercivity discussion}
-{\color{rosa}ERICA -----------------------------------------------------------------------------------Inicio}
+
+
+
 
 %Sea $\mathcal{L}(t, \b{x}, \b{y})=F(t,\b{x})+\Phi(|\b{y}|)$.
 
@@ -587,6 +598,12 @@ We consider the problem   (introduced in \eqref{ecualagran2}):
 \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T).
 \end{equation}
 
+\begin{nota_fer}
+Me parece que vamos a tener que presentar el resultado siguiente de otra forma. Como está escrito, resultará un caso particular de otros teoremas. Tener en cuenta que, al fin y al cabo, se termina pidiendo que $\Phi,\Psi\in\Delta_2$, con lo cual se aplicarían los resultados que escribe Sonia más abajo y la funcional sería coercitiva sin necesidad de la hipótesis \eqref{cota}.  Para poder mantener el resultado de abajo, habría que contextualizarlo en un teorema donde no se pida  $\Phi,\Psi\in\Delta_2$. Se me ocurre que un buen lugar sería después del comentario que sigue a la estimación \eqref{eq:no_coerciva}. Pues allí se habla del papel que juega la constante $C$ y me parece bueno relacionarlo con eso.
+
+Todo el razonamiento hasta llegar a la estimación \eqref{eq:est_abajo_I} se puede tomar para usarlo con lo que escribió Sonia. Justamente lo que demostró Sonia es que la cota inferior en  \eqref{eq:est_abajo_I} tiende a infinito cuando $\|\b{\dot{u}}\orlnor\to\infty$.\textbf{ Eso si, habría que intetar generalizar este razonamiento, sin pedir la condición $\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x})$.} Algo habrá que pedirle a $\mathcal{L}$, intentar que sea alguna desigualdad, en lugar de adjudicarle una forma más explícita. 
+
+\end{nota_fer}
 
 \begin{thm}[Theorem 1.5 M-W]
 Sea $\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x})$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions and that there exists $f \in L^1$  such that
@@ -605,7 +622,7 @@ then problem \eqref{ecualagran3} has at least one solution which minimizes the f
 \end{thm}
 
 \begin{proof}
-For $\b{w} \in \wphi$, we write $\b{w}=\overline{\b{w}}+\widetilde{\b{w}}$ where $\overline{\b{w}} =\int_0^T \b{w}(t)\ dt$.
+For $\b{w} \in \wphi$, we write $\b{w}=\overline{\b{w}}+\widetilde{\b{w}}$ where $\overline{\b{w}} =\frac1T\int_0^T \b{w}(t)\ dt$.
 
 
 \begin{comment}
@@ -661,9 +678,9 @@ I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde
 \end{comment}
 
 Tenemos
-\[
+\begin{equation}\label{eq:est_abajo_I}
 I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}}).
-\]
+\end{equation}
 Para $\b{w}$ denotemos por $\|| \b{w} \||_{\lphi}$ la norma de Luxembourg de $\b{w}$.
 
 Es sabido que que si $\|| \b{w} \||_{\lphi} \geq 1$ entonces $\int_{0}^T \Phi(|\b{w}|) \geq \|| \b{w} \||_{\lphi}$ y que $\|| \b{w}\||_{\lphi} \leq
@@ -690,6 +707,10 @@ Si $-C_1\|f\|_{L^1}+\frac{1}{2} \geq 0$, entonces $I(\b{u}) \rightarrow \infty$ 
 
 
 In the sequel, we will discuss  the  conditions that guarantee the coercivity of  the functional $u \to \int_0^T \Phi(|u|)\,dx$ in $L^{\Phi}$.
+
+\begin{nota_fer}
+\textbf{Tenemos la conejetura que todo sale si pedimos $\Phi$ que satisface $\nabla_2$. Problema: probarla o refutarla} Un problema más amplio sería tratar de sacar hipótesis ya sea la condición $\Delta_2$ de alguna de las funciones ($\Phi$ o $\Psi$) o usar estas condiciones para el infinito o aún para cero(????).
+\end{nota_fer}
 
 
 We know that  $\Phi\in \Delta_2$ if and only if 
@@ -722,24 +743,21 @@ If $\varphi$ is a continuous function, then there exists $k^*$ in Theorem 4.3 of
 
 
 
-\begin{lem}\label{kn_0} Let $\Phi\in \nabla_2\cap\Delta_2$ and  $\{k_n\}$ such that $\int \Psi[\varphi(k_n|u_n|)]\,dx=1$.
-\\
-If
+
+\begin{lem}\label{kn_0} Let $\Phi\in \nabla_2\cap\Delta_2$ and  $\{k_n\}$ such that $\int \Psi[\varphi(k_n|u_n|)]\,dx=1$. If
 $\|u_n{\orlnor}\to\infty $ as $n \to \infty$, then $k_n \to 0$ as $n \to \infty$.
 \end{lem}
 
 
 \begin{proof}
 Since $\Phi\in \nabla_2\cap\Delta_2$, then $\Psi \circ \varphi\in \Delta_2$ and \eqref{delta2-control-potencia} holds.
-\\
+
 Now, for such a sequence $k_n$ we have
 \begin{equation}
 1=\int \Psi[\varphi(k_n|u_n|)]\,dx\geq 
 C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\int \Psi(\varphi(|u_n|))\,dx
 \end{equation}
-for every $\epsilon>0$.
-\\
-Due to $\Phi \in \Delta_2$, there exists $C_{\Lambda}>0$ such that 
+for every $\epsilon>0$. Due to $\Phi \in \Delta_2$, there exists $C_{\Lambda}>0$ such that 
 \begin{equation}
 C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\int \Psi(\varphi(|u_n|))\,dx
 \geq 
@@ -759,9 +777,9 @@ In that way, we have
 \end{equation}
 for every $\epsilon>0$ and for every $n>N$. 
 \\
-In addition, $\alpha>1$ because $\Phi \in \nabla_2$, then $\alpha-	\epsilon>0$ for every $0<\epsilon<1$.
+{\color{violeta} In addition, $\alpha>1$ because $\Phi \in \nabla_2$}, then $\alpha-	\epsilon>0$ for every $0<\epsilon<1$.
 \\
-Now, we have 
+Now, we have
 \begin{equation}
 \frac{1}{C_{\Lambda}C_{\epsilon}^{-1} \|| u_n\||_{ \lphi}}\geq \min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}
 \end{equation}
@@ -781,6 +799,9 @@ where $\alpha-\epsilon>0$ and $\beta+\epsilon>0$; therefore,  $k_n \to  0$ as $n
 
 
 {\bf El resultado que sigue es v\'alido para cualquier funci\'on u?????}
+\begin{nota_fer}  Si me parece que habría que decir que entendemos por coercitivo en el teorema de abajo. Yo creo que la demostración \textbf{Problema: verificarlo y escribarlo} implica el sentido más fuerte de coercitividad
+\[\lim_{\|u\orlnor\to\infty}\frac{\int_0^T\Phi(|u_n|)dx}{\|u\orlnor}=\infty\]
+\end{nota_fer}
 
 \begin{thm}
 If $\Phi\in \Delta_2\cap \nabla_2$, then 
@@ -789,7 +810,7 @@ the functional $u \to \int_0^t \Phi(|u|)\,dx$ is  coercive in $L^\Phi$.
 
 \begin{proof}
 Assume $\|u_n{\orlnor}\to\infty $ when $n\to \infty$ and 
-suppose that there exists $\{k_n\}$ such that 
+{\color{violeta} suppose that there exists $\{k_n\}$} such that 
 %\linebreak 
 $\int \Psi[\varphi(k_n|u_n|)]\,dx=1$.
 \\
@@ -804,8 +825,8 @@ As $\Phi \in \Delta_2$, there exists $\Lambda_{\Phi}>0$ such that
 \int \Phi(|u_n|)\,dx-\frac{C\Lambda_{\Phi}}{k_n}\int \Phi(k_n|u_n|)\,dx\
 \end{equation}
 %%
-Since $\Phi\in \nabla_2$, then $\alpha>1$ \cite{KR,rao1991theory};
-now, we choose $\epsilon>0$ such that $\alpha-\epsilon>1$.
+{\color{violeta} Since $\Phi\in \nabla_2$, then $\alpha>1$ \cite{KR,rao1991theory};
+now, we choose $\epsilon>0$ such that $\alpha-\epsilon>1$.}
 \\
 In addition,  by Lemma \ref{kn_0},   
 there exists $N \in \nn$ such that $k_n<1$ for every $n>N$ and therefore
@@ -837,22 +858,30 @@ $\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}\to \infty$ for every $C>0$; that is,
 the functional $u \to \int_0^t \Phi(|u|)\,dx$ is coercive in $L^\Phi$.
 \end{proof}
 
+\begin{nota_fer}
+Lamentablemente el libro de Rao pag. 43 dice que $\nabla'$ implica $\nabla_2$. Luego la primera parte de este terorema es consecuencia de la proposición anterior.
+ El otro inciso si me parece que tiene sentido pues para ver que no es coercitiva basta mostrar contraejemplos. Este comentario no aporta problemas abiertos, solo es una observación de la redacción
+\end{nota_fer} 
 
+
+{\color{red}
+Sonia: Totalmente de acuerdo, por eso escrib\'i la observaci\'on al final de la prueba. Si el resultado usando $\nabla_2$ es correcto, el primer inciso sobra.}
 
 \begin{prop}
-Let $u$ be a characteristic function.
+{\color{violeta} Let $u$ be a characteristic function.
 \\
-If $\Phi \in \Delta_2\cap\nabla'$, then the functional $u \to \int_0^t \Phi(|u|)\,dx$ is coercive in $L^\Phi$.
+If $\Phi \in \Delta_2\cap\nabla'$, then the functional $u \to \int_0^t \Phi(|u|)\,dx$ is coercive in $L^\Phi$.}
 \\
-If $\Phi \in \nabla_3$, then the functional $u \to \int_0^t \Phi(|u|)\,dx$ is not coercive in $L^\Phi$.
+If $\Phi \in \nabla_3$, then the functional (la suelen llamar {\color{violeta} modular}) $u \to \int_0^t \Phi(|u|)\,dx$ is not coercive in $L^\Phi$.
 \end{prop}
 
 \begin{proof}
 Let  $u=\alpha \chi_A$ with $\alpha \in \rr$  and where $A$ is a subset of $[0,T]$.
 \\
 Assume that 
-$\|u\orlnor \to \infty$ then $\|u\orlnor=\alpha\|\chi_A\orlnor=\alpha m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right) \to \infty$ and consequently $m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right)\to  \infty$ as $m(A)\to 0$.
+$\|u\orlnor \to \infty$ then $\|u\orlnor=\alpha\|\chi_A\orlnor=\alpha m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right) \to \infty$ and consequently $m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right)\to  \infty$ as {\color{violeta} $m(A)\to 0$}.
 \\
+
 On the other hand, we have
 \begin{equation}
 \frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)m(A)}{\alpha m(A) \Phi^{-1}(\frac{1}{m(A)})}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(\frac{1}{m(A)})}.
@@ -884,10 +913,12 @@ Thus, from \eqref{Phi-r-1}-\eqref{Phi-r-3},
 \frac{\Phi(\alpha)}{r}\geq C_1 C_2\frac{\alpha \Psi^{-1}(r)}{2r}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right);
 \end{equation}
 and then ({\bf Ac\'a ten\'ia que despejar y no irme por la ramas!!!)}
+
+
 \begin{equation}
 \frac{\Phi(\alpha)}{\alpha\Psi^{-1}(r)}\geq \frac{C_1 C_2}{2}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right).
 \end{equation}
-Due to $\alpha\frac{\Psi^{-1}(r)}{r}\to \infty$ as $\alpha,r\to \infty$ and 
+{\color{violeta} Due to $\alpha\frac{\Psi^{-1}(r)}{r}\to \infty$ as $\alpha,r\to \infty$} and 
 the fact that $\varphi(x) \to \infty$ as $x \to \infty$, we obtain
 \begin{equation}
 \frac{C_1 C_2}{2}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right)\to \infty
@@ -902,7 +933,12 @@ that is,
 \end{equation}
 Now, we will see that  $\nabla_3$ functions do not imply the wished coercivity
 in case of $u$ being a characteristic function.
-\\
+\begin{nota_fer} Me parece que es posible ver que no es coercitiva en el sentido más debil que
+\[\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}\]
+no tiende a infinito.\textbf{Demostrarlo}
+Por otra parte, notar que al final de la demostración se toma $\alpha=r$, como lo que estamos mostrando es un contraejemplo, no es necesario mantener la distinción entre $\alpha$ y $r$. Podríamos haber tomado de movida 
+\[u=u_r=r\chi_{[0,1/r]},\]
+\end{nota_fer}
 To do so, suppose there exists a function  $\Phi \in \nabla_3$ such that 
 \begin{equation}
 \frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(r)}\to \infty\;\;\mbox{as}\;\;\|u\orlnor\to \infty,
@@ -942,7 +978,31 @@ Nevertheless,  $\Delta_2$ condition is not sufficient  to get the wished coerciv
 in fact, $\nabla_3$ functions, which belong to the set of $\Delta_2$ functions, do not imply coercivity in $L^\Phi$.
 
 We can also see that $\Delta_2$ condition is not sufficient  to have coercivity in $L^\Phi$  providing a counterexample.
- \\
+\begin{nota_fer} Deje de entender. Al fin y al cabo, el de abajo sería un contraejemplo para mostrar la misma cosa que ya vimos en otro contraejemplo? 
+
+
+Pero se nos plantea este problema, la $\Phi$ del contraejemlo de abajo no será $\nabla_3$? Si fuese así lo que decimos abajo ya lo sabemos \textbf{Problema abierto: probar o refutar que la $\Phi$ es $\nabla_3$}
+\end{nota_fer}
+
+{\color{red}
+Sonia: En efecto, quise decir que como $\nabla_3$ implica $\Delta_2$, el ejemplo que viene a continuaci\'on es redundante para probar que $\Delta_2$ no implica coercividad.
+\\
+Por otra parte, en la p\'agina 39 del Rao dice que la funci\'on $\Psi$ que  usamos es $ \Delta_3$, luego $\Phi\in\nabla_3$ (ver Teorema 3 p\'agina 38 de Rao). Conclusi\'on: O ponemos el enunciado general para $\nabla_3$ o el contraejemplo que viene a continuaci\''on, porque dicen lo mismo.}
+
+{\color{green}  Hay una diferencia entre el enunciado general y el ejemplo de abajo. El ejemplo de abajo es un contraejemplo a la afirmación
+\begin{equation}\label{eq:paraborrar}
+\lim_{\|u\orlnor\to\infty}\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}=\infty
+\end{equation}
+Mientras que el resultado general lo es de
+\begin{equation}\label{eq:paraborrar2}\lim_{\|u\orlnor\to\infty}\frac{\int_0^T\Phi(|u_n|)dx}{\|u\orlnor}=\infty
+\end{equation}
+Como \eqref{eq:paraborrar2} implica \eqref{eq:paraborrar},  el contraejemplo de abajo no es consecuencia del resultado general. Además nosotros lo que necesitamos es \eqref{eq:paraborrar2}. Todo esto nos lleva a:
+
+\textbf{Problema abierto (jaja): ver si el enunciado general  sigue sirviendo con \eqref{eq:paraborrar}
+  }}
+
+
+
  In fact, suppose that $\Phi(r)=(r+1)\log(r+1)-r$  then $\Phi\in\Delta_2$; and, we also have $\Psi(r)=e^r-r-1$
 which is not a $\Delta_2$ function \cite[Chapter 1, pp 22]{rao1991theory}.
 \\
@@ -961,7 +1021,7 @@ then
 	\end{split}
   \end{equation}
 Now, as $r_n$ goes to $\infty$, we get 
- \begin{equation}
+ \begin{equation}\label{eq:no_coerciva}
   \lim\limits_{r_n \to \infty}
 	\left(\frac{\Phi(r_n)}{r_n}-C\Psi^{-1}(r_n)\right)  \leq  \left(1-C\right) \infty.
   \end{equation}
@@ -971,6 +1031,7 @@ $\int \Phi(|u_n|)\,dx-C\|u_n {\orlnor} $ is an  upper bounded function provided 
 $\Phi$.
 
 {\bf Porque para tener coercividad, la expresi\'on no deber\'ia estar acotada para $C$ grande, es as\'i????}
+
 
 
 
