@@ -84,7 +84,7 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 \newcommand{\lphi}{L^{\Phi}}
 \newcommand{\lpsi}{L^{\Psi}}
 \newcommand{\ephi}{E^{\Phi}}
-\newcommand{\claseor}{\widetilde{L}^{\Phi}}
+\newcommand{\claseor}{C^{\Phi}}
 \newcommand{\wphi}{W^{1}\lphi}
 \newcommand{\sobnor}{\|_{W^{1}\lphi}}
 \newcommand{\domi}{W^{1}\left(\lphi,\Pi\left(\ephi,1\right)\right)}
@@ -134,6 +134,8 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 
 %\tableofcontents
 
+\section{Introduction}
+
 \section{Preliminaries}
 
 %\subsection{$N$-functions}
@@ -147,38 +149,38 @@ where $\varphi: [0, \infty)\rightarrow [0, \infty)$ is a right continuous nondec
 $\lim_{t\rightarrow \infty}\varphi(t)=+\infty$.
 
 Given a function $\varphi$ as above, we also consider the so-called right inverse function $\psi$ of $\varphi$ which is defined $\psi(s)=\sup_{\varphi(t)\leq s}t$.
-The function $\psi$ satisfies the same properties that function $\varphi$, therefore we have an $N$-function $\Psi$ associated to $\psi$. We say that $\Psi$ is the
+The function $\psi$ satisfies the same properties that function $\varphi$, therefore we have an $N$-function $\Psi$ such that $\Psi'=\psi$ . The function $\Psi$ is called the
 \emph{complementary function} of $\Phi$.
 
 We say that $\Phi$ is a \emph{function of the $\Delta_2$ class} when there exists a constant $k>0$ and a $t_0\geq 0$ such that $\Phi(2t)\leq K\Phi(t)$, for every $t\geq t_0$.
 
-Throughout this article we will try with spaces of $\mathbb{R}^n$ valued functions defined on an interval $[0,T]\subset\mathbb{R}$. Given an $N$-function $\Phi$ we
-define the \emph{Orlicz class} $\widetilde{L}^{\Phi}([0,T],\mathbb{R}^n)$ by
+For  $n$  positive integer we denote by $M_n:=M_n([0,T])$ the set of all measurable functions defined in $[0,T]$ with values in $\mathbb{R}^n$.  In this paper we adopt the convention of to use bold symbols for denote $\mathbb{R}^n$-valued function and plain symbols for scalar ones. Given  a $N$-function $\Phi$ we define the \emph{modular function} $\rho_{\Phi}:M_n\to [0,+\infty]$ by
+\[\rho_{\Phi}(\b{u}):= \int_{[0,T]} \Phi(|\b{u}|)\ dt.\]
+Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^n$.
+The \emph{Orlicz class} $C_n^{\Phi}=C_n^{\Phi}([0,T])$  is defined by
 \begin{equation}\label{claseOrlicz}
-  \widetilde{L}^{\Phi}([0,T],\mathbb{R}^n):=\left\{\b{u}: [0,T] \rightarrow\mathbb{R}^n,\b{u}\ \hbox{mesurable},\ \int_{[0,T]} \Phi(|\b{u}|)\ dx < \infty \right\}.
+  C^{\Phi}_n:=\left\{\b{u}\in M_n | \rho_{\Phi}(\b{u})< \infty \right\}.
 \end{equation}
-here $|\cdot|$ is the euclidean norm of $\mathbb{R}^n$. When clear from the context, we will omit the domain and codomain in the notation of function spaces and
-classes ($\claseor=\widetilde{L}^{\Phi}([0,T],\mathbb{R}^n)$). The \emph{Orlicz space} $\lphi=L^{\Phi}([0,T],\mathbb{R}^n)$ is defined as the linear hull of $\claseor$.
+The \emph{Orlicz space} $\lphi_n=L^{\Phi}_n([0,T])$ is the linear hull of $\claseor_n$.
 Equivalently
 \begin{equation}\label{espacioOrlicz}
-\lphi:=\left\{ \b{u}: [0,T] \rightarrow \mathbb{R}^n \bigg| \b{u}\ \hbox{is mesurable and},\ \int_{[0,T]} \Phi(\alpha|\b{u}|)\ dx < \infty \ \hbox{for some}\ \alpha >0   \right\}.
+\lphi_n:=\left\{ \b{u}\in M_n | \exists \lambda>0: \rho_{\Phi}(\lambda \b{u}) < \infty   \right\}.
 \end{equation}
- We adopt the convention of to use bold symbols for denote $\mathbb{R}^n$-valued fuction and plain symbols for scalar ones. The Orlicz space $\lphi$ equipped with the Orlicz norm
+  The Orlicz space $\lphi_n$ equipped with the \emph{Orlicz norm}
 \[
-\|  \b{u}  \orlnor:=\sup \left\{  \int_0^T\langle \b{u}, \b{v}\rangle dt: \int_0^T\Psi(|\b{v}|)\leq 1\right\},
+\|  \b{u}  \orlnor:=\sup \left\{  \left.\int_0^T \b{u}\b{\cdot} \b{v} dt \right| \rho_{\Psi}(\b{v})\leq 1\right\},
 \]
-is a Banach space. Here by $\langle \b{u}, \b{v}\rangle$ we denote the usual dot product in $\mathbb{R}^{n}$ between $\b{u}$ and $\b{v}$.
-
-%Alternatively  the Luxemburg norm
-%\[
-%\|  u  \lurnor =\inf \left\{ k>0:  \int_{0}^T \Phi \left(\frac{|u|}{k}\right)\ dx \leq 1 \right\},
-%\]
-%defines an equivalent norm.
+is a Banach space. By $\b{u}\b{\cdot} \b{v}$ we denote the usual dot product in $\mathbb{R}^{n}$ between $\b{u}$ and $\b{v}$.
 
 
 
-The space $\ephi=\ephi([0,T],\mathbb{R}^n)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}$. The space $\ephi$ is the maximal subspace of the
-Orlicz class $\claseor$ and, it is known that, $\left[\ephi\right]^*=\lpsi$.
+
+The subspace $\ephi_n=\ephi_n([0,T])$ is defined as the closure in $\lphi_n$ of the subspace $L^{\infty}_n$ of all the $\mathbb{R}^n$-valued essentially bounded functions. It is showed that  $\ephi_n$ is the maximal subspace contained in the Orlicz class $\claseor$. Equivalently $\b{u}\in\ephi_n$ if and only if for any $\lambda>0$ we have $\rho_{\Phi}(\lambda \b{u})<\infty$. 
+
+ 
+
+
+ and, it is known that, $\left[\ephi\right]^*=\lpsi$.
 
 
 Likes in \cite{KR}, we will consider the subset $\Pi(\ephi,r)=\Pi\left(\ephi\left([0,T],\mathbb{R}^n\right),r\right)$ of $\lphi([0,T],\mathbb{R}^n)$ defined by
