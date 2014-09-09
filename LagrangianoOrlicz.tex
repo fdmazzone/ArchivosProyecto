@@ -150,14 +150,7 @@ Given a function $\varphi$ as above, we also consider the so-called right invers
 The function $\psi$ satisfies the same properties that function $\varphi$, therefore we have an $N$-function $\Psi$ associated to $\psi$. We say that $\Psi$ is the
 \emph{complementary function} of $\Phi$.
 
-Following  \cite{M}, we say that a $N$-function $\Phi$ is in the \emph{$\Delta_2$ class in infinity} ($\Phi\in\Delta^{\infty}_2$) when there exists a constant $K>0$  such that 
-\begin{equation}\label{eq:delta2}\Phi(2x)\leq K\Phi(x),\end{equation} 
-for all  $x\geq 1$. If \eqref{eq:delta2}  is satisfied for all $x\leq 1$ instead $x\geq 1$ we say that $\Phi$ is in  \emph{$\Delta_2$ class in $0$} ($\Phi\in\Delta_2^0$).   We write $\Phi\in\Delta^{a}_2$ when \eqref{eq:delta2}  holds for all $x\geq 0$. We define tha $\nabla_2$ class by duality with the $\Delta_2$ class, that is $\Phi\in \nabla_2^i$ if and only if $\Psi\in\Delta_2^i$, with $i=\infty,0,a$. Functions in the $\Delta_2$ and  $\nabla_2$ classes are controled by powers function. More precisely if $\Phi\in \Delta_2^i$ then there exists $\alpha>0$ such that $\Phi(tx)\leq t^{\alpha}\Phi(x)$ for every $    
-
-
-
-
-
+We say that $\Phi$ is a \emph{function of the $\Delta_2$ class} when there exists a constant $k>0$ and a $t_0\geq 0$ such that $\Phi(2t)\leq K\Phi(t)$, for every $t\geq t_0$.
 
 Throughout this article we will try with spaces of $\mathbb{R}^n$ valued functions defined on an interval $[0,T]\subset\mathbb{R}$. Given an $N$-function $\Phi$ we
 define the \emph{Orlicz class} $\widetilde{L}^{\Phi}([0,T],\mathbb{R}^n)$ by
@@ -595,8 +588,7 @@ Therefore, using \eqref{cotaDyL} and taking account that $a(|\b{u}(t)|)\in L^{\i
 
 \section{Coercivity discussion}
 
-\begin{thm} 
-\end{thm}
+
 
 
 %Sea $\mathcal{L}(t, \b{x}, \b{y})=F(t,\b{x})+\Phi(|\b{y}|)$.
@@ -716,8 +708,91 @@ Si $-C_1\|f\|_{L^1}+\frac{1}{2} \geq 0$, entonces $I(\b{u}) \rightarrow \infty$ 
 
 In the sequel, we will discuss  the  conditions that guarantee the coercivity of  the functional $u \to \int_0^T \Phi(|u|)\,dx$ in $L^{\Phi}$.
 
+
+
+\subsection{Condition that guarantees coercivity (a la antigua...sin $\lambda$!!!) }
+{\color{red}
+Habr\'ia que poner s\'olo el resultado que sigue, en lugar de TODOS los INTENTOS de la versi\'on de junio?????
+
+En la última secci\'on dej\'e los intentos previos en caso de que alguno deba ser rescatado del ostracismo.}
+
+\begin{thm}
+$\Psi \in \Delta_2^0$ if and only if 
+$\lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}=\infty$
+\end{thm}
+
+\begin{proof}
+$\Rightarrow)$
+$\Psi \in \Delta_2^0$ if and only if $\Phi \in \nabla_2$ see \cite[Th.3 , pp. 22-23 ]{rao1991theory}. 
+Then, there exists $k>2$ such that 
+%$\Phi(2x)\geq k \Phi(x)$ for every $x>0$ and consequently
+$\Phi(2^n x)\geq k^n \Phi(x)$ for every $x>0$.
+\\
+If $\lambda>1$, there exists  $n\in \nn$ such that $2^n\leq \lambda <2^{n+1}$
+and consequently
+%$n\leq \log_2\lambda <n+1$ and 
+$\Phi(\lambda x)\geq 
+%\Phi(2^n x)\geq 
+%k^n \Phi(x)\geq k^{\log_2\lambda-1}\Phi(x)=
+k^{-1}\lambda^{\nu}\Phi(x)$
+where  $k=2^{\nu}$ with $\nu>1$. 
+%because $k>2$. 
+In that way, we have 
+\begin{equation}\label{delta2-consecuencia}
+\Phi(\lambda x)\geq C_2\lambda^{\nu}\Phi(x) \;\;\mbox{with}\;\;\lambda>1.
+\end{equation}
+We also know, by \cite[Th. 10.5, pp. 92 ]{KR}, that
+\begin{equation}\label{norma-orlicz-cota}
+\|u\orlnor\leq \frac{1}{\lambda}\left(1+\int_0^T \Phi(\lambda|u|)\,dx\right)
+\;\;\mbox{for every}\;\;\lambda>0.
+\end{equation}
+Let $\lambda<1$. Then, from \eqref{delta2-consecuencia} and \eqref{norma-orlicz-cota}, we get
+\[
+\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}
+%=
+%\frac{\int_0^T \Phi(\frac{1}{\lambda}\lambda |u|)\,dx}{\|u\orlnor}
+\geq
+\frac{C_2}{\lambda^{\nu}}\frac{\int_0^T \Phi(\lambda|u|)\,dx}{\|u\orlnor}
+\geq 
+%\frac{C_2}{\lambda^{\nu}}\frac{\lambda \|u\orlnor-1}{\|u\orlnor}=
+\frac{C_2}{\lambda^{\nu-1}}\left(1-\frac{1}{\lambda \|u\orlnor}\right).
+\]
+As $\|u\orlnor \to \infty$, we choose $\lambda=\frac{2}{\|u\orlnor}>1$ and  thus 
+\[
+\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\geq
+C (\|u\orlnor)^{\nu-1}\to \infty
+\]
+because $\nu>1$.
+
+$\Leftarrow)$ Assume that $\Psi \notin \Delta_2$.
+\\
+Now, by \cite[Th. 4.2, pp. 24]{KR},  there exists a sequence of real  numbers  $r_n$ such that
+$r_n \to \infty$ and 
+\[
+\lim\limits_{n \to \infty} \frac{r_n \psi(r_n)}{\Psi(r_n)}=+\infty.
+\]
+Now, we choose
+$u_n=\psi(r_n)\chi_{[0,\frac{1}{\Psi(r_n)}]}$, then 
+by \cite[pp. 72]{KR}, we get 
+\[
+\|u_n\orlnor =\frac{\psi(r_n)}{\Psi(r_n)}\Psi^{-1}(\Psi(r_n))=
+\frac{r_n\psi(r_n)}{\Psi(r_n)}\to \infty\;\;\mbox{as}\;\;n \to \infty.
+\]
+Next, using Young's equality, we have
+\[
+\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}=
+\frac{\Phi(\psi(r_n))[\Psi(r_n)]^{-1}}{\frac{r_n\psi(r_n)}{\Psi(r_n)}}=
+\frac{r_n\psi(r_n)-\Psi(r_n)}{r_n\psi(r_n)}=1-\frac{\Psi(r_n)}{r_n\psi(r_n)}.
+\]
+As $\frac{\Psi(r_n)}{r_n\psi(r_n)}\to 0$ when $r_n \to \infty$, then 
+$\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}$ is bounded and therefore
+$\lim\limits_{\|u\orlnor \to \infty} 
+\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\neq \infty$.
+\end{proof}
+
+\section{Algo para rescatar????}
 \begin{nota_fer}
-\textbf{Tenemos la conejetura que todo sale si pedimos $\Phi$ que satisface $\nabla_2$. Problema: probarla o refutarla} Un problema más amplio sería tratar de sacar hipótesis ya sea la condición $\Delta_2$ de alguna de las funciones ($\Phi$ o $\Psi$) o usar estas condiciones para el infinito o aún para cero(????).
+\textbf{Tenemos la conjetura que todo sale si pedimos $\Phi$ que satisface $\nabla_2$. Problema: probarla o refutarla} Un problema más amplio sería tratar de sacar hipótesis ya sea la condición $\Delta_2$ de alguna de las funciones ($\Phi$ o $\Psi$) o usar estas condiciones para el infinito o aún para cero(????).
 \end{nota_fer}
 
 
@@ -1039,10 +1114,6 @@ $\int \Phi(|u_n|)\,dx-C\|u_n {\orlnor} $ is an  upper bounded function provided 
 $\Phi$.
 
 {\bf Porque para tener coercividad, la expresi\'on no deber\'ia estar acotada para $C$ grande, es as\'i????}
-
-
-
-
 
 \bibliographystyle{plain}
 \bibliography{biblio}
