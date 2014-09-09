@@ -139,7 +139,7 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 \section{Preliminaries}
 
 %\subsection{$N$-functions}
-For reader convenience, a short introduction to Orlicz and Orlicz Sobolev spaces is given, we refer to \cite{adams_sobolev,KR} for additional details and proofs.
+For reader convenience, a short introduction to Orlicz and Orlicz Sobolev spaces of vector valued functions is given. We refer to \cite{adams_sobolev,KR} for additional details and proofs. In these books is considered scalar valued function, however the generalization of the results enumerated below  to vector valued functions is direct.
 
 A function $\Phi:[0,+\infty)\to [0,+\infty)$ is called an \emph{$N$-function} if it has the form
 \[
@@ -175,20 +175,15 @@ is a Banach space. By $\b{u}\b{\cdot} \b{v}$ we denote the usual dot product in 
 
 
 
-The subspace $\ephi_n=\ephi_n([0,T])$ is defined as the closure in $\lphi_n$ of the subspace $L^{\infty}_n$ of all the $\mathbb{R}^n$-valued essentially bounded functions. It is showed that  $\ephi_n$ is the maximal subspace contained in the Orlicz class $\claseor$. Equivalently $\b{u}\in\ephi_n$ if and only if for any $\lambda>0$ we have $\rho_{\Phi}(\lambda \b{u})<\infty$. 
-
- 
+The subspace $\ephi_n=\ephi_n([0,T])$ is defined as the closure in $\lphi_n$ of the subspace $L^{\infty}_n$ of all the $\mathbb{R}^n$-valued essentially bounded functions. It is showed that  $\ephi_n$ is the maximal subspace contained in the Orlicz class $\claseor$, that is $\b{u}\in\ephi_n$ if and only if for any $\lambda>0$ we have $\rho_{\Phi}(\lambda \b{u})<\infty$.  Furthermore the space $\ephi_n$ satisfies the important relation  $\left[\ephi_n\right]^*=\lpsi_n$.
 
 
- and, it is known that, $\left[\ephi\right]^*=\lpsi$.
-
-
-Likes in \cite{KR}, we will consider the subset $\Pi(\ephi,r)=\Pi\left(\ephi\left([0,T],\mathbb{R}^n\right),r\right)$ of $\lphi([0,T],\mathbb{R}^n)$ defined by
-\[\Pi(\ephi,r):=\{\b{u}\in\lphi: d(\b{u},\ephi)<r\}.\]
-This set is related to the Orlicz class $\claseor$ by means of inclusions
-\begin{equation}\label{inclusiones}\Pi(\ephi,1)\subset \claseor \subset\overline{\Pi(\ephi,1)}.\end{equation}
+Likes in \cite{KR}, we will consider the subset $\Pi(\ephi_n,r)$ of $\lphi_n$ defined by
+\[\Pi(\ephi_n,r):=\{\b{u}\in\lphi_n| d(\b{u},\ephi_n)<r\}.\]
+This set is related to the Orlicz class $\claseor_n$ by means of inclusions
+\begin{equation}\label{inclusiones}\Pi(\ephi_n,1)\subset \claseor_n \subset\overline{\Pi(\ephi_n,1)}.\end{equation}
 The proof of this fact, and similar ones, is given by real valued function in \cite{KR},
-the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty. When the function $\Phi$ is of the $\Delta_2$ class then the four sets $\lphi$, $\ephi$ $\Pi(\ephi,1)$ and $\claseor$ are equal.
+the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty. When the function $\Phi$ is of the $\Delta_2$ class then the four sets $\lphi_n$, $\ephi_n$ $\Pi(\ephi_n,1)$ and $\claseor_n$ are equal.
 
 Let $X$ and $Y$ be subsets of certain vector spaces of $\mathbb{R}^n$-valued measurable functions defined in $[0,T]$.   We denote by  $W^1(X,Y)$ to the set defined by
 \[W^1(X,Y):=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{u}\in X, \b{\dot{u}}\in Y\}.\]
