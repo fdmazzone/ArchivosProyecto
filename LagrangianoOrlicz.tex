@@ -88,10 +88,11 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 \newcommand{\claseor}{C^{\Phi}}
 \newcommand{\wphi}{W^{1}\lphi}
 \newcommand{\sobnor}{\|_{W^{1}\lphi}}
-\newcommand{\domi}{W^{1}\left(\lphi,\Pi\left(\ephi,1\right)\right)}
+\newcommand{\domi}{\mathcal{E}^{\Phi}_n(\lambda)}
 \renewcommand{\b}[1]{\boldsymbol{#1}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\nn}{\mathbb{N}}
+\newcommand{\ccdot}{\b{\cdot}}
 
 
 
@@ -188,6 +189,11 @@ This set is related to the Orlicz class $\claseor_n$ by means of inclusions
 The proof of this fact, and similar ones, is given by real valued function in \cite{KR},
 the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty. When the function $\Phi$ is of the $\Delta_2$ class then the four sets $\lphi_n$, $\ephi_n$ $\Pi(\ephi_n,1)$ and $\claseor_n$ are equal.
 
+We will use the following fact frequently 
+\begin{equation}\label{inclusion2}
+\b{u}\in\Pi(\ephi_n,\lambda)\implies \frac{\b{u}}{\lambda}\in\Pi(\ephi_n,1)\subset\claseor_n.
+\end{equation}
+
 We define the Sobolev-Orlicz space $\wphi_n$ (see \cite{adams_sobolev}) by
 \[\wphi_n:=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{u},\b{\dot{u}}\in \lphi_n\}.\]
 This space is a Banach space  equipped with the norm
@@ -271,15 +277,15 @@ Then
 Therefore, $h\in\Pi(\ephi_1,\lambda)$.  In particular,  $|h|<\infty$ a.e. We conclude that the series $\b{u}_{n_1}(x)+\sum_{k=2}^{\infty}(\b{u}_{n_k}(x)-\b{u}_{n_{k-1}}(x))$
 is absolutely convergent a.e.  This imply that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$. The inequality $|\b{u}_{n_k}|\leq h$ is clear from the definition of $h$.
 \end{proof}
-The following simple result will be useful.
+
+A common obstacle with Orlicz spaces, that distinguishes it from $L^p$ spaces, is that a  sequence $\b{u}_n\in\lphi_n$ which is  uniformly bounded by $ h\in\lphi_1$ and a.e. convergent to $\b{u}$ is not necessarily norm convergent.
+Fortunately the subspace $\ephi_n$ has that property. 
+
 \begin{lem}\label{lema_conv_may}
-Suppose that $\Phi$ is a $\Delta_2$ function.  If $u_n \in\lphi$ is a sequence such that $u_n\to 0$ a.e. and suppose that there exist $M\in\lphi$ with $|u_n|\leq M$
-then $\|u_n\orlnor\to 0$.
+Suppose that $\b{u_n} \in\lphi_n$ is a sequence such that $\b{u_n}\to \b{u}$ a.e. and suppose that there exist $h\in\ephi_1$ with $|\b{u_n}|\leq h$ a.e. 
+then $\|\b{u_n}-\b{u}\orlnor\to 0$.
 \end{lem}
-\begin{proof}
- According to \cite[Theorem 9.4]{KR} it is sufficient to prove that
- \[\int_0^T\Phi(|\b{u}_n|)dt\to 0,\quad\text{for }n\to\infty.\]
- This is an immediate consequence of $\Phi(|\b{u}_n|)\leq \Phi(M)\in L^1$ and the Dominated Convergence Theorem.
+\begin{proof}\cite[p.84]{rao1991theory} and \cite[Th. 10.3]{KR})
 \end{proof}
 
 
@@ -299,60 +305,83 @@ the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$
 \end{defi}
 
 
-
-\begin{thm}\label{teorema_acotacion}
-Let $\mathcal{L}:[0,T]\times \mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}$ be a Caratheodory function and $\Phi,\Psi$ be complementary  $N$-functions. Suppose that there
-exists $a \in C(\mathbb{R}^+, \mathbb{R}^+)$, $b \in L^1$, $c \in \lpsi$ such that
+In this paper we will consider Lagrangian functions satisfying the following structure conditions. We assume  that there
+exists $\lambda>0$ and non negative functions  $a \in C(\mathbb{R}^+, \mathbb{R}^+)$, $b \in L^1_1([0,T])$, $c \in \lpsi_1([0,T])$ and $d\in\ephi_1$ such that
 
 \begin{eqnarray}
-|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi(|\b{y}|)  \right),\label{cotaL}\\
-|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi(|\b{y}|)  \right),\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi(|\b{y}|)  \right).\label{cotaDyL}
+|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+d(t) \right)\right),\label{cotaL}\\
+|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+d(t) \right)\right),\label{cotaDxL}\\
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+d(t)\right)  \right).\label{cotaDyL}
 \end{eqnarray}
 
+\begin{comentario}These conditions are a generalization of the frequently considered condition (A) (see \cite{tang1995periodic,
+xu2007some,tang2010periodic,zhao2004periodic} ). In fact, conditions  \eqref{cotaL},\eqref{cotaDxL}, \eqref{cotaDyL} are equivalent to condition (A)  when  $\mathcal{L}(t,\b{x},\b{y})=|\b{y}|^p/p+F(t,\b{x})$, $\Phi_p(s)=s^p/p$,  and $d=0$. 
+\end{comentario}
 
+\begin{comentario} Let us note that if $\Phi\in\Delta_2$ then we can asssume $d=0$. This is consequence of that a non decreasing $\Delta_2$ function $G:\mathbb{R}_+\to\mathbb{R}_+$ is quasi-subadditive. In fact, we suppose $y\leq x$, then  
+\[G(x+y)\leq G(2x)\leq KG(x)\leq K\left(G(x)+G(y)\right).\]
+Moreover, if $\Phi$ is $\Delta_2$  then $\varphi$ is also $\Delta_2$, as the following simple argument shows
+\[2x\varphi(2x)\leq \alpha \Phi(2x)\leq K\Phi(x)\leq Kx\varphi(x) \]
+Here we have used \cite[Th. 4.1]{KR}, the $\Delta_2$ condition for $\Phi$ and the inequality $\Phi(x)\leq x\varphi(x)$ valid for any $N$-function. 
 
+Therefore if $\Phi$ is $\Delta_2$ we have that
 
-Then the following statements hold
+\[b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+d(t) \right)\leq 
+b(t)+ K\Phi\left(d(t) \right) +\Phi\left(\frac{|\b{y}|}{\lambda}\right)=b_1(t)+K\Phi\left(\frac{|\b{y}|}{\lambda}\right),\]
+where $b_1(t)=b(t)+ K\Phi\left(d(t) \right)\in L^1_1([0,T])$. A similar fact holds with $\varphi$ instead $\Phi$ namely
+\[ c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+d(t)\right) \leq c_1(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}\right),\]
+where, as consequence of Lemma \ref{phi_comp} and the $\Delta_2$ condition for $\Phi$, we have   $c_1(t):=c(t)+K\varphi\left(d(t)\right)\in \lpsi$.    
+
+  
+\end{comentario}
+
+\begin{thm}\label{teorema_acotacion}
+Let $\mathcal{L}$ be a Caratheodory function satisfying \eqref{cotaL},\eqref{cotaDxL}, \eqref{cotaDyL}. Then the following statements hold
 \begin{enumerate}
-\item \label{T1item1} \label{A1} The \emph{action integral}  $I: W^{1}(\lphi,\claseor) \rightarrow \mathbb{R}$ defined by
+\item \label{T1item1} \label{A1} The \emph{action integral}  
 \begin{equation}\label{integral_accion}
-I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt
+I(\b{u}):=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt
 \end{equation}
-is finite for every $\b{u}\in W^{1}(\lphi,\claseor)$.
+is finitely defined in $ \mathcal{E}^{\Phi}_n(\lambda):=W^{1}\lphi\cap\{\b{u}|\b{\dot{u}}\in\Pi(\ephi_n,\lambda)\}$.
 
-\item\label{T1item3} The function  $I$ is G\^ateaux differentiable on $W^{1}\left(\lphi,\Pi\left(\ephi,1\right)\right)$ and  its derivative $I'$ is continuous from $\domi$ with the strong topology into $\left[\wphi \right]^*$ equipped with the $w^*$-topology. Moreover $I'$ is given by the expression
+\item\label{T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is continuous from $\domi$ with the strong topology into $\left[\wphi \right]^*$ equipped with the $w^*$-topology. Moreover $I'$ is given by the expression
 \[
-\langle v, I'(\b{u})\rangle= \int_0^T \bigg\{\bigg\langle D_{\b{x}}\mathcal{L}\big(t,\b{u}(t),\b{\dot{u}}(t)\big), \b{v}(t)\bigg\rangle+ \bigg\langle D_{y}\mathcal{L}\big(t,\b{u}(t),\b{\dot{u}}(t)\big),\dot{\b{v}}(t)\bigg\rangle\bigg\} \ dt.
+\langle v, I'(\b{u})\rangle= \int_0^T \left\{D_{\b{x}}\mathcal{L}\big(t,\b{u}(t),\b{\dot{u}}(t)\big)\ccdot \b{v}(t)+ D_{\b{y}}\mathcal{L}\big(t,\b{u}(t),\b{\dot{u}}(t)\big)\ccdot\b{\dot{v}}(t)\right\} \ dt.
 \]
 
-\item\label{T1item4}  If $\Phi$ and $\Psi$ are $\Delta_2$ functions,
-  $I'$ is continuous from $\wphi$ into $\left[\wphi\right]^*$ when both spaces are equipped with the strong topology.
+\item\label{T1item4}  If  $\Psi$ is $\Delta_2$ then 
+  $I'$ is continuous from $\domi$ into $\left[\wphi\right]^*$ when both spaces are equipped with the strong topology.
 
 
 \end{enumerate}
 \end{thm}
-\begin{proof} From Corollary \ref{a_bound} we obtain a constant $c=c(\|\b{u}\sobnor )$ such that  $a(|\b{u}|)\leq c$.
+\begin{proof} From \eqref{inclusion2} we have   $\b{\dot{u}}/\lambda\in\Pi(\ephi_n,1)$. Thus, as $d\in\ephi_1$ and attending to \eqref{inclusiones}, we get 
+
+\begin{equation}\label{inclusion3}
+|\b{\dot{u}}|/\lambda+d\in\Pi(\ephi_1,1)\subset \claseor_1.
+\end{equation}
+From Corollary \ref{a_bound} we get a constant $c=c(\|\b{u}\sobnor )$ such that  $a(|\b{u}(t)|)\leq c$, $t\in [0,T]$.
  Thus,
- \[|\mathcal{L}(t,\b{u},\b{\dot{u}})| \leq M\left(b(t)+ \Phi(|\b{\dot{u}}|)  \right)\in
+ \[|\mathcal{L}(t,\b{u},\b{\dot{u}})| \leq c\left(b(t)+ \Phi\left (\frac{|\b{\dot{u}}(t)|}{\lambda}+d(t)\right)  \right)\in
  L^1.\]
+This fact proves item \ref{T1item1}.
 
  We split the proof of  \ref{T1item3} in three steps.
 
-\noindent\textbf{Step 1.} We prove that $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ into $L^{1}([0,T])$ whith the strong topology on both sets. We take   $\{\b{u}_n\}_{n\in \mathbb{N}}$ a sequence of  functions in $W^{1}(\lphi,\Pi(\ephi,1))$, and $\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$ such that $\b{u}_n\rightarrow \b{u}$ in $\wphi$.
-Then $\b{u}_n\rightarrow \b{u}$ in $\lphi$ and $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi$. By Lemma \ref{segundo lema} there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi,1))$
-such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.  Since $\b{u}_{n_k}$, $k=1,2,\ldots$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wphi$. According to Lemmas \ref{inclusion orlicz} and Corollary \ref{a_bound} there exists $M>0$ such that $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  From the previous facts and \eqref{cotaDxL} we get
+\noindent\textbf{Step 1.} We prove that $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ into $L^{1}_n([0,T])$ whith the strong topology on both sets. We take   $\{\b{u}_n\}_{n\in \mathbb{N}}$ a sequence of  functions in $\domi$, and $\b{u}\in \domi$ such that $\b{u}_n\rightarrow \b{u}$ in $\wphi_n$.
+Then $\b{u}_n\rightarrow \b{u}$ in $\lphi_n$ and $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_n$. By Lemma \ref{segundo lema} there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi_1,\lambda))$
+such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.  Since $\b{u}_{n_k}$, $k=1,2,\ldots$ is a strong convergent sequence in $\wphi_n$, it is a bounded sequence in $\wphi_n$. According to Lemmas \ref{inclusion orlicz} and Corollary \ref{a_bound} there exists $M>0$ such that $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  From the previous facts, \eqref{cotaDxL} and \eqref{inclusion3} we get
 \begin{equation}\label{DxL1}
-|D_x\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))|\leq M\left(b(t)+\Phi(|h|)\right) \in L^1.
+|D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))|\leq M\left(b(t)+\Phi\left(\frac{|h|}{\lambda}+d(t)\right)\right) \in L^1.
 \end{equation}
 By the Caratheodory condition
 \[D_x\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_x\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\quad\hbox{ for a.e }t\in[0,T].\]
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
 \noindent\textbf{Step 2.} We will prove that the mapping  $\b{u}
- \mapsto  D_{y}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ with the strong topology  into $\left[\lphi\right]^*$  with the weak$^*$ topology. Let $\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$.  It follows from Lemma \ref{phi_comp} and Corollary \ref{a_bound} that $\varphi(\b{u}(t))\in\tilde{L}^{\Psi}$ and $a(|\b{u}(t)|)\in L^{\infty}$ respectively. Therefore, in virtue of  \eqref{cotaDyL} we get
+ \mapsto  D_{y}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ with the strong topology  into $\left[\lphi\right]^*$  with the weak$^*$ topology. Let $\b{u}\in \domi$.  It follows from  \eqref{inclusion3}, Lemma \ref{phi_comp} and Corollary \ref{a_bound} that $\varphi\left(|\b{u}|/\lambda+d\right)\in C^{\Psi}_1$ and $\b{a}(|\b{u}|)\in L^{\infty}_1$. Therefore, in virtue of  \eqref{cotaDyL} we get
 \begin{equation}\label{DyLpsi}
-   \left\|D_y\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\right\|_{L^{\Psi}}\leq  c(\|\b{u}\|_{\wphi} )\left(\|c\|_{L^{\Psi}}+\|\boldsymbol{\varphi}(\b{u})\|_{L^{\Psi}} \right)
+   \left|D_y\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\right|\leq  c(\|\b{u}\|_{\wphi} )  \left(c+\boldsymbol{\varphi}\left( |\b{u}|/\lambda+d\right  ) \right)\in\lpsi.
 \end{equation}
 Hence $D_y\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\in L^{\Psi}$.
 
