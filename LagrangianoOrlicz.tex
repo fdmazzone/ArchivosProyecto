@@ -1,5 +1,3 @@
-%%% Preambulo%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[twoside]{article}
 %%Paquetes
 
@@ -421,13 +419,13 @@ which contradict the inequality \eqref{cota_eps}. This completes the proof of st
 
 \textbf{Step 3.} Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $\b{u}\in \domi$ and $\b{v}\in\wphi_n$ we define the function
 \[f(s,t):=\mathcal{L}(t,\b{u}(t)+s\b{v}(t),\b{\dot{u}}(t)+s\b{\dot{v}}(t)).\]
-From \cite[Th. 10.1]{KR} we obtain that if $|\b{u}|\leq |\b{v}|$ then    $d(\b{u},\ephi_n)\leq d(\b{v},\ephi_n)$. Therefor, for  $|s|\leq s_0:=\left(\lambda-d(\b{\dot{u}},\ephi_n)\right)/\|\b{v}\sobnor$ we have
+From \cite[Th. 10.1]{KR} we obtain that if $|\b{u}|\leq |\b{v}|$ then    $d(\b{u},\ephi_n)\leq d(\b{v},\ephi_n)$. Therefore, for  $|s|\leq s_0:=\left(\lambda-d(\b{\dot{u}},\ephi_n)\right)/\|\b{v}\sobnor$ we have
 \[
 d \left(\b{\dot{u}}+s_0\b{\dot{v}}, \ephi_n \right)\leq
 d \left(|\b{\dot{u}}|+s_0|\b{\dot{v}}|, \ephi_1 \right)
 \leq d \left(|\b{\dot{u}}|,\ephi_1 \right)+ s_0 \|\b{\dot{v}}\orlnor < \lambda.
 \]
-As a consequence $\b{\dot{u}}+s_0\b{\dot{v}} \in \Pi(\ephi_n,\lambda)$ and  $|\b{\dot{u}}|+s_0|\b{\dot{v}}| \in \Pi(\ephi_1,\lambda)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion}(\ref{T1item1}) that $I(\b{u}+s\b{v})$ well defined and finite for $|s|\leq s_0$. 
+As a consequence $\b{\dot{u}}+s_0\b{\dot{v}} \in \Pi(\ephi_n,\lambda)$ and  $|\b{\dot{u}}|+s_0|\b{\dot{v}}| \in \Pi(\ephi_1,\lambda)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion}(\ref{T1item1}) that $I(\b{u}+s\b{v})$ is well defined and it is finite for $|s|\leq s_0$. 
 Using  Corollary \ref{a_bound} we see that
 \[ \|a(|\b{u}+s\b{v}|)\|_{L^{\infty}}\leq  c(\|\b{u}+s\b{v}\sobnor)\leq
  c(\|\b{u}\sobnor+s_0\|\b{v}\sobnor).
@@ -440,20 +438,18 @@ Consequently, applying chain rule,  inequalities \eqref{cotaDxL}-\eqref{cotaDyL}
 &\left. \quad+ \left(c(t)+ \varphi\left (\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}\right)\right)|\b{\dot{v}}| \right]
 \end{split}
 \end{equation}
- Then $b+\Phi(|\b{\dot{u}}|+s_0|\b{\dot{v}}|) \in L^1$ and since $\b{v} \in L^{\infty}$ we have that
-$(b+\Phi(|\b{\dot{u}}|+s_0|\b{\dot{v}}|))|\b{v}| \in L^1$. On the other hand, from Lemma \ref{phi_comp} and \eqref{AcotOperphi}  we obtain $c(t)+ \varphi(|\b{\dot{u}}|+s_0|\b{\dot{v}}|) \in L^{\Psi}$ and since $\b{\dot{v}} \in L^{\Phi}$, applying the H\"older inequality
-$(c(t)+ \varphi(|\b{\dot{u}}|+s_0|\b{\dot{v}}|))|\b{\dot{v}}| \in L^1$. Thus, from \eqref{ctg} and the above discussion there exists a function $g \in L^1([0,T], \mathbb{R}^{+})$
+ Invoking \eqref{DxL1}, \eqref{DyLpsi} with $ |\b{\dot{u}}|+s_0|\b{\dot{v}}|$ instead $\b{u}$ and taking account of $\b{\dot{v}}\in L^{\infty}$ and $\b{v}\in\lphi$ we show that there exists a function $g \in L^1([0,T], \mathbb{R}^{+})$
 such that $|D_s f(s,t)| \leq g(t)$. Consequently, $I$ has a directional derivative and
 \[
-\langle v, I'(\b{u}) \rangle=\frac{d}{ds}I(\b{u}+sv)\big|_{s=0}=\int_0^T \left(\langle D_{x}\mathcal{L}(t,\b{u},\b{\dot{u}}), \b{v}\rangle+ \langle D_{y}\mathcal{L}(t,\b{u},\b{\dot{u}}),\b{\dot{v}}\rangle\right) \ dt.
+\langle v, I'(\b{u}) \rangle=\frac{d}{ds}I(\b{u}+sv)\big|_{s=0}=\int_0^T  D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot \b{v}+ D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{\dot{v}}  dt.
 \]
 Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and previous formula
 \[
-|\langle I'(\b{u}), \b{v} \rangle| \leq c \|v\linf + c \|\b{\dot{v}}\orlnor \leq c \|\b{v}\sobnor.
+|\langle \b{v},I'(\b{u}) \rangle| \leq c \|v\linf + c \|\b{\dot{v}}\orlnor \leq c \|\b{v}\sobnor.
 \]
 This complete the proof of the G\^ateaux differentiability of $I$. Finally, the continuity of $I': \left(\domi, \|\cdot \sobnor\right) \to \left(\left[\wphi
 \right]^*, w^* \right)$ is a consequence of the continuity of the mappings $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ and $\b{u} \mapsto
-D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$. Indeed, we set $\b{u}_n,\b{u}\in W^{1}(\lphi,\Pi(\ephi,1))$ with $\b{u}_n\to \b{u}$ in the norm of $\wphi$ and $\b{v} \in
+D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$. Indeed, we set $\b{u}_n,\b{u}\in \domi$ with $\b{u}_n\to \b{u}$ in the norm of $\wphi$ and $\b{v} \in
 \wphi$ , then
 \[
 \begin{split}
