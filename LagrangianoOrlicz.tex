@@ -181,13 +181,13 @@ The subspace $\ephi_n=\ephi_n([0,T])$ is defined as the closure in $\lphi_n$ of 
 
 A generalizated version of \emph{H\"older inequality} holds in the setting of Orlicz spaces (ver \cite[Th 9.3]{KR} ). Namely, if $\b{u}\in\lphi_n$ and $\b{v}\in\lpsi_n$ then $\b{u}\ccdot\b{v}\in L_1^1$ and
 \begin{equation}\label{holder}
-\int_0^T\b{u}\ccdot\b{v}dt\leq \|\b{u}\orlnor\|\b{v}\|_{L^{\Psi}}.
+\int_0^T\b{v}\ccdot\b{u}dt\leq \|\b{u}\orlnor\|\b{v}\|_{L^{\Psi}}.
 \end{equation}
 
 
 
 
-If $X$ and $Y$ are  Banach spaces, with $Y\subset X^*$ we denote by $\langle\cdot,\cdot\rangle:X\times Y\to\mathbb{R}$ to the bilinear pairing  map given by $\langle x,x^*\rangle=x^*(x)$. H\"older inequality shows that $\lpsi_n\subset \left[\lphi_n\right]^*$, where the pairing $\langle \b{u},\b{v}\rangle$, $\b{u}\in\lphi_n$ and $\b{v}\in\lpsi_n$, is defined by 
+If $X$ and $Y$ are  Banach spaces, with $Y\subset X^*$ we denote by $\langle\cdot,\cdot\rangle:Y\times X\to\mathbb{R}$ to the bilinear pairing  map given by $\langle x^*,x\rangle=x^*(x)$. H\"older inequality shows that $\lpsi_n\subset \left[\lphi_n\right]^*$, where the pairing $\langle \b{u},\b{v}\rangle$, $\b{u}\in\lphi_n$ and $\b{v}\in\lpsi_n$, is defined by 
 \begin{equation}\label{pairing}
   \langle \b{u},\b{v}\rangle=\int_0^T\b{u}\ccdot\b{v}dt.
 \end{equation}
@@ -306,10 +306,12 @@ then $\|\b{u_n}-\b{u}\orlnor\to 0$.
   We recall the definition of Gate\^{a}ux derivative, see \cite{ambrosetti} for details. Given a function $I:U\to\mathbb{R}$ where $U$ is an open set of a Banach space $X$,
 we say that $I$ has a G\^ateaux derivative en $\b{u} \in U$ if there exists $\b{u}^*\in X^*$ such that for every $\b{v} \in X$
 \[
-\lim_{s \rightarrow 0}\frac{I(\b{u}+s\b{v})-I(\b{u}) }{s}=\langle \b{u},\b{u}^*\rangle.
+\lim_{s \rightarrow 0}\frac{I(\b{u}+s\b{v})-I(\b{u}) }{s}=\langle \b{u}^* , \b{u}\rangle.
 \]
 
-
+We recall the following definition. 
+\begin{defi}[see \cite{kato1964demicontinuity}] Let $X$ a Banach space and $D\subset X$. A non linear operator $T:D\to X^*$ is called \emph{demicontinuous} if it is continuous when $X$ is equipped with the strong topology and $X^*$ with tha weak${}^*$ topology. 
+\end{defi} 
 
 \section{Differetiability of action integrals on Orlicz spaces}
 
@@ -330,21 +332,24 @@ exists $\lambda>0$ and non negative functions  $a \in C(\mathbb{R}^+, \mathbb{R}
 
 \begin{comentario}These conditions are a generalization of the frequently considered condition (A) (see \cite{tang1995periodic,
 xu2007some,tang2010periodic,zhao2004periodic} ). In fact, conditions  \eqref{cotaL},\eqref{cotaDxL}, \eqref{cotaDyL} are equivalent to condition (A)  when  $\mathcal{L}(t,\b{x},\b{y})=|\b{y}|^p/p+F(t,\b{x})$, $\Phi_p(s)=s^p/p$,  and $d=0$. 
+\begin{equation}
+  
+\end{equation}
+
 \end{comentario}
 
 \begin{comentario} Let us note that if $\Phi\in\Delta_2$ then we can asssume $d=0$. This is consequence of that a non decreasing $\Delta_2$ function $G:\mathbb{R}_+\to\mathbb{R}_+$ is quasi-subadditive. In fact, we suppose $y\leq x$, then  
 \[G(x+y)\leq G(2x)\leq KG(x)\leq K\left(G(x)+G(y)\right).\]
 Moreover, if $\Phi$ is $\Delta_2$  then $\varphi$ is also $\Delta_2$, as the following simple argument shows
 \[2x\varphi(2x)\leq \alpha \Phi(2x)\leq K\Phi(x)\leq Kx\varphi(x) \]
-Here we have used \cite[Th. 4.1]{KR}, the $\Delta_2$ condition for $\Phi$ and the inequality $\Phi(x)\leq x\varphi(x)$ valid for any $N$-function. 
-
-Therefore if $\Phi$ is $\Delta_2$ we have that
+Here we have used \cite[Th. 4.1]{KR}, the $\Delta_2$ condition for $\Phi$ and the inequality $\Phi(x)\leq x\varphi(x)$ valid for any $N$-function. Therefore if $\Phi$ is $\Delta_2$ we have that
 
 \[b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+d(t) \right)\leq 
 b(t)+ K\Phi\left(d(t) \right) +\Phi\left(\frac{|\b{y}|}{\lambda}\right)=b_1(t)+K\Phi\left(\frac{|\b{y}|}{\lambda}\right),\]
 where $b_1(t)=b(t)+ K\Phi\left(d(t) \right)\in L^1_1([0,T])$. A similar fact holds with $\varphi$ instead $\Phi$ namely
 \[ c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+d(t)\right) \leq c_1(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}\right),\]
-where, as consequence of Lemma \ref{phi_comp} and the $\Delta_2$ condition for $\Phi$, we have   $c_1(t):=c(t)+K\varphi\left(d(t)\right)\in \lpsi$.    
+where, as consequence of Lemma \ref{phi_comp} and the $\Delta_2$ condition for $\Phi$, we have   $c_1(t):=c(t)+K\varphi\left(d(t)\right)\in \lpsi_1$.   
+
 
   
 \end{comentario}
@@ -358,9 +363,9 @@ I(\b{u}):=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt
 \end{equation}
 is finitely defined in $ \mathcal{E}^{\Phi}_n(\lambda):=W^{1}\lphi\cap\{\b{u}|\b{\dot{u}}\in\Pi(\ephi_n,\lambda)\}$.
 
-\item\label{T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is continuous from $\domi$ with the strong topology into $\left[\wphi \right]^*$ equipped with the $w^*$-topology. Moreover $I'$ is given by the expression
+\item\label{T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is demicontinuous from $\domi$  into $\left[\wphi \right]^*$. Moreover $I'$ is given by the following expression
 \begin{equation}\label{DerAccion}
-\langle \b{v}, I'(\b{u})\rangle= \int_0^T \left\{D_{\b{x}}\mathcal{L}\big(t,\b{u},\b{\dot{u}}\big)\ccdot \b{v}+ D_{\b{y}}\mathcal{L}\big(t,\b{u},\b{\dot{u}}\big)\ccdot\b{\dot{v}}\right\} \ dt.
+\langle  I'(\b{u}),\b{v}\rangle= \int_0^T \left\{D_{\b{x}}\mathcal{L}\big(t,\b{u},\b{\dot{u}}\big)\ccdot \b{v}+ D_{\b{y}}\mathcal{L}\big(t,\b{u},\b{\dot{u}}\big)\ccdot\b{\dot{v}}\right\} \ dt.
 \end{equation}
 
 \item\label{T1item4}  If  $\Psi$ is $\Delta_2$ then 
@@ -377,36 +382,40 @@ is finitely defined in $ \mathcal{E}^{\Phi}_n(\lambda):=W^{1}\lphi\cap\{\b{u}|\b
 From Corollary \ref{a_bound} we get a constant $c=c(\|\b{u}\sobnor )$ such that  $a(|\b{u}(t)|)\leq c$, $t\in [0,T]$.
  Thus,
  \[|\mathcal{L}(t,\b{u},\b{\dot{u}})| \leq c\left(b(t)+ \Phi\left (\frac{|\b{\dot{u}}(t)|}{\lambda}+d(t)\right)  \right)\in
- L^1.\]
+ L^1_1.\]
 This fact proves item \ref{T1item1}.
 
  We split the proof of  \ref{T1item3} in three steps.
 
-\noindent\textbf{Step 1.} We prove that $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ into $L^{1}_n([0,T])$ whith the strong topology on both sets. We take   $\{\b{u}_n\}_{n\in \mathbb{N}}$ a sequence of  functions in $\domi$, and $\b{u}\in \domi$ such that $\b{u}_n\rightarrow \b{u}$ in $\wphi_n$.
+\noindent\emph{Step 1. The non linear operator  $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ into $L^{1}_n([0,T])$ whith the strong topology on both sets.} 
+
+We take   $\{\b{u}_n\}_{n\in \mathbb{N}}$ a sequence of  functions in $\domi$, and $\b{u}\in \domi$ such that $\b{u}_n\rightarrow \b{u}$ in $\wphi_n$.
 Then $\b{u}_n\rightarrow \b{u}$ in $\lphi_n$ and $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_n$. By Lemma \ref{segundo lema} there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi_1,\lambda))$
 such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.  Since $\b{u}_{n_k}$, $k=1,2,\ldots$ is a strong convergent sequence in $\wphi_n$, it is a bounded sequence in $\wphi_n$. According to Lemmas \ref{inclusion orlicz} and Corollary \ref{a_bound} there exists $M>0$ such that $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  From the previous facts, \eqref{cotaDxL} and \eqref{inclusion3} we get
 \begin{equation}\label{DxL1}
-|D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))|\leq M\left(b(t)+\Phi\left(\frac{|h|}{\lambda}+d(t)\right)\right) \in L^1.
+|D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))|\leq M\left(b(t)+\Phi\left(\frac{|h|}{\lambda}+d(t)\right)\right) \in L^1_1.
 \end{equation}
 By the Caratheodory condition
 \[D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_x\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\quad\hbox{ for a.e }t\in[0,T].\]
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
-\noindent\textbf{Step 2.} We will prove that the mapping  $\b{u}
- \mapsto  D_{y}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ with the strong topology  into $\left[\lphi\right]^*$  with the weak$^*$ topology. Let $\b{u}\in \domi$.  It follows from  \eqref{inclusion3}, Lemma \ref{phi_comp} and Corollary \ref{a_bound} that 
+\noindent\emph{Step 2. The non linear operator   $\b{u}
+ \mapsto  D_{y}\mathcal{L}(t,\b{u},\b{\dot{u}})$ is continuous from $\domi$ with the strong topology  into $\left[\lphi\right]^*$  with the weak$^*$ topology.}
+
+ Let $\b{u}\in \domi$.  It follows from  \eqref{inclusion3}, Lemma \ref{phi_comp} and Corollary \ref{a_bound} that 
 \begin{equation}\label{AcotOperphi}
 \varphi\left(\frac{|\b{u}|}{\lambda}+d\right)\in C^{\Psi}_1
 \end{equation}
 and $\b{a}(|\b{u}|)\in L^{\infty}_1$. Therefore, in virtue of  \eqref{cotaDyL} we get
 \begin{equation}\label{DyLpsi}
-   \left|D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\right|\leq  c(\|\b{u}\|_{\wphi} )  \left(c+\boldsymbol{\varphi}\left( \frac{|\b{u}|}{\lambda}+d\right  ) \right)\in\lpsi.
+   \left|D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\right|\leq  c(\|\b{u}\|_{\wphi} )  \left(c+\boldsymbol{\varphi}\left( \frac{|\b{u}|}{\lambda}+d\right  ) \right)\in\lpsi_1.
 \end{equation}
  We note that \eqref{DxL1},  \eqref{DyLpsi} , the imbedding $\wphi_n \hookrightarrow L_n^{\infty}$ and  $\lpsi_n\hookrightarrow  \left[\lphi_n\right]^*$ imply that the second member 
 \eqref{DerAccion} defines an element in $\left[\wphi_n\right]^*$.
 
 Now, let us to prove the continuity of the map   $\b{u}\mapsto D_y\mathcal{L}(\cdot,\b{u},\b{\dot{u}})$. We take $\b{u}_n,\b{u}\in \domi$ with $\b{u}_n\to \b{u}$ in the norm of $\wphi_n$. We must prove that  $D_y\mathcal{L}(\cdot,\b{u}_n,\dot{\b{u}_n})\overset{w^*}{\rightharpoonup} D_y\mathcal{L}(\cdot,\b{u},\b{\dot{u}})$. Suppose, on the contrary, that there exists $\b{v}\in\lphi_n$, $\epsilon>0$ and a subsequence of $\{\b{u}_n\}$ (again denoted for simplicity $\{\b{u}_n\}$)  such that
 \begin{equation}\label{cota_eps}
- \left| \langle \b{v}, D_y\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}_n}) \rangle - \langle \b{v}, D_y\mathcal{L}(\cdot,\b{u},\b{\dot{u}}) \rangle\right|\geq \epsilon.
+ \left| \langle D_{\b{y}}\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}_n}),\b{v} \rangle - \langle  D_{\b{y}}\mathcal{L}(\cdot,\b{u},\b{\dot{u}}),\b{v} \rangle\right|\geq \epsilon.
 \end{equation}
 We have $\b{u}_n\rightarrow \b{u}$ in $\lphi_n$ and
 $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_n$. By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi,\lambda)$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$. As in the previous step, since $\b{u}_n$ is a convergent sequence, the Corrollary \ref{a_bound} implies that $a(|\b{u}_n(t)|)$ is uniformly bounded by certain constant $C$. Therefore, from \eqref{cotaDyL},  \eqref{AcotOperphi}, the fact that $c\in\lphi_1$, H\"older inequality we obtain
@@ -417,7 +426,7 @@ $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_n$. By Lemma \ref{segundo lema}
 \begin{equation}\label{conv_debil}\int_0^T  D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})\ccdot\b{ v} dt \to \int_0^T D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{ v} dt \end{equation}
 which contradict the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
-\textbf{Step 3.} Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $\b{u}\in \domi$ and $\b{v}\in\wphi_n$ we define the function
+\emph{Step 3.} Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $\b{u}\in \domi$ and $\b{v}\in\wphi_n$ we define the function
 \[f(s,t):=\mathcal{L}(t,\b{u}(t)+s\b{v}(t),\b{\dot{u}}(t)+s\b{\dot{v}}(t)).\]
 From \cite[Th. 10.1]{KR} we obtain that if $|\b{u}|\leq |\b{v}|$ then    $d(\b{u},\ephi_n)\leq d(\b{v},\ephi_n)$. Therefore, for  $|s|\leq s_0:=\left(\lambda-d(\b{\dot{u}},\ephi_n)\right)/\|\b{v}\sobnor$ we have
 \[
@@ -445,60 +454,39 @@ such that $|D_s f(s,t)| \leq g(t)$. Consequently, $I$ has a directional derivati
 \]
 Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and previous formula
 \[
-|\langle \b{v},I'(\b{u}) \rangle| \leq c \|v\linf + c \|\b{\dot{v}}\orlnor \leq c \|\b{v}\sobnor.
+|\langle I'(\b{u}),\b{v} \rangle| \leq c \|v\linf + c \|\b{\dot{v}}\orlnor \leq c \|\b{v}\sobnor.
 \]
-This complete the proof of the G\^ateaux differentiability of $I$. Finally, the continuity of $I': \left(\domi, \|\cdot \sobnor\right) \to \left(\left[\wphi
-\right]^*, w^* \right)$ is a consequence of the continuity of the mappings $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ and $\b{u} \mapsto
+This complete the proof of the G\^ateaux differentiability of $I$. Finally, the demicontinuity of $I':\domi  \to \left[\wphi
+\right]^* $ is a consequence of the continuity of the mappings $\b{u} \mapsto D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ and $\b{u} \mapsto
 D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$. Indeed, we set $\b{u}_n,\b{u}\in \domi$ with $\b{u}_n\to \b{u}$ in the norm of $\wphi$ and $\b{v} \in
 \wphi$ , then
 \[
 \begin{split}
-\left\langle \b{v}, I'(\b{u}_{n}) \right\rangle &= \int_0^T \left\{  D_{\b{x}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot
+\left\langle  I'(\b{u}_{n}),\b{v} \right\rangle &= \int_0^T \left\{  D_{\b{x}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot
 \b{v} +
  D_{\b{y}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot\dot{\b{v}}\right\} \ dt\\
 &\rightarrow \int_0^T \left\{ D_{\b{x}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot \b{v}+ 
 D_{\b{y}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot\dot{\b{v}}\right\} \ dt\\
-&=\left\langle \b{v}, I'(\b{u}) \right\rangle.
+&=\left\langle  I'(\b{u}),\b{v} \right\rangle.
 \end{split}
 \]
 
 
 In order to prove  \ref{T1item4}, let us see that the maps $\b{u}\mapsto D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  and $\b{u}\mapsto D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  are norm continuous
 from $\domi $ into $L^1$ and
- $\lpsi$ respectively.  The continuity of the first map has already been proved in step 1. We will prove the continuity of the second map.  We consider $\b{u}_n$ and $\b{u}$ in $\domi$ with $\|\b{u}_n- \b{u}\sobnor\to 0$.
-By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \domi$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.
-
-
- Then  since $\mathcal{L}$ is a Caratheodory function
- we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$. By an argument similar to a previous one, and  using \eqref{cotaDyL} that $\Psi$ is of the $\Delta_2$ class, we obtain
+ $\lpsi$ respectively.  The continuity of the first map has already been proved in step 1. We will prove the continuity of the second map. We repeat an argument similar to the one given in step 2.  We consider $\b{u}_n$ and $\b{u}$ in $\domi$ with $\|\b{u}_n- \b{u}\sobnor\to 0$.
+By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \domi$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$. Then  since $\mathcal{L}$ is a Caratheodory function
+ we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$. Using \eqref{cotaDyL} and that $\Psi$ is of the $\Delta_2$ class, we obtain
  \[\begin{split}
     |D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))| &\leq a(|\b{u}_{n_k}(t)|)\left( c(t) + \varphi \left(\frac{|\b{\dot{u}}_{n_k}(t)|}{\lambda}+d(t)\right)\right)\\
     &\leq C\left( c(t) + \varphi \left(\frac{|h(t)|}{\lambda}+d(t)\right)\right)\in \lpsi=\epsi
    \end{split}
 \]
 Therefore, invoking  Lemma \ref{lema_conv_may}, we have proved that
-  of all sequence $\b{u}_n$ which converge to $\b{u}$ in $\wphi$ we can
+  from any sequence $\b{u}_n$ which converge to $\b{u}$ in $\wphi$ we can
 extract a subsequence with $D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})\to D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$ in the strong topology. The desired result follows from a standard argument.
 
-Now we are  in conditions of  to prove the continuity of $I'$. Let $\b{u}, \b{u_0},\b{v}\in\lphi$. Then
-\[
-  \begin{split}
-   \langle I'(\b{u})-I'(\b{u}_0),\b{v} \rangle
-      &= \int_0^T \left\{ \left(D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))-D_{\b{x}}\mathcal{L}(t,\b{u}_0(t),\dot{\b{u}_0}(t))\right)\cdot v(t)\right.\\
-      &\quad\left.+
-      \left(D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))-D_{\b{y}}\mathcal{L}(t,\b{u}_0(t),\dot{\b{u}_0}(t))\right)\cdot \b{\dot{v}}(t)\right\}dt \\
-      &\leq \left\{\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\|\b{v}\|_{L^{\infty}}\right.\\
-      &\quad+\left.
-       \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\|\b{\dot{v}}\|_{\lphi}\right\}\\
-  \end{split}
-\]
-Taking supremum on $\b{v}$ with $\|\b{v}\sobnor\leq 1$ in the previous inequality and using Lemma \ref{inclusion orlicz} we obtain
-% \[\begin{split}
-%    \|I'(\b{u})-I'(\b{u}_0)\|_{\wphi} &\leq  C\bigg(\| D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{x}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{L^1}\right.\\
-%      & + \| D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))-D_{\b{y}}\mathcal{L}(\cdot,\b{u}_0(\cdot),\dot{\b{u}_0}(\cdot))\|_{\lpsi}\bigg)
-%   \end{split}
-%   \]
-Therefore the results follows  of the  previously established continuity for $D_{\b{x}}\mathcal{L}$ and $D_{\b{y}}\mathcal{L}$.
+The continuity of $I'$  follows  of the  previously established continuity for $D_{\b{x}}\mathcal{L}$ and $D_{\b{y}}\mathcal{L}$ by using the representation \eqref{DerAccion}.
 \end{proof}
 
 
@@ -506,27 +494,16 @@ Therefore the results follows  of the  previously established continuity for $D_
 \section{Critical points and Euler-Lagrange equations}
 
 
-In this section we derive the Euler-Lagrange equations associated to critical points of action integrals.
-
-
-% \begin{equation}\label{ecualagran}
-%     \left\{%
-% \begin{array}{ll}
-%    \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-%     \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0.
-% \end{array}%
-% \right.
-% \end{equation}
-
-We denote by $\wphi_T$ the subspace of $\wphi$ of all functions $T$-periodic. Similarly we consider the subspaces $\ephi_T$, $\lphi_T$. As is usual, when $Y$ is a subspace of
-the Banach space $X$, we denote by $Y^{\perp}$ the subspace of $X^*$ of all the bounded linear functions which are identically zero on $Y$.
+In this section we derive the Euler-Lagrange equations associated to critical points of action integrals.  We denote by $\wphi_T$ the subspace of $\wphi$ of all  $T$-periodic functions. Similarly we consider the subspaces $\ephi_T$, $\lphi_T$. As is usual, when $Y$ is a subspace of
+the Banach space $X$, we denote by $Y^{\perp}$ the \emph{annihilator subspace} of $X^*$, tghat means the subspace
+consistent of all the bounded linear functions which are identically zero on $Y$.
 
 We recall that  a function $f: \mathbb{R}^n \to \mathbb{R}$ is called \emph{strictly convex} if $f\left(\tfrac{\b{x}+\b{y}}{2}\right)< \tfrac{1}{2} \left(f\left(
-\b{x}\right)+f\left( \b{y}\right)\right)$.  It is a well known that if $f$ is a strictly convex and differentiable functions then
+\b{x}\right)+f\left( \b{y}\right)\right)$ for  $\b{x}\neq\b{y}$.  It is a well known that if $f$ is a strictly convex and differentiable functions then
 $D_{\b{x}}f:\mathbb{R}^n\to\mathbb{R}^n$ is a one-to-one map  (see, for instance \cite[Theorem 12.17]{rockafellar2009variational}).
 
 
-\begin{thm} The following statements are equivalent
+\begin{thm} Let $\b{u}\in\domi$. The following statements are equivalent
 \begin{enumerate}
  \item $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$
  \item  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is an absolutely continuous function and $\b{u}$ solve the following boundary value problem
@@ -543,15 +520,45 @@ Moreover if $D_{\b{y}}\mathcal{L}(t,x,y)$ is $T$-periodic with respect to the va
 $D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\b{\dot{\b{u}}}}(0))-D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=0$ is equivalent to $\b{\dot{u}}(0)=\b{\dot{u}}(T)$.
 \end{thm}
 
-\begin{proof} The condition $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$ means that for every $\b{v}\in \wphi_T$ we have $\langle \b{v}, I'(\b{u})\rangle=0$. According to Theorem
-\ref{teorema_acotacion} we have
-
-\[\int_0^T\langle D_{\b{y}} \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)), \b{\dot{v}}(t)\rangle dt=-\int_0^T \langle D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)),\b{ v}(t)\rangle dt \]
+\begin{proof} The condition  $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$ and \eqref{DerAccion} imply 
+\[\int_0^T  D_{\b{y}} \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ccdot \b{\dot{v}}(t) dt=-\int_0^T  D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \ccdot\b{ v}(t) dt \]
 Using \cite[pag. 6]{mawhin2010critical} we obtain that  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is absolutely continuous and $T$-periodic, therefore it is differentiable a.e.on $[0,T]$ and the first equality of \eqref{ecualagran2} holds true.
 This complete the proof  1. implies 2. The proof of 2.implies 1.  is still easier and so  we will omit it.
 
 The last part of the Corollary is a consequence of that $D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\dot{u}}(0))=D_{\b{y}}\mathcal{L}(T,u(T),\b{\dot{u}}(0))$ and the injectivity of $D_{\b{y}}\mathcal{L}(T,u(T),\cdot)$.
 \end{proof}
+
+
+\section{Coercivity discussion}
+
+We recall the following usual definition in the context  of calculus of variations. 
+
+\begin{defi} Let $X$ be a Banach space and let $D$ be an unbounded subset of $X$. Suppose $J:D\subset X\to\rr$. We said that $J$ is \emph{coercitive} if $J(u)\to +\infty$ when $\|\b{u}\|\to +\infty$. 
+\end{defi}
+
+It is well known that coercitivity is an ingredient useful in order to establish existence of minima. Therefore we are interestent in finding conditions which insure the coercitivityof the action integral $I$ acting on $\domi$. For this purpose we need to introduce the following  extra condition on Lagrange function $\mathcal{L}$, namely,
+
+\begin{equation}\label{cota_inf}
+\
+\end{equation}
+
+
+
+
+
+
+
+We start establish necessa
+
+
+
+
+
+
+We will obtain coercitivity of
+
+
+
 
 \section{Weak lower semicontinuity of actions integrals}
 
@@ -630,7 +637,8 @@ Therefore, using \eqref{cotaDyL} and taking account that $a(|\b{u}(t)|)\in L^{\i
  Which completes the proof.
 \end{proof}
 
-\section{Coercivity discussion}
+
+
 
 
 
