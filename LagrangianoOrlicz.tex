@@ -92,7 +92,7 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 \newcommand{\nn}{\mathbb{N}}
 \newcommand{\ccdot}{\b{\cdot}}
 \renewcommand{\leq}{\leqslant} 
-
+\newcommand{\epsi}{E^{\Psi}}
 
 \begin{document}
 
@@ -414,7 +414,7 @@ $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_n$. By Lemma \ref{segundo lema}
   \left | D_y\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n) \ccdot \b{ v} \right| \leq C\left(c|\b{v}|+\varphi\left(\frac{h}{\lambda}+d\right)\right)|\b{v}|\in L_1^1.
 \]
  From the Lebesgue dominated convergence theorem we deduce
-\begin{equation}\label{conv_debil}\int_0^T \langle D_y\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t)),\b{ v}(t) \rangle dt \to \int_0^T\langle D_y\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)),\b{ v}(t) \rangle dt \end{equation}
+\begin{equation}\label{conv_debil}\int_0^T  D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})\ccdot\b{ v} dt \to \int_0^T D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{ v} dt \end{equation}
 which contradict the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
 \textbf{Step 3.} Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $\b{u}\in \domi$ and $\b{v}\in\wphi_n$ we define the function
@@ -438,7 +438,7 @@ Consequently, applying chain rule,  inequalities \eqref{cotaDxL}-\eqref{cotaDyL}
 &\left. \quad+ \left(c(t)+ \varphi\left (\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}\right)\right)|\b{\dot{v}}| \right]
 \end{split}
 \end{equation}
- Invoking \eqref{DxL1}, \eqref{DyLpsi} with $ |\b{\dot{u}}|+s_0|\b{\dot{v}}|$ instead $\b{u}$ and taking account of $\b{\dot{v}}\in L^{\infty}$ and $\b{v}\in\lphi$ we show that there exists a function $g \in L^1([0,T], \mathbb{R}^{+})$
+ Invoking \eqref{DxL1}, \eqref{DyLpsi} with $ |\b{\dot{u}}|+s_0|\b{\dot{v}}|$ instead $\b{u}$ and taking account of $\b{\dot{v}}\in L^{\infty}$ and $\b{v}\in\lphi$ we show that there exists a function $g \in L^1_1([0,T], \mathbb{R}^{+})$
 such that $|D_s f(s,t)| \leq g(t)$. Consequently, $I$ has a directional derivative and
 \[
 \langle v, I'(\b{u}) \rangle=\frac{d}{ds}I(\b{u}+sv)\big|_{s=0}=\int_0^T  D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot \b{v}+ D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{\dot{v}}  dt.
@@ -453,26 +453,27 @@ D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$. Indeed, we set $\b{u}_n,\b{u}\in \do
 \wphi$ , then
 \[
 \begin{split}
-\left\langle \b{v}, I'(\b{u}_{n}) \right\rangle &= \int_0^T \left\{\left\langle D_{\b{x}}\mathcal{L}\left(t,\b{u}_n(t),\b{\dot{u}}_n(t)\right),
-\b{v}(t)\right\rangle+
-\left\langle D_{y}\mathcal{L}\left(t,\b{u}_n(t),\b{\dot{u}}_n(t)\right),\dot{\b{v}}(t)\right\rangle\right\} \ dt\\
-&\rightarrow \int_0^T \left\{\left\langle D_{\b{x}}\mathcal{L}\left(t,\b{u}(t),\b{\dot{u}}(t)\right), \b{v}(t)\right\rangle+ \left\langle
-D_{y}\mathcal{L}\left(t,\b{u}(t),\b{\dot{u}}(t)\right),\dot{\b{v}}(t)\right\rangle\right\} \ dt\\
+\left\langle \b{v}, I'(\b{u}_{n}) \right\rangle &= \int_0^T \left\{  D_{\b{x}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot
+\b{v} +
+ D_{\b{y}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot\dot{\b{v}}\right\} \ dt\\
+&\rightarrow \int_0^T \left\{ D_{\b{x}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot \b{v}+ 
+D_{\b{y}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot\dot{\b{v}}\right\} \ dt\\
 &=\left\langle \b{v}, I'(\b{u}) \right\rangle.
 \end{split}
 \]
 
 
-In order to prove  \ref{T1item4}, let us see that the maps $\b{u}\mapsto D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  and $\b{u}\mapsto D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  are continuous
-from $\left(\wphi, \|\cdot \sobnor\right) $ into $\left( L^1, \|\cdot \|_{L^1}\right)$ and
- $\left(\lpsi,\|\cdot\|_{L^{\Psi}}\right)$ respectively.  The continuity of the first map is an immediate consequence of the step 1 in the proof of item \ref{T1item3} and the fact that $\Pi(\ephi,1) =\lphi$  when $\Phi$ is of the $\Delta_2$ class. We will prove the continuity of the second map.  We consider $\b{u}_n$ and $\b{u}$ with $\|\b{u}_n- \b{u}\sobnor\to 0$.
-By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \lphi$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.
+In order to prove  \ref{T1item4}, let us see that the maps $\b{u}\mapsto D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  and $\b{u}\mapsto D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  are norm continuous
+from $\domi $ into $L^1$ and
+ $\lpsi$ respectively.  The continuity of the first map has already been proved in step 1. We will prove the continuity of the second map.  We consider $\b{u}_n$ and $\b{u}$ in $\domi$ with $\|\b{u}_n- \b{u}\sobnor\to 0$.
+By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \domi$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$.
+
+
  Then  since $\mathcal{L}$ is a Caratheodory function
- we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$.  From Corollary \ref{a_bound} and the fact that $\|\b{u}_{n_k}\sobnor$ are uniformly bounded, we get a constant $C>0$ such that  $\|\b{a}(\b{u}_{n_k})\|_{L^{\infty}}\leq C$.
- By using \eqref{cotaDyL} and as $\Psi$ is of the $\Delta_2$ class, we obtain
+ we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$. By an argument similar to a previous one, and  using \eqref{cotaDyL} that $\Psi$ is of the $\Delta_2$ class, we obtain
  \[\begin{split}
-    |D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))| &\leq a(|\b{u}_{n_k}|)\left( c(t) + \varphi (|\b{\dot{u}}_{n_k}(t)|)\right)\\
-    &\leq C\left( c(t) + \varphi (|h|)\right)\in \lpsi
+    |D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))| &\leq a(|\b{u}_{n_k}(t)|)\left( c(t) + \varphi \left(\frac{|\b{\dot{u}}_{n_k}(t)|}{\lambda}+d(t)\right)\right)\\
+    &\leq C\left( c(t) + \varphi \left(\frac{|h(t)|}{\lambda}+d(t)\right)\right)\in \lpsi=\epsi
    \end{split}
 \]
 Therefore, invoking  Lemma \ref{lema_conv_may}, we have proved that
