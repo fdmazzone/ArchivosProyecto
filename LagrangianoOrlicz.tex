@@ -152,7 +152,7 @@ Given a function $\varphi$ as above, we also consider the so-called right invers
 The function $\psi$ satisfies the same properties that function $\varphi$, therefore we have an $N$-function $\Psi$ such that $\Psi'=\psi$ . The function $\Psi$ is called the
 \emph{complementary function} of $\Phi$.
 
-We say that $\Phi$ is a \emph{function of the $\Delta_2$ class} when there exists a constant $k>0$ and a $t_0\geq 0$ such that $\Phi(2t)\leq K\Phi(t)$, for every $t\geq t_0$.
+We say that $\Phi$ is a \emph{function of the $\Delta_2$ class} when there exists a constant $k>0$ and a $t_0\geq 0$ such that $\Phi(2t)\leq K\Phi(t)$, for every $t\geq t_0$. If $t_0=0$ we said that $\Phi$ is $\Delta_2$ \emph{global}.  
 
  In this paper we adopt the convention of to use bold symbols for denote points in $\mathbb{R}^n$ and plain symbols for scalar ones.
 
@@ -199,7 +199,7 @@ Likes in \cite{KR}, we will consider the subset $\Pi(\ephi_n,r)$ of $\lphi_n$ de
 This set is related to the Orlicz class $\claseor_n$ by means of inclusions
 \begin{equation}\label{inclusiones}\Pi(\ephi_n,1)\subset \claseor_n \subset\overline{\Pi(\ephi_n,1)}.\end{equation}
 The proof of this fact, and similar ones, is given by real valued function in \cite{KR},
-the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty. When the function $\Phi$ is of the $\Delta_2$ class then the four sets $\lphi_n$, $\ephi_n$ $\Pi(\ephi_n,1)$ and $\claseor_n$ are equal.
+the extension to $\mathbb{R}^n$-valued functions does not involve any difficulty. When the function $\Phi$ is of the $\Delta_2$ class then the four sets $\lphi_n$, $\ephi_n$, $\Pi(\ephi_n,1)$ and $\claseor_n$ are equal.
 
 We will use the following elementary fact frequently 
 \begin{equation}\label{inclusion2}
@@ -534,12 +534,180 @@ We recall the following usual definition in the context  of calculus of variatio
 \begin{defi} Let $X$ be a Banach space and let $D$ be an unbounded subset of $X$. Suppose $J:D\subset X\to\rr$. We said that $J$ is \emph{coercitive} if $J(u)\to +\infty$ when $\|\b{u}\|\to +\infty$. 
 \end{defi}
 
-It is well known that coercitivity is an ingredient useful in order to establish existence of minima. Therefore we are interestent in finding conditions which insure the coercitivityof the action integral $I$ acting on $\domi$. For this purpose we need to introduce the following  extra condition on Lagrange function $\mathcal{L}$, namely,
-
+It is well known that coercitivity is an ingredient useful in order to establish existence of minima. Therefore we are interestent in finding conditions which insure the coercitivityof the action integral $I$ acting on $\domi$. For this purpose we need to introduce the following  extra condition on Lagrange function $\mathcal{L}$  
 \begin{equation}\label{cota_inf}
-\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)-b_0(t)a_0(|\b{x}|),
+\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}-c_0(t)\right)-b_0(t)a_0(|\b{x}|),
 \end{equation}
-where $\alpha_0,\Lambda>0$ and $b_0\in L^1_1([0,T])$ and $a_0\in C(\rr^+,\rr^+)$.  
+where $\alpha_0,\Lambda>0$, $b_0\in L^1_1([0,T])$ and $a_0\in C(\rr^+,\rr^+)$.  
+
+
+
+As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf},  the coercitivity of the action integral $I$ is related to the coercitivity of the functional
+\begin{equation}\label{func_phi}
+  J(\b{u}):=\int_0^T\Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt-C\|\b{u}\orlnor,
+\end{equation}
+for any $C>0$. If $\Phi(x)=|x|^p/p$ then $J$ is clearly coercitive. For more general $\Phi$ the situation is more interesting   as will be shown by the following lemma.
+
+\begin{thm} Let $\Phi$ and $\Psi$ complementary $N$-functions. Then
+\begin{enumerate}
+  \item If $\Psi \in \Delta_2$ if and only if 
+$\lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}=\infty$
+\end{thm}
+
+\begin{proof}
+$\Rightarrow)$
+$\Psi \in \Delta_2^0$ if and only if $\Phi \in \nabla_2$ see \cite[Th.3 , pp. 22-23 ]{rao1991theory}. 
+Then, there exists $k>2$ such that 
+%$\Phi(2x)\geq k \Phi(x)$ for every $x>0$ and consequently
+$\Phi(2^n x)\geq k^n \Phi(x)$ for every $x>0$.
+\\
+If $\lambda>1$, there exists  $n\in \nn$ such that $2^n\leq \lambda <2^{n+1}$
+and consequently
+%$n\leq \log_2\lambda <n+1$ and 
+$\Phi(\lambda x)\geq 
+%\Phi(2^n x)\geq 
+%k^n \Phi(x)\geq k^{\log_2\lambda-1}\Phi(x)=
+k^{-1}\lambda^{\nu}\Phi(x)$
+where  $k=2^{\nu}$ with $\nu>1$. 
+%because $k>2$. 
+In that way, we have 
+\begin{equation}\label{delta2-consecuencia}
+\Phi(\lambda x)\geq C_2\lambda^{\nu}\Phi(x) \;\;\mbox{with}\;\;\lambda>1.
+\end{equation}
+We also know, by \cite[Th. 10.5, pp. 92 ]{KR}, that
+\begin{equation}\label{norma-orlicz-cota}
+\|u\orlnor\leq \frac{1}{\lambda}\left(1+\int_0^T \Phi(\lambda|u|)\,dx\right)
+\;\;\mbox{for every}\;\;\lambda>0.
+\end{equation}
+Let $\lambda<1$. Then, from \eqref{delta2-consecuencia} and \eqref{norma-orlicz-cota}, we get
+\[
+\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}
+%=
+%\frac{\int_0^T \Phi(\frac{1}{\lambda}\lambda |u|)\,dx}{\|u\orlnor}
+\geq
+\frac{C_2}{\lambda^{\nu}}\frac{\int_0^T \Phi(\lambda|u|)\,dx}{\|u\orlnor}
+\geq 
+%\frac{C_2}{\lambda^{\nu}}\frac{\lambda \|u\orlnor-1}{\|u\orlnor}=
+\frac{C_2}{\lambda^{\nu-1}}\left(1-\frac{1}{\lambda \|u\orlnor}\right).
+\]
+As $\|u\orlnor \to \infty$, we choose $\lambda=\frac{2}{\|u\orlnor}>1$ and  thus 
+\[
+\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\geq
+C (\|u\orlnor)^{\nu-1}\to \infty
+\]
+because $\nu>1$.
+
+$\Leftarrow)$ Assume that $\Psi \notin \Delta_2$.
+\\
+Now, by \cite[Th. 4.2, pp. 24]{KR},  there exists a sequence of real  numbers  $r_n$ such that
+$r_n \to \infty$ and 
+\[
+\lim\limits_{n \to \infty} \frac{r_n \psi(r_n)}{\Psi(r_n)}=+\infty.
+\]
+Now, we choose
+$u_n=\psi(r_n)\chi_{[0,\frac{1}{\Psi(r_n)}]}$, then 
+by \cite[pp. 72]{KR}, we get 
+\[
+\|u_n\orlnor =\frac{\psi(r_n)}{\Psi(r_n)}\Psi^{-1}(\Psi(r_n))=
+\frac{r_n\psi(r_n)}{\Psi(r_n)}\to \infty\;\;\mbox{as}\;\;n \to \infty.
+\]
+Next, using Young's equality, we have
+\[
+\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}=
+\frac{\Phi(\psi(r_n))[\Psi(r_n)]^{-1}}{\frac{r_n\psi(r_n)}{\Psi(r_n)}}=
+\frac{r_n\psi(r_n)-\Psi(r_n)}{r_n\psi(r_n)}=1-\frac{\Psi(r_n)}{r_n\psi(r_n)}.
+\]
+As $\frac{\Psi(r_n)}{r_n\psi(r_n)}\to 0$ when $r_n \to \infty$, then 
+$\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}$ is bounded and therefore
+$\lim\limits_{\|u\orlnor \to \infty} 
+\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\neq \infty$.
+\end{proof}
+
+
+
+
+
+
+
+
+\begin{thm}\label{coercitividad1}
+Sea $\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x})$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions and that there exists $f \in L^1$  such that
+\[
+\left|\nabla F(t,\b{x}) \right|\leq f(t)
+\]
+for a.e. $t \in [0,T]$ and all $\b{x}\in \mathbb{R}^n $ with $f$ satisfying
+\begin{equation}\label{cota}
+\|f\|_{L^1([0,T])}\leq\frac{1}{2\|1\|_{\lpsi([0,T])}}.
+\end{equation}
+If
+\begin{equation}\label{propiedad1coercividad}
+\int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
+\end{equation}
+then problem \eqref{ecualagran3} has at least one solution which minimizes the functional $I$ given by \eqref{integral_accion} on $\wphi$.
+\end{thm}
+
+\begin{proof}
+For $\b{w} \in \wphi$, we write $\b{w}=\overline{\b{w}}+\widetilde{\b{w}}$ where $\overline{\b{w}} =\frac1T\int_0^T \b{w}(t)\ dt$.
+
+
+
+
+
+
+\[
+\begin{split}
+I(\b{u})=&\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
+=& \int_{0}^T (\mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))- \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)))\ dt + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+=&\int_{0}^T \int_{0}^{1} \langle D_{\b{x}}\mathcal{L}(t,\overline{\b{u}}+s\widetilde{\b{u}}(t),\dot{\b{u}}(t)),\widetilde{\b{u}}(t)\rangle\ ds \ dt + + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+\geq &-\|f\|_{L^1}\|\widetilde{\b{u}}\|_{L^{\infty}} + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+\geq & -C_1\|f\|_{L^1}\|\dot{\widetilde{\b{u}}}\|_{\lphi} + \int_{0}^T
+\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
+\geq & -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} + \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt.
+\end{split}
+\]
+
+Cuando tomamos $\mathcal{L}$
+\[
+\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x}).
+\]
+
+\begin{comment}
+Para caso 1:
+\[
+I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi}+\int_{0}^T
+\Phi(|\overline{\dot{\b{u}}}|)+F(t,\overline{\b{u}}).
+\]
+\end{comment}
+
+Tenemos
+\begin{equation}\label{eq:est_abajo_I}
+I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}}).
+\end{equation}
+Para $\b{w}$ denotemos por $\|| \b{w} \||_{\lphi}$ la norma de Luxembourg de $\b{w}$.
+
+Es sabido que que si $\|| \b{w} \||_{\lphi} \geq 1$ entonces $\int_{0}^T \Phi(|\b{w}|) \geq \|| \b{w} \||_{\lphi}$ y que $\|| \b{w}\||_{\lphi} \leq
+\|\b{w}\|_{\lphi}\leq 2\|| \b{w}\||_{\lphi}$. Entonces se tiene para $\||\b{u}\|| \geq 1$
+
+\[
+\begin{split}
+I(\b{u})&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}})\\
+&\geq -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\|| \dot{\b{u}} \||_{\lphi}+\int_{0}^TF(t,\overline{\b{u}})\\
+&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\frac{1}{2}\| \dot{\b{u}} \|_{\lphi}+\int_0^TF(t,\overline{\b{u}})\\
+&= \left(-C_1\|f\|_{L^1}+\frac{1}{2}\right)\|\dot{\b{u}}\|_{\lphi}+\int_{0}^{T}F(t,\overline{\b{u}}).
+\end{split}
+\]
+Therefore, if $\|\b{u}\sobnor \rightarrow \infty$ then $(|\overline{\b{u}}|^2+ \|\dot{\b{u}}\|_{\lphi})\rightarrow \infty$. If $|\overline{\b{u}}|^2 \rightarrow
+\infty$ by \eqref{propiedad1coercividad} we have $I(\b{u}) \rightarrow \infty$. If $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$ usamos \eqref{cota}. En efecto,
+
+Si $-C_1\|f\|_{L^1}+\frac{1}{2} \geq 0$, entonces $I(\b{u}) \rightarrow \infty$ cuando $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$. Pero $-C_1\|f\|_{L^1}+\frac{1}{2}
+\geq 0$ si y solamente si $\|f\|_{L^1([0,T])}\leq\frac{1}{2 C_1}=\frac{1}{2\|1\|_{\lpsi([0,T])}}$, lo cual es justamente \eqref{cota}.
+ ($C_1=\|1\|_{\lpsi([0,T])}$ por \eqref{estimacion2}).
+\end{proof}
+
+
 
 
 
@@ -638,112 +806,6 @@ We consider the problem   (introduced in \eqref{ecualagran2}):
 \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T).
 \end{equation}
 
-\begin{nota_fer}
-Me parece que vamos a tener que presentar el resultado siguiente de otra forma. Como está escrito, resultará un caso particular de otros teoremas. Tener en cuenta que, al fin y al cabo, se termina pidiendo que $\Phi,\Psi\in\Delta_2$, con lo cual se aplicarían los resultados que escribe Sonia más abajo y la funcional sería coercitiva sin necesidad de la hipótesis \eqref{cota}.  Para poder mantener el resultado de abajo, habría que contextualizarlo en un teorema donde no se pida  $\Phi,\Psi\in\Delta_2$. Se me ocurre que un buen lugar sería después del comentario que sigue a la estimación \eqref{eq:no_coerciva}. Pues allí se habla del papel que juega la constante $C$ y me parece bueno relacionarlo con eso.
-
-Todo el razonamiento hasta llegar a la estimación \eqref{eq:est_abajo_I} se puede tomar para usarlo con lo que escribió Sonia. Justamente lo que demostró Sonia es que la cota inferior en  \eqref{eq:est_abajo_I} tiende a infinito cuando $\|\b{\dot{u}}\orlnor\to\infty$.\textbf{ Eso si, habría que intetar generalizar este razonamiento, sin pedir la condición $\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x})$.} Algo habrá que pedirle a $\mathcal{L}$, intentar que sea alguna desigualdad, en lugar de adjudicarle una forma más explícita. 
-
-\end{nota_fer}
-
-\begin{thm}[Theorem 1.5 M-W]
-Sea $\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x})$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions and that there exists $f \in L^1$  such that
-\[
-\left|\nabla F(t,\b{x}) \right|\leq f(t)
-\]
-for a.e. $t \in [0,T]$ and all $\b{x}\in \mathbb{R}^n $ with $f$ satisfying
-\begin{equation}\label{cota}
-\|f\|_{L^1([0,T])}\leq\frac{1}{2\|1\|_{\lpsi([0,T])}}.
-\end{equation}
-If
-\begin{equation}\label{propiedad1coercividad}
-\int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
-\end{equation}
-then problem \eqref{ecualagran3} has at least one solution which minimizes the functional $I$ given by \eqref{integral_accion} on $\wphi$.
-\end{thm}
-
-\begin{proof}
-For $\b{w} \in \wphi$, we write $\b{w}=\overline{\b{w}}+\widetilde{\b{w}}$ where $\overline{\b{w}} =\frac1T\int_0^T \b{w}(t)\ dt$.
-
-
-\begin{comment}
-\textbf{Case 1}:
-\[
-\begin{split}
-I(\b{u})=&\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
-=& \int_{0}^T (\mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))- \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)))\ dt + \int_{0}^T
-(\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))-\mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}}))\ dt\\
-&+ \int_0^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt\\
-=&\int_{0}^T \int_{0}^{1} \langle D_{\b{x}}\mathcal{L}(t,\overline{\b{u}}+s\widetilde{\b{u}}(t),\dot{\b{u}}(t)),\widetilde{\b{u}}(t)\rangle\ ds \ dt +
-\int_{0}^T \int_{0}^{1} \langle D_{\b{y}}\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)+s\widetilde{\dot{\b{u}}}(t)),\widetilde{\dot{\b{u}}}(t)\rangle\ ds \ dt\\
-&+  \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt  \\
-\geq &-C_1\|f\|_{L^1}\|\widetilde{\b{u}}\|_{L^{\infty}}-C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} +  \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt  \\
-\geq &-C_1\|f\|_{L^1}\|\widetilde{\b{u}}\sobnor-C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} +  \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt  \\
-\geq & -C_1\|f\|_{L^1}\|\dot{\widetilde{\b{u}}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} +  \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt\\
-\geq & -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi} + {\color{celeste}\int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\overline{\dot{\b{u}}})\ dt}.
-\end{split}
-\]
-\end{comment}
-
-
-
-
-\[
-\begin{split}
-I(\b{u})=&\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
-=& \int_{0}^T (\mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))- \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)))\ dt + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-=&\int_{0}^T \int_{0}^{1} \langle D_{\b{x}}\mathcal{L}(t,\overline{\b{u}}+s\widetilde{\b{u}}(t),\dot{\b{u}}(t)),\widetilde{\b{u}}(t)\rangle\ ds \ dt + + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-\geq &-\|f\|_{L^1}\|\widetilde{\b{u}}\|_{L^{\infty}} + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-\geq & -C_1\|f\|_{L^1}\|\dot{\widetilde{\b{u}}}\|_{\lphi} + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-\geq & -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} {\color{celeste}+ \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt}.
-\end{split}
-\]
-
-Cuando tomamos $\mathcal{L}$
-\[
-\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x}).
-\]
-
-\begin{comment}
-Para caso 1:
-\[
-I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi}+\int_{0}^T
-\Phi(|\overline{\dot{\b{u}}}|)+F(t,\overline{\b{u}}).
-\]
-\end{comment}
-
-Tenemos
-\begin{equation}\label{eq:est_abajo_I}
-I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}}).
-\end{equation}
-Para $\b{w}$ denotemos por $\|| \b{w} \||_{\lphi}$ la norma de Luxembourg de $\b{w}$.
-
-Es sabido que que si $\|| \b{w} \||_{\lphi} \geq 1$ entonces $\int_{0}^T \Phi(|\b{w}|) \geq \|| \b{w} \||_{\lphi}$ y que $\|| \b{w}\||_{\lphi} \leq
-\|\b{w}\|_{\lphi}\leq 2\|| \b{w}\||_{\lphi}$. Entonces se tiene para $\||\b{u}\|| \geq 1$
-
-\[
-\begin{split}
-I(\b{u})&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}})\\
-&\geq -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\|| \dot{\b{u}} \||_{\lphi}+\int_{0}^TF(t,\overline{\b{u}})\\
-&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\frac{1}{2}\| \dot{\b{u}} \|_{\lphi}+\int_0^TF(t,\overline{\b{u}})\\
-&= \left(-C_1\|f\|_{L^1}+\frac{1}{2}\right)\|\dot{\b{u}}\|_{\lphi}+\int_{0}^{T}F(t,\overline{\b{u}}).
-\end{split}
-\]
-Therefore, if $\|\b{u}\sobnor \rightarrow \infty$ then $(|\overline{\b{u}}|^2+ \|\dot{\b{u}}\|_{\lphi})\rightarrow \infty$. If $|\overline{\b{u}}|^2 \rightarrow
-\infty$ by \eqref{propiedad1coercividad} we have $I(\b{u}) \rightarrow \infty$. If $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$ usamos \eqref{cota}. En efecto,
-
-Si $-C_1\|f\|_{L^1}+\frac{1}{2} \geq 0$, entonces $I(\b{u}) \rightarrow \infty$ cuando $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$. Pero $-C_1\|f\|_{L^1}+\frac{1}{2}
-\geq 0$ si y solamente si $\|f\|_{L^1([0,T])}\leq\frac{1}{2 C_1}=\frac{1}{2\|1\|_{\lpsi([0,T])}}$, lo cual es justamente \eqref{cota}.
- ($C_1=\|1\|_{\lpsi([0,T])}$ por \eqref{estimacion2}).
-\end{proof}
-
-
-
 
 
 In the sequel, we will discuss  the  conditions that guarantee the coercivity of  the functional $u \to \int_0^T \Phi(|u|)\,dx$ in $L^{\Phi}$.
@@ -756,79 +818,6 @@ Habr\'ia que poner s\'olo el resultado que sigue, en lugar de TODOS los INTENTOS
 
 En la última secci\'on dej\'e los intentos previos en caso de que alguno deba ser rescatado del ostracismo.}
 
-\begin{thm}
-$\Psi \in \Delta_2^0$ if and only if 
-$\lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}=\infty$
-\end{thm}
-
-\begin{proof}
-$\Rightarrow)$
-$\Psi \in \Delta_2^0$ if and only if $\Phi \in \nabla_2$ see \cite[Th.3 , pp. 22-23 ]{rao1991theory}. 
-Then, there exists $k>2$ such that 
-%$\Phi(2x)\geq k \Phi(x)$ for every $x>0$ and consequently
-$\Phi(2^n x)\geq k^n \Phi(x)$ for every $x>0$.
-\\
-If $\lambda>1$, there exists  $n\in \nn$ such that $2^n\leq \lambda <2^{n+1}$
-and consequently
-%$n\leq \log_2\lambda <n+1$ and 
-$\Phi(\lambda x)\geq 
-%\Phi(2^n x)\geq 
-%k^n \Phi(x)\geq k^{\log_2\lambda-1}\Phi(x)=
-k^{-1}\lambda^{\nu}\Phi(x)$
-where  $k=2^{\nu}$ with $\nu>1$. 
-%because $k>2$. 
-In that way, we have 
-\begin{equation}\label{delta2-consecuencia}
-\Phi(\lambda x)\geq C_2\lambda^{\nu}\Phi(x) \;\;\mbox{with}\;\;\lambda>1.
-\end{equation}
-We also know, by \cite[Th. 10.5, pp. 92 ]{KR}, that
-\begin{equation}\label{norma-orlicz-cota}
-\|u\orlnor\leq \frac{1}{\lambda}\left(1+\int_0^T \Phi(\lambda|u|)\,dx\right)
-\;\;\mbox{for every}\;\;\lambda>0.
-\end{equation}
-Let $\lambda<1$. Then, from \eqref{delta2-consecuencia} and \eqref{norma-orlicz-cota}, we get
-\[
-\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}
-%=
-%\frac{\int_0^T \Phi(\frac{1}{\lambda}\lambda |u|)\,dx}{\|u\orlnor}
-\geq
-\frac{C_2}{\lambda^{\nu}}\frac{\int_0^T \Phi(\lambda|u|)\,dx}{\|u\orlnor}
-\geq 
-%\frac{C_2}{\lambda^{\nu}}\frac{\lambda \|u\orlnor-1}{\|u\orlnor}=
-\frac{C_2}{\lambda^{\nu-1}}\left(1-\frac{1}{\lambda \|u\orlnor}\right).
-\]
-As $\|u\orlnor \to \infty$, we choose $\lambda=\frac{2}{\|u\orlnor}>1$ and  thus 
-\[
-\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\geq
-C (\|u\orlnor)^{\nu-1}\to \infty
-\]
-because $\nu>1$.
-
-$\Leftarrow)$ Assume that $\Psi \notin \Delta_2$.
-\\
-Now, by \cite[Th. 4.2, pp. 24]{KR},  there exists a sequence of real  numbers  $r_n$ such that
-$r_n \to \infty$ and 
-\[
-\lim\limits_{n \to \infty} \frac{r_n \psi(r_n)}{\Psi(r_n)}=+\infty.
-\]
-Now, we choose
-$u_n=\psi(r_n)\chi_{[0,\frac{1}{\Psi(r_n)}]}$, then 
-by \cite[pp. 72]{KR}, we get 
-\[
-\|u_n\orlnor =\frac{\psi(r_n)}{\Psi(r_n)}\Psi^{-1}(\Psi(r_n))=
-\frac{r_n\psi(r_n)}{\Psi(r_n)}\to \infty\;\;\mbox{as}\;\;n \to \infty.
-\]
-Next, using Young's equality, we have
-\[
-\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}=
-\frac{\Phi(\psi(r_n))[\Psi(r_n)]^{-1}}{\frac{r_n\psi(r_n)}{\Psi(r_n)}}=
-\frac{r_n\psi(r_n)-\Psi(r_n)}{r_n\psi(r_n)}=1-\frac{\Psi(r_n)}{r_n\psi(r_n)}.
-\]
-As $\frac{\Psi(r_n)}{r_n\psi(r_n)}\to 0$ when $r_n \to \infty$, then 
-$\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}$ is bounded and therefore
-$\lim\limits_{\|u\orlnor \to \infty} 
-\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\neq \infty$.
-\end{proof}
 
 \section{Algo para rescatar????}
 \begin{nota_fer}
