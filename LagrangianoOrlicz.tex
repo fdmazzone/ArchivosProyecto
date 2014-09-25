@@ -172,8 +172,11 @@ Equivalently
 \[
 \|  \b{u}  \orlnor:=\sup \left\{  \left.\int_0^T \b{u}\b{\cdot} \b{v} dt \right| \rho_{\Psi}(\b{v})\leq 1\right\},
 \]
-is a Banach space. By $\b{u}\b{\cdot} \b{v}$ we denote the usual dot product in $\mathbb{R}^{n}$ between $\b{u}$ and $\b{v}$.
+is a Banach space. By $\b{u}\b{\cdot} \b{v}$ we denote the usual dot product in $\mathbb{R}^{n}$ between $\b{u}$ and $\b{v}$.  Sometimes the following alternative expression for the norm, known as \emph{Amemiya norm},     will  be useful (see \cite[Th. 10.5]{KR} and \cite{hudzik2000amemiya}). For every $\b{u}\in\lphi$,
 
+\begin{equation}\label{amemiya}
+\|\b{u}\orlnor=\inf\limits_{k>0}\frac{1}{k}\left\{1+\rho_{\Phi}(k\b{u})\right\}.
+\end{equation}
 
 
 
@@ -338,7 +341,7 @@ xu2007some,tang2010periodic,zhao2004periodic} ). In fact, conditions  \eqref{cot
 
   
 
-\begin{comentario}  As a direct consequence of convexity, we can  bound the term $\Phi(|\b{y}|/\lambda+d(t))$, $d\in \ephi_1$, by the expression  $\Phi(|\b{y}|/\Lambda)+b(t)$ where $b(t):=\Phi(2d(t))\in L^1_1$, and  $\Lambda= \lambda/2$. That is, we can  assume $d = 0$ at the price of making smaller the value of $\lambda$. 
+\begin{comentario}  As a direct consequence of convexity, we can  bound the term $\Phi(|\b{y}|/\lambda+d(t))$, $d\in \ephi_1$, by the expression  $\frac12\Phi(|\b{y}|/\Lambda)+b(t)$ where $b(t):=\tfrac12\Phi(2d(t))\in L^1_1$, and  $\Lambda= \lambda/2$. That is, we can  assume $d = 0$ at the price of making smaller the value of $\lambda$. 
 \end{comentario}
 
   
@@ -356,7 +359,7 @@ where $b_1(t)=b(t)+ K\Phi\left(d(t) \right)\in L^1_1([0,T])$. A similar fact hol
 \[ c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+d(t)\right) \leq c_1(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}\right),\]
 where, as consequence of Lemma \ref{phi_comp} and the $\Delta_2$ condition for $\Phi$, we have   $c_1(t):=c(t)+K\varphi\left(d(t)\right)\in \lpsi_1$. 
 
-The following  example shows that the condition $\Delta_2$ is essential in the previous discussion. Let $\Phi(s)=e^s-s-1$ and let $d$ be a function in $\lphi_1\setminus L^{\infty}_1$. We suppose that there exists $K>0$ and $b\in L^1_1$ such that $\Phi(s+d(t))\leq K \Phi(s)+b(t)$.  This inequality implies for sufficient large $s$ that $\frac12e^se^{d(t)}\leq Ke^s+b(t)$. As $d\notin L^{\infty}_1$ we can fix $t$ with $e^{b(t)}>4K$. Hence, we obtain $2Ke^s\leq Ke^s+b(t)$. Which is 
+The following  example shows that the condition $\Delta_2$ is essential in the previous discussion. Let $\Phi(s)=e^s-s-1$ and let $d$ be a function in $\lphi_1\setminus L^{\infty}_1$. We suppose that there exists $K>0$ and $b\in L^1_1$ such that $\Phi(s+d(t))\leq K \Phi(s)+b(t)$.  This inequality implies for sufficient large $s$ that $\frac12e^se^{d(t)}\leq Ke^s+b(t)$. As $d\notin L^{\infty}_1$ we can fix $t$ with $e^{b(t)}>4K$. Hence, we obtain $2Ke^s\leq Ke^s+b(t)$, which is 
 evidently false as the limit $s\to +\infty$ shows.   
 
 \end{comentario}
@@ -478,9 +481,9 @@ D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})$. Indeed, we set $\b{u}_n,\b{u}\in \do
 \begin{split}
 \left\langle  I'(\b{u}_{n}),\b{v} \right\rangle &= \int_0^T \left\{  D_{\b{x}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot
 \b{v} +
- D_{\b{y}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot\dot{\b{v}}\right\} \ dt\\
+ D_{\b{y}}\mathcal{L}\left(t,\b{u}_n,\b{\dot{u}}_n\right)\ccdot\b{\dot{v}}\right\} \ dt\\
 &\rightarrow \int_0^T \left\{ D_{\b{x}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot \b{v}+ 
-D_{\b{y}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot\dot{\b{v}}\right\} \ dt\\
+D_{\b{y}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot\b{\dot{v}}\right\} \ dt\\
 &=\left\langle  I'(\b{u}),\b{v} \right\rangle.
 \end{split}
 \]
@@ -552,92 +555,82 @@ We recall the following usual definition in the context  of calculus of variatio
 
 It is well known that coercitivity is an ingredient useful in order to establish existence of minima. Therefore we are interestent in finding conditions which insure the coercitivityof the action integral $I$ acting on $\domi$. For this purpose we need to introduce the following  extra condition on Lagrange function $\mathcal{L}$  
 \begin{equation}\label{cota_inf}
-\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}-c_0(t)\right)-b_0(t)a_0(|\b{x}|),
+\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+F(t,\b{x}),
 \end{equation}
-where $\alpha_0,\Lambda>0$, $b_0\in L^1_1([0,T])$ and $a_0\in C(\rr^+,\rr^+)$.  
+where $\alpha_0,\Lambda>0$ and $F:\rr\times\rr^n\to\rr$ is a Caratheory function.  
 
 
 
 As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf},  the coercitivity of the action integral $I$ is related to the coercitivity of the functional
 \begin{equation}\label{func_phi}
-  J(\b{u}):=\int_0^T\Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt-C\|\b{u}\orlnor,
+  J_C(\b{u}):=\int_0^T\Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt-C\|\b{u}\orlnor,
 \end{equation}
-for any $C>0$. If $\Phi(x)=|x|^p/p$ then $J$ is clearly coercitive. For more general $\Phi$ the situation is more interesting   as will be shown by the following lemma.
+for $C>0$. If $\Phi(x)=|x|^p/p$ then $J_C$ is clearly coercitive. For more general $\Phi$ the situation is more interesting   as will be shown by the following lemma.
 
-\begin{thm} Let $\Phi$ and $\Psi$ complementary $N$-functions. Then
+\begin{lem} Let $\Phi$ and $\Psi$ complementary $N$-functions. Then
 \begin{enumerate}
-  \item If $\Psi \in \Delta_2$ if and only if 
-$\lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}=\infty$
+  \item If $C\Lambda<1$ then $J_C$ is coercitive. 
+  
+  \item If $\Psi$ is $\Delta_2$ global, then there exist $\mu>1$ such that
+\begin{equation}\label{coer_modular} \lim\limits_{\|\b{u}\orlnor \to \infty} \frac{\rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)}{\|\b{u}\orlnor^{\mu}}=+\infty.
+\end{equation}
+In particular, the functional $J_C$ is coercitive for every $C>0$.
+\item If $J_C$ is coercitive with $C\Lambda>1$, then $\Psi$ is $\Delta_2$ at infinity.  
 \end{enumerate}
-\end{thm}
+\end{lem}
 
-\begin{proof}
-$\Rightarrow)$
-$\Psi \in \Delta_2^0$ if and only if $\Phi \in \nabla_2$ see \cite[Th.3 , pp. 22-23 ]{rao1991theory}. 
-Then, there exists $k>2$ such that 
-%$\Phi(2x)\geq k \Phi(x)$ for every $x>0$ and consequently
-$\Phi(2^n x)\geq k^n \Phi(x)$ for every $x>0$.
-\\
-If $\lambda>1$, there exists  $n\in \nn$ such that $2^n\leq \lambda <2^{n+1}$
-and consequently
-%$n\leq \log_2\lambda <n+1$ and 
-$\Phi(\lambda x)\geq 
-%\Phi(2^n x)\geq 
-%k^n \Phi(x)\geq k^{\log_2\lambda-1}\Phi(x)=
-k^{-1}\lambda^{\nu}\Phi(x)$
-where  $k=2^{\nu}$ with $\nu>1$. 
-%because $k>2$. 
-In that way, we have 
+\begin{proof} Using \eqref{amemiya} we obtain
+\[(1-C\Lambda)\|\b{u}\orlnor+C\Lambda\|\b{u}\orlnor\leq \Lambda +\Lambda \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right).\]
+Then
+\[\frac{(1-C\Lambda)}{\Lambda}\|\b{u}\orlnor-1\leq \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)- C\|\b{u}\orlnor=J_C(\b{u}).\]
+This show that $J_C$ is coercitive, and therefore it proves item 1.  
+
+In virtue of \cite[Eq. (2.8)]{AGMS}, the $\Delta_2$ condition for $\Psi$, \cite[Th 11.7]{M} and \cite[Cor. 11.6]{M} we obtain a constant $K>0$ and $\nu>1$ such that for any $s\geq 0$ and $\lambda>1$ 
 \begin{equation}\label{delta2-consecuencia}
-\Phi(\lambda x)\geq C_2\lambda^{\nu}\Phi(x) \;\;\mbox{with}\;\;\lambda>1.
+\Phi(r s)\geq Kr^{\nu}\Phi(s).
 \end{equation}
-We also know, by \cite[Th. 10.5, pp. 92 ]{KR}, that
-\begin{equation}\label{norma-orlicz-cota}
-\|u\orlnor\leq \frac{1}{\lambda}\left(1+\int_0^T \Phi(\lambda|u|)\,dx\right)
-\;\;\mbox{for every}\;\;\lambda>0.
-\end{equation}
-Let $\lambda<1$. Then, from \eqref{delta2-consecuencia} and \eqref{norma-orlicz-cota}, we get
+Let $1<\mu<\nu$ and consider $r>\Lambda$ that later will be specify.  Then, from \eqref{delta2-consecuencia} and \eqref{amemiya}, we get
 \[
-\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}
-%=
-%\frac{\int_0^T \Phi(\frac{1}{\lambda}\lambda |u|)\,dx}{\|u\orlnor}
-\geq
-\frac{C_2}{\lambda^{\nu}}\frac{\int_0^T \Phi(\lambda|u|)\,dx}{\|u\orlnor}
-\geq 
-%\frac{C_2}{\lambda^{\nu}}\frac{\lambda \|u\orlnor-1}{\|u\orlnor}=
-\frac{C_2}{\lambda^{\nu-1}}\left(1-\frac{1}{\lambda \|u\orlnor}\right).
+\begin{split}
+\frac{\int_0^T \Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt}{\|\b{u}\orlnor^{\mu}}
+&\geq
+K \left(\frac{r}{\Lambda}\right)^{\nu}\frac{\int_0^T \Phi(r^{-1}|\b{u}|)dt}{\|\b{u}\orlnor^{\mu}}\\
+&\geq
+K \left(\frac{r}{\Lambda}\right)^{\nu}\frac{r^{-1}\|\b{u}\orlnor-1}{\|\b{u}\orlnor^{\mu}}\\
+\end{split}
 \]
-As $\|u\orlnor \to \infty$, we choose $\lambda=\frac{2}{\|u\orlnor}>1$ and  thus 
-\[
-\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\geq
-C (\|u\orlnor)^{\nu-1}\to \infty
-\]
-because $\nu>1$.
+We choose $r=\|\b{u}\orlnor/2$. Since $\|\b{u}\orlnor\to+\infty$   we can assume $\|\b{u}\orlnor>2$.  Thus $r>1$ and 
 
-$\Leftarrow)$ Assume that $\Psi \notin \Delta_2$.
-\\
-Now, by \cite[Th. 4.2, pp. 24]{KR},  there exists a sequence of real  numbers  $r_n$ such that
+\[
+\frac{\int_0^T \Phi\left(\frac{|\b{u}|}{\Lambda}\right) dt}{\|\b{u}\orlnor^{\mu}}\geq
+\frac{K}{2^{\nu}\Lambda^{\nu}} \|\b{u}\orlnor^{\nu-\mu}\to +\infty\quad\text{for }\|\b{u}\orlnor\to+\infty,
+\]
+because $\nu>\mu$.
+
+In order to prove the last item, we assume that $\Psi \notin \Delta_2$ at infinity. By \cite[Th. 4.2]{KR},  there exists a sequence of real  numbers  $r_n$ such that
 $r_n \to \infty$ and 
-\[
+\begin{equation}\label{eq: un-_tiende_inf}
 \lim\limits_{n \to \infty} \frac{r_n \psi(r_n)}{\Psi(r_n)}=+\infty.
-\]
-Now, we choose
-$u_n=\psi(r_n)\chi_{[0,\frac{1}{\Psi(r_n)}]}$, then 
-by \cite[pp. 72]{KR}, we get 
+\end{equation}
+Now, we choose $\b{u}_n$, such that
+$|\b{u}_n|=\Lambda\psi(r_n)\chi_{[0,\frac{1}{\Psi(r_n)}]}$, then 
+by \cite[Eq. (9.11)]{KR}, we get 
 \[
-\|u_n\orlnor =\frac{\psi(r_n)}{\Psi(r_n)}\Psi^{-1}(\Psi(r_n))=
-\frac{r_n\psi(r_n)}{\Psi(r_n)}\to \infty\;\;\mbox{as}\;\;n \to \infty.
+\|\b{u}_n\orlnor =\Lambda\frac{\psi(r_n)}{\Psi(r_n)}\Psi^{-1}(\Psi(r_n))=
+\Lambda\frac{r_n\psi(r_n)}{\Psi(r_n)}\to \infty,\quad\text{as}\quad n \to \infty.
 \]
-Next, using Young's equality, we have
+Next, using Young's equality (see \cite[Eq. (2.7)]{KR}), we have
 \[
-\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}=
-\frac{\Phi(\psi(r_n))[\Psi(r_n)]^{-1}}{\frac{r_n\psi(r_n)}{\Psi(r_n)}}=
-\frac{r_n\psi(r_n)-\Psi(r_n)}{r_n\psi(r_n)}=1-\frac{\Psi(r_n)}{r_n\psi(r_n)}.
+\begin{split}
+J_C(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)-C\|\b{u}_n\orlnor\\
+&=
+\frac{1}{\Psi(r_n)}\left[\Phi(\psi(r_n))  -C\Lambda r_n\psi(r_n)\right)\\
+&=
+\frac{1}{\Psi(r_n)} \left[ r_n\psi(r_n)-\Psi(r_n)- C\Lambda r_n\psi(r_n) \right]\\
+&=\frac{(1- C\Lambda) r_n\psi(r_n)}{\Psi(r_n)}-1.
+\end{split}
 \]
-As $\frac{\Psi(r_n)}{r_n\psi(r_n)}\to 0$ when $r_n \to \infty$, then 
-$\frac{\int_0^T \Phi(u_n)}{\|u_n\orlnor}$ is bounded and therefore
-$\lim\limits_{\|u\orlnor \to \infty} 
-\frac{\int_0^T \Phi(|u|)\,dx}{\|u\orlnor}\neq \infty$.
+From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_C(\b{u}_n)\to+\infty$, which is a contradiction.
 \end{proof}
 
 
@@ -648,48 +641,41 @@ $\lim\limits_{\|u\orlnor \to \infty}
 
 
 \begin{thm}\label{coercitividad1}
-Sea $\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x})$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions and that there exists $f \in L^1$  such that
+Let  $\mathcal{L}$ be a Lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf}. We assume that the function $F$ in \eqref{cota_inf} satisfies the following conditions 
+\begin{enumerate}
+\item There exists $f \in L^1_1$  such that
 \[
-\left|\nabla F(t,\b{x}) \right|\leq f(t)
+\left|D_{\b{x}} F(t,\b{x}) \right|\leq f(t)
 \]
-for a.e. $t \in [0,T]$ and all $\b{x}\in \mathbb{R}^n $ with $f$ satisfying
-\begin{equation}\label{cota}
-\|f\|_{L^1([0,T])}\leq\frac{1}{2\|1\|_{\lpsi([0,T])}}.
-\end{equation}
-If
+for a.e. $t \in [0,T]$ and all $\b{x}\in \mathbb{R}^n $. 
+\item 
 \begin{equation}\label{propiedad1coercividad}
 \int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
 \end{equation}
-then problem \eqref{ecualagran3} has at least one solution which minimizes the functional $I$ given by \eqref{integral_accion} on $\wphi$.
+\end{enumerate}
+
+In addition we suppose 
+\begin{enumerate}
+\item[3.]  $\Psi$ is $\Delta_2$ or 
+\begin{equation}\label{cotaC}C:=a_0^{-1}T\Psi^{-1}\left(\frac{1}{T}\right)\|f\|_{L^1}<1.
+\end{equation}
+Recall that the constant $a_0$ has been given in  \eqref{cota_inf}. 
+\end{enumerate}
+Then  the action integral $I$ is coercive.
 \end{thm}
 
-\begin{proof}
-For $\b{w} \in \wphi$, we write $\b{w}=\overline{\b{w}}+\widetilde{\b{w}}$ where $\overline{\b{w}} =\frac1T\int_0^T \b{w}(t)\ dt$.
-
-
-
-
-
-
+\begin{proof} In the following estimates we will use the descomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$ and the Wirtinger inequality \eqref{wirtinger}. 
 \[
 \begin{split}
-I(\b{u})=&\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
-=& \int_{0}^T (\mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))- \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t)))\ dt + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-=&\int_{0}^T \int_{0}^{1} \langle D_{\b{x}}\mathcal{L}(t,\overline{\b{u}}+s\widetilde{\b{u}}(t),\dot{\b{u}}(t)),\widetilde{\b{u}}(t)\rangle\ ds \ dt + + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-\geq &-\|f\|_{L^1}\|\widetilde{\b{u}}\|_{L^{\infty}} + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-\geq & -C_1\|f\|_{L^1}\|\dot{\widetilde{\b{u}}}\|_{\lphi} + \int_{0}^T
-\mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt\\
-\geq & -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} + \int_{0}^T \mathcal{L}(t,\overline{\b{u}},\dot{\b{u}}(t))\ dt.
+I(\b{u})&=\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
+&\geq a_0\int_0^T\Phi\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+F(t,\b{u})dt\\ 
+&=a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+ \int_0^TF(t,\b{u})-F(t,\b{\overline{u}})dt +  \int_0^TF(t,\b{\overline{u}})dt\\
+&=a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+ \int_0^T\int_0^1D_{\b{x}}F(t,\b{\overline{u}}+s\b{\tilde{u}})\ccdot\b{\tilde{u}}dsdt +  \int_0^TF(t,\b{\overline{u}})dt\\
+&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right) -T\Psi^{-1}\left(\frac{1}{T}\right)\|f\|_{L^1}\|\b{\dot{u}}\|_{\lphi} + \int_0^TF(t,\b{\overline{u}})dt\\
+&=a_0J_C(\b{\dot{u}})+ \int_0^TF(t,\b{\overline{u}})dt,
 \end{split}
 \]
-
-Cuando tomamos $\mathcal{L}$
-\[
-\mathcal{L}(t,\b{x},\b{y})=\Phi(|\b{y}|)+F(t,\b{x}).
-\]
+where $C$ is the constant defined in \eqref{cotaC}.
 
 \begin{comment}
 Para caso 1:
@@ -698,35 +684,6 @@ I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde
 \Phi(|\overline{\dot{\b{u}}}|)+F(t,\overline{\b{u}}).
 \]
 \end{comment}
-
-Tenemos
-\begin{equation}\label{eq:est_abajo_I}
-I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}}).
-\end{equation}
-Para $\b{w}$ denotemos por $\|| \b{w} \||_{\lphi}$ la norma de Luxembourg de $\b{w}$.
-
-Es sabido que que si $\|| \b{w} \||_{\lphi} \geq 1$ entonces $\int_{0}^T \Phi(|\b{w}|) \geq \|| \b{w} \||_{\lphi}$ y que $\|| \b{w}\||_{\lphi} \leq
-\|\b{w}\|_{\lphi}\leq 2\|| \b{w}\||_{\lphi}$. Entonces se tiene para $\||\b{u}\|| \geq 1$
-
-\[
-\begin{split}
-I(\b{u})&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\int_{0}^T \Phi(|\dot{\b{u}}|)+F(t,\overline{\b{u}})\\
-&\geq -C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\|| \dot{\b{u}} \||_{\lphi}+\int_{0}^TF(t,\overline{\b{u}})\\
-&\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi}+\frac{1}{2}\| \dot{\b{u}} \|_{\lphi}+\int_0^TF(t,\overline{\b{u}})\\
-&= \left(-C_1\|f\|_{L^1}+\frac{1}{2}\right)\|\dot{\b{u}}\|_{\lphi}+\int_{0}^{T}F(t,\overline{\b{u}}).
-\end{split}
-\]
-Therefore, if $\|\b{u}\sobnor \rightarrow \infty$ then $(|\overline{\b{u}}|^2+ \|\dot{\b{u}}\|_{\lphi})\rightarrow \infty$. If $|\overline{\b{u}}|^2 \rightarrow
-\infty$ by \eqref{propiedad1coercividad} we have $I(\b{u}) \rightarrow \infty$. If $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$ usamos \eqref{cota}. En efecto,
-
-Si $-C_1\|f\|_{L^1}+\frac{1}{2} \geq 0$, entonces $I(\b{u}) \rightarrow \infty$ cuando $\|\dot{\b{u}}\|_{\lphi}\rightarrow \infty$. Pero $-C_1\|f\|_{L^1}+\frac{1}{2}
-\geq 0$ si y solamente si $\|f\|_{L^1([0,T])}\leq\frac{1}{2 C_1}=\frac{1}{2\|1\|_{\lpsi([0,T])}}$, lo cual es justamente \eqref{cota}.
- ($C_1=\|1\|_{\lpsi([0,T])}$ por \eqref{estimacion2}).
-\end{proof}
-
-
-
-
 
 
 
@@ -829,337 +786,6 @@ In the sequel, we will discuss  the  conditions that guarantee the coercivity of
 
 
 
-\subsection{Condition that guarantees coercivity (a la antigua...sin $\lambda$!!!) }
-{\color{red}
-Habr\'ia que poner s\'olo el resultado que sigue, en lugar de TODOS los INTENTOS de la versi\'on de junio?????
-
-En la última secci\'on dej\'e los intentos previos en caso de que alguno deba ser rescatado del ostracismo.}
-
-
-\section{Algo para rescatar????}
-\begin{nota_fer}
-\textbf{Tenemos la conjetura que todo sale si pedimos $\Phi$ que satisface $\nabla_2$. Problema: probarla o refutarla} Un problema más amplio sería tratar de sacar hipótesis ya sea la condición $\Delta_2$ de alguna de las funciones ($\Phi$ o $\Psi$) o usar estas condiciones para el infinito o aún para cero(????).
-\end{nota_fer}
-
-
-We know that  $\Phi\in \Delta_2$ if and only if 
-for every $\epsilon>0$ there exists $C_\epsilon>0$ such that
-\begin{equation}\label{delta2-control-potencia}
-C^{-1}_\epsilon \min\{\lambda^{\alpha-\epsilon},\lambda^{\beta+\epsilon}\} \Phi(x)
-\leq \Phi(\lambda x)\leq
-C_\epsilon \max\{\lambda^{\alpha-\epsilon},\lambda^{\beta+\epsilon}\} \Phi(x)
-\end{equation}
-for every $x,\lambda>0$.
-
-Recall that by Theorem 11.11 in \cite{M} we have $p\leq \alpha\leq \beta\leq q$ where $\alpha,\beta$ are lower and upper Orlicz indices, and $p,q$ are lower and upper Simonenko indices.
-We also have that $\Phi,\Psi\in \Delta_2$ implies that $\Phi(x)\sim x\varphi(x)\sim \Psi(\varphi(x))$.
-
-By Theorem 4.3 in \cite{KR} or Corollary 4.4 in \cite{rao1991theory} we know that $p>1$ if and only if $\Phi \in \nabla_2$ and by  Theorem 11.7 in \cite{M} we have that $\beta<\infty$ if and only if $\Phi \in \Delta_2$.
-
-Theorem 10.4 in \cite{KR} says that if there exists $k^*$ such that $\int \Psi[\varphi(k^*|u|)]\,dx=1$, then $\|u{\orlnor}=\int \varphi(k^*|u|)|u|\,dx$.
-
-\begin{comentario}
-If $\varphi$ is a continuous function, then there exists $k^*$ in Theorem 4.3 of \cite{KR}. See \cite[pages 89, 90]{KR}.
-\end{comentario}
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{lem}\label{kn_0} Let $\Phi\in \nabla_2\cap\Delta_2$ and  $\{k_n\}$ such that $\int \Psi[\varphi(k_n|u_n|)]\,dx=1$. If
-$\|u_n{\orlnor}\to\infty $ as $n \to \infty$, then $k_n \to 0$ as $n \to \infty$.
-\end{lem}
-
-
-\begin{proof}
-Since $\Phi\in \nabla_2\cap\Delta_2$, then $\Psi \circ \varphi\in \Delta_2$ and \eqref{delta2-control-potencia} holds.
-
-Now, for such a sequence $k_n$ we have
-\begin{equation}
-1=\int \Psi[\varphi(k_n|u_n|)]\,dx\geq 
-C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\int \Psi(\varphi(|u_n|))\,dx
-\end{equation}
-for every $\epsilon>0$. Due to $\Phi \in \Delta_2$, there exists $C_{\Lambda}>0$ such that 
-\begin{equation}
-C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\int \Psi(\varphi(|u_n|))\,dx
-\geq 
-C_{\Lambda}C^{-1}_{\epsilon}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}
-\int \Phi(|u_n|)\,dx
-\end{equation}
-for every $\epsilon>0$. 
-\\
-As $\|u_n{\orlnor}\to\infty $ as $n \to \infty$, there exists $N\in \nn$ such that $\|u_n{\orlnor}\geq 1$ for every $n> N$
-and consequently 
-$\int \Phi(|u_n|)\,dx\geq \||u_n\||_{\lphi}$ for every $n> N$. 
-\\
-In that way, we have 
-\begin{equation}
-1 \geq C_{\Lambda}C_{\epsilon}^{-1}\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}
-\||u_n\||_{\lphi}
-\end{equation}
-for every $\epsilon>0$ and for every $n>N$. 
-\\
-{\color{violeta} In addition, $\alpha>1$ because $\Phi \in \nabla_2$}, then $\alpha-	\epsilon>0$ for every $0<\epsilon<1$.
-\\
-Now, we have
-\begin{equation}
-\frac{1}{C_{\Lambda}C_{\epsilon}^{-1} \|| u_n\||_{ \lphi}}\geq \min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}
-\end{equation}
-for every $n>N$ and provided that $\alpha-\epsilon>0$.
-\\
-Because of the 
-equivalence between Orlicz and Luxemburg norms, we have 
-$\||u_n\||_{\lphi}\to \infty$ as $n \to \infty$, 
-then
-\begin{equation}
-\min\{k_n^{\alpha-\epsilon},k_n^{\beta+\epsilon}\}\to 0\;\;\mbox{as}\;\;n\to \infty
-\end{equation}
-where $\alpha-\epsilon>0$ and $\beta+\epsilon>0$; therefore,  $k_n \to  0$ as $n \to \infty$.
-\end{proof}
-
-
-
-
-{\bf El resultado que sigue es v\'alido para cualquier funci\'on u?????}
-\begin{nota_fer}  Si me parece que habría que decir que entendemos por coercitivo en el teorema de abajo. Yo creo que la demostración \textbf{Problema: verificarlo y escribarlo} implica el sentido más fuerte de coercitividad
-\[\lim_{\|u\orlnor\to\infty}\frac{\int_0^T\Phi(|u_n|)dx}{\|u\orlnor}=\infty\]
-\end{nota_fer}
-
-\begin{thm}
-If $\Phi\in \Delta_2\cap \nabla_2$, then 
-the functional $u \to \int_0^t \Phi(|u|)\,dx$ is  coercive in $L^\Phi$.
-\end{thm}
-
-\begin{proof}
-Assume $\|u_n{\orlnor}\to\infty $ when $n\to \infty$ and 
-{\color{violeta} suppose that there exists $\{k_n\}$} such that 
-%\linebreak 
-$\int \Psi[\varphi(k_n|u_n|)]\,dx=1$.
-\\
-In that way, by Theorem 10.4 in \cite{KR}, we have
-\begin{equation}
-\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}=
-\int \Phi(|u_n|)\,dx-C\int \varphi(k_n|u_n|)|u_n|\,dx
-\end{equation}
-As $\Phi \in \Delta_2$, there exists $\Lambda_{\Phi}>0$ such that
-\begin{equation}
-\int \Phi(|u_n|)\,dx-\frac{C}{k_n}\int \varphi(k_n|u_n|)|u_n|k_n\,dx\geq 
-\int \Phi(|u_n|)\,dx-\frac{C\Lambda_{\Phi}}{k_n}\int \Phi(k_n|u_n|)\,dx\
-\end{equation}
-%%
-{\color{violeta} Since $\Phi\in \nabla_2$, then $\alpha>1$ \cite{KR,rao1991theory};
-now, we choose $\epsilon>0$ such that $\alpha-\epsilon>1$.}
-\\
-In addition,  by Lemma \ref{kn_0},   
-there exists $N \in \nn$ such that $k_n<1$ for every $n>N$ and therefore
-\begin{equation}
-\Phi(k_n |u_n|) \leq C_\epsilon k_n^{\alpha-\epsilon}\Phi(|u_n|)
-\end{equation}
-for every $n>N$ and where $\alpha-\epsilon>1$.
-\\
-Now, 
-\begin{equation}
-\int \Phi(|u_n|)\,dx-\frac{C\Lambda_{\Phi}}{k_n}
-\int \Phi(k_n|u_n|)\,dx
-\geq
-\left(1-C\Lambda_{\Phi}C_\epsilon k_n^{\alpha-\epsilon-1}\right)\int \Phi(|u_n|)\,dx
-\end{equation}
-with $\alpha-\epsilon-1>0$.
-\\
-As $\|u_n{\orlnor}\to\infty $, there exists $N_2\in \nn$ such  $\|u_n\orlnor>1$ for every $n>N_2$, then
-\begin{equation}
-\left(1-C\Lambda_{\Phi}C_\epsilon k_n^{\alpha-\epsilon-1}\right)\int \Phi(|u_n|)\,dx
-\geq 
-\left(1-C\Lambda_{\Phi}C_\epsilon k_n^{\alpha-\epsilon-1}\right)\|| u_n|\|_{\lphi}
-\end{equation}
-with $\alpha-\epsilon-1>0$.
-\\
-Finally, due to $\|u_n{\orlnor}\to\infty $, 
-we have $k_n^{\alpha-\epsilon-1}\to 0$, $\|| u_n|\|_{\lphi}\to \infty$ and consequently
-$\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}\to \infty$ for every $C>0$; that is, 
-the functional $u \to \int_0^t \Phi(|u|)\,dx$ is coercive in $L^\Phi$.
-\end{proof}
-
-\begin{nota_fer}
-Lamentablemente el libro de Rao pag. 43 dice que $\nabla'$ implica $\nabla_2$. Luego la primera parte de este terorema es consecuencia de la proposición anterior.
- El otro inciso si me parece que tiene sentido pues para ver que no es coercitiva basta mostrar contraejemplos. Este comentario no aporta problemas abiertos, solo es una observación de la redacción
-\end{nota_fer} 
-
-
-{\color{red}
-Sonia: Totalmente de acuerdo, por eso escrib\'i la observaci\'on al final de la prueba. Si el resultado usando $\nabla_2$ es correcto, el primer inciso sobra.}
-
-\begin{prop}
-{\color{violeta} Let $u$ be a characteristic function.
-\\
-If $\Phi \in \Delta_2\cap\nabla'$, then the functional $u \to \int_0^t \Phi(|u|)\,dx$ is coercive in $L^\Phi$.}
-\\
-If $\Phi \in \nabla_3$, then the functional (la suelen llamar {\color{violeta} modular}) $u \to \int_0^t \Phi(|u|)\,dx$ is not coercive in $L^\Phi$.
-\end{prop}
-
-\begin{proof}
-Let  $u=\alpha \chi_A$ with $\alpha \in \rr$  and where $A$ is a subset of $[0,T]$.
-\\
-Assume that 
-$\|u\orlnor \to \infty$ then $\|u\orlnor=\alpha\|\chi_A\orlnor=\alpha m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right) \to \infty$ and consequently $m(A) \Psi^{-1}\left(\frac{1}{m(A)}\right)\to  \infty$ as {\color{violeta} $m(A)\to 0$}.
-\\
-
-On the other hand, we have
-\begin{equation}
-\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)m(A)}{\alpha m(A) \Phi^{-1}(\frac{1}{m(A)})}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(\frac{1}{m(A)})}.
-\end{equation}
-Let $r=\frac{1}{m(A)}\geq \frac{1}{T}$, then $\alpha \frac{\Psi^{-1}(r)}{r}\to \infty$ as $\alpha, r\to \infty$ and
-\begin{equation}
-\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(r)}
-\end{equation}
-As $\Phi \in \nabla '$, there exists  $C_1>0$ such that $\Phi(xy)\geq C_1\Phi(x)\Phi(y)$ for every $x,y>0$.
-Taking $y=\frac{\alpha}{x}$, we have 
-$
-\Phi(\alpha)\geq C_1\Phi(x)\Phi(\frac{\alpha}{x})$ and choosing
-$x=\Phi^{-1}(r)$ we get 
-\begin{equation}\label{Phi-r-1}
-\frac{\Phi(\alpha)}{r}\geq C_1 \Phi\left(\frac{\alpha}{\Phi^{-1}(r)}\right).
-\end{equation}
-\\
-As $\Phi \in \Delta_2$, there exists $C_2>0$ such that 
-\begin{equation}\label{Phi-r-2}
-\Phi\left(\frac{\alpha}{\Phi^{-1}(r)}\right)\geq C_2 \frac{\alpha}{\Phi^{-1}(r)}\varphi\left(\frac{\alpha}{\Phi^{-1}(r)}\right).
-\end{equation}
-We also have that $r \leq \Phi^{-1}(r)\Psi^{-1}(r)\leq 2r$ for every $r>0$, then 
-\begin{equation}\label{Phi-r-3}
-C_2 \frac{\alpha}{\Phi^{-1}(r)}\varphi\left(\frac{\alpha}{\Phi^{-1}(r)}\right)\geq 
-C_2\frac{\alpha \Psi^{-1}(r)}{2r}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right).
-\end{equation}
-Thus, from \eqref{Phi-r-1}-\eqref{Phi-r-3},
-\begin{equation}
-\frac{\Phi(\alpha)}{r}\geq C_1 C_2\frac{\alpha \Psi^{-1}(r)}{2r}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right);
-\end{equation}
-and then ({\bf Ac\'a ten\'ia que despejar y no irme por la ramas!!!)}
-
-
-\begin{equation}
-\frac{\Phi(\alpha)}{\alpha\Psi^{-1}(r)}\geq \frac{C_1 C_2}{2}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right).
-\end{equation}
-{\color{violeta} Due to $\alpha\frac{\Psi^{-1}(r)}{r}\to \infty$ as $\alpha,r\to \infty$} and 
-the fact that $\varphi(x) \to \infty$ as $x \to \infty$, we obtain
-\begin{equation}
-\frac{C_1 C_2}{2}\varphi\left(\frac{\alpha \Psi^{-1}(r)}{2r}\right)\to \infty
-\end{equation}
-and consequently
-\begin{equation}
-\frac{\Phi(\alpha)}{\alpha\Psi^{-1}(r)}\to  \infty\;\;\mbox{as}\;\;\alpha,r\to \infty;
-\end{equation}
-that is, 
-\begin{equation}
-\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}\to\infty\;\;\mbox{as}\;\;\|u\orlnor\to \infty.
-\end{equation}
-Now, we will see that  $\nabla_3$ functions do not imply the wished coercivity
-in case of $u$ being a characteristic function.
-\begin{nota_fer} Me parece que es posible ver que no es coercitiva en el sentido más debil que
-\[\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}\]
-no tiende a infinito.\textbf{Demostrarlo}
-Por otra parte, notar que al final de la demostración se toma $\alpha=r$, como lo que estamos mostrando es un contraejemplo, no es necesario mantener la distinción entre $\alpha$ y $r$. Podríamos haber tomado de movida 
-\[u=u_r=r\chi_{[0,1/r]},\]
-\end{nota_fer}
-To do so, suppose there exists a function  $\Phi \in \nabla_3$ such that 
-\begin{equation}
-\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(r)}\to \infty\;\;\mbox{as}\;\;\|u\orlnor\to \infty,
-\end{equation}
-then 
-\begin{equation}\label{Phi-r-nabla3-1}
-\frac{\int \Phi(|u|)\,dx}{\|u\orlnor}=\frac{\Phi(\alpha)}{\alpha \Psi^{-1}(r)} 
-\leq 
-\frac{\Phi(\alpha)\Phi^{-1}(r)}{\alpha r}\to \infty \;\mbox{as}\;\;\|u\orlnor\to \infty
-\end{equation} 
-for any $\alpha>0$.
-\\
-However,  $\Phi \in \nabla_3$ if and only if there exists $C_3>0$ such that
- \begin{equation}
- \frac {\Phi(r)\Phi^{-1}(r)} {r^2} \leq C_3\;\;\mbox{for every}\;\;r>0
- \end{equation}
- which contradicts \eqref{Phi-r-nabla3-1} choosing $\alpha=r$.
- \\
- Therefore,  if $\Phi\in \nabla_3$ then the functional $u \to \int_0^t \Phi(|u|)\,dx$ 
-is not coercive in $L^{\Phi}$.
-\end{proof}
-
-
-
-
-
-\begin{rem}
-$\nabla'$ functions are a subset of $\nabla_2$ functions and 
-$\nabla_3$ functions belong to  the set of  $\Delta_2$ functions \cite[Chapter 2]{ rao1991theory}.
-\end{rem}
-
-We have just proved that 
-coercivity  in $L^\Phi$ for characteristic functions holds when
-$\Phi$ belongs  to a subclass of $\Delta_2$ functions.
-\\
-Nevertheless,  $\Delta_2$ condition is not sufficient  to get the wished coercivity in $L^\Phi$;
-in fact, $\nabla_3$ functions, which belong to the set of $\Delta_2$ functions, do not imply coercivity in $L^\Phi$.
-
-We can also see that $\Delta_2$ condition is not sufficient  to have coercivity in $L^\Phi$  providing a counterexample.
-\begin{nota_fer} Deje de entender. Al fin y al cabo, el de abajo sería un contraejemplo para mostrar la misma cosa que ya vimos en otro contraejemplo? 
-
-
-Pero se nos plantea este problema, la $\Phi$ del contraejemlo de abajo no será $\nabla_3$? Si fuese así lo que decimos abajo ya lo sabemos \textbf{Problema abierto: probar o refutar que la $\Phi$ es $\nabla_3$}
-\end{nota_fer}
-
-{\color{red}
-Sonia: En efecto, quise decir que como $\nabla_3$ implica $\Delta_2$, el ejemplo que viene a continuaci\'on es redundante para probar que $\Delta_2$ no implica coercividad.
-\\
-Por otra parte, en la p\'agina 39 del Rao dice que la funci\'on $\Psi$ que  usamos es $ \Delta_3$, luego $\Phi\in\nabla_3$ (ver Teorema 3 p\'agina 38 de Rao). Conclusi\'on: O ponemos el enunciado general para $\nabla_3$ o el contraejemplo que viene a continuaci\''on, porque dicen lo mismo.}
-
-{\color{green}  Hay una diferencia entre el enunciado general y el ejemplo de abajo. El ejemplo de abajo es un contraejemplo a la afirmación
-\begin{equation}\label{eq:paraborrar}
-\lim_{\|u\orlnor\to\infty}\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}=\infty
-\end{equation}
-Mientras que el resultado general lo es de
-\begin{equation}\label{eq:paraborrar2}\lim_{\|u\orlnor\to\infty}\frac{\int_0^T\Phi(|u_n|)dx}{\|u\orlnor}=\infty
-\end{equation}
-Como \eqref{eq:paraborrar2} implica \eqref{eq:paraborrar},  el contraejemplo de abajo no es consecuencia del resultado general. Además nosotros lo que necesitamos es \eqref{eq:paraborrar2}. Todo esto nos lleva a:
-
-\textbf{Problema abierto (jaja): ver si el enunciado general  sigue sirviendo con \eqref{eq:paraborrar}
-  }}
-
-
-
- In fact, suppose that $\Phi(r)=(r+1)\log(r+1)-r$  then $\Phi\in\Delta_2$; and, we also have $\Psi(r)=e^r-r-1$
-which is not a $\Delta_2$ function \cite[Chapter 1, pp 22]{rao1991theory}.
-\\
-Let $u_n=\frac{1}{m(A_n)}\chi_{A_n}$ where $A_n \subset[0,T]$ such that $m(A_n)\to 0$.
-\\
-If $r_n=\frac{1}{m(A_n)}$, we have
-\begin{equation}
-\int \Phi(|u_n|)\,dx-C\|u_n{\orlnor}=\frac{\Phi(r_n)}{r_n}-C\Psi^{-1}(r_n)
-\end{equation}
-then 
-\begin{equation}
-\begin{split}
-  \frac{\Phi(r_n)}{r_n}-C\Psi^{-1}(r_n) \leq \left(1+\frac{1}{r_n}\right)\log(r_n+1)-C\log(r_n+1)=
-	\\
-  \left(1+\frac{1}{r_n}-C\right)\log (r_n+1) 
-	\end{split}
-  \end{equation}
-Now, as $r_n$ goes to $\infty$, we get 
- \begin{equation}\label{eq:no_coerciva}
-  \lim\limits_{r_n \to \infty}
-	\left(\frac{\Phi(r_n)}{r_n}-C\Psi^{-1}(r_n)\right)  \leq  \left(1-C\right) \infty.
-  \end{equation}
-In that way, 
-$\int \Phi(|u_n|)\,dx-C\|u_n {\orlnor} $ is an  upper bounded function provided that $C>1$, which means that the functional
- $u \to \int_0^t \Phi(|u|)\,dx$ is not coercive in $L^\Phi$ for such a particular $\Delta_2$ function
-$\Phi$.
-
-{\bf Porque para tener coercividad, la expresi\'on no deber\'ia estar acotada para $C$ grande, es as\'i????}
 
 \bibliographystyle{plain}
 \bibliography{biblio}
