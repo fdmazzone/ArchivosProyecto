@@ -555,41 +555,39 @@ We recall the following usual definition in the context  of calculus of variatio
 
 It is well known that coercitivity is an ingredient useful in order to establish existence of minima. Therefore we are interestent in finding conditions which insure the coercitivityof the action integral $I$ acting on $\domi$. For this purpose we need to introduce the following  extra condition on Lagrange function $\mathcal{L}$  
 \begin{equation}\label{cota_inf}
-\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+F(t,\b{x}),
+\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
-where $\alpha_0,\Lambda>0$ and $F:\rr\times\rr^n\to\rr$ is a Caratheory function.  
-
-
+where $\alpha_0,\Lambda>0$ and  the function $F:\rr\times\rr^n\to\rr$ is measurable respect to $t$ for every fix  $\b{x}\in\rr^n$ and continuous in $\b{x}$ for a.e. $t\in [0,T]$.
 
 As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf},  the coercitivity of the action integral $I$ is related to the coercitivity of the functional
 \begin{equation}\label{func_phi}
-  J_C(\b{u}):=\int_0^T\Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt-C\|\b{u}\orlnor,
+  J_{C,\nu}(\b{u}):=\int_0^T\Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt-C\|\b{u}\orlnor^{\nu},
 \end{equation}
-for $C>0$. If $\Phi(x)=|x|^p/p$ then $J_C$ is clearly coercitive. For more general $\Phi$ the situation is more interesting   as will be shown by the following lemma.
+for $C,\nu>0$. If $\Phi(x)=|x|^p/p$ then $J_{C,\nu}$ is clearly coercitive for $\nu<p$. For more general $\Phi$ the situation is more interesting   as will be shown by the following lemma.
 
-\begin{lem} Let $\Phi$ and $\Psi$ complementary $N$-functions. Then
+\begin{lem}\label{lem_coer} Let $\Phi$ and $\Psi$ complementary $N$-functions. Then
 \begin{enumerate}
-  \item If $C\Lambda<1$ then $J_C$ is coercitive. 
+  \item If $C\Lambda<1$ then $J_{C,1}$ is coercitive. 
   
-  \item If $\Psi$ is $\Delta_2$ global, then there exist $\mu>1$ such that
+  \item If $\Psi$ is $\Delta_2$ global, then there exist a constant $\alpha_{\Phi}>1$ such that for any $0<\mu<\alpha_{\Phi}$,
 \begin{equation}\label{coer_modular} \lim\limits_{\|\b{u}\orlnor \to \infty} \frac{\rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)}{\|\b{u}\orlnor^{\mu}}=+\infty.
 \end{equation}
-In particular, the functional $J_C$ is coercitive for every $C>0$.
-\item If $J_C$ is coercitive with $C\Lambda>1$, then $\Psi$ is $\Delta_2$ at infinity.  
+In particular, the functional $J_{C,\mu}$ is coercitive for every $C>0$ and  $0<\mu<a_{\Phi}$. The constant $\alpha_{\Phi}$ is one of the so called \emph{ Matuszewska-Orlicz indices} (see \cite[Ch. 11]{M}).
+\item If $J_{C,1}$ is coercitive with $C\Lambda>1$, then $\Psi$ is $\Delta_2$ at infinity.  
 \end{enumerate}
 \end{lem}
 
 \begin{proof} Using \eqref{amemiya} we obtain
 \[(1-C\Lambda)\|\b{u}\orlnor+C\Lambda\|\b{u}\orlnor\leq \Lambda +\Lambda \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right).\]
 Then
-\[\frac{(1-C\Lambda)}{\Lambda}\|\b{u}\orlnor-1\leq \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)- C\|\b{u}\orlnor=J_C(\b{u}).\]
-This show that $J_C$ is coercitive, and therefore it proves item 1.  
+\[\frac{(1-C\Lambda)}{\Lambda}\|\b{u}\orlnor-1\leq \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)- C\|\b{u}\orlnor=J_{C,1}(\b{u}).\]
+This show that $J_{C,1}$ is coercitive, and therefore it proves item 1.  
 
-In virtue of \cite[Eq. (2.8)]{AGMS}, the $\Delta_2$ condition for $\Psi$, \cite[Th 11.7]{M} and \cite[Cor. 11.6]{M} we obtain a constant $K>0$ and $\nu>1$ such that for any $s\geq 0$ and $\lambda>1$ 
+In virtue of \cite[Eq. (2.8)]{AGMS}, the $\Delta_2$ condition for $\Psi$, \cite[Th 11.7]{M} and \cite[Cor. 11.6]{M} we obtain a constant $K>0$ and $\alpha_{\Phi}>1$ such that for any $0<\nu<\alpha_{\Phi}$, $s\geq 0$ and $r>1$ 
 \begin{equation}\label{delta2-consecuencia}
 \Phi(r s)\geq Kr^{\nu}\Phi(s).
 \end{equation}
-Let $1<\mu<\nu$ and consider $r>\Lambda$ that later will be specify.  Then, from \eqref{delta2-consecuencia} and \eqref{amemiya}, we get
+Let $1<\mu<\alpha_{\Phi}$ and we consider a constant $r>\Lambda$ that later will be specify.  Then, from \eqref{delta2-consecuencia} and \eqref{amemiya}, we get
 \[
 \begin{split}
 \frac{\int_0^T \Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt}{\|\b{u}\orlnor^{\mu}}
@@ -622,7 +620,7 @@ by \cite[Eq. (9.11)]{KR}, we get
 Next, using Young's equality (see \cite[Eq. (2.7)]{KR}), we have
 \[
 \begin{split}
-J_C(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)-C\|\b{u}_n\orlnor\\
+J_{C,1}(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)-C\|\b{u}_n\orlnor\\
 &=
 \frac{1}{\Psi(r_n)}\left[\Phi(\psi(r_n))  -C\Lambda r_n\psi(r_n)\right)\\
 &=
@@ -630,64 +628,56 @@ J_C(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)-C\|\b{u}_n\orl
 &=\frac{(1- C\Lambda) r_n\psi(r_n)}{\Psi(r_n)}-1.
 \end{split}
 \]
-From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_C(\b{u}_n)\to+\infty$, which is a contradiction.
+From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_{C,1}(\b{u}_n)\to+\infty$, which is a contradiction.
 \end{proof}
 
 
 
-
-
-
-
-
 \begin{thm}\label{coercitividad1}
-Let  $\mathcal{L}$ be a Lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf}. We assume that the function $F$ in \eqref{cota_inf} satisfies the following conditions 
+Let  $\mathcal{L}$ be a Lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf}. We assume  following conditions 
 \begin{enumerate}
-\item There exists $f \in L^1_1$  such that
-\[
-\left|D_{\b{x}} F(t,\b{x}) \right|\leq f(t)
-\]
-for a.e. $t \in [0,T]$ and all $\b{x}\in \mathbb{R}^n $. 
+\item There exists a non negative function  $b_1 \in L^1_1$ and a constant $\mu>0$  such that for any $\b{x_1},\b{x_2}\in\rr^n$ and a.e. $t\in [0,T]$
+\begin{equation}\label{holder_cont}
+  \left| F(t,\b{x_2})- F(t,\b{x_1}) \right|\leq b_1(t)(1+|\b{x_2}-\b{x_1}|^{\mu}).
+\end{equation}
+We suppose that the constant $\mu$ satisfies that $\mu< \alpha_{\Phi}$,  with $\alpha_{\Phi}$ as in Lemma \ref{lem_coer}, when $\Psi\in\Delta_2$ and that $\mu=1$  if $\Psi$ is an  arbitrary $N$-function. 
 \item 
 \begin{equation}\label{propiedad1coercividad}
 \int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
 \end{equation}
 \end{enumerate}
 
+
 In addition we suppose 
 \begin{enumerate}
-\item[3.]  $\Psi$ is $\Delta_2$ or 
-\begin{equation}\label{cotaC}C:=a_0^{-1}T\Psi^{-1}\left(\frac{1}{T}\right)\|f\|_{L^1}<1.
+\setcounter{enumi}{2}
+\item\label{hipot_coer}  $\Psi$ is $\Delta_2$ or 
+\begin{equation}\label{cotaC}C:=a_0^{-1}T\Psi^{-1}\left(\frac{1}{T}\right)\|b_1\|_{L^1}<1.
 \end{equation}
-Recall that the constant $a_0$ has been given in  \eqref{cota_inf}. 
 \end{enumerate}
+
+
 Then  the action integral $I$ is coercive.
 \end{thm}
 
-\begin{proof} In the following estimates we will use the descomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$ and the Wirtinger inequality \eqref{wirtinger}. 
-\[
+\begin{proof} In the following estimates we will use the descomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older and the Wirtinger inequality \eqref{wirtinger}. 
+\begin{equation}\label{cota_inf_I}
 \begin{split}
 I(\b{u})&=\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
 &\geq a_0\int_0^T\Phi\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+F(t,\b{u})dt\\ 
 &=a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+ \int_0^TF(t,\b{u})-F(t,\b{\overline{u}})dt +  \int_0^TF(t,\b{\overline{u}})dt\\
-&=a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+ \int_0^T\int_0^1D_{\b{x}}F(t,\b{\overline{u}}+s\b{\tilde{u}})\ccdot\b{\tilde{u}}dsdt +  \int_0^TF(t,\b{\overline{u}})dt\\
-&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right) -T\Psi^{-1}\left(\frac{1}{T}\right)\|f\|_{L^1}\|\b{\dot{u}}\|_{\lphi} + \int_0^TF(t,\b{\overline{u}})dt\\
-&=a_0J_C(\b{\dot{u}})+ \int_0^TF(t,\b{\overline{u}})dt,
+&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \int_0^Tb_1(t)(1+|\b{\tilde{u}}(t)|^{\mu})dt +  \int_0^TF(t,\b{\overline{u}})dt\\
+&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \|b_1\|_{L^1}(1+\|\b{\tilde{u}}\|_{L^{\infty}}^{\mu}) +  \int_0^TF(t,\b{\overline{u}})dt\\
+&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \|b_1\|_{L^1}\left(1+\left[T\Psi^{-1}\left(\frac{1}{T}\right)\right]^{\mu}\|\b{\dot u}\orlnor^{\mu}\right) \\
+&\quad+  \int_0^TF(t,\b{\overline{u}})dt\\
+&=a_0J_{C,\mu}(\b{\dot{u}})- \|b_1\|_{L^1}+ \int_0^TF(t,\b{\overline{u}})dt,
 \end{split}
-\]
-where $C$ is the constant defined in \eqref{cotaC}.
-
-\begin{comment}
-Para caso 1:
-\[
-I(\b{u})\geq-C_1\|f\|_{L^1}\|\dot{\b{u}}\|_{\lphi} -C_2\|g\|_{\lpsi}\|\widetilde{\dot{\b{u}}}\|_{\lphi}+\int_{0}^T
-\Phi(|\overline{\dot{\b{u}}}|)+F(t,\overline{\b{u}}).
-\]
-\end{comment}
-
-
-
-
+\end{equation}
+where $C=a_0^{-1}\left[T\Psi^{-1}\left(1/T\right)\right]^{\mu}\|b_1\|_{L^1}$.
+Suppose  $\b{u}_n$ a sequence in $\domi$ such that i) the  sequence  $\b{\overline{u}}_n$ is bounded in $\rr^n$ and ii) $\|\b{u}_n\sobnor\to\infty$. Then  the Wirtinger inequality \eqref{wirtinger} implies that $\|\b{\dot{u}}_n\orlnor\to\infty$. Therefore one of the following affirmation holds true $\|\b{\dot{u}}_n\orlnor\to\infty$ or $|\b{\overline{u}}_n|\to \infty$. On the other hand,  \eqref{holder_cont} and \eqref{propiedad1coercividad}
+imply that the integral $\int_0^TF(t,\b{\overline{u}}_n)dt$ is bounded from below.  These observations, the lower bound \eqref{cota_inf_I} of $I$, 
+assumption \ref{hipot_coer} in Theorem \ref{coercitividad1} and Lemma \ref{lem_coer} imply the desidered result.
+\end{proof}
 
 
 \section{Weak lower semicontinuity of actions integrals}
