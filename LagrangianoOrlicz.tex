@@ -19,6 +19,8 @@
 \usepackage{xcolor}
 \usepackage{adjustbox}
 %Teorema y similes
+\usepackage[maxnames=6,backend=bibtex]{biblatex}
+\bibliography{biblio.bib}
 
 \definecolor{rosa}{rgb}{1,0.3,0.9}
 \definecolor{violeta1}{rgb}{0.5,0.3,0.5}
@@ -557,13 +559,13 @@ It is well known that coercitivity is an ingredient useful in order to establish
 \begin{equation}\label{cota_inf}
 \mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
-where $\alpha_0,\Lambda>0$ and  the function $F:\rr\times\rr^n\to\rr$ is measurable respect to $t$ for every fix  $\b{x}\in\rr^n$ and continuous in $\b{x}$ for a.e. $t\in [0,T]$.
+where $\alpha_0,\Lambda>0$ and  the function $F:\rr\times\rr^n\to\rr$ is measurable respect to $t$ for every fixed  $\b{x}\in\rr^n$ and continuous in $\b{x}$ for a.e. $t\in [0,T]$.
 
 As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf},  the coercitivity of the action integral $I$ is related to the coercitivity of the functional
 \begin{equation}\label{func_phi}
   J_{C,\nu}(\b{u}):=\int_0^T\Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt-C\|\b{u}\orlnor^{\nu},
 \end{equation}
-for $C,\nu>0$. If $\Phi(x)=|x|^p/p$ then $J_{C,\nu}$ is clearly coercitive for $\nu<p$. For more general $\Phi$ the situation is more interesting   as will be shown by the following lemma.
+for $C,\nu>0$. If $\Phi(x)=|x|^p/p$ then $J_{C,\nu}$ is clearly coercitive for $\nu<p$. For more general $\Phi$ the situation is more interesting   as will be shown in the following lemma.
 
 \begin{lem}\label{lem_coer} Let $\Phi$ and $\Psi$ complementary $N$-functions. Then
 \begin{enumerate}
@@ -652,7 +654,7 @@ In addition we suppose
 \begin{enumerate}
 \setcounter{enumi}{2}
 \item\label{hipot_coer}  $\Psi$ is $\Delta_2$ or 
-\begin{equation}\label{cotaC}C:=a_0^{-1}T\Psi^{-1}\left(\frac{1}{T}\right)\|b_1\|_{L^1}<1.
+\begin{equation}\label{cotaC}a_0^{-1}T\Psi^{-1}\left(\frac{1}{T}\right)\|b_1\|_{L^1}<1.
 \end{equation}
 \end{enumerate}
 
@@ -777,9 +779,9 @@ In the sequel, we will discuss  the  conditions that guarantee the coercivity of
 
 
 
-\bibliographystyle{plain}
-\bibliography{biblio}
+%\bibliographystyle{plain}
+%\bibliography{biblio}
 
-%\printbibliography
+\printbibliography
 
 \end{document}
