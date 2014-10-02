@@ -555,13 +555,16 @@ We recall the following usual definition in the context  of calculus of variatio
 \begin{defi} Let $X$ be a Banach space and let $D$ be an unbounded subset of $X$. Suppose $J:D\subset X\to\rr$. We said that $J$ is \emph{coercitive} if $J(u)\to +\infty$ when $\|\b{u}\|\to +\infty$. 
 \end{defi}
 
-It is well known that coercitivity is an ingredient useful in order to establish existence of minima. Therefore we are interestent in finding conditions which insure the coercitivityof the action integral $I$ acting on $\domi$. For this purpose we need to introduce the following  extra condition on Lagrange function $\mathcal{L}$  
+It is well known that coercitivity is an ingredient useful in order to establish existence of minima. Therefore we are interestent in finding conditions which insure the coercitivity of the action integral $I$ acting on $\domi$. For this purpose we need to introduce the following  extra condition on Lagrange function $\mathcal{L}$  
 \begin{equation}\label{cota_inf}
 \mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
-where $\alpha_0,\Lambda>0$ and  the function $F:\rr\times\rr^n\to\rr$ is measurable respect to $t$ for every fixed  $\b{x}\in\rr^n$ and continuous in $\b{x}$ for a.e. $t\in [0,T]$.
+where $\alpha_0,\Lambda>0$ and  the function $F:\rr\times\rr^n\to\rr$ is measurable respect to $t$ for every fixed  $\b{x}\in\rr^n$ and continuously differentiable in $\b{x}$ for a.e. $t\in [0,T]$. We note that in virtue of \eqref{cota_inf} and \eqref{cotaL} we have that $F(t,\b{x})\leq a(|\b{x}|)b_0(t)$, with $b_0(t):=b(t)+\Phi(d(t))\in L^1_1([0,T])$. In order to ensure that integral $\int_0^TF(t,\b{u})dt$ be finite for $\b{u}\in\wphi$,  we need to assume 
 
-As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf},  the coercitivity of the action integral $I$ is related to the coercitivity of the functional
+\begin{equation}\label{condA1} |F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T] \text{ and all }\b{x}\in\rr^n.
+\end{equation}
+
+As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1},  the coercitivity of the action integral $I$ is related to the coercitivity of the functional
 \begin{equation}\label{func_phi}
   J_{C,\nu}(\b{u}):=\int_0^T\Phi\left(\frac{|\b{u}|}{\Lambda}\right)dt-C\|\b{u}\orlnor^{\nu},
 \end{equation}
@@ -624,7 +627,7 @@ Next, using Young's equality (see \cite[Eq. (2.7)]{KR}), we have
 \begin{split}
 J_{C,1}(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)-C\|\b{u}_n\orlnor\\
 &=
-\frac{1}{\Psi(r_n)}\left[\Phi(\psi(r_n))  -C\Lambda r_n\psi(r_n)\right)\\
+\frac{1}{\Psi(r_n)}\left[\Phi(\psi(r_n))  -C\Lambda r_n\psi(r_n)\right]\\
 &=
 \frac{1}{\Psi(r_n)} \left[ r_n\psi(r_n)-\Psi(r_n)- C\Lambda r_n\psi(r_n) \right]\\
 &=\frac{(1- C\Lambda) r_n\psi(r_n)}{\Psi(r_n)}-1.
@@ -633,21 +636,23 @@ J_{C,1}(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)-C\|\b{u}_n
 From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_{C,1}(\b{u}_n)\to+\infty$, which is a contradiction.
 \end{proof}
 
+We present two theorems establishing coercitivity of action integrals. 
+
 
 
 \begin{thm}\label{coercitividad1}
-Let  $\mathcal{L}$ be a Lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} and \eqref{cota_inf}. We assume  following conditions 
+Let  $\mathcal{L}$ be a Lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1}. We assume  following conditions 
 \begin{enumerate}
 \item There exists a non negative function  $b_1 \in L^1_1$ and a constant $\mu>0$  such that for any $\b{x_1},\b{x_2}\in\rr^n$ and a.e. $t\in [0,T]$
 \begin{equation}\label{holder_cont}
   \left| F(t,\b{x_2})- F(t,\b{x_1}) \right|\leq b_1(t)(1+|\b{x_2}-\b{x_1}|^{\mu}).
 \end{equation}
 We suppose that the constant $\mu$ satisfies that $\mu< \alpha_{\Phi}$,  with $\alpha_{\Phi}$ as in Lemma \ref{lem_coer}, when $\Psi\in\Delta_2$ and that $\mu=1$  if $\Psi$ is an  arbitrary $N$-function. 
-\item 
+\item
 \begin{equation}\label{propiedad1coercividad}
 \int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
 \end{equation}
-\item\label{hipot_coer}  $\Psi$ is $\Delta_2$ or the following inequality holds: $a_0^{-1}T\Psi^{-1}\left(1/T)\|b_1\|_{L^1}<1$.
+\item\label{hipot_coer}  $\Psi$ is $\Delta_2$ or the following inequality holds: $a_0^{-1}T\Psi^{-1}\left(1/T\right)\|b_1\|_{L^1}<1$.
 \end{enumerate}
 
 
@@ -673,6 +678,71 @@ imply that the integral $\int_0^TF(t,\b{\overline{u}}_n)dt$ is bounded from belo
 assumption \ref{hipot_coer} in Theorem \ref{coercitividad1} and Lemma \ref{lem_coer} imply the desidered result.
 \end{proof}
 
+
+\begin{thm}
+We assume the same hypothesis that in Theorem \ref{coercitividad1}, except condition \eqref{holder_cont}. Instead we suppose that $F(t,\cdot)$ is convex and differentiable for a.e. $t\in [0,T]$ and that the following inequality  holds
+\begin{equation}\label{condA2} |D_{\b{x}}F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T] \text{ and all }\b{x}\in\rr^n,
+\end{equation}
+with $a$ and $b_0$ as in \eqref{condA1}. Then $I$ is coercive. 
+
+\end{thm}
+\begin{comentario}  Inequalities \eqref{condA1} and \eqref{condA2} imply that $F$ satisfies condition (A) (see \cite[p. 12]{mawhin2010critical}).  
+\end{comentario}
+
+\begin{proof} We note that the function $F$ is under the same hypothesis that in \cite[Th. 1.7]{mawhin2010critical}. Therefore, attending to \cite[p. 18, Eq. 20]{mawhin2010critical} we get $\b{x}_0$ such that 
+\[
+ \int_0^T \nabla F(t,\b{x}_0) dt=0.
+\]
+
+
+\[
+\begin{split}
+I(u_n)&=\int_{0}^T \Phi(|\dot{\b{u}}_n|)+F(t,{\b{u}}_n)  dt \\
+&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot (u_n-x_0) dt\\
+&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot (\overline{u}_n +\widetilde{u}_n -x_0) dt\\
+&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot \widetilde{u}_n dt+ \int_0^T \nabla F (t,x_0) \cdot (\overline{u}_n  -x_0) dt\\
+&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot \widetilde{u}_n dt+ 0.
+\end{split}
+\]
+Donde $u_n = \overline{u}_n +\widetilde{u}_n $, con $\overline{u}_n =(1/T)\int_0^T u_n (t) dt$. Aplicando la desigualdad de Hölder
+
+\[
+\begin{split}
+I(u_n)&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt -\| \nabla F (t,x_0)\|_1 
+\| \widetilde{u}_n\|_{\infty}\\
+&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt-c_1 -c_2 \|\dot{u}_n  \|_{\Phi} .
+\end{split}
+\]
+Como $\Psi$ es $\Delta_2$ entonces $\int \Phi(\dot{u}_n|)\,dx-C\|\dot{u}_n{\orlnor} \to \infty$ cuando $\|\dot{u}_n{\orlnor} \to \infty$.
+Esto implica que existe una constante $c_3$  tal que $\|\dot{u}_n{\orlnor} \leq c_3$. Como el promedio de $\widetilde{u}_n$ es cero, se tiene
+\begin{equation}\label{cotatilde}
+\| \widetilde{u}_n\|_{\infty} \leq c \| \dot{\widetilde{u}}_n\|_{\Phi} = c(T)\| \dot{u}_n\|_{\Phi} \leq c_4.
+\end{equation}
+
+Por la convexidad de $F$
+\[
+F(t, \overline{u}_n /2)=F(t,(1/2)(u_n - \widetilde{u}_n)) \leq (1/2)F(t,u_n) + (1/2) F(t, -\widetilde{u}_n).
+\]
+Entonces,
+
+
+\[
+\begin{split}
+I(u_n) &\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+2 \int_0^T F(t,\overline{u}_n /2) dt - \int_0^T F(t, -\widetilde{u}_n) dt\\
+& \geq 0 +2 \int_0^T F(t,\overline{u}_n /2) dt - \int_0^T F(t, -\widetilde{u}_n) dt.
+\end{split}
+\]
+Por propiedad de acotación de la $F$: $( |F(t,x)|\leq a(|x|)b(t) )$ y ladesigualdad \eqref{cotatilde} se sigue que existe $c_5$ tal que
+\[
+\begin{split}
+I(u_n) &\geq 2 \int_0^T F(t,\overline{u}_n /2) dt - c_5.
+\end{split}
+\]
+Luego, por \eqref{propiedad1coercividad} se sigue que $\{\overline{u}_n \}$ esta acotado. Luego $\{u_n\}$ es acotada y así, toda sucesión minimizante resulta acotada.
+
+
+
+\end{proof}
 
 \section{Weak lower semicontinuity of actions integrals}
 
