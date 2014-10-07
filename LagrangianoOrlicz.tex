@@ -261,7 +261,7 @@ We will use repeatedly the following elementary consequence of the previous lemm
 \begin{cor}\label{a_bound} If $a\in C(\mathbb{R}^+,\mathbb{R}^+)$ then $\b{a}:\wphi_n\to L^{\infty}_1([0,T])$ is bounded. More concretely  there exists a non decreasing function $c:\mathbb{R}^+\to\mathbb{R}^+$ such that
  $\|\b{a}(\b{u})\|_{L^{\infty}([0,T])}\leq c(\|\b{u}\|_{\wphi})$.
 \end{cor}
-\begin{proof}  Let $\alpha$ be a  non-decreasing mayorant of $a$, for example $\alpha(s):=\sup_{0\leq t\leq s}a(t)$.  If $\b{u}\in \wphi_n$ then by Lemma \ref{inclusion orlicz} 
+\begin{proof}  Let $\alpha\in C(\mathbb{R}^+,\mathbb{R}^+)$ be a  non-decreasing mayorant of $a$, for example $\alpha(s):=\sup_{0\leq t\leq s}a(t)$.  If $\b{u}\in \wphi_n$ then by Lemma \ref{inclusion orlicz} 
 \[a(|\b{u}(t)|)\leq \alpha(\|\b{u}\|_{L^{\infty}})\leq a\left(\Psi^{-1}\left(\frac{1}{T}\right)\max\{1,T\} \|\b{u}\|_{\wphi}\right)=: c(\|\b{u}\|_{\wphi}).\]
 \end{proof}
 
@@ -652,97 +652,71 @@ We suppose that the constant $\mu$ satisfies that $\mu< \alpha_{\Phi}$,  with $\
 \begin{equation}\label{propiedad1coercividad}
 \int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
 \end{equation}
-\item\label{hipot_coer}  $\Psi$ is $\Delta_2$ or the following inequality holds: $a_0^{-1}T\Psi^{-1}\left(1/T\right)\|b_1\|_{L^1}<1$.
+\item\label{hipot_coer}  $\Psi\in\Delta_2$ or, alternatively, the following inequality $\alpha_0^{-1}T\Psi^{-1}\left(1/T\right)\|b_1\|_{L^1}<1$.
 \end{enumerate}
-
-
 Then  the action integral $I$ is coercive.
 \end{thm}
 
-\begin{proof} In the following estimates we will use the descomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older and the Wirtinger inequality \eqref{wirtinger}. 
+\begin{proof} In the following estimates we will use \eqref{cota_inf}, the descomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older and the Wirtinger inequality \eqref{wirtinger}. 
 \begin{equation}\label{cota_inf_I}
 \begin{split}
-I(\b{u})&=\int_{0}^T \mathcal{L}(t,\b{u}(t),\dot{\b{u}}(t))\ dt\\
-&\geq a_0\int_0^T\Phi\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+F(t,\b{u})dt\\ 
-&=a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+ \int_0^TF(t,\b{u})-F(t,\b{\overline{u}})dt +  \int_0^TF(t,\b{\overline{u}})dt\\
-&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \int_0^Tb_1(t)(1+|\b{\tilde{u}}(t)|^{\mu})dt +  \int_0^TF(t,\b{\overline{u}})dt\\
-&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \|b_1\|_{L^1}(1+\|\b{\tilde{u}}\|_{L^{\infty}}^{\mu}) +  \int_0^TF(t,\b{\overline{u}})dt\\
-&\geq a_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \|b_1\|_{L^1}\left(1+\left[T\Psi^{-1}\left(\frac{1}{T}\right)\right]^{\mu}\|\b{\dot u}\orlnor^{\mu}\right) \\
+I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+\int_0^TF(t,\b{u})dt\\ 
+&=\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+ \int_0^TF(t,\b{u})-F(t,\b{\overline{u}})dt +  \int_0^TF(t,\b{\overline{u}})dt\\
+&\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \int_0^Tb_1(t)(1+|\b{\tilde{u}}(t)|^{\mu})dt +  \int_0^TF(t,\b{\overline{u}})dt\\
+&\geq \alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \|b_1\|_{L^1}(1+\|\b{\tilde{u}}\|_{L^{\infty}}^{\mu}) +  \int_0^TF(t,\b{\overline{u}})dt\\
+&\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)- \|b_1\|_{L^1}\left(1+\left[T\Psi^{-1}\left(\frac{1}{T}\right)\right]^{\mu}\|\b{\dot u}\orlnor^{\mu}\right) \\
 &\quad+  \int_0^TF(t,\b{\overline{u}})dt\\
-&=a_0J_{C,\mu}(\b{\dot{u}})- \|b_1\|_{L^1}+ \int_0^TF(t,\b{\overline{u}})dt,
+&=\alpha_0J_{C,\mu}(\b{\dot{u}})- \|b_1\|_{L^1}+ \int_0^TF(t,\b{\overline{u}})dt,
 \end{split}
 \end{equation}
-where $C=a_0^{-1}\left[T\Psi^{-1}\left(1/T\right)\right]^{\mu}\|b_1\|_{L^1}$.
+where $C=\alpha_0^{-1}\left[T\Psi^{-1}\left(1/T\right)\right]^{\mu}\|b_1\|_{L^1}$.
 Suppose  $\b{u}_n$ a sequence in $\domi$ such that i) the  sequence  $\b{\overline{u}}_n$ is bounded in $\rr^n$ and ii) $\|\b{u}_n\sobnor\to\infty$. Then  the Wirtinger inequality \eqref{wirtinger} implies that $\|\b{\dot{u}}_n\orlnor\to\infty$. Therefore one of the following affirmation holds true $\|\b{\dot{u}}_n\orlnor\to\infty$ or $|\b{\overline{u}}_n|\to \infty$. On the other hand,  \eqref{holder_cont} and \eqref{propiedad1coercividad}
 imply that the integral $\int_0^TF(t,\b{\overline{u}}_n)dt$ is bounded from below.  These observations, the lower bound \eqref{cota_inf_I} of $I$, 
 assumption \ref{hipot_coer} in Theorem \ref{coercitividad1} and Lemma \ref{lem_coer} imply the desidered result.
 \end{proof}
 
-
-\begin{thm}
-We assume the same hypothesis that in Theorem \ref{coercitividad1}, except condition \eqref{holder_cont}. Instead we suppose that $F(t,\cdot)$ is convex and differentiable for a.e. $t\in [0,T]$ and that the following inequality  holds
+Following \cite{mawhin2010critical} we said that $F$ satisfies the condition (A) if it satisfies \eqref{condA1} and 
 \begin{equation}\label{condA2} |D_{\b{x}}F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T] \text{ and all }\b{x}\in\rr^n,
 \end{equation}
-with $a$ and $b_0$ as in \eqref{condA1}. Then $I$ is coercive. 
+The following result was proved in \cite[p. 18]{mawhin2010critical}. 
+\begin{lem}\label{lema_pto_cri} Suppose that $F$ satisfies condition (A),\eqref{propiedad1coercividad}, that $F(t,\cdot)$ is  differentiable and convex  a.e. $t\in [0,T]$. Then there exists $\b{x}_0\in\rr^n$ such that
+\begin{equation}\label{der_cero}
+ \int_0^T D_{\b{x}} F(t,\b{x}_0) dt=0.
+\end{equation}
+\end{lem}
+
+
+\begin{thm}
+Let $\mathcal{L}$ be as in Theorem \ref{coercitividad1} and  $F$ as in Lemma \ref{lema_pto_cri}. In addition assume $\Psi\in\Delta_2$ or, alternatively, the following inequality $\alpha_0^{-1}T\Psi^{-1}\left(1/T\right)a(|\b{x}_0|)\|b_0\|_{L^1}<1$, with $a$ and $b_0$ as in \eqref{condA1} and $\b{x}_0\in\rr^n$  any point satisfying  \eqref{der_cero}. Then $I$ is coercive. 
 
 \end{thm}
-\begin{comentario}  Inequalities \eqref{condA1} and \eqref{condA2} imply that $F$ satisfies condition (A) (see \cite[p. 12]{mawhin2010critical}).  
-\end{comentario}
-
-\begin{proof} We note that the function $F$ is under the same hypothesis that in \cite[Th. 1.7]{mawhin2010critical}. Therefore, attending to \cite[p. 18, Eq. 20]{mawhin2010critical} we get $\b{x}_0$ such that 
-\[
- \int_0^T \nabla F(t,\b{x}_0) dt=0.
-\]
 
 
-\[
+\begin{proof}  Using \eqref{cota_inf}, \cite[Eq. 18, p. 17]{mawhin2010critical},  descomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$,  \eqref{der_cero}, \eqref{holder} and  \eqref{wirtinger} we deduce
+
+\begin{equation}\label{cota_con _upunto}
 \begin{split}
-I(u_n)&=\int_{0}^T \Phi(|\dot{\b{u}}_n|)+F(t,{\b{u}}_n)  dt \\
-&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot (u_n-x_0) dt\\
-&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot (\overline{u}_n +\widetilde{u}_n -x_0) dt\\
-&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot \widetilde{u}_n dt+ \int_0^T \nabla F (t,x_0) \cdot (\overline{u}_n  -x_0) dt\\
-&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt + \int_0^T \nabla F (t,x_0) \cdot \widetilde{u}_n dt+ 0.
+I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+\int_0^T F(t,\b{x}_0) dt + \int_0^T D_{\b{x}} F (t,\b{x}_0) \ccdot (\b{u}-\b{x}_0) dt\\
+&\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right) +\int_0^T F(t,\b{x}_0) dt + \int_0^TD_{\b{x}}F (t,\b{x}_0) \ccdot \b{\widetilde{u}} dt\\
+&\quad + \int_0^T D_{\b{x}} F (t,x_0) \ccdot (\b{\overline{u}}  -\b{x}_0) dt\\
+&\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)+\int_0^T F(t,\b{x}_0) dt + \int_0^T D_{\b{x}} F (t,\b{x}_0) \ccdot \b{\widetilde{u}} dt\\
+&\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)-a(|\b{x}_0|)\|b_0\|_{L^1} -a(|\b{x}_0|)\|b_0\|_{L^1}T\Psi^{-1}\left(\frac{1}{T}\right) \|\b{\dot{u}}  \|_{\Phi}\\
+&= \alpha_0^{-1}J_{C,1}(\b{\dot{u}})-a(|\b{x}_0|)\|b_0\|_{L^1} .
 \end{split}
-\]
-Donde $u_n = \overline{u}_n +\widetilde{u}_n $, con $\overline{u}_n =(1/T)\int_0^T u_n (t) dt$. Aplicando la desigualdad de Hölder
+\end{equation}
+with $C:=\alpha_0^{-1}a(|\b{x}_0|)\|b_0\|_{L^1}T\Psi^{-1}(1/T)$. 
 
-\[
+Let $\alpha$ be as in Corollary \ref{a_bound}, it is  a non decresing mayorant of $a$. Using that  $F(t, \b{\overline{u}} /2) \leq (1/2)F(t,\b{u}) + (1/2) F(t, -\b{\widetilde{u}})$ and taking account of the non negativity of $\Phi$, inequality \eqref{condA1}, H\"older inequality,  Corollary \ref{a_bound} and Wirtinger inequality \eqref{wirtinger}, we obtain
+\begin{equation}\label{cota_con _ubarra}
 \begin{split}
-I(u_n)&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+\int_0^T F(t,x_0) dt -\| \nabla F (t,x_0)\|_1 
-\| \widetilde{u}_n\|_{\infty}\\
-&\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt-c_1 -c_2 \|\dot{u}_n  \|_{\Phi} .
+I(\b{u}) &\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)  +2 \int_0^T F(t,\b{\overline{u}} /2) dt - \int_0^T F(t, -\b{\widetilde{u}}) dt\\
+&\geq 2 \int_0^T F(t,\b{\overline{u}} /2) dt -\|b_0\|_{L^1} \|\b{a}(\b{\tilde{u}})\|_{L^{\infty}}\\
+&\geq 2 \int_0^T F(t,\b{\overline{u}} /2) dt -\|b_0\|_{L^1} \alpha(\|\b{\tilde{u}}\|_{L^{\infty}})\\
+&\geq 2 \int_0^T F(t,\b{\overline{u}} /2) dt -C'\|\b{\dot{u}}\orlnor.
 \end{split}
-\]
-Como $\Psi$ es $\Delta_2$ entonces $\int \Phi(\dot{u}_n|)\,dx-C\|\dot{u}_n{\orlnor} \to \infty$ cuando $\|\dot{u}_n{\orlnor} \to \infty$.
-Esto implica que existe una constante $c_3$  tal que $\|\dot{u}_n{\orlnor} \leq c_3$. Como el promedio de $\widetilde{u}_n$ es cero, se tiene
-\begin{equation}\label{cotatilde}
-\| \widetilde{u}_n\|_{\infty} \leq c \| \dot{\widetilde{u}}_n\|_{\Phi} = c(T)\| \dot{u}_n\|_{\Phi} \leq c_4.
 \end{equation}
 
-Por la convexidad de $F$
-\[
-F(t, \overline{u}_n /2)=F(t,(1/2)(u_n - \widetilde{u}_n)) \leq (1/2)F(t,u_n) + (1/2) F(t, -\widetilde{u}_n).
-\]
-Entonces,
-
-
-\[
-\begin{split}
-I(u_n) &\geq \int_{0}^T \Phi(|\dot{\b{u}}_n|) dt+2 \int_0^T F(t,\overline{u}_n /2) dt - \int_0^T F(t, -\widetilde{u}_n) dt\\
-& \geq 0 +2 \int_0^T F(t,\overline{u}_n /2) dt - \int_0^T F(t, -\widetilde{u}_n) dt.
-\end{split}
-\]
-Por propiedad de acotación de la $F$: $( |F(t,x)|\leq a(|x|)b(t) )$ y ladesigualdad \eqref{cotatilde} se sigue que existe $c_5$ tal que
-\[
-\begin{split}
-I(u_n) &\geq 2 \int_0^T F(t,\overline{u}_n /2) dt - c_5.
-\end{split}
-\]
-Luego, por \eqref{propiedad1coercividad} se sigue que $\{\overline{u}_n \}$ esta acotado. Luego $\{u_n\}$ es acotada y así, toda sucesión minimizante resulta acotada.
-
-
-
-\end{proof}
+Let $\b{u}_n$ be a sequence in $\wphi$ with $\|\b{u}_n\sobnor\to\infty$. We need consider two situations: i) $\|\b{u}_n\orlnor\to\infty$, in this case \eqref{cota_con _upunto} and Lemma \ref{lem_coer} imply $I(\b{u}_n)\to\infty$, ii) $\|\b{\dot{u}}_n\orlnor$ bounded and $\|\b{u}_n\orlnor\to\infty$, in this case we have, by a similar reasoning  that in proof of Theorem \ref{coercitividad1},  $\b{\overline{u}}_n \to\infty$. This fact, together \eqref{cota_con _ubarra}, finished the proof. \end{proof}
 
 \section{Weak lower semicontinuity of actions integrals}
 
