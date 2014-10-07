@@ -154,12 +154,12 @@ Given a function $\varphi$ as above, we also consider the so-called right invers
 The function $\psi$ satisfies the same properties that function $\varphi$, therefore we have an $N$-function $\Psi$ such that $\Psi'=\psi$ . The function $\Psi$ is called the
 \emph{complementary function} of $\Phi$.
 
-We say that $\Phi$ is a \emph{function of the $\Delta_2$ class} when there exists a constant $k>0$ and a $t_0\geq 0$ such that $\Phi(2t)\leq K\Phi(t)$, for every $t\geq t_0$. If $t_0=0$ we said that $\Phi$ is $\Delta_2$ \emph{global}.  
+We say that $\Phi$ is a \emph{function of the $\Delta_2$ class} when there exists a constant $K>0$ and a $t_0\geq 0$ such that $\Phi(2t)\leq K\Phi(t)$, for every $t\geq t_0$. If $t_0=0$ we said that $\Phi$ is $\Delta_2$ \emph{global}.  
 
  In this paper we adopt the convention of to use bold symbols for denote points in $\mathbb{R}^n$ and plain symbols for scalar ones.
 
-For  $n$  positive integer we denote by $M_n:=M_n([0,T])$ the set of all measurable functions defined in $[0,T]$ with values in $\mathbb{R}^n$.  Given  a $N$-function $\Phi$ we define the \emph{modular function} $\rho_{\Phi}:M_n\to :\mathbb{R}^+\cup\{+\infty\}$ by
-\[\rho_{\Phi}(\b{u}):= \int_{[0,T]} \Phi(|\b{u}|)\ dt.\]
+For  $n$  positive integer we denote by $M_n:=M_n([0,T])$ the set of all measurable functions defined in $[0,T]$ with values in $\mathbb{R}^n$.  Given  a $N$-function $\Phi$ we define the \emph{modular function} $\rho_{\Phi}:M_n\to \mathbb{R}^+\cup\{+\infty\}$ by
+\[\rho_{\Phi}(\b{u}):= \int_0^T \Phi(|\b{u}|)\ dt.\]
 Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^n$.
 The \emph{Orlicz class} $C_n^{\Phi}=C_n^{\Phi}([0,T])$  is defined by
 \begin{equation}\label{claseOrlicz}
@@ -194,7 +194,7 @@ A generalizated version of \emph{H\"older inequality} holds in the setting of Or
 
 If $X$ and $Y$ are  Banach spaces, with $Y\subset X^*$ we denote by $\langle\cdot,\cdot\rangle:Y\times X\to\mathbb{R}$ to the bilinear pairing  map given by $\langle x^*,x\rangle=x^*(x)$. H\"older inequality shows that $\lpsi_n\subset \left[\lphi_n\right]^*$, where the pairing $\langle \b{u},\b{v}\rangle$, $\b{u}\in\lphi_n$ and $\b{v}\in\lpsi_n$, is defined by 
 \begin{equation}\label{pairing}
-  \langle \b{u},\b{v}\rangle=\int_0^T\b{u}\ccdot\b{v}dt.
+  \langle \b{v},\b{u}\rangle=\int_0^T\b{u}\ccdot\b{v}dt.
 \end{equation}
  Unless $\Phi$ be a $\Delta_2$ function, the relation $\lpsi_n= \left[\lphi_n\right]^*$ does not holds. It is true in general that  $\left[\ephi_n\right]^*=\lpsi_n$.
 
@@ -311,7 +311,7 @@ then $\|\b{u_n}-\b{u}\orlnor\to 0$.
   We recall the definition of Gate\^{a}ux derivative, see \cite{ambrosetti} for details. Given a function $I:U\to\mathbb{R}$ where $U$ is an open set of a Banach space $X$,
 we say that $I$ has a G\^ateaux derivative en $\b{u} \in U$ if there exists $\b{u}^*\in X^*$ such that for every $\b{v} \in X$
 \[
-\lim_{s \rightarrow 0}\frac{I(\b{u}+s\b{v})-I(\b{u}) }{s}=\langle \b{u}^* , \b{u}\rangle.
+\lim_{s \rightarrow 0}\frac{I(\b{u}+s\b{v})-I(\b{u}) }{s}=\langle \b{u}^* , \b{v}\rangle.
 \]
 
 We recall the following definition. 
@@ -336,7 +336,7 @@ exists $\lambda>0$ and non negative functions  $a \in C(\mathbb{R}^+, \mathbb{R}
 \end{eqnarray}
 
 \begin{comentario}These conditions are a generalization of the frequently considered condition (A) (see \cite{tang1995periodic,
-xu2007some,tang2010periodic,zhao2004periodic} ). In fact, conditions  \eqref{cotaL},\eqref{cotaDxL}, \eqref{cotaDyL} are equivalent to condition (A)  when  $\mathcal{L}(t,\b{x},\b{y})=|\b{y}|^p/p+F(t,\b{x})$, $\Phi_p(s)=s^p/p$,  and $d=0$. 
+xu2007some,tang2010periodic,zhao2004periodic} ). In fact, conditions  \eqref{cotaL},\eqref{cotaDxL}, \eqref{cotaDyL} are equivalent to condition (A)  when  $\mathcal{L}(t,\b{x},\b{y})=\Phi_p(|\b{y}|)+F(t,\b{x})$, $\Phi_p(s)=s^p/p$,  and $d=0$. 
 
 
 \end{comentario}
@@ -423,11 +423,11 @@ Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
  Let $\b{u}\in \domi$.  It follows from  \eqref{inclusion3}, Lemma \ref{phi_comp} and Corollary \ref{a_bound} that 
 \begin{equation}\label{AcotOperphi}
-\varphi\left(\frac{|\b{u}|}{\lambda}+d\right)\in C^{\Psi}_1
+\varphi\left(\frac{|\b{\dot{u}}|}{\lambda}+d\right)\in C^{\Psi}_1
 \end{equation}
 and $\b{a}(|\b{u}|)\in L^{\infty}_1$. Therefore, in virtue of  \eqref{cotaDyL} we get
 \begin{equation}\label{DyLpsi}
-   \left|D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\right|\leq  c(\|\b{u}\|_{\wphi} )  \left(c+\boldsymbol{\varphi}\left( \frac{|\b{u}|}{\lambda}+d\right  ) \right)\in\lpsi_1.
+   \left|D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\right|\leq  c(\|\b{u}\|_{\wphi} )  \left(c(t)+\varphi\left( \frac{|\b{\dot{u}}(t)|}{\lambda}+d(t)\right  ) \right)\in\lpsi_1.
 \end{equation}
  We note that \eqref{DxL1},  \eqref{DyLpsi} , the imbedding $\wphi_n \hookrightarrow L_n^{\infty}$ and  $\lpsi_n\hookrightarrow  \left[\lphi_n\right]^*$ imply that the second member 
 \eqref{DerAccion} defines an element in $\left[\wphi_n\right]^*$.
@@ -437,23 +437,23 @@ Now, let us to prove the continuity of the map   $\b{u}\mapsto D_y\mathcal{L}(\c
  \left| \langle D_{\b{y}}\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}_n}),\b{v} \rangle - \langle  D_{\b{y}}\mathcal{L}(\cdot,\b{u},\b{\dot{u}}),\b{v} \rangle\right|\geq \epsilon.
 \end{equation}
 We have $\b{u}_n\rightarrow \b{u}$ in $\lphi_n$ and
-$\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_n$. By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi,\lambda)$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$. As in the previous step, since $\b{u}_n$ is a convergent sequence, the Corrollary \ref{a_bound} implies that $a(|\b{u}_n(t)|)$ is uniformly bounded by certain constant $C$. Therefore, from \eqref{cotaDyL},  \eqref{AcotOperphi}, the fact that $c\in\lphi_1$, H\"older inequality we obtain
+$\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_n$. By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \Pi(\ephi,\lambda)$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$. As in the previous step, since $\b{u}_n$ is a convergent sequence, the Corrollary \ref{a_bound} implies that $a(|\b{u}_n(t)|)$ is uniformly bounded by certain constant $C$. Therefore, from \eqref{cotaDyL},  \eqref{AcotOperphi}, the fact that $c\in\lpsi_1$, H\"older inequality we obtain
 \[
-  \left | D_y\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n) \ccdot \b{ v} \right| \leq C\left(c|\b{v}|+\varphi\left(\frac{h}{\lambda}+d\right)\right)|\b{v}|\in L_1^1.
+  \left | D_y\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n) \ccdot \b{ v} \right| \leq C\left(c+\varphi\left(\frac{h}{\lambda}+d\right)\right)|\b{v}|\in L_1^1.
 \]
  From the Lebesgue dominated convergence theorem we deduce
 \begin{equation}\label{conv_debil}\int_0^T  D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})\ccdot\b{ v} dt \to \int_0^T D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{ v} dt \end{equation}
 which contradict the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
-\emph{Step 3.} Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $\b{u}\in \domi$ and $\b{v}\in\wphi_n$ we define the function
+\emph{Step 3.} Finally we prove \ref{T1item3}. The proof follows similar lines that \cite[Theorem 1.4]{mawhin2010critical}. For $\b{u}\in \domi$ and $0\neq\b{v}\in\wphi_n$ we define the function
 \[f(s,t):=\mathcal{L}(t,\b{u}(t)+s\b{v}(t),\b{\dot{u}}(t)+s\b{\dot{v}}(t)).\]
 From \cite[Th. 10.1]{KR} we obtain that if $|\b{u}|\leq |\b{v}|$ then    $d(\b{u},\ephi_n)\leq d(\b{v},\ephi_n)$. Therefore, for  $|s|\leq s_0:=\left(\lambda-d(\b{\dot{u}},\ephi_n)\right)/\|\b{v}\sobnor$ we have
 \[
-d \left(\b{\dot{u}}+s_0\b{\dot{v}}, \ephi_n \right)\leq
-d \left(|\b{\dot{u}}|+s_0|\b{\dot{v}}|, \ephi_1 \right)
-\leq d \left(|\b{\dot{u}}|,\ephi_1 \right)+ s_0 \|\b{\dot{v}}\orlnor < \lambda.
+d \left(\b{\dot{u}}+s\b{\dot{v}}, \ephi_n \right)\leq
+d \left(|\b{\dot{u}}|+s|\b{\dot{v}}|, \ephi_1 \right)
+\leq d \left(|\b{\dot{u}}|,\ephi_1 \right)+ s \|\b{\dot{v}}\orlnor < \lambda.
 \]
-As a consequence $\b{\dot{u}}+s_0\b{\dot{v}} \in \Pi(\ephi_n,\lambda)$ and  $|\b{\dot{u}}|+s_0|\b{\dot{v}}| \in \Pi(\ephi_1,\lambda)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion}(\ref{T1item1}) that $I(\b{u}+s\b{v})$ is well defined and it is finite for $|s|\leq s_0$. 
+As a consequence $\b{\dot{u}}+s\b{\dot{v}} \in \Pi(\ephi_n,\lambda)$ and  $|\b{\dot{u}}|+s|\b{\dot{v}}| \in \Pi(\ephi_1,\lambda)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion}(\ref{T1item1}) that $I(\b{u}+s\b{v})$ is well defined and it is finite for $|s|\leq s_0$. 
 Using  Corollary \ref{a_bound} we see that
 \[ \|a(|\b{u}+s\b{v}|)\|_{L^{\infty}}\leq  c(\|\b{u}+s\b{v}\sobnor)\leq
  c(\|\b{u}\sobnor+s_0\|\b{v}\sobnor).
@@ -462,14 +462,14 @@ Consequently, applying chain rule,  inequalities \eqref{cotaDxL}-\eqref{cotaDyL}
 \begin{equation}\label{ctg}
 \begin{split}
 |D_s f(s,t)|&=\left| D_{\b{x}}\mathcal{L}(t,\b{u}+s\b{v},\b{\dot{u}}+s\b{\dot{v}})\ccdot \b{v} +  D_{\b{y}}\mathcal{L}(t,\b{u}+s\b{v},\b{\dot{u}}+s\b{\dot{v}})\ccdot\b{\dot{v}}\right| \\
- & \leq c \left[\left( b(t)+ \Phi\left(\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}\right)\right)|\b{v}|\right.\\
-&\left. \quad+ \left(c(t)+ \varphi\left (\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}\right)\right)|\b{\dot{v}}| \right]
+ & \leq c \left[\left( b(t)+ \Phi\left(\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}+d\right)\right)|\b{v}|\right.\\
+&\left. \quad+ \left(c(t)+ \varphi\left (\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}+d\right)\right)|\b{\dot{v}}| \right]
 \end{split}
 \end{equation}
- Invoking \eqref{DxL1}, \eqref{DyLpsi} with $ |\b{\dot{u}}|+s_0|\b{\dot{v}}|$ instead $\b{u}$ and taking account of $\b{\dot{v}}\in L^{\infty}$ and $\b{v}\in\lphi$ we show that there exists a function $g \in L^1_1([0,T], \mathbb{R}^{+})$
+ Invoking \eqref{DxL1}, \eqref{DyLpsi} with $ |\b{\dot{u}}|+s_0|\b{\dot{v}}|$ instead $\b{\dot{u}}$ and taking account of $\b{v}\in L^{\infty}$ and $\b{\dot{v}}\in\lphi$ we show that there exists a function $g \in L^1_1([0,T], \mathbb{R}^{+})$
 such that $|D_s f(s,t)| \leq g(t)$. Consequently, $I$ has a directional derivative and
 \[
-\langle v, I'(\b{u}) \rangle=\frac{d}{ds}I(\b{u}+sv)\big|_{s=0}=\int_0^T  D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot \b{v}+ D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{\dot{v}}  dt.
+\langle I'(\b{u}),\b{v} \rangle=\frac{d}{ds}I(\b{u}+s\b{v})\big|_{s=0}=\int_0^T  D_{\b{x}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot \b{v}+ D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{\dot{v}}  dt.
 \]
 Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and previous formula
 \[
@@ -494,7 +494,7 @@ D_{\b{y}}\mathcal{L}\left(t,\b{u},\b{\dot{u}}\right)\ccdot\b{\dot{v}}\right\} \ 
 In order to prove  \ref{T1item4}, let us see that the maps $\b{u}\mapsto D_{\b{x}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  and $\b{u}\mapsto D_{\b{y}}\mathcal{L}(\cdot,\b{u}(\cdot),\b{\dot{u}}(\cdot))$  are norm continuous
 from $\domi $ into $L^1$ and
  $\lpsi$ respectively.  The continuity of the first map has already been proved in step 1. We will prove the continuity of the second map. We repeat an argument similar to the one given in step 2.  We consider $\b{u}_n$ and $\b{u}$ in $\domi$ with $\|\b{u}_n- \b{u}\sobnor\to 0$.
-By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and $h\in \domi$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$. Then  since $\mathcal{L}$ is a Caratheodory function
+By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}\in \domi$ and $h\in\Pi(\ephi_1,\lambda)$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$. Then  since $\mathcal{L}$ is a Caratheodory function
  we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$. Using \eqref{cotaDyL} and that $\Psi$ is of the $\Delta_2$ class, we obtain
  \[\begin{split}
     |D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))| &\leq a(|\b{u}_{n_k}(t)|)\left( c(t) + \varphi \left(\frac{|\b{\dot{u}}_{n_k}(t)|}{\lambda}+d(t)\right)\right)\\
@@ -513,7 +513,7 @@ The continuity of $I'$  follows  of the  previously established continuity for $
 \section{Critical points and Euler-Lagrange equations}
 
 
-In this section we derive the Euler-Lagrange equations associated to critical points of action integrals.  We denote by $\wphi_T$ the subspace of $\wphi$ of all  $T$-periodic functions. Similarly we consider the subspaces $\ephi_T$, $\lphi_T$. As is usual, when $Y$ is a subspace of
+In this section we derive the Euler-Lagrange equations associated to critical points of action integrals.  We denote by $\wphi_T$ the subspace of $\wphi_n$ of all  $T$-periodic functions. Similarly we consider the subspaces $\ephi_T$, $\lphi_T$. As is usual, when $Y$ is a subspace of
 the Banach space $X$, we denote by $Y^{\perp}$ the \emph{annihilator subspace} of $X^*$, tghat means the subspace
 consistent of all the bounded linear functions which are identically zero on $Y$.
 
@@ -572,18 +572,18 @@ for $C,\nu>0$. If $\Phi(x)=|x|^p/p$ then $J_{C,\nu}$ is clearly coercitive for $
 
 \begin{lem}\label{lem_coer} Let $\Phi$ and $\Psi$ complementary $N$-functions. Then
 \begin{enumerate}
-  \item If $C\Lambda<1$ then $J_{C,1}$ is coercitive. 
+  \item If $C\Lambda<1$ then $J_{C,1}$ is coercive. 
   
   \item If $\Psi$ is $\Delta_2$ global, then there exist a constant $\alpha_{\Phi}>1$ such that for any $0<\mu<\alpha_{\Phi}$,
 \begin{equation}\label{coer_modular} \lim\limits_{\|\b{u}\orlnor \to \infty} \frac{\rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)}{\|\b{u}\orlnor^{\mu}}=+\infty.
 \end{equation}
-In particular, the functional $J_{C,\mu}$ is coercitive for every $C>0$ and  $0<\mu<a_{\Phi}$. The constant $\alpha_{\Phi}$ is one of the so called \emph{ Matuszewska-Orlicz indices} (see \cite[Ch. 11]{M}).
+In particular, the functional $J_{C,\mu}$ is coercive for every $C>0$ and  $0<\mu<a_{\Phi}$. The constant $\alpha_{\Phi}$ is one of the so called \emph{ Matuszewska-Orlicz indices} (see \cite[Ch. 11]{M}).
 \item If $J_{C,1}$ is coercitive with $C\Lambda>1$, then $\Psi$ is $\Delta_2$ at infinity.  
 \end{enumerate}
 \end{lem}
 
 \begin{proof} Using \eqref{amemiya} we obtain
-\[(1-C\Lambda)\|\b{u}\orlnor+C\Lambda\|\b{u}\orlnor\leq \Lambda +\Lambda \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right).\]
+\[(1-C\Lambda)\|\b{u}\orlnor+C\Lambda\|\b{u}\orlnor=\|\b{u}\orlnor\leq \Lambda +\Lambda \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right).\]
 Then
 \[\frac{(1-C\Lambda)}{\Lambda}\|\b{u}\orlnor-1\leq \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)- C\|\b{u}\orlnor=J_{C,1}(\b{u}).\]
 This show that $J_{C,1}$ is coercitive, and therefore it proves item 1.  
@@ -602,7 +602,7 @@ K \left(\frac{r}{\Lambda}\right)^{\nu}\frac{\int_0^T \Phi(r^{-1}|\b{u}|)dt}{\|\b
 K \left(\frac{r}{\Lambda}\right)^{\nu}\frac{r^{-1}\|\b{u}\orlnor-1}{\|\b{u}\orlnor^{\mu}}\\
 \end{split}
 \]
-We choose $r=\|\b{u}\orlnor/2$. Since $\|\b{u}\orlnor\to+\infty$   we can assume $\|\b{u}\orlnor>2$.  Thus $r>1$ and 
+We choose $r=\|\b{u}\orlnor/2$. Since $\|\b{u}\orlnor\to+\infty$   we can assume $\|\b{u}\orlnor>2\Lambda$.  Thus $r>\Lambda$ and 
 
 \[
 \frac{\int_0^T \Phi\left(\frac{|\b{u}|}{\Lambda}\right) dt}{\|\b{u}\orlnor^{\mu}}\geq
@@ -610,7 +610,7 @@ We choose $r=\|\b{u}\orlnor/2$. Since $\|\b{u}\orlnor\to+\infty$   we can assume
 \]
 because $\nu>\mu$.
 
-In order to prove the last item, we assume that $\Psi \notin \Delta_2$ at infinity. By \cite[Th. 4.2]{KR},  there exists a sequence of real  numbers  $r_n$ such that
+In order to prove the last item, we assume that $\Psi \notin \Delta_2$. By \cite[Th. 4.1]{KR},  there exists a sequence of real  numbers  $r_n$ such that
 $r_n \to \infty$ and 
 \begin{equation}\label{eq: un-_tiende_inf}
 \lim\limits_{n \to \infty} \frac{r_n \psi(r_n)}{\Psi(r_n)}=+\infty.
@@ -633,7 +633,7 @@ J_{C,1}(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)-C\|\b{u}_n
 &=\frac{(1- C\Lambda) r_n\psi(r_n)}{\Psi(r_n)}-1.
 \end{split}
 \]
-From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_{C,1}(\b{u}_n)\to+\infty$, which is a contradiction.
+From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_{C,1}(\b{u}_n)\to-\infty$, which is a contradiction.
 \end{proof}
 
 We present two theorems establishing coercitivity of action integrals. 
@@ -652,7 +652,7 @@ We suppose that the constant $\mu$ satisfies that $\mu< \alpha_{\Phi}$,  with $\
 \begin{equation}\label{propiedad1coercividad}
 \int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty,
 \end{equation}
-\item\label{hipot_coer}  $\Psi\in\Delta_2$ or, alternatively, the following inequality $\alpha_0^{-1}T\Psi^{-1}\left(1/T\right)\|b_1\|_{L^1}<1$.
+\item\label{hipot_coer}  $\Psi\in\Delta_2$ or, alternatively, the following inequality $\alpha_0^{-1}T\Psi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$.
 \end{enumerate}
 Then  the action integral $I$ is coercive.
 \end{thm}
