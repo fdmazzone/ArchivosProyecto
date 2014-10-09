@@ -335,34 +335,44 @@ exists $\lambda>0$ and non negative functions  $a \in C(\mathbb{R}^+, \mathbb{R}
 |D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+d(t)\right)  \right).\label{cotaDyL}
 \end{eqnarray}
 
-\begin{comentario}These conditions are a generalization of the frequently considered condition (A) (see \cite{tang1995periodic,
-xu2007some,tang2010periodic,zhao2004periodic} ). In fact, conditions  \eqref{cotaL},\eqref{cotaDxL}, \eqref{cotaDyL} are equivalent to condition (A)  when  $\mathcal{L}(t,\b{x},\b{y})=\Phi_p(|\b{y}|)+F(t,\b{x})$, $\Phi_p(s)=s^p/p$,  and $d=0$. 
+\begin{comentario}These conditions are a direct  generalization of the conditions
+\cite[Eq (a), p. 10]{mawhin2010critical}. 
+\end{comentario}
 
+In the following comments we discuss the relevance of the function $d$ in the inequalities \eqref{cotaL},  \eqref{cotaDxL} and \eqref{cotaDyL}. In particular, we are interested in to see when it is possible to find, for every  $d\in \ephi_1$, a function  $b\in L^1_1$and $C>0$ such that for every $s>0$
+\begin{equation}\label{cotadb}
+\Phi(s+d(t))\leq C\Phi(s)+b(t).
+\end{equation} 
+In that case we can suppose $d=0$ in \eqref{cotaL} and \eqref{cotaDxL}. The same considerations should be done with $\varphi\left(s+d(t)\right)$.
 
+\begin{comentario}  As a direct consequence of convexity, we can  bound the term $\Phi(s+d(t))$, $d\in \ephi_1$, by the expression  $\frac12\Phi(2s)+b(t)$ where $b(t):=\tfrac12\Phi(2d(t))\in L^1_1$. Therefore, we can always assume $d = 0$ in \eqref{cotaL} and \eqref{cotaDxL} at the price of making smaller the value of $\lambda$. 
 \end{comentario}
 
   
 
-\begin{comentario}  As a direct consequence of convexity, we can  bound the term $\Phi(|\b{y}|/\lambda+d(t))$, $d\in \ephi_1$, by the expression  $\frac12\Phi(|\b{y}|/\Lambda)+b(t)$ where $b(t):=\tfrac12\Phi(2d(t))\in L^1_1$, and  $\Lambda= \lambda/2$. That is, we can  assume $d = 0$ at the price of making smaller the value of $\lambda$. 
-\end{comentario}
 
-  
-
-
-\begin{comentario} Let us note that if $\Phi\in\Delta_2$ then we can asssume $d=0$ keeping the same value of $\lambda$. This is consequence of that a non decreasing $\Delta_2$ function $G:\mathbb{R}_+\to\mathbb{R}_+$ is quasi-subadditive. In fact, we suppose $y\leq x$, then  
-\[G(x+y)\leq G(2x)\leq KG(x)\leq K\left(G(x)+G(y)\right).\]
+\begin{comentario} If $\Phi\in\Delta_2$ then we can asssume $d=0$ keeping the same value of $\lambda$. This is consequence of that a non decreasing $\Delta_2$ function $G:\mathbb{R}_+\to\mathbb{R}_+$ is quasi-subadditive. In fact, we suppose $s_1\leq s_2$, then  
+\[G(s_1+s_2)\leq G(2s_2)\leq KG(s_2)\leq K\left(G(s_1)+G(s_2)\right).\]
 Moreover, if $\Phi$ is $\Delta_2$  then $\varphi$ is also $\Delta_2$, as the following simple argument shows
-\[2x\varphi(2x)\leq \alpha \Phi(2x)\leq K\Phi(x)\leq Kx\varphi(x) \]
-Here we have used \cite[Th. 4.1]{KR}, the $\Delta_2$ condition for $\Phi$ and the inequality $\Phi(x)\leq x\varphi(x)$ valid for any $N$-function. Therefore if $\Phi$ is $\Delta_2$ we have that
+\[2s\varphi(2s)\leq \alpha \Phi(2s)\leq K\Phi(s)\leq Ks\varphi(s) \]
+Here we have used \cite[Th. 4.1]{KR}, the $\Delta_2$ condition for $\Phi$ and the inequality $\Phi(s)\leq s\varphi(s)$ valid for any $N$-function. Therefore if $\Phi$ is $\Delta_2$ we have that
 
-\[b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+d(t) \right)\leq 
-b(t)+ K\Phi\left(d(t) \right) +K\Phi\left(\frac{|\b{y}|}{\lambda}\right)=b_1(t)+K\Phi\left(\frac{|\b{y}|}{\lambda}\right),\]
+\[\Phi\left(s+d(t) \right)\leq K\Phi(s)+
+K\Phi\left(d(t) \right)=K\Phi(s)+b_1(t),\]
 where $b_1(t)=b(t)+ K\Phi\left(d(t) \right)\in L^1_1([0,T])$. A similar fact holds with $\varphi$ instead $\Phi$ namely
-\[ c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+d(t)\right) \leq c_1(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}\right),\]
-where, as consequence of Lemma \ref{phi_comp} and the $\Delta_2$ condition for $\Phi$, we have   $c_1(t):=c(t)+K\varphi\left(d(t)\right)\in \lpsi_1$. 
+\[ \varphi\left(s+d(t)\right) \leq c_1(t)+ \varphi\left(s\right),\]
+where, as consequence of Lemma \ref{phi_comp} and the $\Delta_2$ condition for $\Phi$, we have   $c_1(t):=K\varphi\left(d(t)\right)\in \lpsi_1$. 
 
-The following  example shows that the condition $\Delta_2$ is essential in the previous discussion. Let $\Phi(s)=e^s-s-1$ and let $d$ be a function in $\lphi_1\setminus L^{\infty}_1$. We suppose that there exists $K>0$ and $b\in L^1_1$ such that $\Phi(s+d(t))\leq K \Phi(s)+b(t)$.  This inequality implies for sufficient large $s$ that $\frac12e^se^{d(t)}\leq Ke^s+b(t)$. As $d\notin L^{\infty}_1$ we can fix $t$ with $e^{b(t)}>4K$. Hence, we obtain $2Ke^s\leq Ke^s+b(t)$, which is 
-evidently false as the limit $s\to +\infty$ shows.   
+
+\end{comentario}
+
+\begin{comentario} If $\Phi\notin\Delta_2$ then \eqref{cotadb} may be true or not.  For example, we consider the $N$-function $\Phi(s)=e^s-s-1$ which is not a $\Delta_2$ function. We have that $\ephi_1=L_1^{\infty}$. In fact, if $d\in \ephi_1$ then from the inequality $1/2e^s\leq \Phi(s)+1$ and since $pd\in\claseor_1$, for every $p>0$, we have that $\int_0^Te^{pd(t)}dt<\infty$, for every $p>0$. This imply $d\in L_1^{\infty}$.  Therefore,
+\[\Phi(s+d(t))\leq e^{s+d(t)}\leq 2 \|e^d\|_{L^{\infty}}\Phi(s)+2 \|e^d\|_{L^{\infty}}.\] 
+
+On the other hand, we consider  the $N$-function $\Phi(s)=e^{s^2}-1$.  Suppose that $0\leq d\in\ephi_1$ and $b\in L_1^1$ satisfy  \eqref{cotadb}. Then
+\[e^{s^2}e^{2sd(t)}\leq \Phi(s+d(t))+1\leq Ce^{s^2}+b(t).\]
+Dividing by $e^{s^2}$ and taking the limit $s\to\infty$ we obtain that  $d= 0$ a.e.. In other words, if $d\neq 0$ on a set with positive measure, the bounds in \eqref{cotaL} and \eqref{cotaDxL} are essentially bigger than a bound of the type  $a(|\b{x}|)\left(b(t)+ \Phi\left(|\b{y}|/\lambda \right)\right)$.
+
 
 \end{comentario}
 
@@ -718,7 +728,18 @@ I(\b{u}) &\geq\alpha_0\rho_{\Phi}\left( \frac{|\b{\dot{u}}|}{\Lambda}\right)  +2
 
 Let $\b{u}_n$ be a sequence in $\wphi$ with $\|\b{u}_n\sobnor\to\infty$. We need consider two situations: i) $\|\b{u}_n\orlnor\to\infty$, in this case \eqref{cota_con _upunto} and Lemma \ref{lem_coer} imply $I(\b{u}_n)\to\infty$, ii) $\|\b{\dot{u}}_n\orlnor$ bounded and $\|\b{u}_n\orlnor\to\infty$, in this case we have, by a similar reasoning  that in proof of Theorem \ref{coercitividad1},  $\b{\overline{u}}_n \to\infty$. This fact, together \eqref{cota_con _ubarra}, finished the proof. \end{proof}
 
-\section{Weak lower semicontinuity of actions integrals}
+\section{Duality and weak lower semicontinuity of actions integrals}
+
+The objective of this section is to obtain condictions 
+which ensure lower semicontinuity of the action integral $I$ on its domain $\domi$. The strategy we will use is to split the action integral into two functional integrals, one convex and the other continuous. 
+It will be shown that the convex part is lower  semicontinuous by a duality argument involving the Fenchel transform of $I$. 
+
+We star for considering Lagrangians $\mathcal{L}:\rr\times\rr^n\to\rr^n$  satisfying 
+\begin{equation}\label{reduc_lagran}
+|\mathcal{L}(t,\b{y})|\leq b(t)+a_0\Phi\left(\frac{|\b{y}|}{\lambda}\right),
+\end{equation}
+with $a_0>0$ and $b\in L^1_1([0,T])$. The operators induced by $\mathcal{L}$ were studied in the Lieterature \cite[]{KR}The following lemma is an inmediate consequence of principles  related to  operators of Nemitskii type, see \cite[§17]{KR}.
+
 
  \begin{lem}\label{unif_conv}
 If the sequence $\{\b{u}_{k}\}_{k \geq 1}$ converges weakly to $\b{u}$ in $\wphi$, then $\{\b{u}_{k}\}_{k\geq 1}$ converges uniformly to $\b{u}$ on $[0,T]$.
