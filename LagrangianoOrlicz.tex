@@ -734,11 +734,18 @@ The objective of this section is to obtain condictions
 which ensure lower semicontinuity of the action integral $I$ on its domain $\domi$. The strategy we will use is to split the action integral into two functional integrals, one convex and the other continuous. 
 It will be shown that the convex part is lower  semicontinuous by a duality argument involving the Fenchel transform of $I$. 
 
-We start for considering Lagrangians $\mathcal{L}:\rr\times\rr^n\to\rr^n$  satisfying 
+We start for considering Lagrangians $\mathcal{L}(t,\b{y})$, $t\in 
+[0,T]$ and $\b{y}\in\rr^n$,  wich are continuous in $\b{y}$ for a.e. $t\in [0,T]$ and measurable in $t$ for every $\b{y}\in\rr$. Furthermore we assume the following conditions on $\mathcal{L}$  
 \begin{equation}\label{reduc_lagran}
 |\mathcal{L}(t,\b{y})|\leq b(t)+a_0\Phi\left(\frac{|\b{y}|}{\lambda}\right),
 \end{equation}
-with $a_0>0$ and $b\in L^1_1([0,T])$. The functionals induced by $\mathcal{L}$ were studied in the literature, see \cite[§17]{KR}.
+with $a_0>0$ and $b\in L^1_1([0,T])$ and $\Phi$ a $N$-function.  The functionals induced by $\mathcal{L}$ were studied in the literature, see \cite[§17]{KR}. In particular we have.
+\begin{thm}{\cite[Thm. 17.6]{KR}} We suppose that $\mathcal{L}$ satisfies \eqref{reduc_lagran}. Then the non-linear operator $\b{\mathcal{L}}(\b{u})$ defined by $\b{\mathcal{L}}(\b{u})(t):=\mathcal{L}(t,\b{u}(t))$ maps continuously $\Pi(\ephi_d,\lambda)$ into $L_1^1$.
+\end{thm}
+
+We recall the definition of \emph{Fenchel Transform} (see
+
+
 
 
  \begin{lem}\label{unif_conv}
