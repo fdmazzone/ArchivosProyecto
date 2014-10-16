@@ -784,7 +784,6 @@ assumption \ref{hipot_coer} in Theorem \ref{coercitividad1} and Lemma \ref{lem_c
 Following \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if it verifies \eqref{condA1} and 
 
 Following \cite{mawhin2010critical} we said that $F$ satisfies the condition (A) if  $F(t,\b{x})$ is a Caratheodory function, $F$ satisfies \eqref{condA1} and $F$ is continuously differentiable with respect to $\b{x}$. Moreover, the following inequality holds 
-
 \begin{equation}\label{condA2} |D_{\b{x}}F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T] \text{ and for every }\b{x}\in\rr^d,
 \end{equation}
 The following result was proved in \cite[p. 18]{mawhin2010critical}. 
@@ -840,31 +839,43 @@ This fact together with  \eqref{cota_con _ubarra} finishes the proof.
 
 \end{proof}
 
-\section{Weak lower semicontinuity of actions integrals}
+
+
+\section{Lower semicontinuity of actions integrals and minima existence}
+
+
+The objectives of this section are i) obtain conditions 
+which ensure lower semicontinuity of the action integral $I$ on its domain $\domi$ and ii) discuss the existence of minima for $I$.
 
  \begin{lem}\label{unif_conv}
-If the sequence $\{\b{u}_{k}\}_{k \geq 1}$ converges weakly to $\b{u}$ in $\wphi$, then $\{\b{u}_{k}\}_{k\geq 1}$ converges uniformly to $\b{u}$ on $[0,T]$.
+If the sequence $\{\b{u}_{k}\}_{k \geq 1}$ converges weakly to $\b{u}$ in $\wphi_d$, then $\{\b{u}_{k}\}_{k\geq 1}$ converges uniformly to $\b{u}$ on $[0,T]$.
 \end{lem}
 \begin{proof}
-By Lemma \ref{inclusion orlicz}, the injection of $\wphi$ in $L^{\infty}$ is continuous. Since $\b{u}_{k}\rightharpoonup \b{u}$ in $\wphi$ it follows that
-$\b{u}_{k}\rightharpoonup \b{u}$ in $C(0,T;\mathbb{R}^n)$. Since $\b{u}_{k}\rightharpoonup \b{u}$ in $\wphi$, we know that $\{\b{u}_{k}\}_{k \geq 1}$ is bounded in
-$\wphi$ and, hence by \eqref{estimacion} in $C(0,T;\mathbb{R}^n)$. Moreover, the sequence $\{\b{u}_{k}\}_{k \geq 1}$ is equi-uniformly continuous since, for $0 \leq
+ Since $\b{u}_{k}\rightharpoonup \b{u}$ in $\wphi_d$, the sequence  $\{\b{u}_{k}\}_{k \geq 1}$ is bounded in
+$\wphi_d$. Therefore $\{\b{\dot{u}}_n\}$   is bounded in $\lphi$. For $0 \leq
 s\leq t \leq T $, we have
-\[
+\begin{equation}\label{equicont}
 \begin{split}
-\left|\b{u}_{k}(t)-\b{u}_{k}(s) \right|&\leq \int_{s}^t \left| \dot{\b{u}}_{k}(\tau)\right|\ \ d\tau \leq \| t-s\|_{\lpsi}\|\dot{\b{u}}_{k}\|_{\lphi}\\
-&\leq \| t-s\|_{\lpsi}\|\b{u}_{k}\|_{\wphi} \leq C \| t-s\|_{\lpsi}.
+\left|\b{u}_{k}(t)-\b{u}_{k}(s) \right| &\leq \int_{s}^t \left| \b{\dot{u}}_{k}(\tau)\right|\ \ d\tau\\
+&\leq \| \chi_{[s,t]}\|_{\lpsi}\|\b{\dot{u}}_{k}\|_{\lphi}\\
+&\leq C ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right).
 \end{split}
-\]
-By Arzela-Ascoli theorem, $\{\b{u}_{k}\}_{k \geq 1}$ is relatively compact in $C(0,T;\mathbb{R}^n)$. By the uniqueness of the weak limit in $C(0,T;\mathbb{R}^n)$,
-every uniformly convergent subsequence of $\{\b{u}_{k}\}_{k \geq 1}$ converges to $\b{u}$. Thus, $\{\b{u}_{k}\}_{k \geq 1}$ converges uniformly on $[0,T]$.
-
+\end{equation}
+As $\Phi$ is $N$-function, $\lim_{\xi\to \infty} \Phi^{-1}(\xi)/\xi=\lim_{\eta\to \infty} \eta/\Phi(\eta)=0$.  This fact and \eqref{equicont} prove that the sequence $\{\b{u}_{k}\}_{k \geq 1}$ is equicontinuous. By Arzela-Ascoli theorem, from every subsequence $\{k'\}\subset \mathbb{N}$ we can extract a subsequence $\{k''\}\subset\{k'\}$ such that $\b{u}_{k''}$ converges uniformly to a function $\b{v}\in C([0,T],\mathbb{R}^n)$. In particular $\b{u}_{k''}\rightharpoonup \b{v}$ in $\lphi_d$. But from the immersion $\wphi\hookrightarrow\lphi$ we have $ \b{u}_{k''}\rightharpoonup \b{u}$ in $\lphi$.  Thus by the uniqueness of the weak limit in $\b{u}_{k''}\rightharpoonup \b{u}$ uniformly. We have proved that from every subsequence $\{k'\}\subset \mathbb{N}$ we can extract a subsequence $\{k''\}\subset\{k'\}$ such that $\b{u}_{k''}\to \b{u}$ uniformly. This fact implies the statement in the lemma.
 \end{proof}
 
+
+
 \begin{thm}
-We suppose that $\mathcal{L}(t,\b{x},\b{y})$ is a Charateodory functions satisfying \eqref{cotaL}-\eqref{cotaDyL}.
-Moreover we assume $\mathcal{L}(t,\b{x},\cdot)$ is convex for each $t,\b{x}$. We suppose that $\Phi,\Psi$ are $\Delta_2$ functions. Then the functional \eqref{integral_accion} is weakly lower semicontinuous (w.l.s.c.).
+We suppose that $\mathcal{L}(t,\b{x},\b{y})$, $F(t,\b{x})$ are Charatheodory functions satisfying
+\begin{equation}\label{cota_inf_2}
+\mathcal{L}(t,\b{x},\b{y})\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),
+\end{equation}
+where $\Phi$ is a $N$-function. We also assume inequality \eqref{condA1} for $F$ and that  $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Then the functional $I$  is sequentially weakly lower semicontinuous and  weakly* lower semicontinuous on $\wphi$.
 \end{thm}
+
+\begin{proof} We note that \eqref{cota_inf_2}
+\end{proof}
 
 
 
