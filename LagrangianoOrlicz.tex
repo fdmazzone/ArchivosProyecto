@@ -235,19 +235,31 @@ $\wphi_d$ is a Banach space when it is equipped with the norm
 
 For a  function $\b{u}\in L^1_d([0,T])$, we write $\b{u}=\overline{\b{u}}+\widetilde{\b{u}}$, where $\overline{\b{u}} =\frac1T\int_0^T \b{u}(t)\ dt$ and $\widetilde{\b{u}}=\b{u}-\overline{\b{u}}$.
 
+If $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a subespace of $X$, as usual we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embeeded} in $X$  when the restricted identity map $i_Y:Y\to X$ is bounded. That is, there exists $C>0$ such that  for any $y\in Y$ we have $\|y\|_X\leq C\|y\|_Y$.  With this notation, H\"older's inequality states that  $\lpsi_d\hookrightarrow  \left[\lphi_d\right]^*$.
+
+
+
+
  An important aspect of the theory of Sobolev spaces is related to embedding theorems. There is an extensive literature on this question in the setting of Orlicz-Sobolev spaces, see for example
  \cite{cianchi2000fully,cianchi1999some,claverooptimal,edmunds2000optimal,kerman2006optimal}.
 The following simple lemma is well known and we will use it systematically. For the sake of completeness, we include a brief proof of it.
 
- % As is usual, if $X$ and $Y$ are normed spaces, with $X\subset Y$,  we write $X\hookrightarrow Y$ when the identity map is an bounded operator between $X$ and $Y$.
+
 
 \begin{lem}\label{inclusion orlicz} Let $\b{u}\in\wphi_d$. Then $\b{u}\in L^{\infty}_d([0,T])$ and
 \begin{align}
-  \|\widetilde{\b{u}}\|_{L^{\infty}} &\leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Wirtinger's inequality)}\label{wirtinger}\\
-\|\b{u}\|_{L^{\infty}} &\leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\text{  (Sobolev's inequality)}\label{sobolev}
+  &\hbox{a) }\|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Wirtinger's inequality)}\label{wirtinger}\\
+&\hbox{b) } \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\text{  (Sobolev's inequality)}\label{sobolev}\\
+&\hbox{c) }  \left|\b{u}(t)-\b{u}(s) \right| \leq  \|\b{\dot{u}}\orlnor ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right).&
 \end{align}
-
 \end{lem}
+\begin{comentario}
+ As is usual, a function   $w:[0,+\infty)\to[0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. We say that $\b{u}:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that 
+\[|\b{u}(\b{x})-\b{u}(\b{y})|\leq Cw(|\b{x}-\b{y}|).\] 
+Lemma \ref{inclusion orlicz} c) establish that $w(s):=s\Phi^{-1}(1/s)$ is a modulus of continuity for all functions $\b{u}\in\wphi$. We note that since $\Phi$ is a $N$-function we get $w(0)=0$.  
+
+\end{comentario}
+
 \begin{proof}
 Since $\b{u}$ is continuous, from the Mean Value Theorem there exists $\tau$ such that
 $\b{u}(\tau)=\overline{\b{u}}$. 
@@ -266,9 +278,21 @@ On the other hand, again by H\"older's inequality and \cite[Eq. (9.11)]{KR}, we 
 \end{split}
 \end{equation}
 From \eqref{desigualdad1}, \eqref{desigualdad2} and the fact that $\b{u}=\overline{\b{u}}+\widetilde{\b{u}}$,  we obtain \eqref{sobolev}.
+
+Inequality c) is obtained as follows. For $0 \leq
+s\leq t \leq T $, we have
+\begin{equation}\label{equicont}
+\begin{split}
+\left|\b{u}_{k}(t)-\b{u}_{k}(s) \right| &\leq \int_{s}^t \left| \b{\dot{u}}_{k}(\tau)\right|\ \ d\tau\\
+&\leq \| \chi_{[s,t]}\|_{\lpsi}\|\b{\dot{u}}_{k}\|_{\lphi}\\
+&\leq C ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right).
+\end{split}
+\end{equation}
+
+
 \end{proof}
 
-If $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a subespace of $X$, as usual we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embeeded} in $X$  when the restricted identity map $i_Y:Y\to X$ is bounded. That is, there exists $C>0$ such that  for any $y\in Y$ we have $\|y\|_X\leq C\|y\|_Y$.  With this notation, Lemma \ref{inclusion orlicz} states $\wphi_d \hookrightarrow L_d^{\infty}$ and H\"older's inequality states that  $\lpsi_d\hookrightarrow  \left[\lphi_d\right]^*$.
+
 
 
  Given a continuous function $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, we define the composition operator $\b{a}:\mathcal{M}_d\to \mathcal{M}_d$ by $\b{a}(\b{u})(t)= a(|\b{u}(t)|)$.
@@ -412,20 +436,10 @@ In this case we can suppose $f=0$ in \eqref{cotaL} and \eqref{cotaDxL}. The same
   
 
 
-\begin{comentario} If $\Phi\in\Delta_2$ then we can asssume $f=0$ keeping the same value of $\lambda$. This is consequence of that a non decreasing $\Delta_2$ function $G:\mathbb{R}^+\to\mathbb{R}^+$ is quasi-subadditive (see \cite[Prop. 4.2]{AF12}).
-{\color{red} Si se deja la cita, se puede quitar la cuenta que sigue en azul.}
-\\
-{\color{blue}In fact, we suppose $s_1\leq s_2$, then  
-\[G(s_1+s_2)\leq G(2s_2)\leq KG(s_2)\leq K\left(G(s_1)+G(s_2)\right).\]}
+\begin{comentario} If $\Phi\in\Delta_2$ then we can asssume $f=0$ keeping the same value of $\lambda$. This is consequence of that a non decreasing $\Delta_2$ function $G:\mathbb{R}^+\to\mathbb{R}^+$ is quasi-subadditive (see \cite[Prop. 4.2]{AF12}) i.e. there exists $K>0$  
+\[G(s_1+s_2)\leq K\left(G(s_1)+G(s_2)\right).\]
 %%
 Moreover, if $\Phi \in \Delta_2$  then $\varphi \in \Delta_2$ (see \cite[Eq. (2.15)]{FZ01}).
-\\
-{\color{red} Igual que antes, cita o cuenta que sigue en azul.}, 
-\\
-{\color{blue}as the following simple argument shows
-\[2s\varphi(2s)\leq \alpha \Phi(2s)\leq K\Phi(s)\leq Ks\varphi(s) \]
-Here we have used \cite[Th. 4.1]{KR}, the $\Delta_2$ condition on $\Phi$ and the inequality \linebreak $\Phi(s)\leq s\varphi(s)$ valid for any $N$-function. }
-\\
 Therefore if $\Phi \in \Delta_2$ we have that
 \[\Phi\left(s+f(t) \right)\leq K\Phi(s)+
 K\Phi\left(f(t) \right)=K\Phi(s)+b_1(t),\]
@@ -660,11 +674,8 @@ It is well known that coercivity is a useful ingredient in order to establish ex
 \mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
 where $\alpha_0,\Lambda>0$ and  $F:\rr\times\rr^d\to\rr$ is a Caratheodory function, i.e. $F(t,\b{x})$ is  measurable respect to $t$ for every fixed  $\b{x}\in\rr^n$ and it is continuous in $\b{x}$ for a.e. $t\in [0,T]$. We note that in virtue of \eqref{cota_inf} and \eqref{cotaL} we have that $F(t,\b{x})\leq a(|\b{x}|)b_0(t)$, with $b_0(t):=b(t)+\Phi(f(t))\in L^1_1([0,T])$. In order to ensure that integral $\int_0^TF(t,\b{u})dt$ be finite for $\b{u}\in\wphi$,  we need to assume 
-
-
 \begin{equation}\label{condA1} |F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T] \quad\text{and for every } \b{x}\in\rr^d.
 \end{equation}
-
 As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1},  the coercivity of the action integral $I$ is related to the coercivity of the functional
 \begin{equation}\label{func_phi}
   J_{C,\nu}(\b{u}):= \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)-C\|\b{u}\orlnor^{\nu},
@@ -793,7 +804,9 @@ These observations, the lower bound of $I$ \eqref{cota_inf_I},
 assumption \ref{hipot_coer} in Theorem \ref{coercitividad1} and Lemma \ref{lem_coer} imply the desired result.
 \end{proof}
 
-Following \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if it verifies \eqref{condA1} and 
+
+Following \cite{mawhin2010critical} we said that $F$ satisfies the condition (A) if  $F(t,\b{x})$ is a Caratheodory function, $F$ satisfies \eqref{condA1} and $F$ is continuously differentiable with respect to $\b{x}$. Moreover, the following inequality holds 
+
 \begin{equation}\label{condA2} |D_{\b{x}}F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T] \text{ and for every }\b{x}\in\rr^d.
 \end{equation}
 The following result was proved in \cite[p. 18]{mawhin2010critical}. 
