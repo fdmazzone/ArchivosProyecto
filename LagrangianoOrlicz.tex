@@ -250,44 +250,39 @@ The following simple lemma is well known and we will use it systematically. For 
 \begin{align}
   &\hbox{a) }\|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Wirtinger's inequality)}\label{wirtinger}\\
 &\hbox{b) } \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\text{  (Sobolev's inequality)}\label{sobolev}\\
-&\hbox{c) }  \left|\b{u}(t)-\b{u}(s) \right| \leq  \|\b{\dot{u}}\orlnor ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right).&
+&\hbox{c) }  \left|\b{u}(t)-\b{u}(s) \right| \leq  \|\b{\dot{u}}\orlnor | t-s|\Phi^{-1}\left(\frac{1}{|t-s|}\right).&
 \end{align}
 \end{lem}
 \begin{comentario}
  As is usual, a function   $w:[0,+\infty)\to[0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. We say that $\b{u}:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that 
 \[|\b{u}(\b{x})-\b{u}(\b{y})|\leq Cw(|\b{x}-\b{y}|).\] 
-Lemma \ref{inclusion orlicz} c) establish that $w(s):=s\Phi^{-1}(1/s)$ is a modulus of continuity for all functions $\b{u}\in\wphi$. We note that since $\Phi$ is a $N$-function we get $w(0)=0$.  
-
+Lemma \ref{inclusion orlicz} c) establish that $w(s):=s\Phi^{-1}(1/s)$ is a modulus of continuity for all functions $\b{u}\in\wphi$. We note that since $\Phi$ is a $N$-function we have $w(0)=0$ and from the concavity of $\Phi^{-1}$ we have that $w$ is increasing.
 \end{comentario}
 
 \begin{proof}
-Since $\b{u}$ is continuous, from the Mean Value Theorem there exists $\tau$ such that
-$\b{u}(\tau)=\overline{\b{u}}$. 
-From H\"older's inequality and the norm of a characteristic function (see \cite[Eq. (9.11)]{KR}),
-we have 
-\begin{equation}\label{desigualdad1}\begin{split}
-|\b{u}(t)-\overline{\b{u}}|\leq \int\limits_{\tau}^{t}|\b{\dot{u}}(s)|ds
-\leq \|\b{\dot{u}}\|_{L^{\Phi}}\|1\|_{L^{\Psi}}\leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor.
-\end{split}
-\end{equation}
-Thus, the last inequality proves Wirtinger's inequality. 
-
-On the other hand, again by H\"older's inequality and \cite[Eq. (9.11)]{KR}, we obtain
-\begin{equation}\label{desigualdad2}\begin{split}
-|\overline{\b{u}}|\leq \frac{1}{T}\int\limits_{0}^{T}|\b{u}(s)|ds\leq \Phi^{-1}\left(\frac{1}{T}\right)\|\b{u}\orlnor.
-\end{split}
-\end{equation}
-From \eqref{desigualdad1}, \eqref{desigualdad2} and the fact that $\b{u}=\overline{\b{u}}+\widetilde{\b{u}}$,  we obtain \eqref{sobolev}.
 
 Inequality c) is obtained as follows. For $0 \leq
 s\leq t \leq T $, we have
 \begin{equation}\label{equicont}
 \begin{split}
-\left|\b{u}_{k}(t)-\b{u}_{k}(s) \right| &\leq \int_{s}^t \left| \b{\dot{u}}_{k}(\tau)\right|\ \ d\tau\\
-&\leq \| \chi_{[s,t]}\|_{\lpsi}\|\b{\dot{u}}_{k}\|_{\lphi}\\
-&\leq C ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right).
+\left|\b{u}(t)-\b{u}(s) \right| &\leq \int_{s}^t \left| \b{\dot{u}}(\tau)\right|\ \ d\tau\\
+&\leq \| \chi_{[s,t]}\|_{\lpsi}\|\b{\dot{u}}\|_{\lphi}\\
+&= \|\b{\dot{u}}\|_{\lphi} ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right).
 \end{split}
 \end{equation}
+Where the last equality was obtained from \cite[Eq. (9.11)]{KR}.
+
+Inequality a) follows from c). In fact, since $\b{u}$ is continuous, from the Mean Value Theorem for integrals, there exists $s\in [0,T]$ such that
+$\b{u}(s)=\overline{\b{u}}$. Using this $s$ value in c) and taking account that $s\Phi^{-1}(1/s)$ is increasing we obtain  Wirtinger's inequality. 
+
+On the other hand, again by H\"older's inequality and \cite[Eq. (9.11)]{KR}, we obtain
+\begin{equation}\label{desigualdad2}\begin{split}
+|\overline{\b{u}}|= \frac{1}{T}\int\limits_{0}^{T}|\b{u}(s)|ds\leq \Phi^{-1}\left(\frac{1}{T}\right)\|\b{u}\orlnor.
+\end{split}
+\end{equation}
+
+From \eqref{wirtinger}, \eqref{desigualdad2} and the fact that $\b{u}=\overline{\b{u}}+\widetilde{\b{u}}$,  we obtain \eqref{sobolev}.
+
 
 
 \end{proof}
