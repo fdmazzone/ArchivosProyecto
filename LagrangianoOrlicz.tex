@@ -264,7 +264,8 @@ The following simple lemma is well known and we will use it systematically. For 
 \end{lem}
 \begin{comentario}
  As usual, a function   $w:[0,+\infty)\to[0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. We say that $\b{u}:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that 
-\[|\b{u}(\b{x})-\b{u}(\b{y})|\leq Cw(|\b{x}-\b{y}|).\] 
+\begin{equation}\label{w-holder}|\b{u}(t)-\b{u}(s)|\leq Cw(|t-s|).
+\end{equation}
 The inequality \eqref{in-sob-cont}
 establishes that $w(s):=s\Phi^{-1}(1/s)$ is a modulus of continuity for all functions $\b{u}\in\wphi$. 
 Since $\Phi$ is an $N$-function then $w(0)=0$; 
@@ -284,7 +285,7 @@ s\leq t \leq T $, we get
 using \cite[Eq. (9.11)]{KR} in the last equality. This completes the proof of \eqref{in-sob-cont}.
 
 Since $u_i$ is continuous, from Mean Value Theorem for integrals, 
-there exists \linebreak $s_i\in [0,T]$ such that $u_i(s_i)=\overline{u}_i$.
+there exists  $s_i\in [0,T]$ such that $u_i(s_i)=\overline{u}_i$.
 Using this $s_i$ value in \eqref{in-sob-cont} with $u_i$ instead of $\b{u}$ and taking into account that $s\Phi^{-1}(1/s)$ is increasing, 
 we obtain  Wirtinger's inequality for each $u_i$. The inequality \eqref{wirtinger} 
 follows easily from the corresponding result for each component of $\b{u}$.
@@ -297,27 +298,13 @@ On the other hand, again by H\"older's inequality and \cite[Eq. (9.11)]{KR}, we 
 From \eqref{wirtinger}, \eqref{desigualdad2} and the fact that $\b{u}=\overline{\b{u}}+\widetilde{\b{u}}$,  we obtain \eqref{sobolev}.
 \end{proof}
 
-Inequalities \eqref{in-sob-cont}  establish the embedding  $\wphi_d\hookrightarrow C([0,T],\rr^d)$. Actually a stronger result holds.  
+\begin{comentario}Inequalies \eqref{in-sob-cont} and \eqref{wirtinger}  proves  the embedding  $\wphi_d\hookrightarrow C^w([0,T],\rr^d)$, where $C^w([0,T],\rr^d)$ denotes the space of generalized $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$ and $w(s)=s\Phi^{-1}(1/s)$. This space is a Banach space with norm
+\[\|\b{u}\|_{  C^w([0,T],\rr^d) }  :=\|\b{u}\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|\b{u}(t)-\b{u}(s)|}{w(|t-s|)}.\]
+As it is well known, Arzela-Ascoli Theorem implies that  the embedding $C^w([0,T],\rr^d)\hookrightarrow C([0,T],\rr^d)$ is compact (see \cite[Ch. 5]{driver} for the case $w(s)=|s|^{\alpha}$, $0< \alpha\leq 1$, the case  $w$ arbitrary follows with obvious modifications). Therefore we have the following result.
+\end{comentario}
 
-
- \begin{lem}\label{unif_conv} The embedding  $\wphi_d\hookrightarrow C([0,T],\rr^d) $ is compact. 
-\end{lem}
-\begin{proof} Let $\{\b{u}_{k}\}_{k \geq 1}$ be a bounded  sequence in $\wphi_d$. We have to prove that  there exists a subsequence $\{n_k\}$ and $\b{u}\in C([0,T],\rr^d)$ such that  $\{\b{u}_{k}\}_{k\geq 1}$ converges uniformly to $\b{u}$ on $[0,T]$.
-
- Since $\b{u}_{k}\rightharpoonup \b{u}$ in $\wphi_d$, the sequence  $\{\b{u}_{k}\}_{k \geq 1}$ is bounded in
-$\wphi_d$. Therefore $\{\b{\dot{u}}_n\}$   is bounded in $\lphi$. For $0 \leq
-s\leq t \leq T $, we have
-\begin{equation}\label{equicont}
-\begin{split}
-\left|\b{u}_{k}(t)-\b{u}_{k}(s) \right| &\leq \int_{s}^t \left| \b{\dot{u}}_{k}(\tau)\right|\ \ d\tau\\
-&\leq \| \chi_{[s,t]}\|_{\lpsi}\|\b{\dot{u}}_{k}\|_{\lphi}\\
-&\leq C ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right).
-\end{split}
-\end{equation}
-As $\Phi$ is an $N$-function, $\lim_{\xi\to \infty} \Phi^{-1}(\xi)/\xi=\lim_{\eta\to \infty} \eta/\Phi(\eta)=0$.  This fact and \eqref{equicont} prove that the sequence $\{\b{u}_{k}\}_{k \geq 1}$ is equicontinuous. By Arzel\`a-Ascoli Theorem, from every subsequence $\{k'\}\subset \mathbb{N}$ we can extract a subsequence $\{k''\}\subset\{k'\}$ such that $\b{u}_{k''}$ converges uniformly to a function $\b{v}\in C([0,T],\mathbb{R}^n)$. In particular $\b{u}_{k''}\rightharpoonup \b{v}$ in $\lphi_d$. However, from the embedding  $\wphi\hookrightarrow\lphi$, we have $ \b{u}_{k''}\rightharpoonup \b{u}$ in $\lphi$.  Thus, by the uniqueness of the weak limit, we get $\b{u}_{k''}\rightharpoonup \b{u}$ uniformly. 
-
-{\color{red} Lo que sigue est\'a dicho arriba, o no?...
-We have proved that from every subsequence $\{k'\}\subset \mathbb{N}$ we can extract a subsequence $\{k''\}\subset\{k'\}$ such that $\b{u}_{k''}\to \b{u}$ uniformly.}
+ \begin{cor}\label{unif_conv} Every bounded sequence $\{\b{u}_n\}$ in  $\wphi_d$  has an uniformly convergent subsequence. 
+\end{cor}
 
 
 
@@ -329,7 +316,6 @@ More concretely,  there exists a non decreasing function $A:\mathbb{R}^+\to\math
 \end{cor}
 
 \begin{proof}  Let $\alpha\in C(\mathbb{R}^+,\mathbb{R}^+)$ be a  non-decreasing majorant of $a$, for example 
-\linebreak 
 $\alpha(s):=\sup_{0\leq t\leq s}a(t)$.  If $\b{u}\in \wphi_d$ then, by Lemma \ref{inclusion orlicz}, 
 \[a(|\b{u}(t)|)\leq \alpha(\|\b{u}\|_{L^{\infty}})\leq 
 \alpha\left(\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\} \|\b{u}\|_{\wphi}\right)=: 
@@ -924,7 +910,7 @@ which ensure lower semicontinuity of the action integral $I$ on its domain $\dom
 
 
 This fact implies the next lemma.
-\end{proof}
+
 
 
 
