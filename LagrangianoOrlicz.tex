@@ -140,6 +140,26 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 
 \section{Introduction}
 
+This paper is concerned with the existence of periodic solutions for the following problem
+
+\begin{equation}\label{ecualagran2}
+    \left\{%
+\begin{array}{ll}
+   \frac{d}{dt} D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0,
+\end{array}%
+\right.
+\end{equation}
+ where $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and  $\mathcal{L}:\rr\times\rr^d\times \rr^d\to\rr$ satisfies
+\begin{eqnarray}
+|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
+|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right),\label{cotaDyL}
+\end{eqnarray}
+with  $\lambda>0$,  $a\in C(\mathbb{R}^+, \mathbb{R}^+)$, $\Phi$ is $N$-function, $\varphi$ is the right continuous derivative of $\Phi$,  the functions $b,c,f:[0,T]\to\rr$ satisfies  $b$ integrable,   $c$ and $f$  belonging to  certain  Orlicz spaces associated to $\Phi$.
+
+
+
 \section{Preliminaries}
 
 %\subsection{$N$-functions}
@@ -393,44 +413,6 @@ the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$
 \end{defi}
 
 
-In this paper, we will consider lagrangian functions satisfying the following structure conditions. We assume  that there
-exists $\lambda>0$ and non negative functions  \linebreak $a \in C(\mathbb{R}^+, \mathbb{R}^+)$, $b \in L^1_1([0,T])$, $c \in \lpsi_1([0,T])$ and $f\in\ephi_1$ such that
-
-\begin{eqnarray}
-|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
-|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
-\end{eqnarray}
-
-
-
-%\begin{comentario}These conditions are a generalization of the frequently considered condition (A) (see \cite{tang1995periodic, tang2010periodic, xu2007some,zhao2004periodic} ). In fact, conditions  \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL} are equivalent to condition (A)  when  $\mathcal{L}(t,\b{x},\b{y})=\Phi_p(|\b{y}|)+F(t,\b{x})$, $\Phi_p(s)=s^p/p$ and\, $d(t)=0$ (see \cite{mawhin2010critical}). 
-%\end{comentario}
-%
-%\begin{comentario}  As a direct consequence of convexity, we can  bound the term $\Phi(|\b{y}|/\lambda+d(t))$ where $d\in \ephi_1$, by the expression  $\frac12\Phi(|\b{y}|/\Lambda)+b(t)$ with $b(t):=\tfrac12\Phi(2d(t))\in L^1_1$ and  $\Lambda= \lambda/2$. That is, we can  assume $d(t) = 0$ at the price of making smaller the value of $\lambda$. 
-%\end{comentario}
-%
- %\begin{comentario} Let us note that if $\Phi\in\Delta_2$ then we can assume $d(t)=0$ keeping the same value of $\lambda$. This is consequence of the fact that a non decreasing  function $G:\mathbb{R}^+\to\mathbb{R}^+$ such that $G \in \Delta_2$, is quasi-subadditive. In fact, we suppose $y\leq x$, then  
-%\[G(x+y)\leq G(2x)\leq KG(x)\leq K\left(G(x)+G(y)\right).\]
-%Moreover, if $\Phi \in \Delta_2$  then $\varphi \in \Delta_2$, as the following simple argument shows
-%\[2x\varphi(2x)\leq K \Phi(2x)\leq K^2\Phi(x)\leq K^2x\varphi(x). \]
-%
-%Here we have used \cite[Thm. 4.1]{KR},  the fact that $\Phi \in \Delta_2$ 
-%and the inequality $\Phi(x)\leq x\varphi(x)$ that is valid for any $N$-function. 
-%{\color{red} Buscar cita para omitir la cuenta anterior}.
-%
-%Therefore if $\Phi \in \Delta_2$ we have that
-%\[b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+d(t) \right)\leq 
-%b(t)+ K\Phi\left(d(t) \right) +K\Phi\left(\frac{|\b{y}|}{\lambda}\right)=b_1(t)+K\Phi\left(\frac{|\b{y}|}{\lambda}\right),\]
-%where $b_1(t)=b(t)+ K\Phi\left(d(t) \right)\in L^1_1([0,T])$. A similar fact holds with $\varphi$ instead $\Phi$ namely
-%\[ c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+d(t)\right) \leq c_1(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}\right),\]
-%where, as consequence of Lemma \ref{phi_comp} and the $\Delta_2$ condition on $\Phi$, we have   $c_1(t):=c(t)+K\varphi\left(d(t)\right)\in \lpsi_1$. 
-%
-%The following  example shows that the condition $\Delta_2$ is essential in the previous discussion. Let $\Phi(s)=e^s-s-1$ and let $d$ be a function in $\lphi_1\setminus L^{\infty}_1$. We suppose that there exists $K>0$ and $b\in L^1_1$ such that $\Phi(s+d(t))\leq K \Phi(s)+b(t)$.  This inequality implies for sufficient large $s$ that $\frac12e^se^{d(t)}\leq Ke^s+b(t)$. As $d\notin L^{\infty}_1$ we can fix $t$ with $e^{b(t)}>4K$. Hence, we obtain $2Ke^s\leq Ke^s+b(t)$, which is 
-%evidently false as the limit $s\to +\infty$ shows.   
-%{\color{red} El remark es muuuuy largo, repite $\Phi \in Delta_2$ y no aclara el dominio de $\Phi$ para distinguir global y no. 
-%$G$ es la $\Phi$??  CAMBIAR POR LOS NUEVOS REMARKS!!!!}
-%\end{comentario}
 
 
 \begin{comentario}These conditions are a direct  generalization of the conditions
@@ -531,7 +513,7 @@ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\ri
 |D_{\b{x}}\mathcal{L}(\cdot,\b{u}_{n_k},\b{\dot{u}}_{n_k})|\leq M\left(b+\Phi\left(\frac{|h|}{\lambda}+f\right)\right) \in L^1_1.
 \end{equation*}
 On the other hand, by the Carath\'eodory condition, we have
-\[D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_x\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\quad\hbox{ for a.e. } t\in[0,T].\]
+\[D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\quad\hbox{ for a.e. } t\in[0,T].\]
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
 \noindent\emph{Step 2. The non linear operator   $\b{u}
@@ -550,24 +532,24 @@ Therefore, in virtue of  \eqref{cotaDyL} we get
 \eqref{DerAccion} defines an element in $\left[\wphi_d\right]^*$.
 
 Let $\b{u}_n,\b{u}\in \domi$ such that $\b{u}_n\to \b{u}$ in the norm of $\wphi_d$. 
-We must prove that  $D_y\mathcal{L}(\cdot,\b{u}_n,\dot{\b{u}_n})\overset{w^*}{\rightharpoonup} D_y\mathcal{L}(\cdot,\b{u},\b{\dot{u}})$. On the contrary, if there exist $\b{v}\in\lphi_d$, $\epsilon>0$ and a subsequence of $\{\b{u}_n\}$ (denoted  $\{\b{u}_n\}$ for simplicity)  such that
+We must prove that  $D_{\b{y}}\mathcal{L}(\cdot,\b{u}_n,\dot{\b{u}_n})\overset{w^*}{\rightharpoonup} D_{\b{y}}\mathcal{L}(\cdot,\b{u},\b{\dot{u}})$. On the contrary, if there exist $\b{v}\in\lphi_d$, $\epsilon>0$ and a subsequence of $\{\b{u}_n\}$ (denoted  $\{\b{u}_n\}$ for simplicity)  such that
 \begin{equation}\label{cota_eps}
  \left| \langle D_{\b{y}}\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}_n}),\b{v} \rangle - \langle  D_{\b{y}}\mathcal{L}(\cdot,\b{u},\b{\dot{u}}),\b{v} \rangle\right|\geq \epsilon.
 \end{equation}
 We have $\b{u}_n\rightarrow \b{u}$ in $\lphi_d$ and
 $\b{\dot{u}}_n\rightarrow \b{\dot{u}}$ in $\lphi_d$. By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}$ and a function $h\in \Pi(\ephi_1,\lambda)$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$ 
 As in the previous step, since $\b{u}_n$ is a convergent sequence, the Corollary \ref{a_bound} implies that $a(|\b{u}_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
-Therefore,  with $u$ instead of $u_n$, inequality  \eqref{DyLpsi} becomes  
+Therefore,  with $\b{u}_n$ instead of $\b{u}$, inequality  \eqref{DyLpsi} becomes  
 %\eqref{cotaDyL},  \eqref{AcotOperphi}, the fact that $c\in\lpsi_1$ and H\"older's inequality, we obtain
 \begin{equation}\label{Dy-suc}
-  \left | D_y\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n)  \right| 
+  \left | D_{\b{y}}\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n)  \right| 
 	\leq M\left(c+\varphi\left(\frac{h}{\lambda}+f\right)\right)\in \lpsi_1.
 \end{equation}
 
 {\color{red} La siguiente frase hab\'ia quedado incompleta}
 
 Consequently, as $v \in \lphi_d$ and employing H\"older's inequality, we obtain that 
- $\sup_n|D_y\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n)\ccdot v| \in L^1_1$.  Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
+ $\sup_n|D_{\b{y}}\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n)\ccdot v| \in L^1_1$.  Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
 \begin{equation}\label{conv_debil}\int_0^T  D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})\ccdot\b{ v} \ dt \to \int_0^T D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{ v}\ dt \end{equation}
 which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
@@ -602,8 +584,8 @@ Consequently, $I$ has a directional derivative and
 \]
 Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and previous formula, we have
 \[
-|\langle I'(\b{u}),\b{v} \rangle| \leq \|D_x\mathcal{L}\|_{L^1} \| \b{v}\linf + 
-\|D_y\mathcal{L}\|_{\lpsi} \|\b{\dot{v}}\orlnor \leq C \|\b{v}\sobnor
+|\langle I'(\b{u}),\b{v} \rangle| \leq \|D_{\b{x}}\mathcal{L}\|_{L^1} \| \b{v}\linf + 
+\|D_{\b{y}}\mathcal{L}\|_{\lpsi} \|\b{\dot{v}}\orlnor \leq C \|\b{v}\sobnor
 \]
 with a appropriate constant $C$.
 This completes the proof of the G\^ateaux differentiability of $I$. 
@@ -705,7 +687,7 @@ It is well known that coercivity is a useful ingredient in order to establish ex
 \begin{equation}\label{cota_inf}
 \mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
-where $\alpha_0,\Lambda>0$ and  $F:\rr\times\rr^d\to\rr$ is a Carath\'eodory function, i.e. $F(t,\b{x})$ is  measurable with respect to $t$ for every fixed  $\b{x}\in\rr^n$ and it is continuous at $\b{x}$ for a.e. $t\in [0,T]$. We note that, in virtue of \eqref{cota_inf} and \eqref{cotaL}, $F(t,\b{x})\leq a(|\b{x}|)b_0(t)$  with $b_0(t):=b(t)+\Phi(f(t))\in L^1_1([0,T])$. In order to ensure that integral $\int_0^TF(t,\b{u})dt$ is finite for $\b{u}\in\wphi$,  we need to assume 
+where $\alpha_0,\Lambda>0$ and  $F:\rr\times\rr^d\to\rr$ is a Carath\'eodory function, i.e. $F(t,\b{x})$ is  measurable with respect to $t$ for every fixed  $\b{x}\in\rr^d$ and it is continuous at $\b{x}$ for a.e. $t\in [0,T]$. We note that, in virtue of \eqref{cota_inf} and \eqref{cotaL}, $F(t,\b{x})\leq a(|\b{x}|)b_0(t)$  with $b_0(t):=b(t)+\Phi(f(t))\in L^1_1([0,T])$. In order to ensure that integral $\int_0^TF(t,\b{u})dt$ is finite for $\b{u}\in\wphi$,  we need to assume 
 \begin{equation}\label{condA1} |F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for \,a.e. }t\in [0,T] \quad\text{and for every } \b{x}\in\rr^d.
 \end{equation}
 As we shall see in Theorem \ref{coercitividad1}, when $\mathcal{L}$ satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1},  the coercivity of the action integral $I$ is related to the coercivity of the functional
