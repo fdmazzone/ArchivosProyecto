@@ -147,33 +147,13 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 \end{array}%
 \right.
 \end{equation}
-where $T>0$ and $\mathcal{L}:[0,T]\times\rr^n\times\rr^n\to\rr$ is a Caratheodory function satisfying the conditions 
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and $\mathcal{L}:[0,T]\times\rr^n\times\rr^n\to\rr$ is a Caratheodory function satisfying the conditions 
 \begin{eqnarray}
 |\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
 |D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
 |D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
 \end{eqnarray}
 In this inequalities we assume that $\lambda>0$,  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\Phi$ is a $N$-function (see preliminaries section for definitions), $\varphi$ is the right continuous derivative of $\Phi$ and the non negative functions  $b,$ and $f$ belong to certain Banach spaces that  will be introduced later. 
-
-
-This paper is concerned with the existence of periodic solutions for the following problem
-
-\begin{equation}\label{ecualagran2}
-    \left\{%
-\begin{array}{ll}
-   \frac{d}{dt} D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0,
-\end{array}%
-\right.
-\end{equation}
- where $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and  $\mathcal{L}:\rr\times\rr^d\times \rr^d\to\rr$ satisfies
-\begin{eqnarray}
-|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
-|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right),\label{cotaDyL}
-\end{eqnarray}
-with  $\lambda>0$,  $a\in C(\mathbb{R}^+, \mathbb{R}^+)$, $\Phi$ is $N$-function, $\varphi$ is the right continuous derivative of $\Phi$,  the functions $b,c,f:[0,T]\to\rr$ satisfies  $b$ integrable,   $c$ and $f$  belonging to  certain  Orlicz spaces associated to $\Phi$.
-
 
 
 \section{Preliminaries}
