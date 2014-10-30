@@ -123,7 +123,7 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 %
 
 \begin{abstract}
-...
+In this paper we consider the problem of finding periodic solutions of certain Euler-Lagrange equations. We employ the direct method of the calculus of variations, this is we obtain solutions minimizing certain functional $I$. We give conditions which ensure that $I$ is defined and it is  differentiable on certain subsets of  Orlicz-Sobolev spaces $W^1L^{\Phi}$ associated to a $N$-function $\Phi$. We discuss various conditions for the  coercitivity of $I$. We show that, in some sense, it is necessary for the coercitivity that  the complementary function of $\Phi$ be a $\Delta_2$ function.  We conclude by discussing conditions for existence of minima for $I$. 
 \end{abstract}
 
 
@@ -138,26 +138,22 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 
 %\tableofcontents
 
-\section{Introduction}
-
-This paper is concerned with the existence of periodic solutions for the following problem
-
-\begin{equation}\label{ecualagran2}
+\section{Introduction} This paper is concerned with the existence of periodic solutions of the following problem
+\begin{equation}\label{ProbPrin}
     \left\{%
 \begin{array}{ll}
-   \frac{d}{dt} D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0,
+   \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0.
 \end{array}%
 \right.
 \end{equation}
- where $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and  $\mathcal{L}:\rr\times\rr^d\times \rr^d\to\rr$ satisfies
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and $\mathcal{L}:[0,T]\times\rr^n\times\rr^n\to\rr$ is a Caratheodory function satisfying the conditions 
 \begin{eqnarray}
 |\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
 |D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right),\label{cotaDyL}
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
 \end{eqnarray}
-with  $\lambda>0$,  $a\in C(\mathbb{R}^+, \mathbb{R}^+)$, $\Phi$ is $N$-function, $\varphi$ is the right continuous derivative of $\Phi$,  the functions $b,c,f:[0,T]\to\rr$ satisfies  $b$ integrable,   $c$ and $f$  belonging to  certain  Orlicz spaces associated to $\Phi$.
-
+In this inequalities we assume that $\lambda>0$,  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\Phi$ is a $N$-function (see preliminaries section for definitions), $\varphi$ is the right continuous derivative of $\Phi$ and the non negative functions  $b,$ and $f$ belong to certain Banach spaces that  will be introduced later. 
 
 
 \section{Preliminaries}
@@ -411,6 +407,7 @@ See \cite{ambrosetti} for details.
 the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuously differentiable for almost everywhere $t\in [0,T]$.
 
 \end{defi}
+
 
 
 
@@ -763,9 +760,7 @@ J_{C,1}(\b{u}_n)&=\int_0^T \Phi\left(\frac{|\b{u}_n|}{\Lambda}\right)\,dt-C\|\b{
 &=\frac{(1- C\Lambda) r_n\psi(r_n)}{\Psi(r_n)}-1.
 \end{split}
 \]
-From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_{C,1}(\b{u}_n)\to-\infty$, which is a contradiction.
-\color{red}{con qu\'e?}
-Alternativas: which contradicts the hypohtesis on $J_{C,1}$; which contradicts the coercivity  of $J_{C,1}$.
+From \eqref{eq: un-_tiende_inf} and the condition $C\Lambda>1$, we obtain  $J_{C,1}(\b{u}_n)\to-\infty$, which contradicts the coercivity  of $J_{C,1}$.
 \end{proof}
 
 
@@ -884,16 +879,12 @@ This fact together with  \eqref{cota_con _ubarra} finishes the proof.
 
 
 
-\section{Lower semicontinuity of actions integrals and minima existence}
+\section{Main results}
 
 
-The objectives of this section are i) to obtain conditions 
-which ensure lower semicontinuity of the action integral $I$ on its domain $\domi$ and ii) to discuss the existence of minima for $I$.
 
 
-This fact implies the next lemma.
-
-
+For the lower semicontinuity of  $I$ we only need to adapt some results of \cite{ekeland1999convex} to our problem. 
 
 
 \begin{thm}
@@ -902,13 +893,34 @@ We suppose that $\mathcal{L}(t,\b{x},\b{y})$, $F(t,\b{x})$ are Charath\'eodory f
 \mathcal{L}(t,\b{x},\b{y})\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),
 \end{equation}
 where $\Phi$ is an $N$-function. 
-We also assume that the function $F$ satisfies inequality \eqref{condA1} and $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Then, the functional $I$  is sequentially weakly lower semicontinuous and  weakly* lower semicontinuous on $\wphi$.
+We also assume that the function $F$ satisfies inequality \eqref{condA1} and $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Let $\{\b{u}_n\}\subset\wphi$ be a sequence such that $\b{u}_n$ converges  uniformly  to a function $\b{u}\in\wphi$ and $\b{\dot{u}}_n$ converges in the weak topology of $L^1_d$ to $\b{\dot{u}}$.   Then
+\begin{equation}\label{liminf0}I(\b{u})\leq \liminf_{n\to\infty}I(\b{u}_n).
+\end{equation}
+
 \end{thm}
 
-\begin{proof} We note that \eqref{cota_inf_2}
+\begin{proof} First we note that \eqref{cota_inf_2} and \eqref{condA1} imply that $I$ is defined in $\wphi$ taking values in the interval $(-\infty,+\infty]$. 
+
+Let $\{\b{u}_n\}$ be a sequence  satisfying the assumptions of the Theorem.   We define the Caratheodory function $\mathcal{L}'=\mathcal{L}-F$. Let $I'$ be the associated to $\mathcal{L}'$ action integral. Using  \cite[Th. 2.1, p. 243]{ekeland1999convex} with  $\mathcal{L}'$ instaead $f$, we have that
+\begin{equation}\label{liminf1}\int_0^T\mathcal{L}'(t,\b{u},\b{\dot{u}})dt\leq \liminf_{n\to\infty}\int_0^T\mathcal{L}'(t,\b{u}_n,\b{\dot{u}}_n)dt.
+\end{equation}
+
+From the uniform convergence of $\b{u}_n$ and the Caratheodory conditions for $F$ we obtain that $F(t,\b{u}_n(t))\to F(t,\b{u}(t))$ a.e. $t\in[0,T]$.  Since $\b{u}_n$ are uniformly bouded, the inequaluity  \eqref{condA1} imply that there exists $g\in L_1^1([0,T])$ such that $|F(t,\b{u}_n(t))|\leq g(t)$. From the Dominated Convergence Theorem we have that 
+\begin{equation}\label{liminf2}\lim_{n\to\infty}\int_0^TF(t,\b{u}_n(t))dt=\int_0^TF(t,\b{u}(t))dt.
+\end{equation}
+Taking account of \eqref{liminf1} and  \eqref{liminf2} we obtain \eqref{liminf0}.
+
 \end{proof}
 
-{\color{red} Criterio \'unico para las referencias: Nombres completos o iniciales}
+
+\begin{thm} We suppose $\Phi$ and $\Psi$ complementary $N$-functions with $\Psi\in\Delta_2$. We assume that the Caratheodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex in $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and that it satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1}, \eqref{holder_cont} and \eqref{propiedad1coercividad}.  Then problem \eqref{ProbPrin} has a solution.
+\end{thm}
+
+\begin{proof} Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence of the problem
+\[\min\limits_{\b{u}\in\wphi_T}\int_0^T\mathcal{L}(t,\b{u},\b{\dot{u}})dt.\]
+ Then $I(\b{u}_n)$ is bounded. Theorem \ref{coercitividad1} imply that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. Therefore $\b{\dot{u}}_n$ is bounded in $\lphi_d$. The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*=\left[\lpsi_d\right]^*$ and according to \cite[Prop. 4, p. 147]{rao1991theory} (note that $\Phi\in\nabla_2\Leftrightarrow \Psi\in\Delta_2$) there exists a subsequence 
+
+\end{proof}
 
 \printbibliography
 
