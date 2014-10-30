@@ -879,12 +879,9 @@ This fact together with  \eqref{cota_con _ubarra} finishes the proof.
 
 
 
-\section{Lower semicontinuity of actions integrals and minima existence}
+\section{Main results}
 
 
-In this section we give conditions for the existence  of critical points of $I$. More precisely we give suficient conditions for that the following optimization problem has solutions 
-\begin{equation}\label{minimi_prob}\min\limits_{\b{u}\in\wphi_T}I(\b{u})=\min\limits_{\b{u}\in\wphi_T}\int_0^T\mathcal{L}(t,\b{u},\b{\dot{u}})dt.
-\end{equation}
 
 
 For the lower semicontinuity of  $I$ we only need to adapt some results of \cite{ekeland1999convex} to our problem. 
@@ -897,21 +894,33 @@ We suppose that $\mathcal{L}(t,\b{x},\b{y})$, $F(t,\b{x})$ are Charath\'eodory f
 \end{equation}
 where $\Phi$ is an $N$-function. 
 We also assume that the function $F$ satisfies inequality \eqref{condA1} and $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Let $\{\b{u}_n\}\subset\wphi$ be a sequence such that $\b{u}_n$ converges  uniformly  to a function $\b{u}\in\wphi$ and $\b{\dot{u}}_n$ converges in the weak topology of $L^1_d$ to $\b{\dot{u}}$.   Then
-\[I(\b{u})\leq \liminf_{n\to\infty}I(\b{u}_n).\]
+\begin{equation}\label{liminf0}I(\b{u})\leq \liminf_{n\to\infty}I(\b{u}_n).
+\end{equation}
 
 \end{thm}
 
 \begin{proof} First we note that \eqref{cota_inf_2} and \eqref{condA1} imply that $I$ is defined in $\wphi$ taking values in the interval $(-\infty,+\infty]$. 
 
-Let $\{\b{u}_n\}$ be a sequence  satisfying the assumptions of the Theorem.   We define the Caratheodory function $\mathcal{L}'=\mathcal{L}-F$. 
+Let $\{\b{u}_n\}$ be a sequence  satisfying the assumptions of the Theorem.   We define the Caratheodory function $\mathcal{L}'=\mathcal{L}-F$. Let $I'$ be the associated to $\mathcal{L}'$ action integral. Using  \cite[Th. 2.1, p. 243]{ekeland1999convex} with  $\mathcal{L}'$ instaead $f$, we have that
+\begin{equation}\label{liminf1}\int_0^T\mathcal{L}'(t,\b{u},\b{\dot{u}})dt\leq \liminf_{n\to\infty}\int_0^T\mathcal{L}'(t,\b{u}_n,\b{\dot{u}}_n)dt.
+\end{equation}
 
+From the uniform convergence of $\b{u}_n$ and the Caratheodory conditions for $F$ we obtain that $F(t,\b{u}_n(t))\to F(t,\b{u}(t))$ a.e. $t\in[0,T]$.  Since $\b{u}_n$ are uniformly bouded, the inequaluity  \eqref{condA1} imply that there exists $g\in L_1^1([0,T])$ such that $|F(t,\b{u}_n(t))|\leq g(t)$. From the Dominated Convergence Theorem we have that 
+\begin{equation}\label{liminf2}\lim_{n\to\infty}\int_0^TF(t,\b{u}_n(t))dt=\int_0^TF(t,\b{u}(t))dt.
+\end{equation}
+Taking account of \eqref{liminf1} and  \eqref{liminf2} we obtain \eqref{liminf0}.
 
 \end{proof}
 
 
+\begin{thm} We suppose $\Phi$ and $\Psi$ complementary $N$-functions with $\Psi\in\Delta_2$. We assume that the Caratheodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex in $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and that it satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1}, \eqref{holder_cont} and \eqref{propiedad1coercividad}.  Then problem \eqref{ProbPrin} has a solution.
+\end{thm}
 
-Let $\{\b{u}_n\}\subset \wphi_T$ be a minimizing sequence of the problem \cite{minimi_prob}. Then $I(\b{u}_n)$ is bounded. The coercitivity conditions imply that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. Therefore 
+\begin{proof} Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence of the problem
+\[\min\limits_{\b{u}\in\wphi_T}\int_0^T\mathcal{L}(t,\b{u},\b{\dot{u}})dt.\]
+ Then $I(\b{u}_n)$ is bounded. Theorem \ref{coercitividad1} imply that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. Therefore $\b{\dot{u}}_n$ is bounded in $\lphi_d$. The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*=\left[\lpsi_d\right]^*$ and according to \cite[Prop. 4, p. 147]{rao1991theory} (note that $\Phi\in\nabla_2\Leftrightarrow \Psi\in\Delta_2$) there exists a subsequence 
 
+\end{proof}
 
 \printbibliography
 
