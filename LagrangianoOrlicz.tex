@@ -642,7 +642,7 @@ $f\left(\tfrac{\b{x}+\b{y}}{2}\right)< \tfrac{1}{2} \left(f\left(
 $D_{\b{x}}f:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, for instance \cite[Thm. 12.17]{rockafellar2009variational}).
 
 
-\begin{thm} Let $\b{u}\in\domi$. The following statements are equivalent:
+\begin{thm}\label{critpoint} Let $\b{u}\in\domi$. The following statements are equivalent:
 \begin{enumerate}
  \item $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$.
  \item  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is an absolutely continuous function and $\b{u}$ solves the following boundary value problem
@@ -887,7 +887,7 @@ This fact together with  \eqref{cota_con _ubarra} finishes the proof.
 For the lower semicontinuity of  $I$ we only need to adapt some results of \cite{ekeland1999convex} to our problem. 
 
 
-\begin{thm}
+\begin{thm}\label{semicontinf}
 We suppose that $\mathcal{L}(t,\b{x},\b{y})$, $F(t,\b{x})$ are Charath\'eodory functions satisfying
 \begin{equation}\label{cota_inf_2}
 \mathcal{L}(t,\b{x},\b{y})\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),
@@ -916,11 +916,14 @@ Taking account of \eqref{liminf1} and  \eqref{liminf2} we obtain \eqref{liminf0}
 \begin{thm} We suppose $\Phi$ and $\Psi$ complementary $N$-functions with $\Psi\in\Delta_2$. We assume that the Caratheodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex in $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and that it satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1}, \eqref{holder_cont} and \eqref{propiedad1coercividad}.  Then problem \eqref{ProbPrin} has a solution.
 \end{thm}
 
-\begin{proof} Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence of the problem
-\[\min\limits_{\b{u}\in\wphi_T}\int_0^T\mathcal{L}(t,\b{u},\b{\dot{u}})dt.\]
- Then $I(\b{u}_n)$ is bounded. Theorem \ref{coercitividad1} imply that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. Therefore $\b{\dot{u}}_n$ is bounded in $\lphi_d$. The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*=\left[\lpsi_d\right]^*$ and according to \cite[Prop. 4, p. 147]{rao1991theory} (note that $\Phi\in\nabla_2\Leftrightarrow \Psi\in\Delta_2$) there exists a subsequence 
+\begin{proof} Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence for the problem  $\min_{\b{u}\in\wphi_T}I(\b{u})$.
+Since  $I(\b{u}_n)$, $n=1,2,\ldots$  is bounded, Theorem \ref{coercitividad1} imply that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. In virtue of Corollary \ref{unif_conv} we can assume that $\b{u}_n$ converges uniformly to a $T$-periodic continuous function $\b{u}$.  The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*=\left[\lpsi_d\right]^*$. Therefore, according to \cite[Prop. 4, p. 147]{rao1991theory} (note that $\Phi\in\nabla_2\Leftrightarrow \Psi\in\Delta_2$) and since $\b{\dot{u}}_n$ is bounded in $\lphi_d$,  there exists a subsequence (again denoted $\b{u}_n$) such that $\b{\dot{u}}_n$ converges to a function $\b{v}\in\lphi_d$ in the weak* topology. From this fact and the uniform convergence of $\b{u}_n$ to $\b{u}$ we obtain for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^n)$
+\[\int_0^T\b{\dot{\xi}}\ccdot\b{u}dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\ccdot\b{u}_ndt=-\lim_{n\to\infty}\int_0^T\b{\xi}\ccdot\b{\dot{u}}_ndt=-\int_0^T\b{\xi}\ccdot\b{v}dt.\]
+Thus $\b{v}=\b{\dot{u}}$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $\b{u}\in\wphi_T$.
 
-\end{proof}
+Finally from the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset  \lpsi$ and $\lphi_d\subset L^1_d$ we obtain that $\b{\dot{u}}_n$ converges to $\b{\dot{u}}$ in the weak topology of $L^1_d$. Consequently Theorem \ref{semicontinf} implies 
+\[I(\b{u})\leq  \liminf_{n\to\infty}I(\b{u}_n)=\min\limits_{\b{u}\in\wphi_T}I(\b{u}).\]
+Hence $\b{u}$ is a minimun, and therefore a critical point, of $I$. Applying Theorem \ref{critpoint} we conclude the proof.\end{proof}
 
 \printbibliography
 
