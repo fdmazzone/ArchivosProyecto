@@ -782,7 +782,6 @@ We suppose that $\mu< \alpha_{\Phi}$,  with $\alpha_{\Phi}$ as in Lemma \ref{lem
 \int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty.
 \end{equation}
 \item\label{hipot_coer}  $\Psi\in\Delta_2$ or, alternatively, 
-%the following inequality 
 $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$.
 \end{enumerate}
 Then  the action integral $I$ is coercive.
@@ -831,7 +830,7 @@ The following result was proved in \cite[p. 18]{mawhin2010critical}.
 \end{lem}
 
 
-\begin{thm}
+\begin{thm}\label{segcoerthm}
 Let $\mathcal{L}$ be as in Theorem \ref{coercitividad1} and let $F$ be as in Lemma \ref{lema_pto_cri}. In addition, assume that $\Psi\in\Delta_2$ or, alternatively  $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)a(|\b{x}_0|)\|b_0\|_{L^1} \Lambda<1$, with $a$ and $b_0$ as in \eqref{condA1} and $\b{x}_0\in\rr^d$  any point satisfying  \eqref{der_cero}. Then $I$ is coercive. 
 
 \end{thm}
@@ -874,7 +873,6 @@ from  \eqref{cota_con _upunto} and Lemma \ref{lem_coer}, we have $I(\b{u}_n)\to\
 ii) If $\|\b{\dot{u}}_n\orlnor$ is bounded and $\|\b{u}_n\orlnor\to\infty$,  then we obtain $\b{\overline{u}}_n \to\infty$,
 reasoning in a similar way to that developed in the proof of Theorem \ref{coercitividad1}. 
 This fact together with  \eqref{cota_con _ubarra} finishes the proof. 
-
 \end{proof}
 
 
@@ -913,17 +911,27 @@ Taking account of \eqref{liminf1} and  \eqref{liminf2} we obtain \eqref{liminf0}
 \end{proof}
 
 
-\begin{thm} We suppose $\Phi$ and $\Psi$ complementary $N$-functions with $\Psi\in\Delta_2$. We assume that the Caratheodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex in $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and that it satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1}, \eqref{holder_cont} and \eqref{propiedad1coercividad}.  Then problem \eqref{ProbPrin} has a solution.
+\begin{thm} We suppose $\Phi$ and $\Psi$ complementary $N$-functions. We assume that the Caratheodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex in $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and that it satisfies \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and  \eqref{condA1}. In addition, we suppose that some of the following statements hold (we recall the definitios and properties of $\alpha_0$, $b_1$, $\b{x}_0$ and $b_0$ from \eqref{cota_inf}, \eqref{holder_cont}, \eqref{der_cero} and \eqref{condA2} respectively)
+\begin{enumerate}
+  \item\label{item1prin} $\Psi\in\Delta_2$,  \eqref{holder_cont} and \eqref{propiedad1coercividad}.
+\item  As item \ref{item1prin} but with $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$ instead of $\Psi\in\Delta_2$.
+
+\item\label{item3prin} $\Psi\in\Delta_2$,  $F$ satisfies condition (A), \eqref{propiedad1coercividad} and  $F(t,\cdot)$ is  convex  a.e. $t\in [0,T]$.
+
+\item\label{item4prin} As item \ref{item3prin} but $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)a(|\b{x}_0|)\|b_0\|_{L^1} \Lambda<1$ instead of $\Psi\in\Delta_2$.
+
+\end{enumerate}
+Then problem \eqref{ProbPrin} has a solution.
 \end{thm}
 
-\begin{proof} Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence for the problem  $\min_{\b{u}\in\wphi_T}I(\b{u})$.
-Since  $I(\b{u}_n)$, $n=1,2,\ldots$  is bounded, Theorem \ref{coercitividad1} imply that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. In virtue of Corollary \ref{unif_conv} we can assume that $\b{u}_n$ converges uniformly to a $T$-periodic continuous function $\b{u}$.  The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*=\left[\lpsi_d\right]^*$. Therefore, according to \cite[Prop. 4, p. 147]{rao1991theory} (note that $\Phi\in\nabla_2\Leftrightarrow \Psi\in\Delta_2$) and since $\b{\dot{u}}_n$ is bounded in $\lphi_d$,  there exists a subsequence (again denoted $\b{u}_n$) such that $\b{\dot{u}}_n$ converges to a function $\b{v}\in\lphi_d$ in the weak* topology. From this fact and the uniform convergence of $\b{u}_n$ to $\b{u}$ we obtain for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^n)$
+\begin{proof} Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence for the problem  $\min\{I(\b{u})|\b{u}\in\wphi_T\}$.
+Since  $I(\b{u}_n)$, $n=1,2,\ldots$  is bounded, Theorem \ref{coercitividad1} (or Theorem \ref{segcoerthm} according to which of the items \ref{item1prin}-\ref{item4prin} hold true) implies that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. Hence, in virtue of Corollary \ref{unif_conv} we can assume that $\b{u}_n$ converges uniformly to a $T$-periodic continuous function $\b{u}$.  The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*$. Therefore, from \cite[Cor. 5, p. 148]{rao1991theory} and since $\b{\dot{u}}_n$ is bounded in $\lphi_d$,  there exists a subsequence (again denoted $\b{\dot{u}}_n$) such that $\b{\dot{u}}_n$ converges to a function $\b{v}\in\lphi_d$ in the weak* topology. From this fact and the uniform convergence of $\b{u}_n$ to $\b{u}$ we obtain for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^n)\subset\epsi_d$
 \[\int_0^T\b{\dot{\xi}}\ccdot\b{u}dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\ccdot\b{u}_ndt=-\lim_{n\to\infty}\int_0^T\b{\xi}\ccdot\b{\dot{u}}_ndt=-\int_0^T\b{\xi}\ccdot\b{v}dt.\]
 Thus $\b{v}=\b{\dot{u}}$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $\b{u}\in\wphi_T$.
 
-Finally from the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset  \lpsi$ and $\lphi_d\subset L^1_d$ we obtain that $\b{\dot{u}}_n$ converges to $\b{\dot{u}}$ in the weak topology of $L^1_d$. Consequently Theorem \ref{semicontinf} implies 
+Finally from the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset  \epsi$ and $\lphi_d\subset L^1_d$ we obtain that $\b{\dot{u}}_n$ converges to $\b{\dot{u}}$ in the weak topology of $L^1_d$. Consequently Theorem \ref{semicontinf}, applying with the $N$-function $\alpha_0\Phi\left(|\ccdot|/\Lambda\right)$, implies 
 \[I(\b{u})\leq  \liminf_{n\to\infty}I(\b{u}_n)=\min\limits_{\b{u}\in\wphi_T}I(\b{u}).\]
-Hence $\b{u}$ is a minimun, and therefore a critical point, of $I$. Applying Theorem \ref{critpoint} we conclude the proof.\end{proof}
+Hence $\b{u}$ is a minimun, and therefore a critical point, of $I$. Invoking Theorem \ref{critpoint} we conclude the proof.\end{proof}
 
 \printbibliography
 
