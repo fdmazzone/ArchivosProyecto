@@ -2,6 +2,7 @@
 %%Paquetes
 
 
+\usepackage{hyperref}
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
 \usepackage{color}
@@ -138,22 +139,86 @@ In this paper we consider the problem of finding periodic solutions of certain E
 
 %\tableofcontents
 
-\section{Introduction} This paper is concerned with the existence of periodic solutions of the following problem
+\section{Introduction}
+This paper is concerned with the existence of periodic solutions of the problem
 \begin{equation}\label{ProbPrin}
     \left\{%
 \begin{array}{ll}
    \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0.
+    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and $\mathcal{L}:[0,T]\times\rr^n\times\rr^n\to\rr$ is a Caratheodory function satisfying the conditions 
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the Lagrangian $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function satisfying the conditions
 \begin{eqnarray}
 |\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
 |D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
 |D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
 \end{eqnarray}
-In this inequalities we assume that $\lambda>0$,  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\Phi$ is a $N$-function (see preliminaries section for definitions), $\varphi$ is the right continuous derivative of $\Phi$ and the non negative functions  $b,$ and $f$ belong to certain Banach spaces that  will be introduced later. 
+In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$ and the non negative functions  $b,$ $c$ and $f$ belong to certain Banach spaces that  will be introduced later.
+
+
+
+It is well known that problem \eqref{ProbPrin} comes from a variational one, that is,  a solution of \eqref{ProbPrin}  
+is a critical point of the \emph{action integral}
+\begin{equation}\label{integral_accion}
+I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
+\end{equation}
+
+
+In this article  we consider lagrangian functions  defined on Sobolev-Orlicz spaces $W^{1}L^{\Phi}$    
+(see \cite{adams_sobolev,KR, rao1991theory,2002applications}) 
+and we tackle  the direct method of calculus of variations.
+
+Conditions \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL} are the means to ensure that $I$ is defined on 
+a subspace of $W^{1}\lphi_d$ and $I$ is G\^ateaux differentiable in this subspace 
+(see Theorem \ref{teorema_acotacion} in Section 3). 
+In addition, coercivity and  lower semicontinuity  of $I$ are discussed. 
+
+
+Variational problems and hamiltonian systems  have been studied extensively 
+(see \cite{mawhin2010critical, struwe2008variational}).  
+In the Orlicz space setting,   in \cite{cianchi1999gradient,cianchi2000local}, 
+A. Cianchi dealt with
+the regularity  problem of minima of action integrals defined on several variable functions like
+\[I(u)=\int_{\Omega}f(\b{x},u,\nabla u)d\b{x},\]
+where $\Omega\subset\mathbb{R}^d$, $u:\Omega\to\mathbb{R}$ and $f$ is bounded by convex 
+functions satisfying the $\Delta_2$-condition and possibly anisotropic.
+
+In  several recent articles  
+\cite{tang1995periodic,tang1998periodic,tang2001periodic, xu2007some,tang2010periodic,ye2008periodic,zhao2004periodic,wu1999periodic}, 
+the authors established conditions on Lagrangians defined on $L^p$ to guarantee coercivity and existence of minima.
+For example, in   \cite{tang2001periodic} the Lagrangian is 
+%\begin{equation}\label{lagrangiano_tang}
+$\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x}),$
+%\end{equation}
+where  $F(t,\b{x})\geq \beta(t)$ with $\beta\in L^1$ for every $\b{x}\in\mathbb{R}^d$ and a.e. $t\in[0,T]$. 
+and such that $F(t,\b{x})\to+\infty$, a.e. $t\in E$ when $|\b{x}|\to+\infty$ being   $E\subset[0,1]$ with $|E|>0$.
+Later, in  \cite{xu2007some} these requirements  were generalized to the Lagrangian 
+%\begin{equation}\label{lagrangiano_p}
+$\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^p}{p}+F(t,\b{x}),$
+%\end{equation}
+for $p>1$.
+And, in \cite{xu2007some,tang2010periodic,wu1999periodic,zhao2004periodic} the function $F$
+was split up into two potentials, one of them with a property of subadditivity and the other with a bounded
+gradient.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Preliminaries}
