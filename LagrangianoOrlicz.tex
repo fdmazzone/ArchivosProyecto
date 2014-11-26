@@ -2,7 +2,7 @@
 %%Paquetes
 
 
-\usepackage{hyperref}
+%\usepackage{hyperref}
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
 \usepackage{color}
@@ -176,38 +176,65 @@ a subspace of $W^{1}\lphi_d$ and $I$ is G\^ateaux differentiable in this subspac
 In addition, coercivity and  lower semicontinuity  of $I$ are discussed. 
 
 
-Variational problems and hamiltonian systems  have been studied extensively 
-(see \cite{mawhin2010critical, struwe2008variational}).  
-In the Orlicz space setting,   in \cite{cianchi1999gradient,cianchi2000local}, 
-A. Cianchi dealt with
-the regularity  problem of minima of action integrals defined on several variable functions like
-\[I(u)=\int_{\Omega}f(\b{x},u,\nabla u)d\b{x},\]
-where $\Omega\subset\mathbb{R}^d$, $u:\Omega\to\mathbb{R}$ and $f$ is bounded by convex 
-functions satisfying the $\Delta_2$-condition and possibly anisotropic.
-
-In  several recent articles  
-\cite{tang1995periodic,tang1998periodic,tang2001periodic, xu2007some,tang2010periodic,ye2008periodic,zhao2004periodic,wu1999periodic}, 
-the authors established conditions on Lagrangians defined on $L^p$ to guarantee coercivity and existence of minima.
-For example, in   \cite{tang2001periodic} the Lagrangian is 
-%\begin{equation}\label{lagrangiano_tang}
-$\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x}),$
-%\end{equation}
-where  $F(t,\b{x})\geq \beta(t)$ with $\beta\in L^1$ for every $\b{x}\in\mathbb{R}^d$ and a.e. $t\in[0,T]$. 
-and such that $F(t,\b{x})\to+\infty$, a.e. $t\in E$ when $|\b{x}|\to+\infty$ being   $E\subset[0,1]$ with $|E|>0$.
-Later, in  \cite{xu2007some} these requirements  were generalized to the Lagrangian 
-%\begin{equation}\label{lagrangiano_p}
-$\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^p}{p}+F(t,\b{x}),$
-%\end{equation}
-for $p>1$.
-And, in \cite{xu2007some,tang2010periodic,wu1999periodic,zhao2004periodic} the function $F$
+Variational problems and hamiltonian systems  have been studied extensively
+(see \cite{mawhin2010critical}, {\color{red}\cite{struwe2008variational}}). 
+In \cite{mawhin2010critical}  
+it has been proved that problem \eqref{ProbPrin} has at least one solution which minimizes 
+the action integral  $I$
+on $H_1^T$ by the least action principle and where the Lagrangian is 
+%%\begin{equation}\label{lagrangiano_tang}
+$\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x}).$
+%%\end{equation}
+%%In \cite{mawhin2010critical}, proved the existence of solutions for problem (1) under the condition 
+%%that $F$ is coercive.
+Meanwhile, many solvability conditions were given, such as coercivity, periodicity, 
+convexity and boundedness of the potential $F$. 
+%%
+In  \cite{tang1995periodic} the function $F$
 was split up into two potentials, one of them with a property of subadditivity and the other with a bounded
 gradient.
+%%
+In \cite{tang1998periodic} it was required a certain sublinearity condition on the gradient of the potential $F$; and, 
+in \cite{wu1999periodic} it was considered a potential $F$ given by a sum of a subconvex function and a  subquadratic one. 
+%%
+In  \cite{tang2001periodic} the uniform coercivity was replaced by local coercivity in some positive measure subset of $[0,T]$.
+In \cite{zhao2004periodic}, the authors took the same potential as in \cite{wu1999periodic} getting new solvability conditions 
+and they also studied the case in which the two potentials do not have any convexity.
+%
 
+The Lagrangian  $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^p}{p}+F(t,\b{x})$
+for $p>1$ was treated in more recent papers.
+By using the dual least action principle, in \cite{Tian2007192}
+it was performed the extension of some results given in \cite{mawhin2010critical};
+and, in \cite{tang2010periodic} the authors improved the work done in \cite{wu1999periodic}.
+On the other hand, by the minimax methods in critical point theory 
+some existence theorems were obtained.
+In \cite{xu2007some} it was employed a subquadratic potential $F$ 
+%which is subquadratic in Rabinowitz{}'s sense 
+and in \cite{ye2008periodic} $F$ was taken as in \cite{tang1998periodic}.
+%a sum of two potentials where one of them had a sublinear gradient.
 
+Another source of problems, close to our proposal, is the one in which a \emph {p-laplacian-like} operator is involved.
+Assuming that the function $\varphi$ is a homeomorphism  from $\rr^d$ into itself, it is considered the differential operator
+$u \to (\varphi(u'))'$ for functions of a real variable. 
+In  \cite{Cristia-2011,C-2007,C-2009, 
+Cristia-2008, 
+m-1999, GHMS, GHMZ, manasevich2000boundary, manasevich1998periodic,} 
+some existence results of solutions of equations 
+like 
+$(\varphi({\b u}'))'={\b f}(t,{\b u}(t),{\b u}'(t))$ were obtained 
+under different boundary conditions (periodic, Dirichlet, von Neumann) 
+and where $\b f$ is not a gradient.
+%
 
-
-
-
+In the Orlicz space setting,   in \cite{cianchi1999gradient,cianchi2000local} 
+A. Cianchi dealt with
+the regularity  problem of minima of action integrals defined on several variable functions like
+%\[
+$I(u)=\int_{\Omega}f(\b{x},u,\nabla u)d\b{x},$
+%\]
+where $\Omega\subset\mathbb{R}^d$, $u:\Omega\to\mathbb{R}$ and $f$ is bounded by convex 
+functions satisfying the $\Delta_2$-condition and possibly anisotropic.
 
 
 
@@ -404,7 +431,7 @@ A(\|\b{u}\|_{\wphi}).\]
 \end{proof}
 
 
-The following lemma is an inmediate consequence of principles  related to  operators of Nemitskii type, see \cite[§17]{KR}.
+The following lemma is an inmediate consequence of principles  related to  operators of Nemitskii type, see \cite[ï¿½17]{KR}.
 
 \begin{lem}\label{phi_comp}   
 The  composition operator  $\boldsymbol{\varphi}$  acts from $\Pi(\ephi_d,1)$ into $C_1^{\Psi}$.
