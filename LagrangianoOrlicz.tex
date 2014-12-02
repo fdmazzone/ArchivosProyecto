@@ -2,7 +2,7 @@
 %%Paquetes
 
 
-\usepackage{hyperref}
+%\usepackage{hyperref}
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
 \usepackage{color}
@@ -149,7 +149,7 @@ This paper is concerned with the existence of periodic solutions of the problem
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the Lagrangian $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function satisfying the conditions
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function satisfying the conditions
 \begin{eqnarray}
 |\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
 |D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
@@ -166,42 +166,58 @@ I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
 \end{equation}
 
 
-In this article  we consider lagrangian functions  defined on Sobolev-Orlicz spaces $W^{1}L^{\Phi}$    
-(see \cite{adams_sobolev,KR, rao1991theory,2002applications}) 
-and we tackle  the direct method of calculus of variations.
 
-Conditions \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL} are the means to ensure that $I$ is defined on 
-a subspace of $W^{1}\lphi_d$ and $I$ is G\^ateaux differentiable in this subspace 
-(see Theorem \ref{teorema_acotacion} in Section 3). 
-In addition, coercivity and  lower semicontinuity  of $I$ are discussed. 
-
-
-Variational problems and hamiltonian systems  have been studied extensively 
-(see \cite{mawhin2010critical, struwe2008variational}).  
-In the Orlicz space setting,   in \cite{cianchi1999gradient,cianchi2000local}, 
-A. Cianchi dealt with
-the regularity  problem of minima of action integrals defined on several variable functions like
-\[I(u)=\int_{\Omega}f(\b{x},u,\nabla u)d\b{x},\]
-where $\Omega\subset\mathbb{R}^d$, $u:\Omega\to\mathbb{R}$ and $f$ is bounded by convex 
-functions satisfying the $\Delta_2$-condition and possibly anisotropic.
-
-In  several recent articles  
-\cite{tang1995periodic,tang1998periodic,tang2001periodic, xu2007some,tang2010periodic,ye2008periodic,zhao2004periodic,wu1999periodic}, 
-the authors established conditions on Lagrangians defined on $L^p$ to guarantee coercivity and existence of minima.
-For example, in   \cite{tang2001periodic} the Lagrangian is 
-%\begin{equation}\label{lagrangiano_tang}
-$\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x}),$
-%\end{equation}
-where  $F(t,\b{x})\geq \beta(t)$ with $\beta\in L^1$ for every $\b{x}\in\mathbb{R}^d$ and a.e. $t\in[0,T]$. 
-and such that $F(t,\b{x})\to+\infty$, a.e. $t\in E$ when $|\b{x}|\to+\infty$ being   $E\subset[0,1]$ with $|E|>0$.
-Later, in  \cite{xu2007some} these requirements  were generalized to the Lagrangian 
-%\begin{equation}\label{lagrangiano_p}
-$\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^p}{p}+F(t,\b{x}),$
-%\end{equation}
-for $p>1$.
-And, in \cite{xu2007some,tang2010periodic,wu1999periodic,zhao2004periodic} the function $F$
+Variational problems and hamiltonian systems  have been studied extensively. Classical references of this subject are
+\cite{mawhin2010critical,struwe2008variational,ekeland1999convex}. Problems likes \eqref{ProbPrin} maintained the interest of researchers as testifies the recent literature on the topic. For Lagrangians of the type $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x})$  many solvability conditions were given.  In  \cite{tang1995periodic} the function $F$
 was split up into two potentials, one of them with a property of subadditivity and the other with a bounded
 gradient.
+%%
+In \cite{tang1998periodic} it was required a certain sublinearity condition on the gradient of the potential $F$; and, 
+in \cite{wu1999periodic} it was considered a potential $F$ given by a sum of a subconvex function and a  subquadratic one. 
+%%
+In  \cite{tang2001periodic} the uniform coercivity was replaced by local coercivity in some positive measure subset of $[0,T]$.
+In \cite{zhao2004periodic}, the authors took the same potential as in \cite{wu1999periodic} getting new solvability conditions 
+and they also studied the case in which the two potentials do not have any convexity.
+%
+
+The Lagrangian  $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^p}{p}+F(t,\b{x})$
+for $p>1$ was treated in more recent papers.
+By using the dual least action principle, in \cite{Tian2007192}
+it was performed the extension of some results given in \cite{mawhin2010critical};
+and, in \cite{tang2010periodic} the authors improved the work done in \cite{wu1999periodic}.
+On the other hand, by the minimax methods in critical point theory 
+some existence theorems were obtained.
+In \cite{xu2007some} it was employed a subquadratic potential $F$ 
+%which is subquadratic in Rabinowitz{}'s sense 
+and in \cite{ye2008periodic} $F$ was taken as in \cite{tang1998periodic}.
+%a sum of two potentials where one of them had a sublinear gradient.
+
+Another source of problems, close to our proposal, is the one in which a \emph {p-laplacian-like} operator is involved.
+Assuming that the function $\varphi$ is a homeomorphism  from $\rr^d$ into itself, it is considered the differential operator
+$u \to (\varphi(u'))'$ for functions of a real variable. 
+In  \cite{Cristia-2011,C-2007,C-2009, 
+Cristia-2008, 
+ GHMS, GHMZ, manasevich2000boundary, manasevich1998periodic} 
+some existence results of solutions of equations 
+like 
+$(\varphi({\b u}'))'={\b f}(t,{\b u}(t),{\b u}'(t))$ were obtained 
+under different boundary conditions (periodic, Dirichlet, von Neumann) 
+and where $\b f$ is not a gradient. Our methods differ from previous articles in that  we use the direct method of the calculus of variations.
+
+  In \cite{m-1999} a constrained minimization problem in Orlicz-Sobolev spaces  was considered in order to obtain existence of eigenvalues for certain differential operators involving $N$-functions.  
+
+
+
+Finally we mention that the regularity  problem, in an Orlicz-Sobolev stetting, of minimizers of action integrals defined on several variable functions was studied by A. Cianchi  (see \cite{cianchi2000local, cianchi1999gradient}).
+
+
+
+
+
+In this article  we consider Lagrange functions  defined on Sobolev-Orlicz spaces $W^{1}L^{\Phi}$    
+(see \cite{adams_sobolev,KR, rao1991theory,2002applications}) 
+and we tackle  the direct method of calculus of variations. The exposition is organized as follows. In Section \ref{preliminares} we present results related to Orliz spaces and Orlicz-Sobolev spaces and results related to composition operators. Almost all result in this section  is essentially known. Conditions \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL} are the means to ensure that $I$ is finitely defined on 
+a non trivial subset of $W^{1}\lphi_d$ and $I$ is G\^ateaux differentiable in this subspace. We develop this questions in Theorem \ref{teorema_acotacion}  of Section \ref{sec:dif}. In Section \ref{sec:equa-min} we prove that critical point of \eqref{integral_accion} are solution of \eqref{ProbPrin}. Conditions for the coercitivity of action integrals are discussed in Section \ref{sec:coer}. Finally, our main Theorem about existence of solutions of  \eqref{ProbPrin} is introduced in Section \ref{sec:main}. 
 
 
 
@@ -209,19 +225,7 @@ gradient.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Preliminaries}
+\section{Preliminaries}\label{preliminares}
 
 %\subsection{$N$-functions}
 For reader convenience, we give a short introduction to Orlicz and Orlicz Sobolev spaces of vector valued functions and a  list  of results that we will use throughout the article. We refer to \cite{adams_sobolev,KR,wroblewska2012application} for additional details and proofs. In the first two references scalar valued functions are considered, however the generalization of the results  to vector valued functions, which is enumerated below, is direct. Last one reference considers vector valued functions.
@@ -232,7 +236,6 @@ Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers
 \]
 where $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a right continuous nondecreasing function  satisfying   $\varphi(0)=0$, $\varphi(t)>0$ for $t>0$ and
 $\lim_{t\rightarrow \infty}\varphi(t)=+\infty$.
-{\color{red} Throughout this paper, we assume that $\varphi$ is a continuous function.} 
 
 Given a function $\varphi$ as above, we  consider the so-called right inverse function $\psi$ of $\varphi$ which is 
 defined by $\psi(s)=\sup_{\varphi(t)\leq s}t$.
@@ -404,7 +407,7 @@ A(\|\b{u}\|_{\wphi}).\]
 \end{proof}
 
 
-The following lemma is an inmediate consequence of principles  related to  operators of Nemitskii type, see \cite[§17]{KR}.
+The following lemma is an inmediate consequence of principles  related to  operators of Nemitskii type, see \cite[ï¿½17]{KR}.
 
 \begin{lem}\label{phi_comp}   
 The  composition operator  $\boldsymbol{\varphi}$  acts from $\Pi(\ephi_d,1)$ into $C_1^{\Psi}$.
@@ -466,7 +469,7 @@ See \cite{ambrosetti} for details.
 (see \cite{kato1964demicontinuity}).
 \end{defi} 
 
-\section{Differentiability of action integrals in Orlicz spaces}
+\section{Differentiability of action integrals in Orlicz spaces}\label{sec:dif}
 
 \begin{defi} We say that a function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a Carath\'eodory function if for fixed $(\b{x},\b{y})$
 the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuously differentiable for almost everywhere $t\in [0,T]$.
@@ -608,7 +611,7 @@ Therefore,  with $\b{u}_n$ instead of $\b{u}$, inequality  \eqref{DyLpsi} become
 	\leq M\left(c+\varphi\left(\frac{h}{\lambda}+f\right)\right)\in \lpsi_1.
 \end{equation}
 
-{\color{red} La siguiente frase hab\'ia quedado incompleta}
+
 
 Consequently, as $v \in \lphi_d$ and employing H\"older's inequality, we obtain that 
  $\sup_n|D_{\b{y}}\mathcal{L}(\cdot,\b{u}_n,\b{\dot{u}}_n)\ccdot v| \in L^1_1$.  Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
@@ -676,8 +679,6 @@ We consider $\b{u}_n$ and $\b{u}$ in $\domi$ with $\|\b{u}_n- \b{u}\sobnor\to 0$
 By Lemma \ref{segundo lema}, there exist a subsequence $\b{u}_{n_k}\in \domi$ and a function $h\in\Pi(\ephi_1,\lambda)$ such that $\b{u}_{n_k}\rightarrow \b{u} \quad\text{a.e.}$, $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{\dot{u}}_{n_k}|\leq h\quad\text{a.e.}$ Then,  since $\mathcal{L}$ is a Carath\'eodory function
  we have $ D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ a.e. $t\in [0,T]$. By \eqref{cotaDyL} and the fact that $\Psi\in \Delta_2$, we obtain
 
-{\color{red} Llegamos hasta ac\'a!!! Tenemos que corregir/resumir  citando \eqref{Dy-suc}}
-
  \[\begin{split}
     |D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))| &\leq a(|\b{u}_{n_k}(t)|)\left( c(t) + \varphi \left(\frac{|\b{\dot{u}}_{n_k}(t)|}{\lambda}+f(t)\right)\right)\\
     &\leq C\left( c(t) + \varphi \left(\frac{|h(t)|}{\lambda}+f(t)\right)\right)\in \lpsi_1=\epsi_1.
@@ -693,7 +694,7 @@ of $D_{\b{x}}\mathcal{L}$ and $D_{\b{y}}\mathcal{L}$ by using the formula \eqref
 
 
 
-\section{Critical points and Euler-Lagrange equations}
+\section{Critical points and Euler-Lagrange equations}\label{sec:equa-min}
 
 
 In this section we derive the Euler-Lagrange equations associated to critical points of action integrals.  We denote by $\wphi_T$ the subspace of $\wphi_d$ containing all \linebreak $T$-periodic functions. Similarly we consider the subspaces $\ephi_T$, $\lphi_T$. As usual, when $Y$ is a subspace of
@@ -738,7 +739,7 @@ $D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=D_{\b{y}}\mathcal{L}(0,\b{u}(0)
 \end{proof}
 
 
-\section{Coercivity discussion}
+\section{Coercivity discussion}\label{sec:coer}
 
 We recall the following usual definition in the context  of calculus of variations. 
 
@@ -853,10 +854,6 @@ Then  the action integral $I$ is coercive.
 \end{thm}
 
 
-{\color{red}
-\begin{comentario}
-\eqref{holder_cont} es m\'as d\'ebil que las hip\'otesis anteriores...
-\end{comentario}}
 
 
 \begin{proof} In the following estimates, we will use \eqref{cota_inf}, the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older's inequality and Wirtinger's inequality. Namely,
@@ -942,7 +939,7 @@ This fact together with  \eqref{cota_con _ubarra} finishes the proof.
 
 
 
-\section{Main results}
+\section{Main result}\label{sec:main}
 
 
 
