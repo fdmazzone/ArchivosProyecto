@@ -1,5 +1,4 @@
 \documentclass[twoside]{article}
-%%Paquetes
 
 
 %\usepackage{hyperref}
@@ -124,7 +123,7 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 %
 
 \begin{abstract}
-In this paper we consider the problem of finding periodic solutions of certain Euler-Lagrange equations. We employ the direct method of the calculus of variations, this is we obtain solutions minimizing certain functional $I$. We give conditions which ensure that $I$ is defined and it is  differentiable on certain subsets of  Orlicz-Sobolev spaces $W^1L^{\Phi}$ associated to a $N$-function $\Phi$. We discuss various conditions for the  coercitivity of $I$. We show that, in some sense, it is necessary for the coercitivity that  the complementary function of $\Phi$ be a $\Delta_2$ function.  We conclude by discussing conditions for existence of minima for $I$. 
+In this paper we consider the problem of finding periodic solutions of certain Euler-Lagrange equations. We employ the direct method of the calculus of variations, that is we obtain solutions minimizing certain functional $I$. We give conditions which ensure that $I$ is finitely defined and differentiable on certain subsets of  Orlicz-Sobolev spaces $W^1L^{\Phi}$ associated to an $N$-function $\Phi$. We show that, in some sense, it is necessary for the coercitivity that  the complementary function of $\Phi$ satisfy the $\Delta_2$-condition.  We conclude by discussing conditions for existence of minima for $I$. 
 \end{abstract}
 
 
@@ -167,16 +166,18 @@ I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
 
 
 
-Variational problems and hamiltonian systems  have been studied extensively. Classical references of this subject are
-\cite{mawhin2010critical,struwe2008variational,ekeland1999convex}. Problems likes \eqref{ProbPrin} maintained the interest of researchers as testifies the recent literature on the topic. For Lagrangians of the type $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x})$  many solvability conditions were given.  In  \cite{tang1995periodic} the function $F$
+Variational problems and hamiltonian systems  have been studied extensively. Classic references of these subjects are
+\cite{mawhin2010critical,struwe2008variational,ekeland1999convex}. Problems like \eqref{ProbPrin} have maintained the interest of researchers as the recent literature on the topic testifies. For lagrangian functions of the type $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x})$  many solvability conditions have been given expanding the results in \cite{mawhin2010critical}.  
+In  \cite{tang1995periodic} the function $F$
 was split up into two potentials, one of them with a property of subadditivity and the other with a bounded
 gradient.
 %%
 In \cite{tang1998periodic} it was required a certain sublinearity condition on the gradient of the potential $F$; and, 
 in \cite{wu1999periodic} it was considered a potential $F$ given by a sum of a subconvex function and a  subquadratic one. 
 %%
-In  \cite{tang2001periodic} the uniform coercivity was replaced by local coercivity in some positive measure subset of $[0,T]$.
-In \cite{zhao2004periodic}, the authors took the same potential as in \cite{wu1999periodic} getting new solvability conditions 
+In  \cite{tang2001periodic} the uniform coercivity of $\int_0^T F(t,\b{x})\,dt$
+was replaced by local coercivity of $F$ in some positive measure subset of $[0,T]$.
+In \cite{zhao2004periodic}, the authors took a similar potential to that in \cite{wu1999periodic} getting new solvability conditions 
 and they also studied the case in which the two potentials do not have any convexity.
 %
 
@@ -188,39 +189,47 @@ and, in \cite{tang2010periodic} the authors improved the work done in \cite{wu19
 On the other hand, by the minimax methods in critical point theory 
 some existence theorems were obtained.
 In \cite{xu2007some} it was employed a subquadratic potential $F$ 
-%which is subquadratic in Rabinowitz{}'s sense 
+%which is subquadratic 
+in Rabinowitz{}'s sense 
 and in \cite{ye2008periodic} $F$ was taken as in \cite{tang1998periodic}.
 %a sum of two potentials where one of them had a sublinear gradient.
 
 Another source of problems, close to our proposal, is the one in which a \emph {p-laplacian-like} operator is involved.
 Assuming that the function $\varphi$ is a homeomorphism  from $\rr^d$ into itself, it is considered the differential operator
-$u \to (\varphi(u'))'$ for functions of a real variable. 
-In  \cite{Cristia-2011,C-2007,C-2009, 
-Cristia-2008, 
- GHMS, GHMZ, manasevich2000boundary, manasevich1998periodic} 
+$\b u \mapsto (\varphi(\b u'))'$. 
+In  \cite{C-2007,C-2009, 
+Cristia-2008, manasevich2000boundary, manasevich1998periodic}, using 
+the Leray-Schauder degree theory,
 some existence results of solutions of equations 
 like 
 $(\varphi({\b u}'))'={\b f}(t,{\b u}(t),{\b u}'(t))$ were obtained 
 under different boundary conditions (periodic, Dirichlet, von Neumann) 
-and where $\b f$ is not a gradient. Our methods differ from previous articles in that  we use the direct method of the calculus of variations.
+and where $\b f$ is not necessarily a gradient. 
+We point out that our approach 
+differs from that of previous articles because
+we tackle the direct method of the calculus of variations.
 
-  In \cite{m-1999} a constrained minimization problem in Orlicz-Sobolev spaces  was considered in order to obtain existence of eigenvalues for certain differential operators involving $N$-functions.  
+  In the Orlicz-Sobolev space setting, 
+	in \cite{m-1999} a constrained minimization problem associated to the existence of eigenvalues for certain differential operators involving $N$-functions was studied.  
+Slightly away from the problems to be treated in this paper, 
+we can mention \cite{cianchi2000local, cianchi1999gradient} where A. Cianchi dealt with 
+the regularity of minimizers of action integrals defined on several variable functions.
 
-
-
-Finally we mention that the regularity  problem, in an Orlicz-Sobolev stetting, of minimizers of action integrals defined on several variable functions was studied by A. Cianchi  (see \cite{cianchi2000local, cianchi1999gradient}).
-
-
-
-
-
-In this article  we consider Lagrange functions  defined on Sobolev-Orlicz spaces $W^{1}L^{\Phi}$    
+In this article  we consider lagrangian functions  defined on Orlicz-Sobolev spaces $W^{1}L^{\Phi}$    
 (see \cite{adams_sobolev,KR, rao1991theory,2002applications}) 
-and we tackle  the direct method of calculus of variations. The exposition is organized as follows. In Section \ref{preliminares} we present results related to Orliz spaces and Orlicz-Sobolev spaces and results related to composition operators. Almost all result in this section  is essentially known. Conditions \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL} are the means to ensure that $I$ is finitely defined on 
-a non trivial subset of $W^{1}\lphi_d$ and $I$ is G\^ateaux differentiable in this subspace. We develop this questions in Theorem \ref{teorema_acotacion}  of Section \ref{sec:dif}. In Section \ref{sec:equa-min} we prove that critical point of \eqref{integral_accion} are solution of \eqref{ProbPrin}. Conditions for the coercitivity of action integrals are discussed in Section \ref{sec:coer}. Finally, our main Theorem about existence of solutions of  \eqref{ProbPrin} is introduced in Section \ref{sec:main}. 
+and we use  the direct method of calculus of variations. 
+The exposition is organized as follows. 
+In Section \ref{preliminares} we enumerate results related to Orlicz spaces, Orlicz-Sobolev spaces and composition operators. 
+Almost all results in this section  are essentially known. Conditions \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL} are the means to ensure that $I$ is finitely defined on 
+a non trivial subset of $W^{1}\lphi_d$ and $I$ is G\^ateaux differentiable in this subspace. 
+We develop 
+these issues in Theorem \ref{teorema_acotacion}  of Section \ref{sec:dif}. In Section \ref{sec:equa-min} we prove that critical points of \eqref{integral_accion}
+ are solution of \eqref{ProbPrin}. Conditions for the coercitivity of action integrals are discussed in Section \ref{sec:coer}. Finally, our main theorem about existence of solutions of  \eqref{ProbPrin} is introduced and proved in Section \ref{sec:main}. 
 
-
-
+We put an emphasis on that we take care of using $\Delta_2$-condition. 
+In some results where we have used it,
+we show that $\Delta_2$-condition is necessary in a certain sense (see, for example, Lemma \ref{lem_coer}).
+   
 
 
 
@@ -228,7 +237,9 @@ a non trivial subset of $W^{1}\lphi_d$ and $I$ is G\^ateaux differentiable in th
 \section{Preliminaries}\label{preliminares}
 
 %\subsection{$N$-functions}
-For reader convenience, we give a short introduction to Orlicz and Orlicz Sobolev spaces of vector valued functions and a  list  of results that we will use throughout the article. We refer to \cite{adams_sobolev,KR,wroblewska2012application} for additional details and proofs. In the first two references scalar valued functions are considered, however the generalization of the results  to vector valued functions, which is enumerated below, is direct. Last one reference considers vector valued functions.
+For reader convenience, we give a short introduction to Orlicz and Orlicz-Sobolev spaces of vector valued functions and a  list  of results that we will use throughout the article. 
+Classic references for Orlicz spaces of real valued functions are \cite{adams_sobolev,KR,rao1991theory}.
+For  Orlicz spaces of vector valued functions, see \cite{Orliczvectorial2005} and the references therein.
 
 Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^+\to \mathbb{R}^+ $ is called an \emph{$N$-function} if $\Phi$ is given by 
 \[
@@ -248,16 +259,17 @@ if there exist  constants $K>0$ and  $t_0\geq 0$ such that $\Phi(2t)\leq K\Phi(t
 for every $t\geq t_0$. 
 If $t_0=0$,  we say that $\Phi$ satisfies the \emph{$\Delta_2$-condition globally} ($\Phi \in \Delta_2$ globally).  
 
- In this paper we adopt the convention that bold symbols denote points in $\mathbb{R}^d$ and plain symbols indicate scalars.
+% and plain symbols indicate scalars.
 
-Let $d$ be a positive integer. We denote by $\mathcal{M}_d:=\mathcal{M}_d([0,T])$ the set of all measurable functions defined in $[0,T]$ with values in $\mathbb{R}^d$ and  we write $\b{u}=(u_1,\dots,u_d)$ for  $\b{u}\in \mathcal{M}_d$.
+Let $d$ be a positive integer. We denote by $\mathcal{M}_d:=\mathcal{M}_d([0,T])$ the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $\b{u}=(u_1,\dots,u_d)$ for  $\b{u}\in \mathcal{M}_d$.
+In this paper we adopt the convention that bold symbols denote points in $\mathbb{R}^d$.
 
 
 Given  an $N$-function $\Phi$ we define the \emph{modular function} 
 $\rho_{\Phi}:\mathcal{M}_d\to \mathbb{R}^+\cup\{+\infty\}$ by
 \[\rho_{\Phi}(\b{u}):= \int_0^T \Phi(|\b{u}|)\ dt.\]
 Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^d$.
-The \emph{Orlicz class} $C_d^{\Phi}=C_d^{\Phi}([0,T])$  is defined by
+The \emph{Orlicz class} $C_d^{\Phi}=C_d^{\Phi}([0,T])$  is given  by
 \begin{equation}\label{claseOrlicz}
   C^{\Phi}_d:=\left\{\b{u}\in \mathcal{M}_d | \rho_{\Phi}(\b{u})< \infty \right\}.
 \end{equation}
@@ -282,7 +294,7 @@ The following alternative expression for the norm, known as \emph{Amemiya norm},
 The subspace $\ephi_d=\ephi_d([0,T])$ is defined as the closure in $\lphi_d$ of the subspace $L^{\infty}_d$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi_d$ is the only one maximal subspace contained in the Orlicz class $\claseor_d$, i.e. 
 $\b{u}\in\ephi_d$ if and only if $\rho_{\Phi}(\lambda \b{u})<\infty$ for any $\lambda>0$.  
 
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 9.3]{KR} ). Namely, if $\b{u}\in\lphi_d$ and $\b{v}\in\lpsi_d$ then $\b{u}\ccdot\b{v}\in L_1^1$ and
+A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces. Namely, if $\b{u}\in\lphi_d$ and $\b{v}\in\lpsi_d$ then $\b{u}\ccdot\b{v}\in L_1^1$ and
 \begin{equation}\label{holder}
 \int_0^T\b{v}\ccdot\b{u}\ dt\leq \|\b{u}\orlnor\|\b{v}\|_{L^{\Psi}}.
 \end{equation}
@@ -300,14 +312,12 @@ with  $\b{u}\in\lphi_d$ and $\b{v}\in\lpsi_d$.
  Unless $\Phi \in \Delta_2$, the relation $\lpsi_d= \left[\lphi_d\right]^*$ will not hold. In general, it is true  that  $\left[\ephi_d\right]^*=\lpsi_d$.
 
 
-Like in \cite{KR}, we will consider the subset $\Pi(\ephi_d,r)$ of $\lphi_d$ defined by
+Like in \cite{KR}, we will consider the subset $\Pi(\ephi_d,r)$ of $\lphi_d$ given by
 \[\Pi(\ephi_d,r):=\{\b{u}\in\lphi_d| d(\b{u},\ephi_d)<r\}.\]
-This set is related to the Orlicz class $\claseor_d$ by means of inclusions, that is,
+This set is related to the Orlicz class $\claseor_d$ by means of inclusions, namely,
 \begin{equation}\label{inclusiones}\Pi(\ephi_d, r )\subset r \claseor_d\subset\overline{\Pi(\ephi_d,r)}
 \end{equation}
 for any positive $r$.
-The proof of this fact, and similar ones, is given by real valued function in \cite{KR},
-the extension to $\mathbb{R}^d$-valued functions does not involve any difficulty. 
 If $\Phi \in \Delta_2$,  then the sets $\lphi_d$, $\ephi_d$, $\Pi(\ephi_d,r)$ and $\claseor_d$ are equal.
 
 %Frequently, we will use the following elementary fact 
@@ -333,21 +343,21 @@ As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a sub
 
  An important aspect of the theory of Sobolev spaces is related to embedding theorems. There is an extensive literature on this question in the  Orlicz-Sobolev space setting, see for example
  \cite{cianchi2000fully,cianchi1999some,claverooptimal,edmunds2000optimal,kerman2006optimal}.
-The following simple lemma is well known and we will use it systematically. For the sake of completeness, we include a brief proof of it.
+The following simple lemma is essentially known and we will use it systematically. For the sake of completeness, we include a brief proof of it.
 
 
 
 \begin{lem}\label{inclusion orlicz} Let $\b{u}\in\wphi_d$. Then $\b{u}\in L^{\infty}_d([0,T])$ and
 \begin{align}
-& \left|\b{u}(t)-\b{u}(s) \right| \leq  \|\b{\dot{u}}\orlnor | t-s|\Phi^{-1}\left(\frac{1}{|t-s|}\right)&\label{in-sob-cont}
+& \left|\b{u}(t)-\b{u}(s) \right| \leq  \|\b{\dot{u}}\orlnor | t-s|\Phi^{-1}\left(\frac{1}{|t-s|}\right),&\label{in-sob-cont}
 \\
-& \|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Wirtinger's inequality)}\label{wirtinger}
+& \|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Wirtinger's inequality),}\label{wirtinger}
 \\
-& \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\text{  (Sobolev's inequality)}\label{sobolev}
+& \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\text{  (Sobolev's inequality).}\label{sobolev}
 \end{align}
 \end{lem}
 \begin{comentario}
- As usual, a function   $w:[0,+\infty)\to[0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. We say that $\b{u}:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that 
+ As usual, a function   $w:\mathbb{R}^+\to \mathbb{R}^+$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. We say that $\b{u}:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that 
 \begin{equation}\label{w-holder}|\b{u}(t)-\b{u}(s)|\leq Cw(|t-s|).
 \end{equation}
 The inequality \eqref{in-sob-cont}
@@ -366,7 +376,10 @@ s\leq t \leq T $, we get
 &= \|\b{\dot{u}}\|_{\lphi} ( t-s)\Phi^{-1}\left(\frac{1}{t-s}\right),
 \end{split}
 \end{equation}
-using \cite[Eq. (9.11)]{KR} in the last equality. This completes the proof of \eqref{in-sob-cont}.
+using H\"older's inequality and \cite[Eq. (9.11)]{KR}.
+This completes the proof of \eqref{in-sob-cont}.
+
+{\color{red} Hasta ac\'a llegamos.}
 
 Since $u_i$ is continuous, from Mean Value Theorem for integrals, 
 there exists  $s_i\in [0,T]$ such that $u_i(s_i)=\overline{u}_i$.
@@ -531,10 +544,10 @@ Dividing by $e^{s^2}$ and taking the limit as $s\to\infty$, we obtain that  $f=0
 Let $\mathcal{L}$ be a Carath\'eodory function satisfying \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL}. 
 Then the following statements hold:
 \begin{enumerate}
-\item \label{T1item1} \label{A1} The \emph{action integral}  
-\begin{equation}\label{integral_accion}
-I(\b{u}):=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt
-\end{equation}
+\item \label{T1item1} \label{A1} The action integral given by \eqref{integral_accion}
+%\begin{equation*}\label{integral_accion}
+%I(\b{u}):=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt
+%\end{equation}
 is finitely defined in $\domi:=W^{1}\lphi_d\cap\{\b{u}|\b{\dot{u}}\in\Pi(\ephi_d,\lambda)\}$.
 
 \item\label{T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is demicontinuous from $\domi$  into $\left[\wphi_d \right]^*$. Moreover, $I'$ is given by the following expression
