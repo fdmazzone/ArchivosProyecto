@@ -452,14 +452,14 @@ If \eqref{cotadb} is true, then we can suppose $f=0$  in the equations \eqref{co
 
  The convexity of $\Phi$ allows us to bound  $\Phi(s+f(t))$ by the expression  $\frac12\Phi(2s)+b(t)$ where $b(t):=\tfrac12\Phi(2f(t))\in L^1_1$ and $f\in \ephi_1$. Therefore, we can always assume $f = 0$ in \eqref{cotaL} and \eqref{cotaDxL} at the price of making  the value of $\lambda$ smaller. In the special case that $\Phi\in\Delta_2$, the inequality \eqref{delta2defi} implies \eqref{cotadb}. 
 
- If $\Phi\notin\Delta_2$, then \eqref{cotadb}  may not be true.  In fact,  if we consider the $N$-function $\Phi(s)=\exp(s)-s-1$ which does not satisfy the $\Delta_2$-condition and $f(t)=\ln|\ln(t)|$ for $t\in [0,\exp({-1})]$, then \eqref{cotadb} does not hold.  First, note that $f(t)\geq 0$ on $[0,\exp({-1})]$ and 
-\[\int_0^{\exp({-1})}\Phi(\lambda f(t))dt\leq 
-\int_0^{\exp({-1})}\exp({\lambda f(t)})dt\leq \int_0^{\exp({-1})}|\ln(t)|^{\lambda}dt<\infty\]
+ If $\Phi\notin\Delta_2$, then \eqref{cotadb}  may not be true.  In fact,  if we consider the $N$-function $\Phi(s)=e^s-s-1$ which does not satisfy the $\Delta_2$-condition and $f(t)=\ln|\ln(t)|$ for $t\in [0,e^{-1}]$, then \eqref{cotadb} does not hold.  First, note that $f(t)\geq 0$ on $[0,e^{-1}]$ and 
+\[\int_0^{e^{-1}}\Phi(\lambda f(t))dt\leq 
+\int_0^{e^{-1}} e^{\lambda f(t)}dt\leq \int_0^{e^{-1}}|\ln(t)|^{\lambda}dt<\infty\]
 for $\lambda>1$, hence $f\in\ephi_1$. 
 Now, suppose that there exist $b\in L^1_1$ and $C>0$ satisfying \eqref{cotadb}. 
-From the inequality $1/2\exp(s)\leq \Phi(s)+1$, we obtain
-\[\frac12 \exp(s)\exp({f(t)})\leq \Phi(s+f(t))+1\leq C\Phi(s)+b(t)+1;\]
-next, dividing by $\exp(s)$ and taking $s\to\infty$, we get $\tfrac12|\ln(t)|\leq\tfrac12 \exp({f(t)})\leq C$ which is a contradiction. 
+From the inequality $1/2 e^s\leq \Phi(s)+1$, we obtain
+\[\frac12 e^s e^{f(t)}\leq \Phi(s+f(t))+1\leq C\Phi(s)+b(t)+1;\]
+next, dividing by $e^s$ and taking $s\to\infty$, we get $\tfrac12|\ln(t)|\leq\tfrac12 e^{f(t)}\leq C$ which is a contradiction. 
 
  Before addressing the main results of this section, we recall a definition.  
 
