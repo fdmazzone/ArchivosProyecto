@@ -1,28 +1,9 @@
 \documentclass[twoside]{elsarticle}
 
 
-%\usepackage{hyperref}
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
-%\usepackage{color}
-%\usepackage{ esint }
-%\usepackage{graphicx}
-%\usepackage{wrapfig}
-%\usepackage{subfigure}
-%\usepackage{fancyhdr}
-%\usepackage{times}
-%\usepackage{theorem}
-%\usepackage[latin1]{inputenc}
-%\usepackage{showkeys}
-%\usepackage{comment}
-%\usepackage{url}
-%\usepackage{xcolor}
-%\usepackage{adjustbox}
-%Teorema y similes
-%\usepackage[maxnames=6,backend=bibtex]{biblatex}
-%\bibliography{Biblio-ABGMS.bib}
-
-
+\usepackage{url}
 
 
 
@@ -36,36 +17,7 @@
 \newtheorem{comentario}{Remark}
 
 
-\title{Some existence results on periodic solutions of 
-Euler-Lagrange equations in an Orlicz-Sobolev space setting}
-\author{Sonia Acinas \thanks{SECyT-UNRC, UNSL and CONICET}\\
-Instituto de Matem\'atica Aplicada San Luis (CONICET-UNSL)\\
-(5700) San Luis, Argentina\\
-Universidad Nacional de La Pampa\\
-(6300) Santa Rosa, La Pampa, Argentina\\
-\url{sonia.acinas@gmail.com}\\[3mm]
-Leopoldo Buri \thanks{SECyT-UNRC}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{lburi@exa.unrc.edu.ar}\\[3mm]
-Graciela Giubergia \thanks{SECyT-UNRC and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{ggiubergia@exa.unrc.edu.ar}\\[3mm]
-Fernando D. Mazzone \thanks{SECyT-UNRC and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{fmazzone@exa.unrc.edu.ar}\\[3mm]
-Erica L. Schwindt\thanks{AVENTURES - ANR-12-BLAN-BS01-0001-01 and Ecos-Conicyt Grant C13E05}\\
-Universit\'{e} d'{O}rl\'{e}ans, Laboratoire MAPMO, CNRS, UMR 7349, \\
-F\'ed\'eration Denis Poisson, FR 2964,\\
-B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
-\url{leris98@gmail.com}}
 
-\date{}
 
 \newcommand{\orlnor}{\|_{L^{\Phi}}}
 \newcommand{\lurnor}{\|^{*}_{L^{\Phi}}}
@@ -84,45 +36,58 @@ B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France,\\
 \renewcommand{\leq}{\leqslant} 
 \newcommand{\epsi}{E^{\Psi}}
 
+
+
+\journal{Nonlinear Analysis: TMA}
+
 \begin{document}
 
+\begin{frontmatter}
+\title{Some existence results on periodic solutions of 
+Euler-Lagrange equations in an Orlicz-Sobolev space setting}
 
 
-\maketitle
-%
-\begingroup%Locallizing the change to `thefootnote'.
-    \renewcommand{\thefootnote}{}%Removing the footnote symbol.
-    %
-    %\footnotetext{%
-    %   2010 Mathematics Subject Classification
-    %   http://www.ams.org/msc/
-    %\textbf{2010  AMS Subject Classification.} Primary: .
-    %Secondary: .
-    %}%
-        \footnotetext{%
-    \textbf{Keywords and phrases:} Periodic Solution, Orlicz-Sobolev Spaces, Euler-Lagrange, $N$-function, Critical Points.   
-    }%
-    \endgroup
-%
-%
-%
-%
+
+\author[imasl,unlpam]{S. ~Acinas \corref{corSonia}}
+\ead{sonia.acinas@gmail.com}
+\author[unrc]{L. ~Buri }
+\ead{lburi@exa.unrc.edu.ar  }
+\author[unrc]{G. ~Giubergia}
+\ead{ggiubergia@exa.unrc.edu.ar  }
+\author[unrc]{F. ~Mazzone \corref{corFer}}
+\ead{ fmazzone@exa.unrc.edu.ar  }
+\author[mapmo]{E. ~Schwindt }
+\ead{ leris98@gmail.com  }
+
+\cortext[corFer]{Principal correspondig author }
+\cortext[corSonia]{Correspondig author}
+
+\address[imasl]{Instituto de Matem\'atica Aplicada San Luis (CONICET-UNSL),\\
+(5700) San Luis, Argentina.  }
+
+\address[unlpam]{Universidad Nacional de La Pampa,
+(6300) Santa Rosa, La Pampa, Argentina.  }
+
+\address[unrc]{Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales,
+Universidad Nacional de R\'{i}o Cuarto,
+(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina. }
+
+
+\address[mapmo]{Universit\'{e} d'{O}rl\'{e}ans, Laboratoire MAPMO, CNRS, UMR 7349, F\'ed\'eration Denis Poisson, FR 2964,
+B\^{a}timent de Math\'{e}matiques, BP 6759, 45067 Orl\'{e}ans Cedex 2, France.
+}
+
 
 \begin{abstract}
 In this paper we consider the problem of finding periodic solutions of certain Euler-Lagrange equations. We employ the direct method of the calculus of variations, i.e. we obtain solutions minimizing certain functional $I$. We give conditions which ensure that $I$ is finitely defined and differentiable on certain subsets of  Orlicz-Sobolev spaces $W^1L^{\Phi}$ associated to an $N$-function $\Phi$. We show that, in some sense, it is necessary for the coercitivity that  the complementary function of $\Phi$ satisfy the $\Delta_2$-condition.  We conclude by discussing conditions for the existence of minima of $I$. 
 \end{abstract}
 
+\begin{keyword}
+Periodic Solution \sep Orlicz-Sobolev Spaces \sep  Euler-Lagrange  \sep $N$-function   \sep Critical Points.   
+\end{keyword}
 
+\end{frontmatter}
 
-
-\pagestyle{fancy} \headheight 35pt \fancyhead{} \fancyfoot{}
-
-\fancyfoot[C]{\thepage} \fancyhead[CE]{\nouppercase{S. Acinas, L. Buri, G. Giubergia, F. Mazzone and E. Schwindt}} \fancyhead[CO]{\nouppercase{\section}}
-
-\fancyhead[CO]{\nouppercase{\leftmark}}
-
-
-%\tableofcontents
 
 \section{Introduction}
 This paper is concerned with the existence of periodic solutions of the problem
@@ -972,253 +937,13 @@ Now, taking into account the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset
 Hence, $\b{u}$ is a minimun and therefore a critical point of $I$. Finally, 
 invoking Theorem \ref{critpoint},  the proof concludes.\end{proof}
 
+\section*{Acknowledgments}
+The first four authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. The third and fourth authors are partially supported by a CONICET grant number 11220090100714CO. the fifth  author is  supported by a AVENTURES - ANR-12-BLAN-BS01-0001-01 and ECOS-CONICyT Grant number  C13E05.
 
 
 \section*{References}
 
-
-\def\cprime{$'$}
-\begin{thebibliography}{10}
-
-\bibitem{AGMS}
-S.~Acinas, G.~Giubergia, F.~Mazzone, and E.~Schwindt.
-\newblock On estimates for the period of solutions of equations involving the
-  {$\phi$}-{L}aplace operator.
-\newblock {\em J. Abstr. Differ. Equ. Appl.}, 5(1):21--34, 2014.
-
-\bibitem{adams_sobolev}
-R.~Adams and J.~Fournier.
-\newblock {\em Sobolev spaces}, volume 140 of {\em Pure and Applied Mathematics
-  (Amsterdam)}.
-\newblock Elsevier/Academic Press, Amsterdam, second edition, 2003.
-
-\bibitem{ambrosetti}
-A.~Ambrosetti and G.~Prodi.
-\newblock {\em A primer of nonlinear analysis}, volume~34 of {\em Cambridge
-  Studies in Advanced Mathematics}.
-\newblock Cambridge University Press, Cambridge, 1995.
-\newblock Corrected reprint of the 1993 original.
-
-\bibitem{C-2007}
-C.~Bereanu and J.~Mawhin.
-\newblock Existence and multiplicity results for some nonlinear problems with
-  singular {$\phi$}-{L}aplacian.
-\newblock {\em J. Differential Equations}, 243(2):536--557, 2007.
-
-\bibitem{Cristia-2008}
-C.~Bereanu and J.~Mawhin.
-\newblock Periodic solutions of nonlinear perturbations of
-  {$\phi$}-{L}aplacians with possibly bounded {$\phi$}.
-\newblock {\em Nonlinear Anal.}, 68(6):1668--1681, 2008.
-
-\bibitem{C-2009}
-C.~Bereanu and J.~Mawhin.
-\newblock Nonhomogeneous boundary value problems for some nonlinear equations
-  with singular {$\phi$}-{L}aplacian.
-\newblock {\em J. Math. Anal. Appl.}, 352(1):218--233, 2009.
-
-\bibitem{cianchi1999some}
-A.~Cianchi.
-\newblock Some results in the theory of {O}rlicz spaces and applications to
-  variational problems.
-\newblock In {\em Nonlinear analysis, function spaces and applications, {V}ol.
-  6 ({P}rague, 1998)}, pages 50--92. Acad. Sci. Czech Repub., Prague, 1999.
-
-\bibitem{cianchi2000fully}
-A.~Cianchi.
-\newblock A fully anisotropic {S}obolev inequality.
-\newblock {\em Pacific J. Math.}, 196(2):283--295, 2000.
-
-\bibitem{cianchi2000local}
-A.~Cianchi.
-\newblock Local boundedness of minimizers of anisotropic functionals.
-\newblock {\em Ann. Inst. H. Poincar\'e Anal. Non Lin\'eaire}, 17(2):147--168,
-  2000.
-
-\bibitem{cianchi1999gradient}
-A.~Cianchi and N.~Fusco.
-\newblock Gradient regularity for minimizers under general growth conditions.
-\newblock {\em J. Reine Angew. Math.}, 507:15--36, 1999.
-
-\bibitem{claverooptimal}
-N.~Clavero.
-\newblock Optimal {S}obolev embeddings and {F}unction {S}paces.
-\newblock \url{http://www.maia.ub.edu/~soria/sobolev1.pdf}, 2011.
-
-\bibitem{driver}
-B.~Driver.
-\newblock Analysis tools with applications.
-\newblock
-  \url{http://www.math.ucsd.edu/~bdriver/231-02-03/Lecture_Notes/PDE-Anal-Book/analpde1.pdf},
-  2003.
-
-\bibitem{edmunds2000optimal}
-D.~Edmunds, R.~Kerman, and L.~Pick.
-\newblock Optimal {S}obolev imbeddings involving rearrangement-invariant
-  quasinorms.
-\newblock {\em J. Funct. Anal.}, 170(2):307--355, 2000.
-
-\bibitem{ekeland1999convex}
-I.~Ekeland and R.~T{\'e}mam.
-\newblock {\em Convex analysis and variational problems}, volume~28 of {\em
-  Classics in Applied Mathematics}.
-\newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
-  PA, english edition, 1999.
-\newblock Translated from the French.
-
-\bibitem{m-1999}
-M.~Garc{\'{\i}}a-Huidobro, V.~Le, R.~Man{\'a}sevich, and K.~Schmitt.
-\newblock On principal eigenvalues for quasilinear elliptic differential
-  operators: an {O}rlicz-{S}obolev space setting.
-\newblock {\em NoDEA Nonlinear Differential Equations Appl.}, 6(2):207--225,
-  1999.
-
-\bibitem{hudzik2000amemiya}
-H.~Hudzik and L.~Maligranda.
-\newblock Amemiya norm equals {O}rlicz norm in general.
-\newblock {\em Indag. Math. (N.S.)}, 11(4):573--585, 2000.
-
-\bibitem{kato1964demicontinuity}
-T.~Kato.
-\newblock Demicontinuity, hemicontinuity and monotonicity.
-\newblock {\em Bull. Amer. Math. Soc.}, 70:548--550, 1964.
-
-\bibitem{kerman2006optimal}
-R.~Kerman and L.~Pick.
-\newblock Optimal {S}obolev imbeddings.
-\newblock {\em Forum Math.}, 18(4):535--570, 2006.
-
-\bibitem{KR}
-M.~A. Krasnosel{\cprime}ski{\u\i} and Ja.~B. Ruticki{\u\i}.
-\newblock {\em Convex functions and {O}rlicz spaces}.
-\newblock Translated from the first Russian edition by Leo F. Boron. P.
-  Noordhoff Ltd., Groningen, 1961.
-
-\bibitem{M}
-L.~Maligranda.
-\newblock {\em Orlicz spaces and interpolation}, volume~5 of {\em Semin\'arios
-  de Matem\'atica [Seminars in Mathematics]}.
-\newblock Universidade Estadual de Campinas, Departamento de Matem\'atica,
-  Campinas, 1989.
-
-\bibitem{manasevich1998periodic}
-R.~Man{\'a}sevich and J.~Mawhin.
-\newblock Periodic solutions for nonlinear systems with {$p$}-{L}aplacian-like
-  operators.
-\newblock {\em J. Differential Equations}, 145(2):367--393, 1998.
-
-\bibitem{manasevich2000boundary}
-R.~Man{\'a}sevich and J.~Mawhin.
-\newblock Boundary value problems for nonlinear perturbations of vector
-  {$p$}-{L}aplacian-like operators.
-\newblock {\em J. Korean Math. Soc.}, 37(5):665--685, 2000.
-
-\bibitem{mawhin2010critical}
-J.~Mawhin and M.~Willem.
-\newblock {\em Critical point theory and {H}amiltonian systems}, volume~74 of
-  {\em Applied Mathematical Sciences}.
-\newblock Springer-Verlag, New York, 1989.
-
-\bibitem{rao1991theory}
-M.~M. Rao and Z.~D. Ren.
-\newblock {\em Theory of {O}rlicz spaces}, volume 146 of {\em Monographs and
-  Textbooks in Pure and Applied Mathematics}.
-\newblock Marcel Dekker, Inc., New York, 1991.
-
-\bibitem{2002applications}
-M.~M. Rao and Z.~D. Ren.
-\newblock {\em Applications of {O}rlicz spaces}, volume 250 of {\em Monographs
-  and Textbooks in Pure and Applied Mathematics}.
-\newblock Marcel Dekker, Inc., New York, 2002.
-
-\bibitem{rockafellar2009variational}
-R.~T. Rockafellar and R.~Wets.
-\newblock {\em Variational analysis}, volume 317 of {\em Grundlehren der
-  Mathematischen Wissenschaften [Fundamental Principles of Mathematical
-  Sciences]}.
-\newblock Springer-Verlag, Berlin, 1998.
-
-\bibitem{Orliczvectorial2005}
-G.~Schappacher.
-\newblock A notion of {O}rlicz spaces for vector valued functions.
-\newblock {\em Appl. Math.}, 50(4):355--386, 2005.
-
-\bibitem{struwe2008variational}
-M.~Struwe.
-\newblock {\em Variational methods}, volume~34 of {\em Ergebnisse der
-  Mathematik und ihrer Grenzgebiete. 3. Folge. A Series of Modern Surveys in
-  Mathematics [Results in Mathematics and Related Areas. 3rd Series. A Series
-  of Modern Surveys in Mathematics]}.
-\newblock Springer-Verlag, Berlin, fourth edition, 2008.
-\newblock Applications to nonlinear partial differential equations and
-  Hamiltonian systems.
-
-\bibitem{tang1995periodic}
-C.-L. Tang.
-\newblock Periodic solutions of non-autonomous second order systems with
-  {$\gamma$}-quasisubadditive potential.
-\newblock {\em J. Math. Anal. Appl.}, 189(3):671--675, 1995.
-
-\bibitem{tang1998periodic}
-C.-L. Tang.
-\newblock Periodic solutions for nonautonomous second order systems with
-  sublinear nonlinearity.
-\newblock {\em Proc. Amer. Math. Soc.}, 126(11):3263--3270, 1998.
-
-\bibitem{tang2001periodic}
-C.~L. Tang and X.-P. Wu.
-\newblock Periodic solutions for second order systems with not uniformly
-  coercive potential.
-\newblock {\em J. Math. Anal. Appl.}, 259(2):386--397, 2001.
-
-\bibitem{tang2010periodic}
-X.~Tang and X.~Zhang.
-\newblock Periodic solutions for second-order {H}amiltonian systems with a
-  {$p$}-{L}aplacian.
-\newblock {\em Ann. Univ. Mariae Curie-Sk\l odowska Sect. A}, 64(1):93--113,
-  2010.
-
-\bibitem{Tian2007192}
-Y.~Tian and W.~Ge.
-\newblock Periodic solutions of non-autonomous second-order systems with a
-  {$p$}-{L}aplacian.
-\newblock {\em Nonlinear Anal.}, 66(1):192--203, 2007.
-
-\bibitem{wu1999periodic}
-X.-P. Wu and C.-L. Tang.
-\newblock Periodic solutions of a class of non-autonomous second-order systems.
-\newblock {\em J. Math. Anal. Appl.}, 236(2):227--235, 1999.
-
-\bibitem{xu2007some}
-B.~Xu and C.-L. Tang.
-\newblock Some existence results on periodic solutions of ordinary
-  {$p$}-{L}aplacian systems.
-\newblock {\em J. Math. Anal. Appl.}, 333(2):1228--1236, 2007.
-
-\bibitem{ye2008periodic}
-Y.-W. Ye and C.-L. Tang.
-\newblock Periodic solutions for some nonautonomous second order {H}amiltonian
-  systems.
-\newblock {\em J. Math. Anal. Appl.}, 344(1):462--471, 2008.
-
-\bibitem{zhao2004periodic}
-F.~Zhao and X.~Wu.
-\newblock Periodic solutions for a class of non-autonomous second order
-  systems.
-\newblock {\em J. Math. Anal. Appl.}, 296(2):422--434, 2004.
-
-\end{thebibliography}
-
-
-
-
-%\bibliographystyle{plain}
-%\bibliography{Biblio-ABGMS}{}
-
-%\printbibliography
+ \bibliographystyle{elsarticle-num} 
+ \bibliography{Biblio-ABGMS.bib}
 
 \end{document}
-
-
-
-
