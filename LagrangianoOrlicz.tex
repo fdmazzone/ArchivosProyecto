@@ -127,7 +127,7 @@ In  \cite{tang2001periodic} the uniform coercivity of $\int_0^T F(t,\b{x})\,dt$
 was replaced by local coercivity of $F$ in some positive measure subset of $[0,T]$.
 In \cite{zhao2004periodic}, the authors took a similar potential to that in \cite{wu1999periodic} getting new solvability conditions 
 and they also studied the case in which the two potentials do not have any convexity.
-%
+
 
 The Lagrangian  $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^p}{p}+F(t,\b{x})$
 for $p>1$ was treated in more recent papers.
@@ -137,7 +137,7 @@ and, in \cite{tang2010periodic} the authors improved the work done in \cite{wu19
 On the other hand, by the minimax methods in critical point theory 
 some existence theorems were obtained.
 In \cite{xu2007some} it was employed a subquadratic potential $F$ 
-%which is subquadratic 
+
 in Rabinowitz{}'s sense 
 and in \cite{ye2008periodic} $F$ was taken as in \cite{tang1998periodic}.
 
@@ -268,10 +268,7 @@ This set is related to the Orlicz class $\claseor_d$ by means of inclusions, nam
 for any positive $r$.
 If $\Phi \in \Delta_2$,  then the sets $\lphi_d$, $\ephi_d$, $\Pi(\ephi_d,r)$ and $\claseor_d$ are equal.
 
-%Frequently, we will use the following elementary fact 
-%\begin{equation}\label{inclusion2}
-%\b{u}\in\Pi(\ephi_d,\lambda)\implies \frac{\b{u}}{\lambda}\in\Pi(\ephi_d,1)\subset\claseor_d.
-%\end{equation}
+
 
 We define the \emph{Sobolev-Orlicz space} $\wphi_d$ (see \cite{adams_sobolev}) by
 \[\wphi_d:=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{u},\b{\dot{u}}\in \lphi_d\}.\]
@@ -290,11 +287,8 @@ As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a sub
  Recall that a function   $w:\mathbb{R}^+\to \mathbb{R}^+$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example, it can be easily shown that $w(s)=s\Phi^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  We say that $\b{u}:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that 
 \begin{equation}\label{w-holder}|\b{u}(t)-\b{u}(s)|\leq Cw(|t-s|).
 \end{equation}
-% The inequality \eqref{in-sob-cont}
-% establishes that $w(s):=s\Phi^{-1}(1/s)$ is a modulus of continuity for all functions $\b{u}\in\wphi$. 
-% Since $\Phi$ is an $N$-function then $w(0)=0$.
-% and, from the concavity of $\Phi^{-1}$, we have that $w$ is increasing.
-% Inequalies \eqref{in-sob-cont} and \eqref{wirtinger}  proves that the embedding  $\wphi_d\hookrightarrow C^w([0,T],\rr^d)$ holds, where 
+
+
 We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$ and it is a Banach space with norm
 \[\|\b{u}\|_{  C^w([0,T],\rr^d) }  :=\|\b{u}\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|\b{u}(t)-\b{u}(s)|}{w(|t-s|)}.\]
 
@@ -458,17 +452,14 @@ If \eqref{cotadb} is true, then we can suppose $f=0$  in the equations \eqref{co
 
  The convexity of $\Phi$ allows us to bound  $\Phi(s+f(t))$ by the expression  $\frac12\Phi(2s)+b(t)$ where $b(t):=\tfrac12\Phi(2f(t))\in L^1_1$ and $f\in \ephi_1$. Therefore, we can always assume $f = 0$ in \eqref{cotaL} and \eqref{cotaDxL} at the price of making  the value of $\lambda$ smaller. In the special case that $\Phi\in\Delta_2$, the inequality \eqref{delta2defi} implies \eqref{cotadb}. 
 
- If $\Phi\notin\Delta_2$, then \eqref{cotadb}  may not be true.  In fact,  if we consider the $N$-function $\Phi(s)=e^s-s-1$ which does not satisfy the $\Delta_2$-condition and $f(t)=\ln|\ln(t)|$ for $t\in [0,e^{-1}]$, then \eqref{cotadb} does not hold.  
-
-First, note that $f(t)\geq 0$ on $[0,e^{-1}]$ and 
+ If $\Phi\notin\Delta_2$, then \eqref{cotadb}  may not be true.  In fact,  if we consider the $N$-function $\Phi(s)=e^s-s-1$ which does not satisfy the $\Delta_2$-condition and $f(t)=\ln|\ln(t)|$ for $t\in [0,e^{-1}]$, then \eqref{cotadb} does not hold.  First, note that $f(t)\geq 0$ on $[0,e^{-1}]$ and 
 \[\int_0^{e^{-1}}\Phi(\lambda f(t))dt\leq 
 \int_0^{e^{-1}}e^{\lambda f(t)}dt\leq \int_0^{e^{-1}}|\ln(t)|^{\lambda}dt<\infty\]
 for $\lambda>1$, hence $f\in\ephi_1$. 
 Now, suppose that there exist $b\in L^1_1$ and $C>0$ satisfying \eqref{cotadb}. 
 From the inequality $1/2e^s\leq \Phi(s)+1$, we obtain
 \[\frac12 e^se^{f(t)}\leq \Phi(s+f(t))+1\leq C\Phi(s)+b(t)+1;\]
-next, dividing by $e^s$ and taking $s\to\infty$, we get $\tfrac12|\ln(t)|\leq\tfrac12 e^f(t)\leq C$ which is a contradiction. 
-%Thus, there do not exist $b\in L^1_1$ and $C>0$ such that \eqref{cotadb} holds.
+next, dividing by $e^s$ and taking $s\to\infty$, we get $\tfrac12|\ln(t)|\leq\tfrac12 e^{f(t)}\leq C$ which is a contradiction. 
 
  Before addressing the main results of this section, we recall a definition.  
 
