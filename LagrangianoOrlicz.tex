@@ -1,3 +1,18 @@
+%%Cambios 
+
+
+%%p.2 Agregue hipotesis b,c,f
+%%p.4 Agregue referencia a holder
+%p. 5 saque u en lphi
+%lagrangian->Lagrangian en varios lados
+% para L Caratheodory-> differentiable caratheodory (varios lados)
+% p.10 caratheodory-> continuous differentiability
+%p.17 Lemma 6.1 differentiable caratheodory. F condicion A
+% 
+
+
+ 
+
 \documentclass[twoside]{elsarticle}
 
 
@@ -104,13 +119,13 @@ This paper is concerned with the existence of periodic solutions of the problem
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function satisfying the conditions
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory and differentiable function satisfying the conditions
 \begin{eqnarray}
 |\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
 |D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
 |D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
 \end{eqnarray}
-In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$ and the non negative functions  $b,$ $c$ and $f$ belong to certain Banach spaces that  will be introduced later.
+In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$  will be defined later.
 
 
 
@@ -124,7 +139,7 @@ I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
 
 Variational problems and hamiltonian systems  have been studied extensively. Classic references of these subjects are
 \cite{mawhin2010critical,struwe2008variational,ekeland1999convex}. Problems like \eqref{ProbPrin} have maintained the interest of researchers as the recent literature on the topic testifies. 
-For lagrangian functions of the type $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x})$  many solvability conditions have been given expanding the results of \cite{mawhin2010critical}.  
+For Lagrangian functions of the type $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x})$  many solvability conditions have been given expanding the results of \cite{mawhin2010critical}.  
 In  \cite{tang1995periodic} the function $F$ was split up into two potentials, one of them with a property of subadditivity and the other with a bounded gradient.
 In \cite{tang1998periodic} it was required a certain sublinearity condition on the gradient of the potential $F$; and, 
 in \cite{wu1999periodic} it was considered a potential $F$ given by a sum of a subconvex function and a  subquadratic one. 
@@ -164,7 +179,7 @@ Slightly away from the problems to be treated in this paper,
 we can mention \cite{cianchi2000local, cianchi1999gradient} where A. Cianchi dealt with 
 the regularity of minimizers of action integrals defined on several variable functions.
 
-In this article  we consider lagrangian functions  defined on Orlicz-Sobolev spaces $W^{1}L^{\Phi}$    
+In this article  we consider Lagrangian functions  defined on Orlicz-Sobolev spaces $W^{1}L^{\Phi}$    
 (see \cite{adams_sobolev,KR, rao1991theory,2002applications}) 
 and we use  the direct method of calculus of variations. 
 The exposition is organized as follows. 
@@ -242,7 +257,7 @@ The following alternative expression for the norm, known as \emph{Amemiya norm},
 The subspace $\ephi_d=\ephi_d([0,T])$ is defined as the closure in $\lphi_d$ of the subspace $L^{\infty}_d$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi_d$ is the only one maximal subspace contained in the Orlicz class $\claseor_d$, i.e. 
 $\b{u}\in\ephi_d$ if and only if $\rho_{\Phi}(\lambda \b{u})<\infty$ for any $\lambda>0$.  
 
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces. Namely, if $\b{u}\in\lphi_d$ and $\b{v}\in\lpsi_d$ then $\b{u}\ccdot\b{v}\in L_1^1$ and
+A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Th. 9.3]{KR}). Namely, if $\b{u}\in\lphi_d$ and $\b{v}\in\lpsi_d$ then $\b{u}\ccdot\b{v}\in L_1^1$ and
 \begin{equation}\label{holder}
 \int_0^T\b{v}\ccdot\b{u}\ dt\leq \|\b{u}\orlnor\|\b{v}\|_{L^{\Psi}}.
 \end{equation}
@@ -271,7 +286,7 @@ If $\Phi \in \Delta_2$,  then the sets $\lphi_d$, $\ephi_d$, $\Pi(\ephi_d,r)$ an
 
 
 We define the \emph{Sobolev-Orlicz space} $\wphi_d$ (see \cite{adams_sobolev}) by
-\[\wphi_d:=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{u},\b{\dot{u}}\in \lphi_d\}.\]
+\[\wphi_d:=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{\dot{u}}\in \lphi_d\}.\]
 $\wphi_d$ is a Banach space when equipped with the norm
 \[
 \|  \b{u}  \|_{\wphi}= \|  \b{u}  \|_{\lphi} + \|\b{\dot{u}}\orlnor.
@@ -440,6 +455,7 @@ See \cite{ambrosetti} for details.
 \section{Differentiability of action integrals in Orlicz spaces}\label{sec:dif}
 
 
+Henceforth we ssume that the functions $b,c,f$ in \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} satisfy that 
 
 
 
@@ -464,7 +480,7 @@ next, dividing by $e^s$ and taking $s\to\infty$, we get $\tfrac12|\ln(t)|\leq C$
  Before addressing the main results of this section, we recall a definition.  
 
 
-\begin{defi} We say that a function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a Carath\'eodory function if for fixed $(\b{x},\b{y})$
+\begin{defi} We say that a function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a \emph{differentiable Carath\'eodory} function if for fixed $(\b{x},\b{y})$
 the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuously differentiable for almost everywhere $t\in [0,T]$.
 
 \end{defi}
@@ -472,7 +488,7 @@ the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$
 
 
 \begin{thm}\label{teorema_acotacion}
-Let $\mathcal{L}$ be a Carath\'eodory function satisfying \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL}. 
+Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL}. 
 Then the following statements hold:
 \begin{enumerate}
 \item \label{T1item1} \label{A1} The action integral given by \eqref{integral_accion}
@@ -519,7 +535,7 @@ such that  $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{
 \begin{equation*}\label{DxL1-bis}
 |D_{\b{x}}\mathcal{L}(\cdot,\b{u}_{n_k},\b{\dot{u}}_{n_k})|\leq M\left(b+\Phi\left(\frac{|h|}{\lambda}+f\right)\right) \in L^1_1.
 \end{equation*}
-On the other hand, by the Carath\'eodory condition, we have
+On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
 \[D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\quad\hbox{ for a.e. } t\in[0,T].\]
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
@@ -678,7 +694,7 @@ We recall a usual definition in the context of calculus of variations.
 \begin{defi} Let $X$ be a Banach space and let $D$ be an unbounded subset of $X$. Suppose that $J:D\subset X\to\rr$. We say that $J$ is \emph{coercive} if $J(u)\to +\infty$ when  $\|\b{u}\|_X\to +\infty$. 
 \end{defi}
 
-It is well known that coercivity is a useful ingredient in the process of establishing existence of minima. Therefore, we are interested in finding conditions which ensure the coercivity of the action integral $I$ acting on $\domi$. For this purpose, we need to introduce the following  extra condition on the lagrangian function $\mathcal{L}$  
+It is well known that coercivity is a useful ingredient in the process of establishing existence of minima. Therefore, we are interested in finding conditions which ensure the coercivity of the action integral $I$ acting on $\domi$. For this purpose, we need to introduce the following  extra condition on the Lagrangian function $\mathcal{L}$  
 \begin{equation}\label{cota_inf}
 \mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
@@ -769,7 +785,7 @@ Next, we present two results that establish coercivity of action integrals under
 
 
 \begin{thm}\label{coercitividad1}
-Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1}. We assume the following conditions:
+Let  $\mathcal{L}$ be a Lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1}. We assume the following conditions:
 \begin{enumerate}
 \item There exist a non negative function  $b_1 \in L^1_1$ and a constant $\mu>0$  such that for any $\b{x_1},\b{x_2}\in\rr^d$ and a.e. $t\in [0,T]$
 \begin{equation}\label{holder_cont}
@@ -875,19 +891,19 @@ we perform a little adaptation of  a result of \cite{ekeland1999convex}.
 
 
 \begin{lem}\label{semicontinf}
-Let $\mathcal{L}(t,\b{x},\b{y})$ and $F(t,\b{x})$ be  Carath\'eodory functions satisfying
+Let $\mathcal{L}(t,\b{x},\b{y})$ be a  differentiable Carath\'eodory function. Suppose that  $F$ satisfies the condition (A) and the inequality
 \begin{equation}\label{cota_inf_2}
 \mathcal{L}(t,\b{x},\b{y})\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),
 \end{equation}
 where $\Phi$ is an $N$-function. 
-In addtion, suppose that $F$ satisfies inequality \eqref{condA1} and $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Let $\{\b{u}_n\}\subset\wphi$ be a sequence such that $\b{u}_n$ converges  uniformly  to a function $\b{u}\in\wphi$ and $\b{\dot{u}}_n$ converges in the weak topology of $L^1_d$ to $\b{\dot{u}}$.   Then
+In addtion, suppose that  $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Let $\{\b{u}_n\}\subset\wphi$ be a sequence such that $\b{u}_n$ converges  uniformly  to a function $\b{u}\in\wphi$ and $\b{\dot{u}}_n$ converges in the weak topology of $L^1_d$ to $\b{\dot{u}}$.   Then
 \begin{equation}\label{liminf0}I(\b{u})\leq \liminf_{n\to\infty}I(\b{u}_n).
 \end{equation}
 
 \end{lem}
 
 \begin{proof} First, we point out that \eqref{cota_inf_2} and \eqref{condA1} imply that $I$ is defined on $\wphi$ taking values on the interval $(-\infty,+\infty]$. 
-Let $\{\b{u}_n\}$ be a sequence  satisfying the assumptions of the theorem.   We define the Carath\'eodory function $\mathcal{\hat{L}}=\mathcal{L}-F$ and we denote by $\hat{I}$ its  associated action integral. Using  \cite[Thm. 2.1, p. 243]{ekeland1999convex}, we get
+Let $\{\b{u}_n\}$ be a sequence  satisfying the assumptions of the theorem.   We define the differentiable Carath\'eodory function $\mathcal{\hat{L}}=\mathcal{L}-F$ and we denote by $\hat{I}$ its  associated action integral. Using  \cite[Thm. 2.1, p. 243]{ekeland1999convex}, we get
 \begin{equation}\label{liminf1}
 \int_0^T\mathcal{\hat{L}}(t,\b{u},\b{\dot{u}})\ dt\leq \liminf_{n\to\infty}\int_0^T\mathcal{\hat{L}}(t,\b{u}_n,\b{\dot{u}}_n)\ dt.
 \end{equation}
@@ -900,9 +916,11 @@ Finally, as a consequence of  \eqref{liminf1} and  \eqref{liminf2}, we obtain \e
 \end{proof}
 
 
+Gathering our previous results we obtain existence of solutions under four different sets of assumptions. We enunciate all these posisibilidades in the following theorem. 
+
 \begin{thm} 
 Let $\Phi$ and $\Psi$ be complementary $N$-functions. 
-Suppose that the Cara\-th\'eodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex at $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} are satisfied. In addition, assume that some of the following statements hold (we recall the definitions and properties of $\alpha_0$, $b_1$, $\b{x}_0$ and $b_0$ from \eqref{cota_inf}, \eqref{holder_cont}, \eqref{der_cero} and \eqref{condA2} respectively):
+Suppose that the differentiable Carath\'eodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex at $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} are satisfied. In addition, assume that some of the following statements hold (we recall the definitions and properties of $\alpha_0$, $b_1$, $\b{x}_0$ and $b_0$ from \eqref{cota_inf}, \eqref{holder_cont}, \eqref{der_cero} and \eqref{condA2} respectively):
 \begin{enumerate}
   \item\label{item1prin} $\Psi\in\Delta_2$ and  \eqref{holder_cont}.
 \item \eqref{holder_cont} and  $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$.
