@@ -139,7 +139,7 @@ I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
 
 Variational problems and hamiltonian systems  have been studied extensively. Classic references of these subjects are
 \cite{mawhin2010critical,struwe2008variational,ekeland1999convex}. Problems like \eqref{ProbPrin} have maintained the interest of researchers as the recent literature on the topic testifies. 
-For Lagrangian functions of the type $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x})$  many solvability conditions have been given expanding the results of \cite{mawhin2010critical}.  
+For lagrangian functions of the type $\mathcal{L}(t,\b{x},\b{y})=\frac{|\b{y}|^2}{2}+F(t,\b{x})$  many solvability conditions have been given expanding the results of \cite{mawhin2010critical}.  
 In  \cite{tang1995periodic} the function $F$ was split up into two potentials, one of them with a property of subadditivity and the other with a bounded gradient.
 In \cite{tang1998periodic} it was required a certain sublinearity condition on the gradient of the potential $F$; and, 
 in \cite{wu1999periodic} it was considered a potential $F$ given by a sum of a subconvex function and a  subquadratic one. 
@@ -179,7 +179,7 @@ Slightly away from the problems to be treated in this paper,
 we can mention \cite{cianchi2000local, cianchi1999gradient} where A. Cianchi dealt with 
 the regularity of minimizers of action integrals defined on several variable functions.
 
-In this article  we consider Lagrangian functions  defined on Orlicz-Sobolev spaces $W^{1}L^{\Phi}$    
+In this article  we consider lagrangian functions  defined on Orlicz-Sobolev spaces $W^{1}L^{\Phi}$    
 (see \cite{adams_sobolev,KR, rao1991theory,2002applications}) 
 and we use  the direct method of calculus of variations. 
 The exposition is organized as follows. 
@@ -323,11 +323,11 @@ The next simple lemma is essentially known and we will use it systematically. Fo
 \begin{align}
  &\left|\b{u}(t)-\b{u}(s) \right| \leq  \|\b{\dot{u}}\orlnor w(| t-s|),&\label{in-sob-cont}
 \\
-& \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\text{(Sobolev's inequality).}\label{sobolev}
+& \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\label{sobolev}
 \end{align}
 \item For every $\b{u}\in\wphi$ we have $\widetilde{\b{u}}\in L^{\infty}_d$ and 
 \begin{align}
-& \|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Wirtinger's inequality).}\label{wirtinger}
+& \|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Sobolev's inequality).}\label{wirtinger}
 \end{align}
 
 
@@ -352,7 +352,7 @@ This proves the inequality \eqref{in-sob-cont}.
 Since $u_i$ is continuous, from Mean Value Theorem for integrals, 
 there exists  $s_i\in [0,T]$ such that $u_i(s_i)=\overline{u}_i$.
 Using this $s_i$ value in \eqref{in-sob-cont} with $u_i$ instead of $\b{u}$ and taking into account that $s\Phi^{-1}(1/s)$ is increasing, 
-we obtain  Wirtinger's inequality for each $u_i$. The inequality \eqref{wirtinger} 
+we obtain  Sobolev's inequality for each $u_i$. The inequality \eqref{wirtinger} 
 follows easily from the corresponding result for each component of $\b{u}$.
 
 On the other hand, again by H\"older's inequality and \cite[Eq. (9.11)]{KR}, we have
@@ -694,7 +694,7 @@ We recall a usual definition in the context of calculus of variations.
 \begin{defi} Let $X$ be a Banach space and let $D$ be an unbounded subset of $X$. Suppose that $J:D\subset X\to\rr$. We say that $J$ is \emph{coercive} if $J(u)\to +\infty$ when  $\|\b{u}\|_X\to +\infty$. 
 \end{defi}
 
-It is well known that coercivity is a useful ingredient in the process of establishing existence of minima. Therefore, we are interested in finding conditions which ensure the coercivity of the action integral $I$ acting on $\domi$. For this purpose, we need to introduce the following  extra condition on the Lagrangian function $\mathcal{L}$  
+It is well known that coercivity is a useful ingredient in the process of establishing existence of minima. Therefore, we are interested in finding conditions which ensure the coercivity of the action integral $I$ acting on $\domi$. For this purpose, we need to introduce the following  extra condition on the lagrangian function $\mathcal{L}$  
 \begin{equation}\label{cota_inf}
 \mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
@@ -785,7 +785,7 @@ Next, we present two results that establish coercivity of action integrals under
 
 
 \begin{thm}\label{coercitividad1}
-Let  $\mathcal{L}$ be a Lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1}. We assume the following conditions:
+Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1}. We assume the following conditions:
 \begin{enumerate}
 \item There exist a non negative function  $b_1 \in L^1_1$ and a constant $\mu>0$  such that for any $\b{x_1},\b{x_2}\in\rr^d$ and a.e. $t\in [0,T]$
 \begin{equation}\label{holder_cont}
@@ -805,7 +805,7 @@ Then  the action integral $I$ is coercive.
 
 
 
-\begin{proof} In the subsequent estimates, we use \eqref{cota_inf}, the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older's inequality and Wirtinger's inequality. 
+\begin{proof} In the subsequent estimates, we use \eqref{cota_inf}, the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older's inequality and Sobolev's inequality. 
 \begin{equation}\label{cota_inf_I}
 \begin{split}
 I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0^TF(t,\b{u})\ dt\\ 
@@ -845,7 +845,7 @@ Let $\mathcal{L}$ be as in Theorem \ref{coercitividad1} and let $F$ be as in Lem
 \end{thm}
 
 
-\begin{proof}  Using \eqref{cota_inf}, \cite[Eq. (18), p.17]{mawhin2010critical},  the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$,  \eqref{der_cero}, \eqref{holder} and Wirtinger's inequality, we get
+\begin{proof}  Using \eqref{cota_inf}, \cite[Eq. (18), p.17]{mawhin2010critical},  the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$,  \eqref{der_cero}, \eqref{holder} and Sobolev's inequality, we get
 %
 \begin{equation}\label{cota_con _upunto}
 \begin{split}
@@ -863,7 +863,7 @@ I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0
 \end{equation}
 with $C:=\alpha_0^{-1}a(|\b{x}_0|)\|b_0\|_{L^1}T\Phi^{-1}(1/T)$. 
 
-Let $\alpha$ be as in Corollary \ref{a_bound}, i.e. $\alpha$ is  a non decreasing majorant of $a$. Using that  $F(t, \b{\overline{u}} /2) \leq (1/2)F(t,\b{u}) + (1/2) F(t, -\b{\widetilde{u}})$ and taking into account that $\Phi$ is a non negative function, inequality \eqref{condA1}, H\"older's inequality,  Corollary \ref{a_bound} and Wirtinger's inequality, we obtain
+Let $\alpha$ be as in Corollary \ref{a_bound}, i.e. $\alpha$ is  a non decreasing majorant of $a$. Using that  $F(t, \b{\overline{u}} /2) \leq (1/2)F(t,\b{u}) + (1/2) F(t, -\b{\widetilde{u}})$ and taking into account that $\Phi$ is a non negative function, inequality \eqref{condA1}, H\"older's inequality,  Corollary \ref{a_bound} and Sobolev's inequality, we obtain
 \begin{equation}\label{cota_con _ubarra}
 \begin{split}
 I(\b{u}) &\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)  +2 \int_0^T F(t,\b{\overline{u}} /2)\ dt - \int_0^T F(t, -\b{\widetilde{u}})\ dt\\
@@ -945,6 +945,59 @@ Now, taking into account the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset
 \[I(\b{u})\leq  \liminf_{n\to\infty}I(\b{u}_n)=\min\limits_{\b{u}\in\wphi_T}I(\b{u}).\]
 Hence, $\b{u}$ is a minimun and therefore a critical point of $I$. Finally, 
 invoking Theorem \ref{critpoint},  the proof concludes.\end{proof}
+
+
+One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,\b{x},\b{y})$ where the  nonlinearity is not a power function. 
+And, in virtue of the fact that we have not supposed that the $N$-functions $\Phi$ satisfies the $\Delta_2$ condition, the nonlinearity is not even bounded by power functions.
+For example, our main theorem can be applied to Lagrangians like
+  \[\mathcal{L}(t,\b{x},\b{y})=e^{|\b{y}|}+F(t,\b{x}),\] 
+when $F$  satisfies some of the alternatives 1-4 in the main theorem.
+In this case, we can consider the $N$-function $\Phi(x)=e^x-x-1$ that verifies  conditions (2),(3) and (4)  and its complementary 
+function is $\Psi(x)=(1+x)\log(1+x)-x$ that satisfies the $\Delta_2$ condition. We can apply our main theorem even if $\Psi$ are not a $\Delta_2$ function, although in this case we need an additional condition on the size of certain constants. 
+
+Another contribution that we want to emphasize is the condition (38). This condition is a relaxed version of the inequality
+\begin{equation}\label{eq:hip_ma_whi}
+  |\nabla F(t,\b{x})|\leq g(t),
+\end{equation}
+with  $g(t)\in L^1$, considered by Mawhin and Willem (see \cite[Th.1.5]{mawhin2010critical}). 
+We point out that Mean Value Theorem for derivatives and inequality \eqref{eq:hip_ma_whi} imply our condition (38). 
+In a series of papers (see for example  \cite{wu1999periodic,zhao2004periodic,tang2010periodic}) some weaker conditions than \eqref{eq:hip_ma_whi} for 
+Lagrangians of the power type, such as
+ \begin{equation}\label{eq:la_pot}\mathcal{L}(t,\b{x},\b{y})=|\b{y}|^p+F(t,\b{x}),\quad p>1,
+ \end{equation}
+were treated. In the aforementioned papers, inequality \eqref{eq:hip_ma_whi} was replaced by the weaker condition 
+ \begin{equation}\label{eq:sublinear}|
+\nabla F(t,\b{x})|\leq b(t)|x|^{\mu-1}+b_2(t),\quad b_1,b_2\in L^1, \mu\geq 1.
+ \end{equation}
+Furthermore, either $\mu$ is subcritical, that is $\mu<p$; 
+or, assuming additional conditions on $b_1$, $\mu$  is critical, i.e. $\mu=p$.  
+Our condition (38) is different to \eqref{eq:sublinear}, because of this fact our results are new even for 
+lagrangian functions like \eqref{eq:la_pot}. 
+For example, let $f(x)$ be a function defined on $\rr$, continuously  differentiable with  $f(x)=|x|$, for $|x|>1$; and, we define $F(t,x)=g(t)(f(x)+\cos(e^x))$, where  $g$ is any function in $L^1$. Then $F$ satisfies (38) because 
+\[|F(t,x_1)-F(t,x_2)|\leq |g(t)|(K|x_1-x_2|+2),\]
+since $f$ is a Lipschitz function. In addition, as $f(x)=|x|$ for $|x|>1$ and $\cos(e^x)$ is bounded, the function $F$ satisfies the coercivity condition (39). 
+From here, our main theorem  can be applied to this function $F$.  
+However,  $\frac{d}{dx}F=g(t)(f'(x)-e^x\sin(e^x))$ is not bounded 
+by any power of $x$, unless $g$ is trivial, i.e. $F$ does not  satisfy \eqref{eq:sublinear}.
+
+Alternatively, we consider the hypothesis of convexity on $F$. We would like to emphasize that a convex function does not necessarily 
+satisfy (38). This observation is justified by the following fact: assume that $F$ is independent of $t$ and it also satisfies (38),
+then $F$ is sublinear, i.e.
+\[|F(x)|\leq a|x|+b,\quad a>0,b>0.\]
+In fact, inequality (38) implies that 
+$|F(x)-F(y)|\leq c$ with $c>0$ provided that  $|x-y|\leq 1$.
+Now, if $x\in\rr^n$ we look for some $n\in\nn$ such that $n-1\leq |x|<n$. Therefore,
+\[
+\begin{split}
+|F(x)|&=\left|F(x)-F\left(\frac{n-1}{n}x\right)+ F\left(\frac{n-1}{n}x\right)-  \cdots
++F\left(\frac{1}{n}x\right)-F(0)\right|\\
+&\leq nc\leq c(|x|+1).
+\end{split}
+\]
+Particularly, the function $F(t,x)=|x|^2$ is convex and satisfies the condition  (A); 
+nevertheless,  $F$ is not sublinear and consequently it does not satisfy (38). 
+The same function allows us to see that our condition (38) does not imply \eqref{eq:sublinear}.  
+And condition (38) does not imply convexity either, which is clear taking the previously studied function  $F=g(t)(f(x)+\cos(e^x))$. 
 
 \section*{Acknowledgments}
 The first four authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. The third and fourth authors are partially supported by a CONICET grant number 11220090100714CO. the fifth  author is  supported by a AVENTURES - ANR-12-BLAN-BS01-0001-01 and ECOS-CONICyT grant number  C13E05.
