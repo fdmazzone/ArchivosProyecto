@@ -1,18 +1,3 @@
-%%Cambios 
-
-
-%%p.2 Agregue hipotesis b,c,f
-%%p.4 Agregue referencia a holder
-%p. 5 saque u en lphi
-%lagrangian->Lagrangian en varios lados
-% para L Caratheodory-> differentiable caratheodory (varios lados)
-% p.10 caratheodory-> continuous differentiability
-%p.17 Lemma 6.1 differentiable caratheodory. F condicion A
-% 
-
-
- 
-
 \documentclass[twoside]{elsarticle}
 
 
@@ -455,8 +440,6 @@ See \cite{ambrosetti} for details.
 \section{Differentiability of action integrals in Orlicz spaces}\label{sec:dif}
 
 
-Henceforth we ssume that the functions $b,c,f$ in \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL} satisfy that 
-
 
 
 We take a moment for  discussing the relevance of the function $f$ in the inequalities \eqref{cotaL},  \eqref{cotaDxL} and \eqref{cotaDyL}, which are a direct  generalization of the conditions \cite[Eq (a), p. 10]{mawhin2010critical}.  In particular, we are interested in seeing when for every  $f\in \ephi_1$ there exist
@@ -480,8 +463,9 @@ next, dividing by $e^s$ and taking $s\to\infty$, we get $\tfrac12|\ln(t)|\leq C$
  Before addressing the main results of this section, we recall a definition.  
 
 
-\begin{defi} We say that a function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a \emph{differentiable Carath\'eodory} function if for fixed $(\b{x},\b{y})$
-the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuously differentiable for almost everywhere $t\in [0,T]$.
+\begin{defi} A function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a \emph{Carath\'eodory} function if for fixed $(\b{x},\b{y})$
+the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuous  for almost everywhere $t\in [0,T]$. We say that 
+$\mathcal{L}(t, \b{x},\b{y})$ is  \emph{differentiable Carath\'eodory} if in addition $\mathcal{L}(t, \b{x},\b{y})$ is continuously differentiable with respect to $\b{x}$ and $\b{y}$  for almost everywhere $t\in [0,T]$.
 
 \end{defi}
 
@@ -916,7 +900,7 @@ Finally, as a consequence of  \eqref{liminf1} and  \eqref{liminf2}, we obtain \e
 \end{proof}
 
 
-Gathering our previous results we obtain existence of solutions under four different sets of assumptions. We enunciate all these posisibilidades in the following theorem. 
+Gathering our previous results we obtain existence of solutions under four different sets of assumptions. We enunciate all these alternatives in the following theorem. 
 
 \begin{thm} 
 Let $\Phi$ and $\Psi$ be complementary $N$-functions. 
@@ -933,7 +917,7 @@ Suppose that the differentiable Carath\'eodory function $\mathcal{L}(t,\b{x},\b{
 Then, problem \eqref{ProbPrin} has a solution.
 \end{thm}
 
-\begin{proof} First of all, note that  \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} imply that $I$ is ,lower bounded on $\wphi_T$. Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence for the problem  $\min\{I(\b{u})|\b{u}\in\wphi_T\}$.
+\begin{proof} First of all, note that  \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} imply that $I$ is, lower bounded on $\wphi_T$. Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence for the problem  $\min\{I(\b{u})|\b{u}\in\wphi_T\}$.
 Since  $I(\b{u}_n)$, $n=1,2,\ldots$  is bounded, Theorem \ref{coercitividad1} (or Theorem \ref{segcoerthm} according to which of the items \ref{item1prin}-\ref{item4prin} hold true) implies that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. Hence, in virtue of Corollary \ref{unif_conv}, we can assume that $\b{u}_n$ converges uniformly to a $T$-periodic continuous function $\b{u}$.  The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*$. Thus, by \cite[Cor. 5, p. 148]{rao1991theory} and since $\b{\dot{u}}_n$ is bounded in $\lphi_d$,  there exists a subsequence (again denoted by $\b{\dot{u}}_n$) such that $\b{\dot{u}}_n$ converges to a function $\b{v}\in\lphi_d$ in the weak* topology of $\lphi_d$. From this fact and the uniform convergence of $\b{u}_n$ to $\b{u}$, we obtain that
 \[
 \int_0^T\b{\dot{\xi}}\ccdot\b{u}\ dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\ccdot\b{u}_n \ dt=-\lim_{n\to\infty}\int_0^T\b{\xi}\ccdot\b{\dot{u}}_n\ dt=-\int_0^T\b{\xi}\ccdot\b{v}\ dt
@@ -947,20 +931,20 @@ Hence, $\b{u}$ is a minimun and therefore a critical point of $I$. Finally,
 invoking Theorem \ref{critpoint},  the proof concludes.\end{proof}
 
 
-One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,\b{x},\b{y})$ where the  nonlinearity is not a power function. 
-And, in virtue of the fact that we have not supposed that the $N$-functions $\Phi$ satisfies the $\Delta_2$ condition, the nonlinearity is not even bounded by power functions.
+One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,\b{x},\b{y})$ where the  nonlinearity is not necessarily  a power function. 
+And, in virtue of the fact that we have not supposed that the $N$-functions $\Phi$ satisfy the $\Delta_2$ condition, the nonlinearity is not even bounded by power functions.
 For example, our main theorem can be applied to Lagrangians like
   \[\mathcal{L}(t,\b{x},\b{y})=e^{|\b{y}|}+F(t,\b{x}),\] 
 when $F$  satisfies some of the alternatives 1-4 in the main theorem.
-In this case, we can consider the $N$-function $\Phi(x)=e^x-x-1$ that verifies  conditions (2),(3) and (4)  and its complementary 
-function is $\Psi(x)=(1+x)\log(1+x)-x$ that satisfies the $\Delta_2$ condition. We can apply our main theorem even if $\Psi$ are not a $\Delta_2$ function, although in this case we need an additional condition on the size of certain constants. 
+In this case, considering  the $N$-function $\Phi(x)=e^x-x-1$,  conditions (2),(3) and (4) hold. Moreover, the complementary  
+function of $\Phi$, i.e.  $\Psi(x)=(1+x)\ln(1+x)-x$, satisfies the $\Delta_2$-condition. We can apply our main theorem even if $\Psi\notin\Delta_2$, although in this case we need an additional condition on the size of certain constants. 
 
-Another contribution that we want to emphasize is the condition (38). This condition is a relaxed version of the inequality
+Another contribution that we want to emphasize is the condition \eqref{holder_cont}. This condition is a relaxed version of the inequality
 \begin{equation}\label{eq:hip_ma_whi}
   |\nabla F(t,\b{x})|\leq g(t),
 \end{equation}
-with  $g(t)\in L^1$, considered by Mawhin and Willem (see \cite[Th.1.5]{mawhin2010critical}). 
-We point out that Mean Value Theorem for derivatives and inequality \eqref{eq:hip_ma_whi} imply our condition (38). 
+with  $g\in L^1_1$, considered by Mawhin and Willem (see \cite[Th.1.5]{mawhin2010critical}). 
+We point out that Mean Value Theorem for derivatives and inequality \eqref{eq:hip_ma_whi} imply our condition \eqref{holder_cont}. 
 In a series of papers (see for example  \cite{wu1999periodic,zhao2004periodic,tang2010periodic}) some weaker conditions than \eqref{eq:hip_ma_whi} for 
 Lagrangians of the power type, such as
  \begin{equation}\label{eq:la_pot}\mathcal{L}(t,\b{x},\b{y})=|\b{y}|^p+F(t,\b{x}),\quad p>1,
@@ -971,20 +955,20 @@ were treated. In the aforementioned papers, inequality \eqref{eq:hip_ma_whi} was
  \end{equation}
 Furthermore, either $\mu$ is subcritical, that is $\mu<p$; 
 or, assuming additional conditions on $b_1$, $\mu$  is critical, i.e. $\mu=p$.  
-Our condition (38) is different to \eqref{eq:sublinear}, because of this fact our results are new even for 
+Our condition \eqref{holder_cont} is different to \eqref{eq:sublinear}, because of this fact our results are new even for 
 lagrangian functions like \eqref{eq:la_pot}. 
 For example, let $f(x)$ be a function defined on $\rr$, continuously  differentiable with  $f(x)=|x|$, for $|x|>1$; and, we define $F(t,x)=g(t)(f(x)+\cos(e^x))$, where  $g$ is any function in $L^1$. Then $F$ satisfies (38) because 
 \[|F(t,x_1)-F(t,x_2)|\leq |g(t)|(K|x_1-x_2|+2),\]
-since $f$ is a Lipschitz function. In addition, as $f(x)=|x|$ for $|x|>1$ and $\cos(e^x)$ is bounded, the function $F$ satisfies the coercivity condition (39). 
+since $f$ is a Lipschitz function. In addition, as $f(x)=|x|$ for $|x|>1$ and $\cos(e^x)$ is bounded, the function $F$ satisfies the coercivity condition \eqref{propiedad1coercividad}. 
 From here, our main theorem  can be applied to this function $F$.  
 However,  $\frac{d}{dx}F=g(t)(f'(x)-e^x\sin(e^x))$ is not bounded 
 by any power of $x$, unless $g$ is trivial, i.e. $F$ does not  satisfy \eqref{eq:sublinear}.
 
 Alternatively, we consider the hypothesis of convexity on $F$. We would like to emphasize that a convex function does not necessarily 
-satisfy (38). This observation is justified by the following fact: assume that $F$ is independent of $t$ and it also satisfies (38),
+satisfy (38). This observation is justified by the following fact: assume that $F$ is independent of $t$ and it also satisfies \eqref{holder_cont} ,
 then $F$ is sublinear, i.e.
 \[|F(x)|\leq a|x|+b,\quad a>0,b>0.\]
-In fact, inequality (38) implies that 
+In fact, inequality \eqref{holder_cont} implies that 
 $|F(x)-F(y)|\leq c$ with $c>0$ provided that  $|x-y|\leq 1$.
 Now, if $x\in\rr^n$ we look for some $n\in\nn$ such that $n-1\leq |x|<n$. Therefore,
 \[
@@ -995,12 +979,12 @@ Now, if $x\in\rr^n$ we look for some $n\in\nn$ such that $n-1\leq |x|<n$. Theref
 \end{split}
 \]
 Particularly, the function $F(t,x)=|x|^2$ is convex and satisfies the condition  (A); 
-nevertheless,  $F$ is not sublinear and consequently it does not satisfy (38). 
-The same function allows us to see that our condition (38) does not imply \eqref{eq:sublinear}.  
-And condition (38) does not imply convexity either, which is clear taking the previously studied function  $F=g(t)(f(x)+\cos(e^x))$. 
+nevertheless,  $F$ is not sublinear and consequently it does not satisfy \eqref{holder_cont}. 
+The same function allows us to see that our condition \eqref{holder_cont} does not imply \eqref{eq:sublinear}.  
+And condition \eqref{holder_cont} does not imply convexity either, which is clear taking the previously studied function  $F=g(t)(f(x)+\cos(e^x))$. 
 
 \section*{Acknowledgments}
-The first four authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. The third and fourth authors are partially supported by a CONICET grant number 11220090100714CO. the fifth  author is  supported by a AVENTURES - ANR-12-BLAN-BS01-0001-01 and ECOS-CONICyT grant number  C13E05.
+The first four authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. The third and fourth authors are partially supported by a CONICET grant number 11220090100714CO. The fifth  author is  supported by a AVENTURES - ANR-12-BLAN-BS01-0001-01 and ECOS-CONICyT grant number  C13E05.
 
 
 \section*{References}
