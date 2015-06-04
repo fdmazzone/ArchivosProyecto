@@ -104,13 +104,13 @@ This paper is concerned with the existence of periodic solutions of the problem
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function satisfying the conditions
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory and differentiable function satisfying the conditions
 \begin{eqnarray}
 |\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
 |D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
 |D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
 \end{eqnarray}
-In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$ and the non negative functions  $b,$ $c$ and $f$ belong to certain Banach spaces that  will be introduced later.
+In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$  will be defined later.
 
 
 
@@ -242,7 +242,7 @@ The following alternative expression for the norm, known as \emph{Amemiya norm},
 The subspace $\ephi_d=\ephi_d([0,T])$ is defined as the closure in $\lphi_d$ of the subspace $L^{\infty}_d$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi_d$ is the only one maximal subspace contained in the Orlicz class $\claseor_d$, i.e. 
 $\b{u}\in\ephi_d$ if and only if $\rho_{\Phi}(\lambda \b{u})<\infty$ for any $\lambda>0$.  
 
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces. Namely, if $\b{u}\in\lphi_d$ and $\b{v}\in\lpsi_d$ then $\b{u}\ccdot\b{v}\in L_1^1$ and
+A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Th. 9.3]{KR}). Namely, if $\b{u}\in\lphi_d$ and $\b{v}\in\lpsi_d$ then $\b{u}\ccdot\b{v}\in L_1^1$ and
 \begin{equation}\label{holder}
 \int_0^T\b{v}\ccdot\b{u}\ dt\leq \|\b{u}\orlnor\|\b{v}\|_{L^{\Psi}}.
 \end{equation}
@@ -271,7 +271,7 @@ If $\Phi \in \Delta_2$,  then the sets $\lphi_d$, $\ephi_d$, $\Pi(\ephi_d,r)$ an
 
 
 We define the \emph{Sobolev-Orlicz space} $\wphi_d$ (see \cite{adams_sobolev}) by
-\[\wphi_d:=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{u},\b{\dot{u}}\in \lphi_d\}.\]
+\[\wphi_d:=\{\b{u}| \b{u} \hbox{ is absolutely continuous and } \b{\dot{u}}\in \lphi_d\}.\]
 $\wphi_d$ is a Banach space when equipped with the norm
 \[
 \|  \b{u}  \|_{\wphi}= \|  \b{u}  \|_{\lphi} + \|\b{\dot{u}}\orlnor.
@@ -308,11 +308,11 @@ The next simple lemma is essentially known and we will use it systematically. Fo
 \begin{align}
  &\left|\b{u}(t)-\b{u}(s) \right| \leq  \|\b{\dot{u}}\orlnor w(| t-s|),&\label{in-sob-cont}
 \\
-& \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\text{(Sobolev's inequality).}\label{sobolev}
+& \|\b{u}\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|\b{u}\sobnor&\label{sobolev}
 \end{align}
 \item For every $\b{u}\in\wphi$ we have $\widetilde{\b{u}}\in L^{\infty}_d$ and 
 \begin{align}
-& \|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Wirtinger's inequality).}\label{wirtinger}
+& \|\widetilde{\b{u}}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\b{\dot u}\orlnor&\text{  (Sobolev's inequality).}\label{wirtinger}
 \end{align}
 
 
@@ -337,7 +337,7 @@ This proves the inequality \eqref{in-sob-cont}.
 Since $u_i$ is continuous, from Mean Value Theorem for integrals, 
 there exists  $s_i\in [0,T]$ such that $u_i(s_i)=\overline{u}_i$.
 Using this $s_i$ value in \eqref{in-sob-cont} with $u_i$ instead of $\b{u}$ and taking into account that $s\Phi^{-1}(1/s)$ is increasing, 
-we obtain  Wirtinger's inequality for each $u_i$. The inequality \eqref{wirtinger} 
+we obtain  Sobolev's inequality for each $u_i$. The inequality \eqref{wirtinger} 
 follows easily from the corresponding result for each component of $\b{u}$.
 
 On the other hand, again by H\"older's inequality and \cite[Eq. (9.11)]{KR}, we have
@@ -442,7 +442,6 @@ See \cite{ambrosetti} for details.
 
 
 
-
 We take a moment for  discussing the relevance of the function $f$ in the inequalities \eqref{cotaL},  \eqref{cotaDxL} and \eqref{cotaDyL}, which are a direct  generalization of the conditions \cite[Eq (a), p. 10]{mawhin2010critical}.  In particular, we are interested in seeing when for every  $f\in \ephi_1$ there exist
 $b\in L^1_1$ and a constant $C>0$ such that 
 \begin{equation}\label{cotadb}
@@ -464,15 +463,16 @@ next, dividing by $e^s$ and taking $s\to\infty$, we get $\tfrac12|\ln(t)|\leq C$
  Before addressing the main results of this section, we recall a definition.  
 
 
-\begin{defi} We say that a function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a Carath\'eodory function if for fixed $(\b{x},\b{y})$
-the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuously differentiable for almost everywhere $t\in [0,T]$.
+\begin{defi} A function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a \emph{Carath\'eodory} function if for fixed $(\b{x},\b{y})$
+the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuous  for almost everywhere $t\in [0,T]$. We say that 
+$\mathcal{L}(t, \b{x},\b{y})$ is  \emph{differentiable Carath\'eodory} if in addition $\mathcal{L}(t, \b{x},\b{y})$ is continuously differentiable with respect to $\b{x}$ and $\b{y}$  for almost everywhere $t\in [0,T]$.
 
 \end{defi}
 
 
 
 \begin{thm}\label{teorema_acotacion}
-Let $\mathcal{L}$ be a Carath\'eodory function satisfying \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL}. 
+Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL}. 
 Then the following statements hold:
 \begin{enumerate}
 \item \label{T1item1} \label{A1} The action integral given by \eqref{integral_accion}
@@ -519,7 +519,7 @@ such that  $\b{\dot{u}}_{n_k}\rightarrow \b{\dot{u}} \quad\text{a.e.}$ and $|\b{
 \begin{equation*}\label{DxL1-bis}
 |D_{\b{x}}\mathcal{L}(\cdot,\b{u}_{n_k},\b{\dot{u}}_{n_k})|\leq M\left(b+\Phi\left(\frac{|h|}{\lambda}+f\right)\right) \in L^1_1.
 \end{equation*}
-On the other hand, by the Carath\'eodory condition, we have
+On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
 \[D_{\b{x}}\mathcal{L}(t,\b{u}_{n_k}(t),\b{\dot{u}}_{n_k}(t))\to D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\quad\hbox{ for a.e. } t\in[0,T].\]
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
@@ -789,7 +789,7 @@ Then  the action integral $I$ is coercive.
 
 
 
-\begin{proof} In the subsequent estimates, we use \eqref{cota_inf}, the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older's inequality and Wirtinger's inequality. 
+\begin{proof} In the subsequent estimates, we use \eqref{cota_inf}, the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$, H\"older's inequality and Sobolev's inequality. 
 \begin{equation}\label{cota_inf_I}
 \begin{split}
 I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0^TF(t,\b{u})\ dt\\ 
@@ -829,7 +829,7 @@ Let $\mathcal{L}$ be as in Theorem \ref{coercitividad1} and let $F$ be as in Lem
 \end{thm}
 
 
-\begin{proof}  Using \eqref{cota_inf}, \cite[Eq. (18), p.17]{mawhin2010critical},  the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$,  \eqref{der_cero}, \eqref{holder} and Wirtinger's inequality, we get
+\begin{proof}  Using \eqref{cota_inf}, \cite[Eq. (18), p.17]{mawhin2010critical},  the decomposition $\b{u}=\b{\overline{u}}+\b{\tilde{u}}$,  \eqref{der_cero}, \eqref{holder} and Sobolev's inequality, we get
 %
 \begin{equation}\label{cota_con _upunto}
 \begin{split}
@@ -847,7 +847,7 @@ I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0
 \end{equation}
 with $C:=\alpha_0^{-1}a(|\b{x}_0|)\|b_0\|_{L^1}T\Phi^{-1}(1/T)$. 
 
-Let $\alpha$ be as in Corollary \ref{a_bound}, i.e. $\alpha$ is  a non decreasing majorant of $a$. Using that  $F(t, \b{\overline{u}} /2) \leq (1/2)F(t,\b{u}) + (1/2) F(t, -\b{\widetilde{u}})$ and taking into account that $\Phi$ is a non negative function, inequality \eqref{condA1}, H\"older's inequality,  Corollary \ref{a_bound} and Wirtinger's inequality, we obtain
+Let $\alpha$ be as in Corollary \ref{a_bound}, i.e. $\alpha$ is  a non decreasing majorant of $a$. Using that  $F(t, \b{\overline{u}} /2) \leq (1/2)F(t,\b{u}) + (1/2) F(t, -\b{\widetilde{u}})$ and taking into account that $\Phi$ is a non negative function, inequality \eqref{condA1}, H\"older's inequality,  Corollary \ref{a_bound} and Sobolev's inequality, we obtain
 \begin{equation}\label{cota_con _ubarra}
 \begin{split}
 I(\b{u}) &\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)  +2 \int_0^T F(t,\b{\overline{u}} /2)\ dt - \int_0^T F(t, -\b{\widetilde{u}})\ dt\\
@@ -875,19 +875,19 @@ we perform a little adaptation of  a result of \cite{ekeland1999convex}.
 
 
 \begin{lem}\label{semicontinf}
-Let $\mathcal{L}(t,\b{x},\b{y})$ and $F(t,\b{x})$ be  Carath\'eodory functions satisfying
+Let $\mathcal{L}(t,\b{x},\b{y})$ be a  differentiable Carath\'eodory function. Suppose that  $F$ satisfies the condition (A) and the inequality
 \begin{equation}\label{cota_inf_2}
 \mathcal{L}(t,\b{x},\b{y})\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),
 \end{equation}
 where $\Phi$ is an $N$-function. 
-In addtion, suppose that $F$ satisfies inequality \eqref{condA1} and $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Let $\{\b{u}_n\}\subset\wphi$ be a sequence such that $\b{u}_n$ converges  uniformly  to a function $\b{u}\in\wphi$ and $\b{\dot{u}}_n$ converges in the weak topology of $L^1_d$ to $\b{\dot{u}}$.   Then
+In addtion, suppose that  $\mathcal{L}(t,\b{x},\cdot)$ is convex in $\rr^d$ for each $(t,\b{x})\in [0,T]\times\rr^d$.  Let $\{\b{u}_n\}\subset\wphi$ be a sequence such that $\b{u}_n$ converges  uniformly  to a function $\b{u}\in\wphi$ and $\b{\dot{u}}_n$ converges in the weak topology of $L^1_d$ to $\b{\dot{u}}$.   Then
 \begin{equation}\label{liminf0}I(\b{u})\leq \liminf_{n\to\infty}I(\b{u}_n).
 \end{equation}
 
 \end{lem}
 
 \begin{proof} First, we point out that \eqref{cota_inf_2} and \eqref{condA1} imply that $I$ is defined on $\wphi$ taking values on the interval $(-\infty,+\infty]$. 
-Let $\{\b{u}_n\}$ be a sequence  satisfying the assumptions of the theorem.   We define the Carath\'eodory function $\mathcal{\hat{L}}=\mathcal{L}-F$ and we denote by $\hat{I}$ its  associated action integral. Using  \cite[Thm. 2.1, p. 243]{ekeland1999convex}, we get
+Let $\{\b{u}_n\}$ be a sequence  satisfying the assumptions of the theorem.   We define the differentiable Carath\'eodory function $\mathcal{\hat{L}}=\mathcal{L}-F$ and we denote by $\hat{I}$ its  associated action integral. Using  \cite[Thm. 2.1, p. 243]{ekeland1999convex}, we get
 \begin{equation}\label{liminf1}
 \int_0^T\mathcal{\hat{L}}(t,\b{u},\b{\dot{u}})\ dt\leq \liminf_{n\to\infty}\int_0^T\mathcal{\hat{L}}(t,\b{u}_n,\b{\dot{u}}_n)\ dt.
 \end{equation}
@@ -900,9 +900,11 @@ Finally, as a consequence of  \eqref{liminf1} and  \eqref{liminf2}, we obtain \e
 \end{proof}
 
 
+Gathering our previous results we obtain existence of solutions under four different sets of assumptions. We enunciate all these alternatives in the following theorem. 
+
 \begin{thm} 
 Let $\Phi$ and $\Psi$ be complementary $N$-functions. 
-Suppose that the Cara\-th\'eodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex at $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} are satisfied. In addition, assume that some of the following statements hold (we recall the definitions and properties of $\alpha_0$, $b_1$, $\b{x}_0$ and $b_0$ from \eqref{cota_inf}, \eqref{holder_cont}, \eqref{der_cero} and \eqref{condA2} respectively):
+Suppose that the differentiable Carath\'eodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex at $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} are satisfied. In addition, assume that some of the following statements hold (we recall the definitions and properties of $\alpha_0$, $b_1$, $\b{x}_0$ and $b_0$ from \eqref{cota_inf}, \eqref{holder_cont}, \eqref{der_cero} and \eqref{condA2} respectively):
 \begin{enumerate}
   \item\label{item1prin} $\Psi\in\Delta_2$ and  \eqref{holder_cont}.
 \item \eqref{holder_cont} and  $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$.
@@ -915,7 +917,7 @@ Suppose that the Cara\-th\'eodory function $\mathcal{L}(t,\b{x},\b{y})$ is stric
 Then, problem \eqref{ProbPrin} has a solution.
 \end{thm}
 
-\begin{proof} First of all, note that  \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} imply that $I$ is ,lower bounded on $\wphi_T$. Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence for the problem  $\min\{I(\b{u})|\b{u}\in\wphi_T\}$.
+\begin{proof} First of all, note that  \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} imply that $I$ is, lower bounded on $\wphi_T$. Let $\{\b{u}_n\}\subset \wphi_T$ be a  minimizing sequence for the problem  $\min\{I(\b{u})|\b{u}\in\wphi_T\}$.
 Since  $I(\b{u}_n)$, $n=1,2,\ldots$  is bounded, Theorem \ref{coercitividad1} (or Theorem \ref{segcoerthm} according to which of the items \ref{item1prin}-\ref{item4prin} hold true) implies that $\{\b{u}_n\}$ is norm bounded in $\wphi_d$. Hence, in virtue of Corollary \ref{unif_conv}, we can assume that $\b{u}_n$ converges uniformly to a $T$-periodic continuous function $\b{u}$.  The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*$. Thus, by \cite[Cor. 5, p. 148]{rao1991theory} and since $\b{\dot{u}}_n$ is bounded in $\lphi_d$,  there exists a subsequence (again denoted by $\b{\dot{u}}_n$) such that $\b{\dot{u}}_n$ converges to a function $\b{v}\in\lphi_d$ in the weak* topology of $\lphi_d$. From this fact and the uniform convergence of $\b{u}_n$ to $\b{u}$, we obtain that
 \[
 \int_0^T\b{\dot{\xi}}\ccdot\b{u}\ dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\ccdot\b{u}_n \ dt=-\lim_{n\to\infty}\int_0^T\b{\xi}\ccdot\b{\dot{u}}_n\ dt=-\int_0^T\b{\xi}\ccdot\b{v}\ dt
@@ -928,8 +930,61 @@ Now, taking into account the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset
 Hence, $\b{u}$ is a minimun and therefore a critical point of $I$. Finally, 
 invoking Theorem \ref{critpoint},  the proof concludes.\end{proof}
 
+
+One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,\b{x},\b{y})$ where the  nonlinearity is not necessarily  a power function. 
+And, in virtue of the fact that we have not supposed that the $N$-functions $\Phi$ satisfy the $\Delta_2$ condition, the nonlinearity is not even bounded by power functions.
+For example, our main theorem can be applied to Lagrangians like
+  \[\mathcal{L}(t,\b{x},\b{y})=e^{|\b{y}|}+F(t,\b{x}),\] 
+when $F$  satisfies some of the alternatives 1-4 in the main theorem.
+In this case, considering  the $N$-function $\Phi(x)=e^x-x-1$,  conditions (2),(3) and (4) hold. Moreover, the complementary  
+function of $\Phi$, i.e.  $\Psi(x)=(1+x)\ln(1+x)-x$, satisfies the $\Delta_2$-condition. We can apply our main theorem even if $\Psi\notin\Delta_2$, although in this case we need an additional condition on the size of certain constants. 
+
+Another contribution that we want to emphasize is the condition \eqref{holder_cont}. This condition is a relaxed version of the inequality
+\begin{equation}\label{eq:hip_ma_whi}
+  |\nabla F(t,\b{x})|\leq g(t),
+\end{equation}
+with  $g\in L^1_1$, considered by Mawhin and Willem (see \cite[Th.1.5]{mawhin2010critical}). 
+We point out that Mean Value Theorem for derivatives and inequality \eqref{eq:hip_ma_whi} imply our condition \eqref{holder_cont}. 
+In a series of papers (see for example  \cite{wu1999periodic,zhao2004periodic,tang2010periodic}) some weaker conditions than \eqref{eq:hip_ma_whi} for 
+Lagrangians of the power type, such as
+ \begin{equation}\label{eq:la_pot}\mathcal{L}(t,\b{x},\b{y})=|\b{y}|^p+F(t,\b{x}),\quad p>1,
+ \end{equation}
+were treated. In the aforementioned papers, inequality \eqref{eq:hip_ma_whi} was replaced by the weaker condition 
+ \begin{equation}\label{eq:sublinear}|
+\nabla F(t,\b{x})|\leq b(t)|x|^{\mu-1}+b_2(t),\quad b_1,b_2\in L^1, \mu\geq 1.
+ \end{equation}
+Furthermore, either $\mu$ is subcritical, that is $\mu<p$; 
+or, assuming additional conditions on $b_1$, $\mu$  is critical, i.e. $\mu=p$.  
+Our condition \eqref{holder_cont} is different to \eqref{eq:sublinear}, because of this fact our results are new even for 
+lagrangian functions like \eqref{eq:la_pot}. 
+For example, let $f(x)$ be a function defined on $\rr$, continuously  differentiable with  $f(x)=|x|$, for $|x|>1$; and, we define $F(t,x)=g(t)(f(x)+\cos(e^x))$, where  $g$ is any function in $L^1$. Then $F$ satisfies (38) because 
+\[|F(t,x_1)-F(t,x_2)|\leq |g(t)|(K|x_1-x_2|+2),\]
+since $f$ is a Lipschitz function. In addition, as $f(x)=|x|$ for $|x|>1$ and $\cos(e^x)$ is bounded, the function $F$ satisfies the coercivity condition \eqref{propiedad1coercividad}. 
+From here, our main theorem  can be applied to this function $F$.  
+However,  $\frac{d}{dx}F=g(t)(f'(x)-e^x\sin(e^x))$ is not bounded 
+by any power of $x$, unless $g$ is trivial, i.e. $F$ does not  satisfy \eqref{eq:sublinear}.
+
+Alternatively, we consider the hypothesis of convexity on $F$. We would like to emphasize that a convex function does not necessarily 
+satisfy (38). This observation is justified by the following fact: assume that $F$ is independent of $t$ and it also satisfies \eqref{holder_cont} ,
+then $F$ is sublinear, i.e.
+\[|F(x)|\leq a|x|+b,\quad a>0,b>0.\]
+In fact, inequality \eqref{holder_cont} implies that 
+$|F(x)-F(y)|\leq c$ with $c>0$ provided that  $|x-y|\leq 1$.
+Now, if $x\in\rr^n$ we look for some $n\in\nn$ such that $n-1\leq |x|<n$. Therefore,
+\[
+\begin{split}
+|F(x)|&=\left|F(x)-F\left(\frac{n-1}{n}x\right)+ F\left(\frac{n-1}{n}x\right)-  \cdots
++F\left(\frac{1}{n}x\right)-F(0)\right|\\
+&\leq nc\leq c(|x|+1).
+\end{split}
+\]
+Particularly, the function $F(t,x)=|x|^2$ is convex and satisfies the condition  (A); 
+nevertheless,  $F$ is not sublinear and consequently it does not satisfy \eqref{holder_cont}. 
+The same function allows us to see that our condition \eqref{holder_cont} does not imply \eqref{eq:sublinear}.  
+And condition \eqref{holder_cont} does not imply convexity either, which is clear taking the previously studied function  $F=g(t)(f(x)+\cos(e^x))$. 
+
 \section*{Acknowledgments}
-The first four authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. The third and fourth authors are partially supported by a CONICET grant number 11220090100714CO. the fifth  author is  supported by a AVENTURES - ANR-12-BLAN-BS01-0001-01 and ECOS-CONICyT grant number  C13E05.
+The first four authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. The third and fourth authors are partially supported by a CONICET grant number 11220090100714CO. The fifth  author is  supported by a AVENTURES - ANR-12-BLAN-BS01-0001-01 and ECOS-CONICyT grant number  C13E05.
 
 
 \section*{References}
