@@ -324,7 +324,7 @@ C(|\b{\overline u}|+\|\b{\dot{u}}\orlnor)
 $|\b{\overline u}|+\|\b{\dot{u}}\orlnor\to \infty$.
 \end{proof}
 
-
+{\bf Esta definici\'on va as\'i o requiere modificaciones/adaptaciones???}
 
 \begin{defi} We say that a function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a Carath\'eodory function if for fixed $(\b{x},\b{y})$
 the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuously differentiable for almost everywhere $t\in [0,T]$.
@@ -524,7 +524,9 @@ $D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\b{\dot{\b{u}}}}(0))-D_{\b{y}}\mathcal{L}(T,
 
 
 DECIR ALGO DE LOS \'INDICES AC\'A O EN LA INTRO...????
-We recall a usual definition in the context of calculus of variations. 
+\\
+Por ac\'a aparec\'ia la NOTACI\'ON DE $J_{C,\nu}$, que usamos en alguna demostraci\'on m\'as adelante.
+Me parece que no es necesaria, s\'olo hay que corregir la prueba donde se la usaba!!!! 
 
 
 
@@ -547,21 +549,20 @@ Reciprocally, if \eqref{coer_modular} holds for $\mu\geq 1$ then $\Psi \in \Delt
 
 
 
-Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if  $F(t,\b{x})$ is a Carath\'eo\-dory function, $F$ is continuously differentiable with respect to $\b{x}$. Moreover, the next inequality holds 
+Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if  $F(t,\b{x})$ is a Carath\'eo\-dory function and  $F$ is continuously differentiable with respect to $\b{x}$. Moreover, the next inequality holds 
 \begin{equation}\label{condA2}|F(t,\b{x})|+ |D_{\b{x}}F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T], \forall\b{x}\in\rr^d.
 \end{equation}
-
+{\bf La continua diferenciabilidad  implica la primera parte de la desigualdad???}
 
 \section{Lagrangians with sublinear nonlinearity}
 
-The symbol $C$ with  will stand for a constant, not necessarily the same at each occurrence, which can depend on the constants displayed between brackets .
+The symbol $C$ with  will stand for a constant, not necessarily the same at each occurrence, which can depend (unless otherwise stated) on some constants displayed between brackets.
 
 Like in \cite{ABGMS2015} we assume that
-
 \begin{equation}\label{cota_inf}
 \mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
 \end{equation}
-
+where $F$ satisfies the condition (A) or \eqref{condA2}???.
 
 Now, we have another result about coercivity of $I$ assuming some conditions on the nonlinearity $\nabla F$. 
 
@@ -696,11 +697,11 @@ Then,
 $\b{\overline u}_n\to \infty$ or $\|\b{\dot{u}}_n\orlnor\to \infty$.
 Now, as the functionals $J_{C,\mu'(\b{\dot u})}$ and $\gamma(\b{\overline{u}})$ are coercive, then 
 $J_{C,\mu'(\b{\dot u}_n)} \to \infty$ or $\gamma(\b{\overline{u}}_n)\to \infty$.
-By \eqref{condA1}, the functional $\gamma(\b{\overline{u}}_n)$ is lower bounded and 
+By \eqref{condA2}, the functional $\gamma(\b{\overline{u}}_n)$ is lower bounded and 
 $J_{C,\mu'(\b{\dot u}_n)}$ is also lower bounded on a bounded set because the modular $\rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)$ is always bigger than zero. 
 Therefore,  $I(\b{u}_n)\to\infty$ as $\|\b{u}_n\sobnor\to\infty$ which contradits the initial assumption on the behavior of $I(\b{u}_n)$. 
 \end{proof}
-REVISAR LA PRUEBA ANTERIOR Y MEJORAR LA ESCRITURA!!!!
+REVISAR LA PRUEBA ANTERIOR Y MEJORAR LA ESCRITURA, y adaptar quitando $J$ si fuera el caso!!!!
 
 \section{Limit case $\mu=\alpha_{\Phi}$}
 
@@ -728,8 +729,37 @@ If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
 
 
 \begin{proof}
-Resumir la prueba....
+We have 
+\[\Phi'(u)=\left\{
+\begin{array}{cl}
+(p-1)u^{p-1}=:\varphi_1(u)&u<e
+\\
+\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u}):=\varphi_2(u)&u>e
+\end{array}
+\right.
+\]
+and $\Phi$ is differentiable at $e$ because $\varphi_1(e)=\varphi_2(e)=(p-1)e^{p-1}$.
+
+{\bf Tendr\'iamos que ver que $\varphi_1,\varphi_2$ son crecientes y que $\varphi_2\to \infty$ cuando
+$u \to \infty????$ o basta con ver que $\varphi_2$ es creciente????}
+
+$\varphi_1$ is an increasing function provided that $p>1$ and $\varphi_1(u)\to 0$ as $u \to 0$.
+
+In addition, $\varphi_2(u)\to \infty$ as $u \to \infty$ provided that $p>1$.
+And 
+\[0<\varphi_2'(u)=
+\frac{u^{p-2}}{\log u} \left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)\] on $[e,\infty)$ if and only if 
+\[
+\left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)>0.
+\]
+If we take $\alpha:=\frac{1}{\log u}$, then we need 
+\[
+2\alpha^2+(1-2p)\alpha+(p^2-p)\geq 0
+\]
+which is true if and only if $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.
+Therefore, $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 \end{proof}
+
 
 
 \begin{thm}
@@ -781,6 +811,7 @@ The authors are partially supported by a UNRC grant number 18/C417. The first au
 
 
 No s\'e por qu\'e pero parece que funciona...., en realidad quit\'e el .bib...
+Y reci\'en ahora me doy cuenta que las referencias se ordenan de acuerdo al orden de menci\'on/aparici\'on....
  \bibliographystyle{elsarticle-num} 
  \bibliography{biblio}
 
