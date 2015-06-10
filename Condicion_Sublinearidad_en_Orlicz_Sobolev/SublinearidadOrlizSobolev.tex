@@ -552,22 +552,20 @@ Reciprocally, if \eqref{coer_modular} holds for $\mu\geq 1$ then $\Psi \in \Delt
 Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if  $F(t,\b{x})$ is a Carath\'eo\-dory function and  $F$ is continuously differentiable with respect to $\b{x}$. Moreover, the next inequality holds 
 \begin{equation}\label{condA2}|F(t,\b{x})|+ |D_{\b{x}}F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T], \forall\b{x}\in\rr^d.
 \end{equation}
-{\bf La continua diferenciabilidad  implica la primera parte de la desigualdad???}
 
 \section{Lagrangians with sublinear nonlinearity}
 
-The symbol $C$ with  will stand for a constant, not necessarily the same at each occurrence, which can depend (unless otherwise stated) on some constants displayed between brackets.
 
-Like in \cite{ABGMS2015} we assume that
+Like in \cite{ABGMS2015} we consider Lagrangians $\mathcal{L}$ which are lower bounded as follows 
 \begin{equation}\label{cota_inf}
-\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
+\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}).
 \end{equation}
-where $F$ satisfies the condition (A) or \eqref{condA2}???.
 
-Now, we have another result about coercivity of $I$ assuming some conditions on the nonlinearity $\nabla F$. 
+
+Now, we have another result about coercivity of $I$ assuming some conditions on the  $\nabla F$. 
 
 \begin{thm}\label{coercitividad-r}
-Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and \eqref{condA2}. We assume the following conditions:
+Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and $F$ satisfies condition (A). We assume the following conditions:
 \begin{enumerate}
 \item $\Psi\in\Delta_2$.
 \item There exist  non negative functions  $b_1,b_2 \in L^1_1$ and a constant $1<\mu<\alpha_{\Phi}$  such that 
@@ -603,14 +601,14 @@ and \eqref{holder_cont-mu}, we have
 On the one hand, by H\"older's inequality and Sobolev's inequality, we estimate $I_2$ as follows
 \begin{equation}\label{cota-i2}
 I_2\leq \|b_2\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}\leq
-C(\|b_2\|_{L^1}, T)\|\b{\dot u}\orlnor.
+C_1\|\b{\dot u}\orlnor.
 \end{equation}
- On the other hand, as $\b{\overline{u}}\in\rr$ and $s\in [0,1]$, we have
+ where $C_1=C_1(\|b_2\|_{L^1}, T)$. On the other hand, as $s\in [0,1]$, we have
 \begin{equation}\label{pot-suma}
 |\b{\overline{u}}+s\b{\tilde{u}}(t)|^{\mu-1}\leq
 C(\mu)(|\b{\overline{u}}|^{\mu-1}+\|\b{\tilde{u}}\|_{L^{\infty}}^{\mu-1}).
 \end{equation}
-Now,  inequality \eqref{pot-suma}, H\"older's inequality and Sobolev's inequality imply that
+where $C(\mu)=2^{\mu-2}$, for $\mu\geq 2$ and $C(\mu)=1$, for $1<\mu<2$. Now,  inequality \eqref{pot-suma}, H\"older's inequality and Sobolev's inequality imply that
 \begin{equation}\label{cota-i1}
 \begin{split}
 I_1&\leq 
@@ -620,28 +618,33 @@ C(\mu)\left(|\b{\overline{u}}|^{\mu-1} \int_0^T b_1(t) |\b{\tilde{u}}(t)|\,dt+
 &\leq C(\mu)\bigg\{ |\b{\overline{u}}|^{\mu-1} \|b_1\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}+
  \|b_1\|_{L^1}\|\b{\tilde{u}}\|^{\mu}_{L^\infty}\bigg\}
 \\
-&\leq C(\mu,T, \|b_1\|_{L^1} )\bigg\{ |\b{\overline{u}}|^{\mu-1} \|\b{\tilde{u}}\|_{L^{\infty}}+ \|\b{\dot u}\orlnor^{\mu}\bigg\}.
+&\leq C_2 \bigg\{ |\b{\overline{u}}|^{\mu-1} \|\b{\dot{u}}\orlnor+ \|\b{\dot u}\orlnor^{\mu}\bigg\},
 \end{split}
 \end{equation}
-Let $\mu'$ be a positive constant such that $1<\mu\leq \mu'<\alpha_{\Phi}$. 
+where $C_2=C_2(\mu,T, \|b_1\|_{L^1} )$. Let $\mu'$ be a positive constant such that $1<\mu\leq \mu'<\alpha_{\Phi}$. 
 Next, using Young's inequality with conjugate exponents $\mu'$ and $\frac{\mu'}{\mu'-1}$ 
  we get
 \begin{equation}\label{cota-i1-parcial}
-|\b{\overline{u}}|^{\mu-1}  \|\b{\tilde{u}}\|_{L^{\infty}}
+|\b{\overline{u}}|^{\mu-1}   \|\b{\dot{u}}\orlnor
 \leq \frac{(\mu'-1)}{\mu'}|\b{\overline{u}|^{\sigma}}
-+\frac{1}{\mu'}\|\b{\tilde{u}}\|_{L^{\infty}}^{\mu'}
++\frac{1}{\mu'} \|\b{\dot{u}}\orlnor^{\mu'}
 \end{equation}
-where $\sigma=\frac{(\mu-1) \mu'}{\mu'-1}$ is a positive constant such that $\sigma>(\mu-1)b_{\Psi}$.
+where $\sigma=\frac{(\mu-1) \mu'}{\mu'-1}$. We note that $\sigma$ is an arbitrary positive constant bigger than $(\mu-1)b_{\Psi}$.
 
-From \eqref{cota-i1},\eqref{cota-i1-parcial} and \eqref{cota-i2}, we have
+From \eqref{cota-i1},\eqref{cota-i1-parcial}, \eqref{cota-i2} and the inequality $x^{r_1}\leq x^{r_2}+1$, for any $x\geq 0$ and $r_1\leq r_2$ we have
 \begin{equation}\label{cota-i1-i2}
+\begin{split}
 I_1+I_2
-\leq C(\mu,T, \|b_1\|_{L^1},\mu' )\bigg\{ |\b{\overline{u}}|^{\sigma}
+&\leq C_3\bigg\{ |\b{\overline{u}}|^{\sigma}
 + \|\b{\dot u}\orlnor^{\mu'}
 + \|\b{\dot u}\orlnor^{\mu}
-+\|\b{\dot u}\orlnor\bigg\}.
++\|\b{\dot u}\orlnor\bigg\}\\
+&\leq C_3\bigg\{ |\b{\overline{u}}|^{\sigma}
++ \|\b{\dot u}\orlnor^{\mu'}
++1\bigg\}
+\end{split}
 \end{equation}
-In the subsequent estimates, we use the decomposition $u=\overline{u}+\b{\tilde{u}}$, \eqref{cota_inf}, \eqref{cota-diferencia-F},
+with $C_3= C_3(\mu,T, \|b_1\|_{L^1},\mu' )$. In the subsequent estimates, we use the decomposition $u=\overline{u}+\b{\tilde{u}}$, \eqref{cota_inf}, \eqref{cota-diferencia-F},
 \eqref{cota-i1-i2} and we get
 \begin{equation}\label{cota_inf_I}
 \begin{split}
@@ -651,24 +654,12 @@ I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0
 +  \int_0^TF(t,\b{\overline{u}})\ dt
 \\
 &\geq \alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)
--C( \|\b{\dot u}\orlnor^{\mu'}
-+ \|\b{\dot u}\orlnor^{\mu}
-+ \|\b{\dot u}\orlnor)
-\\
-&+\int_0^TF(t,\b{\overline{u}})\ dt-
-C |\b{\overline{u}}|^{\sigma}.
+-C_3 \|\b{\dot u}\orlnor^{\mu'}
++\int_0^TF(t,\b{\overline{u}})\ dt-
+C_3 |\b{\overline{u}}|^{\sigma}-C_3.
 \end{split}
 \end{equation}
-As $1<\mu\leq \mu'$, we have  
-$\|\b{\dot u}\orlnor \le\|\b{\dot u}\orlnor^{\mu'}+1$ and
-$\|\b{\dot u}\orlnor^{\mu}\le\|\b{\dot u}\orlnor^{\mu'}+1$, then
-\begin{equation}\label{todo-a-mu'}
--C( \|\b{\dot u}\orlnor^{\mu'}
-+ \|\b{\dot u}\orlnor^{\mu}
-+ \|\b{\dot u}\orlnor)
-\geq
--C(3\|\b{\dot u}\orlnor^{\mu'}+2).
-\end{equation}
+
 In this way, from \eqref{cota_inf_I} and \eqref{todo-a-mu'}
 \[
 \begin{split}
