@@ -554,7 +554,16 @@ Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) i
 \end{equation}
 
 \section{Lagrangians with sublinear nonlinearity}
+We define the following functionals $J_{C,\mu}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\sigma}:\rr^n\to \rr$, with $C,\nu,\sigma>0$, by
+\begin{equation}\label{func_phi}
+  J_{C,\nu}(\b{u}):= \rho_{\Phi}\left(\b{u}\right)-C\|\b{u}\orlnor^{\nu},
+\end{equation}
+ and
 
+\begin{equation}\label{eq:functional_H}
+ H_{C,\sigma}(\b{x})=\int_0^TF(t,\b{x})dt-C|\b{x}|^{\sigma}
+\end{equation}
+respectively.
 
 Like in \cite{ABGMS2015} we consider Lagrangians $\mathcal{L}$ which are lower bounded as follows 
 \begin{equation}\label{cota_inf}
@@ -656,13 +665,12 @@ I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0
 &\geq \alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)
 -C_3 \|\b{\dot u}\orlnor^{\mu'}
 +\int_0^TF(t,\b{\overline{u}})\ dt-
-C_3 |\b{\overline{u}}|^{\sigma}-C_3.
-&=\alpha_0J_{C_3,\mu'}(\b{\dot u})
-+ \gamma(\b{\overline{u}})-C.
+C_3 |\b{\overline{u}}|^{\sigma}-C_3\\
+&=\alpha_0J_{C_4,\mu'}\left(\frac{\b{\dot u}}{\Lambda}\right)
++ H_{C_3,\sigma}(\b{\overline{u}})-C_3,
 \end{split}
-\]
-
-
+\end{equation}
+where $C_4=\Lambda^{\mu'}C_3/\alpha_0$.
 
 
 Let $\b{u}_n$ be  a sequence in $\domi$ with 
