@@ -524,9 +524,7 @@ $D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\b{\dot{\b{u}}}}(0))-D_{\b{y}}\mathcal{L}(T,
 
 
 DECIR ALGO DE LOS \'INDICES AC\'A O EN LA INTRO...????
-\\
-Por ac\'a aparec\'ia la NOTACI\'ON DE $J_{C,\nu}$, que usamos en alguna demostraci\'on m\'as adelante.
-Me parece que no es necesaria, s\'olo hay que corregir la prueba donde se la usaba!!!! 
+
 
 
 
@@ -709,7 +707,7 @@ $\Phi(u)=
 \frac{u^p}{\log u}-\frac{e^p}{p}&u>e
 \end{array}
 \right.$
-
+with $p>1$.
 \begin{thm}
 If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
 \end{thm}
@@ -751,18 +749,94 @@ Therefore, $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 
 \begin{thm}
 There exists a constant $C>0$ such that 
-\begin{equation}
+\begin{equation}\label{cota-sup-indices}
 \Phi(tu)\leq ct^p\Phi(u)\;\;t\geq 1, u>0.
 \end{equation}
 For every $\varepsilon>0$ there exists a constant $C=C(\varepsilon,p)$ such that
-\begin{equation}
+\begin{equation}\label{cota-inf-indices}
 \Phi(tu)\geq Ct^{p-\varepsilon}\Phi(u)\;\;t\geq 1,u>0.
 \end{equation}
 \end{thm}
 
 \begin{proof}
-Resumir la prueba
+In order to prove \eqref{cota-sup-indices}, we will analyze three cases.
+
+If $u\leq tu\leq e$, then $\Phi(tu)=t^p\Phi(u)$ and \eqref{cota-sup-indices} holds with $C=1$.
+
+If $u\leq e\leq tu$, as $\frac{e^p}{p}>0$  and $\log(tu)\geq 1$, we have 
+$\Phi(tu)\leq t^pu^p= \frac{p}{p-1}t^p\Phi(u)$. Thus, \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$.
+
+If $e\leq u\leq tu$, then 
+\begin{equation}\label{Phi-de-u-a-v}
+\Phi(tu)\leq \frac{t^pu^p}{\log(tu)}\leq \frac{t^pu^p}{\log(u)}=\frac{pt^pv}{\log v}
+\end{equation} where $v:=u^p$ and $v\geq e^p$.
+
+If $\alpha>0$, the function $f(x)=\frac{x}{x-\alpha}$ is decreasing on $(\alpha,\infty)$.
+And, the function $g(v)=\frac{pv}{\log v}$ is decreasing  on $[e^p,\infty)$. 
+Therefore, $f \circ g$ is decreasing on $[e^p,\infty)$ and we have 
+\[
+(f\circ g)(v)=
+\frac{\frac{pv}{\log v}}{\frac{pv}{\log v}-\frac{e^p}{p}}\leq 
+e^p-\frac{e^p}{p}=\frac{p}{p-1}
+\]
+for every $v \geq e^p$.
+
+In this way, from \eqref{Phi-de-u-a-v}, we have
+\[
+\Phi(tu)\leq \frac{pt^p}{p-1}\left(\frac{pv}{\log v}-\frac{e^p}{p}\right)=
+ \frac{pt^p}{p-1}\left(\frac{u^p}{\log u}-\frac{e^p}{p}\right)
+\]
+and \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$.
+
+Now, we will prove \eqref{cota-inf-indices}.
+
+If $u\leq tu \leq e$, \eqref{cota-inf-indices} is immediate because $t^p \geq t^{p-\varepsilon}$ for every $t \geq 1$, $p>1$ and $\varepsilon$ {\bf sufficiently small????}
+
+If $u\leq e\leq tu$, as $f(t)=\frac{t}{\log t}$ is increasing on $[e,\infty)$ then $f(t)\geq e$ for every $t\geq e$. 
+Habr\'ia que mirar en $[e^p,\infty)$ para que $f(t)\geq \frac{e^p}{p}$???? O, como $f$ es creciente y 
+$e^p\leq (tu)^p$ entonces
+$f((tu)^p)\geq f(e^p)$???
+Now, 
+\[
+\Phi(tu)=\frac{p(tu)^p}{\log (tu)^p}-\frac{e^p}{p}=
+\frac{(p-1)(tu)^p}{\log(tu)^p}+\frac{(tu)^p}{\log (tu)^p}-\frac{e^p}{p}\geq 
+\frac{p-1}{p}\frac{(tu)^p}{\log(tu)}\geq
+\frac{p-1}{p}\frac{t^{\varepsilon}}{\log t+1}t^{p-\varepsilon}u^p
+\]
+Since the function $f(t)=\frac{t^{\varepsilon}}{\log t+1}$ attains a minimum at 
+$e^{\frac{1-\varepsilon}{\varepsilon}}$ and its minimum value is $\varepsilon e^{1-\varepsilon}$, then  
+\[
+\Phi(tu)\geq \frac{p-1}{p}\varepsilon e^{1-\varepsilon}t^{p-\varepsilon}u^p.
+\]
+If $e\leq u\leq tu$, then 
+\[
+\Phi(tu)=\frac{p-1}{p}\frac{(tu)^p}{\log(tu)}
++\frac{1}{p}\frac{(tu)^p}{\log(tu)}-\frac{e^p}{p}
+\geq
+\frac{p-1}{p}\frac{(tu)^p}{\log(tu)}=
+\frac{p-1}{p}
+\frac{t^{\varepsilon} \log (u)^{\varepsilon}}{\log(t^{\varepsilon}u^{\varepsilon})}
+\frac{t^{p-\varepsilon}u^p}{\log u}
+\]
+Let $f(s)=\frac{sA}{\log s+1}$ with $s\geq 1$ and $A\geq \varepsilon$.
+Then, the function $f$ attains a minimum at $s=e^{1-A}$; but, 
+$s$ has to be bigger than 1, then it is necessary that
+$\varepsilon\leq A\leq 1$.
+And, the minimum value is $f(e^{1-A})=Ae^{1-A}\geq \varepsilon$.
+If $A\geq 1$, $f$ attains the minimum at $s=???$ and $f(1)=1$. 
+Then, $f\geq \varepsilon$ and  therefore
+\[
+\Phi(tu)\geq \frac{p-1}{p}\varepsilon \frac{t^{p-\varepsilon}u^p}{\log u}\geq
+\frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi(u)
+\]
 \end{proof}
+
+
+
+
+
+
+
 \begin{rem}
 The inequality 
 \[
@@ -770,7 +844,9 @@ The inequality
 \] 
 is false for every $C$ because for every $u\geq e$ we have 
 \[
-\lim\limits_{t \to \infty}\frac{\Phi(tu)}{t^p\Phi(u)}=0
+\lim\limits_{t \to \infty}\frac{\Phi(tu)}{t^p\Phi(u)}=
+\lim\limits_{t \to \infty} \frac{\frac{u^p}{\log(tu)}-
+\frac{e^p}{pt^p}}{\frac{u^p}{\log u}-\frac{e^p}{p}}=0
 \]
 \end{rem}
 
@@ -797,8 +873,6 @@ last inequality is false.
 The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
 
 
-No s\'e por qu\'e pero parece que funciona...., en realidad quit\'e el .bib...
-Y reci\'en ahora me doy cuenta que las referencias se ordenan de acuerdo al orden de menci\'on/aparici\'on....
  \bibliographystyle{elsarticle-num} 
  \bibliography{biblio}
 
