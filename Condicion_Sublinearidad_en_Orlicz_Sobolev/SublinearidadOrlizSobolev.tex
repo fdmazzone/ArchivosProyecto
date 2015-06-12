@@ -581,26 +581,36 @@ Therefore,  $I(\b{u}_n)\to\infty$ as $\|\b{u}_n\sobnor\to\infty$ which contradic
 
 \section{Limit case $\mu=\alpha_{\Phi}$}
 
-Coercivity was obtained even in the limit case $\mu=1$ (see \cite{zhao2004periodic}) and 
-  $\mu=p$ (see \cite{tang2010periodic}) assuming additional conditions on one of the $L^1$ 
+Coercivity was obtained even in the limit case $\mu=1$ and   $\mu=p$ 
+(see \cite{zhao2004periodic, tang2010periodic})
+assuming additional conditions on one of the $L^1$ 
 functions that bound the nonlinearity.
-This was possible because in $L^p$ spaces, the norm and the modular coincides, that is, $\|\cdot\|_p^p=O(\int_0^T |\cdot|^p\,dt)$.
-In Orlicz spaces, $\|\cdot\orlnor^\mu$ can be upper controled by a modular provided that $\mu<\alpha_{\Phi}$ for any
-$N$-function $\Phi$. But,  the limit case does  not hold for any $\Phi$, i.e. in general $\|\cdot\orlnor^{\alpha_{\Phi}}=O(\int_0^T \Phi(|u|)\,dt)$ is false as can be seen as follows.
+These results lean on the fact that in $L^p$ spaces the norm and the modular coincides, 
+that is, $\|\cdot\|_p^p=O(\int_0^T |\cdot|^p\,dt)$.
+In Orlicz spaces, $\|\cdot\orlnor^\mu$ can be upper controlled by a modular provided that $\mu<\alpha_{\Phi}$ for any
+$N$-function $\Phi$. 
+Nevertheless,  the limit case does  not hold for any $\Phi$, i.e. in general $\|\cdot\orlnor^{\alpha_{\Phi}}=O(\int_0^T \Phi(|u|)\,dt)$ is false as can be seen as follows.
 
 
-Let $\Phi, \Psi \in \Delta_2$, then the next inequality $\Phi(tu)\geq t^{\alpha_{\Phi}}\Phi(u)$ for any $u>0$ and for any $t\geq 1$ is false.
+Let $\Phi$ be an $N$-function that satisfies the $\Delta_2$-condition. 
+We claim that the inequality $\Phi(tu)\geq t^{\alpha_{\Phi}}\Phi(u)$ for any $u>0$ and for any $t\geq 1$ is false.
 
-In fact, let 
-$\Phi(u)=
+With the aim of proving the above assertion, we define the function 
+\[\Phi(u)=
 \left\{
 \begin{array}{ll}
 \frac{p-1}{p}u^p&u\leq e
 \\
 \frac{u^p}{\log u}-\frac{e^p}{p}&u>e
 \end{array}
-\right.$
+\right.\]
 with $p>1$.
+
+{\bf  Me parece que habr\'ia que decir algo que aclare los que se hace a continuaci\'on. 
+Por ejemplo: 
+
+Next, we will study the behaviour of $\Phi$/ establish some properties of $\Phi$/...}
+
 \begin{thm}
 If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
 \end{thm}
@@ -609,36 +619,41 @@ If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
 \begin{proof}
 We have 
 \[\Phi'(u)=\left\{
-\begin{array}{cl}
-(p-1)u^{p-1}=:\varphi_1(u)&u<e
+\begin{array}{cccc}
+(p-1)u^{p-1}&:=&\varphi_1(u)& \mbox{if}\;u<e
 \\
-\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u}):=\varphi_2(u)&u>e
+\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u})&:=&\varphi_2(u)&\mbox{if}\; u>e
 \end{array}
 \right.
 \]
 and $\Phi$ is differentiable at $e$ because $\varphi_1(e)=\varphi_2(e)=(p-1)e^{p-1}$.
 
+We will see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
+Then, it is enough to see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on 
+$[e,\infty)$ for $p\geq \frac{1+\sqrt {2}}{2}$.
+
 {\bf Tendr\'iamos que ver que $\varphi_1,\varphi_2$ son crecientes y que $\varphi_2\to \infty$ cuando
 $u \to \infty????$ o basta con ver que $\varphi_2$ es creciente????}
 
-$\varphi_1$ is an increasing function provided that $p>1$ and $\varphi_1(u)\to 0$ as $u \to 0$.
+$\varphi_1$ is an increasing function for $p>1$ and $\varphi_1(u)\to 0$ as $u \to 0$.
 
-In addition, $\varphi_2(u)\to \infty$ as $u \to \infty$ provided that $p>1$.
-And 
-\[0<\varphi_2'(u)=
-\frac{u^{p-2}}{\log u} \left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)\] on $[e,\infty)$ if and only if 
-\[
+On the other hand, $\varphi_2(u)\to \infty$ as $u \to \infty$ provided that $p>1$.
+And,  
+$\varphi_2'(u)>0$
+%\frac{u^{p-2}}{\log u} \left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)\] 
+on $[e,\infty)$ if and only if 
+\begin{equation}\label{cuad-log-pos}
 \left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)>0.
-\]
-If we take $\alpha:=\frac{1}{\log u}$, then we need 
-\[
-2\alpha^2+(1-2p)\alpha+(p^2-p)\geq 0
-\]
-which is true if and only if $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.
-Therefore, $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
+\end{equation}
+%If we take $\alpha:=\frac{1}{\log u}$, then we need 
+%\[
+%2\alpha^2+(1-2p)\alpha+(p^2-p)\geq 0
+%\]
+%which is true 
+Now, as \eqref{cuad-log-pos} holds if and only if $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$, then $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 \end{proof}
 
-
+{\bf  Conviene agregar m\'as cuentas en la prueba anterior, es decir, que la f\'ormula \eqref{cuad-log-pos} es una cuadr\'atica y bla....???}
 
 \begin{thm}
 There exists a constant $C>0$ such that 
@@ -652,7 +667,7 @@ For every $\varepsilon>0$ there exists a constant $C=C(\varepsilon,p)$ such that
 \end{thm}
 
 \begin{proof}
-In order to prove \eqref{cota-sup-indices}, we will analyze three cases.
+In order to prove \eqref{cota-sup-indices}, we analyze three cases.
 
 If $u\leq tu\leq e$, then $\Phi(tu)=t^p\Phi(u)$ and \eqref{cota-sup-indices} holds with $C=1$.
 
@@ -686,9 +701,10 @@ Now, we will prove \eqref{cota-inf-indices}.
 If $u\leq tu \leq e$, \eqref{cota-inf-indices} is immediate because $t^p \geq t^{p-\varepsilon}$ for every $t \geq 1$, $p>1$ and $\varepsilon$ {\bf sufficiently small????}
 
 If $u\leq e\leq tu$, as $f(t)=\frac{t}{\log t}$ is increasing on $[e,\infty)$ then $f(t)\geq e$ for every $t\geq e$. 
-Habr\'ia que mirar en $[e^p,\infty)$ para que $f(t)\geq \frac{e^p}{p}$???? O, como $f$ es creciente y 
+{\bf Habr\'ia que mirar en $[e^p,\infty)$ para que $f(t)\geq \frac{e^p}{p}$???? O, como $f$ es creciente y 
 $e^p\leq (tu)^p$ entonces
-$f((tu)^p)\geq f(e^p)$???
+$f((tu)^p)\geq f(e^p)$???}
+\\
 Now, 
 \[
 \begin{split}
@@ -696,11 +712,12 @@ Now,
 \frac{(p-1)(tu)^p}{\log(tu)^p}+\frac{(tu)^p}{\log (tu)^p}-\frac{e^p}{p}\geq 
 \\
 \frac{p-1}{p}\frac{(tu)^p}{\log(tu)}\geq
-\frac{p-1}{p}\frac{t^{\varepsilon}}{\log t+1}t^{p-\varepsilon}u^p
+\frac{p-1}{p}\frac{t^{\varepsilon}}{\log t+1}t^{p-\varepsilon}u^p.
 \end{split}
 \]
-Since the function $f(t)=\frac{t^{\varepsilon}}{\log t+1}$ attains a minimum at 
-$e^{\frac{1-\varepsilon}{\varepsilon}}$ and its minimum value is $\varepsilon e^{1-\varepsilon}$, then  
+Since $f(t)=\frac{t^{\varepsilon}}{\log t+1}$ attains its 
+ minimum value $\varepsilon e^{1-\varepsilon}$ at 
+$e^{\frac{1-\varepsilon}{\varepsilon}}$, \; then  
 \[
 \Phi(tu)\geq \frac{p-1}{p}\varepsilon e^{1-\varepsilon}t^{p-\varepsilon}u^p.
 \]
@@ -719,15 +736,15 @@ Then, the function $f$ attains a minimum at $s=e^{1-A}$; but,
 $s$ has to be bigger than 1, then it is necessary that
 $\varepsilon\leq A\leq 1$.
 And, the minimum value is $f(e^{1-A})=Ae^{1-A}\geq \varepsilon$.
-If $A\geq 1$, $f$ attains the minimum at $s=???$ and $f(1)=1$. 
+If $A\geq 1$, $f$ attains the minimum at $s=1???$ and $f(1)=1$. 
 Then, $f\geq \varepsilon$ and  therefore
 \[
 \Phi(tu)\geq \frac{p-1}{p}\varepsilon \frac{t^{p-\varepsilon}u^p}{\log u}\geq
-\frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi(u)
+\frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi(u).
 \]
 \end{proof}
 
-
+{\bf La prueba anterior est\'a rara.}
 
 
 
@@ -746,19 +763,22 @@ is false for every $C$ because for every $u\geq e$ we have
 \]
 \end{rem}
 
+
+{\bf El l\'imite intermedio de la f\'ormula anterior se podr\'ia quitar.}
+
+
 \begin{thm}
 $\alpha_{\Phi}=\beta_{\Phi}=p$
 \end{thm}
 
 \begin{proof}
-From \eqref{cota-sup-indices} we have 
+From \eqref{MO_indices} and \eqref{cota-sup-indices}, we get 
 \[
-\lim\limits_{t \to \infty} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}
+\beta_{\Phi}=\lim\limits_{t \to \infty} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}
 \leq
-\lim \limits_{t \to \infty} \frac{\log C+p\log t}{\log t}=p,
+\lim \limits_{t \to \infty} \frac{\log C+p\log t}{\log t}=p.
 \]
-then $\beta_{\Phi}\leq p$.
-On the other hand, performing some elementary calculations, we get
+On the other hand, employing \eqref{MO_indices} and performing some elementary calculations, we obtain
 \[
 \alpha_{\Phi}=
 \lim\limits_{t \to 0^+} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}=
@@ -766,13 +786,15 @@ On the other hand, performing some elementary calculations, we get
 \lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}
 \]
 where $v:=tu$ and $s:=\frac{1}{t}$.
-Now, for every $\varepsilon>0$, we have
+Then, using \eqref{cota-inf-indices},  for every $\varepsilon>0$ we have
 \[
 \alpha_{\Phi}=
 \lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}\geq
 \lim\limits_{s \to \infty} \frac{\log C+(p-\varepsilon)\log s}{\log s}\geq p-\varepsilon,
 \]
-then $\alpha_{\Phi}\geq p$. And, as $\alpha_{\Phi}\leq \beta_{\Phi}\leq p$, therefore 
+therefore $\alpha_{\Phi}\geq p$. 
+
+Finally, as $\alpha_{\Phi}\leq \beta_{\Phi}\leq p$, we get  
 $\alpha_{\Phi}=\beta_{\Phi}=p$.
 \end{proof}
 
@@ -784,9 +806,9 @@ Now, we are able to see that
 \]
 is false.
 
-If we take $u\equiv t>0$, then $\|u\orlnor^p=C_1t^p$ where $C_1=\|1\orlnor$ and
+In fact, if we take $u\equiv t>0$, then $\|u\orlnor^p=C_1t^p$ where $C_1=\|1\orlnor$ and
 $\int_0^T \Phi(|u|)\,dx=C_2\Phi(t)$ with $C_2=T$. 
-Then, if $\rho_{\Phi}(u)\geq C\|u\orlnor^p$ were true, then $\Phi(t)\geq C t^p$ were also true but this
+Then, if $\rho_{\Phi}(u)\geq C\|u\orlnor^p$ were true, then $\Phi(t)\geq C t^p$ would also be true; however, this
 last inequality is false.
  
 
