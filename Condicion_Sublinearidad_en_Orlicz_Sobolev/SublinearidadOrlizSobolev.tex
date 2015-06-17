@@ -295,28 +295,27 @@ we get
 \|\b{\overline u}\orlnor+\|\b{\tilde{u}}\orlnor=
 |\b{\overline u}|\|1\orlnor+\|\b{\tilde{u}}\orlnor.
 \end{equation}
-It is known that H\"older's inequality implies that $L^{\infty}_d\hookrightarrow\lphi_d$, i.e.,
-there exists $C_1>0$ such that for any $\b{\tilde{u}}\in L^{\infty}_d$ we have
+It is known that $L^{\infty}_d\hookrightarrow\lphi_d$, i.e.,
+there exists $C_1=C_1(T)>0$ such that for any $\b{\tilde{u}}\in L^{\infty}_d$ we have
 \[
 \|\b{\tilde{u}}\orlnor
 \leq 
 C_1 \|\b{\tilde{u}}\|_{L^{\infty}};
 \]
-and, applying  Sobolev's inequality,  we obtain  
+and, applying  Sobolev's inequality,  we obtain the Wirtinger's inequality, that is there exists $C_2=C_2(T)>0$ suvh that 
 \begin{equation}\label{cota-u-tilde}
 \|\b{\tilde{u}}\orlnor
 \leq 
-C_1\|\b{\dot{u}}\orlnor.
+C_2\|\b{\dot{u}}\orlnor.
 \end{equation}
-{\bf La desigualdad anterior ser\'ia del tipo Wirtinger's que no tenemos enunciada en ning\'un lado.}
-\\
+
 Therefore, from \eqref{cota-u-lphi}, \eqref{cota-u-tilde} and \eqref{def-norma-orlicz-sob}, 
 we get
 \[
 \|\b{u}\sobnor\leq
-C_2(|\b{\overline u}|+\|\b{\dot{u}}\orlnor)
+C_3(|\b{\overline u}|+\|\b{\dot{u}}\orlnor)
 \]
-where $C_2=\max\{C_1, |\|1\orlnor\}$. Finally, as $\|\b{u}\sobnor\to \infty$ we conclude that   
+where $C_3=C_3(T)$. Finally, as $\|\b{u}\sobnor\to \infty$ we conclude that   
 $(|\b{\overline u}|+\|\b{\dot{u}}\orlnor)\to \infty$.
 \end{proof}
 
@@ -411,21 +410,47 @@ constant $K=K(\varphi,\epsilon)$ such that, for every $t,u\geq 0$,
     K\max\big\{t^{\beta_{\varphi}+\epsilon},t^{\alpha_{\varphi}-\epsilon} \big\}\varphi(u).
 \end{equation}
 
-The second item of the following lemma, with a slight different notation, was proved \cite{ABGMS2015}.
-{\bf The first one, where???? and the reciprocal??? Habr\'ia que decir d\'onde vive ${\b u}$ o se sobreentiende???}
+
+We define the following  functionals $J_{C,\mu}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\sigma}:\rr^n\to \rr$, with $C,\nu,\sigma>0$, by
+\begin{equation}\label{func_phi}
+  J_{C,\nu}(\b{u}):= \rho_{\Phi}\left(\b{u}\right)-C\|\b{u}\orlnor^{\nu},
+\end{equation}
+ and
+
+\begin{equation}\label{eq:functional_H}
+ H_{C,\sigma}(\b{x})=\int_0^TF(t,\b{x})dt-C|\b{x}|^{\sigma},
+\end{equation}
+respectively.
 
 
-\begin{lem}\label{lem_coer} Let $\Phi$ and $\Psi$ be complementary $N$-functions. Then:
+
+We will use the classic notations big $O$ and little $o$ \cite{erdelyi}. The  following lemma, was essentially  proved in \cite{ABGMS2015}.
+
+
+
+\begin{lem}\label{lem_coer} Let $\Phi$ and $\Psi$ be complementary $N$-functions and let $\b{u}\in\lphi$. Then:
 \begin{enumerate}
-  \item $\|\b{u}\orlnor=O\left( \rho_{\Phi}\left(\b{u} \right)  \right)$.
+  \item\label{th:coer_item1} $\|\b{u}\orlnor=O\left( \rho_{\Phi}\left(\b{u} \right)  \right)$.
   
-  \item If $\Psi \in \Delta_2$ globally, then there exists a constant $\alpha_{\Phi}>1$ such that, for any $0<\mu<\alpha_{\Phi}$,
+  \item\label{th:coer_item2} If $\Psi \in \Delta_2$ globally, then there exists a constant $\alpha_{\Phi}>1$ such that, for any $0<\mu<\alpha_{\Phi}$,
 \begin{equation}\label{coer_modular} \|\b{u}\orlnor^{\mu} =o\left(\rho_{\Phi}\left(\b{u}\right)\right)
 \end{equation}
 as $\|\b{u}\orlnor\to \infty$.
-Reciprocally, if \eqref{coer_modular} holds for $\mu\geq 1$ then $\Psi \in \Delta_2$.  
+
+\item\label{th:coer_item3} If \eqref{coer_modular} holds for $\mu\geq 1$ then $\Psi \in \Delta_2$.  
 \end{enumerate}
 \end{lem}
+
+\begin{proof} \ref{th:coer_item1}. In virtue of \cite[Lemma 5.2(1)]{ABGMS2015} we have that $\lim_{\|\b{u}\orlnor \to+\infty }J_{C,1}(\b{u})=+\infty$ for $C<1$. Then for sufficiently large $ \|\b{u}\orlnor$ we have that $J_{C,1}(\b{u})>0$. This implies $\rho_{\Phi}(\b{u})\leq C^{-1}\|\b{u}\orlnor$. 
+
+\ref{th:coer_item2}. Taking account of \cite[Lemma 5.2(2)]{ABGMS2015} we have that $\lim_{\|\b{u}\orlnor \to+\infty }J_{C,1}(\b{u})=+\infty$ for every $C>0$. Therefore for any $n\in \nn$ there exists $k_n>0$ such that for $  \|\b{u}\orlnor>k_n$ we  have  $J_{n,\mu}(\b{u})>1$. Then $\rho_{\Phi}(\b{u})/ \|\b{u}\orlnor^{\mu}>n$. 
+
+\ref{th:coer_item3}. The statement \ref{th:coer_item3} represents a parcial reciprocal of  \ref{th:coer_item2}. The difference rests on the fact that the $\Delta_2$ condition for $\Psi$  in item  \ref{th:coer_item2} is global, while in item   \ref{th:coer_item3} is for large values. We can suppose $\mu=1$. By \eqref{coer_modular} we obtain for any $C>1$ that
+\[\lim_{   \|\b{u}\orlnor\to+\infty} J_{C,1}(\b{u})=\lim_{   \|\b{u}\orlnor\to+\infty}
+ \|\b{u}\orlnor\left(\frac{\rho_{\Phi}(\b{u})}{ \|\b{u}\orlnor}-C\right)=+\infty.\]
+ Therefore, using \cite[Lemma 5.2(3)]{ABGMS2015}, we conclude $\Psi\in\Delta_2$. 
+
+\end{proof}
 
 
 
@@ -437,16 +462,7 @@ Reciprocally, if \eqref{coer_modular} holds for $\mu\geq 1$ then $\Psi \in \Delt
 
 
 \section{Lagrangians with sublinear ``nonlinearity''????}
-We begin this section  defining the functionals $J_{C,\mu}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\sigma}:\rr^n\to \rr$, with $C,\nu,\sigma>0$, by
-\begin{equation}\label{func_phi}
-  J_{C,\nu}(\b{u}):= \rho_{\Phi}\left(\b{u}\right)-C\|\b{u}\orlnor^{\nu},
-\end{equation}
- and
 
-\begin{equation}\label{eq:functional_H}
- H_{C,\sigma}(\b{x})=\int_0^TF(t,\b{x})dt-C|\b{x}|^{\sigma},
-\end{equation}
-respectively.
 
 Like in \cite{ABGMS2015} we consider Lagrangians $\mathcal{L}$ which are lower bounded as follows 
 \begin{equation}\label{cota_inf}
