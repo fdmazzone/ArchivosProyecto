@@ -828,6 +828,179 @@ Then, if $\rho_{\Phi}(u)\geq C\|u\orlnor^p$ were true, then $\Phi(t)\geq C t^p$ 
 last inequality is false.
  
 
+
+\section{Bounding by power-behaviour functions}
+
+\begin{thm}\label{coercitividad-r}
+Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and $F$ satisfies condition (A). We assume the following conditions:
+\begin{enumerate}
+\item $\Psi\in\Delta_2$.
+\item There exist  non negative functions  $b_1,b_2 \in L^1_1$ and 
+$f(\b{x})=\varepsilon(\b{x})|\b{x}|^{\alpha_{\Phi}-1}$ which is  non-decreasing, sub additive and  such that
+for any $\b{x}\in\rr^d$ and a.e. $t\in [0,T]$
+\begin{equation}\label{holder_cont-mu}
+  \left| \nabla F(t,\b{x}) \right|\leq b_1(t)f(|\b{x}|)+b_2(t).
+\end{equation}
+\item There exists a real positive number $\sigma$ such that $\sigma>(\alpha_{\Phi}-1)\beta_{\Psi}$ and
+\begin{equation}\label{propiedad-coercividad-sigma}
+|\b{x}|^{\sigma}=o\left(\int_{0}^{T}F(t,\b{x})\ dt\right)\;\;\mbox{as}\;\;|\b{x}|\to \infty.
+\end{equation}
+{\bf En las cuentas, aparece la funci\'on $\varepsilon$!!! 
+?`sirve a\'un la f\'ormula anterior???}
+\end{enumerate}
+Then  the action integral $I$ is coercive.
+\end{thm}
+
+\begin{proof}
+By the decomposition $u=\overline{u}+\b{\tilde{u}}$,  Mean Value Theorem, Cauchy-Schwarz's inequality 
+and \eqref{holder_cont-mu}, we have
+\begin{equation}\label{cota-diferencia-F}
+\begin{split}
+&\left|\int_0^T F(t,\b{u})-F(t,\b{\overline{u}})\,dt\right|=
+\left|\int_0^T \int_0^1 \nabla F(t,\b{\overline{u}}+s\b{\tilde{u}}(t))\ccdot \b{\tilde{u}}(t) \,ds \,dt\right|
+\\
+&\leq \int_0^T \int_0^1 b_1(t)f(|\b{\overline{u}}+s\b{\tilde{u}}(t)|)|\b{\tilde{u}}(t)|\,ds\,dt+
+\int_0^T \int_0^1 b_2(t)|\b{\tilde{u}}(t)|\,ds\,dt
+\\
+&=I_1+I_2.
+\end{split}
+\end{equation}
+On the one hand, by H\"older's inequality and Sobolev's inequality, we estimate $I_2$ as follows
+\begin{equation}\label{cota-i2}
+I_2\leq \|b_2\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}\leq
+C_1\|\b{\dot u}\orlnor.
+\end{equation}
+ where $C_1=C_1(\|b_2\|_{L^1}, T)$. On the other hand, as $s\in [0,1]$, we have
+\begin{equation}\label{pot-suma}
+f(|\b{\overline{u}}+s\b{\tilde{u}}(t)|)\leq
+C(f)(f(|\b{\overline{u}}|)+f(\|\b{\tilde{u}}\|_{L^{\infty}})).
+\end{equation}
+where $C(f)$ springs from the subadditivity of $f$. Now,  inequality \eqref{pot-suma}, H\"older's inequality, Sobolev's inequality and {\bf the properties of $f$( no decrecimiento y subaditividad )} imply that
+\begin{equation}\label{cota-i1}
+\begin{split}
+I_1&
+\leq C(f)\bigg\{ f(|\b{\overline{u}}|) \|b_1\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}+
+ \|b_1\|_{L^1}f(\|\b{\tilde{u}}\|_{L^\infty})\|\b{\tilde{u}}\|_{L^\infty}\bigg\}
+\\
+&\leq C_2 \bigg\{ f(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
++f(\|\b{\dot u}\orlnor) \|\b{\dot u}\orlnor\bigg\}
+\\
+&=
+C_2 \bigg\{ f(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
++\varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}}
+%f(\|\b{\dot u}\orlnor) \|\b{\dot u}\orlnor
+\bigg\}
+\end{split}
+\end{equation}
+where $C_2=C_2(f,T, \|b_1\|_{L^1} )$. 
+
+
+Let $\mu$ be a positive constant such that $1<\mu<\alpha_{\Phi}$. 
+Next, using Young's inequality with conjugate exponents $\mu$ and $\frac{\mu}{\mu-1}$ 
+ we get
+\begin{equation}\label{cota-i1-parcial}
+ \begin{split}
+f(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
+&=
+[\varepsilon(|\b{\overline{u}}|)
+|\b{\overline{u}}|^{\alpha_{\Phi}-1}]   \|\b{\dot{u}}\orlnor
+\\
+&\leq 
+\frac{(\mu-1)}{\mu}
+[\varepsilon(|\b{\overline{u}}|)]^{\frac{\mu}{\mu-1}}
+|\b{\overline{u}}|^{(\alpha_{\Phi}-1)\frac{\mu}{\mu-1}}
++\frac{1}{\mu} \|\b{\dot{u}}\orlnor^{\mu}
+\\
+&=
+\frac{1}{\gamma}
+[\varepsilon(|\b{\overline{u}}|)]^{\gamma}
+|\b{\overline{u}}|^{(\alpha_{\Phi}-1)\gamma}
++\frac{1}{\mu} \|\b{\dot{u}}\orlnor^{\mu}
+\\
+&=
+\frac{1}{\gamma}
+[\varepsilon(|\b{\overline{u}}|)]^{\gamma}
+|\b{\overline{u}}|^{\sigma}
++\frac{1}{\mu} \|\b{\dot{u}}\orlnor^{\mu}
+\end{split}
+\end{equation}
+where $\gamma=\frac{\mu}{\mu-1}$ and $\sigma=(\alpha_{\Phi}-1)\gamma$. 
+We point out that $\sigma=(\alpha_{\Phi}-1)\gamma$ is an arbitrary positive constant bigger than $(\alpha_{\Phi}-1)b_{\Psi}$.
+
+($\mu<\alpha_{\Phi}$ then $\sigma=\frac{\mu}{\mu-1}>b_{\Psi}$, because
+$\frac{1}{\mu}+\frac{1}{b_{\Psi}}>\frac{1}{\alpha_{\Phi}}+\frac{1}{b_{\Psi}}=1$, then
+$\frac{1}{b_{\Psi}}>\frac{\mu-1}{\mu}=\frac{1}{\gamma}$)
+
+From \eqref{cota-i1}, \eqref{cota-i1-parcial} and \eqref{cota-i2},
+%and the inequality $x^{r_1}\leq x^{r_2}+1$, for any $x\geq 0$ and $r_1\leq r_2$, 
+we have
+\begin{equation}\label{cota-i1-i2}
+\begin{split}
+I_1+I_2
+&
+\leq C_3
+\bigg\{ 
+[\varepsilon(|\b{\overline{u}}|)]^{\gamma}
+|\b{\overline{u}}|^{\sigma}
++ \|\b{\dot{u}}\orlnor^{\mu}
++ \varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}}
+\bigg\}
+%\\
+%&\leq C_3\bigg\{ |\b{\overline{u}}|^{\sigma}
+%+ \|\b{\dot {u}}\orlnor^{\mu'}
+%+1\bigg\}
+\end{split}
+\end{equation}
+with $C_3= C_3(\mu,T, \|b_1\|_{L^1} )$, $\mu<\alpha_{\Phi}$ and $\sigma>b_{\Psi}(\alpha_{\Phi}-1)$.
+
+
+
+
+In the subsequent estimates, we use the decomposition $u=\overline{u}+\b{\tilde{u}}$, \eqref{cota_inf}, \eqref{cota-diferencia-F},
+\eqref{cota-i1-i2} and we get
+\begin{equation}\label{cota_inf_I}
+\begin{split}
+I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0^TF(t,\b{u})\ dt
+\\ 
+&=\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+ \int_0^T \left[F(t,\b{u})-F(t,\b{\overline{u}})\right]\ dt 
++  \int_0^TF(t,\b{\overline{u}})\ dt
+\\
+&\geq \alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)
+-C_3 \|\b{\dot u}\orlnor^{\mu}
++\int_0^TF(t,\b{\overline{u}})\ dt-
+C_3 [\varepsilon(|\b{\overline{u}}|)]^{\gamma}|\b{\overline{u}}|^{\sigma}-C_3
+\varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}}
+\\
+&=\alpha_0J_{C_4,\mu}\left(\frac{\b{\dot u}}{\Lambda}\right)
++\int_0^TF(t,\b{\overline{u}})\ dt-
+C_3 [\varepsilon(|\b{\overline{u}}|)]^{\gamma}|\b{\overline{u}}|^{\sigma}-C_3
+\varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}},
+\end{split}
+\end{equation}
+where $C_4=\Lambda^{\mu'}C_3/\alpha_0$.
+
+{\bf De ac\'a en adelante, es copia del  final de la otra demo. Debe adaptarse a la f\'ormula anterior, si es que ella logra sobrevivir....}  
+
+Let $\b{u}_n$ be  a sequence in $\domi$ with 
+$\|\b{u}_n\sobnor\to\infty$ and we have to prove that $I(\b{u}_n)\to\infty$. 
+On the contrary, suppose  that for a subsequence, 
+still denoted by $\b{u}_n$, $I(\b{u}_n)$ is upper bounded, i.e., there exists $M>0$ such that $|I(\b{u}_{n})|\leq M$. 
+As $\|\b{u}_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{\b{u}}_n|+\|\b{\dot{u}}_n\orlnor\to \infty$.
+Then, there exists a subsequence of $\{\b{u}_n\}$, still denoted by $\b{u}_n$, which is not bounded.
+Then, 
+$|\b{\overline u}_n|\to \infty$ or $\|\b{\dot{u}}_n\orlnor\to \infty$.
+Now, Lemma \ref{lem_coer} implies that the functional $J_{C_4,\mu'}(\frac{\b{\dot u}}{\Lambda})$ is coercive,
+and, by \eqref{propiedad-coercividad-sigma},
+the functional $H(\b{\overline{u}})$ is also coercive, then 
+$J_{C_4,\mu'}(\frac{\b{\dot u}_n}{\Lambda}) \to \infty$ or $H(\b{\overline{u}}_n)\to \infty$.
+From \eqref{condA2}, we have that on a bounded set the functional $H(\b{\overline{u}}_n)$ is lower bounded; and, $J_{C_4,\mu'}(\frac{\b{\dot u}_n}{\Lambda})$ is also lower bounded  because the modular $\rho_{\Phi}\left(\frac{\b{\dot u}}{\Lambda}\right)$ is always bigger than zero. 
+Therefore,  $I(\b{u}_n)\to\infty$ as $\|\b{u}_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(\b{u}_n)$. 
+\end{proof}
+probando
+
+
+
+
 \section*{Acknowledgments}
 The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
 
