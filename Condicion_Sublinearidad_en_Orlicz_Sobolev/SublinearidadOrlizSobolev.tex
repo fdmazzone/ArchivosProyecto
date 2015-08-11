@@ -65,6 +65,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\nn}{\mathbb{N}}
 \newcommand{\ccdot}{\b{\cdot}}
 \renewcommand{\leq}{\leqslant} 
+\renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Psi}}
 
 \begin{document}
@@ -596,22 +597,14 @@ Therefore,  $I(\b{u}_n)\to\infty$ as $\|\b{u}_n\sobnor\to\infty$ which contradic
 {\bf Falta leer y corregir la  secci\'on que sigue del caso l\'imite!!!}
 
 \section{Limit case $\mu=\alpha_{\Phi}$}
+Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic} even  was obtained coercitivity for the limit value $\mu=p$ in inequality \eqref{holder_cont-mu}.  This result lean on the  fact that when  $\Phi(u)=|u|^p$,
 
-Coercivity was obtained even in the limit case $\mu=1$ and   $\mu=p$ 
-(see \cite{zhao2004periodic, tang2010periodic})
-assuming additional conditions on one of the $L^1$ 
-functions that bound the nonlinearity.
-These results lean on the fact that in $L^p$ spaces the norm and the modular coincides, 
-that is, $\|\cdot\|_p^p=O(\int_0^T |\cdot|^p\,dt)$.
-In Orlicz spaces, $\|\cdot\orlnor^\mu$ can be upper controlled by a modular provided that $\mu<\alpha_{\Phi}$ for any
-$N$-function $\Phi$. 
-Nevertheless,  the limit case does  not hold for any $\Phi$, i.e. in general $\|\cdot\orlnor^{\alpha_{\Phi}}=O(\int_0^T \Phi(|u|)\,dt)$ is false as can be seen as follows.
+\begin{equation}
+ \|u\orlnor^{\alpha_{\Phi}}=O\left(\int_0^T \Phi(|u|)\,dt\right),\quad\text{for } \|u\orlnor\to\infty.
+\end{equation}
+However, it is no longer the case  for any $N$-function $\Phi$ as the example below shows
 
-
-Let $\Phi$ be an $N$-function that satisfies the $\Delta_2$-condition. 
-We claim that the inequality $\Phi(tu)\geq t^{\alpha_{\Phi}}\Phi(u)$ for any $u>0$ and for any $t\geq 1$ is false.
-
-With the aim of proving the above assertion, we define the function 
+From now on in this section, we will suppose that 
 \[\Phi(u)=
 \left\{
 \begin{array}{ll}
@@ -620,12 +613,7 @@ With the aim of proving the above assertion, we define the function
 \frac{u^p}{\log u}-\frac{e^p}{p}&u>e
 \end{array}
 \right.\]
-with $p>1$.
-
-{\bf  Me parece que habr\'ia que decir algo que aclare los que se hace a continuaci\'on. 
-Por ejemplo: 
-
-Next, we will study the behaviour of $\Phi$/ establish some properties of $\Phi$/...}
+with $p>1$. Next, we will establish some properties of this $\Phi$. 
 
 \begin{thm}
 If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
@@ -634,18 +622,17 @@ If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
 
 \begin{proof}
 We have 
-\[\Phi'(u)=\left\{
+\[\varphi(u)=\Phi'(u)=\left\{
 \begin{array}{cccc}
-(p-1)u^{p-1}&:=&\varphi_1(u)& \mbox{if}\;u<e
+(p-1)u^{p-1}&:=&\varphi_1(u)& \mbox{if}\;u\leq e
 \\
-\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u})&:=&\varphi_2(u)&\mbox{if}\; u>e
+\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u})&:=&\varphi_2(u)&\mbox{if}\; u\geq e
 \end{array}
 \right.
 \]
-and $\Phi$ is differentiable at $e$ because $\varphi_1(e)=\varphi_2(e)=(p-1)e^{p-1}$.
 
-We will see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
-Then, it is enough to see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on 
+Let us see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
+For this purpose, it is enough see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on 
 $[e,\infty)$ for $p\geq \frac{1+\sqrt {2}}{2}$.
 
 {\bf Tendr\'iamos que ver que $\varphi_1,\varphi_2$ son crecientes y que $\varphi_2\to \infty$ cuando
