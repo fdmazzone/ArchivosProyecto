@@ -94,6 +94,11 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 \begin{abstract}
 In this paper we....
+
+ALGO AS\'I HAB\'IA QUE ESCRIBIR AC\'A O EN LA INTRO....
+
+The results of this paper improve on the classic ones obtained in \cite{tang1998periodic} and \cite{tang2010periodic} with $|\nabla F(t,\b{x})|\leq f(t) \b{x}^{\alpha}+g(t)$
+for $\alpha<1$ and $\alpha<p$ respectively. Here, the bounds of the sublinearity are bigger than those considered in the aforementioned works.
 \end{abstract}
 
 
@@ -411,6 +416,81 @@ constant $K=K(\varphi,\epsilon)$ such that, for every $t,u\geq 0$,
 \end{equation}
 
 
+
+\begin{lem}
+Let $\Phi,\Psi$ complementary functions.
+The next statements are equivalent:
+\begin{enumerate}
+\item\label{item1} $\Psi \in \Delta_2$ globally.
+\item\label{item2} There exists an $N$-function $\Phi_1 \in \Delta_2$ globally???? such that
+\begin{equation}
+\Phi(rs)\geq \Phi_1(r)\Phi(s)\;\;\mbox{for every}\;\;r\geq1,\;\;s\geq 0.
+\end{equation}
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\ref{item1})$\Rightarrow$\ref{item2}) As $\Psi \in  \Delta_2$ globally, there exist $k>0$ and $\nu>1$ such that
+\[
+\Phi(rs)\geq k r^\nu \Phi(s)\;\;r\geq 1,\;s>0,
+\]
+which is \eqref{} with $\Phi_1(r)=kr^\nu$ that is an $N$-function that satisfies the $\Delta_2$-condition globally.
+
+\ref{item2})$\Rightarrow$\ref{item1})
+Next, we follow  \cite[p. 32, Prop. 13]{rao1991theory} and \cite[p. 29, Prop. 9]{rao1991theory}.
+Assume that 
+\[
+\Phi_1(r)\Phi(s)\leq \Phi(rs)\;\;r>1,\;s\geq 0.
+\]
+Let $u=\Phi_1(r)\geq \Phi_1(1)$ and $v=\Phi(s)\geq 0$. By the well known inequality \cite[(), p. ]{KR} we have  
+\[
+\frac{uv}{\Psi^{-1}(uv)}\leq \Phi^{-1}(uv)\leq\Phi_1^{-1}(u)\Phi^{-1}(v)\leq
+\frac{4uv}{\Psi_1^{-1}(u)\Psi^{-1}(v)},\;\;u\geq \Phi_1(1),\;v\geq 0,
+\]
+then 
+\[
+\Psi^{-1}_1(u)\Psi^{-1}(v)\leq 4 \Psi^{-1}(uv).
+\]
+If we take $x=\Psi^{-1}_1(u)\geq \Psi^{-1}_1(\Phi_1(1))$ and $y=\Psi^{-1}(v)\geq 0$, then 
+\[
+\Psi(\frac{xy}{4})\leq \Psi_1(x)\Psi(y).
+\]
+Now, taking  $x\geq \max\{8,\Psi_1^{-1}(\Phi_1(1))\}$ we get that $\Psi \in \Delta_2$ globally.
+\end{proof}
+
+
+\begin{lem}
+Let $\Phi,\Phi_2$ be $N$-functions and suppose that $\Phi \in \Delta_2$.
+If $\Phi(rs)\geq \Phi_1(r)\Phi(s)$ for every $r\geq 1$ and $s>0$, then
+\[
+\lim\limits_{\|u\orlnor\to \infty}
+\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}=\infty,
+\]
+for every $\Phi_0$ with $\Phi_0=o(\Phi_1)$ at $\infty$.
+\end{lem}
+
+\begin{proof}
+By the assumptions on $\Phi$ and $\Phi_1$  and identity \eqref{amemiya}, we have
+\[
+\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
+\Phi_1(r) \frac{\int_0^T \Phi(r^{-1}|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
+\frac{\Phi_1(r)}{\Phi_0(\|u\orlnor)}\{r^{-1}\|u\orlnor-1\}.
+\]
+Now, we choose $r=\frac{\|u\orlnor}{2}$, we use the fact that $\Phi_1\in\Delta_2$ and
+$\Phi_0=o(\Phi_1)$ at $\infty$, and 
+therefore we get
+\[
+\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
+\lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1(\frac{\|u\orlnor}{2})}{\Phi_0(\|u\orlnor)}
+\geq
+C \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1(\|u\orlnor)}{\Phi_0(\|u\orlnor)}=\infty.
+\]
+
+\end{proof}
+
+
+
+
 We define the following  functionals $J_{C,\mu}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\sigma}:\rr^n\to \rr$, with $C,\nu,\sigma>0$, by
 \begin{equation}\label{func_phi}
   J_{C,\nu}(\b{u}):= \rho_{\Phi}\left(\b{u}\right)-C\|\b{u}\orlnor^{\nu},
@@ -420,6 +500,12 @@ We define the following  functionals $J_{C,\mu}:\lphi\to (-\infty,+\infty]$ and 
 \begin{equation}\label{eq:functional_H}
  H_{C,\sigma}(\b{x})=\int_0^TF(t,\b{x})dt-C|\b{x}|^{\sigma},
 \end{equation}
+
+{\bf Deber\'ia ir algo as\'i, en lugar de la anterior!!!}
+\begin{equation}\label{eq:functional_H-bis}
+ H_{C,\Phi_0}(\b{x})=\int_0^TF(t,\b{x})dt-C\Phi_0(|\b{x}|)
+\end{equation}
+
 respectively.
 
 
@@ -427,6 +513,7 @@ respectively.
 We will use the classic notations big $O$ and little $o$ \cite{erdelyi}. The  following lemma, was essentially  proved in \cite{ABGMS2015}.
 
 
+El siguiente lema debe {\bf adaptarse} a la nueva versi\'on $\Phi_0$.
 
 \begin{lem}\label{lem_coer} Let $\Phi$ and $\Psi$ be complementary $N$-functions and let $\b{u}\in\lphi$. Then:
 \begin{enumerate}
@@ -449,15 +536,29 @@ as $\|\b{u}\orlnor\to \infty$.
 \[\lim_{   \|\b{u}\orlnor\to+\infty} J_{C,1}(\b{u})=\lim_{   \|\b{u}\orlnor\to+\infty}
  \|\b{u}\orlnor\left(\frac{\rho_{\Phi}(\b{u})}{ \|\b{u}\orlnor}-C\right)=+\infty.\]
  Therefore, using \cite[Lemma 5.2(3)]{ABGMS2015}, we conclude $\Psi\in\Delta_2$. 
-
 \end{proof}
 
 
+\begin{lem}\label{lem_coer-version-phi} Let $\Phi$ and $\Psi$ be complementary $N$-functions and let $\b{u}\in\lphi$. Then:
+\begin{enumerate}
+  \item\label{th:coer_item1} $\|\b{u}\orlnor=O\left( \rho_{\Phi}\left(\b{u} \right)  \right)$ REVISAR!!!.
+  
+  \item\label{th:coer_item2} If $\Psi \in \Delta_2$ globally, then
+	%then there exists a constant $\alpha_{\Phi}>1$ such that, for any $0<\mu<\alpha_{\Phi}$,
+\begin{equation}\label{coer_modular} \Phi_0(\|\b{u}\orlnor) =o\left(\rho_{\Phi}\left(\b{u}\right)\right)
+\end{equation}
+as $\|\b{u}\orlnor\to \infty$.
+being $\Phi_0 \in \Delta_2$ globally that satisfies 
+$\Phi_0=o(\Phi_1)$ at $\infty$ and where $\Phi(rs)\geq \Phi_1(r)\Phi(s)$.
 
+\item\label{th:coer_item3} If \eqref{coer_modular} holds for $\mu\geq 1$ then $\Psi \in \Delta_2$. REVISAR!!!!  
+\end{enumerate}
+\end{lem}
 
+\begin{proof}
+HACER LA PRUEBA!!!! DE AL MENOS EL SEGUNDO ITEM!!!!
 
-
-
+\end{proof}
 
 
 
@@ -475,6 +576,214 @@ Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) i
 
 Now, we have another result about coercivity of $I$ assuming some conditions on the nonlinearity  $\nabla F$. 
 
+
+
+
+
+
+
+
+
+
+
+
+\begin{thm}\label{coercitividad-r}
+Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and $F$ satisfies condition (A). We assume the following conditions:
+\begin{enumerate}
+\item $\Psi\in\Delta_2$.
+\item There exist  non negative functions  $b_1,b_2 \in L^1_1$ 
+%and $f(\b{x})=\varepsilon(\b{x})|\b{x}|^{\alpha_{\Phi}-1}$ which is  non-decreasing, sub additive and  
+such that
+for any $\b{x}\in\rr^d$ and a.e. $t\in [0,T]$
+\begin{equation}\label{holder_cont-mu}
+  \left| \nabla F(t,\b{x}) \right|\leq b_1(t)\varphi_0(|\b{x}|)+b_2(t)
+\end{equation}
+being  $\varphi_0=\Phi'_0$ and $\Phi_0 \in \Delta_2$ globally that satifies 
+$\Phi_0=o(\Phi_1)$ at $\infty$ and where $\Phi(rs)\geq \Phi_1(r)\Phi(s)$.
+\item 
+\begin{equation}\label{propiedad-coercividad-sigma}
+\Phi_0(|\b{x}|)=o\left(\int_{0}^{T}F(t,\b{x})\ dt\right)\;\;\mbox{as}\;\;|\b{x}|\to \infty.
+\end{equation}
+\end{enumerate}
+Then  the action integral $I$ is coercive.
+\end{thm}
+
+\begin{proof}
+By the decomposition $u=\overline{u}+\b{\tilde{u}}$,  Mean Value Theorem, Cauchy-Schwarz's inequality 
+and \eqref{holder_cont-mu}, we have
+\begin{equation}\label{cota-diferencia-F}
+\begin{split}
+&\left|\int_0^T F(t,\b{u})-F(t,\b{\overline{u}})\,dt\right|=
+\left|\int_0^T \int_0^1 \nabla F(t,\b{\overline{u}}+s\b{\tilde{u}}(t))\ccdot \b{\tilde{u}}(t) \,ds \,dt\right|
+\\
+&\leq \int_0^T \int_0^1 b_1(t)f(|\b{\overline{u}}+s\b{\tilde{u}}(t)|)|\b{\tilde{u}}(t)|\,ds\,dt+
+\int_0^T \int_0^1 b_2(t)|\b{\tilde{u}}(t)|\,ds\,dt
+\\
+&=I_1+I_2.
+\end{split}
+\end{equation}
+On the one hand, by H\"older's inequality and Sobolev's inequality, we estimate $I_2$ as follows
+\begin{equation}\label{cota-i2}
+I_2\leq \|b_2\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}\leq
+C_1\|\b{\dot u}\orlnor.
+\end{equation}
+ where $C_1=C_1(\|b_2\|_{L^1}, T)$. 
+
+On the other hand, since $\Phi_0 \in \Delta_2$ globally, then $\varphi \in \Delta_2$ globally and 
+consequently $\varphi_0$ is a subadditive function, i.e. there exists $k>0$ such that 
+$\varphi_0(a+b)\leq k(\varphi_0(a)+\varphi_(b))$ for every $a,b\geq 0$.
+In this way, we have
+\begin{equation}\label{pot-suma}
+\varphi_0(|\b{\overline{u}}+s\b{\tilde{u}}(t)|)\leq
+C(\varphi_0)[\varphi_0(|\b{\overline{u}}|)+\varphi_0(\|\b{\tilde{u}}\|_{L^{\infty}})].
+\end{equation}
+where $s \in [0,1]$ and $C(\varphi_0)$ springs from the subadditivity of $\varphi_0$. 
+
+Now,  inequality \eqref{pot-suma}, H\"older's inequality, Sobolev's inequality,
+and the monotonicity and the subadditivity of $\varphi_0$ imply that
+\begin{equation}\label{cota-i1}
+\begin{split}
+I_1&
+\leq C(\varphi_0)\bigg\{ \varphi_0(|\b{\overline{u}}|) \|b_1\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}+
+ \|b_1\|_{L^1}\varphi_0(\|\b{\tilde{u}}\|_{L^\infty})\|\b{\tilde{u}}\|_{L^\infty}\bigg\}
+\\
+&\leq C_2 \bigg\{ \varphi_0(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
++\varphi_0(\|\b{\dot u}\orlnor) \|\b{\dot u}\orlnor\bigg\}
+%\\
+%&=
+%C_2 \bigg\{ f(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
+%+\varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}}
+%%f(\|\b{\dot u}\orlnor) \|\b{\dot u}\orlnor\bigg\}
+\end{split}
+\end{equation}
+where $C_2=C_2(\varphi_0,T, \|b_1\|_{L^1} )$. 
+
+Next, by Young's inequality with complementary functions $\Phi_0$ and $\Psi_0$ and the fact that 
+$\Phi_0 \in \Delta_2$ globally, we get
+\begin{equation}\label{cota-i1-parcial}
+ \begin{split}
+\varphi_0(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
+&\leq 
+\Psi_0(\varphi_0(|\b{\overline{u}}|)+
+\Phi_0(\|\b{\dot{u}}\orlnor)
+\\
+&=
+|\b{\overline{u}}|\varphi_0(|\b{\overline{u}}|)
++\Phi_0(\|\b{\dot{u}}\orlnor)
+\\
+&\leq C(\Phi_0)
+\Phi_0(|\b{\overline{u}}|)
++\Phi_0(\|\b{\dot{u}}\orlnor)
+\end{split}
+\end{equation}
+and 
+\begin{equation}\label{cota-i1-parcial-segunda}
+\varphi_0(\|\b{\dot u}\orlnor) \|\b{\dot u}\orlnor
+\leq 
+C(\Phi_0) \Phi_0(\|\b{\dot u}\orlnor),
+\end{equation}
+with $C(\Phi_0)$ the constant that comes from the $\Delta_2$ condition on $\Phi_0$.
+
+From \eqref{cota-i1}, \eqref{cota-i1-parcial}, \eqref{cota-i1-parcial-segunda} and \eqref{cota-i2},
+%and the inequality $x^{r_1}\leq x^{r_2}+1$, for any $x\geq 0$ and $r_1\leq r_2$, 
+we have
+\begin{equation}\label{cota-i1-i2}
+\begin{split}
+I_1+I_2
+&
+\leq C_3
+\bigg\{ 
+\Phi_0(|\b{\overline{u}}|)
++\Phi_0(\|\b{\dot{u}}\orlnor)
++\|\b{\dot{u}}\orlnor
+\bigg\}
+%\\
+%&\leq C_3\bigg\{ 
+%+ \|\b{\dot {u}}\orlnor^{\mu'}
+%+1\bigg\}
+\end{split}
+\end{equation}
+with $C_3= C_3(\Phi_0,T, \|b_1\|_{L^1}, \|b_2\|_{L^1} )$.
+
+
+We recall that as $\Phi_0$ is an $N$-function, there exists $C>0$ such that $\Phi_0(x)\geq Cx$ for every $x\geq 1$; and for $0\leq x \leq 1$, we also have $x\leq 1+C\Phi_0(x)$. 
+Thus, 
+\begin{equation}\label{x-cota-phi0}
+x\leq C\Phi_0(x)+1\;\;\mbox{for every}\;\;x\geq 0.
+\end{equation}
+{\bf $C=\Phi_0(1)$????, en las notas pero no lo veo claro}
+
+
+In the subsequent estimates, we use the decomposition $u=\overline{u}+\b{\tilde{u}}$, \eqref{cota_inf}, \eqref{cota-diferencia-F},
+\eqref{cota-i1-i2}, \eqref{x-cota-phi0}, the fact that $\Phi_0 \in \Delta_2$ and we get
+\begin{equation}\label{cota_inf_I}
+\begin{split}
+I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0^TF(t,\b{u})\ dt
+\\ 
+&=\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+ \int_0^T \left[F(t,\b{u})-F(t,\b{\overline{u}})\right]\ dt 
++  \int_0^TF(t,\b{\overline{u}})\ dt
+\\
+&\geq \alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)
+-C_3 \Phi_0(\|\b{\dot u}\orlnor)
++\int_0^TF(t,\b{\overline{u}})\ dt-
+C_3 \Phi_0(|\b{\overline{u}}|)-
+C_3 \|\b{\dot{u}}\orlnor
+\\
+&\geq
+\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)
+-C_4 \Phi_0(\|\b{\dot u}\orlnor)
++H_{C_3, \Phi_0}(\b{\overline{u}})
+-C_3 
+\\&\geq
+\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)
+-C_5 \Phi_0\left(\frac{\|\b{\dot u}\orlnor}{\Lambda} \right)
++H_{C_3, \Phi_0}(\b{\overline{u}})
+-C_3 
+\\&=
+\alpha_0J_{C_6,\Phi_0}\left(\frac{\b{\dot u}}{\Lambda}\right)
++H_{C_3, \Phi_0}(\b{\overline{u}})
+-C_3 
+\end{split}
+\end{equation}
+where  $C_4=(C+1)C_3$, $C_5=C_5(\Phi_0,\Lambda,C_4)$ and $C_6=\frac{C_5}{\alpha_0}$.
+
+
+
+{\bf De ac\'a en adelante, es copia del  final de la otra demo. Debe adaptarse a la f\'ormula anterior, si es que ella logra sobrevivir....}  
+
+Let $\b{u}_n$ be  a sequence in $\domi$ with 
+$\|\b{u}_n\sobnor\to\infty$ and we have to prove that $I(\b{u}_n)\to\infty$. 
+On the contrary, suppose  that for a subsequence, 
+still denoted by $\b{u}_n$, $I(\b{u}_n)$ is upper bounded, i.e., there exists $M>0$ such that $|I(\b{u}_{n})|\leq M$. 
+As $\|\b{u}_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{\b{u}}_n|+\|\b{\dot{u}}_n\orlnor\to \infty$.
+Then, there exists a subsequence of $\{\b{u}_n\}$, still denoted by $\b{u}_n$, which is not bounded.
+Then, 
+$|\b{\overline u}_n|\to \infty$ or $\|\b{\dot{u}}_n\orlnor\to \infty$.
+Now, Lemma \ref{lem_coer} implies that the functional $J_{C_4,\mu'}(\frac{\b{\dot u}}{\Lambda})$ is coercive,
+and, by \eqref{propiedad-coercividad-sigma},
+the functional $H(\b{\overline{u}})$ is also coercive, then 
+$J_{C_4,\mu'}(\frac{\b{\dot u}_n}{\Lambda}) \to \infty$ or $H(\b{\overline{u}}_n)\to \infty$.
+From \eqref{condA2}, we have that on a bounded set the functional $H(\b{\overline{u}}_n)$ is lower bounded; and, $J_{C_4,\mu'}(\frac{\b{\dot u}_n}{\Lambda})$ is also lower bounded  because the modular $\rho_{\Phi}\left(\frac{\b{\dot u}}{\Lambda}\right)$ is always bigger than zero. 
+Therefore,  $I(\b{u}_n)\to\infty$ as $\|\b{u}_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(\b{u}_n)$. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{versi\'on potencias por si acaso...} 
 \begin{thm}\label{coercitividad-r}
 Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and $F$ satisfies condition (A). We assume the following conditions:
 \begin{enumerate}
@@ -827,177 +1136,6 @@ $\int_0^T \Phi(|u|)\,dx=C_2\Phi(t)$ with $C_2=T$.
 Then, if $\rho_{\Phi}(u)\geq C\|u\orlnor^p$ were true, then $\Phi(t)\geq C t^p$ would also be true; however, this
 last inequality is false.
  
-
-
-\section{Bounding by power-behaviour functions}
-
-\begin{thm}\label{coercitividad-r}
-Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and $F$ satisfies condition (A). We assume the following conditions:
-\begin{enumerate}
-\item $\Psi\in\Delta_2$.
-\item There exist  non negative functions  $b_1,b_2 \in L^1_1$ and 
-$f(\b{x})=\varepsilon(\b{x})|\b{x}|^{\alpha_{\Phi}-1}$ which is  non-decreasing, sub additive and  such that
-for any $\b{x}\in\rr^d$ and a.e. $t\in [0,T]$
-\begin{equation}\label{holder_cont-mu}
-  \left| \nabla F(t,\b{x}) \right|\leq b_1(t)f(|\b{x}|)+b_2(t).
-\end{equation}
-\item There exists a real positive number $\sigma$ such that $\sigma>(\alpha_{\Phi}-1)\beta_{\Psi}$ and
-\begin{equation}\label{propiedad-coercividad-sigma}
-|\b{x}|^{\sigma}=o\left(\int_{0}^{T}F(t,\b{x})\ dt\right)\;\;\mbox{as}\;\;|\b{x}|\to \infty.
-\end{equation}
-{\bf En las cuentas, aparece la funci\'on $\varepsilon$!!! 
-?`sirve a\'un la f\'ormula anterior???}
-\end{enumerate}
-Then  the action integral $I$ is coercive.
-\end{thm}
-
-\begin{proof}
-By the decomposition $u=\overline{u}+\b{\tilde{u}}$,  Mean Value Theorem, Cauchy-Schwarz's inequality 
-and \eqref{holder_cont-mu}, we have
-\begin{equation}\label{cota-diferencia-F}
-\begin{split}
-&\left|\int_0^T F(t,\b{u})-F(t,\b{\overline{u}})\,dt\right|=
-\left|\int_0^T \int_0^1 \nabla F(t,\b{\overline{u}}+s\b{\tilde{u}}(t))\ccdot \b{\tilde{u}}(t) \,ds \,dt\right|
-\\
-&\leq \int_0^T \int_0^1 b_1(t)f(|\b{\overline{u}}+s\b{\tilde{u}}(t)|)|\b{\tilde{u}}(t)|\,ds\,dt+
-\int_0^T \int_0^1 b_2(t)|\b{\tilde{u}}(t)|\,ds\,dt
-\\
-&=I_1+I_2.
-\end{split}
-\end{equation}
-On the one hand, by H\"older's inequality and Sobolev's inequality, we estimate $I_2$ as follows
-\begin{equation}\label{cota-i2}
-I_2\leq \|b_2\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}\leq
-C_1\|\b{\dot u}\orlnor.
-\end{equation}
- where $C_1=C_1(\|b_2\|_{L^1}, T)$. On the other hand, as $s\in [0,1]$, we have
-\begin{equation}\label{pot-suma}
-f(|\b{\overline{u}}+s\b{\tilde{u}}(t)|)\leq
-C(f)(f(|\b{\overline{u}}|)+f(\|\b{\tilde{u}}\|_{L^{\infty}})).
-\end{equation}
-where $C(f)$ springs from the subadditivity of $f$. Now,  inequality \eqref{pot-suma}, H\"older's inequality, Sobolev's inequality and {\bf the properties of $f$( no decrecimiento y subaditividad )} imply that
-\begin{equation}\label{cota-i1}
-\begin{split}
-I_1&
-\leq C(f)\bigg\{ f(|\b{\overline{u}}|) \|b_1\|_{L^1} \|\b{\tilde{u}}\|_{L^{\infty}}+
- \|b_1\|_{L^1}f(\|\b{\tilde{u}}\|_{L^\infty})\|\b{\tilde{u}}\|_{L^\infty}\bigg\}
-\\
-&\leq C_2 \bigg\{ f(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
-+f(\|\b{\dot u}\orlnor) \|\b{\dot u}\orlnor\bigg\}
-\\
-&=
-C_2 \bigg\{ f(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
-+\varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}}
-%f(\|\b{\dot u}\orlnor) \|\b{\dot u}\orlnor
-\bigg\}
-\end{split}
-\end{equation}
-where $C_2=C_2(f,T, \|b_1\|_{L^1} )$. 
-
-
-Let $\mu$ be a positive constant such that $1<\mu<\alpha_{\Phi}$. 
-Next, using Young's inequality with conjugate exponents $\mu$ and $\frac{\mu}{\mu-1}$ 
- we get
-\begin{equation}\label{cota-i1-parcial}
- \begin{split}
-f(|\b{\overline{u}}|) \|\b{\dot{u}}\orlnor
-&=
-[\varepsilon(|\b{\overline{u}}|)
-|\b{\overline{u}}|^{\alpha_{\Phi}-1}]   \|\b{\dot{u}}\orlnor
-\\
-&\leq 
-\frac{(\mu-1)}{\mu}
-[\varepsilon(|\b{\overline{u}}|)]^{\frac{\mu}{\mu-1}}
-|\b{\overline{u}}|^{(\alpha_{\Phi}-1)\frac{\mu}{\mu-1}}
-+\frac{1}{\mu} \|\b{\dot{u}}\orlnor^{\mu}
-\\
-&=
-\frac{1}{\gamma}
-[\varepsilon(|\b{\overline{u}}|)]^{\gamma}
-|\b{\overline{u}}|^{(\alpha_{\Phi}-1)\gamma}
-+\frac{1}{\mu} \|\b{\dot{u}}\orlnor^{\mu}
-\\
-&=
-\frac{1}{\gamma}
-[\varepsilon(|\b{\overline{u}}|)]^{\gamma}
-|\b{\overline{u}}|^{\sigma}
-+\frac{1}{\mu} \|\b{\dot{u}}\orlnor^{\mu}
-\end{split}
-\end{equation}
-where $\gamma=\frac{\mu}{\mu-1}$ and $\sigma=(\alpha_{\Phi}-1)\gamma$. 
-We point out that $\sigma=(\alpha_{\Phi}-1)\gamma$ is an arbitrary positive constant bigger than $(\alpha_{\Phi}-1)b_{\Psi}$.
-
-($\mu<\alpha_{\Phi}$ then $\sigma=\frac{\mu}{\mu-1}>b_{\Psi}$, because
-$\frac{1}{\mu}+\frac{1}{b_{\Psi}}>\frac{1}{\alpha_{\Phi}}+\frac{1}{b_{\Psi}}=1$, then
-$\frac{1}{b_{\Psi}}>\frac{\mu-1}{\mu}=\frac{1}{\gamma}$)
-
-From \eqref{cota-i1}, \eqref{cota-i1-parcial} and \eqref{cota-i2},
-%and the inequality $x^{r_1}\leq x^{r_2}+1$, for any $x\geq 0$ and $r_1\leq r_2$, 
-we have
-\begin{equation}\label{cota-i1-i2}
-\begin{split}
-I_1+I_2
-&
-\leq C_3
-\bigg\{ 
-[\varepsilon(|\b{\overline{u}}|)]^{\gamma}
-|\b{\overline{u}}|^{\sigma}
-+ \|\b{\dot{u}}\orlnor^{\mu}
-+ \varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}}
-\bigg\}
-%\\
-%&\leq C_3\bigg\{ |\b{\overline{u}}|^{\sigma}
-%+ \|\b{\dot {u}}\orlnor^{\mu'}
-%+1\bigg\}
-\end{split}
-\end{equation}
-with $C_3= C_3(\mu,T, \|b_1\|_{L^1} )$, $\mu<\alpha_{\Phi}$ and $\sigma>b_{\Psi}(\alpha_{\Phi}-1)$.
-
-
-
-
-In the subsequent estimates, we use the decomposition $u=\overline{u}+\b{\tilde{u}}$, \eqref{cota_inf}, \eqref{cota-diferencia-F},
-\eqref{cota-i1-i2} and we get
-\begin{equation}\label{cota_inf_I}
-\begin{split}
-I(\b{u})&\geq\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+\int_0^TF(t,\b{u})\ dt
-\\ 
-&=\alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)+ \int_0^T \left[F(t,\b{u})-F(t,\b{\overline{u}})\right]\ dt 
-+  \int_0^TF(t,\b{\overline{u}})\ dt
-\\
-&\geq \alpha_0\rho_{\Phi}\left( \frac{\b{\dot{u}}}{\Lambda}\right)
--C_3 \|\b{\dot u}\orlnor^{\mu}
-+\int_0^TF(t,\b{\overline{u}})\ dt-
-C_3 [\varepsilon(|\b{\overline{u}}|)]^{\gamma}|\b{\overline{u}}|^{\sigma}-C_3
-\varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}}
-\\
-&=\alpha_0J_{C_4,\mu}\left(\frac{\b{\dot u}}{\Lambda}\right)
-+\int_0^TF(t,\b{\overline{u}})\ dt-
-C_3 [\varepsilon(|\b{\overline{u}}|)]^{\gamma}|\b{\overline{u}}|^{\sigma}-C_3
-\varepsilon(\|\b{\dot{u}}\orlnor)\|\b{\dot{u}}\orlnor^{\alpha_{\Phi}},
-\end{split}
-\end{equation}
-where $C_4=\Lambda^{\mu'}C_3/\alpha_0$.
-
-{\bf De ac\'a en adelante, es copia del  final de la otra demo. Debe adaptarse a la f\'ormula anterior, si es que ella logra sobrevivir....}  
-
-Let $\b{u}_n$ be  a sequence in $\domi$ with 
-$\|\b{u}_n\sobnor\to\infty$ and we have to prove that $I(\b{u}_n)\to\infty$. 
-On the contrary, suppose  that for a subsequence, 
-still denoted by $\b{u}_n$, $I(\b{u}_n)$ is upper bounded, i.e., there exists $M>0$ such that $|I(\b{u}_{n})|\leq M$. 
-As $\|\b{u}_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{\b{u}}_n|+\|\b{\dot{u}}_n\orlnor\to \infty$.
-Then, there exists a subsequence of $\{\b{u}_n\}$, still denoted by $\b{u}_n$, which is not bounded.
-Then, 
-$|\b{\overline u}_n|\to \infty$ or $\|\b{\dot{u}}_n\orlnor\to \infty$.
-Now, Lemma \ref{lem_coer} implies that the functional $J_{C_4,\mu'}(\frac{\b{\dot u}}{\Lambda})$ is coercive,
-and, by \eqref{propiedad-coercividad-sigma},
-the functional $H(\b{\overline{u}})$ is also coercive, then 
-$J_{C_4,\mu'}(\frac{\b{\dot u}_n}{\Lambda}) \to \infty$ or $H(\b{\overline{u}}_n)\to \infty$.
-From \eqref{condA2}, we have that on a bounded set the functional $H(\b{\overline{u}}_n)$ is lower bounded; and, $J_{C_4,\mu'}(\frac{\b{\dot u}_n}{\Lambda})$ is also lower bounded  because the modular $\rho_{\Phi}\left(\frac{\b{\dot u}}{\Lambda}\right)$ is always bigger than zero. 
-Therefore,  $I(\b{u}_n)\to\infty$ as $\|\b{u}_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(\b{u}_n)$. 
-\end{proof}
-probando
-
 
 
 
