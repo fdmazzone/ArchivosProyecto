@@ -631,41 +631,21 @@ We have
 \right.
 \]
 
-Let us see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
-For this purpose, it is enough see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on 
-$[e,\infty)$ for $p\geq \frac{1+\sqrt {2}}{2}$.
+First let us see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
+For this purpose, since $\varphi_1(e)=\varphi_2(e)$, it is enough see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on
+$[e,\infty)$ for every $p\geq \frac{1+\sqrt {2}}{2}$. Clearly
+$\varphi_1$ is an increasing function for $p>1$.  On the other hand, an elementary function analysis shows that
+$\varphi_2'(u)>0$ on $[e,\infty)$ if and only if
+ $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.  Therefore $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 
-{\bf Tendr\'iamos que ver que $\varphi_1,\varphi_2$ son crecientes y que $\varphi_2\to \infty$ cuando
-$u \to \infty????$ o basta con ver que $\varphi_2$ es creciente???}
+ Besides $\varphi_2(u)\to \infty$ and  $\varphi_1(u)\to 0$  as $u \to  \infty$ and $u\to 0$  respectively, provided that $p>1$. Hence $\Phi$ is $N$-function.
 
-$\varphi_1$ is an increasing function for $p>1$ and $\varphi_1(u)\to 0$ as $u \to 0$.
-
-On the other hand, $\varphi_2(u)\to \infty$ as $u \to \infty$ provided that $p>1$.
-And,  
-$\varphi_2'(u)>0$
-%\frac{u^{p-2}}{\log u} \left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)\] 
-on $[e,\infty)$ if and only if 
-\begin{equation}\label{cuad-log-pos}
-\left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)>0.
-\end{equation}
-%If we take $\alpha:=\frac{1}{\log u}$, then we need 
-%\[
-%2\alpha^2+(1-2p)\alpha+(p^2-p)\geq 0
-%\]
-%which is true 
-Now, as \eqref{cuad-log-pos} holds if and only if $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$, then $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 \end{proof}
 
-{\bf  Conviene agregar m\'as cuentas en la prueba anterior, es decir, que la f\'ormula \eqref{cuad-log-pos} es una cuadr\'atica y bla....???}
 
-\begin{thm}
-There exists a constant $C>0$ such that 
+\begin{thm} For every $\varepsilon>0$, there exists a positive constant $C=C(p,\varepsilon)$  such that
 \begin{equation}\label{cota-sup-indices}
-\Phi(tu)\leq ct^p\Phi(u)\;\;t\geq 1, u>0.
-\end{equation}
-For every $\varepsilon>0$ there exists a constant $C=C(\varepsilon,p)$ such that
-\begin{equation}\label{cota-inf-indices}
-\Phi(tu)\geq Ct^{p-\varepsilon}\Phi(u)\;\;t\geq 1,u>0.
+C^{-1}t^{p-\varepsilon}\Phi(u)\leq \Phi(tu) \leq Ct^p\Phi(u)\quad t\geq 1, u>0.
 \end{equation}
 \end{thm}
 
