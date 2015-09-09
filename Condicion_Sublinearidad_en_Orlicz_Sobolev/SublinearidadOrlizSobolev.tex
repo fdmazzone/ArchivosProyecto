@@ -1,4 +1,3 @@
-
 \documentclass[twoside]{article}
 
 
@@ -66,6 +65,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\nn}{\mathbb{N}}
 \newcommand{\ccdot}{\b{\cdot}}
 \renewcommand{\leq}{\leqslant} 
+\renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Psi}}
 
 \begin{document}
@@ -329,7 +329,8 @@ We present a definition that will be useful later.
  
 \begin{defi} A function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a \emph{Carath\'eodory} function if for fixed $(\b{x},\b{y})$
 the map $t \mapsto \mathcal{L}(t, \b{x},\b{y})$ is measurable  and for fixed $t$ the map  $(\b{x},\b{y}) \mapsto \mathcal{L}(t, \b{x}, \b{y})$ is continuous  for almost everywhere $t\in [0,T]$. We say that 
-$\mathcal{L}(t, \b{x},\b{y})$ is  \emph{differentiable Carath\'eodory} if in addition $\mathcal{L}(t, \b{x},\b{y})$ is continuously differentiable with respect to $\b{x}$ and $\b{y}$  for almost everywhere $t\in [0,T]$.
+$\mathcal{L}(t, \b{x},\b{y})$ is  \emph{differentiable Carath\'eodory} if in addition $\mathcal{L}(t, \b{x},\b{y})$ is
+continuously differentiable with respect to $\b{x}$ and $\b{y}$  for almost everywhere $t\in [0,T]$.
 
 \end{defi}
 
@@ -852,22 +853,14 @@ Therefore,  $I(\b{u}_n)\to\infty$ as $\|\b{u}_n\sobnor\to\infty$ which contradic
 % {\bf Falta leer y corregir la  secci\'on que sigue del caso l\'imite!!!}
 
 \section{Limit case $\mu=\alpha_{\Phi}$}
+Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic} even  was obtained coercitivity for the limit value $\mu=p$ in inequality \eqref{holder_cont-mu}.  This result lean on the  fact that when  $\Phi(u)=|u|^p$,
 
-Coercivity was obtained even in the limit case $\mu=1$ and   $\mu=p$ 
-(see \cite{zhao2004periodic, tang2010periodic})
-assuming additional conditions on one of the $L^1$ 
-functions that bound the nonlinearity.
-These results lean on the fact that in $L^p$ spaces the norm and the modular coincides, 
-that is, $\|\cdot\|_p^p=O(\int_0^T |\cdot|^p\,dt)$.
-In Orlicz spaces, $\|\cdot\orlnor^\mu$ can be upper controlled by a modular provided that $\mu<\alpha_{\Phi}$ for any
-$N$-function $\Phi$. 
-Nevertheless,  the limit case does  not hold for any $\Phi$, i.e. in general $\|\cdot\orlnor^{\alpha_{\Phi}}=O(\int_0^T \Phi(|u|)\,dt)$ is false as can be seen as follows.
+\begin{equation}
+ \|u\orlnor^{\alpha_{\Phi}}=O\left(\int_0^T \Phi(|u|)\,dt\right),\quad\text{for } \|u\orlnor\to\infty.
+\end{equation}
+However, it is no longer the case  for any $N$-function $\Phi$ as the example below shows
 
-
-Let $\Phi$ be an $N$-function that satisfies the $\Delta_2$-condition. 
-We claim that the inequality $\Phi(tu)\geq t^{\alpha_{\Phi}}\Phi(u)$ for any $u>0$ and for any $t\geq 1$ is false.
-
-With the aim of proving the above assertion, we define the function 
+From now on in this section, we will suppose that 
 \[\Phi(u)=
 \left\{
 \begin{array}{ll}
@@ -876,12 +869,7 @@ With the aim of proving the above assertion, we define the function
 \frac{u^p}{\log u}-\frac{e^p}{p}&u>e
 \end{array}
 \right.\]
-with $p>1$.
-
-{\bf  Me parece que habr\'ia que decir algo que aclare los que se hace a continuaci\'on. 
-Por ejemplo: 
-
-Next, we will study the behaviour of $\Phi$/ establish some properties of $\Phi$/...}
+with $p>1$. Next, we will establish some properties of this $\Phi$. 
 
 \begin{thm}
 If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
@@ -890,135 +878,88 @@ If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
 
 \begin{proof}
 We have 
-\[\Phi'(u)=\left\{
+\[\varphi(u)=\Phi'(u)=\left\{
 \begin{array}{cccc}
-(p-1)u^{p-1}&:=&\varphi_1(u)& \mbox{if}\;u<e
+(p-1)u^{p-1}&:=&\varphi_1(u)& \mbox{if}\;u\leq e
 \\
-\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u})&:=&\varphi_2(u)&\mbox{if}\; u>e
+\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u})&:=&\varphi_2(u)&\mbox{if}\; u\geq e
 \end{array}
 \right.
 \]
-and $\Phi$ is differentiable at $e$ because $\varphi_1(e)=\varphi_2(e)=(p-1)e^{p-1}$.
 
-We will see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
-Then, it is enough to see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on 
-$[e,\infty)$ for $p\geq \frac{1+\sqrt {2}}{2}$.
+First let us see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
+For this purpose, since $\varphi_1(e)=\varphi_2(e)$, it is enough see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on
+$[e,\infty)$ for every $p\geq \frac{1+\sqrt {2}}{2}$. Clearly
+$\varphi_1$ is an increasing function for $p>1$.  On the other hand, an elementary function analysis shows that
+$\varphi_2'(u)>0$ on $[e,\infty)$ if and only if
+ $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.  Therefore $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 
-{\bf Tendr\'iamos que ver que $\varphi_1,\varphi_2$ son crecientes y que $\varphi_2\to \infty$ cuando
-$u \to \infty????$ o basta con ver que $\varphi_2$ es creciente????}
+ Besides $\varphi_2(u)\to \infty$ and  $\varphi_1(u)\to 0$  as $u \to  \infty$ and $u\to 0$  respectively, provided that $p>1$. Hence $\Phi$ is $N$-function.
 
-$\varphi_1$ is an increasing function for $p>1$ and $\varphi_1(u)\to 0$ as $u \to 0$.
-
-On the other hand, $\varphi_2(u)\to \infty$ as $u \to \infty$ provided that $p>1$.
-And,  
-$\varphi_2'(u)>0$
-%\frac{u^{p-2}}{\log u} \left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)\] 
-on $[e,\infty)$ if and only if 
-\begin{equation}\label{cuad-log-pos}
-\left(p^2-p-\frac{2p}{\log u}+\frac{1}{\log u}+\frac{2}{\log^2 u}\right)>0.
-\end{equation}
-%If we take $\alpha:=\frac{1}{\log u}$, then we need 
-%\[
-%2\alpha^2+(1-2p)\alpha+(p^2-p)\geq 0
-%\]
-%which is true 
-Now, as \eqref{cuad-log-pos} holds if and only if $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$, then $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 \end{proof}
 
-{\bf  Conviene agregar m\'as cuentas en la prueba anterior, es decir, que la f\'ormula \eqref{cuad-log-pos} es una cuadr\'atica y bla....???}
 
-\begin{thm}
-There exists a constant $C>0$ such that 
+\begin{thm} For every $\varepsilon>0$, there exists a positive constant $C=C(p,\varepsilon)$  such that
 \begin{equation}\label{cota-sup-indices}
-\Phi(tu)\leq ct^p\Phi(u)\;\;t\geq 1, u>0.
-\end{equation}
-For every $\varepsilon>0$ there exists a constant $C=C(\varepsilon,p)$ such that
-\begin{equation}\label{cota-inf-indices}
-\Phi(tu)\geq Ct^{p-\varepsilon}\Phi(u)\;\;t\geq 1,u>0.
+C^{-1}t^{p-\varepsilon}\Phi(u)\leq \Phi(tu) \leq Ct^p\Phi(u)\quad t\geq 1, u>0.
 \end{equation}
 \end{thm}
 
-\begin{proof}
-In order to prove \eqref{cota-sup-indices}, we analyze three cases.
-
-If $u\leq tu\leq e$, then $\Phi(tu)=t^p\Phi(u)$ and \eqref{cota-sup-indices} holds with $C=1$.
+\begin{proof} If $u\leq tu\leq e$, then $\Phi(tu)=t^p\Phi(u)$ and \eqref{cota-sup-indices} holds with $C=1$.
 
 If $u\leq e\leq tu$, as $\frac{e^p}{p}>0$  and $\log(tu)\geq 1$, we have 
-$\Phi(tu)\leq t^pu^p= \frac{p}{p-1}t^p\Phi(u)$. Thus, \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$.
+$\Phi(tu)\leq t^pu^p= \frac{p}{p-1}t^p\Phi(u)$. Thus, the last inequality in  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$. On the other hand, as $f(t)=\frac{t}{\log t}$ is increasing on $[e,\infty)$, then $f((tu)^p)\geq  f(e^p)=e^p/p$.
+Now, 
+\[
+\begin{split}
+\Phi(tu)&=\frac{p(tu)^p}{\log (tu)^p}-\frac{e^p}{p}\\
+&= \frac{(p-1)(tu)^p}{\log(tu)^p}+\frac{(tu)^p}{\log (tu)^p}-\frac{e^p}{p}
+\\
+&\geq \frac{p-1}{p}\frac{(tu)^p}{\log(tu)}\\
+&\geq
+\frac{p-1}{p}\frac{t^{\varepsilon}}{\log t+1}t^{p-\varepsilon}u^p.
+\end{split}
+\]
+Since $\varepsilon e^{1-\varepsilon}$ is the minimum value of $t\mapsto\frac{t^{\varepsilon}}{\log t+1}$  on the interval $[1,+\infty)$ then  
+\[
+\Phi(tu)\geq \frac{p-1}{p}\varepsilon e^{1-\varepsilon}t^{p-\varepsilon}u^p,
+\]
+which is the first inequality of \eqref{cota-sup-indices} with $C=\frac{p}{p-1}\varepsilon^{-1} e^{-1+\varepsilon}$.  
+
 
 If $e\leq u\leq tu$, then 
 \begin{equation}\label{Phi-de-u-a-v}
 \Phi(tu)\leq \frac{t^pu^p}{\log(tu)}\leq \frac{t^pu^p}{\log(u)}=\frac{pt^pv}{\log v}
-\end{equation} where $v:=u^p$ and $v\geq e^p$.
-
-If $\alpha>0$, the function $f(x)=\frac{x}{x-\alpha}$ is decreasing on $(\alpha,\infty)$.
-And, the function $g(v)=\frac{pv}{\log v}$ is decreasing  on $[e^p,\infty)$. 
-Therefore, $f \circ g$ is decreasing on $[e^p,\infty)$ and we have 
+\end{equation} where $v:=u^p$ and $v\geq e^p$.  If $\alpha>0$, the function $x\mapsto \frac{x}{x-\alpha}$ is decreasing on $(\alpha,\infty)$ 
+and the function $v\mapsto \frac{pv}{\log v}$ is increasing  on $[e^p,\infty)$. 
+Therefore,  we have 
 \[
-(f\circ g)(v)=
 \frac{\frac{pv}{\log v}}{\frac{pv}{\log v}-\frac{e^p}{p}}\leq 
-e^p-\frac{e^p}{p}=\frac{p}{p-1}
+\frac{e^p}{e^p-\frac{e^p}{p}}=\frac{p}{p-1}
 \]
-for every $v \geq e^p$.
-
-In this way, from \eqref{Phi-de-u-a-v}, we have
+for every $v \geq e^p$. In this way, from \eqref{Phi-de-u-a-v}, we have
 \[
 \Phi(tu)\leq \frac{pt^p}{p-1}\left(\frac{pv}{\log v}-\frac{e^p}{p}\right)=
  \frac{pt^p}{p-1}\left(\frac{u^p}{\log u}-\frac{e^p}{p}\right)
 \]
-and \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$.
+and the second inequality of  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$. For the first inequality we have, as it was proved previously,
 
-Now, we will prove \eqref{cota-inf-indices}.
-
-If $u\leq tu \leq e$, \eqref{cota-inf-indices} is immediate because $t^p \geq t^{p-\varepsilon}$ for every $t \geq 1$, $p>1$ and $\varepsilon$ {\bf sufficiently small????}
-
-If $u\leq e\leq tu$, as $f(t)=\frac{t}{\log t}$ is increasing on $[e,\infty)$ then $f(t)\geq e$ for every $t\geq e$. 
-{\bf Habr\'ia que mirar en $[e^p,\infty)$ para que $f(t)\geq \frac{e^p}{p}$???? O, como $f$ es creciente y 
-$e^p\leq (tu)^p$ entonces
-$f((tu)^p)\geq f(e^p)$???}
-\\
-Now, 
 \[
-\begin{split}
-\Phi(tu)=\frac{p(tu)^p}{\log (tu)^p}-\frac{e^p}{p}=
-\frac{(p-1)(tu)^p}{\log(tu)^p}+\frac{(tu)^p}{\log (tu)^p}-\frac{e^p}{p}\geq 
-\\
-\frac{p-1}{p}\frac{(tu)^p}{\log(tu)}\geq
-\frac{p-1}{p}\frac{t^{\varepsilon}}{\log t+1}t^{p-\varepsilon}u^p.
-\end{split}
+  \Phi(tu)
+  \geq
+  \frac{p-1}{p}\frac{(tu)^p}{\log(tu)}
+  =
+  \frac{p-1}{p}
+  \frac{t^{\varepsilon} \log u^{\varepsilon}}{\log(t^{\varepsilon}u^{\varepsilon})}
+  \frac{t^{p-\varepsilon}u^p}{\log u}
 \]
-Since $f(t)=\frac{t^{\varepsilon}}{\log t+1}$ attains its 
- minimum value $\varepsilon e^{1-\varepsilon}$ at 
-$e^{\frac{1-\varepsilon}{\varepsilon}}$, \; then  
-\[
-\Phi(tu)\geq \frac{p-1}{p}\varepsilon e^{1-\varepsilon}t^{p-\varepsilon}u^p.
-\]
-If $e\leq u\leq tu$, then 
-\[
-\Phi(tu)=\frac{p-1}{p}\frac{(tu)^p}{\log(tu)}
-+\frac{1}{p}\frac{(tu)^p}{\log(tu)}-\frac{e^p}{p}
-\geq
-\frac{p-1}{p}\frac{(tu)^p}{\log(tu)}=
-\frac{p-1}{p}
-\frac{t^{\varepsilon} \log (u)^{\varepsilon}}{\log(t^{\varepsilon}u^{\varepsilon})}
-\frac{t^{p-\varepsilon}u^p}{\log u}
-\]
-Let $f(s)=\frac{sA}{\log s+1}$ with $s\geq 1$ and $A\geq \varepsilon$.
-Then, the function $f$ attains a minimum at $s=e^{1-A}$; but, 
-$s$ has to be bigger than 1, then it is necessary that
-$\varepsilon\leq A\leq 1$.
-And, the minimum value is $f(e^{1-A})=Ae^{1-A}\geq \varepsilon$.
-If $A\geq 1$, $f$ attains the minimum at $s=1???$ and $f(1)=1$. 
-Then, $f\geq \varepsilon$ and  therefore
+Let $f(s)=\frac{sA}{\log s+A}$ with $s\geq 1$ and $A\geq \varepsilon$.  If $A\leq 1$, then, the function $f$ attains a minimum on $[1,\infty)$ at $s=e^{1-A}$ and the minimum value is $f(e^{1-A})=Ae^{1-A}\geq \varepsilon$. If $A> 1$, $f$ is increasing  on $[1,\infty)$ and its minimum value is $f(1)=1$. Then, $f(s)\geq \varepsilon$ in any case,   therefore
 \[
 \Phi(tu)\geq \frac{p-1}{p}\varepsilon \frac{t^{p-\varepsilon}u^p}{\log u}\geq
 \frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi(u).
 \]
+Therefore \eqref{cota-sup-indices} holds with $C=\frac{p}{\varepsilon (p-1)}$, because this $C$ is the biggest constant that we have obtained in each case under consideration.
 \end{proof}
-
-{\bf La prueba anterior est\'a rara.}
-
-
 
 
 
@@ -1029,15 +970,13 @@ The inequality
 \] 
 is false for every $C$ because for every $u\geq e$ we have 
 \[
-\lim\limits_{t \to \infty}\frac{\Phi(tu)}{t^p\Phi(u)}=
-\lim\limits_{t \to \infty} \frac{\frac{u^p}{\log(tu)}-
-\frac{e^p}{pt^p}}{\frac{u^p}{\log u}-\frac{e^p}{p}}=0
+\lim\limits_{t \to \infty}\frac{\Phi(tu)}{t^p\Phi(u)}=0
 \]
 \end{comentario}
 
 
 
-{\bf El l\'imite intermedio de la f\'ormula anterior se podr\'ia quitar.}
+
 
 
 \begin{thm}
