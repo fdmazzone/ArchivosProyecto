@@ -100,12 +100,9 @@ Universidad Nacional de R\'{i}o Cuarto\\
 %
 
 \begin{abstract}
-In this paper we....
 
-ALGO AS\'I HAB\'IA QUE ESCRIBIR AC\'A O EN LA INTRO....
+In this paper we obtain existence of periodic solutions, in the Orlicz-Sobolev space $\wphi([0,T])$, of hamiltonian systems with a potential  function $F$ satisfying the inequality  $|\nabla F(t,\b{x})|\leq b_1(t) \varphi_0(|\b{x}|)+b_2(t)$, with    $b_1(t), b_2(t)\in L^1$ and for certain functions $\varphi_0$.
 
-The results of this paper improve on the classic ones obtained in \cite{tang1998periodic} and \cite{tang2010periodic} with $|\nabla F(t,\b{x})|\leq f(t) \b{x}^{\alpha}+g(t)$
-for $\alpha<1$ and $\alpha<p$ respectively. Here, the bounds of the sublinearity are bigger than those considered in the aforementioned works.
 \end{abstract}
 
 
@@ -124,7 +121,9 @@ for $\alpha<1$ and $\alpha<p$ respectively. Here, the bounds of the sublinearity
 
 
 \section{Introduction}
-This paper is concerned with the existence of periodic solutions of the problem
+The purpose of this paper is to study the existence  of periodic solution for the
+following non-autonomous second-order systems:
+
 \begin{equation}\label{ProbPrin}
     \left\{%
 \begin{array}{ll}
@@ -133,14 +132,25 @@ This paper is concerned with the existence of periodic solutions of the problem
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function, which is continously differentiable with respect to $\b{x}$ and $\b{y}$ for a.e. $t\in [0,T]$,   satisfying the conditions
-\begin{eqnarray}
-|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right), \text{ a.e. } t\in [0,T],\label{cotaL}\\
-|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right), \text{ a.e. } t\in [0,T],\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right),  \text{ a.e. } t\in [0,T].\label{cotaDyL}
-\end{eqnarray}
-In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$  will be defined later.
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfies the following conditions
+\begin{enumerate}
+ \item[(C)] $\mathcal{L}$ and its derivatives $D_x\mathcal{L}$  and $ D_y\mathcal{L}$  are  Carath\'eodory functions, i.e. they are measurable functions with respecto to $t\in [0,T]$, for every  $\b{x},\b{y}\in\rr^d$, and   continuous functions with  respect to  $(\b{x},\b{y})\in\rr^d\times \rr^d$ for a.e. $t \in [0,T]$.
 
+ \item[(A)]   For   a.e. $t\in [0,T]$ we have that
+\begin{align*}
+|\mathcal{L}(t,\b{x},\b{y})| + |D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})|  &   \leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right), \tag{A1}\label{cotaL}\\
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\tag{A2}\label{cotaDyL}
+\end{align*}
+Where, in these inequalities we assume that  $a:[0,+\infty)\to [0,+\infty)$ is nondecreasing, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$  will be defined later.
+
+\end{enumerate}
+
+\item[(LB)] We ssume that there exist a Lagragian function of  
+\begin{equation}\label{cota_inf}
+\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}).
+\end{equation}
+
+If $\mathcal{L}$ is given by the right hand side in \eqref{cota_inf} and $\Phi(u)=|u|^2$, then the ODE $\ddot{\b{u}}=\nabla F(t,\b{u}(t))$ in \eqref{ProbPrin}  is quasilinear,  being  $\nabla F(t,\b{u}(t))$ the nonlinearity. Following the literature, we refer to $\nabla F$ as the non linearity even when we assume in \eqref{cota_inf} just the inequality. In \cite{tang1998periodic} and \cite{tang2010periodic} the authors considered, for the $p$-laplacian case, non linearities satisfying the inequality
 
 It is well known that problem \eqref{ProbPrin} comes from a variational one, that is,  a solution of \eqref{ProbPrin}  
 is a critical point of the \emph{action integral}
