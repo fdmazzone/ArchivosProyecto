@@ -127,13 +127,15 @@ following non-autonomous second-order systems:
 \begin{equation}\label{ProbPrin}
     \left\{%
 \begin{array}{ll}
-   \frac{d}{dt} = D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+   \frac{d}{dt}\left(u'(t)\frac{\varphi(|u'|)}{|u'|}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfies the following conditions
+where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and the \emph{potential} $F:[0,T]\times\rr^d\to\rr$ and the function $\varphi:[0,+\infty)\to [0,+\infty)$ satisfy the following conditions
 \begin{enumerate}
+
+ \intem[N)]
  \item[(C)] $\mathcal{L}$ and its derivatives $D_x\mathcal{L}$  and $ D_y\mathcal{L}$  are  Carath\'eodory functions, i.e. they are measurable functions with respecto to $t\in [0,T]$, for every  $x,y\in\rr^d$, and   continuous functions with  respect to  $(x,y)\in\rr^d\times \rr^d$ for a.e. $t \in [0,T]$.
 
  \item[(A)]   For   a.e. $t\in [0,T]$ we have that
@@ -226,9 +228,9 @@ The following alternative expression for the norm, known as \emph{Amemiya norm},
 The subspace $\ephi_d=\ephi_d([0,T])$ is defined as the closure in $\lphi_d$ of the subspace $L^{\infty}_d$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi_d$ is the only one maximal subspace contained in the Orlicz class $\claseor_d$, i.e. 
 $u\in\ephi_d$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$.
 
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Th. 9.3]{KR}). Namely, if $u\in\lphi_d$ and $v\in\lpsi_d$ then $u\ccdotv\in L_1^1$ and
+A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Th. 9.3]{KR}). Namely, if $u\in\lphi_d$ and $v\in\lpsi_d$ then $u\cdot v\in L_1^1$ and
 \begin{equation}\label{holder}
-\int_0^Tv\ccdotu\ dt\leq \|u\orlnor\|v\|_{L^{\Psi}}.
+\int_0^Tv\cdot u\ dt\leq \|u\orlnor\|v\|_{L^{\Psi}}.
 \end{equation}
 
 
@@ -238,7 +240,7 @@ If $X$ and $Y$ are  Banach spaces such that  $Y\subset X^*$, we denote by $\lang
 $\langle v, u\rangle$
 is defined by 
 \begin{equation}\label{pairing}
-  \langle v,u\rangle=\int_0^Tv\ccdotu\ dt
+  \langle v,u\rangle=\int_0^Tv\cdot u\ dt
 \end{equation}
 with  $u\in\lphi_d$ and $v\in\lpsi_d$.
  Unless $\Phi \in \Delta_2$, the relation $\lpsi_d= \left[\lphi_d\right]^*$ will not hold. In general, it is true  that  $\left[\ephi_d\right]^*=\lpsi_d$.
@@ -367,7 +369,7 @@ is finitely defined on $\domi:=W^{1}\lphi_d\cap\{u|u'\in\Pi(\ephi_d,\lambda)\}$.
 
 \item\label{T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is demicontinuous from $\domi$  into $\left[\wphi_d \right]^*$. Moreover, $I'$ is given by the following expression
 \begin{equation}\label{DerAccion}
-\langle  I'(u),v\rangle= \int_0^T \left\{D_{x}\mathcal{L}\big(t,u,u'\big)\ccdot v+ D_{y}\mathcal{L}\big(t,u,u'\big)\ccdotv'\right\} \ dt.
+\langle  I'(u),v\rangle= \int_0^T \left\{D_{x}\mathcal{L}\big(t,u,u'\big)\cdot v+ D_{y}\mathcal{L}\big(t,u,u'\big)\cdot v'\right\} \ dt.
 \end{equation}
 
 \item\label{T1item4}  If  $\Psi \in \Delta_2$ then 
@@ -386,7 +388,7 @@ that consists of all  bounded linear functions which are identically zero on $Y$
 
 We recall that  a function $f: \mathbb{R}^d \to \mathbb{R}$ is called \emph{strictly convex} if 
 $f\left(\tfrac{x+y}{2}\right)< \tfrac{1}{2} \left(f\left(
-x\right)+f\left( y\right)\right)$ for  $x\neqy$.
+x\right)+f\left( y\right)\right)$ for  $x\neq y$.
 It is  well known that if $f$ is a strictly convex and differentiable function, then
 $D_{x}f:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Thm. 12.17]{rockafellar2009variational}).
 
@@ -561,7 +563,7 @@ where $\varphi_0=\Phi'_0$ with $\Phi_0$ an $N$-function. The employment of  $N$-
 
 
 Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if  $F(t,x)$ is a Carath\'eo\-dory function and  $F$ is continuously differentiable with respect to $x$. Moreover, the next inequality holds
-\begin{equation}\label{condA2}|F(t,x)|+ |D_{x}F(t,x)|\leq a(|x|)b_0(t),\quad\text{for a.e. }t\in [0,T], \forallx\in\rr^d.
+\begin{equation}\label{condA2}|F(t,x)|+ |D_{x}F(t,x)|\leq a(|x|)b_0(t),\quad\text{for a.e. }t\in [0,T], \forall x\in\rr^d.
 \end{equation}
 
 The following theorem establishes  coercivity of $I$ assuming sublinear conditions on the nonlinearity  $\nabla F$. 
@@ -957,7 +959,7 @@ Since $\ephi_d$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi_d$.
 
 From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 \[
-\int_0^T\b{\dot{\xi}}\ccdotu\ dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\ccdotu_n \ dt=-\lim_{n\to\infty}\int_0^T\b{\xi}\ccdotu'_n\ dt=-\int_0^T\b{\xi}\ccdotv\ dt
+\int_0^T\b{\dot{\xi}}\cdot u\ dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\cdot u_n \ dt=-\lim_{n\to\infty}\int_0^T\b{\xi}\cdot u'_n\ dt=-\int_0^T\b{\xi}\cdot v\ dt
 \]
 for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^d)\subset\epsi_d$.
 Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\ephi_T$.
