@@ -13,7 +13,7 @@
 \usepackage{amsmath}
 \usepackage{color}
 \usepackage{ esint }
-
+\usepackage{mathabx}
 \usepackage{fancyhdr}
 \usepackage{times}
 
@@ -132,36 +132,30 @@ following non-autonomous second-order systems:
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and the \emph{potential} $F:[0,T]\times\rr^d\to\rr$ and the function $\varphi:[0,+\infty)\to [0,+\infty)$ satisfy the following conditions
+where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and  $\varphi=\Phi'$ where $\Phi$ is an differentiable  $N$-function (see preliminaries section  for definitions). Furthermore, the \emph{potential} $F:[0,T]\times\rr^d\to\rr$  satisfy the following conditions
 \begin{enumerate}
 
- \intem[N)]
- \item[(C)] $\mathcal{L}$ and its derivatives $D_x\mathcal{L}$  and $ D_y\mathcal{L}$  are  Carath\'eodory functions, i.e. they are measurable functions with respecto to $t\in [0,T]$, for every  $x,y\in\rr^d$, and   continuous functions with  respect to  $(x,y)\in\rr^d\times \rr^d$ for a.e. $t \in [0,T]$.
+ \item[(C)] $F$ and its gradient $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respecto to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
 
  \item[(A)]   For   a.e. $t\in [0,T]$ we have that
-\begin{align*}
-|\mathcal{L}(t,x,y)| + |D_{x}\mathcal{L}(t,x,y)|  &   \leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right), \tag{A1}\label{cotaL}\\
-|D_{y}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(c(t)+ \varphi\left(\frac{|y|}{\lambda}+f(t)\right)  \right).\tag{A2}\label{cotaDyL}
-\end{align*}
-Where, in these inequalities we assume that  $a:[0,+\infty)\to [0,+\infty)$ is nondecreasing, $\lambda>0$, $\Phi$ is an $N$-function (see preliminaries section  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$  will be defined in the preliminaries section.
-
-
-
-\item[(LB)] We assume that there exist a Caratheodory function $F:[0,T]\times\rr^n\to\rr$
-\begin{equation}\label{cota_inf}
-\mathcal{L}(t,x,y)\geq \alpha_0\Phi\left(\frac{|y|}{\Lambda}\right)+ F(t,x).
+\begin{equation}
+|F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t)
 \end{equation}
+In these inequalities we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
+
+
 \end{enumerate}
 
+We call the differential operator.
+\[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\varphi(|u'|)}{|u'|}\right) \]
+the
+\emph{$\Phi$-laplacian operator}. If $\Phi(x)=|x|^p$, $1<p<\infty$, $L_{\Phi}$ is the well known $p$-laplacian operator.
 
 
 
-If $\mathcal{L}$ is given by the right hand side in \eqref{cota_inf} and $\Phi(u)=|u|^2$, then the ODE $\ddot{u}=\nabla F(t,u(t))$ in \eqref{ProbPrin}  is quasilinear,  being  $\nabla F(t,u(t))$ the nonlinearity. Following the literature, we refer to $\nabla F$ as the non linearity even when we assume in \eqref{cota_inf} just the inequality. In \cite{tang1998periodic} and \cite{tang2010periodic} the authors considered, for the $p$-laplacian case, non linearities satisfying the inequality
-
-It is well known that problem \eqref{ProbPrin} comes from a variational one, that is,  a solution of \eqref{ProbPrin}  
-is a critical point of the \emph{action integral}
+The problem \eqref{ProbPrin} comes from a variational one, that is,  the equation in  \eqref{ProbPrin}  is the Euler-Lagrange equation associeted to the \emph{action integral}
 \begin{equation}\label{integral_accion}
-I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
+I(u)=\int_{0}^T \Phi(|u'(t)|)+F(t,u(t))\ dt.
 \end{equation}
 
 
@@ -173,46 +167,46 @@ For reader convenience, we give a short introduction to Orlicz and Orlicz-Sobole
 Classic references for Orlicz spaces of real valued functions are \cite{adams_sobolev,KR,rao1991theory}.
 For  Orlicz spaces of vector valued functions, see \cite{Orliczvectorial2005} and the references therein.
 
-Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^+\to \mathbb{R}^+ $ is called an \emph{$N$-function} if $\Phi$ is given by 
+Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^+\to \mathbb{R}^+ $ is called an \emph{$N$-function} if $\Phi$ is convex and satisfies that
 \[
-\Phi(t)=\int_{0}^t \varphi(\tau)\ d\tau,\quad\hbox{for } t\geq 0,
+\lim_{t\to+\infty}\frac{\Phi(t)}{t}=+\infty\quad\text{and}\quad \lim_{t\to 0}\frac{\Phi(t)}{t}=0
 \]
-where $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a right continuous non decreasing function  satisfying   $\varphi(0)=0$, $\varphi(t)>0$ for $t>0$ and
-$\lim_{t\rightarrow \infty}\varphi(t)=+\infty$.
-
-Given a function $\varphi$ as above, we  consider the so-called right inverse function $\psi$ of $\varphi$ which is 
-defined by $\psi(s)=\sup_{\varphi(t)\leq s}t$.
-The function $\psi$ satisfies the same properties as the function $\varphi$, therefore we have an $N$-function $\Psi$ such that $\Psi'=\psi$ .
- The function $\Psi$ is called the \emph{complementary function} of $\Phi$.
+In addition,  in this paper,  we asssume that $\Phi$ is differentiable, and we call $\varphi$ to the derivative of $\Phi$. With these assumptions, $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a homeomorphism, with inverse $\psi$. We denote by $\Psi$ the primitive of $\psi$ that satisfies $\Psi(0)=0$. Then $\Psi$ is a $N$-function which  is called the \emph{complementary function} of $\Phi$.
 
 
-We say that $\Phi$ satisfies the  \emph{$\Delta_2$-condition}, denoted by $\Phi \in \Delta_2$, 
+There exists several order relations between $N$-functions (see \cite[Section 2.2]{rao1991theory}). Following \cite[Def. 1, p.15]{rao1991theory} we said that the $N$-function $\Phi_2$ is \emph{essentially stronger} than the $N$-function  $\Phi_2$  ($\Phi_1\llcurly\Phi_2$) if and only if there exists $x_0\geq 0$ such that $\Phi_1(x)\leq \Phi_2(ax)$, for every $a>0$ and $x\geq x_0$.
+
+
+
+
+
+
+We say that a function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2$-condition}, denoted by $\eta \in \Delta_2$,
 if there exist  constants $K>0$ and  $t_0\geq 0$ such that 
-\begin{equation}\label{delta2defi}\Phi(2t)\leq K\Phi(t)
+\begin{equation}\label{delta2defi}\eta(2t)\leq K\eta(t)
 \end{equation}
 for every $t\geq t_0$. 
-If $t_0=0$,  we say that $\Phi$ satisfies the \emph{$\Delta_2$-condition globally} ($\Phi \in \Delta_2$ globally).  
+If $t_0=0$,  we say that a function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$ globally).
 
-% and plain symbols indicate scalars.
 
-Let $d$ be a positive integer. We denote by $\mathcal{M}_d:=\mathcal{M}_d([0,T])$ the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}_d$.
-In this paper we adopt the convention that bold symbols denote points in $\mathbb{R}^d$.
+Let $d$ be a positive integer. We denote by $\mathcal{M}_d:=\mathcal{M}_d([0,T],\rr^d)$ the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}_d$.
+
 
 
 Given  an $N$-function $\Phi$ we define the \emph{modular function} 
 $\rho_{\Phi}:\mathcal{M}_d\to \mathbb{R}^+\cup\{+\infty\}$ by
 \[\rho_{\Phi}(u):= \int_0^T \Phi(|u|)\ dt.\]
 Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^d$.
-The \emph{Orlicz class} $C_d^{\Phi}=C_d^{\Phi}([0,T])$  is given  by
+The \emph{Orlicz class} $C_d^{\Phi}=C_d^{\Phi}([0,T],\rr^d)$  is given  by
 \begin{equation}\label{claseOrlicz}
   C^{\Phi}_d:=\left\{u\in \mathcal{M}_d | \rho_{\Phi}(u)< \infty \right\}.
 \end{equation}
-The \emph{Orlicz space} $\lphi_d=L^{\Phi}_d([0,T])$ is the linear hull of $\claseor_d$;
+The \emph{Orlicz space} $\lphi=L^{\Phi}_d([0,T],\rr^d)$ is the linear hull of $\claseor$;
 equivalently,
 \begin{equation}\label{espacioOrlicz}
-\lphi_d:=\left\{ u\in \mathcal{M}_d | \exists \lambda>0: \rho_{\Phi}(\lambda u) < \infty   \right\}.
+\lphi:=\left\{ u\in \mathcal{M}_d | \exists \lambda>0: \rho_{\Phi}(\lambda u) < \infty   \right\}.
 \end{equation}
-  The Orlicz space $\lphi_d$ equipped with the \emph{Orlicz norm}
+  The Orlicz space $\lphi$ equipped with the \emph{Orlicz norm}
 \[
 \|  u  \orlnor:=\sup \left\{  \int_0^T u\b{\cdot} v\ dt \big| \rho_{\Psi}(v)\leq 1\right\},
 \]
@@ -222,13 +216,16 @@ The following alternative expression for the norm, known as \emph{Amemiya norm},
 \begin{equation}\label{amemiya}
 \|u\orlnor=\inf\limits_{k>0}\frac{1}{k}\left\{1+\rho_{\Phi}(ku)\right\}.
 \end{equation}
+In particular
+\begin{equation}\label{amemiya-ine}
+\|u\orlnor\leq \frac{1}{k}\left\{1+\rho_{\Phi}(ku)\right\},\quad\text{for every } k>0.
+\end{equation}
 
 
+The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}_d([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi$ is the only one maximal subspace contained in the Orlicz class $\claseor$, i.e.
+$u\in\ephi$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$.
 
-The subspace $\ephi_d=\ephi_d([0,T])$ is defined as the closure in $\lphi_d$ of the subspace $L^{\infty}_d$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi_d$ is the only one maximal subspace contained in the Orlicz class $\claseor_d$, i.e. 
-$u\in\ephi_d$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$.
-
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Th. 9.3]{KR}). Namely, if $u\in\lphi_d$ and $v\in\lpsi_d$ then $u\cdot v\in L_1^1$ and
+A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Th. 9.3]{KR}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L_1^1$ and
 \begin{equation}\label{holder}
 \int_0^Tv\cdot u\ dt\leq \|u\orlnor\|v\|_{L^{\Psi}}.
 \end{equation}
@@ -236,29 +233,29 @@ A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (se
 
 
 
-If $X$ and $Y$ are  Banach spaces such that  $Y\subset X^*$, we denote by $\langle\cdot,\cdot\rangle:Y\times X\to\mathbb{R}$ the bilinear pairing  map given by $\langle x^*,x\rangle=x^*(x)$. H\"older's inequality shows that $\lpsi_d\subset \left[\lphi_d\right]^*$, where the pairing  
+If $X$ and $Y$ are  Banach spaces such that  $Y\subset X^*$, we denote by $\langle\cdot,\cdot\rangle:Y\times X\to\mathbb{R}$ the bilinear pairing  map given by $\langle x^*,x\rangle=x^*(x)$. H\"older's inequality shows that $\lpsi\subset \left[\lphi\right]^*$, where the pairing
 $\langle v, u\rangle$
 is defined by 
 \begin{equation}\label{pairing}
   \langle v,u\rangle=\int_0^Tv\cdot u\ dt
 \end{equation}
-with  $u\in\lphi_d$ and $v\in\lpsi_d$.
- Unless $\Phi \in \Delta_2$, the relation $\lpsi_d= \left[\lphi_d\right]^*$ will not hold. In general, it is true  that  $\left[\ephi_d\right]^*=\lpsi_d$.
+with  $u\in\lphi$ and $v\in\lpsi$.
+ Unless $\Phi \in \Delta_2$, the relation $\lpsi= \left[\lphi\right]^*$ will not hold. In general, it is true  that  $\left[\ephi\right]^*=\lpsi$.
 
 
-Like in \cite{KR}, we will consider the subset $\Pi(\ephi_d,r)$ of $\lphi_d$ given by
-\[\Pi(\ephi_d,r):=\{u\in\lphi_d| d(u,\ephi_d)<r\}.\]
-This set is related to the Orlicz class $\claseor_d$ by means of inclusions, namely,
-\begin{equation}\label{inclusiones}\Pi(\ephi_d, r )\subset r \claseor_d\subset\overline{\Pi(\ephi_d,r)}
+Like in \cite{KR}, we will consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
+\[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}.\]
+This set is related to the Orlicz class $\claseor$ by means of inclusions, namely,
+\begin{equation}\label{inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
 \end{equation}
 for any positive $r$.
-If $\Phi \in \Delta_2$,  then the sets $\lphi_d$, $\ephi_d$, $\Pi(\ephi_d,r)$ and $\claseor_d$ are equal.
+If $\Phi \in \Delta_2$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
 
 
 
-We define the \emph{Sobolev-Orlicz space} $\wphi_d$ (see \cite{adams_sobolev}) by
-\[\wphi_d:=\{u| u \hbox{ is absolutely continuous and } u'\in \lphi_d\}.\]
-$\wphi_d$ is a Banach space when equipped with the norm
+We define the \emph{Sobolev-Orlicz space} $\wphi$ (see \cite{adams_sobolev}) by
+\[\wphi:=\{u| u \hbox{ is absolutely continuous in $[0,T]$ and } u'\in \lphi\}.\]
+$\wphi$ is a Banach space when equipped with the norm
 \begin{equation}\label{def-norma-orlicz-sob}
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
@@ -267,7 +264,7 @@ $\wphi_d$ is a Banach space when equipped with the norm
 
 For a  function $u\in L^1_d([0,T])$, we write $u=\overline{u}+\widetilde{u}$ where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
 
-As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when the restricted identity map $i_Y:Y\to X$ is bounded. That is, there exists $C>0$ such that  for any $y\in Y$ we have $\|y\|_X\leq C\|y\|_Y$.  With this notation, H\"older's inequality states that  $\lpsi_d\hookrightarrow  \left[\lphi_d\right]^*$; and, it is easy to see that for every $N$-function $\Phi$ we have that $L^{\infty}_d\hookrightarrow\lphi_d \hookrightarrow L^1_d$.
+As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when the restricted identity map $i_Y:Y\to X$ is bounded. That is, there exists $C>0$ such that  for any $y\in Y$ we have $\|y\|_X\leq C\|y\|_Y$.  With this notation, H\"older's inequality states that  $\lpsi\hookrightarrow  \left[\lphi\right]^*$; and, it is easy to see that for every $N$-function $\Phi$ we have that $L^{\infty}_d\hookrightarrow\lphi \hookrightarrow L^1_d$.
 
 
  Recall that a function   $w:\mathbb{R}^+\to \mathbb{R}^+$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example, it can be easily shown that $w(s)=s\Phi^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
@@ -293,13 +290,13 @@ The next simple lemma, whose proof can be found in \cite{ABGMS2015}, will be use
 \begin{enumerate}
 \item\label{inclusion orlicz_item1} $\wphi\hookrightarrow C^w([0,T],\rr^d) $ and for every $u\in\wphi$
 \begin{align}
- &\left|u(t)-u(s) \right| \leq  \|u'\orlnor w(| t-s|),&\label{in-sob-cont}
+ &\left|u(t)-u(s) \right| \leq  \|u'\orlnor w(| t-s|),&\text{  (Morrey inequality).}\label{in-sob-cont}
 \\
-& \|u\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor&\label{sobolev}
+& \|u\|_{L^{\infty}} \leq\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor&\text{  (Sobolev inequality).}\label{sobolev}
 \end{align}
 \item For every $u\in\wphi$ we have $\widetilde{u}\in L^{\infty}_d$ and
 \begin{align}
-& \|\widetilde{u}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\dot{u}\orlnor&\text{  (Sobolev's inequality).}\label{wirtinger}
+& \|\widetilde{u}\|_{L^{\infty}} \leq T\Phi^{-1}\left(\frac{1}{T}\right)\|\dot{u}\orlnor&\text{  (Sobolev-Wirtinger inequality).}\label{wirtinger}
 \end{align}
 
 
@@ -323,7 +320,7 @@ we get
 \|\overline{u}\orlnor+\|\tilde{u}\orlnor=
 |\overline{u}|\|1\orlnor+\|\tilde{u}\orlnor.
 \end{equation}
-It is known that $L^{\infty}_d\hookrightarrow\lphi_d$, i.e.
+It is known that $L^{\infty}_d\hookrightarrow\lphi$, i.e.
 there exists $C_1=C_1(T)>0$ such that for any $\tilde{u}\in L^{\infty}_d$ we have
 \[
 \|\tilde{u}\orlnor
@@ -348,99 +345,6 @@ $(|\overline{u}|+\|u'\orlnor)\to \infty$.
 \end{proof}
 
 
-We present a definition that will be useful later.
- 
-\begin{defi} A function $\mathcal{L}:[0,T]\times \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}$ is a \emph{Carath\'eodory} function if for fixed $(x,y)$
-the map $t \mapsto \mathcal{L}(t, x,y)$ is measurable  and for fixed $t$ the map  $(x,y) \mapsto \mathcal{L}(t, x, y)$ is continuous  for almost everywhere $t\in [0,T]$. We say that
-$\mathcal{L}(t, x,y)$ is  \emph{differentiable Carath\'eodory} if in addition $\mathcal{L}(t, x,y)$ is
-continuously differentiable with respect to $x$ and $y$  for almost everywhere $t\in [0,T]$.
-
-\end{defi}
-
-
-In \cite{ABGMS2015} we proved the next results.
-
-\begin{thm}\label{teorema_acotacion}
-Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{cotaL}, \eqref{cotaDxL} and \eqref{cotaDyL}. 
-Then the following statements hold:
-\begin{enumerate}
-\item \label{T1item1} \label{A1} The action integral given by \eqref{integral_accion}
-is finitely defined on $\domi:=W^{1}\lphi_d\cap\{u|u'\in\Pi(\ephi_d,\lambda)\}$.
-
-\item\label{T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is demicontinuous from $\domi$  into $\left[\wphi_d \right]^*$. Moreover, $I'$ is given by the following expression
-\begin{equation}\label{DerAccion}
-\langle  I'(u),v\rangle= \int_0^T \left\{D_{x}\mathcal{L}\big(t,u,u'\big)\cdot v+ D_{y}\mathcal{L}\big(t,u,u'\big)\cdot v'\right\} \ dt.
-\end{equation}
-
-\item\label{T1item4}  If  $\Psi \in \Delta_2$ then 
-  $I'$ is continuous from $\domi$ into $\left[\wphi_d\right]^*$ when both spaces are equipped with the strong topology.
-\end{enumerate}
-\end{thm}
-
-
-
-
-
-In \cite{ABGMS2015} we derive the Euler-Lagrange equations associated to critical points of action integrals on the subspace of $T$-periodic functions.  
-We denote by $\wphi_T$ the subspace of $\wphi_d$ containing all  $T$-periodic functions. As usual, when $Y$ is a subspace of
-the Banach space $X$, we denote by $Y^{\perp}$ the \emph{annihilator subspace} of $X^*$, i.e. the subspace
-that consists of all  bounded linear functions which are identically zero on $Y$.
-
-We recall that  a function $f: \mathbb{R}^d \to \mathbb{R}$ is called \emph{strictly convex} if 
-$f\left(\tfrac{x+y}{2}\right)< \tfrac{1}{2} \left(f\left(
-x\right)+f\left( y\right)\right)$ for  $x\neq y$.
-It is  well known that if $f$ is a strictly convex and differentiable function, then
-$D_{x}f:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Thm. 12.17]{rockafellar2009variational}).
-
-The following theorem is a slight modification of  \cite[Th. 4.1]{ABGMS2015} and it is proved in a similar way.
-
-\begin{thm}\label{critpoint} Let $u\in\wphiet$. The following statements are equivalent:
-\begin{enumerate}
- \item $I'(u)\in\left( \wphiet\right)^{\perp}$.
- \item  $D_{y}\mathcal{L}(t,u(t),u'(t))$ is an absolutely continuous function and $u$ solves the following boundary value problem
- \begin{equation}\label{ecualagran2}
-    \left\{%
-\begin{array}{ll}
-   \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    u(0)-u(T)=D_{y}\mathcal{L}(0,u(0),u'(0))-D_{y}\mathcal{L}(T,u(T),u'(T))=0.
-\end{array}%
-\right.
-\end{equation}
-\end{enumerate}
-Moreover if $D_{y}\mathcal{L}(t,x,y)$ is $T$-periodic with respect to the variable $t$ and strictly convex with respect to $y$, then
-$D_{y}\mathcal{L}(0,u(0),\b{u'}(0))-D_{y}\mathcal{L}(T,u(T),u'(T))=0$ is equivalent to $u'(0)=u'(T)$.
-\end{thm}
-
-HABR\'IA QUE ARREGLAR EL TEOREMA ANTERIOR CAMBIANDO $\wphi_T$ por $\wphiet$??????
-
-{\bf Habr\'ia que ver si el lugar de los \'indices es el adecuado. Copi\'e lo que ten\'iamos en el 
-primer trabajo.}
-
-
-Next, we enumerate some definitions and results from the theory of convex functions. 
-We suggest \cite{FK97, GP77, KR, M, rao1991theory} for definitions, proofs and additional details.
-
-We denote by $\alpha_{\varphi}$ and $\beta_{\varphi}$ the so-called  \emph{Matuszewska-Orlicz indices} of the function $\varphi$, which are defined next. Given
-an increasing, unbounded, continuous function  \linebreak $\varphi:[ 0,+\infty)\to [0,+\infty)$ such that $\varphi(0)=0$ we define
-\begin{equation}\label{MO_indices}
-    \alpha_{\varphi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\varphi(t u)}{\varphi(u)} \right ) }{\log(t)},\quad
-    \beta_{\varphi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\varphi(t u)}{\varphi(u)}\right )}{\log(t)}.
-\end{equation}
-We have that $0\leq \alpha_{\varphi}\leq \beta_{\varphi}\leq +\infty$. The relation $\beta_{\varphi}<\infty$ holds true if and only if $\varphi$ satisfies the $\Delta_2$-condition. If $\varphi$ is a homeomorphism  we have that
-\begin{equation}\label{inv_indices}
-    \alpha_{\varphi^{-1}}=\frac{1}{\beta_{\varphi}}.
-\end{equation}
-Moreover $\varphi\in\mathcal{F}$ implies  $\alpha_{\varphi}\geq 1$. As a consequence, $\varphi^{-1}$ satisfies the $\Delta_2$-function.
-
- It is well known   that if $\varphi$ is an increasing function that satisfies the $\Delta_2$-condition, $\varphi$ is controlled by above and below 
- by power functions.  More concretely, for every $\epsilon>0$ there exists a
-constant $K=K(\varphi,\epsilon)$ such that, for every $t,u\geq 0$,
-\begin{equation}\label{delta2-potencias}
-    K^{-1}\min\big\{t^{\beta_{\varphi}+\epsilon},t^{\alpha_{\varphi}-\epsilon} \big\}\varphi(u)\leq \varphi(t u)\leq
-    K\max\big\{t^{\beta_{\varphi}+\epsilon},t^{\alpha_{\varphi}-\epsilon} \big\}\varphi(u).
-\end{equation}
-
-
 
 \section{Lagrangians satisfying  sublinear nonlinearity type conditions}
 \begin{lem}
@@ -456,11 +360,12 @@ The next statements are equivalent:
 \end{lem}
 
 \begin{proof}
-\ref{item1})$\Rightarrow$\ref{item2}) As $\Psi \in  \Delta_2$ globally, there exist $k>0$ and $\nu>1$ such that
-\[
-\Phi(rs)\geq k r^\nu \Phi(s)\;\;r\geq 1,\;s>0,
-\]
-which is \eqref{eq:caract_delta2} with $\Phi_1(r)=kr^\nu$ that is an $N$-function satisfying the $\Delta_2$-condition.
+\ref{item1})$\Rightarrow$\ref{item2})
+In virtue of \cite[Eq. (2.8)]{AGMS}, the $\Delta_2$-condition on $\Psi$, \cite[Thm. 11.7]{M} and \cite[Cor. 11.6]{M}, we obtain constants $K>0$ and $\alpha_{\Phi}>1$ such that
+\begin{equation}\label{delta2-consecuencia}
+\Phi(r s)\geq Kr^{\nu}\Phi(s)
+\end{equation}
+for any $0<\nu<\alpha_{\Phi}$,  $s\geq 0$ and $r>1$. This proves  \eqref{eq:caract_delta2} with $\Phi_1(r)=kr^\nu$, which is is an $N$-function satisfying the $\Delta_2$-condition.
 
 \ref{item2})$\Rightarrow$\ref{item1})
 Next, we follow  \cite[p. 32, Prop. 13]{rao1991theory} and \cite[p. 29, Prop. 9]{rao1991theory}.
@@ -487,7 +392,7 @@ Now, taking  $x\geq \max\{8,\Psi_1^{-1}(\Phi_1(1))\}$ we get that $\Psi \in \Del
 The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 
 \begin{lem}\label{lem_coer}
-Let $\Phi,\Psi$ be $N$-functions and suppose that $\Psi \in \Delta_2$ globally. Then
+Let $\Phi,\Psi$ be complementary $N$-functions and suppose that $\Psi \in \Delta_2$ globally. Then
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}=\infty,
@@ -500,7 +405,7 @@ Reciprocally if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then
 \end{lem}
 
 \begin{proof}
-By the assumptions on $\Phi$ and $\Phi_1$  and the identity \eqref{amemiya}, we have
+By the assumptions on $\Phi$ and $\Phi_1$  and the inequality \eqref{amemiya-ine}, we have, for $r>1$,
 \[
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
 \Phi_1(r) \frac{\int_0^T \Phi(r^{-1}|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
@@ -515,7 +420,7 @@ $\Phi_0=o(\Phi_1)$ at $\infty$, and  we get
 \geq
 C \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1(\|u\orlnor)}{\Phi_0(\|u\orlnor)}=\infty.
 \]
-The last assertion of the lemma follows from the fact that if $\Phi_0$ is an $N$-function, then $\Phi_0(u)\geq ku$ for  $k$ small enough. Therefore \eqref{eq:coer_mod} holds for $\Phi_0(u)=|u|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$.
+The last assertion of the lemma follows from the fact that if $\Phi_0$ is an $N$-function, then $\Phi_0(u)\geq k|u|$ for  $k$ small enough and $|u1>1$. Therefore \eqref{eq:coer_mod} holds for $\Phi_0(u)=|u|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$.
 \end{proof}
 
 
@@ -527,7 +432,7 @@ The last assertion of the lemma follows from the fact that if $\Phi_0$ is an $N$
 
 
 
-We define the following  functionals $J_{C,\Phi_0}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\Phi_0}:\rr^n\to \rr$, where $C>0$ and $\Phi_0$ is an $N$-function, by
+\begin{defi}We define the  functionals $J_{C,\Phi_0}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\Phi_0}:\rr^n\to \rr$, where $C>0$ and $\Phi_0$ is an $N$-function, by
 \begin{equation}\label{func_phi}
   J_{C,\Phi_0}(u):= \rho_{\Phi}\left(u\right)-C\Phi_0\left(\|u\orlnor\right),
 \end{equation}
@@ -537,6 +442,7 @@ We define the following  functionals $J_{C,\Phi_0}:\lphi\to (-\infty,+\infty]$ a
  H_{C,\Phi_0}(x):=\int_0^TF(t,x)dt-C\Phi_0(|x|),
 \end{equation}
 respectively.
+\end{defi}
 
 
 
@@ -553,13 +459,18 @@ Like in \cite{ABGMS2015} we consider Lagrangians $\mathcal{L}$ which are lower b
 \mathcal{L}(t,x,y)\geq \alpha_0\Phi\left(\frac{|y|}{\Lambda}\right)+ F(t,x).
 \end{equation}
 
-If $\mathcal{L}$ is given by the right hand side in \eqref{cota_inf} and $\Phi(u)=|u|^2$, then the ODE $\ddot{u}=\nabla F(t,u(t))$ in \eqref{ProbPrin}  is quasilinear,  being  $\nabla F(t,u(t))$ the nonlinearity. Following the literature, we refer to $\nabla F$ as the non linearity even when we assume in \eqref{cota_inf} just the inequality. In \cite{tang1998periodic} and \cite{tang2010periodic} the authors considered, for the $p$-laplacian case, non linearities satisfying the inequality
+In \cite{tang1998periodic} and \cite{tang2010periodic} was considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
 \[ |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),\]
-where  $b_1,b_2 \in L^1_1$ and $\alpha$ is any power less than $p$. Thus, they said $F$ is a sublinear nonlinearity. In this paper, we consider the following type of bounds for the nonlinearity 
+where  $b_1,b_2 \in L^1_1$ and $\alpha$ is any power less than $p$. Thus, they said $F$ is a sublinear nonlinearity. In this paper, we will consider bounds on $\nabla F$ of a more general type.
+
+\begin{defi} We said taht $\nabla F(t,x)$ satisfies a \emph{grow $\phi_0$-condition} if
 \begin{equation}\label{holder_cont-mu}
   \left| \nabla F(t,x) \right|\leq b_1(t)\varphi_0(|x|)+b_2(t),
 \end{equation}
-where $\varphi_0=\Phi'_0$ with $\Phi_0$ an $N$-function. The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic} even in the $p$-laplacian case.
+where $\varphi_0=\Phi'_0$ with $\Phi_0$ an $N$-function.
+
+\end{defi}
+The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic} even in the $p$-laplacian case.
 
 
 Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if  $F(t,x)$ is a Carath\'eo\-dory function and  $F$ is continuously differentiable with respect to $x$. Moreover, the next inequality holds
@@ -915,23 +826,23 @@ Finally, as a consequence of  \eqref{liminf1} and  \eqref{liminf2}, we obtain \e
 
 
 \begin{lem}\label{lem:deb*cerrado}
-$\ephi_d$ is weak* closed in $\lphi_d$.
+$\ephi$ is weak* closed in $\lphi$.
 \end{lem}
 
 
 \begin{proof}
-From \cite[Thm. 7, p. 110]{rao1991theory} we have that $\lphi_d=\left[\epsi_d\right]^*
+From \cite[Thm. 7, p. 110]{rao1991theory} we have that $\lphi=\left[\epsi_d\right]^*
 $.
-Then, $\lphi_d$ is a dual and therefore we are allowed to speak about the weak* topology of $\lphi_d$.
-Besides, $\ephi_d
+Then, $\lphi$ is a dual and therefore we are allowed to speak about the weak* topology of $\lphi$.
+Besides, $\ephi
 $ is separable (see \cite[Thm. 1, p. 87]{rao1991theory}).
-Let $S=\ephi_d\cap \{u \in \lphi_d|\|u\orlnor\leq 1\}$, then $S$ is closed in the norm $\|\cdot\orlnor$. Now, according to \cite[Cor. 5, p. 148]{rao1991theory} $S$ is weak* sequentially compact. Thus, $S$ is weak* sequentially closed because 
+Let $S=\ephi\cap \{u \in \lphi|\|u\orlnor\leq 1\}$, then $S$ is closed in the norm $\|\cdot\orlnor$. Now, according to \cite[Cor. 5, p. 148]{rao1991theory} $S$ is weak* sequentially compact. Thus, $S$ is weak* sequentially closed because
 is $u_n\in S$ and
 $u_n \overset{*}{\rightharpoonup}u \in \lphi$ then  the weak* sequentially compactness implies the existence of $v \in S$ and a subsequence $u_{n_k}$ such that 
 $u_{n_k}\overset{*}{\rightharpoonup}v$. Finally, by the uniqueness of   the limit, we get
 $u=v\in S$.
-As $\epsi_d$ is separable and $\lphi_d=\left[\epsi_d\right]^*$, the ball of $\lphi$ $\{u \in \lphi | \|u\orlnor\leq 1\}$ is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
-Thus, $S$ is closed respect to  the weak* topology. Now, by the Krein-Smulian Theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi_d$ is weak* closed.
+As $\epsi_d$ is separable and $\lphi=\left[\epsi_d\right]^*$, the ball of $\lphi$ $\{u \in \lphi | \|u\orlnor\leq 1\}$ is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
+Thus, $S$ is closed respect to  the weak* topology. Now, by the Krein-Smulian Theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi$ is weak* closed.
 \end{proof}
 
 Gathering our previous results we obtain existence of solutions.
@@ -950,12 +861,12 @@ Suppose that the differentiable Carath\'eodory function $\mathcal{L}(t,x,y)$ is 
 
 Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
 Since  $I(u_n)$, $n=1,2,\ldots$  is upper bounded, Theorem \ref{coercitividad-r}  implies that $\{u_n\}$ is norm bounded in $\wphie_d$. Hence, in virtue of Corollary \cite[Corollary 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous function $u$.
-Then, $u$ is bounded and $u \in \ephi_d$.
+Then, $u$ is bounded and $u \in \ephi$.
 
-As $u'_n \in \ephi_d\subset \lphi_d$,
-%The space  $\lphi_d$ is a predual space, concretely $\lphi_d=\left[\epsi_d\right]^*$. Thus, by \cite[Cor. 5, p. 148]{rao1991theory} and since $u'_n$ is bounded in $\lphi_d$,
-there exists a subsequence (again denoted by $u'_n$) such that $u'_n$ converges to a function $v\in\lphi_d$ in the weak* topology of $\lphi_d$.
-Since $\ephi_d$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi_d$.
+As $u'_n \in \ephi\subset \lphi$,
+%The space  $\lphi$ is a predual space, concretely $\lphi=\left[\epsi_d\right]^*$. Thus, by \cite[Cor. 5, p. 148]{rao1991theory} and since $u'_n$ is bounded in $\lphi$,
+there exists a subsequence (again denoted by $u'_n$) such that $u'_n$ converges to a function $v\in\lphi$ in the weak* topology of $\lphi$.
+Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$.
 
 From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 \[
@@ -964,7 +875,7 @@ From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^d)\subset\epsi_d$.
 Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\ephi_T$.
 
-Now, taking into account the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset  \epsi_d$ and $\lphi_d\subset L^1_d$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1_d$. Consequently,  Lemma \ref{semicontinf} applied to the $N$-function $\alpha_0\Phi\left(|\ccdot|/\Lambda\right)$ implies that
+Now, taking into account the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset  \epsi_d$ and $\lphi\subset L^1_d$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1_d$. Consequently,  Lemma \ref{semicontinf} applied to the $N$-function $\alpha_0\Phi\left(|\ccdot|/\Lambda\right)$ implies that
 \[I(u)\leq  \liminf_{n\to\infty}I(u_n)=\inf\limits_{u\in\wphie_T}I(u).\]
 
 As $u\in \wphiet\subset \domi$ then $I(u)>-\infty$, hence, $u$ is a minimun and therefore  $I'(u)\in (\wphiet)^{\perp}$. Finally,
