@@ -174,7 +174,7 @@ Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers
 In addition,  in this paper,  we asssume that $\Phi$ is differentiable, and we call $\varphi$ to the derivative of $\Phi$. With these assumptions, $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a homeomorphism, with inverse $\psi$. We denote by $\Psi$ the primitive of $\psi$ that satisfies $\Psi(0)=0$. Then $\Psi$ is a $N$-function which  is called the \emph{complementary function} of $\Phi$.
 
 
-There exists several order relations between $N$-functions (see \cite[Section 2.2]{rao1991theory}). Following \cite[Def. 1, p.15]{rao1991theory} we said that the $N$-function $\Phi_2$ is \emph{essentially stronger} than the $N$-function  $\Phi_2$  ($\Phi_1\llcurly\Phi_2$) if and only if there exists $x_0\geq 0$ such that $\Phi_1(x)\leq \Phi_2(ax)$, for every $a>0$ and $x\geq x_0$.
+There exists several order relations between $N$-functions (see \cite[Section 2.2]{rao1991theory}). Following \cite[Def. 1, p.15]{rao1991theory} we said that the $N$-function $\Phi_2$ is \emph{essentially stronger} than the $N$-function  $\Phi_1$  ($\Phi_1\llcurly\Phi_2$) if and only if there exists $x_0\geq 0$ such that $\Phi_1(x)\leq \Phi_2(ax)$, for every $a>0$ and $x\geq x_0$.
 
 
 
@@ -352,7 +352,7 @@ Let $\Phi,\Psi$ complementary functions.
 The next statements are equivalent:
 \begin{enumerate}
 \item\label{item1} $\Psi \in \Delta_2$ globally.
-\item\label{item2} There exists an $N$-function $\Phi_1 \in \Delta_2$ such that
+\item\label{item2} There exists an $N$-function $\Phi_1$ such that
 \begin{equation}\label{eq:caract_delta2}
 \Phi(rs)\geq \Phi_1(r)\Phi(s)\;\;\mbox{for every}\;\;r\geq1,\;\;s\geq 0.
 \end{equation}
@@ -361,11 +361,11 @@ The next statements are equivalent:
 
 \begin{proof}
 \ref{item1})$\Rightarrow$\ref{item2})
-In virtue of \cite[Eq. (2.8)]{AGMS}, the $\Delta_2$-condition on $\Psi$, \cite[Thm. 11.7]{M} and \cite[Cor. 11.6]{M}, we obtain constants $K>0$ and $\alpha_{\Phi}>1$ such that
+In virtue of the $\Delta_2$-condition on $\Psi$, \cite[Thm. 11.7]{M} and \cite[Cor. 11.6]{M} (see also  \cite[Eq. (2.8)]{AGMS}), we get constants $K>0$ and $\alpha_{\Phi}>1$ such that
 \begin{equation}\label{delta2-consecuencia}
 \Phi(r s)\geq Kr^{\nu}\Phi(s)
 \end{equation}
-for any $0<\nu<\alpha_{\Phi}$,  $s\geq 0$ and $r>1$. This proves  \eqref{eq:caract_delta2} with $\Phi_1(r)=kr^\nu$, which is is an $N$-function satisfying the $\Delta_2$-condition.
+for any $1<\nu<\alpha_{\Phi}$,  $s\geq 0$ and $r>1$. This proves  \eqref{eq:caract_delta2} with $\Phi_1(r)=kr^\nu$, which is is an $N$-function.
 
 \ref{item2})$\Rightarrow$\ref{item1})
 Next, we follow  \cite[p. 32, Prop. 13]{rao1991theory} and \cite[p. 29, Prop. 9]{rao1991theory}.
@@ -373,7 +373,7 @@ Assume that
 \[
 \Phi_1(r)\Phi(s)\leq \Phi(rs)\;\;r>1,\;s\geq 0.
 \]
-Let $u=\Phi_1(r)\geq \Phi_1(1)$ and $v=\Phi(s)\geq 0$. By a well known inequality \cite[p. 13, Prop. 1]{rao1991theory} and \eqref{eq:caract_delta2},  we have  for $u\geq \Phi_1(1)$ and $v\geq 0$
+Let $u=\Phi_1(r)\geq \Phi_1(1)$ and $v=\Phi(s)\geq 0$. By a well known inequality \cite[p. 13, Prop. 1]{rao1991theory} and \eqref{eq:caract_delta2},  we have  for $u\geq \Phi_1(1)$ and $v> 0$
 \[
 \frac{uv}{\Psi^{-1}(uv)}\leq \Phi^{-1}(uv)\leq\Phi_1^{-1}(u)\Phi^{-1}(v)\leq
 \frac{4uv}{\Psi_1^{-1}(u)\Psi^{-1}(v)},
@@ -392,14 +392,14 @@ Now, taking  $x\geq \max\{8,\Psi_1^{-1}(\Phi_1(1))\}$ we get that $\Psi \in \Del
 The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 
 \begin{lem}\label{lem_coer}
-Let $\Phi,\Psi$ be complementary $N$-functions and suppose that $\Psi \in \Delta_2$ globally. Then
+Let $\Phi,\Psi$ be complementary $N$-functions and  $\Phi_1$ be any $N$-function satisfying \eqref{eq:caract_delta2}and suppose that $\Psi \in \Delta_2$ globally. Then
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}=\infty,
 \end{equation}
 
 
-for every $\Phi_0$ with $\Phi_0=o(\Phi_1)$ at $\infty$ where $\Phi_1$ is any $N$-function satisfying \eqref{eq:caract_delta2}.
+for every $\Phi_0$ with $\Phi_0=o(\Phi_1)$ at $\infty$ where.
 
 Reciprocally if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$ (at $\infty$). 
 \end{lem}
