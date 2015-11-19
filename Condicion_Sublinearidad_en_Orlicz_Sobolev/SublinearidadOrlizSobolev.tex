@@ -133,18 +133,18 @@ following non-autonomous second-order systems:
 \right.
 \end{equation}
 where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and  $\varphi=\Phi'$ where $\Phi$ is an differentiable  $N$-function (see preliminaries section  for definitions). Furthermore, the \emph{potential} $F:[0,T]\times\rr^d\to\rr$  satisfy the following conditions
-\begin{enumerate}
+\begin{description}
 
- \item[(C)] $F$ and its gradient $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respecto to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
+ \item[(C)]\label{item:condicion_c} $F$ and its gradient $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respecto to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
 
- \item[(A)]   For   a.e. $t\in [0,T]$ we have that
+ \item[(A)]\label{item:condicion_a}  For   a.e. $t\in [0,T]$ we have that
 \begin{equation}
 |F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t)
 \end{equation}
 In these inequalities we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
 
 
-\end{enumerate}
+\end{description}
 
 We call the differential operator.
 \[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\varphi(|u'|)}{|u'|}\right) \]
@@ -392,16 +392,16 @@ Now, taking  $x\geq \max\{8,\Psi_1^{-1}(\Phi_1(1))\}$ we get that $\Psi \in \Del
 The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 
 \begin{lem}\label{lem_coer}
-Let $\Phi,\Psi$ be complementary $N$-functions and  $\Phi_1$ be any $N$-function satisfying \eqref{eq:caract_delta2}and suppose that $\Psi \in \Delta_2$ globally. Then
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$ globally. Let $\Phi_1$ be any $N$-function satisfying \eqref{eq:caract_delta2}. Then
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}=\infty,
 \end{equation}
 
 
-for every $\Phi_0$ with $\Phi_0=o(\Phi_1)$ at $\infty$ where.
+for every $\Phi_0$ with $\Phi_0\llcurly\Phi_1)$.
 
-Reciprocally if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$ (at $\infty$). 
+If  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$ (at $\infty$).
 \end{lem}
 
 \begin{proof}
@@ -412,15 +412,17 @@ By the assumptions on $\Phi$ and $\Phi_1$  and the inequality \eqref{amemiya-ine
 \frac{\Phi_1(r)}{\Phi_0(\|u\orlnor)}\{r^{-1}\|u\orlnor-1\}.
 \]
 Now, we choose $r=\frac{\|u\orlnor}{2}$ and as $\|u\orlnor\to\infty$ we can assume $r>1$.
-Next, we use the fact that $\Phi_1\in\Delta_2$ and
 $\Phi_0=o(\Phi_1)$ at $\infty$, and  we get
 \[
 \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
 \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(\|u\orlnor)}
-\geq
-C \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1(\|u\orlnor)}{\Phi_0(\|u\orlnor)}=\infty.
+=\infty.
 \]
-The last assertion of the lemma follows from the fact that if $\Phi_0$ is an $N$-function, then $\Phi_0(u)\geq k|u|$ for  $k$ small enough and $|u1>1$. Therefore \eqref{eq:coer_mod} holds for $\Phi_0(u)=|u|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$.
+The last equality follows of \cite[Th. 2 (b),p. 16]{rao1991theory}.
+
+
+
+Finally, if $\Phi_0$ is an $N$-function, then $\Phi_0(u)\geq k|u|$ for  $k$ small enough and $|u|>1$. Therefore \eqref{eq:coer_mod} holds for $\Phi_0(u)=|u|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$.
 \end{proof}
 
 
@@ -454,47 +456,24 @@ respectively.
 
 
 
-Like in \cite{ABGMS2015} we consider Lagrangians $\mathcal{L}$ which are lower bounded as follows 
-\begin{equation}\label{cota_inf}
-\mathcal{L}(t,x,y)\geq \alpha_0\Phi\left(\frac{|y|}{\Lambda}\right)+ F(t,x).
-\end{equation}
-
 In \cite{tang1998periodic} and \cite{tang2010periodic} was considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
 \[ |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),\]
 where  $b_1,b_2 \in L^1_1$ and $\alpha$ is any power less than $p$. Thus, they said $F$ is a sublinear nonlinearity. In this paper, we will consider bounds on $\nabla F$ of a more general type.
 
-\begin{defi} We said taht $\nabla F(t,x)$ satisfies a \emph{grow $\phi_0$-condition} if
+\begin{defi} Let $\varphi_0:[0,+\infty)\to [0,+\infty)$ a function. We said that $G:[0,T]\times\rr^n\to\rr$  satisfies a \emph{grow conditions of  $\varphi_0$-type} if
 \begin{equation}\label{holder_cont-mu}
-  \left| \nabla F(t,x) \right|\leq b_1(t)\varphi_0(|x|)+b_2(t),
+  \left| G(t,x) \right|\leq b_1(t)\varphi_0(|x|)+b_2(t),
 \end{equation}
-where $\varphi_0=\Phi'_0$ with $\Phi_0$ an $N$-function.
+with $b_1,b_2 \in L^1([0,T],\rr)$.
 
 \end{defi}
-The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic} even in the $p$-laplacian case.
+The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in\cite{tang1998periodic,tang2010periodic}.
 
 
-Based on \cite{mawhin2010critical} we say that $F$ satisfies the condition (A) if  $F(t,x)$ is a Carath\'eo\-dory function and  $F$ is continuously differentiable with respect to $x$. Moreover, the next inequality holds
-\begin{equation}\label{condA2}|F(t,x)|+ |D_{x}F(t,x)|\leq a(|x|)b_0(t),\quad\text{for a.e. }t\in [0,T], \forall x\in\rr^d.
-\end{equation}
-
-The following theorem establishes  coercivity of $I$ assuming sublinear conditions on the nonlinearity  $\nabla F$. 
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{thm}\label{coercitividad-r}
-Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and suppose that $F$ satisfies condition (A). We assume the following conditions:
+\begin{thm}\label{coercitividad-r} Let $\Phi$ be a $N$-function whose complementary function $\Psi$ is $\Delta_2$-globally. We suppose that the $N$-function $\Phi_1$ satisfies \eqref{eq:caract_delta2}.  We assume that $F$ satisfies (C), (A) and a grow conditions of $\varphi_0$-type, where $\phi_0=\Phi_0'$ and $\Phi_0\llcurly\Phi_1$.  We assume the following conditions:
 \begin{enumerate}
 \item $\Psi\in\Delta_2$.
-\item Inequality \eqref{holder_cont-mu} with $b_1,b_2 \in L^1_1$,  $\varphi_0=\Phi'_0$ where $\Phi_0$ is a differentiable $N$-function that satisfies the $\Delta_2$-condition globally such that
+\item Inequality \eqref{holder_cont-mu}  $\varphi_0=\Phi'_0$ where $\Phi_0$ is a differentiable $N$-function that satisfies the $\Delta_2$-condition globally such that
 $\Phi_0=o(\Phi_1)$ at $\infty$ and $\Phi_1$ verifies \eqref{eq:caract_delta2}.
 \item 
 \begin{equation}\label{eq:propiedad-coercividad-phi0}
