@@ -101,7 +101,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 \begin{abstract}
 
-In this paper we obtain existence of periodic solutions, in the Orlicz-Sobolev space $\wphi([0,T])$, of hamiltonian systems with a potential  function $F$ satisfying the inequality  $|\nabla F(t,x)|\leq b_1(t) \varphi_0(|x|)+b_2(t)$, with    $b_1(t), b_2(t)\in L^1$ and for certain functions $\varphi_0$.
+In this paper we obtain existence of periodic solutions, in the Orlicz-Sobolev space $\wphi([0,T])$, of hamiltonian systems with a potential  function $F$ satisfying the inequality  $|\nabla F(t,x)|\leq b_1(t) \Phi_0'(|x|)+b_2(t)$, with    $b_1(t), b_2(t)\in L^1$ and for certain $N$-functions $\Phi_0$.
 
 \end{abstract}
 
@@ -127,12 +127,12 @@ following non-autonomous second-order systems:
 \begin{equation}\label{ProbPrin}
     \left\{%
 \begin{array}{ll}
-   \frac{d}{dt}\left(u'(t)\frac{\varphi(|u'|)}{|u'|}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+   \frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and  $\varphi=\Phi'$ where $\Phi$ is an differentiable  $N$-function (see preliminaries section  for definitions). Furthermore, the \emph{potential} $F:[0,T]\times\rr^d\to\rr$  satisfy the following conditions
+where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and  $\Phi$ is an differentiable  $N$-function (see preliminaries section  for definitions). Furthermore, the \emph{potential} $F:[0,T]\times\rr^d\to\rr$  satisfy the following conditions
 \begin{description}
 
  \item[(C)]\label{item:condicion_c} $F$ and its gradient $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respecto to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
@@ -147,7 +147,7 @@ In these inequalities we assume that the function  $a:[0,+\infty)\to [0,+\infty)
 \end{description}
 
 We call the differential operator.
-\[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\varphi(|u'|)}{|u'|}\right) \]
+\[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right) \]
 the
 \emph{$\Phi$-laplacian operator}. If $\Phi(x)=|x|^p$, $1<p<\infty$, $L_{\Phi}$ is the well known $p$-laplacian operator.
 
@@ -243,21 +243,21 @@ with  $u\in\lphi$ and $v\in\lpsi$.
  Unless $\Phi \in \Delta_2$, the relation $\lpsi= \left[\lphi\right]^*$ will not hold. In general, it is true  that  $\left[\ephi\right]^*=\lpsi$.
 
 
-Like in \cite{KR}, we will consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
-\[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}.\]
-This set is related to the Orlicz class $\claseor$ by means of inclusions, namely,
-\begin{equation}\label{inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
-\end{equation}
-for any positive $r$.
-If $\Phi \in \Delta_2$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
-
-
 
 We define the \emph{Sobolev-Orlicz space} $\wphi$ (see \cite{adams_sobolev}) by
 \[\wphi:=\{u| u \hbox{ is absolutely continuous in $[0,T]$ and } u'\in \lphi\}.\]
 $\wphi$ is a Banach space when equipped with the norm
 \begin{equation}\label{def-norma-orlicz-sob}
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
+\end{equation}
+
+We introduce the following subspaces of $\wphi$
+
+\begin{equation}\label{def-esp-orlicz-sob-per}
+\begin{split}
+\wphie&=\{u\in\wphi|u'\in\ephi\},\\
+\wphie_T&=\{u\in\wphie|u(0)=u(T)\}.
+\end{split}
 \end{equation}
 
 
@@ -306,6 +306,34 @@ The next simple lemma, whose proof can be found in \cite{ABGMS2015}, will be use
 \end{lem}
 
 
+
+
+
+
+\section{Lagrangians satisfying  sublinear nonlinearity type conditions}
+
+
+
+\begin{lem}\label{lem:deb*cerrado}
+$\ephi$ is weak* closed in $\lphi$.
+\end{lem}
+
+
+\begin{proof}
+From \cite[Thm. 7, p. 110]{rao1991theory} we have that $\lphi=\left[\epsi\right]^*
+$.
+Then, $\lphi$ is a dual and therefore we are allowed to speak about the weak* topology of $\lphi$.
+Besides, $\ephi
+$ is separable (see \cite[Thm. 1, p. 87]{rao1991theory}).
+Let $S=\ephi\cap \{u \in \lphi|\|u\orlnor\leq 1\}$, then $S$ is closed in the norm $\|\cdot\orlnor$. Now, according to \cite[Cor. 5, p. 148]{rao1991theory} $S$ is weak* sequentially compact. Thus, $S$ is weak* sequentially closed because
+is $u_n\in S$ and
+$u_n \overset{*}{\rightharpoonup}u \in \lphi$ then  the weak* sequentially compactness implies the existence of $v \in S$ and a subsequence $u_{n_k}$ such that
+$u_{n_k}\overset{*}{\rightharpoonup}v$. Finally, by the uniqueness of   the limit, we get
+$u=v\in S$.
+As $\epsi$ is separable and $\lphi=\left[\epsi\right]^*$, the ball of $\lphi$ $\{u \in \lphi | \|u\orlnor\leq 1\}$ is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
+Thus, $S$ is closed respect to  the weak* topology. Now, by the Krein-Smulian Theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi$ is weak* closed.
+\end{proof}
+
 The following result is analogous to some lemmata in $W^1L^p_d$, see \cite{xu2007some}.
 \begin{lem}\label{infinito-a-prom-upunto}
 If $\|u\sobnor\to \infty$, then $(|\overline{u}|+\|\dot{u}\orlnor)\to \infty$.
@@ -324,17 +352,17 @@ It is known that $L^{\infty}_d\hookrightarrow\lphi$, i.e.
 there exists $C_1=C_1(T)>0$ such that for any $\tilde{u}\in L^{\infty}_d$ we have
 \[
 \|\tilde{u}\orlnor
-\leq 
+\leq
 C_1 \|\tilde{u}\|_{L^{\infty}};
 \]
-and, applying  Sobolev's inequality,  we obtain Wirtinger's inequality, that is there exists $C_2=C_2(T)>0$ such that 
+and, applying  Sobolev's inequality,  we obtain Wirtinger's inequality, that is there exists $C_2=C_2(T)>0$ such that
 \begin{equation}\label{cota-u-tilde}
 \|\tilde{u}\orlnor
-\leq 
+\leq
 C_2\|u'\orlnor.
 \end{equation}
 
-Therefore, from \eqref{cota-u-lphi}, \eqref{cota-u-tilde} and \eqref{def-norma-orlicz-sob}, 
+Therefore, from \eqref{cota-u-lphi}, \eqref{cota-u-tilde} and \eqref{def-norma-orlicz-sob},
 we get
 \[
 \|u\sobnor\leq
@@ -344,9 +372,6 @@ where $C_3=C_3(T)$. Finally, as $\|u\sobnor\to \infty$ we conclude that
 $(|\overline{u}|+\|u'\orlnor)\to \infty$.
 \end{proof}
 
-
-
-\section{Lagrangians satisfying  sublinear nonlinearity type conditions}
 \begin{lem}
 Let $\Phi,\Psi$ complementary functions.
 The next statements are equivalent:
@@ -460,9 +485,9 @@ In \cite{tang1998periodic} and \cite{tang2010periodic} was considered, for the $
 \[ |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),\]
 where  $b_1,b_2 \in L^1_1$ and $\alpha$ is any power less than $p$. Thus, they said $F$ is a sublinear nonlinearity. In this paper, we will consider bounds on $\nabla F$ of a more general type.
 
-\begin{defi} Let $\varphi_0:[0,+\infty)\to [0,+\infty)$ a function. We said that $G:[0,T]\times\rr^n\to\rr$  satisfies a \emph{grow conditions of  $\varphi_0$-type} if
+\begin{defi} Let $\Phi_0$ a differentiable $N$-function. We said that $G:[0,T]\times\rr^n\to\rr$  satisfies a $\Phi_0$-\emph{grow condition} if
 \begin{equation}\label{holder_cont-mu}
-  \left| G(t,x) \right|\leq b_1(t)\varphi_0(|x|)+b_2(t),
+  \left| G(t,x) \right|\leq b_1(t)\Phi_0'(|x|)+b_2(t),
 \end{equation}
 with $b_1,b_2 \in L^1([0,T],\rr)$.
 
@@ -470,17 +495,11 @@ with $b_1,b_2 \in L^1([0,T],\rr)$.
 The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in\cite{tang1998periodic,tang2010periodic}.
 
 
-\begin{thm}\label{coercitividad-r} Let $\Phi$ be a $N$-function whose complementary function $\Psi$ is $\Delta_2$-globally. We suppose that the $N$-function $\Phi_1$ satisfies \eqref{eq:caract_delta2}.  We assume that $F$ satisfies (C), (A) and a grow conditions of $\varphi_0$-type, where $\phi_0=\Phi_0'$ and $\Phi_0\llcurly\Phi_1$.  We assume the following conditions:
-\begin{enumerate}
-\item $\Psi\in\Delta_2$.
-\item Inequality \eqref{holder_cont-mu}  $\varphi_0=\Phi'_0$ where $\Phi_0$ is a differentiable $N$-function that satisfies the $\Delta_2$-condition globally such that
-$\Phi_0=o(\Phi_1)$ at $\infty$ and $\Phi_1$ verifies \eqref{eq:caract_delta2}.
-\item 
+\begin{thm}\label{coercitividad-r} Let $\Phi$ be a $N$-function whose complementary function $\Psi$ is $\Delta_2$-globally. We suppose that the $N$-function $\Phi_1$ satisfies \eqref{eq:caract_delta2}, $F$ satisfies (C), (A) and that $\nabla F$ satisfies a $\Phi_0$-grow condition, for some $\Delta_2$-globally $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi_1$.  Furthermore, we suppose that
 \begin{equation}\label{eq:propiedad-coercividad-phi0}
 \lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Phi_0(|x|)}=+\infty.
 \end{equation}
-\end{enumerate}
-Then  the action integral $I$ is coercive.
+Then  the problem \eqref{ProbPrin} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
 \end{thm}
 
 \begin{proof}
@@ -491,39 +510,39 @@ and \eqref{holder_cont-mu}, we have
 &\left|\int_0^T F(t,u)-F(t,\overline{u})\,dt\right|=
 \left|\int_0^T \int_0^1 \nabla F(t,\overline{u}+s\tilde{u}(t))\ccdot \tilde{u}(t) \,ds \,dt\right|
 \\
-&\leq \int_0^T \int_0^1 b_1(t)\varphi_0(|\overline{u}+s\tilde{u}(t)|)|\tilde{u}(t)|\,ds\,dt+
+&\leq \int_0^T \int_0^1 b_1(t)\Phi_0'(|\overline{u}+s\tilde{u}(t)|)|\tilde{u}(t)|\,ds\,dt+
 \int_0^T \int_0^1 b_2(t)|\tilde{u}(t)|\,ds\,dt
 \\
-&=I_1+I_2.
+&=:I_1+I_2.
 \end{split}
 \end{equation}
-On the one hand, by H\"older's and Sobolev's inequalities, we estimate $I_2$ as follows
+On the one hand, by H\"older's and Sobolev-Wirtinger inequality, we estimate $I_2$ as follows
 \begin{equation}\label{cota-i2}
 I_2\leq \|b_2\|_{L^1} \|\tilde{u}\|_{L^{\infty}}\leq
 C_1\|\dot{u}\orlnor,
 \end{equation}
  where $C_1=C_1(\|b_2\|_{L^1}, T)$. 
 
-On the other hand, since $\Phi_0 \in \Delta_2$ globally, then $\varphi_0 \in \Delta_2$ globally and 
-consequently $\varphi_0$ is a quasi-subadditive function, i.e. there exists $C(\varphi_0)>0$ such that 
-$\varphi_0(a+b)\leq C(\varphi_0)(\varphi_0(a)+\varphi_0(b))$ for every $a,b\geq 0$.
+On the other hand, since $\Phi_0 \in \Delta_2$ globally, then $\Phi_0' \in \Delta_2$ globally and
+consequently $\Phi_0'$ is a quasi-subadditive function, i.e. there exists $C(\Phi_0)>0$ such that
+$\Phi'_0(a+b)\leq C(\Phi'_0)(\Phi'_0(a)+\Phi'_0(b))$ for every $a,b\geq 0$.
 In this way, we have
 \begin{equation}\label{pot-suma}
-\varphi_0(|\overline{u}+s\tilde{u}(t)|)\leq
-C(\varphi_0)[\varphi_0(|\overline{u}|)+\varphi_0(\|\tilde{u}\|_{L^{\infty}})],
+\Phi'_0(|\overline{u}+s\tilde{u}(t)|)\leq
+C(\Phi_0)[\Phi'_0(|\overline{u}|)+\Phi'_0(\|\tilde{u}\|_{L^{\infty}})],
 \end{equation}
 for every $s \in [0,1]$. 
 
-Now,  inequality \eqref{pot-suma}, H\"older's and Sobolev's inequalities,
- the monotonicity, the subadditivity and  the $\Delta_2$-condition on $\varphi_0$, imply that
+Now,  inequality \eqref{pot-suma}, H\"older's and Sobolev-Wirtinger inequality,
+ the monotonicity, the subadditivity and  the $\Delta_2$-condition on $\Phi'_0$, imply that
 \begin{equation}\label{cota-i1}
 \begin{split}
 I_1&
-\leq C(\varphi_0)\bigg\{ \varphi_0(|\overline{u}|) \|b_1\|_{L^1} \|\tilde{u}\|_{L^{\infty}}+
- \|b_1\|_{L^1}\varphi_0(\|\tilde{u}\|_{L^\infty})\|\tilde{u}\|_{L^\infty}\bigg\}
+\leq C(\Phi'_0)\bigg\{ \Phi'_0(|\overline{u}|) \|b_1\|_{L^1} \|\tilde{u}\|_{L^{\infty}}+
+ \|b_1\|_{L^1}\Phi'_0(\|\tilde{u}\|_{L^\infty})\|\tilde{u}\|_{L^\infty}\bigg\}
 \\
-&\leq C_2 \bigg\{ \varphi_0(|\overline{u}|) \|u'\orlnor
-+\varphi_0(\|\dot{u}\orlnor) \|\dot{u}\orlnor\bigg\},
+&\leq C_2 \bigg\{ \Phi'_0(|\overline{u}|) \|u'\orlnor
++\Phi'_0(\|\dot{u}\orlnor) \|\dot{u}\orlnor\bigg\},
 %\\
 %&=
 %C_2 \bigg\{ f(|\overline{u}|) \|u'\orlnor
@@ -531,19 +550,19 @@ I_1&
 %%f(\|\dot{u}\orlnor) \|\dot{u}\orlnor\bigg\}
 \end{split}
 \end{equation}
-where $C_2=C_2(\varphi_0,T, \|b_1\|_{L^1} )$. 
+where $C_2=C_2(\Phi_0',T, \|b_1\|_{L^1} )$.
 
 Next, by Young's inequality with complementary functions $\Phi_0$ and $\Psi_0$ and the fact that 
 $\Phi_0 \in \Delta_2$ globally, Young's equality \cite[Eq. 2.7-2.8]{KR} and \cite[Th. 3-(ii), p. 23]{rao1991theory}, we get
 \begin{equation}\label{cota-i1-parcial}
  \begin{split}
-\varphi_0(|\overline{u}|) \|u'\orlnor
+\Phi_0'(|\overline{u}|) \|u'\orlnor
 &\leq 
-\Psi_0(\varphi_0(|\overline{u}|))+
+\Psi_0(\Phi_0'(|\overline{u}|))+
 \Phi_0(\|u'\orlnor)
 \\
 &\leq 
-|\overline{u}|\varphi_0(|\overline{u}|)
+|\overline{u}|\Phi_0'(|\overline{u}|)
 +\Phi_0(\|u'\orlnor)
 \\
 &\leq C(\Phi_0)
@@ -553,7 +572,7 @@ $\Phi_0 \in \Delta_2$ globally, Young's equality \cite[Eq. 2.7-2.8]{KR} and \cit
 \end{equation}
 and 
 \begin{equation}\label{cota-i1-parcial-segunda}
-\varphi_0(\|\dot{u}\orlnor) \|\dot{u}\orlnor
+\Phi_0'(\|\dot{u}\orlnor) \|\dot{u}\orlnor
 \leq 
 C(\Phi_0) \Phi_0(\|\dot{u}\orlnor),
 \end{equation}
@@ -584,7 +603,7 @@ I_1+I_2
 with $C_3$ and $C_4$ depending on $\Phi_0,T, \|b_1\|_{L^1}$ and $\|b_2\|_{L^1} $. The last inequality follows from the fact that $\Phi_0$ is an $N$-function, then there exists $C>0$ such that $\Phi_0(x)\geq Cx$ for every $x\geq 1$. Thus $x\leq C\Phi_0(x)+1$ for every $x\geq 0$.
 
 
-In the subsequent estimates, we use  \eqref{cota_inf}, \eqref{cota-diferencia-F},
+In the subsequent estimates, we use  \eqref{cota-diferencia-F},
 \eqref{cota-i1-i2}, the fact that $\Phi_0 \in \Delta_2$ and we get
 \begin{equation}\label{cota_inf_I}
 \begin{split}
@@ -621,244 +640,41 @@ where $C_5=C_5(\Phi_0,\Lambda,C_4)$ and $C_6=\frac{C_5}{\alpha_0}$.
 
 Let $u_n$ be  a sequence in $\domi$ with
 $\|u_n\sobnor\to\infty$ and we have to prove that $I(u_n)\to\infty$.
-On the contrary, suppose  that for a subsequence, 
+On the contrary, suppose  that for a subsequence,
 still denoted by $u_n$, $I(u_n)$ is upper bounded, i.e., there exists $M>0$ such that $|I(u_{n})|\leq M$.
 As $\|u_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{u}_n|+\|u'_n\orlnor\to \infty$. Passing to a subsequence, still denoted $u_n$, we can assume that $|\overline{u}_n|\to \infty$ or $\|u'_n\orlnor\to \infty$.
 Now, Lemma \ref{lem_coer} implies that the functional $J_{C_6,\Phi_0}(\frac{\dot{u}}{\Lambda})$ is coercive;
 and, by \eqref{eq:propiedad-coercividad-phi0},
 the functional $H_{C_4,\Phi_0}(\overline{u})$ is also coercive, then
 $J_{C_6,\Phi_0}(\frac{\dot{u}_n}{\Lambda}) \to \infty$ or $H_{C_4,\Phi_0}(\overline{u}_n)\to \infty$.
-From \eqref{condA2}, we have that on a bounded set the functional $H_{C_4,\Phi_0}(\overline{u}_n)$ is lower bounded and also $J_{C_6,\Phi_0}(\frac{\dot{u}_n}{\Lambda})\geq 0$.
+From the (A) condition for $F$, we have that on a bounded set the functional $H_{C_4,\Phi_0}(\overline{u}_n)$ is lower bounded and also $J_{C_6,\Phi_0}(\frac{\dot{u}_n}{\Lambda})\geq 0$.
 Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
-\end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
-
-% 
-% 
-% 
-% 
-% \subsection{versi\'on potencias por si acaso...} 
-% \begin{thm}\label{coercitividad-r}
-% Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}  and $F$ satisfies condition (A). We assume the following conditions:
-% \begin{enumerate}
-% \item $\Psi\in\Delta_2$.
-% \item There exist  non negative functions  $b_1,b_2 \in L^1_1$ and a constant $1<\mu<\alpha_{\Phi}$  such that 
-% for any $x\in\rr^d$ and a.e. $t\in [0,T]$
-% \begin{equation}\label{holder_cont-mu}
-%   \left| \nabla F(t,x) \right|\leq b_1(t)|x|^{\mu-1}+b_2(t).
-% \end{equation}
-% \item There exists a real positive number $\sigma$ such that $\sigma>(\mu-1)\beta_{\Psi}$ and
-% \begin{equation}\label{propiedad-coercividad-sigma}
-% |x|^{\sigma}=o\left(\int_{0}^{T}F(t,x)\ dt\right)\;\;\mbox{as}\;\;|x|\to \infty.
-% \end{equation}
-% \end{enumerate}
-% Then  the action integral $I$ is coercive.
-% \end{thm}
-% 
-% 
-% 
-% 
-% \begin{proof} 
-% By the decomposition $u=\overline{u}+\tilde{u}$,  Mean Value Theorem, Cauchy-Schwarz's inequality
-% and \eqref{holder_cont-mu}, we have
-% \begin{equation}\label{cota-diferencia-F}
-% \begin{split}
-% &\left|\int_0^T F(t,u)-F(t,\overline{u})\,dt\right|=
-% \left|\int_0^T \int_0^1 \nabla F(t,\overline{u}+s\tilde{u}(t))\ccdot \tilde{u}(t) \,ds \,dt\right|
-% \\
-% &\leq \int_0^T \int_0^1 b_1(t)|\overline{u}+s\tilde{u}(t)|^{\mu-1}|\tilde{u}(t)|\,ds\,dt+
-% \int_0^T \int_0^1 b_2(t)|\tilde{u}(t)|\,ds\,dt
-% \\
-% &=I_1+I_2.
-% \end{split}
-% \end{equation}
-% On the one hand, by H\"older's inequality and Sobolev's inequality, we estimate $I_2$ as follows
-% \begin{equation}\label{cota-i2}
-% I_2\leq \|b_2\|_{L^1} \|\tilde{u}\|_{L^{\infty}}\leq
-% C_1\|\dot{u}\orlnor.
-% \end{equation}
-%  where $C_1=C_1(\|b_2\|_{L^1}, T)$. On the other hand, as $s\in [0,1]$, we have
-% \begin{equation}\label{pot-suma}
-% |\overline{u}+s\tilde{u}(t)|^{\mu-1}\leq
-% C(\mu)(|\overline{u}|^{\mu-1}+\|\tilde{u}\|_{L^{\infty}}^{\mu-1}).
-% \end{equation}
-% where $C(\mu)=2^{\mu-2}$, for $\mu\geq 2$ and $C(\mu)=1$, for $1<\mu<2$. Now,  inequality \eqref{pot-suma}, H\"older's inequality and Sobolev's inequality imply that
-% \begin{equation}\label{cota-i1}
-% \begin{split}
-% I_1&\leq 
-% C(\mu)\left(|\overline{u}|^{\mu-1} \int_0^T b_1(t) |\tilde{u}(t)|\,dt+
-% \|\tilde{u}\|^{\mu-1}_{L^{\infty}} \int_0^T b_1(t)|\tilde{u}(t)| \,dt\right)
-% \\
-% &\leq C(\mu)\bigg\{ |\overline{u}|^{\mu-1} \|b_1\|_{L^1} \|\tilde{u}\|_{L^{\infty}}+
-%  \|b_1\|_{L^1}\|\tilde{u}\|^{\mu}_{L^\infty}\bigg\}
-% \\
-% &\leq C_2 \bigg\{ |\overline{u}|^{\mu-1} \|u'\orlnor+ \|\dot{u}\orlnor^{\mu}\bigg\},
-% \end{split}
-% \end{equation}
-% where $C_2=C_2(\mu,T, \|b_1\|_{L^1} )$. Let $\mu'$ be a positive constant such that $1<\mu\leq \mu'<\alpha_{\Phi}$. 
-% Next, using Young's inequality with conjugate exponents $\mu'$ and $\frac{\mu'}{\mu'-1}$ 
-%  we get
-% \begin{equation}\label{cota-i1-parcial}
-% |\overline{u}|^{\mu-1}   \|u'\orlnor
-% \leq \frac{(\mu'-1)}{\mu'}|\b{\overline{u}|^{\sigma}}
-% +\frac{1}{\mu'} \|u'\orlnor^{\mu'}
-% \end{equation}
-% where $\sigma=\frac{(\mu-1) \mu'}{\mu'-1}$. We point out that $\sigma$ is an arbitrary positive constant bigger than $(\mu-1)b_{\Psi}$.
-% 
-% From \eqref{cota-i1}, \eqref{cota-i1-parcial}, \eqref{cota-i2} and the inequality $x^{r_1}\leq x^{r_2}+1$, for any $x\geq 0$ and $r_1\leq r_2$, we have
-% \begin{equation}\label{cota-i1-i2}
-% \begin{split}
-% I_1+I_2
-% &\leq C_3\bigg\{ |\overline{u}|^{\sigma}
-% + \|\dot{u}\orlnor^{\mu'}
-% + \|\dot{u}\orlnor^{\mu}
-% +\|\dot{u}\orlnor\bigg\}\\
-% &\leq C_3\bigg\{ |\overline{u}|^{\sigma}
-% + \|\dot{u}\orlnor^{\mu'}
-% +1\bigg\}
-% \end{split}
-% \end{equation}
-% with $C_3= C_3(\mu,T, \|b_1\|_{L^1},\mu' )$. In the subsequent estimates, we use the decomposition $u=\overline{u}+\tilde{u}$, \eqref{cota_inf}, \eqref{cota-diferencia-F},
-% \eqref{cota-i1-i2} and we get
-% \begin{equation}\label{cota_inf_I}
-% \begin{split}
-% I(u)&\geq\alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)+\int_0^TF(t,u)\ dt
-% \\ 
-% &=\alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)+ \int_0^T \left[F(t,u)-F(t,\overline{u})\right]\ dt
-% +  \int_0^TF(t,\overline{u})\ dt
-% \\
-% &\geq \alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)
-% -C_3 \|\dot{u}\orlnor^{\mu'}
-% +\int_0^TF(t,\overline{u})\ dt-
-% C_3 |\overline{u}|^{\sigma}-C_3\\
-% &=\alpha_0J_{C_4,\mu'}\left(\frac{\dot{u}}{\Lambda}\right)
-% + H_{C_3,\sigma}(\overline{u})-C_3,
-% \end{split}
-% \end{equation}
-% where $C_4=\Lambda^{\mu'}C_3/\alpha_0$.
-% 
-% 
-% Let $u_n$ be  a sequence in $\domi$ with
-% $\|u_n\sobnor\to\infty$ and we have to prove that $I(u_n)\to\infty$.
-% On the contrary, suppose  that for a subsequence, 
-% still denoted by $u_n$, $I(u_n)$ is upper bounded, i.e., there exists $M>0$ such that $|I(u_{n})|\leq M$.
-% As $\|u_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{u}_n|+\|u'_n\orlnor\to \infty$.
-% Then, there exists a subsequence of $\{u_n\}$, still denoted by $u_n$, which is not bounded.
-% Then, 
-% $|\overline{u}_n|\to \infty$ or $\|u'_n\orlnor\to \infty$.
-% Now, Lemma \ref{lem_coer} implies that the functional $J_{C_4,\mu'}(\frac{\dot{u}}{\Lambda})$ is coercive,
-% and, by \eqref{propiedad-coercividad-sigma},
-% the functional $H(\overline{u})$ is also coercive, then
-% $J_{C_4,\mu'}(\frac{\dot{u}_n}{\Lambda}) \to \infty$ or $H(\overline{u}_n)\to \infty$.
-% From \eqref{condA2}, we have that on a bounded set the functional $H(\overline{u}_n)$ is lower bounded; and, $J_{C_4,\mu'}(\frac{\dot{u}_n}{\Lambda})$ is also lower bounded  because the modular $\rho_{\Phi}\left(\frac{\dot{u}}{\Lambda}\right)$ is always bigger than zero.
-% Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
-% \end{proof}
-% 
-% {\bf Leer y ver si es coherente lo anterior,  si conviene trabajar siempre con $u_n$ o habr\'ia que usar la notaci\'on de subsucesiones expl\'icita!!!}
-% 
-% {\bf Falta leer y corregir la  secci\'on que sigue del caso l\'imite!!!}
-
-
-
-\section{Main result}\label{sec:main}
-
-
-
-In order to find conditions for the lower semicontinuity of  $I$, 
-we perform a little adaptation of  a result of \cite{ekeland1999convex}. 
-
-
-\begin{lem}\label{semicontinf}
-Let $\mathcal{L}(t,x,y)$ be a  differentiable Carath\'eodory function. Suppose that  $F$ satisfies the condition (A) and the inequality
-\begin{equation}\label{cota_inf_2}
-\mathcal{L}(t,x,y)\geq \Phi\left(|y|\right)+ F(t,x),
-\end{equation}
-where $\Phi$ is an $N$-function. 
-In addition, suppose that  $\mathcal{L}(t,x,\cdot)$ is convex in $\rr^d$ for each $(t,x)\in [0,T]\times\rr^d$.  Let $\{u_n\}\subset\wphi$ be a sequence such that $u_n$ converges  uniformly  to a function $u\in\wphi$ and $u'_n$ converges in the weak topology of $L^1_d$ to $u'$.   Then
-\begin{equation}\label{liminf0}I(u)\leq \liminf_{n\to\infty}I(u_n).
-\end{equation}
-
-\end{lem}
-
-\begin{proof} First, we point out that \eqref{cota_inf_2} and \eqref{condA2} imply that $I$ is defined on $\wphi$ taking values on the interval $(-\infty,+\infty]$. 
-Let $\{u_n\}$ be a sequence  satisfying the assumptions of the theorem.   We define the differentiable Carath\'eodory function $\mathcal{\hat{L}}=\mathcal{L}-F$ and we denote by $\hat{I}$ its  associated action integral. Using  \cite[Thm. 2.1, p. 243]{ekeland1999convex}, we get
-\begin{equation}\label{liminf1}
-\int_0^T\mathcal{\hat{L}}(t,u,u')\ dt\leq \liminf_{n\to\infty}\int_0^T\mathcal{\hat{L}}(t,u_n,u'_n)\ dt.
-\end{equation}
-Taking account of the uniform convergence of $u_n$ and the fact that  $F$  is a  Carath\'eodory function,  we obtain that $F(t,u_n(t))\to F(t,u(t))$ a.e. $t\in[0,T]$.  Since the sequence $u_n$ is uniformly bounded, from \eqref{condA2} follows that there exists $g\in L_1^1([0,T])$ such that $|F(t,u_n(t))|\leq g(t)$. Now, by the Dominated Convergence Theorem, we have that
-\begin{equation}\label{liminf2}
-\lim_{n\to\infty}\int_0^TF(t,u_n(t))\ dt=\int_0^TF(t,u(t))\ dt.
-\end{equation}
-Finally, as a consequence of  \eqref{liminf1} and  \eqref{liminf2}, we obtain \eqref{liminf0}.
-\end{proof}
-
-
-\begin{lem}\label{lem:deb*cerrado}
-$\ephi$ is weak* closed in $\lphi$.
-\end{lem}
-
-
-\begin{proof}
-From \cite[Thm. 7, p. 110]{rao1991theory} we have that $\lphi=\left[\epsi_d\right]^*
-$.
-Then, $\lphi$ is a dual and therefore we are allowed to speak about the weak* topology of $\lphi$.
-Besides, $\ephi
-$ is separable (see \cite[Thm. 1, p. 87]{rao1991theory}).
-Let $S=\ephi\cap \{u \in \lphi|\|u\orlnor\leq 1\}$, then $S$ is closed in the norm $\|\cdot\orlnor$. Now, according to \cite[Cor. 5, p. 148]{rao1991theory} $S$ is weak* sequentially compact. Thus, $S$ is weak* sequentially closed because
-is $u_n\in S$ and
-$u_n \overset{*}{\rightharpoonup}u \in \lphi$ then  the weak* sequentially compactness implies the existence of $v \in S$ and a subsequence $u_{n_k}$ such that 
-$u_{n_k}\overset{*}{\rightharpoonup}v$. Finally, by the uniqueness of   the limit, we get
-$u=v\in S$.
-As $\epsi_d$ is separable and $\lphi=\left[\epsi_d\right]^*$, the ball of $\lphi$ $\{u \in \lphi | \|u\orlnor\leq 1\}$ is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
-Thus, $S$ is closed respect to  the weak* topology. Now, by the Krein-Smulian Theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi$ is weak* closed.
-\end{proof}
-
-Gathering our previous results we obtain existence of solutions.
-
-Let $\wphiet=\wphi_T \cap \wphie_d$.
-
-
-\begin{thm} 
-Let $\Phi$ and $\Psi$ be complementary $N$-functions. 
-Suppose that the differentiable Carath\'eodory function $\mathcal{L}(t,x,y)$ is strictly convex at $y$, $D_{y}\mathcal{L}$ is $T$-periodic with respect to $t$. In addition, assume the same hypothesis than Theorem \ref{coercitividad-r}. Then, problem \eqref{ProbPrin} has a solution.
-\end{thm}
-
-\begin{proof}
-
-
 
 Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
-Since  $I(u_n)$, $n=1,2,\ldots$  is upper bounded, Theorem \ref{coercitividad-r}  implies that $\{u_n\}$ is norm bounded in $\wphie_d$. Hence, in virtue of Corollary \cite[Corollary 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous function $u$.
-Then, $u$ is bounded and $u \in \ephi$.
-
-As $u'_n \in \ephi\subset \lphi$,
-%The space  $\lphi$ is a predual space, concretely $\lphi=\left[\epsi_d\right]^*$. Thus, by \cite[Cor. 5, p. 148]{rao1991theory} and since $u'_n$ is bounded in $\lphi$,
+Since  $I(u_n)$, $n=1,2,\ldots$  is upper bounded, the previous part of the proof shows that $\{u_n\}$ is norm bounded in $\wphie$. Hence, in virtue of Corollary \cite[Corollary 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous (therefore in $\ephi$)  function $u$. As $u'_n \in \ephi$ is a norm bounded sequence in $\lphi$,
 there exists a subsequence (again denoted by $u'_n$) such that $u'_n$ converges to a function $v\in\lphi$ in the weak* topology of $\lphi$.
-Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$.
-
-From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
+Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$. From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 \[
 \int_0^T\b{\dot{\xi}}\cdot u\ dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\cdot u_n \ dt=-\lim_{n\to\infty}\int_0^T\b{\xi}\cdot u'_n\ dt=-\int_0^T\b{\xi}\cdot v\ dt
 \]
-for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^d)\subset\epsi_d$.
+for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^d)\subset\epsi$.
 Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\ephi_T$.
 
-Now, taking into account the relations $\left[L^1_d\right]^*=L^{\infty}_d\subset  \epsi_d$ and $\lphi\subset L^1_d$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1_d$. Consequently,  Lemma \ref{semicontinf} applied to the $N$-function $\alpha_0\Phi\left(|\ccdot|/\Lambda\right)$ implies that
+Now, taking into account the relations $\left[L^1\right]^*=L^{\infty}\subset  \epsi$ and $\lphi\subset L^1$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1$. Consequently,  the semicontinuity lemma (see \cite[Lemma 6.1]{ABGMS2015})  implies that
 \[I(u)\leq  \liminf_{n\to\infty}I(u_n)=\inf\limits_{u\in\wphie_T}I(u).\]
 
-As $u\in \wphiet\subset \domi$ then $I(u)>-\infty$, hence, $u$ is a minimun and therefore  $I'(u)\in (\wphiet)^{\perp}$. Finally,
-invoking Theorem \ref{critpoint},  the proof concludes.\end{proof}
+Hence $u\in \wphiet\subset \domi$ is a minimun. Since $I$ is G\^ateaux differentiable on $\wphie$ (see  \cite[Th. 3.2]{ABGMS2015})
+and therefore  $I'(u)\in (\wphiet)^{\perp}$. Finally,
+invoking Theorem \ref{critpoint},  the proof concludes.
+
+\end{proof}
+
+
+
+
+
+
+
 
 
 
@@ -866,7 +682,7 @@ invoking Theorem \ref{critpoint},  the proof concludes.\end{proof}
 Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic} 
 coercivity  was obtained even  for the limit value $\mu=p$ in inequality \eqref{holder_cont-mu}.  
 
-{\bf OJO que $\mu$ no aparece en \eqref{holder_cont-mu}!!!!. Quiz\'as deber\'ia decir $\varphi_0(x)=x^p$. O, mecionarse la ecuaci\'on anterior donde aparece $\alpha<p$, no $\mu$.} 
+{\bf OJO que $\mu$ no aparece en \eqref{holder_cont-mu}!!!!. Quiz\'as deber\'ia decir $\Phi_0'(x)=x^p$. O, mecionarse la ecuaci\'on anterior donde aparece $\alpha<p$, no $\mu$.}
 
 This result leans on the  fact that
 \begin{equation}
