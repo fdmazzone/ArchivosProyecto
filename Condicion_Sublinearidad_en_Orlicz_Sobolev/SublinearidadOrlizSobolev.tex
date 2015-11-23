@@ -658,13 +658,20 @@ Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$. Fro
 \int_0^T\b{\dot{\xi}}\cdot u\ dt=\lim_{n\to\infty}\int_0^T\b{\dot{\xi}}\cdot u_n \ dt=-\lim_{n\to\infty}\int_0^T\b{\xi}\cdot u'_n\ dt=-\int_0^T\b{\xi}\cdot v\ dt
 \]
 for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^d)\subset\epsi$.
-Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\ephi_T$.
+Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\wphiet$.
 
-Now, taking into account the relations $\left[L^1\right]^*=L^{\infty}\subset  \epsi$ and $\lphi\subset L^1$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1$. Consequently,  the semicontinuity lemma (see \cite[Lemma 6.1]{ABGMS2015})  implies that
-\[I(u)\leq  \liminf_{n\to\infty}I(u_n)=\inf\limits_{u\in\wphie_T}I(u).\]
+Now, taking into account the relations $\left[L^1\right]^*=L^{\infty}\subset  \epsi$ and $\lphi\subset L^1$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1$. Consequently,  the from the semicontinuity of $I$ (see \cite[Lemma 6.1]{ABGMS2015})  implies that
+\[I(u)\leq  \liminf_{n\to\infty}I(u_n)=\inf\limits_{v\in\wphie_T}I(v).\]
 
-Hence $u\in \wphiet\subset \domi$ is a minimun. Since $I$ is G\^ateaux differentiable on $\wphie$ (see  \cite[Th. 3.2]{ABGMS2015})
-and therefore  $I'(u)\in (\wphiet)^{\perp}$. Finally,
+From \cite[Th. 3.2]{ABGMS2015} $I$ is a G\^ateaux differentible on $\wphie$ and 
+\[\langle I'(u),v\rangle =\int_0^T u'(t) \frac
+
+
+and $u\in \wphiet$ is a minimun of $I$ on $\wphiet$, we have that  
+
+\[I'(u)\in (\wphiet)^{\perp}:=\left\{L\in \left[\wphi\right]^* \bigg| \forall v\in\wphiet:
+\langle L,v\rangle=0\right\}.\]
+Finally,
 invoking Theorem \ref{critpoint},  the proof concludes.
 
 \end{proof}
