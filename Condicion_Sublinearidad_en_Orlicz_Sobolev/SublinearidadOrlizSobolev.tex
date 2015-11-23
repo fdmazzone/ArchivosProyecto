@@ -492,7 +492,7 @@ where  $b_1,b_2 \in L^1_1$ and $\alpha$ is any power less than $p$. Thus, they s
 with $b_1,b_2 \in L^1([0,T],\rr)$.
 
 \end{defi}
-The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in\cite{tang1998periodic,tang2010periodic}.
+
 
 
 \begin{thm}\label{coercitividad-r} Let $\Phi$ be a $N$-function whose complementary function $\Psi$ is $\Delta_2$-globally. We suppose that the $N$-function $\Phi_1$ satisfies \eqref{eq:caract_delta2}, $F$ satisfies (C), (A) and that $\nabla F$ satisfies a $\Phi_0$-grow condition, for some $\Delta_2$-globally $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi_1$.  Furthermore, we suppose that
@@ -651,7 +651,7 @@ From the (A) condition for $F$, we have that on a bounded set the functional $H_
 Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
 
 Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
-Since  $I(u_n)$, $n=1,2,\ldots$  is upper bounded, the previous part of the proof shows that $\{u_n\}$ is norm bounded in $\wphie$. Hence, in virtue of Corollary \cite[Corollary 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous (therefore in $\ephi$)  function $u$. As $u'_n \in \ephi$ is a norm bounded sequence in $\lphi$,
+Since  $I(u_n)$, $n=1,2,\ldots$  is upper bounded, the previous part of the proof shows that $\{u_n\}$ is norm bounded in $\wphie$. Hence, in virtue of Corollary \cite[Corollary 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous (therefore in $\ephi_T$)  function $u$. As $u'_n \in \ephi$ is a norm bounded sequence in $\lphi$,
 there exists a subsequence (again denoted by $u'_n$) such that $u'_n$ converges to a function $v\in\lphi$ in the weak* topology of $\lphi$.
 Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$. From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 \[
@@ -663,10 +663,15 @@ Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\ep
 Now, taking into account the relations $\left[L^1\right]^*=L^{\infty}\subset  \epsi$ and $\lphi\subset L^1$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1$. Consequently,  the semicontinuity lemma (see \cite[Lemma 6.1]{ABGMS2015})  implies that
 \[I(u)\leq  \liminf_{n\to\infty}I(u_n)=\inf\limits_{u\in\wphie_T}I(u).\]
 
-Hence $u\in \wphiet\subset \domi$ is a minimun. Since $I$ is G\^ateaux differentiable on $\wphie$ (see  \cite[Th. 3.2]{ABGMS2015})
-and therefore  $I'(u)\in (\wphiet)^{\perp}$. Finally,
-invoking Theorem \ref{critpoint},  the proof concludes.
+Hence $u\in \wphiet$ is a minimun and since $I$ is G\^ateaux differentiable on $\wphie$ (see  \cite[Th. 3.2]{ABGMS2015}) we have
+and therefore  $I'(u)\in (\wphiet)^{\perp}$. Therefore
+\[\int_0^T \frac{\Phi'(|u'(t)|)}{|u'(t)|}u'(t)\cdot v'(t)dt =-\int_0^T \nabla F(t,u(t))\cdot v(t)dt,\]
+for every  $v\in \wphiet$.  Since $\frac{\Phi'(|u'(t)|)}{|u'(t)|}u'(t)\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$ and  $\nabla F(t,u(t))\in L^1([0,T],\rr^n)$.
 
+
+
+Then, from \cite[Lemma 2.4]{ABGMS2015} we obtain
+ $u'(t)\Phi'(|u'(t)|)/|u'(t)|\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$ and  from condition (A) and $u\in L^{\infty}$ we have $\nabla F(t,u(t))\in L^1([0,T],\rr^n)$. Consequently, from \cite[p. 6]{mawhin2010critical} we obtain that the differential equations in \eqref{ProbPrin} is verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds. Thus $u'(0)=u'(T)$.
 \end{proof}
 
 
@@ -678,7 +683,22 @@ invoking Theorem \ref{critpoint},  the proof concludes.
 
 
 
- \section{Limit case $\mu=\alpha_{\Phi}$}
+ \section{Examples}
+
+ The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions for the $p$-laplacian operator under la assumption
+ \[|\nabla F|\leq b_1(t) |x|^{\alpha}+b_2(t).\]
+ for any $\alpha\in (0,p-1)$ 
+
+
+
+
+
+
+
+
+
+
+
 Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic} 
 coercivity  was obtained even  for the limit value $\mu=p$ in inequality \eqref{holder_cont-mu}.  
 
