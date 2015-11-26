@@ -189,22 +189,22 @@ for every $t\geq t_0$.
 If $t_0=0$,  a function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$ globally).
 
 
-Let $d$ be a positive integer. We denote by $\mathcal{M}_d:=\mathcal{M}_d([0,T],\rr^d)$ the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}_d$.
+Let $d$ be a positive integer. We denote by $\mathcal{M}:=\mathcal{M}([0,T],\rr^d)$ the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
 
 
 
 Given  an $N$-function $\Phi$ we define the \emph{modular function} 
-$\rho_{\Phi}:\mathcal{M}_d\to \mathbb{R}^+\cup\{+\infty\}$ by
+$\rho_{\Phi}:\mathcal{M}\to \mathbb{R}^+\cup\{+\infty\}$ by
 \[\rho_{\Phi}(u):= \int_0^T \Phi(|u|)\ dt.\]
 Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^d$.
-The \emph{Orlicz class} $C_d^{\Phi}=C_d^{\Phi}([0,T],\rr^d)$  is defined  by
+The \emph{Orlicz class} $C^{\Phi}=C^{\Phi}([0,T],\rr^d)$  is defined  by
 \begin{equation}\label{claseOrlicz}
-  C^{\Phi}_d:=\left\{u\in \mathcal{M}_d | \rho_{\Phi}(u)< \infty \right\}.
+  C^{\Phi}_d:=\left\{u\in \mathcal{M} | \rho_{\Phi}(u)< \infty \right\}.
 \end{equation}
-The \emph{Orlicz space} $\lphi=L^{\Phi}_d([0,T],\rr^d)$ is the linear hull of $\claseor$;
+The \emph{Orlicz space} $\lphi=L^{\Phi}([0,T],\rr^d)$ is the linear hull of $\claseor$;
 equivalently,
 \begin{equation}\label{espacioOrlicz}
-\lphi:=\left\{ u\in \mathcal{M}_d | \exists \lambda>0: \rho_{\Phi}(\lambda u) < \infty   \right\}.
+\lphi:=\left\{ u\in \mathcal{M}| \exists \lambda>0: \rho_{\Phi}(\lambda u) < \infty   \right\}.
 \end{equation}
   The Orlicz space $\lphi$ equipped with the \emph{Orlicz norm}
 \[
@@ -225,7 +225,7 @@ In particular
 The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}_d([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi$ is the only one maximal subspace contained in the Orlicz class $\claseor$, i.e.
 $u\in\ephi$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$.
 
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 9.3]{KR}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L_1^1$ and
+A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 9.3]{KR}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
 \begin{equation}\label{holder}
 \int_0^Tv\cdot u\ dt\leq \|u\orlnor\|v\|_{L^{\Psi}}.
 \end{equation}
@@ -336,7 +336,7 @@ As $\epsi$ is separable and $\lphi=\left[\epsi\right]^*$, the ball of $\lphi$ $\
 Thus, $S$ is closed with respect to  the weak* topology. Now, by  Krein-Smulian theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi$ is weak* closed.
 \end{proof}
 
-The following result is analogous to some lemmata in $W^1L^p_d$, see \cite{xu2007some}.
+The following result is analogous to some lemmata in $W^{1,p}$, see \cite{xu2007some}.
 \begin{lem}\label{infinito-a-prom-upunto}
 If $\|u\sobnor\to \infty$, then $(|\overline{u}|+\|u'\orlnor)\to \infty$.
 \end{lem}
@@ -439,14 +439,13 @@ By the assumptions on $\Phi$ and $\Phi_1$  and  inequality \eqref{amemiya-ine}, 
 \Phi_1(r) \frac{\int_0^T \Phi(r^{-1}|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
 \frac{\Phi_1(r)}{\Phi_0(\|u\orlnor)}\{r^{-1}\|u\orlnor-1\}.
 \]
-Now, we choose $r=\frac{\|u\orlnor}{2}$ and as $\|u\orlnor\to\infty$ we can assume $r>1$. And, as
-$\Phi_0=o(\Phi_1)$ at $\infty$, and  we get
+Now, we choose $r=\frac{\|u\orlnor}{2}$ and as $\|u\orlnor\to\infty$ we can assume $r>1$ and by \cite[Thm. 2 (b), p. 16]{rao1991theory}.
 \[
 \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
 \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(\|u\orlnor)}
 =\infty.
 \]
-The last equality follows from \cite[Thm. 2 (b), p. 16]{rao1991theory}.
+
 
 
 
@@ -478,7 +477,7 @@ respectively.
 
 In \cite{tang1998periodic} and \cite{tang2010periodic} the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
 \[ |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),\]
-where  $b_1,b_2 \in L^1_1$ and $\alpha$ is any power less than $p$. Thus, they called $F$  a sublinear nonlinearity. 
+where  $b_1,b_2 \in L^1_1$ and $\alpha<p$. Thus, they called $F$  a sublinear nonlinearity. 
 In this paper, we will consider bounds on $\nabla F$ of a more general type.
 
 \begin{defi} Let $\Phi_0$ be a differentiable $N$-function. We say that $G:[0,T]\times\rr^n\to\rr$  satisfies a $\Phi_0$-\emph{grow condition} if
@@ -655,10 +654,10 @@ Since  $I(u_n)$, $n=1,2,\ldots$,  is upper bounded, the previous part of the pro
 there exists a subsequence (again denoted by $u'_n$) such that $u'_n$ converges to a function $v\in\lphi$ in the weak* topology of $\lphi$.
 Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$. From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 \[
-\int_0^T\b{\xi'}\cdot u\ dt=\lim_{n\to\infty}\int_0^T\b{\xi'}\cdot u_n \ dt=
--\lim_{n\to\infty}\int_0^T\b{\xi}\cdot u'_n\ dt=-\int_0^T\b{\xi}\cdot v\ dt
+\int_0^T\xi'\cdot u\ dt=\lim_{n\to\infty}\int_0^T\xi'\cdot u_n \ dt=
+-\lim_{n\to\infty}\int_0^T\xi\cdot u'_n\ dt=-\int_0^T\xi\cdot v\ dt
 \]
-for every $T$-periodic function $\b{\xi}\in C^{\infty}([0,T],\rr^d)\subset\epsi$.
+for every $T$-periodic function $\xi\in C^{\infty}([0,T],\rr^d)\subset\epsi$.
 Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\wphiet$.
 
 Now, taking into account the relations $\left[L^1\right]^*=L^{\infty}\subset  \epsi$ and $\lphi\subset L^1$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1$. Consequently,  from the semicontinuity of $I$ (see \cite[Lemma 6.1]{ABGMS2015})  we get 
@@ -668,11 +667,6 @@ Hence $u\in \wphiet$ is a minimun and, since $I$ is G\^ateaux differentiable on 
 therefore $I'(u)\in (\wphiet)^{\perp}$. Thus,
 \[\int_0^T \frac{\Phi'(|u'(t)|)}{|u'(t)|}u'(t)\cdot v'(t)dt =-\int_0^T \nabla F(t,u(t))\cdot v(t)dt,\]
 for every  $v\in \wphiet$.  
-
-
-
-????? est\'a repetido????
-Since $\frac{\Phi'(|u'(t)|)}{|u'(t)|}u'(t)\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$ and  $\nabla F(t,u(t))\in L^1([0,T],\rr^n)$.
 
 
 
