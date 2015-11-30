@@ -689,20 +689,28 @@ are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds
  \section{Growing conditions with power functions}
 
 
-As it has been seen in the proof of Lemma \ref{lem:submultipliativa} and in \cite[Lemma 5.2]{ABGMS2015}, the function $\Phi_0$ may be assumed a power function $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$. The positive number $\alpha_{\Phi}$  is a Matuszewska-Orlicz indices (see \cite[Ch 11]{M}) which is defined by
+As it has been seen in the proof of Lemma \ref{lem:submultipliativa} and in \cite[Lemma 5.2]{ABGMS2015}, the function $\Phi_0$ in Lemma \ref{lem:submultipliativa} may be assumed a power function $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ and  $\alpha_{\Phi}$  is a Matuszewska-Orlicz indices (see \cite[Ch 11]{M}). These indices are defined by
+\begin{equation}\label{MO_indices}
+    \alpha_{\Phi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)} \right ) }{\log(t)},\quad
+    \beta_{\Phi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)}\right )}{\log(t)}.
+\end{equation}
+Hence, following the same lines that in the proof of Theorem \ref{coercitividad-r},  using \cite[Lemma 5.2]{ABGMS2015} instead of our Lemma \ref{lem:submultipliativa}, we can assume that $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ in  Theorem \ref{coercitividad-r}.
+
+
+
+
+ The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions for the $p$-laplacian operator under la assumption
+ \[|\nabla F|\leq b_1(t) |x|^{\alpha}+b_2(t).\]
+ for any $\alpha\in (0,p-1)$.
 
 
 
 
 
+ Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic}
+coercivity  was obtained even  for the limit value $\alpha=p-1$ in inequality \eqref{holder_cont-mu}.
 
 
-
-
-Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic} 
-coercivity  was obtained even  for the limit value $\mu=p$ in inequality \eqref{holder_cont-mu}.  
-
-{\bf OJO que $\mu$ no aparece en \eqref{holder_cont-mu}!!!!. Quiz\'as deber\'ia decir $\Phi_0'(x)=x^p$. O, mecionarse la ecuaci\'on anterior donde aparece $\alpha<p$, no $\mu$.}
 
 This result leans on the  fact that
 \begin{equation}
@@ -877,9 +885,6 @@ last inequality is false.
  
 
 
- The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions for the $p$-laplacian operator under la assumption
- \[|\nabla F|\leq b_1(t) |x|^{\alpha}+b_2(t).\]
- for any $\alpha\in (0,p-1)$
 
 \section*{Acknowledgments}
 The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
