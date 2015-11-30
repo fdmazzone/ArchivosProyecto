@@ -158,7 +158,7 @@ The problem \eqref{ProbPrin} comes from a variational one, that is,  the equatio
 I(u)=\int_{0}^T \Phi(|u'(t)|)+F(t,u(t))\ dt.
 \end{equation}
 
-
+ESCRIBIR ALGO SOBRE EL RESULTADO PRINCIPAL!!!!
 
 
 \section{Preliminaries}\label{preliminares}
@@ -684,6 +684,42 @@ are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds
 
 
 \subsection{More general action integrals}
+
+
+Muuuuuy en construcci\'on.....Fernando: no s\'e si era la idea que ten\'ias en mente..... 
+
+Let us consider the following problem 
+
+\begin{equation}\label{ProbPrin-gral}
+    \left\{%
+\begin{array}{ll}
+   \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0
+\end{array}%
+\right.
+\end{equation}
+where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and 
+the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory and differentiable function satisfying the conditions
+\begin{eqnarray}
+\mathcal{L}(t,\b{x},\b{y}) &\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),\label{cota_inf_2}\\
+|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
+|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
+\end{eqnarray}
+and where the potential $F$ satisfies conditions (A) and (C).
+
+In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$.
+
+Now,  performing some slight modifications in the proof of Theorem \ref{coercitividad-r}
+(in first line of \eqref{cota_inf_I}, $=$ has to be changed by $\geq$ and  
+Thm. 4.1 of  \cite{ABGMS2015} can be applied to prove $u'(0)=u'(T)$ exchanging $\wphi$ by $\wphiet$),
+we also get that problem \eqref{ProbPrin-gral} has at least one solution
+which minimizes the action integral
+\begin{equation}\label{integral_accion}
+I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
+\end{equation}
+
+
 
 
 
