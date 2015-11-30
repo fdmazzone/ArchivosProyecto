@@ -606,34 +606,36 @@ In the subsequent estimates, we use  \eqref{cota-diferencia-F},
 \eqref{cota-i1-i2}, the fact that $\Phi_0 \in \Delta_2$ and we get
 \begin{equation}\label{cota_inf_I}
 \begin{split}
-I(u)&\geq\alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)+\int_0^TF(t,u)\ dt
+I(u)&
+=\rho_{\Phi}(u')+\int_0^TF(t,u)\ dt
 \\ 
-&=\alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)+ \int_0^T \left[F(t,u)-F(t,\overline{u})\right]\ dt
+&=\rho_{\Phi}( u')+ \int_0^T \left[F(t,u)-F(t,\overline{u})\right]\ dt
 +  \int_0^TF(t,\overline{u})\ dt
 \\
-&\geq \alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)
+&\geq \rho_{\Phi}( u')
 -C_4 \Phi_0(\|u'\orlnor)
 +\int_0^TF(t,\overline{u})\ dt-
 C_4 \Phi_0(|\overline{u}|)-
 C_4 
 \\
-&\geq
-\alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)
+&\geq 
+\rho_{\Phi}( u')
 -C_4 \Phi_0(\|u'\orlnor)
 +H_{C_4, \Phi_0}(\overline{u})
 -C_4 
-\\&\geq
-\alpha_0\rho_{\Phi}\left( \frac{u'}{\Lambda}\right)
--C_5 \Phi_0\left(\frac{\|u'\orlnor}{\Lambda} \right)
+\\
+%&\geq
+%\rho_{\Phi}(u')
+%-C_5 \Phi_0\left(\frac{\|u'\orlnor}{\Lambda} \right)
+%+H_{C_4, \Phi_0}(\overline{u})
+%-C_4 
+%\\
+&=
+J_{C_4,\Phi_0}(u')
 +H_{C_4, \Phi_0}(\overline{u})
--C_4 
-\\&=
-\alpha_0J_{C_6,\Phi_0}\left(\frac{u'}{\Lambda}\right)
-+H_{C_4, \Phi_0}(\overline{u})
--C_4, 
+-C_4.
 \end{split}
 \end{equation}
-where $C_5=C_5(\Phi_0,\Lambda,C_4)$ and $C_6=\frac{C_5}{\alpha_0}$.
 
 
 
@@ -642,11 +644,12 @@ $\|u_n\sobnor\to\infty$ and we have to prove that $I(u_n)\to\infty$.
 On the contrary, suppose  that for a subsequence,
 still denoted by $u_n$, $I(u_n)$ is upper bounded, i.e. there exists $M>0$ such that $|I(u_{n})|\leq M$.
 As $\|u_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{u}_n|+\|u'_n\orlnor\to \infty$. Passing to a subsequence is necessary, still denoted $u_n$, we can assume that $|\overline{u}_n|\to \infty$ or $\|u'_n\orlnor\to \infty$.
-Now, Lemma \ref{lem_coer} implies that the functional $J_{C_6,\Phi_0}(\frac{u'}{\Lambda})$ is coercive;
+Now, Lemma \ref{lem_coer} implies that the functional $J_{C_4,\Phi_0}(u')$ is coercive;
 and, by \eqref{eq:propiedad-coercividad-phi0},
 the functional $H_{C_4,\Phi_0}(\overline{u})$ is also coercive, then
-$J_{C_6,\Phi_0}(\frac{u'_n}{\Lambda}) \to \infty$ or $H_{C_4,\Phi_0}(\overline{u}_n)\to \infty$.
-From the condition (A) on $F$, we have that on a bounded set the functional $H_{C_4,\Phi_0}(\overline{u}_n)$ is lower bounded and also $J_{C_6,\Phi_0}(\frac{u'_n}{\Lambda})\geq 0$.
+$J_{C_4,\Phi_0}(u'_n) \to \infty$ or $H_{C_4,\Phi_0}(\overline{u}_n)\to \infty$.
+From the condition (A) on $F$, we have that on a bounded set the functional $H_{C_4,\Phi_0}(\overline{u}_n)$ is lower bounded and 
+also $J_{C_4,\Phi_0}(u'_n)\geq 0$.
 Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
 
 Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
@@ -680,7 +683,7 @@ are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds
 
 
 
-
+\subsection{More general action integrals}
 
 
 
