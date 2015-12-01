@@ -167,7 +167,13 @@ The problem \eqref{ProbPrin} comes from a variational one, that is,  the equatio
 I(u)=\int_{0}^T \Phi(|u'(t)|)+F(t,u(t))\ dt.
 \end{equation}
 
-ESCRIBIR ALGO SOBRE EL RESULTADO PRINCIPAL!!!!
+PARA MEJORAR Y AMPLIAR!!!
+
+The main result of this article is Theorem \ref{coercitividad-r} which establishes conditions to guarantee existence of 
+solutions of the problem \eqref{ProbPrin} by minimization of functional \eqref{integral_accion}. 
+We point out that the hypothesis of
+Theorem \ref{coercitividad-r} are generalizations of those given in 
+\cite{wu1999periodic,zhao2004periodic,zhao2005existence,tang2010periodic} about the sublinearity.
 
 
 \section{Preliminaries}\label{preliminares}
@@ -692,16 +698,22 @@ Consequently, from \cite[p. 6]{mawhin2010critical} we obtain that the differenti
 are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds. Thus $u'(0)=u'(T)$.
 \end{proof}
 
+\begin{cor}
+Let 
+$\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ 
+be a Carath\'eodory, differentiable, {\bf strictly convex???} function such that 
+\begin{eqnarray}
+\mathcal{L}(t,\b{x},\b{y}) &\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),\label{cota_inf_2}\\
+|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
+|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
+\end{eqnarray}
+where $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function, 
+$\varphi$ is the right continuous derivative of $\Phi$,  
+$b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$.
+In addition, the potential $F$ satisfies conditions (A) and (C) {\bf and convex???} and $\Psi \in \Delta_2$ ????.
 
-
-
-\subsection{More general action integrals}
-
-
-Muuuuuy en construcci\'on.....Fernando: no s\'e si era la idea que ten\'ias en mente..... 
-
-Let us consider the following problem 
-
+Then, the problem
 \begin{equation}\label{ProbPrin-gral}
     \left\{%
 \begin{array}{ll}
@@ -710,30 +722,22 @@ Let us consider the following problem
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and 
-the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory and differentiable function satisfying the conditions
-\begin{eqnarray}
-\mathcal{L}(t,\b{x},\b{y}) &\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),\label{cota_inf_2}\\
-|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
-|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
-\end{eqnarray}
-and where the potential $F$ satisfies conditions (A) and (C).
-
-In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$.
-
-Now,  performing some slight modifications in the proof of Theorem \ref{coercitividad-r}
-(in first line of \eqref{cota_inf_I}, $=$ has to be changed by $\geq$ and  
-Thm. 4.1 of  \cite{ABGMS2015} can be applied to prove $u'(0)=u'(T)$ exchanging $\wphi$ by $\wphiet$),
-we also get that problem \eqref{ProbPrin-gral} has at least one solution
+has at least one solution $\b{u}:[0,T]\to\rr^d$ absolutely continuous, 
 which minimizes the action integral
 \begin{equation}\label{integral_accion}
-I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
+I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
+\end{cor}
 
+{\bf Quiz\'as hay demasiada informaci\'on en el enunciado y se puede quitar algo....}
 
-
-
+\begin{proof}
+In Theorem \ref{coercitividad-r} we have seen that $\Phi\left(|y|\right)+ F(t,x)$ is coercive, 
+then the function $\mathcal L$ do so. The  differentiability and lower semicontinuity of the $I$ follow from  
+Thm. 3.2  and Lemma 6.1 of \cite{ABGMS2015}, respectively. 
+Last, applying Thm. 4.1 and Thm. 6.2???? of \cite{ABGMS2015}, we get the existence of $u$ 
+and the initial conditions on $u$. 
+\end{proof}
 
 
 
@@ -751,14 +755,24 @@ I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
 
 
 
-As it has been seen in the proof of Lemma \ref{lem:submultipliativa} and in \cite[Lemma 5.2]{ABGMS2015}, the function $\Phi_0$ in Lemma \ref{lem:submultipliativa} may be assumed a power function $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ and  $\alpha_{\Phi}$  is a Matuszewska-Orlicz indices (see \cite[Ch 11]{M}). These indices are defined by
+As it has seen in the proof of Lemma \ref{lem:submultipliativa} and in \cite[Lemma 5.2]{ABGMS2015}, 
+we may assume that the function $\Phi_0$ 
+in Lemma \ref{lem:submultipliativa} ???no ser\'ia \ref{lem_coer}???? 
+is given by $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ and  
+where $\alpha_{\Phi}$  is a Matuszewska-Orlicz index (see \cite[Ch. 11]{M}). 
+These indices are defined by
 \begin{equation}\label{MO_indices}
     \alpha_{\Phi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)} \right ) }{\log(t)},\quad
     \beta_{\Phi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)}\right )}{\log(t)}.
 \end{equation}
-Hence, following the same lines that in the proof of Theorem \ref{coercitividad-r},  using \cite[Lemma 5.2]{ABGMS2015} instead of our Lemma \ref{lem:submultipliativa}, we can assume that $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ in  Theorem \ref{coercitividad-r}.
+Hence, following the same lines  as the proof of Theorem \ref{coercitividad-r},  using \cite[Lemma 5.2]{ABGMS2015} instead of our Lemma \ref{lem:submultipliativa}, we can assume that $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ in  Theorem \ref{coercitividad-r}.
+{\bf (Se repite el Thm 3.7 y los dos p\'arrafos est\'an un poco enredados!!!)}.
 
 
+
+ The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, not only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be sharper than those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Thm. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions for the $p$-laplacian operator under the assumption
+ \[|\nabla F|\leq b_1(t) |x|^{\alpha}+b_2(t)\]
+ for any $\alpha\in (0,p-1)$.
 
 
 
