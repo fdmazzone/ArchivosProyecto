@@ -149,7 +149,16 @@ In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ i
 We will call the differential operator
 \[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right) \]
 the
-\emph{$\Phi$-laplacian operator}. If $\Phi(x)=|x|^p$, $1<p<\infty$, $L_{\Phi}$ is the well known $p$-laplacian operator.
+\emph{$\Phi$-laplacian operator}. If $\Phi(x)=|x|^p/p$, $1<p<\infty$, $L_{\Phi}$ is the well known $p$-laplacian operator. In this case, we have the \emph{Dirichlet problem} for the $p$-laplacian
+
+\begin{equation}\label{ProbP-lapla}
+    \left\{%
+\begin{array}{ll}
+   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    u(0)-u(T)=u'(0)-u'(T)=0
+\end{array}%
+\right.
+\end{equation}
 
 
 
@@ -476,7 +485,10 @@ respectively.
 \end{defi}
 
 In \cite{tang1998periodic} and \cite{tang2010periodic} the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
-\[ |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),\]
+\begin{equation}\label{eq:cota_pot} |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),
+ \end{equation}
+
+
 where  $b_1,b_2 \in L^1_1$ and $\alpha<p$. Thus, they called $F$  a sublinear nonlinearity. 
 In this paper, we will consider bounds on $\nabla F$ of a more general type.
 
@@ -725,7 +737,18 @@ I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
 
 
 
- \section{Growing conditions with power functions}
+ \section{Examples growing conditions with power functions}
+
+
+ The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}  a $\Phi$-laplacian operators with $N$-functions $\Phi$ which grow faster that power functions, for example with a exponential grow. Furthermore, we  extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic} even in the case of  $p$-laplacian operator \eqref{ProbP-lapla}, because
+ we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions of \eqref{ProbP-lapla} under la assumption \eqref{eq:cota_pot}
+ for any $\alpha\in (0,p-1)$. Meanwhile, our Theorem \ref{coercitividad-r} implies existence for the potential
+
+ \[F(t,x)=|x|^p/\sqrt{\ln(2+|x|)}.\]
+
+ We note that this $F$ does not satisfies \eqref{eq:cota_pot} for any $\alpha<p-1$.  Next we will show  a $N$-function $\Phi$ satisfying the hypothesis of Theorem \ref{coercitividad-r} for the potential $F$.
+
+
 
 
 As it has been seen in the proof of Lemma \ref{lem:submultipliativa} and in \cite[Lemma 5.2]{ABGMS2015}, the function $\Phi_0$ in Lemma \ref{lem:submultipliativa} may be assumed a power function $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ and  $\alpha_{\Phi}$  is a Matuszewska-Orlicz indices (see \cite[Ch 11]{M}). These indices are defined by
@@ -737,10 +760,6 @@ Hence, following the same lines that in the proof of Theorem \ref{coercitividad-
 
 
 
-
- The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions for the $p$-laplacian operator under la assumption
- \[|\nabla F|\leq b_1(t) |x|^{\alpha}+b_2(t).\]
- for any $\alpha\in (0,p-1)$.
 
 
 
