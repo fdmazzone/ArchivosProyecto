@@ -149,7 +149,16 @@ In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ i
 We will call the differential operator
 \[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right) \]
 the
-\emph{$\Phi$-laplacian operator}. If $\Phi(x)=|x|^p$, $1<p<\infty$, $L_{\Phi}$ is the well known $p$-laplacian operator.
+\emph{$\Phi$-laplacian operator}. If $\Phi(x)=|x|^p/p$, $1<p<\infty$, $L_{\Phi}$ is the well known $p$-laplacian operator. In this case, we have the \emph{Dirichlet problem} for the $p$-laplacian
+
+\begin{equation}\label{ProbP-lapla}
+    \left\{%
+\begin{array}{ll}
+   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    u(0)-u(T)=u'(0)-u'(T)=0
+\end{array}%
+\right.
+\end{equation}
 
 
 
@@ -158,7 +167,13 @@ The problem \eqref{ProbPrin} comes from a variational one, that is,  the equatio
 I(u)=\int_{0}^T \Phi(|u'(t)|)+F(t,u(t))\ dt.
 \end{equation}
 
-ESCRIBIR ALGO SOBRE EL RESULTADO PRINCIPAL!!!!
+PARA MEJORAR Y AMPLIAR!!!
+
+The main result of this article is Theorem \ref{coercitividad-r} which establishes conditions to guarantee existence of 
+solutions of the problem \eqref{ProbPrin} by minimization of functional \eqref{integral_accion}. 
+We point out that the hypothesis of
+Theorem \ref{coercitividad-r} are generalizations of those given in 
+\cite{wu1999periodic,zhao2004periodic,zhao2005existence,tang2010periodic} about the sublinearity.
 
 
 \section{Preliminaries}\label{preliminares}
@@ -476,7 +491,10 @@ respectively.
 \end{defi}
 
 In \cite{tang1998periodic} and \cite{tang2010periodic} the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
-\[ |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),\]
+\begin{equation}\label{eq:cota_pot} |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),
+ \end{equation}
+
+
 where  $b_1,b_2 \in L^1_1$ and $\alpha<p$. Thus, they called $F$  a sublinear nonlinearity. 
 In this paper, we will consider bounds on $\nabla F$ of a more general type.
 
@@ -680,16 +698,22 @@ Consequently, from \cite[p. 6]{mawhin2010critical} we obtain that the differenti
 are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds. Thus $u'(0)=u'(T)$.
 \end{proof}
 
+\begin{cor}
+Let 
+$\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ 
+be a Carath\'eodory, differentiable, {\bf strictly convex???} function such that 
+\begin{eqnarray}
+\mathcal{L}(t,\b{x},\b{y}) &\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),\label{cota_inf_2}\\
+|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
+|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
+\end{eqnarray}
+where $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function, 
+$\varphi$ is the right continuous derivative of $\Phi$,  
+$b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$.
+In addition, the potential $F$ satisfies conditions (A) and (C) {\bf and convex???} and $\Psi \in \Delta_2$ ????.
 
-
-
-\subsection{More general action integrals}
-
-
-Muuuuuy en construcci\'on.....Fernando: no s\'e si era la idea que ten\'ias en mente..... 
-
-Let us consider the following problem 
-
+Then, the problem
 \begin{equation}\label{ProbPrin-gral}
     \left\{%
 \begin{array}{ll}
@@ -698,56 +722,42 @@ Let us consider the following problem
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $\b{u}:[0,T]\to\rr^d$ is absolutely continuous and 
-the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory and differentiable function satisfying the conditions
-\begin{eqnarray}
-\mathcal{L}(t,\b{x},\b{y}) &\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),\label{cota_inf_2}\\
-|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
-|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
-\end{eqnarray}
-and where the potential $F$ satisfies conditions (A) and (C).
-
-In these inequalities we assume that  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function (see section  Preliminaries  for definitions), $\varphi$ is the right continuous derivative of $\Phi$. The non negative functions $b,c$ and $f$ satisfy that  $b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$, where  the Banach spaces $ L^1_1([0,T]), \lpsi_1([0,T])$ and  $\ephi_1([0,T])$.
-
-Now,  performing some slight modifications in the proof of Theorem \ref{coercitividad-r}
-(in first line of \eqref{cota_inf_I}, $=$ has to be changed by $\geq$ and  
-Thm. 4.1 of  \cite{ABGMS2015} can be applied to prove $u'(0)=u'(T)$ exchanging $\wphi$ by $\wphiet$),
-we also get that problem \eqref{ProbPrin-gral} has at least one solution
+has at least one solution $\b{u}:[0,T]\to\rr^d$ absolutely continuous, 
 which minimizes the action integral
 \begin{equation}\label{integral_accion}
-I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
+I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
+\end{cor}
+
+{\bf Quiz\'as hay demasiada informaci\'on en el enunciado y se puede quitar algo....}
+
+\begin{proof}
+In Theorem \ref{coercitividad-r} we have seen that $\Phi\left(|y|\right)+ F(t,x)$ is coercive, 
+then the function $\mathcal L$ do so. The  differentiability and lower semicontinuity of the $I$ follow from  
+Thm. 3.2  and Lemma 6.1 of \cite{ABGMS2015}, respectively. 
+Last, applying Thm. 4.1 and Thm. 6.2???? of \cite{ABGMS2015}, we get the existence of $u$ 
+and the initial conditions on $u$. 
+\end{proof}
 
 
 
+ \section{Examples}
 
 
+ The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}  a $\Phi$-laplacian operators with $N$-functions $\Phi$ which grow faster that power functions, for example with a exponential grow.
 
 
- \section{Growing conditions with power functions}
+ Furthermore, we want to emphasize that, even in the case of $p$-laplacian operator \eqref{ProbP-lapla}, our results  extend  previous one (see \cite{tang1998periodic, tang2010periodic}), because
+ we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions of \eqref{ProbP-lapla} under la assumption \eqref{eq:cota_pot}
+ for any $\alpha\in (0,p-1)$. Meanwhile, our Theorem \ref{coercitividad-r} implies existence for the potential
+
+ \[F_0(t,x)=|x|^p/\ln(2+|x|)^2.\]
+
+ We note that this $F$ does not satisfies \eqref{eq:cota_pot} for any $\alpha<p-1$.  Next we will show  a $N$-function $\Phi_0$ satisfying the hypothesis of Theorem \ref{coercitividad-r} for this potential $F_0$.
 
 
-As it has been seen in the proof of Lemma \ref{lem:submultipliativa} and in \cite[Lemma 5.2]{ABGMS2015}, the function $\Phi_0$ in Lemma \ref{lem:submultipliativa} may be assumed a power function $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ and  $\alpha_{\Phi}$  is a Matuszewska-Orlicz indices (see \cite[Ch 11]{M}). These indices are defined by
-\begin{equation}\label{MO_indices}
-    \alpha_{\Phi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)} \right ) }{\log(t)},\quad
-    \beta_{\Phi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)}\right )}{\log(t)}.
-\end{equation}
-Hence, following the same lines that in the proof of Theorem \ref{coercitividad-r},  using \cite[Lemma 5.2]{ABGMS2015} instead of our Lemma \ref{lem:submultipliativa}, we can assume that $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ in  Theorem \ref{coercitividad-r}.
-
-
-
-
- The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}, no only to the $\Phi$-laplacian operator, but even in the case of  $p$-laplacian operator we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions for the $p$-laplacian operator under la assumption
- \[|\nabla F|\leq b_1(t) |x|^{\alpha}+b_2(t).\]
- for any $\alpha\in (0,p-1)$.
-
-
-
-
-
-In this section, from now on we will suppose that
-\[\Phi(u)=
+We define
+\[\Phi_0(u)=
 \left\{
 \begin{array}{ll}
 \frac{p-1}{p}u^p&u\leq e
@@ -755,16 +765,20 @@ In this section, from now on we will suppose that
 \frac{u^p}{\log u}-\frac{e^p}{p}&u>e
 \end{array}
 \right.\]
-with $p>1$. Next, we will establish some properties of this function $\Phi$.
+with $p>1$. Next, we will establish some properties of this function $\Phi_0$.
 
 \begin{thm}
-If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi$ is an $N$-function.
+If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi_0$ is an differentiable $N$-function. The $N$-function $\Phi_0$ satisfies that for every $\varepsilon>0$, there exists a positive constant $C=C(p,\varepsilon)$  such that
+\begin{equation}\label{cota-sup-indices}
+C^{-1}t^{p-\varepsilon}\Phi_0(u)\leq \Phi_0(tu) \leq Ct^p\Phi_0(u)\quad t\geq 1, u>0,
+\end{equation}
+
 \end{thm}
 
 
 \begin{proof}
 We have
-\[\varphi(u)=\Phi'(u)=\left\{
+\[\varphi(u)=\Phi_0'(u)=\left\{
 \begin{array}{cccc}
 (p-1)u^{p-1}&:=&\varphi_1(u)& \mbox{if}\;u\leq e
 \\
@@ -773,31 +787,23 @@ We have
 \right.
 \]
 
-First let us see that $\Phi'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
+First let us see that $\Phi_0'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
 For this purpose, since $\varphi_1(e)=\varphi_2(e)$, it is enough to see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on
 $[e,\infty)$ for every $p\geq \frac{1+\sqrt {2}}{2}$. Clearly
 $\varphi_1$ is an increasing function for $p>1$.  On the other hand, an elementary analysis of the function shows that
 $\varphi_2'(u)>0$ on $[e,\infty)$ if and only if
  $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.  Therefore $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
 
- Besides $\varphi_2(u)\to \infty$ and  $\varphi_1(u)\to 0$  as $u \to  \infty$ and $u\to 0$  respectively, provided that $p>1$. Hence, $\Phi$ is an $N$-function.
-\end{proof}
+ Besides $\varphi_2(u)\to \infty$ and  $\varphi_1(u)\to 0$  as $u \to  \infty$ and $u\to 0$  respectively, provided that $p>1$. Hence, $\Phi_0$ is an $N$-function.
 
 
-\begin{thm} For every $\varepsilon>0$, there exists a positive constant $C=C(p,\varepsilon)$  such that
-\begin{equation}\label{cota-sup-indices}
-C^{-1}t^{p-\varepsilon}\Phi(u)\leq \Phi(tu) \leq Ct^p\Phi(u)\quad t\geq 1, u>0,
-\end{equation}
-\end{thm}
 
-\begin{proof} If $u\leq tu\leq e$, then $\Phi(tu)=t^p\Phi(u)$ and \eqref{cota-sup-indices} holds with $C=1$.
-
-If $u\leq e\leq tu$, as $\frac{e^p}{p}>0$  and $\log(tu)\geq 1$, we have
-$\Phi(tu)\leq t^pu^p= \frac{p}{p-1}t^p\Phi(u)$. Thus, the second inequality of  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$. On the other hand, as $f(t)=\frac{t}{\log t}$ is increasing on $[e,\infty)$, then $f((tu)^p)\geq  f(e^p)=e^p/p$.
+Next we will prove \eqref{cota-sup-indices}. If $u\leq tu\leq e$, then $\Phi_0(tu)=t^p\Phi_0(u)$ and \eqref{cota-sup-indices} holds with $C=1$. If $u\leq e\leq tu$, as $\frac{e^p}{p}>0$  and $\log(tu)\geq 1$, we have
+$\Phi_0(tu)\leq t^pu^p= \frac{p}{p-1}t^p\Phi_0(u)$. Thus, the second inequality of  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$. On the other hand, as $f(t)=\frac{t}{\log t}$ is increasing on $[e,\infty)$, then $f((tu)^p)\geq  f(e^p)=e^p/p$.
 Now,
 \[
 \begin{split}
-\Phi(tu)&=\frac{p(tu)^p}{\log (tu)^p}-\frac{e^p}{p}\\
+\Phi_0(tu)&=\frac{p(tu)^p}{\log (tu)^p}-\frac{e^p}{p}\\
 &= \frac{(p-1)(tu)^p}{\log(tu)^p}+\frac{(tu)^p}{\log (tu)^p}-\frac{e^p}{p}
 \\
 &\geq \frac{p-1}{p}\frac{(tu)^p}{\log(tu)}\\
@@ -807,14 +813,14 @@ Now,
 \]
 Since $\varepsilon e^{1-\varepsilon}$ is the minimum value of $t\mapsto\frac{t^{\varepsilon}}{\log t+1}$  on the interval $[1,+\infty)$ then
 \[
-\Phi(tu)\geq \frac{p-1}{p}\varepsilon e^{1-\varepsilon}t^{p-\varepsilon}u^p,
+\Phi_0(tu)\geq \frac{p-1}{p}\varepsilon e^{1-\varepsilon}t^{p-\varepsilon}u^p,
 \]
 which is the first inequality of \eqref{cota-sup-indices} with $C=\frac{p}{p-1}\varepsilon^{-1} e^{-1+\varepsilon}$.
 
 
 If $e\leq u\leq tu$, then
 \begin{equation}\label{Phi-de-u-a-v}
-\Phi(tu)\leq \frac{t^pu^p}{\log(tu)}\leq \frac{t^pu^p}{\log(u)}=\frac{pt^pv}{\log v},
+\Phi_0(tu)\leq \frac{t^pu^p}{\log(tu)}\leq \frac{t^pu^p}{\log(u)}=\frac{pt^pv}{\log v},
 \end{equation} 
 where $v:=u^p$ and $v\geq e^p$.  
 If $\alpha>0$, the function $x\mapsto \frac{x}{x-\alpha}$ is decreasing on $(\alpha,\infty)$
@@ -826,13 +832,13 @@ Therefore,  we have
 \]
 for every $v \geq e^p$. In this way, from \eqref{Phi-de-u-a-v}, we have
 \[
-\Phi(tu)\leq \frac{pt^p}{p-1}\left(\frac{pv}{\log v}-\frac{e^p}{p}\right)=
+\Phi_0(tu)\leq \frac{pt^p}{p-1}\left(\frac{pv}{\log v}-\frac{e^p}{p}\right)=
  \frac{pt^p}{p-1}\left(\frac{u^p}{\log u}-\frac{e^p}{p}\right)
 \]
 and the second inequality of  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$. For the first inequality we have, as it was proved previously,
 
 \[
-  \Phi(tu)
+  \Phi_0(tu)
   \geq
   \frac{p-1}{p}\frac{(tu)^p}{\log(tu)}
   =
@@ -842,8 +848,8 @@ and the second inequality of  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-
 \]
 Let $f(s)=\frac{sA}{\log s+A}$ with $s\geq 1$ and $A\geq \varepsilon$.  If $A\leq 1$,  the function $f$ attains a minimum on $[1,\infty)$ at $s=e^{1-A}$ and the minimum value is $f(e^{1-A})=Ae^{1-A}\geq \varepsilon$. If $A> 1$, $f$ is increasing  on $[1,\infty)$ and its minimum value is $f(1)=1$. Then, $f(s)\geq \varepsilon$ in any case,   therefore
 \[
-\Phi(tu)\geq \frac{p-1}{p}\varepsilon \frac{t^{p-\varepsilon}u^p}{\log u}\geq
-\frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi(u).
+\Phi_0(tu)\geq \frac{p-1}{p}\varepsilon \frac{t^{p-\varepsilon}u^p}{\log u}\geq
+\frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi_0(u).
 \]
 Therefore, \eqref{cota-sup-indices} holds with $C=\frac{p}{\varepsilon (p-1)}$, because this $C$ is the biggest constant that we have obtained in each case under consideration.
 \end{proof}
@@ -853,81 +859,158 @@ Therefore, \eqref{cota-sup-indices} holds with $C=\frac{p}{\varepsilon (p-1)}$, 
 \begin{comentario}
 The inequality
 \[
-\Phi(tu)\geq Ct^p\Phi(u)
+\Phi_0(tu)\geq Ct^p\Phi_0(u)
 \]
 is false for every $C$ because for every $u\geq e$ we have
 \[
-\lim\limits_{t \to \infty}\frac{\Phi(tu)}{t^p\Phi(u)}=0
+\lim\limits_{t \to \infty}\frac{\Phi_0(tu)}{t^p\Phi_0(u)}=0
 \]
 \end{comentario}
 
+We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. For the $p$-laplacian operator we have that $\Phi(|u|)=|u|^p/p$. Then we can take $Phi_1=\Phi$ in \eqref{eq:caract_delta2}. Clearly $\Phi_0\llcurly\Phi_1$.
 
 
-
-
-
-\begin{thm}
-$\alpha_{\Phi}=\beta_{\Phi}=p$
-\end{thm}
-
-\begin{proof}
-From \eqref{MO_indices} and \eqref{cota-sup-indices}, we get
-\[
-\beta_{\Phi}=\lim\limits_{t \to \infty} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}
-\leq
-\lim \limits_{t \to \infty} \frac{\log C+p\log t}{\log t}=p.
-\]
-On the other hand, employing \eqref{MO_indices} and performing some elementary calculations, we obtain
-\[
-\alpha_{\Phi}=
-\lim\limits_{t \to 0^+} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}=
-\lim\limits_{s \to \infty} \frac{\log\left[\sup\limits_{v>0} \frac{\Phi(v)}{\Phi(sv)}\right]^{-1}}{\log s}=
-\lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}
-\]
-where $v:=tu$ and $s:=\frac{1}{t}$.
-Then, using \eqref{cota-sup-indices},  for every $\varepsilon>0$ we have
-\[
-\alpha_{\Phi}=
-\lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}\geq
-\lim\limits_{s \to \infty} \frac{\log C+(p-\varepsilon)\log s}{\log s}\geq p-\varepsilon,
-\]
-therefore $\alpha_{\Phi}\geq p$.
-
-Finally, as $\alpha_{\Phi}\leq \beta_{\Phi}\leq p$, we get
-$\alpha_{\Phi}=\beta_{\Phi}=p$.
-\end{proof}
-
-
-
-Now, we are able to see that
-\[
-\rho_{\Phi}(u)=\int_0^T \Phi(|u|)\,dx\geq C\|u\orlnor^{\alpha_{\Phi}}=C\|u\orlnor^p
-\]
-is false.
-
-In fact, if we take $u\equiv t>0$, then $\|u\orlnor^p=C_1t^p$ where $C_1=\|1\orlnor$ and
-$\int_0^T \Phi(|u|)\,dx=C_2\Phi(t)$ with $C_2=T$.
-Then, if $\rho_{\Phi}(u)\geq C\|u\orlnor^p$ were true, then $\Phi(t)\geq C t^p$ would also be true; however, this
-last inequality is false.
- 
-
-
- Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic}
-coercivity  was obtained even  for the limit value $\alpha=p-1$ in inequality \eqref{holder_cont-mu}.
-
-
-
-
-This result leans on the  fact that
-\begin{equation}
- \|u\orlnor^{\alpha_{\Phi}}=O\left(\int_0^T \Phi(|u|)\,dt\right)\quad\text{for } \|u\orlnor\to\infty,
-\end{equation}
-when  $\Phi(u)=|u|^p$.
-Nevertheless, it is no longer the case  for any $N$-function $\Phi$ as the following example shows.
+% <<<<<<< HEAD
+% 
+% 
+% 
+% \begin{thm}
+% $\alpha_{\Phi}=\beta_{\Phi}=p$
+% \end{thm}
+% 
+% \begin{proof}
+% From \eqref{MO_indices} and \eqref{cota-sup-indices}, we get
+% \[
+% \beta_{\Phi}=\lim\limits_{t \to \infty} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}
+% \leq
+% \lim \limits_{t \to \infty} \frac{\log C+p\log t}{\log t}=p.
+% \]
+% On the other hand, employing \eqref{MO_indices} and performing some elementary calculations, we obtain
+% \[
+% \alpha_{\Phi}=
+% \lim\limits_{t \to 0^+} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}=
+% \lim\limits_{s \to \infty} \frac{\log\left[\sup\limits_{v>0} \frac{\Phi(v)}{\Phi(sv)}\right]^{-1}}{\log s}=
+% \lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}
+% \]
+% where $v:=tu$ and $s:=\frac{1}{t}$.
+% Then, using \eqref{cota-sup-indices},  for every $\varepsilon>0$ we have
+% \[
+% \alpha_{\Phi}=
+% \lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}\geq
+% \lim\limits_{s \to \infty} \frac{\log C+(p-\varepsilon)\log s}{\log s}\geq p-\varepsilon,
+% \]
+% therefore $\alpha_{\Phi}\geq p$.
+% 
+% Finally, as $\alpha_{\Phi}\leq \beta_{\Phi}\leq p$, we get
+% $\alpha_{\Phi}=\beta_{\Phi}=p$.
+% \end{proof}
+% 
+% 
+% 
+% Now, we are able to see that
+% \[
+% \rho_{\Phi}(u)=\int_0^T \Phi(|u|)\,dx\geq C\|u\orlnor^{\alpha_{\Phi}}=C\|u\orlnor^p
+% \]
+% is false.
+% 
+% In fact, if we take $u\equiv t>0$, then $\|u\orlnor^p=C_1t^p$ where $C_1=\|1\orlnor$ and
+% $\int_0^T \Phi(|u|)\,dx=C_2\Phi(t)$ with $C_2=T$.
+% Then, if $\rho_{\Phi}(u)\geq C\|u\orlnor^p$ were true, then $\Phi(t)\geq C t^p$ would also be true; however, this
+% last inequality is false.
+%  
+% 
+% 
+%  Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic}
+% coercivity  was obtained even  for the limit value $\alpha=p-1$ in inequality \eqref{holder_cont-mu}.
+% 
+% 
+% 
+% 
+% This result leans on the  fact that
+% \begin{equation}
+%  \|u\orlnor^{\alpha_{\Phi}}=O\left(\int_0^T \Phi(|u|)\,dt\right)\quad\text{for } \|u\orlnor\to\infty,
+% \end{equation}
+% when  $\Phi(u)=|u|^p$.
+% Nevertheless, it is no longer the case  for any $N$-function $\Phi$ as the following example shows.
 
 \section*{Acknowledgments}
 The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
 
+
+
+%
+% \begin{thm}
+% $\alpha_{\Phi}=\beta_{\Phi}=p$
+% \end{thm}
+%
+% \begin{proof}
+% From \eqref{MO_indices} and \eqref{cota-sup-indices}, we get
+% \[
+% \beta_{\Phi}=\lim\limits_{t \to \infty} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}
+% \leq
+% \lim \limits_{t \to \infty} \frac{\log C+p\log t}{\log t}=p.
+% \]
+% On the other hand, employing \eqref{MO_indices} and performing some elementary calculations, we obtain
+% \[
+% \alpha_{\Phi}=
+% \lim\limits_{t \to 0^+} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}=
+% \lim\limits_{s \to \infty} \frac{\log\left[\sup\limits_{v>0} \frac{\Phi(v)}{\Phi(sv)}\right]^{-1}}{\log s}=
+% \lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}
+% \]
+% where $v:=tu$ and $s:=\frac{1}{t}$.
+% Then, using \eqref{cota-sup-indices},  for every $\varepsilon>0$ we have
+% \[
+% \alpha_{\Phi}=
+% \lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}\geq
+% \lim\limits_{s \to \infty} \frac{\log C+(p-\varepsilon)\log s}{\log s}\geq p-\varepsilon,
+% \]
+% therefore $\alpha_{\Phi}\geq p$.
+%
+% Finally, as $\alpha_{\Phi}\leq \beta_{\Phi}\leq p$, we get
+% $\alpha_{\Phi}=\beta_{\Phi}=p$.
+% \end{proof}
+%
+%
+%
+% Now, we are able to see that
+% \[
+% \rho_{\Phi}(u)=\int_0^T \Phi(|u|)\,dx\geq C\|u\orlnor^{\alpha_{\Phi}}=C\|u\orlnor^p
+% \]
+% is false.
+%
+% In fact, if we take $u\equiv t>0$, then $\|u\orlnor^p=C_1t^p$ where $C_1=\|1\orlnor$ and
+% $\int_0^T \Phi(|u|)\,dx=C_2\Phi(t)$ with $C_2=T$.
+% Then, if $\rho_{\Phi}(u)\geq C\|u\orlnor^p$ were true, then $\Phi(t)\geq C t^p$ would also be true; however, this
+% last inequality is false.
+%
+%
+%
+% As it has seen in the proof of Lemma \ref{lem:submultipliativa} and in \cite[Lemma 5.2]{ABGMS2015},
+% we may assume that the function $\Phi_0$
+% in Lemma \ref{lem:submultipliativa} ???no ser\'ia \ref{lem_coer}????
+% is given by $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ and
+% where $\alpha_{\Phi}$  is a Matuszewska-Orlicz index (see \cite[Ch. 11]{M}).
+% These indices are defined by
+% \begin{equation}\label{MO_indices}
+%     \alpha_{\Phi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)} \right ) }{\log(t)},\quad
+%     \beta_{\Phi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)}\right )}{\log(t)}.
+% \end{equation}
+% Hence, following the same lines  as the proof of Theorem \ref{coercitividad-r},  using \cite[Lemma 5.2]{ABGMS2015} instead of our Lemma \ref{lem:submultipliativa}, we can assume that $\Phi_0(x)=|x|^{\mu}$ with $0<\mu<\alpha_{\Phi}$ in  Theorem \ref{coercitividad-r}.
+% {\bf (Se repite el Thm 3.7 y los dos p\'arrafos est\'an un poco enredados!!!)}.
+%
+% Assuming $\|b_1\|_{L^1}$  small enough, in  \cite{zhao2004periodic, tang2010periodic}
+% coercivity  was obtained even  for the limit value $\alpha=p-1$ in inequality \eqref{holder_cont-mu}.
+%
+% \section*{Acknowledgments}
+% The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223.
+%
+%
+% This result leans on the  fact that
+% \begin{equation}
+%  \|u\orlnor^{\alpha_{\Phi}}=O\left(\int_0^T \Phi(|u|)\,dt\right)\quad\text{for } \|u\orlnor\to\infty,
+% \end{equation}
+% when  $\Phi(u)=|u|^p$.
+% Nevertheless, it is no longer the case  for any $N$-function $\Phi$ as the following example shows.
 
  \bibliographystyle{elsarticle-num} 
  \bibliography{biblio}
