@@ -438,34 +438,32 @@ The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$ globally. Let $\Phi_1$ be any $N$-function satisfying \eqref{eq:caract_delta2}. Then
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
-\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}=\infty,
+\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty,
 \end{equation}
 
 
-for every $\Phi_0$ with $\Phi_0\llcurly\Phi_1)$.
-
-If  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$ (at $\infty$).
+for every $\Phi_0$ with $\Phi_0\llcurly\Phi_1$ and $k>0$. If  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$ (at $\infty$).
 \end{lem}
 
 \begin{proof}
 By the assumptions on $\Phi$ and $\Phi_1$  and  inequality \eqref{amemiya-ine}, for $r>1$ we have 
 \[
-\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
-\Phi_1(r) \frac{\int_0^T \Phi(r^{-1}|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
-\frac{\Phi_1(r)}{\Phi_0(\|u\orlnor)}\{r^{-1}\|u\orlnor-1\}.
+\int_0^T \Phi(|u|)\,dt\geq
+\Phi_1(r) \int_0^T \Phi(r^{-1}|u|)\,dt\geq
+\Phi_1(r)\{r^{-1}\|u\orlnor-1\}.
 \]
-Now, we choose $r=\frac{\|u\orlnor}{2}$ and as $\|u\orlnor\to\infty$ we can assume $r>1$ and by \cite[Thm. 2 (b), p. 16]{rao1991theory}.
+Now, we choose $r=\frac{\|u\orlnor}{2}$ and as $\|u\orlnor\to\infty$ we can assume $r>1$ and by \cite[Thm. 2 (b)(v), p. 16]{rao1991theory}.
 \[
-\lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(\|u\orlnor)}\geq
-\lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(\|u\orlnor)}
+\lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq
+\lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
 =\infty.
 \]
 
 
 
 
-Finally, if $\Phi_0$ is an $N$-function, then $\Phi_0(u)\geq k|u|$ for  $k$ small enough and $|u|>1$. 
-Therefore \eqref{eq:coer_mod} holds for $\Phi_0(u)=|u|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$.
+Finally, if $\Phi_0$ is an $N$-function, then $\Phi_0(x)\geq \alpha |x|$ for  $k$ small enough and $|x|>1$.
+Therefore \eqref{eq:coer_mod} holds for $\Phi_0(x)=|x|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$.
 \end{proof}
 
 
@@ -478,14 +476,14 @@ However, $\Phi_0(u)$ is not dominated for any  power function $|u|^{\alpha}$ for
 
 
 
-\begin{defi}We define the  functionals $J_{C,\Phi_0}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\Phi_0}:\rr^n\to \rr$, where $C>0$ and $\Phi_0$ is an $N$-function, by
+\begin{defi}We define the  functionals $J_{C,\varphi}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\varphi}:\rr^n\to \rr$, where $C>0$ and $\varphi:[0,+\infty)\to [0,+\infty)$ is an by
 \begin{equation}\label{func_phi}
-  J_{C,\Phi_0}(u):= \rho_{\Phi}\left(u\right)-C\Phi_0\left(\|u\orlnor\right),
+  J_{C,\varphi}(u):= \rho_{\Phi}\left(u\right)-C\varphi\left(\|u\orlnor\right),
 \end{equation}
  and
 
 \begin{equation}\label{eq:functional_H-bis}
- H_{C,\Phi_0}(x):=\int_0^TF(t,x)dt-C\Phi_0(|x|),
+ H_{C,\varphi}(x):=\int_0^TF(t,x)dt-C\varphi(2|x|),
 \end{equation}
 respectively.
 \end{defi}
@@ -511,11 +509,12 @@ with $b_1,b_2 \in L^1([0,T],\rr)$.
 \begin{thm}\label{coercitividad-r} Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2$ condition globally. 
 Assume that the $N$-function $\Phi_1$ satisfies \eqref{eq:caract_delta2}, $F$ satisfies (C) and
 (A), and  $\nabla F$ satisfies a $\Phi_0$-grow condition for some 
-$\Delta_2$-globally $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi_1$.  
+ $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi_1$.
 Furthermore, we suppose that
 \begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Phi_0(|x|)}=+\infty.
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_2(\Phi_0'(2|x|))}=+\infty.
 \end{equation}
+for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi_1$.
 Then,  the problem \eqref{ProbPrin} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
 \end{thm}
 
@@ -540,88 +539,55 @@ C_1\|u'\orlnor,
 \end{equation}
  where $C_1=C_1(\|b_2\|_{L^1}, T)$. 
 
-On the other hand, since $\Phi_0 \in \Delta_2$ globally, then $\Phi_0' \in \Delta_2$ globally and
-consequently $\Phi_0'$ is a quasi-subadditive function, i.e. there exists $C(\Phi_0)>0$ such that
-$\Phi'_0(a+b)\leq C(\Phi'_0)(\Phi'_0(a)+\Phi'_0(b))$ for every $a,b\geq 0$.
+We note that, since $\Phi_0'$ is increasing function  and $\Phi_0'(x)\geq 0$ for $x\geq 0$, then $\Phi'_0(a+b)\leq \Phi'_0(2a)+\Phi'_0(2b)$ for every $a,b\geq 0$.
 In this way, we have
 \begin{equation}\label{pot-suma}
 \Phi'_0(|\overline{u}+s\tilde{u}(t)|)\leq
-C(\Phi_0)[\Phi'_0(|\overline{u}|)+\Phi'_0(\|\tilde{u}\|_{L^{\infty}})],
+\Phi'_0(2|\overline{u}|)+\Phi'_0(2\|\tilde{u}\|_{L^{\infty}}),
 \end{equation}
-for every $s \in [0,1]$. 
-
-Now,  inequality \eqref{pot-suma}, H\"older's and Sobolev-Wirtinger's inequalities,
- the monotonicity, the subadditivity and  the $\Delta_2$-condition on $\Phi'_0$, imply that
+for every $s \in [0,1]$.  Now,  inequality \eqref{pot-suma}, H\"older's and Sobolev-Wirtinger's inequalities imply that
 \begin{equation}\label{cota-i1}
 \begin{split}
 I_1&
-\leq C(\Phi'_0)\bigg\{ \Phi'_0(|\overline{u}|) \|b_1\|_{L^1} \|\tilde{u}\|_{L^{\infty}}+
- \|b_1\|_{L^1}\Phi'_0(\|\tilde{u}\|_{L^\infty})\|\tilde{u}\|_{L^\infty}\bigg\}
+\leq \Phi'_0(2|\overline{u}|) \|b_1\|_{L^1} \|\tilde{u}\|_{L^{\infty}}+\Phi'_0(2\|\tilde{u}\|_{L^\infty})
+ \|b_1\|_{L^1}\|\tilde{u}\|_{L^\infty}
 \\
-&\leq C_2 \bigg\{ \Phi'_0(|\overline{u}|) \|u'\orlnor
-+\Phi'_0(\|u'\orlnor) \|u'\orlnor\bigg\},
-%\\
-%&=
-%C_2 \bigg\{ f(|\overline{u}|) \|u'\orlnor
-%+\varepsilon(\|u'\orlnor)\|u'\orlnor^{\alpha_{\Phi}}
-%%f(\|u'\orlnor) \|u'\orlnor\bigg\}
+&\leq C_2 \bigg\{ \Phi'_0(2|\overline{u}|) \|u'\orlnor
++\Phi'_0(C_3\|u'\orlnor) \|u'\orlnor\bigg\},
 \end{split}
 \end{equation}
-where $C_2=C_2(\Phi_0',T, \|b_1\|_{L^1} )$.
-
-Next, by Young's inequality with complementary functions $\Phi_0$ and $\Psi_0$ and the fact that 
-$\Phi_0 \in \Delta_2$ globally, Young's equality \cite[Eq. 2.7-2.8]{KR} and \cite[Thm. 3-(ii), p. 23]{rao1991theory}, we get
+where $C_2=C_2(T, \|b_1\|_{L^1} )$ and $C_3=C_3(T)$. Next, by Young's inequality with complementary functions $\Phi_2$ and $\Psi_2$
 \begin{equation}\label{cota-i1-parcial}
  \begin{split}
-\Phi_0'(|\overline{u}|) \|u'\orlnor
+\Phi_0'(2|\overline{u}|) \|u'\orlnor
 &\leq 
-\Psi_0(\Phi_0'(|\overline{u}|))+
-\Phi_0(\|u'\orlnor)
-\\
-&\leq 
-|\overline{u}|\Phi_0'(|\overline{u}|)
-+\Phi_0(\|u'\orlnor)
-\\
-&\leq C(\Phi_0)
-\Phi_0(|\overline{u}|)
-+\Phi_0(\|u'\orlnor)
+\Psi_2(\Phi_0'(2|\overline{u}|))+
+\Phi_2(\|u'\orlnor).
 \end{split}
 \end{equation}
-and 
+We have that any $N$-function $\Phi_0$ satisfies the inequality $x\Phi_0'(x)\leq \Phi_0(2x)$ (see \cite[p. 17]{rao1991theory} ). Moreover, since $\Phi_0\llcurly\Phi_2$ there exists $x_0=x_0(\Phi_0,\Phi_2,T)\geq 0$ such that $\Phi_0(2C_3x)\leq \Phi_2(x)$, for every $x\geq x_0$. Therefore, $\Phi_0(2C_3x)\leq \Phi_2(x)+C_4$, with $C_4=\Phi_0(2x_0)$. The previous observations imply
 \begin{equation}\label{cota-i1-parcial-segunda}
-\Phi_0'(\|u'\orlnor) \|u'\orlnor
+\Phi_0'(C_3\|u'\orlnor) \|u'\orlnor
 \leq 
-C(\Phi_0) \Phi_0(\|u'\orlnor),
+C_3^{-1}(\Phi_2(\|u'\orlnor)+C_4).
 \end{equation}
-with $C(\Phi_0)$ the constant that comes from the $\Delta_2$-condition on $\Phi_0$.
-
-From \eqref{cota-i1}, \eqref{cota-i1-parcial}, \eqref{cota-i1-parcial-segunda} and \eqref{cota-i2},
-%and the inequality $x^{r_1}\leq x^{r_2}+1$, for any $x\geq 0$ and $r_1\leq r_2$, 
-we have
+From \eqref{cota-i1}, \eqref{cota-i1-parcial}, \eqref{cota-i1-parcial-segunda} and \eqref{cota-i2}, we have
 \begin{equation}\label{cota-i1-i2}
 \begin{split}
 I_1+I_2
 &
-\leq C_3
+\leq C_5
 \bigg\{ 
-\Phi_0(|\overline{u}|)
-+\Phi_0(\|u'\orlnor)
-+\|u'\orlnor
+\Psi_2(\Phi_0'(2|\overline{u}|))
++\Phi_2(\|u'\orlnor)
++\|u'\orlnor +1
 \bigg\}\\
-&
-\leq C_4
-\bigg\{ 
-\Phi_0(|\overline{u}|)
-+\Phi_0(\|u'\orlnor)
-+1
-\bigg\},
 \end{split}
 \end{equation}
-with $C_3$ and $C_4$ depending on $\Phi_0, T, \|b_1\|_{L^1}$ and $\|b_2\|_{L^1} $. The last inequality follows from the fact that $\Phi_0$ is an $N$-function, then there exists $C>0$ such that $\Phi_0(x)\geq Cx$ for every $x\geq 1$. Thus $x\leq C\Phi_0(x)+1$ for every $x\geq 0$.
-
+with $C_5$ depending on $\Phi_0, \Phi_2, T, \|b_1\|_{L^1}$ and $\|b_2\|_{L^1} $.
 
 In the subsequent estimates, we use  \eqref{cota-diferencia-F},
-\eqref{cota-i1-i2}, the fact that $\Phi_0 \in \Delta_2$ and we get
+\eqref{cota-i1-i2}, we get
 \begin{equation}\label{cota_inf_I}
 \begin{split}
 I(u)&
@@ -631,27 +597,21 @@ I(u)&
 +  \int_0^TF(t,\overline{u})\ dt
 \\
 &\geq \rho_{\Phi}( u')
--C_4 \Phi_0(\|u'\orlnor)
+-C_5 \Phi_2(\|u'\orlnor)
 +\int_0^TF(t,\overline{u})\ dt-
-C_4 \Phi_0(|\overline{u}|)-
-C_4 
+C_5 \Psi_2(\Phi_0'(2|\overline{u}|))-
+C_5
 \\
 &\geq 
 \rho_{\Phi}( u')
--C_4 \Phi_0(\|u'\orlnor)
-+H_{C_4, \Phi_0}(\overline{u})
--C_4 
+-C_5 \Phi_2(\|u'\orlnor)
++H_{C_5, \Psi_2\circ\Phi_0}(\overline{u})
+-C_5
 \\
-%&\geq
-%\rho_{\Phi}(u')
-%-C_5 \Phi_0\left(\frac{\|u'\orlnor}{\Lambda} \right)
-%+H_{C_4, \Phi_0}(\overline{u})
-%-C_4 
-%\\
 &=
-J_{C_4,\Phi_0}(u')
-+H_{C_4, \Phi_0}(\overline{u})
--C_4.
+J_{C_5,\Phi_0}(u')
++H_{C_5, \Psi_2\circ\Phi_0}(\overline{u})
+-C_5.
 \end{split}
 \end{equation}
 
@@ -662,12 +622,12 @@ $\|u_n\sobnor\to\infty$ and we have to prove that $I(u_n)\to\infty$.
 On the contrary, suppose  that for a subsequence,
 still denoted by $u_n$, $I(u_n)$ is upper bounded, i.e. there exists $M>0$ such that $|I(u_{n})|\leq M$.
 As $\|u_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{u}_n|+\|u'_n\orlnor\to \infty$. Passing to a subsequence is necessary, still denoted $u_n$, we can assume that $|\overline{u}_n|\to \infty$ or $\|u'_n\orlnor\to \infty$.
-Now, Lemma \ref{lem_coer} implies that the functional $J_{C_4,\Phi_0}(u')$ is coercive;
+Now, Lemma \ref{lem_coer} implies that the functional $J_{C_5,\Phi_0}(u')$ is coercive;
 and, by \eqref{eq:propiedad-coercividad-phi0},
-the functional $H_{C_4,\Phi_0}(\overline{u})$ is also coercive, then
-$J_{C_4,\Phi_0}(u'_n) \to \infty$ or $H_{C_4,\Phi_0}(\overline{u}_n)\to \infty$.
-From the condition (A) on $F$, we have that on a bounded set the functional $H_{C_4,\Phi_0}(\overline{u}_n)$ is lower bounded and 
-also $J_{C_4,\Phi_0}(u'_n)\geq 0$.
+the functional $H_{C_5,\Phi_0}(\overline{u})$ is also coercive, then
+$J_{C_5,\Phi_0}(u'_n) \to \infty$ or $H_{C_5,\Phi_0}(\overline{u}_n)\to \infty$.
+From the condition (A) on $F$, we have that on a bounded set the functional $H_{C_5,\Phi_0}(\overline{u}_n)$ is lower bounded and
+also $J_{C_5,\Phi_0}(u'_n)\geq 0$.
 Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
 
 Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
@@ -741,7 +701,25 @@ and the initial conditions on $u$.
 
 
 
- \section{Examples}
+ \section{Applications}
+
+ In this section we developed some applications of our main results
+so that the reader can appreciate the innovations that bring.
+
+One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,\b{x},\b{y})$ where the  nonlinearity is not necessarily  a power function.
+And, in virtue of the fact that we have not supposed that the $N$-functions $\Phi$ satisfy the $\Delta_2$ condition, the nonlinearity is not even bounded by power functions.
+
+
+We can applied Theorem \ref{coercitividad-r} to Lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with an exponential grow in $y$ like
+  \[\mathcal{L}(t,x,y)=e^{|y|}+F(t,x),\]
+In this case, considering  the $N$-function $\Phi(x)=e^x-x-1$,   whose complementary
+function  $\Psi(x)=(1+x)\ln(1+x)-x$, satisfies the $\Delta_2$-condition.
+
+when $F$  satisfies some of the alternatives 1-4 in the main theorem.
+In this case, considering  the $N$-function $\Phi(x)=e^x-x-1$,  conditions (2),(3) and (4) hold. Moreover, the complementary
+function of $\Phi$, i.e.  $\Psi(x)=(1+x)\ln(1+x)-x$, satisfies the $\Delta_2$-condition. We can apply our main theorem even if $\Psi\notin\Delta_2$, although in this case we need an additional condition on the size of certain constants.
+
+
 
 
  The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}  a $\Phi$-laplacian operators with $N$-functions $\Phi$ which grow faster that power functions, for example with a exponential grow.
@@ -867,7 +845,7 @@ is false for every $C$ because for every $u\geq e$ we have
 \]
 \end{comentario}
 
-We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. For the $p$-laplacian operator we have that $\Phi(|u|)=|u|^p/p$. Then we can take $Phi_1=\Phi$ in \eqref{eq:caract_delta2}. Clearly $\Phi_0\llcurly\Phi_1$.
+We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. For the $p$-laplacian operator we have that $\Phi(|u|)=|u|^p/p$. Then we can take $\Phi_1=\Phi$ in \eqref{eq:caract_delta2}. Clearly $\Phi_0\llcurly\Phi_1$.
 
 
 % <<<<<<< HEAD
