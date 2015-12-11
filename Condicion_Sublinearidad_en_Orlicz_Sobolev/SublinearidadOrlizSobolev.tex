@@ -689,8 +689,6 @@ therefore $I'(u)\in (\wphiet)^{\perp}$. Thus,
 \[\int_0^T \frac{\Phi'(|u'(t)|)}{|u'(t)|}u'(t)\cdot v'(t)dt =-\int_0^T \nabla F(t,u(t))\cdot v(t)dt,\]
 for every  $v\in \wphiet$.  
 
-
-
 From \cite[Lemma 2.4]{ABGMS2015} we have 
  $u'(t)\Phi'(|u'(t)|)/|u'(t)|\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$; 
 and,  from condition (A) and the fact that $u\in L^{\infty}$, it follows that $\nabla F(t,u(t))\in L^1([0,T],\rr^n)$. 
@@ -698,62 +696,103 @@ Consequently, from \cite[p. 6]{mawhin2010critical} we obtain that the differenti
 are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds. Thus $u'(0)=u'(T)$.
 \end{proof}
 
-\begin{cor}
-Let 
+%===========================================================================================================
+
+
+In the article \cite{ABGMS2015} we have considered more general lagrangian functions 
 $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ 
-be a Carath\'eodory, differentiable, {\bf strictly convex???} function such that 
-\begin{eqnarray}
-\mathcal{L}(t,\b{x},\b{y}) &\geq \Phi\left(|\b{y}|\right)+ F(t,\b{x}),\label{cota_inf_2}\\
-|\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaL}\\
-|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),\label{cotaDxL}\\
-|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).\label{cotaDyL}
-\end{eqnarray}
+satisfying the conditions
+\begin{align*}
+|\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\text{(A1),}
+\\
+|D_{x}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\text{(A2),}
+\\
+|D_{y}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(c(t)+ \varphi\left(\frac{|y|}{\lambda}+f(t)\right)\right)
+&\text{(A3),}
+\end{align*}
 where $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function, 
 $\varphi$ is the right continuous derivative of $\Phi$,  
-$b\in L^1_1([0,T]) $,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$.
-In addition, the potential $F$ satisfies conditions (A) and (C) {\bf and convex???} and $\Psi \in \Delta_2$ ????.
+$b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$.
 
+In  \cite[Thm. 6.2]{ABGMS2015} we obtained existence results of solutions of the problem 
+$\inf\{I(u):u \in \wphie \}$ 
+where the action integral was given by $I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt$. 
+
+Unfortunately, we made a mistake in the proof of \cite[Thm. 4.1]{ABGMS2015}, 
+because  the minimum of the functional  might be out of the domain of differentiability.
+
+Now, we can fix the aforementioned mistake by the process of minimization developed 
+in the last part of the proof of Theorem \ref{coercitividad-r}.
+
+Furthermore, based on Theorem \ref{coercitividad-r},
+we can get another existence result under different hypothesis  than those assumed in \cite[Thm. 6.2]{ABGMS2015}, as follows.
+
+
+\begin{cor}
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$ globally. 
+Suppose that  $\mathcal{L}(t,x,y)$ is a differentiable Carath\'eodory function such that (A1),(A2) and (A3) hold. 
+Assume also that $\mathcal{L}(t,x,y)$ is strictly convex at $y$ and 
+\begin{equation}
+\mathcal{L}(t,x,y) \geq \Phi\left(|y|\right)+ F(t,x),
+\end{equation}
+where the function $F(t,x)$ satisfies conditions (A) and (C).
 Then, the problem
 \begin{equation}\label{ProbPrin-gral}
     \left\{%
 \begin{array}{ll}
-   \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    \b{u}(0)-\b{u}(T)=\b{\dot{u}}(0)-\b{\dot{u}}(T)=0
+  \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    u(0)-u(T)=u'(0)-u'(T)=0
 \end{array}%
 \right.
 \end{equation}
-has at least one solution $\b{u}:[0,T]\to\rr^d$ absolutely continuous, 
+has at least one solution $u:[0,T]\to\rr^d$ absolutely continuous, 
 which minimizes the action integral
 \begin{equation}\label{integral_accion}
 I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
 \end{cor}
 
-{\bf Quiz\'as hay demasiada informaci\'on en el enunciado y se puede quitar algo....}
 
 \begin{proof}
-In Theorem \ref{coercitividad-r} we have seen that $\Phi\left(|y|\right)+ F(t,x)$ is coercive, 
-then the function $\mathcal L$ do so. The  differentiability and lower semicontinuity of the $I$ follow from  
-Thm. 3.2  and Lemma 6.1 of \cite{ABGMS2015}, respectively. 
-Last, applying Thm. 4.1 and Thm. 6.2???? of \cite{ABGMS2015}, we get the existence of $u$ 
-and the initial conditions on $u$. 
+In Theorem \ref{coercitividad-r} we have just seen that the action integral 
+$\int_0^T \Phi(|u'(t)|)+F(t,u(t))\,dt$
+is coercive, then the functional $\mathcal L$ does so. 
+
+Let $\{u_n\}\subset \wphiet$ be   a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
+Now, $\{u_n\}$ is bounded due to the coercivity of $\mathcal{L}$. 
+
+By \cite[Thm. 3.2, Lemma 6.1]{ABGMS2015} we have that $I$ is differentiable on $\wphie$ and lower semi-continuous, respectively.
+
+Next, we find the minimum of $I$ by means of a similar argument to the one developed 
+on the last part of the proof of Theorem \ref{coercitividad-r}, 
+changing  $u'(t)\Phi'(|u'(t)|)/|u'(t)|$ by $D_{y}\mathcal{L}(t,u(t),u'(t))$  which also belongs to $\lpsi$  
+(see \cite[Eq. (26)]{ABGMS2015}). 
+
+Finally, the strict convexity of $\mathcal{L}(t,x,y)$ at $y$ and the injectivity of 
+the function $D_y\mathcal{L}(T,u(T),\cdot)$ imply that $u'(0)=u'(T)$.
 \end{proof}
 
 
 
+
+%====================================================================================================
+
  \section{Examples}
 
 
- The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}  a $\Phi$-laplacian operators with $N$-functions $\Phi$ which grow faster that power functions, for example with a exponential grow.
+ The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}  to $\Phi$-laplacian operators with $N$-functions $\Phi$ which grow faster than power functions, for example with an exponential grow.
 
 
- Furthermore, we want to emphasize that, even in the case of $p$-laplacian operator \eqref{ProbP-lapla}, our results  extend  previous one (see \cite{tang1998periodic, tang2010periodic}), because
- we get bounds that may be more sharp that those in \cite{tang1998periodic,tang2010periodic}. More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions of \eqref{ProbP-lapla} under la assumption \eqref{eq:cota_pot}
+ Furthermore, we want to emphasize that, even in the case of $p$-laplacian operator \eqref{ProbP-lapla}, our results  extend  previous ones (see \cite{tang1998periodic, tang2010periodic}), because
+ we get bounds that may be  sharper than those in \cite{tang1998periodic,tang2010periodic}. 
+More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions of \eqref{ProbP-lapla} 
+under the assumption \eqref{eq:cota_pot}
  for any $\alpha\in (0,p-1)$. Meanwhile, our Theorem \ref{coercitividad-r} implies existence for the potential
 
  \[F_0(t,x)=|x|^p/\ln(2+|x|)^2.\]
 
- We note that this $F$ does not satisfies \eqref{eq:cota_pot} for any $\alpha<p-1$.  Next we will show  a $N$-function $\Phi_0$ satisfying the hypothesis of Theorem \ref{coercitividad-r} for this potential $F_0$.
+ We note that this $F$ does not satisfy \eqref{eq:cota_pot} for any $\alpha<p-1$.  
+Next we will show  an $N$-function $\Phi_0$ satisfying the hypothesis of Theorem \ref{coercitividad-r} for this potential $F_0$.
 
 
 We define
@@ -768,7 +807,8 @@ We define
 with $p>1$. Next, we will establish some properties of this function $\Phi_0$.
 
 \begin{thm}
-If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi_0$ is an differentiable $N$-function. The $N$-function $\Phi_0$ satisfies that for every $\varepsilon>0$, there exists a positive constant $C=C(p,\varepsilon)$  such that
+If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi_0$ is a differentiable $N$-function. 
+The $N$-function $\Phi_0$ satisfies that for every $\varepsilon>0$, there exists a positive constant $C=C(p,\varepsilon)$  such that
 \begin{equation}\label{cota-sup-indices}
 C^{-1}t^{p-\varepsilon}\Phi_0(u)\leq \Phi_0(tu) \leq Ct^p\Phi_0(u)\quad t\geq 1, u>0,
 \end{equation}
@@ -792,9 +832,9 @@ For this purpose, since $\varphi_1(e)=\varphi_2(e)$, it is enough to see that $\
 $[e,\infty)$ for every $p\geq \frac{1+\sqrt {2}}{2}$. Clearly
 $\varphi_1$ is an increasing function for $p>1$.  On the other hand, an elementary analysis of the function shows that
 $\varphi_2'(u)>0$ on $[e,\infty)$ if and only if
- $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.  Therefore $\varphi_2$ is an icreasing function when $p\geq \frac{1+\sqrt2}{2}$.
+ $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.  Therefore $\varphi_2$ is an increasing function when $p\geq \frac{1+\sqrt2}{2}$.
 
- Besides $\varphi_2(u)\to \infty$ and  $\varphi_1(u)\to 0$  as $u \to  \infty$ and $u\to 0$  respectively, provided that $p>1$. Hence, $\Phi_0$ is an $N$-function.
+Moreover $\varphi_2(u)\to \infty$ and  $\varphi_1(u)\to 0$  as $u \to  \infty$ and $u\to 0$  respectively, provided that $p>1$. Hence, $\Phi_0$ is an $N$-function.
 
 
 
@@ -851,7 +891,7 @@ Let $f(s)=\frac{sA}{\log s+A}$ with $s\geq 1$ and $A\geq \varepsilon$.  If $A\le
 \Phi_0(tu)\geq \frac{p-1}{p}\varepsilon \frac{t^{p-\varepsilon}u^p}{\log u}\geq
 \frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi_0(u).
 \]
-Therefore, \eqref{cota-sup-indices} holds with $C=\frac{p}{\varepsilon (p-1)}$, because this $C$ is the biggest constant that we have obtained in each case under consideration.
+Finally, \eqref{cota-sup-indices} holds with $C=\frac{p}{\varepsilon (p-1)}$, because this $C$ is the biggest constant that we have obtained in each case under consideration.
 \end{proof}
 
 
@@ -867,7 +907,7 @@ is false for every $C$ because for every $u\geq e$ we have
 \]
 \end{comentario}
 
-We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. For the $p$-laplacian operator we have that $\Phi(|u|)=|u|^p/p$. Then we can take $Phi_1=\Phi$ in \eqref{eq:caract_delta2}. Clearly $\Phi_0\llcurly\Phi_1$.
+We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. For the $p$-laplacian operator we have that $\Phi(|u|)=|u|^p/p$. Then we can take $\Phi_1=\Phi$ in \eqref{eq:caract_delta2}. Clearly $\Phi_0\llcurly\Phi_1$.
 
 
 % <<<<<<< HEAD
