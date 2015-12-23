@@ -75,6 +75,17 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Psi}}
 
+
+\newcounter{example}
+
+\setcounter{example}{1}
+
+
+\newenvironment{example}{\noindent\textit{Example} \arabic{example}.}{\addtocounter{example}{1}}
+
+
+
+
 \begin{document}
 
 
@@ -191,9 +202,10 @@ On these assumptions, $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a homeom
 We denote by $\Psi$ the primitive of $\psi$ that satisfies $\Psi(0)=0$. Then, $\Psi$ is an $N$-function which  is called the \emph{complementary function} of $\Phi$.
 
 
-There exist several order relations between $N$-functions (see \cite[Sec. 2.2]{rao1991theory}). 
-Following \cite[Def. 1, p. 15]{rao1991theory} we say that the $N$-function $\Phi_2$ is \emph{essentially stronger} than the $N$-function  $\Phi_1$  ($\Phi_1\llcurly\Phi_2$) if and only if there exists $x_0\geq 0$ such that $\Phi_1(x)\leq \Phi_2(ax)$, for every $a>0$ and $x\geq x_0$.
-
+There exist several order and equivalence relations between $N$-functions (see \cite[Sec. 2.2]{rao1991theory}).
+Following \cite[Def. 1, p. 15-16]{rao1991theory} we say that the   $N$-function $\Phi_2$ is \emph{stronger} than the $N$-function  $\Phi_1$,   $\Phi_1\prec\Phi_2$ in symbols, if  there exists $a>0$ and $x_0\geq 0$ such that
+\begin{equation}\label{eq:prec}\Phi_1(x)\leq \Phi_2(ax), \quad x\geq x_0.\end{equation}
+We said that  $\Phi_2$ is \emph{essentially stronger} than  $\Phi_1$  ($\Phi_1\llcurly\Phi_2$) if and only if for every $a>0$ there exists $x_0=x_0(a)\geq 0$ such that \eqref{eq:prec} holds.  The $N$-functions  $\Phi_1$ and   $\Phi_2$ are \emph{equivalent} ($\Phi_1\sim\Phi_2$)  when  $\Phi_1\prec\Phi_2$ and $\Phi_2\prec\Phi_1$.
 
 
 We also say that a function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2$-condition}, denoted by $\eta \in \Delta_2$,
@@ -389,6 +401,76 @@ C_3(|\overline{u}|+\|u'\orlnor)
 where $C_3=C_3(T)$. Finally, as $\|u\sobnor\to \infty$ we conclude that
 $(|\overline{u}|+\|u'\orlnor)\to \infty$.
 \end{proof}
+
+\begin{lem}\label{lema:delta_2 y der} Let $\Phi$ a $N$-function and $\varphi$ the right continuous derivative of $\Phi$. Then $\Phi\in\Delta_2$ (
+$\Phi\in\Delta_2$ globally) iff $\varphi\in\Delta_2$ (
+$\varphi\in\Delta_2$ globally).
+\end{lem}
+\begin{proof}  It is consequence of $\cite[Th. 11.7]{M}$ and \cite[Remark 5, p. 87]{M}.
+
+\end{proof}
+
+\begin{lem} Let $\Psi$ be a $N$-function satisfying the $\Delta_2$ condition. Then there exists a $N$-function $\Psi^*$  and $x_0\geq 0$ such that $\Psi^*$ is $\Delta_2$-globally and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that
+\begin{equation}\label{eq:psi_equi_psi*}\Psi(x)\leq\Psi^*(x)\leq a\Psi(x).
+ \end{equation}
+In particular, since $\Psi(ax)>a\Psi(x)$, when $a>1$,   $\Psi\sim\Psi^*$.
+\end{lem}
+
+\begin{proof} We can assume that the $\Delta_2$ condition for $\Psi$ fails near to $0$. Consequently, from Lemma \ref{lema:delta_2 y der}, we have that the right continuous derivative $\psi$ of $\Psi$ is not $\Delta_2$ near to $0$. Therefore, we obtain a sequence $x_n$, $n=1,2,\ldots$ of positive numbers with $x_n\to 0$, and
+\begin{equation}\label{eq:prop_psi*}2x_{n+1}<x_n<2x_n\quad\text{and}\quad \psi(2x_n)> 2\psi(x_n).
+ \end{equation}
+
+We define $\psi^*$ inductively on $n$ on the interval $[2x_n,+\infty)$ of the following way.   We define $\psi^*(x)=\psi(x)$ when  $x\in[ 2x_1,+\infty) $ . Suppose $\psi^*$ defined in $[2x_n,+\infty)$. We define $\psi^*$ in $[2x_{n+1},2x_n)$ by
+\[
+ \psi^*(x)=\left\{
+\begin{array}{cc}
+  \max\left\{\psi(x),\frac{\psi^*(2x_n)}{2x_n}(x-x_n)+\frac{ \psi^*(2x_n)}{2}\right\},& \text{if } x_n\leq x<2x_n\\
+   \frac{\psi^*(2x_n)}{2}& \text{if }2x_{n+1} \leq x<x_n
+  \end{array}
+\right.
+\]
+Moreover we define $\psi^*(0)=0$. Next, we will use induction again for to prove that
+\begin{enumerate}
+ \item\label{item:prop_psi*1} $\psi^*(x_n)=\frac12\psi^*(2x_n)$,
+ \item\label{item:prop_psi*2}  $\psi^*$ is non-decreasing $[2x_{n},+\infty)$,
+ \item\label{item:prop_psi*3}   $\psi\leq \psi^*$ in  $[2x_{n},+\infty)$
+\end{enumerate}
+
+We suppose $n=1$. Then items \ref{item:prop_psi*2} and \ref{item:prop_psi*3} are obvious. From \eqref{eq:prop_psi*} we have
+\[\psi(x_1)<\frac12\psi(2x_1)=\frac12\psi^*(2x_1).\]
+This inequlity implies \ref{item:prop_psi*1}.
+
+ Clearly $\psi^*$ is non-decreasing on each interval $[2x_{n+1},x_n)$ and $[x_n,2x_n)$. We note that since $\psi$ is right continuous, $\psi^*$ is contiuous at $x_n$. Therefore $\psi^*$ is non-decreasing on $[2x_{n+1},2x_n)$. Suppose $x\in[2x_{n+1},2x_n)$ and $y\geq 2x_n$.  From the definition of $\psi^*$, inductive hypothesis item \ref{item:prop_psi*3} and item \ref{item:prop_psi*2} we obtain
+
+\[\psi^*(x)\leq\max\{\psi(2x_n),\psi^*(2x_n)\}=\psi^*(2x_n)\leq\psi^*(y).\]
+This proves item \ref{item:prop_psi*2} in the interval $[2x_{n+1},+\infty)$.
+Inequality in item \ref{item:prop_psi*3} holds by inductive hypothesis in $[2x_n,+\infty)$ and  is obvious for  $x\in[x_n,2x_n)$. If $ x\in[2x_{n+1},x_n)$, then $\psi(x)\leq\psi(x_n)\leq\psi^*(x_n)=\psi^*(x)$. This proves  \ref{item:prop_psi*3} in the interval $[2x_{n+1},+\infty)$
+
+Now, using \eqref{eq:prop_psi*} and the alreadyr proved items \ref{item:prop_psi*3} for $n+1$ we deduce
+\[\psi(x_{n+1})<\frac12\psi(2x_{n+1})\leq \frac12\psi^*(2x_{n+1}) \]
+Then
+\[\psi^*(x_{n+1})=\max\left\{\psi(x_{n+1}),\frac12\psi^*(2x_{n+1}) \right\}=\frac12\psi^*(2x_{n+1}),\]
+i.e. we have proved item \ref{item:prop_psi*1}.
+
+We note that
+\[\psi^*(x_{n+1})=\frac12\psi^*(2x_{n+1})\leq\psi^*(x_{n}).\]
+Consequently $\psi(x)\to 0$ when $x\to 0$. Therefore $\psi^*$ is right continuous at $0$ and, in fact, right continuous on $[0,+\infty)$. Moreover, since $\psi(x)=\psi^*(x)$ for $x\geq 2x_1$ being $\psi$ the right continuous derivative of a $N$-function, $\psi^*(x)\to +\infty$ when $x\to +\infty$. In this way
+\[\Psi^*(x):=\int_0^x\psi(t)dt.\]
+define a $N$ function.
+
+Let  see that $\psi^*$ is $\Delta_2$ globally.
+For it is sufficient to prove that $\psi^*$ satisfies the $ \Delta_2$ conditions near of $0$. For this end, suppose $x\leq x_1$ and take $n\in\mathbb{N}$ such that $x_{n+1}\leq x\leq x_n$. Then
+\[\psi^*(2x)\leq \psi^*(2x_n)=2\psi^*(2x_{n+1})=4\psi^*(x_{n+1})\leq 4\psi^*(x).\]
+Consequently $\Psi^*$ is $\delta_2$ globally and $\Psi\leq \psi^*$.
+Rest to prove the second inequality of \eqref{eq:psi_equi_psi*}. We take $x_0$ sufficiently large for that
+\[\frac{1}{a-1}\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x_0).\]
+Since $\Psi$ is  $N$-function, satisfies that $\Psi(ax)>a\Psi(x)$, when $a>1$. Then    when  $x>\max\{x_0,2x_1\}$ we have
+We note that for $x>2x_1$ we have that
+\[\Psi^*(x)=\Psi(x)+\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x)+(a-1)\Psi(x)\leq a\Psi(x).\]
+
+\end{proof}
+
+
 
 \begin{lem}\label{lem:submultipliativa}
 Let $\Phi,\Psi$ be complementary functions.
@@ -734,35 +816,32 @@ the function $D_y\mathcal{L}(T,u(T),\cdot)$ imply that $u'(0)=u'(T)$.
 
 
 
- \section{Applications}
+ \section{Examples}
 
  In this section we developed some applications of our main results
 so that the reader can appreciate the innovations that bring.
 
-One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,\b{x},\b{y})$ where the  nonlinearity is not necessarily  a power function.
-And, in virtue of the fact that we have not supposed that the $N$-functions $\Phi$ satisfy the $\Delta_2$ condition, the nonlinearity is not even bounded by power functions.
+
+One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,x,y)$ that not satisfy a power like grow condition in $y$.   is not necessarily  a power function.
+
+\begin{example}We can applied Theorem \ref{coercitividad-r} to Lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with an exponential grow in $y$. For example, suppose
+  \[\mathcal{L}(t,x,y)=f(y)+F(t,x),\]
+with $f(y)\geq e^{|y|}-|y|-1$. The complementary
+function  $\Psi(x)$ of the $N$-function $\Phi(x)=e^{x}-x-1$ is $\Delta_2$ globally (see \cite[p. 28]{KR}).  We suppose that $\Phi_1$ satisfies \eqref{eq:caract_delta2}. Taking $s\to 0$ in \eqref{eq:caract_delta2} we obtain that $\Phi_1(r)\leq r^2$. On the other hand,  is not hard to prove that $\Phi_1(r)= r^2$ satisfies  \eqref{eq:caract_delta2}. Hence, if $1<\alpha<\beta<2$ and $\Phi_0(x)=|x|^{\alpha}$ and $\Phi_2(x)=|x|^{\beta}$ then $\Phi_0 \llcurly\Phi_2\llcurly\Phi_1$,  we obtain existence of periodic solutions when $F$
+satisfies
+\[\left| \nabla F(t,x) \right|\leq b_1(t)|x|^{\alpha-1}+b_2(t)\quad\text{and}\quad \lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{|x|^{\gamma}}=+\infty,\]
+with $\alpha\in (1,2)$ and $\gamma\in (2\alpha-2,\alpha)$.
+\end{example}
 
 
-We can applied Theorem \ref{coercitividad-r} to Lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with an exponential, or super-exponential grow in $y$ like
-  \[\mathcal{L}(t,x,y)=e^{|y|^2}+F(t,x),\]
-In this case, considering  the $N$-function $\Phi(x)=e^{x^2}-1$,   whose complementary
-function  $\Psi(x)$, satisfies the $\Delta_2$-condition (see \cite[p. 28]{KR}).
-
-when $F$  satisfies some of the alternatives 1-4 in the main theorem.
-In this case, considering  the $N$-function $\Phi(x)=e^x-x-1$,  conditions (2),(3) and (4) hold. Moreover, the complementary
-function of $\Phi$, i.e.  $\Psi(x)=(1+x)\ln(1+x)-x$, satisfies the $\Delta_2$-condition. We can apply our main theorem even if $\Psi\notin\Delta_2$, although in this case we need an additional condition on the size of certain constants.
 
 
 
-%====================================================================================================
 
-
- The employment of  $N$-functions instead of power functions in  inequalities like  \eqref{holder_cont-mu}  will allow us to extend some results of   \cite{tang1998periodic} and \cite{tang2010periodic}  to $\Phi$-laplacian operators with $N$-functions $\Phi$ which grow faster than power functions, for example with an exponential grow.
-
-
- Furthermore, we want to emphasize that, even in the case of $p$-laplacian operator \eqref{ProbP-lapla}, our results  extend  previous ones (see \cite{tang1998periodic, tang2010periodic}), because
+\begin{example}\end{example}
+We want to emphasize that, even in the case of $p$-laplacian operator \eqref{ProbP-lapla}, our results  extend  previous ones (see \cite{tang1998periodic, tang2010periodic}), because
  we get bounds that may be  sharper than those in \cite{tang1998periodic,tang2010periodic}. 
-More precisely, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions of \eqref{ProbP-lapla} 
+For example, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions of \eqref{ProbP-lapla}
 under the assumption \eqref{eq:cota_pot}
  for any $\alpha\in (0,p-1)$. Meanwhile, our Theorem \ref{coercitividad-r} implies existence for the potential
 
