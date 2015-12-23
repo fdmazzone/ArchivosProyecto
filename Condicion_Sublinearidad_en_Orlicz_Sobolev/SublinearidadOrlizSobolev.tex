@@ -476,7 +476,7 @@ Let $\Phi,\Psi$ be complementary functions.
 The next statements are equivalent:
 \begin{enumerate}
 \item\label{item1} $\Psi \in \Delta_2$ globally.
-\item\label{item2} There exists an $N$-function $\Phi_1$ such that
+\item\label{item2} There exists an $N$-function $\Phi^*$ such that
 \begin{equation}\label{eq:caract_delta2}
 \Phi(rs)\geq \Phi^*(r)\Phi(s)\;\;\mbox{for every}\;\;r\geq1,\;\;s\geq 0.
 \end{equation}
@@ -499,29 +499,35 @@ Assume that
 \]
 Let $u=\Phi^*(r)\geq \Phi^*(1)$ and $v=\Phi(s)\geq 0$. By a well known inequality \cite[p. 13, Prop. 1]{rao1991theory} and \eqref{eq:caract_delta2},  we have  for $u\geq \Phi^*(1)$ and $v> 0$
 \[
-\frac{uv}{\Psi^{-1}(uv)}\leq \Phi^{-1}(uv)\leq\Phi^*^{-1}(u)\Phi^{-1}(v)\leq
-\frac{4uv}{\Psi_1^{-1}(u)\Psi^{-1}(v)},
+\frac{uv}{\Psi^{-1}(uv)}\leq \Phi^{-1}(uv)\leq{\Phi^*}^{-1}(u)\Phi^{-1}(v)\leq
+\frac{4uv}{{\Psi^*}^{-1}(u)\Psi^{-1}(v)},
 \]
 then 
 \[
-\Psi^{-1}_1(u)\Psi^{-1}(v)\leq 4 \Psi^{-1}(uv).
+{\Psi^*}^{-1}(u)\Psi^{-1}(v)\leq 4 \Psi^{-1}(uv).
 \]
 If we take $x=\Psi^{-1}_1(u)\geq \Psi^{-1}_1(\Phi^*(1))$ and $y=\Psi^{-1}(v)\geq 0$, then 
 \[
-\Psi\left(\frac{xy}{4}\right)\leq \Psi_1(x)\Psi(y).
+\Psi\left(\frac{xy}{4}\right)\leq \Psi^*(x)\Psi(y).
 \]
-Now, taking  $x\geq \max\{8,\Psi_1^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \Delta_2$ globally.
+Now, taking  $x\geq \max\{8,{\Psi^*}^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \Delta_2$ globally.
 \end{proof}
+
+\begin{comentario} We note that if $\Phi^*$ satisfies \eqref{eq:caract_delta2} then $\Phi^*\prec \Phi$.
+ \end{comentario}
+
+\begin{comentario}  The $N$-function $\Phi(x)=|x|^p$, $p>1$ has a complementary which is $\Delta_2$. 
+
 
 The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 
 \begin{lem}\label{lem_coer}
-Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$ such that
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty,
 \end{equation}
-for every $\Phi_0$ with $\Phi_0\llcurly\Phi^*$ and $k>0$. Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$.
+Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$.
 \end{lem}
 
 \begin{proof} At first we assume that $\Phi$ is $\Delta_2$-globally. Let $\Phi^*$ be a $N$ function satisfying \eqref{eq:caract_delta2}. By the inequality \eqref{amemiya-ine}, for $r>1$ we have 
@@ -536,8 +542,9 @@ Now, we choose $r=\frac{\|u\orlnor}{2}$, as $\|u\orlnor\to\infty$ we can assume 
 \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi^*\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
 =\infty.
 \]
- If $\Psi$ is $\Delta_2$, but it is not $\Delta_2$-globally, we  use Lemma \ref{lem:delta2-equiv-delta2-global}. Then there exists a $Delta_2$-globally $N$-function $\Psi^*$, with $\Psi^*\equiv\Psi\leq \Psi^*$. Let $\Phi^*$ the complementary function of $\Psi^*$. 
+ If $\Psi$ is $\Delta_2$, but it is not $\Delta_2$-globally, we  use Lemma \ref{lem:delta2-equiv-delta2-global}. Then there exists a $\Delta_2$-globally $N$-function $\Psi_1$, with $\Psi_1\sim\Psi\leq \Psi_1$. Let $\Phi_1$ the complementary function of $\Psi_1$. Then $\Phi\sim\Phi_1\leq \Phi$ (see \cite[Th. 3.1]{KR}) and $\|\cdot\orlnor$ and $\|\cdot\|_{L^{\Phi_1}}$ are equivalents norms  (see \cite[Th. 13.2 and Th. 13.3]{KR}). By the previously proved, there exists $\Phi_0$ satisfying  \eqref{eq:coer_mod} with $\Phi=\Phi_1$. Let $C>0$ be such that  $\|\cdot\orlnor\leq C\|\cdot\|_{L^{\Phi_1}}$. Then
 
+\[\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq  \frac{\int_0^T \Phi_1(|u|)dt}{\Phi_0(kC\|u\|_{L^{\Phi_1}})}=+\infty.\]
 
 
 Finally, if $\Phi_0$ is an $N$-function, then $\Phi_0(x)\geq \alpha |x|$ for  $\alpha$ small enough and $|x|>1$.
@@ -585,14 +592,14 @@ with $b_1,b_2 \in L^1([0,T],\rr)$.
 
 
 \begin{thm}\label{coercitividad-r} Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2$ condition globally. 
-Assume that the $N$-function $\Phi_1$ satisfies \eqref{eq:caract_delta2}, $F$ satisfies (C) and
+Assume that the $N$-function $\Phi^*$ satisfies the Lemma \ref{lem_coer}, $F$ satisfies (C) and
 (A), and  $\nabla F$ satisfies a $\Phi_0$-grow condition for some 
- $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi_1$.
+ $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
 Furthermore, we suppose that
 \begin{equation}\label{eq:propiedad-coercividad-phi0}
 \lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_2(\Phi_0'(2|x|))}=+\infty.
 \end{equation}
-for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi_1$.
+for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi^*$.
 Then,  the problem \eqref{ProbPrin} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
 \end{thm}
 
