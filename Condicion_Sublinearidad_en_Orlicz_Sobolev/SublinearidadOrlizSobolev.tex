@@ -410,10 +410,7 @@ $\varphi\in\Delta_2$ globally).
 
 \end{proof}
 
-\begin{lem} Let $\Psi$ be a $N$-function satisfying the $\Delta_2$ condition. Then there exists a $N$-function $\Psi^*$  and $x_0\geq 0$ such that $\Psi^*$ is $\Delta_2$-globally and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that
-\begin{equation}\label{eq:psi_equi_psi*}\Psi(x)\leq\Psi^*(x)\leq a\Psi(x).
- \end{equation}
-In particular, since $\Psi(ax)>a\Psi(x)$, when $a>1$,   $\Psi\sim\Psi^*$.
+\begin{lem}\label{lem:delta2-equiv-delta2-global} Let $\Psi$ be a $N$-function satisfying the $\Delta_2$ condition. Then there exists a $N$-function $\Psi^*$  such that $\Psi^*$ is $\Delta_2$-globally, $\Psi\leq\Psi^*$ and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that $\Psi^*(x)\leq a\Psi(x)$, for every $x\geq x_0$.  In particular every $\Delta_2$ $N$-function is equivalent to a $\Delta_2$-globally $N$-function.
 \end{lem}
 
 \begin{proof} We can assume that the $\Delta_2$ condition for $\Psi$ fails near to $0$. Consequently, from Lemma \ref{lema:delta_2 y der}, we have that the right continuous derivative $\psi$ of $\Psi$ is not $\Delta_2$ near to $0$. Therefore, we obtain a sequence $x_n$, $n=1,2,\ldots$ of positive numbers with $x_n\to 0$, and
@@ -455,18 +452,20 @@ i.e. we have proved item \ref{item:prop_psi*1}.
 We note that
 \[\psi^*(x_{n+1})=\frac12\psi^*(2x_{n+1})\leq\psi^*(x_{n}).\]
 Consequently $\psi(x)\to 0$ when $x\to 0$. Therefore $\psi^*$ is right continuous at $0$ and, in fact, right continuous on $[0,+\infty)$. Moreover, since $\psi(x)=\psi^*(x)$ for $x\geq 2x_1$ being $\psi$ the right continuous derivative of a $N$-function, $\psi^*(x)\to +\infty$ when $x\to +\infty$. In this way
-\[\Psi^*(x):=\int_0^x\psi(t)dt.\]
+\[\Psi^*(x):=\int_0^x\psi^*(t)dt.\]
 define a $N$ function.
 
 Let  see that $\psi^*$ is $\Delta_2$ globally.
 For it is sufficient to prove that $\psi^*$ satisfies the $ \Delta_2$ conditions near of $0$. For this end, suppose $x\leq x_1$ and take $n\in\mathbb{N}$ such that $x_{n+1}\leq x\leq x_n$. Then
 \[\psi^*(2x)\leq \psi^*(2x_n)=2\psi^*(2x_{n+1})=4\psi^*(x_{n+1})\leq 4\psi^*(x).\]
 Consequently $\Psi^*$ is $\delta_2$ globally and $\Psi\leq \psi^*$.
-Rest to prove the second inequality of \eqref{eq:psi_equi_psi*}. We take $x_0$ sufficiently large for that
+
+It remains to show the ineaulity $\Psi^*(x)\leq a\Psi(x)$, for every $a>1$ and sufficiently large $x$. We take $x_0$ sufficiently large for that
 \[\frac{1}{a-1}\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x_0).\]
-Since $\Psi$ is  $N$-function, satisfies that $\Psi(ax)>a\Psi(x)$, when $a>1$. Then    when  $x>\max\{x_0,2x_1\}$ we have
-We note that for $x>2x_1$ we have that
-\[\Psi^*(x)=\Psi(x)+\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x)+(a-1)\Psi(x)\leq a\Psi(x).\]
+Therefore, if  $x>\max\{x_0,2x_1\}$ then
+\[\Psi^*(x)=\Psi(x)+\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x)+(a-1)\Psi(x)= a\Psi(x).\]
+
+The last affirmation of the lemma is consequence of that  $\Psi(ax)>a\Psi(x)$ when $a>1$. 
 
 \end{proof}
 
@@ -479,7 +478,7 @@ The next statements are equivalent:
 \item\label{item1} $\Psi \in \Delta_2$ globally.
 \item\label{item2} There exists an $N$-function $\Phi_1$ such that
 \begin{equation}\label{eq:caract_delta2}
-\Phi(rs)\geq \Phi_1(r)\Phi(s)\;\;\mbox{for every}\;\;r\geq1,\;\;s\geq 0.
+\Phi(rs)\geq \Phi^*(r)\Phi(s)\;\;\mbox{for every}\;\;r\geq1,\;\;s\geq 0.
 \end{equation}
 \end{enumerate}
 \end{lem}
@@ -490,57 +489,54 @@ By virtue of the $\Delta_2$-condition on $\Psi$, \cite[Thm. 11.7]{M} and \cite[C
 \begin{equation}\label{delta2-consecuencia}
 \Phi(r s)\geq Kr^{\nu}\Phi(s),
 \end{equation}
-for any $1<\nu<\alpha_{\Phi}$,  $s\geq 0$ and $r>1$. This proves  \eqref{eq:caract_delta2} with $\Phi_1(r)=kr^\nu$, which is an $N$-function.
+for any $1<\nu<\alpha_{\Phi}$,  $s\geq 0$ and $r>1$. This proves  \eqref{eq:caract_delta2} with $\Phi^*(r)=kr^\nu$, which is an $N$-function.
 
 \ref{item2})$\Rightarrow$\ref{item1})
 Next, we follow  \cite[p. 32, Prop. 13]{rao1991theory} and \cite[p. 29, Prop. 9]{rao1991theory}.
 Assume that 
 \[
-\Phi_1(r)\Phi(s)\leq \Phi(rs)\;\;r>1,\;s\geq 0.
+\Phi^*(r)\Phi(s)\leq \Phi(rs)\;\;r>1,\;s\geq 0.
 \]
-Let $u=\Phi_1(r)\geq \Phi_1(1)$ and $v=\Phi(s)\geq 0$. By a well known inequality \cite[p. 13, Prop. 1]{rao1991theory} and \eqref{eq:caract_delta2},  we have  for $u\geq \Phi_1(1)$ and $v> 0$
+Let $u=\Phi^*(r)\geq \Phi^*(1)$ and $v=\Phi(s)\geq 0$. By a well known inequality \cite[p. 13, Prop. 1]{rao1991theory} and \eqref{eq:caract_delta2},  we have  for $u\geq \Phi^*(1)$ and $v> 0$
 \[
-\frac{uv}{\Psi^{-1}(uv)}\leq \Phi^{-1}(uv)\leq\Phi_1^{-1}(u)\Phi^{-1}(v)\leq
+\frac{uv}{\Psi^{-1}(uv)}\leq \Phi^{-1}(uv)\leq\Phi^*^{-1}(u)\Phi^{-1}(v)\leq
 \frac{4uv}{\Psi_1^{-1}(u)\Psi^{-1}(v)},
 \]
 then 
 \[
 \Psi^{-1}_1(u)\Psi^{-1}(v)\leq 4 \Psi^{-1}(uv).
 \]
-If we take $x=\Psi^{-1}_1(u)\geq \Psi^{-1}_1(\Phi_1(1))$ and $y=\Psi^{-1}(v)\geq 0$, then 
+If we take $x=\Psi^{-1}_1(u)\geq \Psi^{-1}_1(\Phi^*(1))$ and $y=\Psi^{-1}(v)\geq 0$, then 
 \[
 \Psi\left(\frac{xy}{4}\right)\leq \Psi_1(x)\Psi(y).
 \]
-Now, taking  $x\geq \max\{8,\Psi_1^{-1}(\Phi_1(1))\}$ we get that $\Psi \in \Delta_2$ globally.
+Now, taking  $x\geq \max\{8,\Psi_1^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \Delta_2$ globally.
 \end{proof}
 
 The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 
 \begin{lem}\label{lem_coer}
-Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$ globally. Let $\Phi_1$ be any $N$-function satisfying \eqref{eq:caract_delta2}. Then
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$ such that
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty,
 \end{equation}
-
-
-for every $\Phi_0$ with $\Phi_0\llcurly\Phi_1$ and $k>0$. If  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$ (at $\infty$).
+for every $\Phi_0$ with $\Phi_0\llcurly\Phi^*$ and $k>0$. Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$.
 \end{lem}
 
-\begin{proof}
-By the assumptions on $\Phi$ and $\Phi_1$  and  inequality \eqref{amemiya-ine}, for $r>1$ we have 
+\begin{proof} At first we assume that $\Phi$ is $\Delta_2$-globally. Let $\Phi^*$ be a $N$ function satisfying \eqref{eq:caract_delta2}. By the inequality \eqref{amemiya-ine}, for $r>1$ we have 
 \[
 \int_0^T \Phi(|u|)\,dt\geq
-\Phi_1(r) \int_0^T \Phi(r^{-1}|u|)\,dt\geq
-\Phi_1(r)\{r^{-1}\|u\orlnor-1\}.
+\Phi^*(r) \int_0^T \Phi(r^{-1}|u|)\,dt\geq
+\Phi^*(r)\{r^{-1}\|u\orlnor-1\}.
 \]
-Now, we choose $r=\frac{\|u\orlnor}{2}$ and as $\|u\orlnor\to\infty$ we can assume $r>1$ and by \cite[Thm. 2 (b)(v), p. 16]{rao1991theory}.
+Now, we choose $r=\frac{\|u\orlnor}{2}$, as $\|u\orlnor\to\infty$ we can assume $r>1$. From \cite[Thm. 2 (b)(v), p. 16]{rao1991theory} we get
 \[
 \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq
-\lim\limits_{\|u\orlnor \to \infty} \frac{\Phi_1\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
+\lim\limits_{\|u\orlnor \to \infty} \frac{\Phi^*\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
 =\infty.
 \]
-
+ If $\Psi$ is $\Delta_2$, but it is not $\Delta_2$-globally, we  use Lemma \ref{lem:delta2-equiv-delta2-global}. Then there exists a $Delta_2$-globally $N$-function $\Psi^*$, with $\Psi^*\equiv\Psi\leq \Psi^*$. Let $\Phi^*$ the complementary function of $\Psi^*$. 
 
 
 
