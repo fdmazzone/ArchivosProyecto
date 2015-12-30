@@ -205,15 +205,18 @@ We denote by $\Psi$ the primitive of $\psi$ that satisfies $\Psi(0)=0$. Then, $\
 There exist several order and equivalence relations between $N$-functions (see \cite[Sec. 2.2]{rao1991theory}).
 Following \cite[Def. 1, p. 15-16]{rao1991theory} we say that the   $N$-function $\Phi_2$ is \emph{stronger} than the $N$-function  $\Phi_1$,   $\Phi_1\prec\Phi_2$ in symbols, if  there exists $a>0$ and $x_0\geq 0$ such that
 \begin{equation}\label{eq:prec}\Phi_1(x)\leq \Phi_2(ax), \quad x\geq x_0.\end{equation}
-We said that  $\Phi_2$ is \emph{essentially stronger} than  $\Phi_1$  ($\Phi_1\llcurly\Phi_2$) if and only if for every $a>0$ there exists $x_0=x_0(a)\geq 0$ such that \eqref{eq:prec} holds.  The $N$-functions  $\Phi_1$ and   $\Phi_2$ are \emph{equivalent} ($\Phi_1\sim\Phi_2$)  when  $\Phi_1\prec\Phi_2$ and $\Phi_2\prec\Phi_1$.
+ The $N$-functions  $\Phi_1$ and   $\Phi_2$ are \emph{equivalent} ($\Phi_1\sim\Phi_2$)  when  $\Phi_1\prec\Phi_2$ and $\Phi_2\prec\Phi_1$.
+We said that  $\Phi_2$ is \emph{essentially stronger} than  $\Phi_1$  ($\Phi_1\llcurly\Phi_2$) if and only if for every $a>0$ there exists $x_0=x_0(a)\geq 0$ such that \eqref{eq:prec} holds. Finally we said that  $\Phi_2$ is \emph{completely stronger} than  $\Phi_1$  ($\Phi_1\precdot\Phi_2$) if and only if for every $a>0$ there exists $K=K(a)>0$ and  $x_0=x_0(a)\geq 0$ such that
+
+\begin{equation}\label{eq:prec2}\Phi_1(x)\leq K\Phi_2(ax), \quad x\geq x_0.\end{equation}
 
 
 We also say that a function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2$-condition}, denoted by $\eta \in \Delta_2$,
-if there exist  constants $K>0$ and  $t_0\geq 0$ such that 
-\begin{equation}\label{delta2defi}\eta(2t)\leq K\eta(t),
+if there exist  constants $K>0$ and  $x_0\geq 0$ such that
+\begin{equation}\label{delta2defi}\eta(2x)\leq K\eta(x),
 \end{equation}
-for every $t\geq t_0$. 
-If $t_0=0$,  a function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$ globally).
+for every $x\geq x_0$. We note that $\eta$ is $\Delta_2$ if and only if $\eta\precdot\eta$.
+If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$ globally).
 
 
 Let $d$ be a positive integer. We denote by $\mathcal{M}:=\mathcal{M}([0,T],\rr^d)$ the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
@@ -469,11 +472,9 @@ The last affirmation of the lemma is consequence of that  $\Psi(ax)>a\Psi(x)$ wh
 
 \end{proof}
 
-The following lemma is essentially known, basically it is consequence of \cite[Prop. 4, p. 20]{rao1991theory} (we note that )
+The following lemma is essentially known, basically it is consequence of the fact that $\Psi\in\Delta_2$ if and only if $\Psi\precdot\Psi$, of  \cite[Prop. 4, p. 20]{rao1991theory} and \cite[Cor. 10, p. 30]{rao1991theory}. However we prefer included an alternative proof, because we do not see clear that the previous results of \cite{rao1991theory} contemplate the case of $N$-functions satisfying the $\Delta_2$ condition globally.
 
-\newcommand{\complstronger}{\left|\prec\right.}
 
-$\complstronger$
 
 \begin{lem}\label{lem:submultipliativa}
 Let $\Phi,\Psi$ be complementary functions.
@@ -482,7 +483,7 @@ The next statements are equivalent:
 \item\label{item1} $\Psi \in \Delta_2$ ($\Delta_2$ globally).
 \item\label{item2} There exists an $N$-function $\Phi^*$ such that
 \begin{equation}\label{eq:caract_delta2}
-\Phi(rs)\geq \Phi^*(r)\Phi(s)\;\;\mbox{for every }r\geq1,s\geq 0\, (s\geq 1).
+\Phi(rs)\geq \Phi^*(r)\Phi(s)\;\;\mbox{for every }r\geq1,s\geq 1\, (s\geq 0).
 \end{equation}
 \end{enumerate}
 \end{lem}
