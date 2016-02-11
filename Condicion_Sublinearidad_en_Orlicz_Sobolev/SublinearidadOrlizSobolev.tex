@@ -132,8 +132,50 @@ In this paper we obtain existence of periodic solutions, in the Orlicz-Sobolev s
 
 
 \section{Introduction}
-The purpose of this paper is to study the existence  of periodic solution for the
-following non-autonomous second-order system:
+This paper deal of system  equations of the type:
+
+\begin{equation}\label{ProbPrin-gral}
+    \left\{%
+\begin{array}{ll}
+  \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    u(0)-u(T)=u'(0)-u'(T)=0
+\end{array}%
+\right.,
+\end{equation}
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, and the the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interesting in to find \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic    was addressed deeply for the \emph{Lagrange function}
+\begin{equation}\label{eq:lagrange_cuad}
+\mathcal{L}_{p,F}(t,x,y)=\frac{|y|^p}{p}+F(t,x),
+\end{equation}
+for $1<p<\infty$. For example, the classical book  \cite{mawhin2010critical} approach mainly with problem \eqref{ProbPrin-gral} through various methods: direct, dual action, minimax, etc. In this context  it is customary to call $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respecto to $x$ for a.e. $t\in [0,T]$ and the following conditions
+\begin{description}
+
+ \item[(C)]\label{item:condicion_c} $F$ and its gradient, with respect to $x\in\rr^d$, $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
+
+ \item[(A)]\label{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
+\begin{equation}
+|F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t).
+\end{equation}
+In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
+\end{description}
+
+The Lagrange function \eqref{eq:lagrange_cuad} for arbitrary $1<p<infty$ was considered in several papers. For example in \cite{Tian2007192}, Y. Tian and W. Ge obtained existence results for this problem through the  dual least action principle. In this paper we extend and generalize this results a more general Lagrange functions. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{equation}\label{ProbPrin}
     \left\{%
@@ -144,18 +186,7 @@ following non-autonomous second-order system:
 \right.
 \end{equation}
 where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and  $\Phi$ is a differentiable  $N$-function (see section Preliminaries for definitions). Furthermore, the \emph{potential} $F:[0,T]\times\rr^d\to\rr$  satisfies the following conditions:
-\begin{description}
 
- \item[(C)]\label{item:condicion_c} $F$ and its gradient $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
-
- \item[(A)]\label{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
-\begin{equation}
-|F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t).
-\end{equation}
-In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
-
-
-\end{description}
 
 We will call the differential operator
 \[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right) \]
@@ -786,7 +817,7 @@ Assume also that $\mathcal{L}(t,x,y)$ is strictly convex at $y$ and
 \end{equation}
 where the function $F(t,x)$ satisfies conditions (A) and (C).
 Then, the problem
-\begin{equation}\label{ProbPrin-gral}
+\begin{equation}\label{P}
     \left\{%
 \begin{array}{ll}
   \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
