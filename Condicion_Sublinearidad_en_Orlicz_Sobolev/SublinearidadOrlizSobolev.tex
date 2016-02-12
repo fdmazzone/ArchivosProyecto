@@ -142,11 +142,22 @@ This paper deal of system  equations of the type:
 \end{array}%
 \right.,
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, and the the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interesting in to find \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic    was addressed deeply for the \emph{Lagrange function}
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interesting in to find \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic    was addressed deeply for the \emph{Lagrange function}
 \begin{equation}\label{eq:lagrange_cuad}
 \mathcal{L}_{p,F}(t,x,y)=\frac{|y|^p}{p}+F(t,x),
 \end{equation}
-for $1<p<\infty$. For example, the classical book  \cite{mawhin2010critical} approach mainly with problem \eqref{ProbPrin-gral} through various methods: direct, dual action, minimax, etc. In this context  it is customary to call $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respecto to $x$ for a.e. $t\in [0,T]$ and the following conditions
+for $1<p<\infty$. For example, the classical book  \cite{mawhin2010critical} deal mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{2,F}$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in various articles, see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic}, in this case \eqref{ProbPrin-gral} reduced to the $p$-laplacian system
+\begin{equation}\label{ProbP-lapla}
+    \left\{%
+\begin{array}{ll}
+   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    u(0)-u(T)=u'(0)-u'(T)=0
+\end{array}%
+\right.
+\end{equation}
+
+
+In this context  is customary to call the function $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respecto to $x$ for a.e. $t\in [0,T]$ and the following conditions
 \begin{description}
 
  \item[(C)]\label{item:condicion_c} $F$ and its gradient, with respect to $x\in\rr^d$, $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
@@ -158,49 +169,26 @@ for $1<p<\infty$. For example, the classical book  \cite{mawhin2010critical} app
 In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
 \end{description}
 
-The Lagrange function \eqref{eq:lagrange_cuad} for arbitrary $1<p<infty$ was considered in several papers. For example in \cite{Tian2007192}, Y. Tian and W. Ge obtained existence results for this problem through the  dual least action principle. In this paper we extend and generalize this results a more general Lagrange functions. 
 
+In \cite{ABGMS2015} was studied the case of a lagrangian $\mathcal{L}$ which is bounded from below by a Lagrange function
+\begin{equation}\label{eq:lagrange_phi}
+\mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
+\end{equation}
+with $\Phi$ a $N$-function (see section \ref{preliminares} for the definition of this concept).  In the paper \cite{ABGMS2015} was assumed on $F$  a condition of \emph{bounded oscilation} (see xxxxx below). In this paper we are interesting in to study the condition of \emph{sublinearity} (see  \cite{tang1998periodic,wu1999periodic,zhao2004periodic,tang2010periodic,zhao2005existence}) on $\nabla F$ for the lagrangian  $\mathcal{L}_{\Phi,F}$, or more generally for lagrangians bounded from below by $\mathcal{L}_{\Phi,F}$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+We note that the equations \eqref{ProbPrin-gral} for the lagrangian $\mathcal{L}_{\Phi,F}$ are written of the following way
 
 \begin{equation}\label{ProbPrin}
     \left\{%
 \begin{array}{ll}
-   \frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    L_{\Phi}[u]= \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0
 \end{array}%
 \right.
 \end{equation}
-where $T>0$, $u:[0,T]\to\rr^d$ is absolutely continuous and  $\Phi$ is a differentiable  $N$-function (see section Preliminaries for definitions). Furthermore, the \emph{potential} $F:[0,T]\times\rr^d\to\rr$  satisfies the following conditions:
+where $L_{\Phi}$ is the second order quasilinear  \emph{$\Phi$-laplacian} differential operator, defined by
+\[L_{\Phi}[u]:=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right). \]
 
-
-We will call the differential operator
-\[L_{\Phi}[u]=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right) \]
-the
-\emph{$\Phi$-laplacian operator}. If $\Phi(x)=|x|^p/p$, $1<p<\infty$, $L_{\Phi}$ is the well known $p$-laplacian operator. In this case, we have the \emph{Dirichlet problem} for the $p$-laplacian
-
-\begin{equation}\label{ProbP-lapla}
-    \left\{%
-\begin{array}{ll}
-   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    u(0)-u(T)=u'(0)-u'(T)=0
-\end{array}%
-\right.
-\end{equation}
 
 
 
@@ -209,14 +197,7 @@ The problem \eqref{ProbPrin} comes from a variational one, that is,  the equatio
 I(u)=\int_{0}^T \Phi(|u'(t)|)+F(t,u(t))\ dt.
 \end{equation}
 
-PARA MEJORAR Y AMPLIAR!!!
-
-The main result of this article is Theorem \ref{coercitividad-r} which establishes conditions to guarantee existence of 
-solutions of the problem \eqref{ProbPrin} by minimization of functional \eqref{integral_accion}. 
-We point out that the hypothesis of
-Theorem \ref{coercitividad-r} are generalizations of those given in 
-\cite{wu1999periodic,zhao2004periodic,zhao2005existence,tang2010periodic} about the sublinearity.
-
+The paper is organized as follows. In section \ref{preliminares} we give preliminaries facts on $N$-functions, Orlicz-Sobolev spaces of functions and we establish our main results. Section \ref{sec:proofs} contains the proofs and section \ref{sec:examples} examples of applications of our results to concrete cases. Finally, in section \ref{sec:BO}, we compare the condition of sublinearity considered in this paper with the condition of bounded oscilations considered in \cite{ABGMS2015}.
 
 \section{Preliminaries}\label{preliminares}
 
@@ -374,7 +355,7 @@ The next simple lemma, whose proof can be found in \cite{ABGMS2015}, will be use
 
 
 
-\section{Lagrangians satisfying  sublinear nonlinearity type conditions}
+\section{Lagrangians satisfying  sublinear nonlinearity type conditions}\label{sec:proofs}
 
 
 
@@ -861,7 +842,7 @@ the function $D_y\mathcal{L}(T,u(T),\cdot)$ imply that $u'(0)=u'(T)$.
 
 
 
- \section{Examples}
+ \section{Examples}\label{sec:examples}
 
  In this section we developed some applications of our main results
 so that the reader can appreciate the innovations that bring.
@@ -1073,6 +1054,9 @@ We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. F
 % \end{equation}
 % when  $\Phi(u)=|u|^p$.
 % Nevertheless, it is no longer the case  for any $N$-function $\Phi$ as the following example shows.
+
+
+\section{On the \textit{BO} condition}\label{sec:BO}
 
 \section*{Acknowledgments}
 The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
