@@ -192,9 +192,9 @@ where $L_{\Phi}$ is the second order quasilinear  \emph{$\Phi$-laplacian} differ
 
 
 
-The problem \eqref{ProbPrin} comes from a variational one, that is,  the equation in  \eqref{ProbPrin}  is the Euler-Lagrange equation associated to the \emph{action integral}
+The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the equation in  \eqref{ProbPrin}  is the Euler-Lagrange equation associated to the \emph{action integral}
 \begin{equation}\label{integral_accion}
-I(u)=\int_{0}^T \Phi(|u'(t)|)+F(t,u(t))\ dt.
+I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
 
 The paper is organized as follows. In section \ref{preliminares} we give preliminaries facts on $N$-functions, Orlicz-Sobolev spaces of functions and we establish our main results. Section \ref{sec:proofs} contains the proofs and section \ref{sec:examples} examples of applications of our results to concrete cases. Finally, in section \ref{sec:BO}, we compare the condition of sublinearity considered in this paper with the condition of bounded oscilations considered in \cite{ABGMS2015}.
@@ -211,6 +211,7 @@ In addition,  in this paper for sake of simplicity  we assume that $\Phi$ is dif
 On these assumptions, $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a homeomorphism whose inverse will be denoted $\psi$. 
 We denote by $\Psi$ the primitive of $\psi$ that satisfies $\Psi(0)=0$. Then, $\Psi$ is an $N$-function which  is called the \emph{complementary function} of $\Phi$.
 
+ We recall that a function $N$-function $\Phi(u)$ has \emph{principal part} the function $f(u)$ if $\Phi(u)=f(u)$ for large value of the argument (see \cite[p. 16]{KR} and \cite[Sec. 7]{KR} for  properties of principal part)
 
 There exist several order and equivalence relations between $N$-functions (see \cite[Sec. 2.2]{rao1991theory}).
 Following \cite[Def. 1, p. 15-16]{rao1991theory} we say that the   $N$-function $\Phi_2$ is \emph{stronger} than the $N$-function  $\Phi_1$,   $\Phi_1\prec\Phi_2$ in symbols, if  there exists $a>0$ and $x_0\geq 0$ such that
@@ -227,12 +228,11 @@ if there exist  constants $K>0$ and  $x_0\geq 0$ such that
 \begin{equation}\label{delta2defi}\eta(2x)\leq K\eta(x),
 \end{equation}
 for every $x\geq x_0$. We note that $\eta$ is $\Delta_2^{\infty}$ if and only if $\eta\closedprec\eta$.
-If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$). If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$ we said that 
+If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$). If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$ we said that $\Phi$ satisfies the \emph{$\Delta_2$-condition near to 0} ($\Phi\in\Delta_2^0$).
 
 
 
-Let $d$ be a positive integer. We denote by $\mathcal{M}:=\mathcal{M}([0,T],\rr^d)$ the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
-
+Let $d$ be a positive integer. We denote by $\mathcal{M}:=\mathcal{M}([0,T],\rr^d)$  the set of all measurable functions defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$. For the set of functions $\mathcal{M}$, as for other similar sets, we omit the reference to codomain $\mathbb{R}^d$ when $d=1$.
 
 
 Given  an $N$-function $\Phi$ we define the \emph{modular function} 
@@ -289,8 +289,7 @@ $\wphi$ is a Banach space when equipped with the norm
 \begin{equation}\label{def-norma-orlicz-sob}
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
-
-Moreover, we introduce the following subspaces of $\wphi$
+We introduce the following subspaces of $\wphi$
 %%
 \begin{equation}\label{def-esp-orlicz-sob-per}
 \begin{split}
@@ -346,7 +345,7 @@ The next simple  embedding lemma, whose proof can be found in \cite{ABGMS2015}, 
 
 \section{Main results}
 
-
+We begin by stating the following lemma which establish the coercivity of the modular function $\rho_{\Phi}(u)$ with respect to certain functions of the Orlicz norm $\Phi_0(\|u\orlnor|)$. This lemma generalizes \cite[Lemma 5.2]{ABGMS2015} in two directions. The first, we consider function $\Phi_0$ more general than in  \cite[Lemma 5.2]{ABGMS2015}. The second one and more important, the condition $\Delta_2$-global on $\Psi$ used in \cite[Lemma 5.2]{ABGMS2015} was relaxed to $\Delta_2^{\infty}$. We need to present this result here since the lemma introduces the function $\Phi^*$ that plays an important role in our main theorem.
 
 \begin{lem}\label{lem_coer}
 Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
@@ -357,6 +356,50 @@ Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then th
 Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$.
 \end{lem}
 
+
+
+ We point out that this lemma can be applied to more cases than \cite[Lemma 5.2]{ABGMS2015}. For example, if $\Phi(u)=u^2$, $\Phi_1$ and $\Phi_0$ are  $N$-functions with principal parts equal to $u^2/\log u$ and $u^2/(\log u)^2$ respectively , then  \eqref{eq:coer_mod} holds for $\Phi_0$.. On the other hand, $\Phi_0(|u|)$ is not dominated for any  power function $|u|^{\alpha}$ for every $\alpha<2$.
+
+
+
+
+Likes \cite{ABGMS2015} we will consider general lagrangian functions
+$\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$
+satisfying the conditions
+\begin{align*}
+|\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\
+\\
+|D_{x}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\text{(A2),}
+\\
+|D_{y}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(c(t)+ \varphi\left(\frac{|y|}{\lambda}+f(t)\right)\right)
+&\text{(A3),}
+\end{align*}
+where $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function,
+$\varphi$ is the right continuous derivative of $\Phi$,
+$b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$. It was shown in
+\cite{ABGMS2015} that conditions (A1-3)  guarantee the  existence of the Gate\^aux derivative $I'(u)$ of the integral functional $I$, defined in \eqref{integral_accion}, on the subspace $\wphie([0,T],\rr^d)$. We note that for the lagrangian $\mathcal{L}_{\Phi,F}$ assumptions (A1-3) are equivalent to condition (A) for the potential $F$.
+It is needed  other assumptions on Lagrange function $\mathcal{L}$.
+As mentioned we
+
+In \cite{tang1998periodic} and \cite{tang2010periodic} the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
+\begin{equation}\label{eq:cota_pot} |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),
+ \end{equation}
+
+
+where  $b_1,b_2 \in L^1_1$ and $\alpha<p$. Thus, they called $F$  a sublinear nonlinearity.
+In this paper, we will consider bounds on $\nabla F$ of a more general type.
+
+
+
+
+
+\begin{defi} Let $\Phi_0$ be a differentiable $N$-function. We say that $G:[0,T]\times\rr^n\to\rr$  satisfies a $\Phi_0$-\emph{grow condition} if
+\begin{equation}\label{holder_cont-mu}
+  \left| G(t,x) \right|\leq b_1(t)\Phi_0'(|x|)+b_2(t),
+\end{equation}
+with $b_1,b_2 \in L^1([0,T],\rr)$.
+
+\end{defi}
 
 \section{Lagrangians satisfying  sublinear nonlinearity type conditions}\label{sec:proofs}
 
@@ -545,18 +588,9 @@ Now, taking  $x\geq \max\{8,{\Psi^*}^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \D
 \begin{comentario}  The $N$-function $\Phi(x)=|x|^p$, $p>1$ has a complementary which is $\Delta_2$. 
  \end{comentario}
 
-The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 
-\begin{lem}\label{lem_coer}  YA ESTA 
-Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
-\begin{equation}\label{eq:coer_mod}
-\lim\limits_{\|u\orlnor\to \infty}
-\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty,
-\end{equation}
-Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$.
-\end{lem}
 
-\begin{proof} At first we assume that $\Phi$ is $\Delta_2$-globally. Let $\Phi^*$ be a $N$ function satisfying \eqref{eq:caract_delta2}. By the inequality \eqref{amemiya-ine}, for $r>1$ we have 
+\begin{proof} \emph{Lemma \ref{lem_coer}} At first we assume that $\Phi$ is $\Delta_2$-globally. Let $\Phi^*$ be a $N$ function satisfying \eqref{eq:caract_delta2}. By the inequality \eqref{amemiya-ine}, for $r>1$ we have
 \[
 \int_0^T \Phi(|u|)\,dt\geq
 \Phi^*(r) \int_0^T \Phi(r^{-1}|u|)\,dt\geq
@@ -578,9 +612,7 @@ Therefore \eqref{eq:coer_mod} holds for $\Phi_0(x)=|x|$, then \cite[Lemma 5.2]{A
 \end{proof}
 
 
-\begin{comentario}  We point out that this lemma can be applied to more cases than \cite[Lemma 5.2]{ABGMS2015}. For example, if $\Phi(u)=u^2$, $\Phi_1$ and $\Phi_0$ are  $N$-functions with principal parts equal to $u^2/\log u$ and $u^2/(\log u)^2$ respectively (see \cite[p. 16]{KR} and \cite[Sec. 7]{KR} for the definition and properties of principal part), then  \eqref{eq:coer_mod} holds for $\Phi_0$.
-However, $\Phi_0(u)$ is not dominated for any  power function $|u|^{\alpha}$ for every $\alpha<2$. 
-\end{comentario}
+
 
 
 
@@ -598,23 +630,6 @@ However, $\Phi_0(u)$ is not dominated for any  power function $|u|^{\alpha}$ for
 \end{equation}
 respectively.
 \end{defi}
-
-In \cite{tang1998periodic} and \cite{tang2010periodic} the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
-\begin{equation}\label{eq:cota_pot} |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),
- \end{equation}
-
-
-where  $b_1,b_2 \in L^1_1$ and $\alpha<p$. Thus, they called $F$  a sublinear nonlinearity. 
-In this paper, we will consider bounds on $\nabla F$ of a more general type.
-
-\begin{defi} Let $\Phi_0$ be a differentiable $N$-function. We say that $G:[0,T]\times\rr^n\to\rr$  satisfies a $\Phi_0$-\emph{grow condition} if
-\begin{equation}\label{holder_cont-mu}
-  \left| G(t,x) \right|\leq b_1(t)\Phi_0'(|x|)+b_2(t),
-\end{equation}
-with $b_1,b_2 \in L^1([0,T],\rr)$.
-
-\end{defi}
-
 
 
 \begin{thm}\label{coercitividad-r} Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2$ condition globally. 
@@ -768,22 +783,6 @@ are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds
 \end{proof}
 
 
-
-In the article \cite{ABGMS2015} we have considered more general lagrangian functions 
-$\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ 
-satisfying the conditions
-\begin{align*}
-|\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\text{(A1),}
-\\
-|D_{x}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\text{(A2),}
-\\
-|D_{y}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(c(t)+ \varphi\left(\frac{|y|}{\lambda}+f(t)\right)\right)
-&\text{(A3),}
-\end{align*}
-where $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function, 
-$\varphi$ is the right continuous derivative of $\Phi$,  
-$b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$.
-
 In  \cite[Thm. 6.2]{ABGMS2015} we obtained existence results of solutions of the problem 
 $\inf\{I(u):u \in \wphie \}$ 
 where the action integral was given by $I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt$. 
@@ -816,10 +815,7 @@ Then, the problem
 \right.
 \end{equation}
 has at least one solution $u:[0,T]\to\rr^d$ absolutely continuous, 
-which minimizes the action integral
-\begin{equation}\label{integral_accion}
-I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
-\end{equation}
+which minimizes the action integral \eqref{integral_accion}.
 \end{cor}
 
 
