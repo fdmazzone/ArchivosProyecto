@@ -14,6 +14,7 @@
 \usepackage{color}
 \usepackage{ esint }
 \usepackage{mathabx}
+\usepackage{MnSymbol}
 \usepackage{fancyhdr}
 \usepackage{times}
 
@@ -87,7 +88,6 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 \begin{document}
-
 
 
 \maketitle
@@ -201,16 +201,14 @@ The paper is organized as follows. In section \ref{preliminares} we give prelimi
 
 \section{Preliminaries}\label{preliminares}
 
-For reader convenience, we give a short introduction to Orlicz and Orlicz-Sobolev spaces of vector valued functions and a  list  of results that we will use throughout the article. 
-Classic references for Orlicz spaces of real valued functions are \cite{adams_sobolev,KR,rao1991theory}.
-For  Orlicz spaces of vector valued functions, see \cite{Orliczvectorial2005} and the references therein.
+For reader convenience, we give a short introduction to Orlicz and Orlicz-Sobolev spaces of vector valued functions. Classic references for these topics are \cite{adams_sobolev,KR,rao1991theory}. 
 
 Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^+\to \mathbb{R}^+ $ is called an \emph{$N$-function} if $\Phi$ is convex and satisfies that
 \[
 \lim_{t\to+\infty}\frac{\Phi(t)}{t}=+\infty\quad\text{and}\quad \lim_{t\to 0}\frac{\Phi(t)}{t}=0
 \]
-In addition,  in this paper  we assume that $\Phi$ is differentiable and we call $\varphi$  the derivative of $\Phi$. 
-On these assumptions, $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a homeomorphism whose inverse is $\psi$. 
+In addition,  in this paper for sake of simplicity  we assume that $\Phi$ is differentiable and we call $\varphi$  the derivative of $\Phi$. 
+On these assumptions, $\varphi:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is a homeomorphism whose inverse will be denoted $\psi$. 
 We denote by $\Psi$ the primitive of $\psi$ that satisfies $\Psi(0)=0$. Then, $\Psi$ is an $N$-function which  is called the \emph{complementary function} of $\Phi$.
 
 
@@ -218,7 +216,7 @@ There exist several order and equivalence relations between $N$-functions (see \
 Following \cite[Def. 1, p. 15-16]{rao1991theory} we say that the   $N$-function $\Phi_2$ is \emph{stronger} than the $N$-function  $\Phi_1$,   $\Phi_1\prec\Phi_2$ in symbols, if  there exists $a>0$ and $x_0\geq 0$ such that
 \begin{equation}\label{eq:prec}\Phi_1(x)\leq \Phi_2(ax), \quad x\geq x_0.\end{equation}
  The $N$-functions  $\Phi_1$ and   $\Phi_2$ are \emph{equivalent} ($\Phi_1\sim\Phi_2$)  when  $\Phi_1\prec\Phi_2$ and $\Phi_2\prec\Phi_1$.
-We said that  $\Phi_2$ is \emph{essentially stronger} than  $\Phi_1$  ($\Phi_1\llcurly\Phi_2$) if and only if for every $a>0$ there exists $x_0=x_0(a)\geq 0$ such that \eqref{eq:prec} holds. Finally we said that  $\Phi_2$ is \emph{completely stronger} than  $\Phi_1$  ($\Phi_1\precdot\Phi_2$) if and only if for every $a>0$ there exists $K=K(a)>0$ and  $x_0=x_0(a)\geq 0$ such that
+We said that  $\Phi_2$ is \emph{essentially stronger} than  $\Phi_1$  ($\Phi_1\llcurly\Phi_2$) if and only if for every $a>0$ there exists $x_0=x_0(a)\geq 0$ such that \eqref{eq:prec} holds. Finally we said that  $\Phi_2$ is \emph{completely stronger} than  $\Phi_1$  ($\Phi_1\closedprec\Phi_2$) if and only if for every $a>0$ there exists $K=K(a)>0$ and  $x_0=x_0(a)\geq 0$ such that
 
 
 \begin{equation}\label{eq:prec2}\Phi_1(x)\leq K\Phi_2(ax), \quad x\geq x_0.\end{equation}
@@ -228,8 +226,8 @@ We also say that a function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfie
 if there exist  constants $K>0$ and  $x_0\geq 0$ such that
 \begin{equation}\label{delta2defi}\eta(2x)\leq K\eta(x),
 \end{equation}
-for every $x\geq x_0$. We note that $\eta$ is $\Delta_2^{\infty}$ if and only if $\eta\precdot\eta$.
-If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$).
+for every $x\geq x_0$. We note that $\eta$ is $\Delta_2^{\infty}$ if and only if $\eta\closedprec\eta$.
+If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$). If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$ we said that 
 
 
 
@@ -243,7 +241,7 @@ $\rho_{\Phi}:\mathcal{M}\to \mathbb{R}^+\cup\{+\infty\}$ by
 Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^d$.
 The \emph{Orlicz class} $C^{\Phi}=C^{\Phi}([0,T],\rr^d)$  is defined  by
 \begin{equation}\label{claseOrlicz}
-  C^{\Phi}_d:=\left\{u\in \mathcal{M} | \rho_{\Phi}(u)< \infty \right\}.
+  C^{\Phi}:=\left\{u\in \mathcal{M} | \rho_{\Phi}(u)< \infty \right\}.
 \end{equation}
 The \emph{Orlicz space} $\lphi=L^{\Phi}([0,T],\rr^d)$ is the linear hull of $\claseor$;
 equivalently,
@@ -255,19 +253,16 @@ equivalently,
 \|  u  \orlnor:=\sup \left\{  \int_0^T u\b{\cdot} v\ dt \big| \rho_{\Psi}(v)\leq 1\right\},
 \]
 is a Banach space. By $u\b{\cdot} v$ we denote the usual dot product in $\mathbb{R}^{d}$ between $u$ and $v$.
-The following alternative expression for the norm, known as \emph{Amemiya norm},     will  be useful (see \cite[Thm. 10.5]{KR} and \cite{hudzik2000amemiya}). For every $u\in\lphi$,
 
-\begin{equation}\label{amemiya}
-\|u\orlnor=\inf\limits_{k>0}\frac{1}{k}\left\{1+\rho_{\Phi}(ku)\right\}.
-\end{equation}
-In particular
+The following  inequality holds for any $u\in\lphi$
 \begin{equation}\label{amemiya-ine}
 \|u\orlnor\leq \frac{1}{k}\left\{1+\rho_{\Phi}(ku)\right\},\quad\text{for every } k>0.
 \end{equation}
+In fact, $\|u\orlnor$ is the infimum for $k>0$ of the r.h.s in above expression  (see \cite[Thm. 10.5]{KR} and \cite{hudzik2000amemiya}). 
 
 
-The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}_d([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi$ is the only one maximal subspace contained in the Orlicz class $\claseor$, i.e.
-$u\in\ephi$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$.
+The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi$ is the only one maximal subspace contained in the Orlicz class $\claseor$, i.e.
+$u\in\ephi$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ holds if and only if $\Phi\in\Delta_2^{\infty}$.
 
 A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 9.3]{KR}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
 \begin{equation}\label{holder}
@@ -306,9 +301,9 @@ Moreover, we introduce the following subspaces of $\wphi$
 
 
 
-For a  function $u\in L^1_d([0,T])$, we write $u=\overline{u}+\widetilde{u}$ where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
+We will use repeatedly the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
 
-As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when the restricted identity map $i_Y:Y\to X$ is bounded. That is, there exists $C>0$ such that  for any $y\in Y$ we have $\|y\|_X\leq C\|y\|_Y$.  With this notation, H\"older's inequality states that  $\lpsi\hookrightarrow  \left[\lphi\right]^*$; and, it is easy to see that for every $N$-function $\Phi$ we have that $L^{\infty}_d\hookrightarrow\lphi \hookrightarrow L^1_d$.
+As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when the restricted identity map $i_Y:Y\to X$ is bounded. That is, there exists $C>0$ such that  for any $y\in Y$ we have $\|y\|_X\leq C\|y\|_Y$.  With this notation, H\"older's inequality states that  $\lpsi\hookrightarrow  \left[\lphi\right]^*$; and, it is easy to see that for every $N$-function $\Phi$ we have that $L^{\infty}\hookrightarrow\lphi \hookrightarrow L^1$.
 
 
  Recall that a function   $w:\mathbb{R}^+\to \mathbb{R}^+$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example, it can be easily shown that $w(s)=s\Phi^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
@@ -316,16 +311,14 @@ As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a sub
 \end{equation}
 
 
-We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$ and it is a Banach space with norm
+We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$. This is a Banach space with norm
 \[\|u\|_{  C^w([0,T],\rr^d) }  :=\|u\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|u(t)-u(s)|}{w(|t-s|)}.\]
 
 
 
 
 
- An important aspect of the theory of Sobolev spaces is related to embedding theorems. There is an extensive literature on this question in the  Orlicz-Sobolev space setting, see for example
- \cite{cianchi2000fully,cianchi1999some,claverooptimal,edmunds2000optimal,kerman2006optimal}.
-The next simple lemma, whose proof can be found in \cite{ABGMS2015}, will be used systematically.
+The next simple  embedding lemma, whose proof can be found in \cite{ABGMS2015}, will be used systematically.
 
 
 
@@ -351,8 +344,18 @@ The next simple lemma, whose proof can be found in \cite{ABGMS2015}, will be use
 \end{lem}
 
 
+\section{Main results}
 
 
+
+\begin{lem}\label{lem_coer}
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
+\begin{equation}\label{eq:coer_mod}
+\lim\limits_{\|u\orlnor\to \infty}
+\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty,
+\end{equation}
+Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$.
+\end{lem}
 
 
 \section{Lagrangians satisfying  sublinear nonlinearity type conditions}\label{sec:proofs}
@@ -490,7 +493,7 @@ The last affirmation of the lemma is consequence of that  $\Psi(ax)>a\Psi(x)$ wh
 
 
 
-The following lemma is essentially known,  This is basically consequence  of the fact that $\Psi\in\Delta_2$ if and only if $\Psi\precdot\Psi$, of  \cite[Prop. 4, p. 20]{rao1991theory} and \cite[Cor. 10, p. 30]{rao1991theory}. However we prefer included an alternative proof, because we do not see clear that the previous results of \cite{rao1991theory} contemplate the case of $N$-functions satisfying the $\Delta_2$ condition globally.
+The following lemma is essentially known,  This is basically consequence  of the fact that $\Psi\in\Delta_2$ if and only if $\Psi\closedprec\Psi$, of  \cite[Prop. 4, p. 20]{rao1991theory} and \cite[Cor. 10, p. 30]{rao1991theory}. However we prefer included an alternative proof, because we do not see clear that the previous results of \cite{rao1991theory} contemplate the case of $N$-functions satisfying the $\Delta_2$ condition globally.
 
 
 
@@ -544,7 +547,7 @@ Now, taking  $x\geq \max\{8,{\Psi^*}^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \D
 
 The following lemma generalizes \cite[Lemma 5.2]{ABGMS2015}.
 
-\begin{lem}\label{lem_coer}
+\begin{lem}\label{lem_coer}  YA ESTA 
 Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
