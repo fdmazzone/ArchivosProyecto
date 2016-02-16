@@ -234,7 +234,7 @@ if there exist  constants $K>0$ and  $x_0\geq 0$ such that
 \begin{equation}\label{delta2defi}\eta(2x)\leq K\eta(x),
 \end{equation}
 for every $x\geq x_0$. We note that $\eta$ is $\Delta_2^{\infty}$ if and only if $\eta\closedprec\eta$.
-If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the \emph{$\Delta_2$-condition globally} ($\eta \in \Delta_2$). If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$ we said that $\Phi$ satisfies the \emph{$\Delta_2$-condition near to 0} ($\Phi\in\Delta_2^0$).
+If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the $\Delta_2$ ($\eta \in \Delta_2$). If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$ we said that $\Phi$ satisfies the $\Delta_2^0$-condition ($\Phi\in\Delta_2^0$).
 
 
 
@@ -359,7 +359,7 @@ Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2^{\infty}$
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty,
 \end{equation}
-Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2$.
+Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  then $\Psi\in\Delta_2^{\infty}$.
 \end{lem}
 
 
@@ -434,7 +434,7 @@ Then,  for every lagrangian $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$ 
 
 
 
-\section{Lagrangians satisfying  sublinear nonlinearity type conditions}\label{sec:proofs}
+\section{Proofs}\label{sec:proofs}
 
 
 
@@ -498,17 +498,17 @@ where $C_3=C_3(T)$. Finally, as $\|u\sobnor\to \infty$ we conclude that
 $(|\overline{u}|+\|u'\orlnor)\to \infty$.
 \end{proof}
 
-\begin{lem}\label{lema:delta_2 y der} Let $\Phi$ a $N$-function and $\varphi$ the right continuous derivative of $\Phi$. Then $\Phi\in\Delta_2^{\infty}$ (
+\begin{lem}\label{lema:delta_2 y der} Let $\Phi$ be a (not needed differentiable) $N$-function and $\varphi$ the right continuous derivative of $\Phi$. Then $\Phi\in\Delta_2^{\infty}$ (
 $\Phi\in\Delta_2$) iff $\varphi\in\Delta_2^{\infty}$ (
-$\varphi\in\Delta_2$ globally).
+$\varphi\in\Delta_2$).
 \end{lem}
 \begin{proof}  It is consequence of $\cite[Th. 11.7]{M}$ and \cite[Remark 5, p. 87]{M}.
 
 \end{proof}
 
-The following lemma improves the comment on the beginning of \cite[p. 24]{KR}.
+The following lemma improves the result at the comment on the beginning of \cite[p. 24]{KR}.
 
-\begin{lem}\label{lem:delta2-equiv-delta2-global} Let $\Psi$ be a $N$-function satisfying the $\Delta_2$ condition. Then there exists a $N$-function $\Psi^*$  such that $\Psi^*$ is $\Delta_2$-globally, $\Psi\leq\Psi^*$ and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that $\Psi^*(x)\leq a\Psi(x)$, for every $x\geq x_0$.  In particular every $\Delta_2$ $N$-function is equivalent to a $\Delta_2$-globally $N$-function.
+\begin{lem}\label{lem:delta2-equiv-delta2-global} Let $\Psi$ be a $N$-function satisfying the $\Delta_2^{\infty}$ condition. Then there exists a $N$-function $\Psi^*$  such that $\Psi^*\in\Delta_2$, $\Psi\leq\Psi^*$ and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that $\Psi^*(x)\leq a\Psi(x)$, for every $x\geq x_0$.  In other words,  every $\Delta_2$ near infinity  $N$-function is equivalent to a $\Delta_2$ globally $N$-function.
 \end{lem}
 
 \begin{proof} We can assume that the $\Delta_2$ condition for $\Psi$ fails near to $0$. Consequently, from Lemma \ref{lema:delta_2 y der}, we have that the right continuous derivative $\psi$ of $\Psi$ is not $\Delta_2$ near to $0$. Therefore, we obtain a sequence $x_n$, $n=1,2,\ldots$ of positive numbers with $x_n\to 0$, and
@@ -569,7 +569,7 @@ The last affirmation of the lemma is consequence of that  $\Psi(ax)>a\Psi(x)$ wh
 
 
 
-The following lemma is essentially known,  This is basically consequence  of the fact that $\Psi\in\Delta_2$ if and only if $\Psi\closedprec\Psi$, of  \cite[Prop. 4, p. 20]{rao1991theory} and \cite[Cor. 10, p. 30]{rao1991theory}. However we prefer included an alternative proof, because we do not see clear that the previous results of \cite{rao1991theory} contemplate the case of $N$-functions satisfying the $\Delta_2$ condition globally.
+The following lemma is essentially known,  this is basically consequence  of the fact that $\Psi\in\Delta_2^{\infty}$ if and only if $\Psi\closedprec\Psi$, of  \cite[Prop. 4, p. 20]{rao1991theory} and \cite[Cor. 10, p. 30]{rao1991theory}. However we prefer included an alternative proof, because we do not see clear that the previous results of \cite{rao1991theory} contemplate the case in the following lemma of the $N$-functions satisfying the $\Delta_2$ condition globally.
 
 
 
@@ -577,16 +577,18 @@ The following lemma is essentially known,  This is basically consequence  of the
 Let $\Phi,\Psi$ be complementary functions.
 The next statements are equivalent:
 \begin{enumerate}
-\item\label{item1} $\Psi \in \Delta_2$ ($\Delta_2$ globally).
+\item\label{item1} $\Psi \in \Delta_2$ ($\Psi \in \Delta_2^{\infty}$).
 \item\label{item2} There exists an $N$-function $\Phi^*$ such that
 \begin{equation}\label{eq:caract_delta2}
-\Phi(rs)\geq \Phi^*(r)\Phi(s)\quad\mbox{for every }r\geq1,s\geq 1\, (s\geq 0).
+\Phi(rs)\geq \Phi^*(r)\Phi(s)\quad\mbox{for every }r\geq1,s\geq 0\, (r\geq1,s\geq 1).
 \end{equation}
 \end{enumerate}
 \end{lem}
 
 \begin{proof}
-\ref{item1})$\Rightarrow$\ref{item2})
+ In virtue of the comment that precedes the statement of the lemma, we only condider the case   $\Psi \in \Delta_2$.
+
+\ref{item1})$\Rightarrow$\ref{item2}).
 By virtue of the $\Delta_2$-condition on $\Psi$, \cite[Thm. 11.7]{M} and \cite[Cor. 11.6]{M} (see also  \cite[Eq. (2.8)]{AGMS}), we get constants $K>0$ and $\alpha_{\Phi}>1$ such that
 \begin{equation}\label{delta2-consecuencia}
 \Phi(r s)\geq Kr^{\nu}\Phi(s),
@@ -618,12 +620,11 @@ Now, taking  $x\geq \max\{8,{\Psi^*}^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \D
 \begin{comentario} We note that if $\Phi^*$ satisfies \eqref{eq:caract_delta2} then $\Phi^*\prec \Phi$.
  \end{comentario}
 
-\begin{comentario}  The $N$-function $\Phi(x)=|x|^p$, $p>1$ has a complementary which is $\Delta_2$. 
- \end{comentario}
 
 
 
-\begin{proof} \emph{Lemma \ref{lem_coer}} At first we assume that $\Phi$ is $\Delta_2$-globally. Let $\Phi^*$ be a $N$ function satisfying \eqref{eq:caract_delta2}. By the inequality \eqref{amemiya-ine}, for $r>1$ we have
+
+\noindent\textbf{Proof Lemma \ref{lem_coer}} At first we assume that $\Phi$ is $\Delta_2$-globally. Let $\Phi^*$ be a $N$ function satisfying \eqref{eq:caract_delta2}. By the inequality \eqref{amemiya-ine}, for $r>1$ we have
 \[
 \int_0^T \Phi(|u|)\,dt\geq
 \Phi^*(r) \int_0^T \Phi(r^{-1}|u|)\,dt\geq
@@ -635,14 +636,13 @@ Now, we choose $r=\frac{\|u\orlnor}{2}$, as $\|u\orlnor\to\infty$ we can assume 
 \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi^*\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
 =\infty.
 \]
- If $\Psi$ is $\Delta_2$, but it is not $\Delta_2$-globally, we  use Lemma \ref{lem:delta2-equiv-delta2-global}. Then there exists a $\Delta_2$-globally $N$-function $\Psi_1$, with $\Psi_1\sim\Psi\leq \Psi_1$. Let $\Phi_1$ the complementary function of $\Psi_1$. Then $\Phi\sim\Phi_1\leq \Phi$ (see \cite[Th. 3.1]{KR}) and $\|\cdot\orlnor$ and $\|\cdot\|_{L^{\Phi_1}}$ are equivalents norms  (see \cite[Th. 13.2 and Th. 13.3]{KR}). By the previously proved, there exists $\Phi_0$ satisfying  \eqref{eq:coer_mod} with $\Phi=\Phi_1$. Let $C>0$ be such that  $\|\cdot\orlnor\leq C\|\cdot\|_{L^{\Phi_1}}$. Then
+ If $\Psi\in\Delta_2^{\infty}$, but $\Psi\notin\Delta_2$, we  use Lemma \ref{lem:delta2-equiv-delta2-global}. Then there exists a $\Delta_2$ $N$-function $\Psi_1$, with $\Psi_1\sim\Psi\leq \Psi_1$. Let $\Phi_1$ the complementary function of $\Psi_1$. Then $\Phi\sim\Phi_1\leq \Phi$ (see \cite[Th. 3.1]{KR}) and $\|\cdot\orlnor$ and $\|\cdot\|_{L^{\Phi_1}}$ are equivalents norms  (see \cite[Th. 13.2 and Th. 13.3]{KR}). By the previously proved, there exists $\Phi_0$ satisfying  \eqref{eq:coer_mod} with $\Phi=\Phi_1$. Let $C>0$ be such that  $\|\cdot\orlnor\leq C\|\cdot\|_{L^{\Phi_1}}$. Then
 
-\[\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq  \frac{\int_0^T \Phi_1(|u|)dt}{\Phi_0(kC\|u\|_{L^{\Phi_1}})}=+\infty.\]
+\[\lim\limits_{\|u\orlnor \to \infty}\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi_1(|u|)dt}{\Phi_0(kC\|u\|_{L^{\Phi_1}})}=+\infty.\]
 
 
 Finally, if $\Phi_0$ is an $N$-function, then $\Phi_0(x)\geq \alpha |x|$ for  $\alpha$ small enough and $|x|>1$.
-Therefore \eqref{eq:coer_mod} holds for $\Phi_0(x)=|x|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$.
-\end{proof}
+Therefore \eqref{eq:coer_mod} holds for $\Phi_0(x)=|x|$, then \cite[Lemma 5.2]{ABGMS2015}  implies  $\Psi\in\Delta_2$ at $\infty$. \qed
 
 
 
