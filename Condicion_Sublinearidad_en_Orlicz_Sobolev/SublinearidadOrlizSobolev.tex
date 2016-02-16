@@ -35,10 +35,18 @@
 \theoremstyle{remark}
 \newtheorem{comentario}{Remark}
 
+\makeatletter
+\newcommand{\labitem}[2]{%
+\def\@itemlabel{\textbf{#1}}
+\item
+\def\@currentlabel{#1}\label{#2}}
+\makeatother
+
+
 
 
 \title{Periodic solutions of 
-Euler-Lagrange equations with ``sublinear nonlinearity'' in an Orlicz-Sobolev space setting}
+Euler-Lagrange equations and ``sublinear'' pontentials   in an Orlicz-Sobolev space setting }
 \author{Sonia Acinas \thanks{SECyT-UNRC, UNSL and CONICET}\\
 Instituto de Matem\'atica Aplicada San Luis (IMASL)\\ 
 Universidad Nacional de San Luis and CONICET\\
@@ -158,16 +166,14 @@ for $1<p<\infty$. For example, the classical book  \cite{mawhin2010critical} dea
 
 
 In this context  is customary to call the function $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respecto to $x$ for a.e. $t\in [0,T]$ and the following conditions
-\begin{description}
-
- \item[(C)]\label{item:condicion_c} $F$ and its gradient, with respect to $x\in\rr^d$, $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
-
- \item[(A)]\label{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
+\begin{enumerate}
+\labitem{(C)}{item:condicion_c} $F$ and its gradient, with respect to $x\in\rr^d$, $\nabla F$ are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and   continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
+ \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
 \begin{equation}
 |F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t).
 \end{equation}
 In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
-\end{description}
+\end{enumerate}
 
 
 In \cite{ABGMS2015} was studied the case of a lagrangian $\mathcal{L}$ which is bounded from below by a Lagrange function
@@ -348,7 +354,7 @@ The next simple  embedding lemma, whose proof can be found in \cite{ABGMS2015}, 
 We begin by stating the following lemma which establish the coercivity of the modular function $\rho_{\Phi}(u)$ with respect to certain functions of the Orlicz norm $\Phi_0(\|u\orlnor|)$. This lemma generalizes \cite[Lemma 5.2]{ABGMS2015} in two directions. The first, we consider function $\Phi_0$ more general than in  \cite[Lemma 5.2]{ABGMS2015}. The second one and more important, the condition $\Delta_2$-global on $\Psi$ used in \cite[Lemma 5.2]{ABGMS2015} was relaxed to $\Delta_2^{\infty}$. We need to present this result here since the lemma introduces the function $\Phi^*$ that plays an important role in our main theorem.
 
 \begin{lem}\label{lem_coer}
-Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$. Then there exists a $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2^{\infty}$. Then there exists a $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty,
@@ -365,41 +371,68 @@ Reciprocally, if  \eqref{eq:coer_mod} holds for some $N$-function $\Phi_0$,  the
 
 Likes \cite{ABGMS2015} we will consider general lagrangian functions
 $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$
-satisfying the conditions
-\begin{align*}
-|\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\
+satisfying the structure conditions
+\begin{align}
+|\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\tag{$A_1$}\label{eq:estru1}
 \\
-|D_{x}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\text{(A2),}
+|D_{x}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)&\tag{$A_2$}\label{eq:estru2}
 \\
-|D_{y}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(c(t)+ \varphi\left(\frac{|y|}{\lambda}+f(t)\right)\right)
-&\text{(A3),}
-\end{align*}
+|D_{y}\mathcal{L}(t,x,y)| &\leq a(|x|)\left(c(t)+ \varphi\left(\frac{|y|}{\lambda}+f(t)\right)\right),
+&\tag{$A_3$}\label{eq:estru3}
+\end{align}
 where $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $\lambda>0$, $\Phi$ is an $N$-function,
 $\varphi$ is the right continuous derivative of $\Phi$,
-$b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$. It was shown in
-\cite{ABGMS2015} that conditions (A1-3)  guarantee the  existence of the Gate\^aux derivative $I'(u)$ of the integral functional $I$, defined in \eqref{integral_accion}, on the subspace $\wphie([0,T],\rr^d)$. We note that for the lagrangian $\mathcal{L}_{\Phi,F}$ assumptions (A1-3) are equivalent to condition (A) for the potential $F$.
-It is needed  other assumptions on Lagrange function $\mathcal{L}$.
-As mentioned we
+$b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$. We denote by $\mathfrak{A}(a,b,c,\lambda,f,\Phi)$ the set of all Lagrange functions satisfying  \eqref{eq:estru1},\eqref{eq:estru2} and \eqref{eq:estru3}.
 
-In \cite{tang1998periodic} and \cite{tang2010periodic} the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
+
+
+
+It was shown in
+\cite{ABGMS2015} that if $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$ then there  exists the Gate\^aux derivative $I'(u)$ of the integral functional $I$, defined in \eqref{integral_accion}, on the subspace $\wphie([0,T],\rr^d)$. We note that for the lagrangian $\mathcal{L}_{\Phi,F}$ the condition \ref{item:condicion_a} is equivalent to
+$\mathcal{L}_{\Phi,F}\in \mathfrak{A}(a,b,0,1,0,\Phi)$.
+
+ Unlike what is usual in the literature, we do not assume that the Lagrangian $\mathcal{L}$  split in two terms one of them function of $y$ and the other one function of $(t,x)$. We suppose only a lower bound by a function of that type. More precisely we assume that for every $(t,x,y)\in\rr\times\rr^d\times\rr^d$
+
+\begin{equation}\label{eq:control_inf}
+\mathcal{L} \geq \mathcal{L}_{\Phi,F},\quad F\text{ satisfying \ref{item:condicion_a} and \ref{item:condicion_c},  $\Phi$ being $N$-function}.\tag{$A_4$}
+\end{equation}
+
+
+
+Moreover, as is usual, it is needed to suppose that the time integral of $F$ satisfies certain coercivity condition, see \eqref{eq:propiedad-coercividad-phi0} below.  But even all these hypotheses are not enough. It is necessary to assume extra conditions on the potential $F$.
+Several hypotheses were tested in the past years. The so-called \emph{subconvexity} for $F$ was tried in \cite{wu1999periodic,tang1995periodic,zhao2004periodic} for semilinear equations and in \cite{xu2007some,tang2010periodic} for $p$-laplacian systems. A boundeness on the oscilation of $F$ was studied in \cite{ABGMS2015}. In \cite{tang1998periodic, tang2010periodic}) the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
 \begin{equation}\label{eq:cota_pot} |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),
  \end{equation}
-
-
-where  $b_1,b_2 \in L^1_1$ and $\alpha<p$. Thus, they called $F$  a sublinear nonlinearity.
-In this paper, we will consider bounds on $\nabla F$ of a more general type.
-
-
-
-
-
-\begin{defi} Let $\Phi_0$ be a differentiable $N$-function. We say that $G:[0,T]\times\rr^n\to\rr$  satisfies a $\Phi_0$-\emph{grow condition} if
+where  $b_1,b_2 \in L^1([0,T])$ and $\alpha<p$. The potentials $F$ satisfying these inequalities  were called by the authors \emph{sublinear nonlinearities}. In this paper, we are interesting in to study this type of potential, but with more general bounds on $\nabla F$ which includes $N$-functions instead power functions, namely, we will consider inequalities for $F$ of the following type
 \begin{equation}\label{holder_cont-mu}
-  \left| G(t,x) \right|\leq b_1(t)\Phi_0'(|x|)+b_2(t),
+  \left| \nabla F(t,x) \right|\leq b_1(t)\Phi_0'(|x|)+b_2(t),
+  \tag{$A_6$}
 \end{equation}
-with $b_1,b_2 \in L^1([0,T],\rr)$.
+with $\Phi_0$  a differentiable $N$-function and $b_1,b_2 \in L^1([0,T],\rr)$.
 
-\end{defi}
+
+
+
+
+
+
+
+\begin{thm}\label{coercitividad-r} Let $\Phi$ be an $N$-function, whose complementary function $\Psi$ satisfies  $\Psi\in\Delta_2^{\infty}$ and suppose that $\Phi^*$ satisfies the Lemma \ref{lem_coer}. Assume that the potential $F$ satisfies \ref{item:condicion_c} and \ref{item:condicion_a} and the conditions
+
+\begin{enumerate}
+ \item  \eqref{holder_cont-mu}  for some
+ $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
+
+ \item \begin{equation}\label{eq:propiedad-coercividad-phi0}
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_2(\Phi_0'(2|x|))}=+\infty,\tag{$A_5$}
+\end{equation}
+for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi^*$.
+\end{enumerate}
+Then,  for every lagrangian $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$ satisfying \eqref{eq:control_inf} the problem \eqref{ProbPrin} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
+\end{thm}
+
+
+
 
 \section{Lagrangians satisfying  sublinear nonlinearity type conditions}\label{sec:proofs}
 
@@ -632,19 +665,7 @@ respectively.
 \end{defi}
 
 
-\begin{thm}\label{coercitividad-r} Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2$ condition globally. 
-Assume that the $N$-function $\Phi^*$ satisfies the Lemma \ref{lem_coer}, $F$ satisfies (C) and
-(A), and  $\nabla F$ satisfies a $\Phi_0$-grow condition for some 
- $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
-Furthermore, we suppose that
-\begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_2(\Phi_0'(2|x|))}=+\infty.
-\end{equation}
-for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi^*$.
-Then,  the problem \eqref{ProbPrin} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
-\end{thm}
-
-\begin{proof}
+\begin{proof} \emph{Th \ref{coercitividad-r} }.
 By the decomposition $u=\overline{u}+\tilde{u}$,   Cauchy-Schwarz's inequality
 and \eqref{holder_cont-mu}, we have
 \begin{equation}\label{cota-diferencia-F}
@@ -798,15 +819,11 @@ we can get another existence result under different hypothesis  than those assum
 
 
 \begin{cor}
-Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$ globally. 
-Suppose that  $\mathcal{L}(t,x,y)$ is a differentiable Carath\'eodory function such that (A1),(A2) and (A3) hold. 
-Assume also that $\mathcal{L}(t,x,y)$ is strictly convex at $y$ and 
-\begin{equation}
-\mathcal{L}(t,x,y) \geq \Phi\left(|y|\right)+ F(t,x),
-\end{equation}
-where the function $F(t,x)$ satisfies conditions (A) and (C).
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$ globally.
+Suppose that  $\mathcal{L}(t,x,y)$ is a differentiable Carath\'eodory function such that  \eqref{eq:estru1}--\eqref{eq:estru3} hold.
+Assume also that $\mathcal{L}(t,x,y)$ is strictly convex at $y$ and \eqref{eq:control_inf}.
 Then, the problem
-\begin{equation}\label{P}
+\begin{equation}
     \left\{%
 \begin{array}{ll}
   \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
