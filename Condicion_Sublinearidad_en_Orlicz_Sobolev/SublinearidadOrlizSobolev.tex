@@ -181,20 +181,20 @@ In \cite{ABGMS2015} was studied the case of a lagrangian $\mathcal{L}$ which is 
 \mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
 \end{equation}
 with $\Phi$ a $N$-function (see section \ref{preliminares} for the definition of this concept).  In the paper \cite{ABGMS2015} was assumed on $F$  a condition of \emph{bounded oscilation} (see xxxxx below). In this paper we are interesting in to study the condition of \emph{sublinearity} (see  \cite{tang1998periodic,wu1999periodic,zhao2004periodic,tang2010periodic,zhao2005existence}) on $\nabla F$ for the lagrangian  $\mathcal{L}_{\Phi,F}$, or more generally for lagrangians bounded from below by $\mathcal{L}_{\Phi,F}$.
-
-We note that the equations \eqref{ProbPrin-gral} for the lagrangian $\mathcal{L}_{\Phi,F}$ are written of the following way
-
-\begin{equation}\label{ProbPrin}
-    \left\{%
-\begin{array}{ll}
-    L_{\Phi}[u]= \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    u(0)-u(T)=u'(0)-u'(T)=0
-\end{array}%
-\right.
-\end{equation}
-where $L_{\Phi}$ is the second order quasilinear  \emph{$\Phi$-laplacian} differential operator, defined by
-\[L_{\Phi}[u]:=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right). \]
-
+%
+% We note that the equations \eqref{ProbPrin-gral} for the lagrangian $\mathcal{L}_{\Phi,F}$ are written of the following way
+%
+% \begin{equation}\label{ProbPrin}
+%     \left\{%
+% \begin{array}{ll}
+%     L_{\Phi}[u]= \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+%     u(0)-u(T)=u'(0)-u'(T)=0
+% \end{array}%
+% \right.
+% \end{equation}
+% where $L_{\Phi}$ is the second order quasilinear  \emph{$\Phi$-laplacian} differential operator, defined by
+% \[L_{\Phi}[u]:=\frac{d}{dt}\left(u'(t)\frac{\Phi'(|u'|)}{|u'|}\right). \]
+%
 
 
 
@@ -428,7 +428,7 @@ with $\Phi_0$  a differentiable $N$-function and $b_1,b_2 \in L^1([0,T],\rr)$.
 \end{equation}
 for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi^*$.
 \end{enumerate}
-Then,  for every lagrangian $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$ satisfying \eqref{eq:control_inf} the problem \eqref{ProbPrin} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
+Then,  for every lagrangian $\mathcal{L}(t,x,y)$ such that  $D_y\mathcal{L}(0,x,y)=D_y\mathcal{L}(T,x,y)$,  stritly convex with respecto to $y\in\rr^d$,  $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$, and satisfying \eqref{eq:control_inf} the problem \eqref{ProbPrin-gral} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
 \end{thm}
 
 
@@ -455,7 +455,7 @@ Thus, $S$ is weak* sequentially closed because if $u_n\in S$ and
 $u_n \overset{*}{\rightharpoonup}u \in \lphi$ then  the weak* sequentially compactness implies the existence of $v \in S$ and a subsequence $u_{n_k}$ such that
 $u_{n_k}\overset{*}{\rightharpoonup}v$. Finally, by the uniqueness of   the limit, we get
 $u=v\in S$.
-As $\epsi$ is separable and $\lphi=\left[\epsi\right]^*$, the ball of $\lphi$ $\{u \in \lphi | \|u\orlnor\leq 1\}$ is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
+As $\epsi$ is separable and $\lphi=\left[\epsi\right]^*$, the closed ball of $\{u \in \lphi | \|u\orlnor\leq 1\}$ of $\lphi$  is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
 Thus, $S$ is closed with respect to  the weak* topology. Now, by  Krein-Smulian theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi$ is weak* closed.
 \end{proof}
 
@@ -473,7 +473,7 @@ we get
 \|\overline{u}\orlnor+\|\tilde{u}\orlnor=
 |\overline{u}|\|1\orlnor+\|\tilde{u}\orlnor.
 \end{equation}
-It is known that $L^{\infty}_d\hookrightarrow\lphi$, i.e.
+It is known that $L^{\infty}\hookrightarrow\lphi$, i.e.
 there exists $C_1=C_1(T)>0$ such that for any $\tilde{u}\in L^{\infty}_d$ we have
 \[
 \|\tilde{u}\orlnor
@@ -556,7 +556,7 @@ define a $N$ function.
 Let  see that $\psi^*$ is $\Delta_2$ globally.
 For it is sufficient to prove that $\psi^*$ satisfies the $ \Delta_2$ conditions near of $0$. For this end, suppose $x\leq x_1$ and take $n\in\mathbb{N}$ such that $x_{n+1}\leq x\leq x_n$. Then
 \[\psi^*(2x)\leq \psi^*(2x_n)=2\psi^*(2x_{n+1})=4\psi^*(x_{n+1})\leq 4\psi^*(x).\]
-Consequently $\Psi^*$ is $\delta_2$ globally and $\Psi\leq \psi^*$.
+Consequently $\Psi^*$ is $\Delta_2$ globally and $\Psi\leq \psi^*$.
 
 It remains to show the ineaulity $\Psi^*(x)\leq a\Psi(x)$, for every $a>1$ and sufficiently large $x$. We take $x_0$ sufficiently large for that
 \[\frac{1}{a-1}\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x_0).\]
@@ -652,7 +652,7 @@ Therefore \eqref{eq:coer_mod} holds for $\Phi_0(x)=|x|$, then \cite[Lemma 5.2]{A
 
 
 
-\begin{defi}We define the  functionals $J_{C,\varphi}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\varphi}:\rr^n\to \rr$, where $C>0$ and $\varphi:[0,+\infty)\to [0,+\infty)$ is an by
+\begin{defi}We define the  functionals $J_{C,\varphi}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\varphi}:\rr^n\to \rr$, where $C>0$ and $\varphi:[0,+\infty)\to [0,+\infty)$ by
 \begin{equation}\label{func_phi}
   J_{C,\varphi}(u):= \rho_{\Phi}\left(u\right)-C\varphi\left(\|u\orlnor\right),
 \end{equation}
@@ -665,8 +665,10 @@ respectively.
 \end{defi}
 
 
-\begin{proof} \emph{Th \ref{coercitividad-r} }.
-By the decomposition $u=\overline{u}+\tilde{u}$,   Cauchy-Schwarz's inequality
+
+Next we give the proof of the Theorem \ref{coercitividad-r}.  Here we correct an error in the end of the proof of  \cite[Thm. 6.2]{ABGMS2015}  where was wrongly assumed that  the minimum of  $I$ is in the domain of differentiability of $I$. We avoid this problem by minimizing $I$ on $\wphiet$ which is a subspace weak* closed contained that domain.
+
+\noindent\textbf{Proof. Theorem \ref{coercitividad-r} }. By the decomposition $u=\overline{u}+\tilde{u}$,   Cauchy-Schwarz's inequality
 and \eqref{holder_cont-mu}, we have
 \begin{equation}\label{cota-diferencia-F}
 \begin{split}
@@ -733,12 +735,12 @@ I_1+I_2
 \end{equation}
 with $C_5$ depending on $\Phi_0, \Phi_2, T, \|b_1\|_{L^1}$ and $\|b_2\|_{L^1} $.
 
-In the subsequent estimates, we use  \eqref{cota-diferencia-F},
-\eqref{cota-i1-i2}, we get
+Using  \eqref{cota-diferencia-F} and
+\eqref{cota-i1-i2} we get
 \begin{equation}\label{cota_inf_I}
 \begin{split}
 I(u)&
-=\rho_{\Phi}(u')+\int_0^TF(t,u)\ dt
+\geq\rho_{\Phi}(u')+\int_0^TF(t,u)\ dt
 \\ 
 &=\rho_{\Phi}( u')+ \int_0^T \left[F(t,u)-F(t,\overline{u})\right]\ dt
 +  \int_0^TF(t,\overline{u})\ dt
@@ -793,50 +795,21 @@ Now, taking into account the relations $\left[L^1\right]^*=L^{\infty}\subset  \e
 
 Hence $u\in \wphiet$ is a minimun and, since $I$ is G\^ateaux differentiable on $\wphie$ (see  \cite[Thm. 3.2]{ABGMS2015}), 
 therefore $I'(u)\in (\wphiet)^{\perp}$. Thus,
-\[\int_0^T \frac{\Phi'(|u'(t)|)}{|u'(t)|}u'(t)\cdot v'(t)dt =-\int_0^T \nabla F(t,u(t))\cdot v(t)dt,\]
+\[\int_0^T D_y\mathcal{L}(t,u(t),u'(t))\cdot v'(t)dt =-\int_0^T D_x\mathcal{L}(t,u(t),u'(t))\cdot v(t)dt,\]
 for every  $v\in \wphiet$.  
 
-From \cite[Lemma 2.4]{ABGMS2015} we have 
- $u'(t)\Phi'(|u'(t)|)/|u'(t)|\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$; 
-and,  from condition (A) and the fact that $u\in L^{\infty}$, it follows that $\nabla F(t,u(t))\in L^1([0,T],\rr^n)$. 
-Consequently, from \cite[p. 6]{mawhin2010critical} we obtain that the differential equations in \eqref{ProbPrin} 
-are verified and $u'(0)\Phi'(|u'(0)|)/|u'(0)|=u'(T)\Phi'(|u'(T)|)/|u'(T)|$ holds. Thus $u'(0)=u'(T)$.
-\end{proof}
+From \cite[Eq. (26)]{ABGMS2015} we have
+ $D_y\mathcal{L}(t,u(t),u'(t))\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$;
+and,  from  \cite[Eq. (24)]{ABGMS2015}, it follows that $D_x\mathcal{L}(t,u(t),u'(t))\in L^1([0,T],\rr^n)$. Consequently, from \cite[p. 6]{mawhin2010critical} we obtain that the differential equations in \eqref{ProbPrin-gral}
+are verified.
 
 
-In  \cite[Thm. 6.2]{ABGMS2015} we obtained existence results of solutions of the problem 
-$\inf\{I(u):u \in \wphie \}$ 
-where the action integral was given by $I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt$. 
-
-Unfortunately, we made a mistake in the proof of \cite[Thm. 4.1]{ABGMS2015}, 
-because  the minimum of the functional  might be out of the domain of differentiability.
-
-Now, we can fix the aforementioned mistake by the process of minimization developed 
-in the last part of the proof of Theorem \ref{coercitividad-r}.
-
-Furthermore, based on Theorem \ref{coercitividad-r},
-we can get another existence result under different hypothesis  than those assumed in \cite[Thm. 6.2]{ABGMS2015}, as follows.
 
 
-\begin{cor}
-Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2$ globally.
-Suppose that  $\mathcal{L}(t,x,y)$ is a differentiable Carath\'eodory function such that  \eqref{eq:estru1}--\eqref{eq:estru3} hold.
-Assume also that $\mathcal{L}(t,x,y)$ is strictly convex at $y$ and \eqref{eq:control_inf}.
-Then, the problem
-\begin{equation}
-    \left\{%
-\begin{array}{ll}
-  \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    u(0)-u(T)=u'(0)-u'(T)=0
-\end{array}%
-\right.
-\end{equation}
-has at least one solution $u:[0,T]\to\rr^d$ absolutely continuous, 
-which minimizes the action integral \eqref{integral_accion}.
-\end{cor}
 
 
-\begin{proof}
+
+Now we consider a genral lagragian $\mathcal{L}$.
 In Theorem \ref{coercitividad-r} we have just seen that the action integral 
 $\int_0^T \Phi(|u'(t)|)+F(t,u(t))\,dt$
 is coercive, then the functional $\mathcal L$ does so. 
@@ -852,8 +825,7 @@ changing  $u'(t)\Phi'(|u'(t)|)/|u'(t)|$ by $D_{y}\mathcal{L}(t,u(t),u'(t))$  whi
 (see \cite[Eq. (26)]{ABGMS2015}). 
 
 Finally, the strict convexity of $\mathcal{L}(t,x,y)$ at $y$ and the injectivity of 
-the function $D_y\mathcal{L}(T,u(T),\cdot)$ imply that $u'(0)=u'(T)$.
-\end{proof}
+the function $D_y\mathcal{L}(T,u(T),\cdot)$ imply that $u'(0)=u'(T)$.\qed
 
 
 
