@@ -186,7 +186,7 @@ In this paper we shall study the condition of \emph{sublinearity} (see  \cite{ta
 
 
 
-The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the equation in  \eqref{ProbPrin}  is the Euler-Lagrange equation associated to the \emph{action integral}
+The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the equation in  \eqref{ProbPrin-gral} is the Euler-Lagrange equation associated to the \emph{action integral}
 \begin{equation}\label{integral_accion}
 I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
@@ -437,9 +437,9 @@ with $\Phi_0$  a differentiable $N$-function and $b_1,b_2 \in L^1([0,T],\rr)$.
  $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
 
  \item \begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_2(\Phi_0'(2|x|))}=+\infty,\tag{$A_5$}
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_1(\Phi_0'(2|x|))}=+\infty,\tag{$A_5$}
 \end{equation}
-for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi^*$.
+for some $N$-function $\Psi_1$ whose complementary function $\Phi_1$ satisfies $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
 \end{enumerate}
 
 Then,  for every Lagrangian $\mathcal{L}(t,x,y)$ such that  $D_y\mathcal{L}(0,x,y)=D_y\mathcal{L}(T,x,y)$,  stritly convex with respecto to $y\in\rr^d$,  $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$, and satisfying \eqref{eq:control_inf} the problem \eqref{ProbPrin-gral} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
@@ -612,7 +612,7 @@ The next statements are equivalent:
  In virtue of the comment that precedes the statement of the lemma, we only condider the case   $\Psi \in \Delta_2$.
 
 \ref{item1})$\Rightarrow$\ref{item2}).
-As consequences of the $\Delta_2$-condition on $\Psi$, \eqref{compl_ind} and \eqref{delta2-potencias} we get  constants $K>0$ and $1<\nu<\alpha_{\Phi}$ such that
+As consequences of the $\Delta_2$-condition on $\Psi$, \eqref{compl_ind} and \eqref{delta2-potencias} we get for every $1<\nu<\alpha_{\Phi}$ a constant $K=K_{\nu}>0$  such that
 \begin{equation}\label{delta2-consecuencia}
 \Phi(r s)\geq Kr^{\nu}\Phi(s),
 \end{equation}
@@ -728,20 +728,20 @@ I_1&
 +\Phi'_0(C_3\|u'\orlnor) \|u'\orlnor\bigg\},
 \end{split}
 \end{equation}
-where $C_2=C_2(T, \|b_1\|_{L^1} )$ and $C_3=C_3(T)$. Next, by Young's inequality with complementary functions $\Phi_2$ and $\Psi_2$
+where $C_2=C_2(T, \|b_1\|_{L^1} )$ and $C_3=C_3(T)$. Next, by Young's inequality with complementary functions $\Phi_1$ and $\Psi_1$
 \begin{equation}\label{cota-i1-parcial}
  \begin{split}
 \Phi_0'(2|\overline{u}|) \|u'\orlnor
 &\leq 
-\Psi_2(\Phi_0'(2|\overline{u}|))+
-\Phi_2(\|u'\orlnor).
+\Psi_1(\Phi_0'(2|\overline{u}|))+
+\Phi_1(\|u'\orlnor).
 \end{split}
 \end{equation}
-We have that any $N$-function $\Phi_0$ satisfies the inequality $x\Phi_0'(x)\leq \Phi_0(2x)$ (see \cite[p. 17]{rao1991theory} ). Moreover, since $\Phi_0\llcurly\Phi_2$ there exists $x_0=x_0(\Phi_0,\Phi_2,T)\geq 0$ such that $\Phi_0(2C_3x)\leq \Phi_2(x)$, for every $x\geq x_0$. Therefore, $\Phi_0(2C_3x)\leq \Phi_2(x)+C_4$, with $C_4=\Phi_0(2x_0)$. The previous observations imply
+We have that any $N$-function $\Phi_0$ satisfies the inequality $x\Phi_0'(x)\leq \Phi_0(2x)$ (see \cite[p. 17]{rao1991theory} ). Moreover, since $\Phi_0\llcurly\Phi_1$ there exists $x_0=x_0(\Phi_0,\Phi_1,T)\geq 0$ such that $\Phi_0(2C_3x)\leq \Phi_1(x)$, for every $x\geq x_0$. Therefore, $\Phi_0(2C_3x)\leq \Phi_1(x)+C_4$, with $C_4=\Phi_0(2x_0)$. The previous observations imply
 \begin{equation}\label{cota-i1-parcial-segunda}
 \Phi_0'(C_3\|u'\orlnor) \|u'\orlnor
 \leq 
-C_3^{-1}(\Phi_2(\|u'\orlnor)+C_4).
+C_3^{-1}(\Phi_1(\|u'\orlnor)+C_4).
 \end{equation}
 From \eqref{cota-i1}, \eqref{cota-i1-parcial}, \eqref{cota-i1-parcial-segunda} and \eqref{cota-i2}, we have
 \begin{equation}\label{cota-i1-i2}
@@ -750,13 +750,13 @@ I_1+I_2
 &
 \leq C_5
 \bigg\{ 
-\Psi_2(\Phi_0'(2|\overline{u}|))
-+\Phi_2(\|u'\orlnor)
+\Psi_1(\Phi_0'(2|\overline{u}|))
++\Phi_1(\|u'\orlnor)
 +\|u'\orlnor +1
 \bigg\}\\
 \end{split}
 \end{equation}
-with $C_5$ depending on $\Phi_0, \Phi_2, T, \|b_1\|_{L^1}$ and $\|b_2\|_{L^1} $.
+with $C_5$ depending on $\Phi_0, \Phi_1, T, \|b_1\|_{L^1}$ and $\|b_2\|_{L^1} $.
 
 Using  \eqref{cota-diferencia-F} and
 \eqref{cota-i1-i2} we get
@@ -769,20 +769,20 @@ I(u)&
 +  \int_0^TF(t,\overline{u})\ dt
 \\
 &\geq \rho_{\Phi}( u')
--C_5 \Phi_2(\|u'\orlnor)
+-C_5 \Phi_1(\|u'\orlnor)
 +\int_0^TF(t,\overline{u})\ dt-
-C_5 \Psi_2(\Phi_0'(2|\overline{u}|))-
+C_5 \Psi_1(\Phi_0'(2|\overline{u}|))-
 C_5
 \\
 &\geq 
 \rho_{\Phi}( u')
--C_5 \Phi_2(\|u'\orlnor)
-+H_{C_5, \Psi_2\circ\Phi_0}(\overline{u})
+-C_5 \Phi_1(\|u'\orlnor)
++H_{C_5, \Psi_1\circ\Phi_0}(\overline{u})
 -C_5
 \\
 &=
 J_{C_5,\Phi_0}(u')
-+H_{C_5, \Psi_2\circ\Phi_0}(\overline{u})
++H_{C_5, \Psi_1\circ\Phi_0}(\overline{u})
 -C_5.
 \end{split}
 \end{equation}
@@ -836,11 +836,22 @@ One of the main novelties of our work is that we obtain existence of solutions f
 
 \begin{example}We can applied Theorem \ref{coercitividad-r} to Lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with an exponential grow in $y$. For example, suppose
   \[\mathcal{L}(t,x,y)=f(y)+F(t,x),\]
-with $f(y)\geq e^{|y|}-|y|-1$. The complementary
-function  $\Psi(x)$ of the $N$-function $\Phi(x)=e^{x}-x-1$ is $\Delta_2$ globally (see \cite[p. 28]{KR}).  We suppose that $\Phi_1$ satisfies \eqref{eq:caract_delta2}. Taking $s\to 0$ in \eqref{eq:caract_delta2} we obtain that $\Phi_1(r)\leq r^2$. On the other hand,  is not hard to prove that $\Phi_1(r)= r^2$ satisfies  \eqref{eq:caract_delta2}. Hence, if $1<\alpha<\beta<2$ and $\Phi_0(x)=|x|^{\alpha}$ and $\Phi_2(x)=|x|^{\beta}$ then $\Phi_0 \llcurly\Phi_2\llcurly\Phi_1$,  we obtain existence of periodic solutions when $F$
-satisfies
-\[\left| \nabla F(t,x) \right|\leq b_1(t)|x|^{\alpha-1}+b_2(t)\quad\text{and}\quad \lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{|x|^{\gamma}}=+\infty,\]
-with $\alpha\in (1,2)$ and $\gamma\in (2\alpha-2,\alpha)$.
+with $f:\rr^n\to\rr$ differentiable, stritly convex and $f(y)\geq e^{|y|}$. We define for $n\geq 1$
+\[\Phi(y)=e^y-\sum\limits_{i=0}^{n-1}\frac{y^i}{i!}  \]
+It is easy to see that $\Phi:[0,+\infty)\to [0,+\infty)$  is $N$-function. From \cite[Ex. 3, p. 85]{M} we known that $\alpha_{\Phi}=n$. Therefore, as consequence of \eqref{compl_ind} we have $\beta_{\Psi}=\frac{n}{n-1}<\infty$. Consequently $\Psi\in\Delta_2$. From \eqref{delta2-potencias} we have that for evey $1<p<n$ there exists $C_p>0$ such that
+\[\Phi(rs)\geq C_pr^p\Phi(s),\quad r>1,s>0.\]
+Then the complementary pair $(\Phi,\Psi)$ and the $N$-function $\Phi^*(r):=r^p$ satisfy Lemma \ref{lem_coer} for every $1<p<n$. Fix arbitrary real numbers $1<p_0<p_1<p<n$ and we consider $\Phi_i=r^{p_i}$, $i=0,1$. We have that $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
+The conditions  \eqref{holder_cont-mu} and     \eqref{eq:propiedad-coercividad-phi0} becomes
+
+\begin{equation}\label{eq:A6_ejem1}
+  \left| \nabla F(t,x) \right|\leq b_1(t)|x|^{p_0-1}+b_2(t), \quad b_1,b_2\in L^1([0,T])
+\end{equation}
+and
+\begin{equation}\label{eq:ejem_propiedad-coercividad-phi0}
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{|x|^{(p_0-1)q_1 }}=+\infty,\quad q_1=p_1/(p_1-1)
+\end{equation}
+respectively. Since $n$ is an arbitrary positive integer, the pair $p_0$ and $p_1$ of numbers with $1<p_0<p_1$ is also arbitrary. For clarity we suppose $F(t,x)=b(t)|x|^{\sigma}$, for some $1<\sigma<\infty$ and $b\in L^1([0,T])$. We note that this $F$ satisfies \eqref{item:condicion_a} and \eqref{item:condicion_c}. Now we can fix any $1<p_0$ with $p_0-1<\sigma<p_0$ and we took $p_1$ with $p_1>\sigma(\sigma-p_0+1)^{-1}$. Then \eqref{eq:A6_ejem1}
+ and \eqref {eq:ejem_propiedad-coercividad-phi0} holds. In conclusion the system \eqref{ProbPrin-gral} has solution for the Lagrangian given by $\mathcal{L}(t,x,y)=f(y)+b(t)|x|^{\sigma}$ for any $1<\sigma$.
 \end{example}
 
 
