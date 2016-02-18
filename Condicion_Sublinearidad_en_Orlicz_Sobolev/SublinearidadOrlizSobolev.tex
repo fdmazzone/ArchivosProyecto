@@ -217,12 +217,34 @@ We say that  $\Phi_2$ is \emph{essentially stronger} than  $\Phi_1$  ($\Phi_1\ll
 \begin{equation}\label{eq:prec2}\Phi_1(x)\leq K\Phi_2(ax), \quad x\geq x_0.\end{equation}
 
 
-We also say that a function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\eta \in \Delta_2^{\infty}$,
+We also say that a non decreasing function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\eta \in \Delta_2^{\infty}$,
 if there exist  constants $K>0$ and  $x_0\geq 0$ such that
 \begin{equation}\label{delta2defi}\eta(2x)\leq K\eta(x),
 \end{equation}
 for every $x\geq x_0$. We note that $\eta$ is $\Delta_2^{\infty}$ if and only if $\eta\closedprec\eta$.
 If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the $\Delta_2$ ($\eta \in \Delta_2$). If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$ we say that $\Phi$ satisfies the $\Delta_2^0$-condition ($\Phi\in\Delta_2^0$).
+
+We denote by $\alpha_{\eta}$ and $\beta_{\eta}$ the so called  \emph{Matuszewska-Orlicz indices} of the function $\eta$, which are defined next. Given
+an increasing, unbounded, continuous function   $\eta:[ 0,+\infty)\to [0,+\infty)$ such that $\eta(0)=0$ we define
+\begin{equation}\label{MO_indices}
+    \alpha_{\eta}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\eta(t u)}{\eta(u)} \right ) }{\log(t)},\quad
+    \beta_{\eta}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\eta(t u)}{\eta(u)}\right )}{\log(t)}.
+\end{equation}
+It is known that the previous limits exist and  $0\leq \alpha_{\eta}\leq \beta_{\eta}\leq +\infty$ 
+(see \cite[p.84]{M}). The relation $\beta_{\eta}<+\infty$ holds true if and only if $\eta$ is a
+$\Delta_2$-function (\cite[Theorem 11.7]{M}). If $(\Phi,\Psi)$ is a complementary pair of  $N$-functions then
+\begin{equation}\label{compl_ind}
+ \frac{1}{\alpha_{\Phi}}+\frac{1}{\beta_{\Psi}}=1,
+\end{equation}
+(see \cite[Corollary 11.6]{M}). Therefore $1\leq \alpha_{\Phi}\leq\beta_{\Phi}\leq \infty $.
+
+ If $\eta$ is an increasing $\Delta_2$-function then $\eta$ is controlled by above and below
+ by power functions (\cite[Section 1]{Gustavsson1977}, \cite[Equations 2.3-2.4]{fiorenza1997indices} and \cite[Theorem 11.13]{M}).   More concretely, for every $\epsilon>0$ there exists a
+constant $K=K(\eta,\epsilon)$ such that, for every $t,u\geq 0$,
+\begin{equation}\label{delta2-potencias}
+    K^{-1}\min\big\{t^{\beta_{\eta}+\epsilon},t^{\alpha_{\eta}-\epsilon} \big\}\eta(u)\leq \eta(t u)\leq
+    K\max\big\{t^{\beta_{\eta}+\epsilon},t^{\alpha_{\eta}-\epsilon} \big\}\eta(u).
+\end{equation}
 
 
 
@@ -590,7 +612,7 @@ The next statements are equivalent:
  In virtue of the comment that precedes the statement of the lemma, we only condider the case   $\Psi \in \Delta_2$.
 
 \ref{item1})$\Rightarrow$\ref{item2}).
-By virtue of the $\Delta_2$-condition on $\Psi$, \cite[Thm. 11.7]{M} and \cite[Cor. 11.6]{M} (see also  \cite[Eq. (2.8)]{AGMS}), we get constants $K>0$ and $\alpha_{\Phi}>1$ such that
+As consequences of the $\Delta_2$-condition on $\Psi$, \eqref{compl_ind} and \eqref{delta2-potencias} we get  constants $K>0$ and $1<\nu<\alpha_{\Phi}$ such that
 \begin{equation}\label{delta2-consecuencia}
 \Phi(r s)\geq Kr^{\nu}\Phi(s),
 \end{equation}
