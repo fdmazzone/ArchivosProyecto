@@ -988,6 +988,41 @@ We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. F
 
 
 
+
+\begin{thm}
+$\alpha_{\Phi}=\beta_{\Phi}=p$
+\end{thm}
+
+\begin{proof}
+From \eqref{MO_indices} and \eqref{cota-sup-indices}, we get
+\[
+\beta_{\Phi}=\lim\limits_{t \to \infty} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}
+\leq
+\lim \limits_{t \to \infty} \frac{\log C+p\log t}{\log t}=p.
+\]
+On the other hand, employing \eqref{MO_indices} and performing some elementary calculations, we obtain
+\[
+\alpha_{\Phi}=
+\lim\limits_{t \to 0^+} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}=
+\lim\limits_{s \to \infty} \frac{\log\left[\sup\limits_{v>0} \frac{\Phi(v)}{\Phi(sv)}\right]^{-1}}{\log s}=
+\lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}
+\]
+where $v:=tu$ and $s:=\frac{1}{t}$.
+Then, using \eqref{cota-inf-indices},  for every $\varepsilon>0$ we have
+\[
+\alpha_{\Phi}=
+\lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}\geq
+\lim\limits_{s \to \infty} \frac{\log C+(p-\varepsilon)\log s}{\log s}\geq p-\varepsilon,
+\]
+therefore $\alpha_{\Phi}\geq p$.
+
+Finally, as $\alpha_{\Phi}\leq \beta_{\Phi}\leq p$, we get
+$\alpha_{\Phi}=\beta_{\Phi}=p$.
+\end{proof}
+
+
+
+
 \section{On the \textit{BO} condition}\label{sec:BO}
 
 \section*{Acknowledgments}
