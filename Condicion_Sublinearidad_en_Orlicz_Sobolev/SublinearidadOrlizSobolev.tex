@@ -180,7 +180,6 @@ In \cite{ABGMS2015} it was treated  the case of a lagrangian $\mathcal{L}$ which
 \begin{equation}\label{eq:lagrange_phi}
 \mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
 \end{equation}
-
 where  $\Phi$ is an $N$-function (see section \ref{preliminares} for the definition of this concept).  
 In the paper \cite{ABGMS2015} it was assumed  a condition of \emph{bounded oscillation} on $F$  (see xxxxx below). 
 In this paper we shall study the condition of \emph{sublinearity} (see  \cite{tang1998periodic,wu1999periodic,zhao2004periodic,tang2010periodic,zhao2005existence}) on $\nabla F$ for the lagrangian  $\mathcal{L}_{\Phi,F}$, or more generally for lagrangians which are lower bounded by $\mathcal{L}_{\Phi,F}$.
@@ -898,15 +897,15 @@ Consequently, from \cite[p. 6]{mawhin2010critical}
 
 
 
- \section{Examples}\label{sec:examples}
+ \section{An example}\label{sec:examples}
 
  In this section we developed some applications of our main results
 so that the reader can appreciate the innovations that bring.
 
 
-One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,x,y)$ that not satisfy a power like grow condition in $y$.   is not necessarily  a power function.
+One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,x,y)$ that not satisfy a power like grow condition in $y$.   
 
-\begin{example}We can applied Theorem \ref{coercitividad-r} to Lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with an exponential grow in $y$. For example, suppose
+We can applied Theorem \ref{coercitividad-r} to Lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with an exponential grow in $y$. For example, suppose
   \[\mathcal{L}(t,x,y)=f(y)+F(t,x),\]
 with $f:\rr^n\to\rr$ differentiable, stritly convex and $f(y)\geq e^{|y|}$. We define for $n\geq 1$
 \[\Phi(y)=e^y-\sum\limits_{i=0}^{n-1}\frac{y^i}{i!}  \]
@@ -924,178 +923,10 @@ and
 \end{equation}
 respectively. Since $n$ is an arbitrary positive integer, the pair $p_0$ and $p_1$ of numbers with $1<p_0<p_1$ is also arbitrary. For clarity we suppose $F(t,x)=b(t)|x|^{\sigma}$, for some $1<\sigma<\infty$ and $b\in L^1([0,T])$. We note that this $F$ satisfies \eqref{item:condicion_a} and \eqref{item:condicion_c}. Now we can fix any $1<p_0$ with $p_0-1<\sigma<p_0$ and we took $p_1$ with $p_1>\sigma(\sigma-p_0+1)^{-1}$. Then \eqref{eq:A6_ejem1}
  and \eqref {eq:ejem_propiedad-coercividad-phi0} holds. In conclusion the system \eqref{ProbPrin-gral} has solution for the Lagrangian given by $\mathcal{L}(t,x,y)=f(y)+b(t)|x|^{\sigma}$ for any $1<\sigma$.
-\end{example}
 
 
 
 
-
-
-\begin{example}\end{example}
-We want to emphasize that, even in the case of $p$-laplacian operator \eqref{ProbP-lapla}, our results  extend  previous ones (see \cite{tang1998periodic, tang2010periodic}), because
- we get bounds that may be  sharper than those in \cite{tang1998periodic,tang2010periodic}. 
-For example, in  \cite[Th. 2.1]{tang2010periodic} X. Tang and X. Zhang obtained existences of solutions of \eqref{ProbP-lapla}
-under the assumption \eqref{eq:cota_pot}
- for any $\alpha\in (0,p-1)$. Meanwhile, our Theorem \ref{coercitividad-r} implies existence for the potential
-
- \[F_0(t,x)=|x|^p/\ln(2+|x|)^2.\]
-
- We note that this $F$ does not satisfy \eqref{eq:cota_pot} for any $\alpha<p-1$.  
-Next we will show  an $N$-function $\Phi_0$ satisfying the hypothesis of Theorem \ref{coercitividad-r} for this potential $F_0$.
-
-
-We define
-\[\Phi_0(u)=
-\left\{
-\begin{array}{ll}
-\frac{p-1}{p}u^p&u\leq e
-\\
-\frac{u^p}{\log u}-\frac{e^p}{p}&u>e
-\end{array}
-\right.\]
-with $p>1$. Next, we will establish some properties of this function $\Phi_0$.
-
-\begin{thm}
-If $p\geq \frac{1+\sqrt 2}{2}$, then $\Phi_0$ is a differentiable $N$-function. 
-The $N$-function $\Phi_0$ satisfies that for every $\varepsilon>0$, there exists a positive constant $C=C(p,\varepsilon)$  such that
-\begin{equation}\label{cota-sup-indices}
-C^{-1}t^{p-\varepsilon}\Phi_0(u)\leq \Phi_0(tu) \leq Ct^p\Phi_0(u)\quad t\geq 1, u>0,
-\end{equation}
-
-\end{thm}
-
-
-\begin{proof}
-We have
-\[\varphi(u)=\Phi_0'(u)=\left\{
-\begin{array}{cccc}
-(p-1)u^{p-1}&:=&\varphi_1(u)& \mbox{if}\;u\leq e
-\\
-\frac{u^{p-1}}{\log u}(p-\frac{1}{\log u})&:=&\varphi_2(u)&\mbox{if}\; u\geq e
-\end{array}
-\right.
-\]
-
-First let us see that $\Phi_0'$ is increasing when $p\geq \frac{1+\sqrt {2}}{2}$.
-For this purpose, since $\varphi_1(e)=\varphi_2(e)$, it is enough to see that $\varphi_1$ is increasing  on $[0,e]$ and $\varphi_2$ is increasing on
-$[e,\infty)$ for every $p\geq \frac{1+\sqrt {2}}{2}$. Clearly
-$\varphi_1$ is an increasing function for $p>1$.  On the other hand, an elementary analysis of the function shows that
-$\varphi_2'(u)>0$ on $[e,\infty)$ if and only if
- $p \notin(\frac{1-\sqrt2}{2},\frac{1+\sqrt2}{2})$.  Therefore $\varphi_2$ is an increasing function when $p\geq \frac{1+\sqrt2}{2}$.
-
-Moreover $\varphi_2(u)\to \infty$ and  $\varphi_1(u)\to 0$  as $u \to  \infty$ and $u\to 0$  respectively, provided that $p>1$. Hence, $\Phi_0$ is an $N$-function.
-
-
-
-Next we will prove \eqref{cota-sup-indices}. If $u\leq tu\leq e$, then $\Phi_0(tu)=t^p\Phi_0(u)$ and \eqref{cota-sup-indices} holds with $C=1$. If $u\leq e\leq tu$, as $\frac{e^p}{p}>0$  and $\log(tu)\geq 1$, we have
-$\Phi_0(tu)\leq t^pu^p= \frac{p}{p-1}t^p\Phi_0(u)$. Thus, the second inequality of  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$. On the other hand, as $f(t)=\frac{t}{\log t}$ is increasing on $[e,\infty)$, then $f((tu)^p)\geq  f(e^p)=e^p/p$.
-Now,
-\[
-\begin{split}
-\Phi_0(tu)&=\frac{p(tu)^p}{\log (tu)^p}-\frac{e^p}{p}\\
-&= \frac{(p-1)(tu)^p}{\log(tu)^p}+\frac{(tu)^p}{\log (tu)^p}-\frac{e^p}{p}
-\\
-&\geq \frac{p-1}{p}\frac{(tu)^p}{\log(tu)}\\
-&\geq
-\frac{p-1}{p}\frac{t^{\varepsilon}}{\log t+1}t^{p-\varepsilon}u^p.
-\end{split}
-\]
-Since $\varepsilon e^{1-\varepsilon}$ is the minimum value of $t\mapsto\frac{t^{\varepsilon}}{\log t+1}$  on the interval $[1,+\infty)$ then
-\[
-\Phi_0(tu)\geq \frac{p-1}{p}\varepsilon e^{1-\varepsilon}t^{p-\varepsilon}u^p,
-\]
-which is the first inequality of \eqref{cota-sup-indices} with $C=\frac{p}{p-1}\varepsilon^{-1} e^{-1+\varepsilon}$.
-
-
-If $e\leq u\leq tu$, then
-\begin{equation}\label{Phi-de-u-a-v}
-\Phi_0(tu)\leq \frac{t^pu^p}{\log(tu)}\leq \frac{t^pu^p}{\log(u)}=\frac{pt^pv}{\log v},
-\end{equation} 
-where $v:=u^p$ and $v\geq e^p$.  
-If $\alpha>0$, the function $x\mapsto \frac{x}{x-\alpha}$ is decreasing on $(\alpha,\infty)$
-and the function $v\mapsto \frac{pv}{\log v}$ is increasing  on $[e^p,\infty)$.
-Therefore,  we have
-\[
-\frac{\frac{pv}{\log v}}{\frac{pv}{\log v}-\frac{e^p}{p}}\leq
-\frac{e^p}{e^p-\frac{e^p}{p}}=\frac{p}{p-1}
-\]
-for every $v \geq e^p$. In this way, from \eqref{Phi-de-u-a-v}, we have
-\[
-\Phi_0(tu)\leq \frac{pt^p}{p-1}\left(\frac{pv}{\log v}-\frac{e^p}{p}\right)=
- \frac{pt^p}{p-1}\left(\frac{u^p}{\log u}-\frac{e^p}{p}\right)
-\]
-and the second inequality of  \eqref{cota-sup-indices} holds with $C=\frac{p}{p-1}$. For the first inequality we have, as it was proved previously,
-
-\[
-  \Phi_0(tu)
-  \geq
-  \frac{p-1}{p}\frac{(tu)^p}{\log(tu)}
-  =
-  \frac{p-1}{p}
-  \frac{t^{\varepsilon} \log u^{\varepsilon}}{\log(t^{\varepsilon}u^{\varepsilon})}
-  \frac{t^{p-\varepsilon}u^p}{\log u}
-\]
-Let $f(s)=\frac{sA}{\log s+A}$ with $s\geq 1$ and $A\geq \varepsilon$.  If $A\leq 1$,  the function $f$ attains a minimum on $[1,\infty)$ at $s=e^{1-A}$ and the minimum value is $f(e^{1-A})=Ae^{1-A}\geq \varepsilon$. If $A> 1$, $f$ is increasing  on $[1,\infty)$ and its minimum value is $f(1)=1$. Then, $f(s)\geq \varepsilon$ in any case,   therefore
-\[
-\Phi_0(tu)\geq \frac{p-1}{p}\varepsilon \frac{t^{p-\varepsilon}u^p}{\log u}\geq
-\frac{p-1}{p}\varepsilon t^{p-\varepsilon}\Phi_0(u).
-\]
-Finally, \eqref{cota-sup-indices} holds with $C=\frac{p}{\varepsilon (p-1)}$, because this $C$ is the biggest constant that we have obtained in each case under consideration.
-\end{proof}
-
-
-
-\begin{comentario}
-The inequality
-\[
-\Phi_0(tu)\geq Ct^p\Phi_0(u)
-\]
-is false for every $C$ because for every $u\geq e$ we have
-\[
-\lim\limits_{t \to \infty}\frac{\Phi_0(tu)}{t^p\Phi_0(u)}=0
-\]
-\end{comentario}
-
-We note that $\Phi_0$ and $F_0$ satisfy \eqref{eq:propiedad-coercividad-phi0}. For the $p$-laplacian operator we have that $\Phi(|u|)=|u|^p/p$. Then we can take $\Phi_1=\Phi$ in \eqref{eq:caract_delta2}. Clearly $\Phi_0\llcurly\Phi_1$.
-
-
-
-
-\begin{thm}
-$\alpha_{\Phi}=\beta_{\Phi}=p$
-\end{thm}
-
-\begin{proof}
-From \eqref{MO_indices} and \eqref{cota-sup-indices}, we get
-\[
-\beta_{\Phi}=\lim\limits_{t \to \infty} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}
-\leq
-\lim \limits_{t \to \infty} \frac{\log C+p\log t}{\log t}=p.
-\]
-On the other hand, employing \eqref{MO_indices} and performing some elementary calculations, we obtain
-\[
-\alpha_{\Phi}=
-\lim\limits_{t \to 0^+} \frac{\log\left[\sup\limits_{u>0} \frac{\Phi(tu)}{\Phi(u)}\right]}{\log t}=
-\lim\limits_{s \to \infty} \frac{\log\left[\sup\limits_{v>0} \frac{\Phi(v)}{\Phi(sv)}\right]^{-1}}{\log s}=
-\lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}
-\]
-where $v:=tu$ and $s:=\frac{1}{t}$.
-Then, using \eqref{cota-inf-indices},  for every $\varepsilon>0$ we have
-\[
-\alpha_{\Phi}=
-\lim\limits_{s \to \infty} \frac{\log\left[\inf\limits_{v>0} \frac{\Phi(sv)}{\Phi(v)}\right]}{\log s}\geq
-\lim\limits_{s \to \infty} \frac{\log C+(p-\varepsilon)\log s}{\log s}\geq p-\varepsilon,
-\]
-therefore $\alpha_{\Phi}\geq p$.
-
-Finally, as $\alpha_{\Phi}\leq \beta_{\Phi}\leq p$, we get
-$\alpha_{\Phi}=\beta_{\Phi}=p$.
-\end{proof}
-
-
-
-
-\section{On the \textit{BO} condition}\label{sec:BO}
 
 \section*{Acknowledgments}
 The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
