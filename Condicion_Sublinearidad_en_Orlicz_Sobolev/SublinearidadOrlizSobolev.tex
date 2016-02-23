@@ -121,7 +121,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \begin{abstract}
 
 In this paper we obtain existence of periodic solutions, in the Orlicz-Sobolev space $\wphi([0,T])$, of hamiltonian systems with a potential  function $F$ satisfying the inequality  $|\nabla F(t,x)|\leq b_1(t) \Phi_0'(|x|)+b_2(t)$, with    $b_1, b_2\in L^1$ and for certain $N$-functions $\Phi_0$.
-
+ACLARAR QUE EL METODO ES DIRECTO????
 \end{abstract}
 
 
@@ -145,34 +145,34 @@ This paper deals with system  of equations of the type:
 \begin{equation}\label{ProbPrin-gral}
     \left\{%
 \begin{array}{ll}
-  \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+  \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right.,
+\right.
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic was deeply addressed???(studied, treated????) for the \emph{Lagrange function}
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic was deeply addressed for the \emph{Lagrange function}
 \begin{equation}\label{eq:lagrange_cuad}
 \mathcal{L}_{p,F}(t,x,y)=\frac{|y|^p}{p}+F(t,x),
 \end{equation}
-for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{2,F}$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles, see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic} and in this case \eqref{ProbPrin-gral}  is reduced to the $p$-laplacian system
+for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral} for the lagrangian $\mathcal{L}_{2,F}$ and through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles, see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ are considered in  \cite{Tian2007192,tang2010periodic} and in this case \eqref{ProbPrin-gral}  is reduced to the $p$-laplacian system
 \begin{equation}\label{ProbP-lapla}
     \left\{%
 \begin{array}{ll}
-   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0.
 \end{array}%
 \right.
 \end{equation}
 
 
-In this context, it  is customary to call $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respect to $x$ for a.e. $t\in [0,T]$ and the following conditions are verified:
+In this context, it  is customary to call $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respect to $x$ for a.e. $t\in [0,T]$ and the following conditions hold:
 \begin{enumerate}
-\labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
- \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
+\labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$ for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
+ \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, 
 \begin{equation}
 |F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t).
 \end{equation}
-In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
+In this inequality, it is assumed that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
 \end{enumerate}
 
 
@@ -181,7 +181,7 @@ In \cite{ABGMS2015} it was treated  the case of a lagrangian $\mathcal{L}$ which
 \mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
 \end{equation}
 where  $\Phi$ is an $N$-function (see section \ref{preliminares} for the definition of this concept).  
-In the paper \cite{ABGMS2015} it was assumed  a condition of \emph{bounded oscillation} on $F$  (see xxxxx below). 
+In the paper \cite{ABGMS2015} it was also assumed  a condition of \emph{bounded oscillation} on $F$  (see xxxxx below). 
 In this paper we shall study the condition of \emph{sublinearity} (see  \cite{tang1998periodic,wu1999periodic,zhao2004periodic,tang2010periodic,zhao2005existence}) on $\nabla F$ for the lagrangian  $\mathcal{L}_{\Phi,F}$, or more generally for lagrangians which are lower bounded by $\mathcal{L}_{\Phi,F}$.
 
 
@@ -191,7 +191,11 @@ The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the eq
 I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
 
-The paper is organized as follows. In section \ref{preliminares} we give preliminaries facts on $N$-functions, Orlicz-Sobolev spaces of functions and we establish our main results. Section \ref{sec:proofs} contains the proofs and section \ref{sec:examples} provides examples of applications of our results to concrete cases. Finally, in section \ref{sec:BO}, we compare the condition of sublinearity considered in this paper with the condition of bounded oscillations studied in \cite{ABGMS2015}.
+The paper is organized as follows. In section \ref{preliminares} we give preliminaries facts on $N$-functions, Orlicz-Sobolev spaces of functions and we establish our main results. Section \ref{sec:proofs} contains the proofs and section \ref{sec:examples} provides examples of applications of our results to concrete cases.
+ 
+LO SIGUIENTE NO CORRESPONDE PORQUE LA SECCION BO NO EXISTE O SI????
+
+Finally, in section \ref{sec:BO}, we compare the condition of sublinearity considered in this paper with the condition of bounded oscillations studied in \cite{ABGMS2015}.
 
 \section{Preliminaries}\label{preliminares}
 
@@ -224,7 +228,8 @@ if there exist  constants $K>0$ and  $x_0\geq 0$ such that
 for every $x\geq x_0$. We note that $\eta \in \Delta_2^{\infty}$ if and only if $\eta\closedprec\eta$.
 If $x_0=0$,  the function   $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ is said to satisfy the 
 \emph{$\Delta_2$-condition} ($\eta \in \Delta_2$). 
-If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$ we say that $\Phi$ satisfies the 
+If there exists $x_0>0$ such that  inequality \eqref{delta2defi} holds for $x\leq x_0$, 
+we will say that $\Phi$ satisfies the 
 \emph{$\Delta_2^0$-condition} ($\Phi\in\Delta_2^0$).
 
 We denote by $\alpha_{\eta}$ and $\beta_{\eta}$ the so called  \emph{Matuszewska-Orlicz indices} of the function $\eta$, which are defined next. Given
@@ -241,7 +246,7 @@ It is known that the previous limits exist and  $0\leq \alpha_{\eta}\leq \beta_{
 \end{equation}
 (see \cite[Cor. 11.6]{M}). Therefore $1\leq \alpha_{\Phi}\leq\beta_{\Phi}\leq \infty $.
 
- If $\eta$ is an increasing that satisfies the $\Delta_2$-condition, then $\eta$ is controlled by above and below
+ If $\eta$ is an increasing function that satisfies the $\Delta_2$-condition, then $\eta$ is controlled by above and below
  by power functions (\cite[Sec. 1]{Gustavsson1977}, \cite[Eq. (2.3)-(2.4)]{fiorenza1997indices} and \cite[Thm. 11.13]{M}).   More concretely, for every $\epsilon>0$ there exists a
 constant $K=K(\eta,\epsilon)$ such that, for every $t,u\geq 0$,
 \begin{equation}\label{delta2-potencias}
@@ -258,7 +263,7 @@ Given  an $N$-function $\Phi$ we define the \emph{modular function}
 $\rho_{\Phi}:\mathcal{M}\to \mathbb{R}^+\cup\{+\infty\}$ by
 \[\rho_{\Phi}(u):= \int_0^T \Phi(|u|)\ dt.\]
 Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^d$.
-The \emph{Orlicz class} $C^{\Phi}=C^{\Phi}([0,T],\rr^d)$  is defined  by
+Now, we introduce the \emph{Orlicz class} $C^{\Phi}=C^{\Phi}([0,T],\rr^d)$   by setting
 \begin{equation}\label{claseOrlicz}
   C^{\Phi}:=\left\{u\in \mathcal{M} | \rho_{\Phi}(u)< \infty \right\}.
 \end{equation}
@@ -277,11 +282,11 @@ The following  inequality holds for any $u\in\lphi$
 \begin{equation}\label{amemiya-ine}
 \|u\orlnor\leq \frac{1}{k}\left\{1+\rho_{\Phi}(ku)\right\},\quad\text{for every } k>0.
 \end{equation}
-In fact, $\|u\orlnor$ is the infimum for $k>0$ of the r.h.s in above expression  (see \cite[Thm. 10.5]{KR} and \cite{hudzik2000amemiya}). 
+In fact, $\|u\orlnor$ is the infimum for $k>0$ of the right hand side in above expression  (see \cite[Thm. 10.5]{KR} and \cite{hudzik2000amemiya}). 
 
 
 The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  $\ephi$ is the only one maximal subspace contained in the Orlicz class $\claseor$, i.e.
-$u\in\ephi$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ holds if and only if $\Phi\in\Delta_2^{\infty}$.
+$u\in\ephi$ if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2^{\infty}$.
 
 A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 9.3]{KR}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
 \begin{equation}\label{holder}
@@ -298,7 +303,8 @@ is defined by
   \langle v,u\rangle=\int_0^Tv\cdot u\ dt,
 \end{equation}
 with  $u\in\lphi$ and $v\in\lpsi$.
- Unless $\Phi \in \Delta_2^{\infty}$, the relation $\lpsi= \left[\lphi\right]^*$ will not hold. In general, it is true  that  $\left[\ephi\right]^*=\lpsi$.
+ Unless $\Phi \in \Delta_2^{\infty}$, the relation $\lpsi= \left[\lphi\right]^*$ will not be satisfied. 
+In general, it is true  that  $\left[\ephi\right]^*=\lpsi$.
 
 
 
@@ -308,7 +314,7 @@ $\wphi$ is a Banach space when equipped with the norm
 \begin{equation}\label{def-norma-orlicz-sob}
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
-We introduce the following subspaces of $\wphi$
+And, we introduce the following subspaces of $\wphi$
 %%
 \begin{equation}\label{def-esp-orlicz-sob-per}
 \begin{split}
@@ -324,20 +330,19 @@ We will use repeatedly the decomposition $u=\overline{u}+\widetilde{u}$ for a fu
 As usual, if $(X,\|\cdot\|_X)$ is a Banach space and $(Y,\|\cdot \|_Y)$ is a subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when the restricted identity map $i_Y:Y\to X$ is bounded. That is, there exists $C>0$ such that  for any $y\in Y$ we have $\|y\|_X\leq C\|y\|_Y$.  With this notation, H\"older's inequality states that  $\lpsi\hookrightarrow  \left[\lphi\right]^*$; and, it is easy to see that for every $N$-function $\Phi$ we have that $L^{\infty}\hookrightarrow\lphi \hookrightarrow L^1$.
 
 
- Recall that a function   $w:\mathbb{R}^+\to \mathbb{R}^+$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example, it can be easily shown that $w(s)=s\Phi^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
+ Recall that a function   $w:\mathbb{R}^+\to \mathbb{R}^+$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example, it can be easily shown that $w(s)=s\Phi^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  It is said that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
 \begin{equation}\label{w-holder}|u(t)-u(s)|\leq Cw(|t-s|).
 \end{equation}
 
 
-We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$. This is a Banach space with norm
+We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions that satisfy  \eqref{w-holder} for some $C>0$. 
+This is a Banach space with norm
 \[\|u\|_{  C^w([0,T],\rr^d) }  :=\|u\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|u(t)-u(s)|}{w(|t-s|)}.\]
 
 
-HOLD y DEFINE aparecen MUUUUUCHAS VECES!!!!
 
 
-
-The next simple  embedding lemma, whose proof can be found in \cite{ABGMS2015}, will be used systematically.
+The following simple  embedding lemma, whose proof can be found in \cite{ABGMS2015}, will be used systematically.
 
 
 
@@ -365,7 +370,10 @@ The next simple  embedding lemma, whose proof can be found in \cite{ABGMS2015}, 
 
 \section{Main results}
 
-We begin stating a lemma which establishes the coercivity of the modular function $\rho_{\Phi}(u)$ with respect to certain functions of the Orlicz norm $\Phi_0(\|u\orlnor|)$. This lemma generalizes \cite[Lemma 5.2]{ABGMS2015} in two directions. The first, we consider function $\Phi_0$ more general than in  \cite[Lemma 5.2]{ABGMS2015}. The second one and more important, the condition $\Delta_2$-global on $\Psi$ used in \cite[Lemma 5.2]{ABGMS2015} is relaxed to $\Delta_2^{\infty}$. We need to present this result here since the lemma introduces the function $\Phi^*$ that will play an important role in our main theorem.
+We begin with a lemma which establishes the coercivity of the modular function $\rho_{\Phi}(u)$ with respect to certain functions of the Orlicz norm $\Phi_0(\|u\orlnor|)$. This lemma generalizes \cite[Lemma 5.2]{ABGMS2015} in two directions. 
+Namely, the function  $\Phi_0$ is more general and $\Delta_2$-condition  on $\Psi$ is relaxed to $\Delta_2^{\infty}$. 
+It is worth noting that the second improvement is more important that the first one.
+And, we present the result here since the lemma introduces a function $\Phi^*$ that will play a significant role in our main theorem.
 
 \begin{lem}\label{lem_coer}
 Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2^{\infty}$. 
@@ -402,79 +410,49 @@ $b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$. We denote
 
 
 
-It was shown in
-\cite{ABGMS2015} that if $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$ then there  exists the Gate\^aux derivative $I'(u)$ of the integral functional $I$, defined in \eqref{integral_accion}, on the subspace $\wphie([0,T],\rr^d)$. We note that for the lagrangian $\mathcal{L}_{\Phi,F}$ the condition \ref{item:condicion_a} is equivalent to
-$\mathcal{L}_{\Phi,F}\in \mathfrak{A}(a,b,0,1,0,\Phi)$.
+In
+\cite{ABGMS2015} it was shown that if $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$ 
+then there  exists the Gate\^aux derivative of the integral functional $I$, defined in \eqref{integral_accion}, 
+on the subspace $\wphie([0,T],\rr^d)$. We observe that the condition \ref{item:condicion_a} on 
+the lagrangian $\mathcal{L}_{\Phi,F}$  is equivalent to say that $\mathcal{L}_{\Phi,F}\in \mathfrak{A}(a,b,0,1,0,\Phi)$.
 
  Unlike what is usual in the literature, we do not assume the lagrangian $\mathcal{L}$  split into two terms, 
 one of them function of $y$ and the other one function of $(t,x)$. 
 We only suppose that $\mathcal{L}$ is lower bounded by a function of this type. More precisely, we assume that for every $(t,x,y)\in\rr\times\rr^d\times\rr^d$
-
+%
 \begin{equation}\label{eq:control_inf}
-\mathcal{L} \geq \mathcal{L}_{\Phi,F},\quad \text{with}\;F\text{ satisfying \ref{item:condicion_a} and\; \ref{item:condicion_c},  
+\mathcal{L} \geq \mathcal{L}_{\Phi,F},\quad \text{with}\;F\text{ satisfying \ref{item:condicion_a} \;and\; \ref{item:condicion_c},  
 \;\text{and}$\Phi$ being $N$-function}.\tag{$A_4$}
 \end{equation}
-
-
-
-Moreover, as usual it is needed to suppose that the time integral of $F$ satisfies certain coercivity condition, see \eqref{eq:propiedad-coercividad-phi0} below.  However,  all these hypotheses are not enough. It is necessary to assume extra conditions on the potential $F$.
-Several hypotheses were tested in the past years. The so called \emph{subconvexity} of $F$ was tried in \cite{wu1999periodic,tang1995periodic,zhao2004periodic} for semilinear equations and in \cite{xu2007some,tang2010periodic} for $p$-laplacian systems. A boundedness on the oscillation of $F$ was studied in \cite{ABGMS2015}. In \cite{tang1998periodic, tang2010periodic} the authors  considered, for the $p$-laplacian case, potentials $F$ satisfying the inequality
+%
+Moreover, as usual we suppose that the time integral of $F$ satisfies certain coercivity condition, see \eqref{eq:propiedad-coercividad-phi0} below.  However,  all these hypotheses are not enough. It is also necessary to assume extra conditions on the potential $F$.
+Several hypotheses were tested in the past years. The so called \emph{subconvexity} of $F$ was tried in \cite{wu1999periodic,tang1995periodic,zhao2004periodic} for semilinear equations and in \cite{xu2007some,tang2010periodic} for $p$-laplacian systems. A boundedness on the oscillation of $F$ was studied in \cite{ABGMS2015}. In \cite{tang1998periodic, tang2010periodic} the authors  dealt with the $p$-laplacian case where the potentials $F$ satisfied 
 \begin{equation}\label{eq:cota_pot} |\nabla F(t,x)|\leq b_1(t)|x|^{\alpha}+b_2(t),
  \end{equation}
-where  $b_1,b_2 \in L^1([0,T])$ and $\alpha<p$. The potentials $F$ satisfying \eqref{eq:cota_pot} 
+where  $b_1,b_2 \in L^1([0,T])$ and $\alpha<p$. Such potentials $F$ 
 were called  \emph{sublinear nonlinearities}. In this paper, we are interested in studying this type of potentials, 
-but with more general bounds on $\nabla F$ which include $N$-functions instead of power functions, 
+but with more general bounds on $\nabla F$ which include $N$-functions instead of power functions; 
 namely, we will consider inequalities like
 \begin{equation}\label{holder_cont-mu}
   \left| \nabla F(t,x) \right|\leq b_1(t)\Phi_0'(|x|)+b_2(t),
-  \tag{$A_6$}
+  \tag{$A_5$}
 \end{equation}
 with $\Phi_0$  a differentiable $N$-function and $b_1,b_2 \in L^1([0,T],\rr)$.
 
 
 
-
-
-
-{\color{red} El siguiente enunciado tiene muchos satisfies y me parece que el resultado est\'a enredado!!!
-Abajo va una versi\'on intentando mejorar la redacci\'on, por favor mir\'a si respeto el sentido del original. 
-Quiz\'as sean necesarios otros refinamientos!!!!!!!!}
-
-\begin{thm}\label{coercitividad-r} Let $\Phi$ be an $N$-function, whose complementary function $\Psi$ satisfies  $\Psi\in\Delta_2^{\infty}$ and suppose that $\Phi^*$ satisfies  Lemma \ref{lem_coer}. Assume that the potential $F$ satisfies \ref{item:condicion_c}, \ref{item:condicion_a} and the conditions
-
-\begin{enumerate}
- \item  \eqref{holder_cont-mu}  for some
- $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
-
- \item \begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_1(\Phi_0'(2|x|))}=+\infty,\tag{$A_5$}
-\end{equation}
-for some $N$-function $\Psi_1$ whose complementary function $\Phi_1$ satisfies $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
-\end{enumerate}
-
-Then,  for every Lagrangian $\mathcal{L}(t,x,y)$ such that  $D_y\mathcal{L}(0,x,y)=D_y\mathcal{L}(T,x,y)$,  stritly convex with respecto to $y\in\rr^d$,  $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$, and satisfying \eqref{eq:control_inf} the problem \eqref{ProbPrin-gral} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
-
-\end{thm}
-
-
-APARECE CONSIDER MUUUUCHAS VECES!!!!
-
-Y APARECE A5 DESPUES DE A6!!!!
-
-
-\begin{thm}\label{coercitividad-r} Let $\Phi$ be an $N$-function, whose complementary function $\Psi$ satisfies  
-$\Psi\in\Delta_2^{\infty}$-condition and suppose that $\Phi^*$ is given by Lemma \ref{lem_coer}. 
-Moreover, assume that the potential $F$ verifies \ref{item:condicion_c}, \ref{item:condicion_a} and 
+\begin{thm}\label{coercitividad-r} 
+Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2^{\infty}$-condition 
+and suppose that $\Phi^*$ is given by Lemma \ref{lem_coer}. 
+Let $F$ be a potential that satisfies \ref{item:condicion_c}, \ref{item:condicion_a} and 
 the following conditions:
-
 \begin{enumerate}
- \item  \eqref{holder_cont-mu}  for some
- $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
-
+ \item  \eqref{holder_cont-mu}  for some $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
+%%
  \item \begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_2(\Phi_0'(2|x|))}=+\infty,\tag{$A_5$}
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_2(\Phi_0'(2|x|))}=+\infty,\tag{$A_6$}
 \end{equation}
-for some $N$-function $\Psi_2$ whose complementary function $\Phi_2$ satisfies $\Phi_0\llcurly \Phi_2\llcurly \Phi^*$.
+for some $N$-function $\Psi_2$ with complementary function $\Phi_2$ satisfying $\Phi_0\llcurly \Phi_2\llcurly \Phi^*$.
 \end{enumerate}
 
 Now,  if the lagrangian $\mathcal{L}(t,x,y)$ is strictly convex  with respect to $y\in\rr^d$,
@@ -568,17 +546,17 @@ $\varphi\in\Delta_2$).
 
 The following lemma improves the result on the comment at the beginning of \cite[p. 24]{KR}.
 
-\begin{lem}\label{lem:delta2-equiv-delta2-global} Let $\Psi$ be an $N$-function satisfying the $\Delta_2^{\infty}$-condition. Then there exists an $N$-function $\Psi^*$  such that $\Psi^*\in\Delta_2$, $\Psi\leq\Psi^*$ and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that $\Psi^*(x)\leq a\Psi(x)$, for every $x\geq x_0$.  In other words,  every $\Delta_2$ near infinity  $N$-function is equivalent to a $\Delta_2$ globally $N$-function.
+\begin{lem}\label{lem:delta2-equiv-delta2-global} Let $\Psi$ be an $N$-function satisfying the $\Delta_2^{\infty}$-condition. Then there exists an $N$-function $\Psi^*$  such that $\Psi^*\in\Delta_2$, $\Psi\leq\Psi^*$ and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that $\Psi^*(x)\leq a\Psi(x)$, for every $x\geq x_0$.  In other words,  every $\Delta_2$ near infinity  $N$-function is equivalent to a $\Delta_2$  $N$-function.
 \end{lem}
 
-\begin{proof} We can assume that the $\Delta_2$ condition on $\Psi$ fails near to $0$. Consequently, from Lemma \ref{lema:delta_2 y der}, we have that the right continuous derivative $\psi$ of $\Psi$ does not satisfy the $\Delta_2$-condition near to $0$. 
+\begin{proof} We can assume that the $\Delta_2$-condition on $\Psi$ fails near to $0$. Consequently, from Lemma \ref{lema:delta_2 y der}, we have that the right continuous derivative $\psi$ of $\Psi$ does not satisfy the $\Delta_2^0$-condition. 
 Therefore, we obtain a sequence of positive numbers $x_n$, $n=1,2,\ldots$,  such that $x_n\to 0$, 
 \begin{equation}\label{eq:prop_psi*}2x_{n+1}<x_n<2x_n\quad\text{and}\quad \psi(2x_n)> 2\psi(x_n).
  \end{equation}
 
 We define $\psi^*$ inductively on $n$ on the interval $[2x_n,+\infty)$ of the following way.   
 We put $\psi^*(x)=\psi(x)$ when  $x\in[ 2x_1,+\infty)$. 
-Suppose $\psi^*$ defined on $[2x_n,+\infty)$. We define $\psi^*$ on $[2x_{n+1},2x_n)$ by
+Suppose $\psi^*$ defined on $[2x_n,+\infty)$ and we set $\psi^*$ on $[2x_{n+1},2x_n)$ by
 \[
  \psi^*(x)=\left\{
 \begin{array}{cc}
@@ -587,9 +565,8 @@ Suppose $\psi^*$ defined on $[2x_n,+\infty)$. We define $\psi^*$ on $[2x_{n+1},2
   \end{array}
 \right.
 \]
-Moreover we define $\psi^*(0)=0$. 
+Moreover, we define $\psi^*(0)=0$. 
 
-Aparece DEFINE MUUUUUCHAS  veces!!!! y la definici\'on de la funci\'on un poco enredada...
 
 Next, we will use induction again  to prove that
 \begin{enumerate}
@@ -602,7 +579,7 @@ We suppose $n=1$. Then items \ref{item:prop_psi*2} and \ref{item:prop_psi*3} are
 \[\psi(x_1)<\frac12\psi(2x_1)=\frac12\psi^*(2x_1).\]
 This inequality implies \ref{item:prop_psi*1}.
 
- Clearly $\psi^*$ is non decreasing on each interval $[2x_{n+1},x_n)$ and $[x_n,2x_n)$. We note that since $\psi$ is right continuous, then $\psi^*$ is continuous at $x_n$. Therefore, $\psi^*$ is non decreasing on $[2x_{n+1},2x_n)$. Suppose $x\in[2x_{n+1},2x_n)$ and $y\geq 2x_n$.  From the definition of $\psi^*$, inductive hypothesis, item \ref{item:prop_psi*3} and item \ref{item:prop_psi*2}, we obtain
+ Clearly $\psi^*$ is non decreasing on each interval $[2x_{n+1},x_n)$ and $[x_n,2x_n)$. And, since $\psi$ is right continuous, then $\psi^*$ is continuous at $x_n$. Therefore, $\psi^*$ is non decreasing on $[2x_{n+1},2x_n)$. Suppose $x\in[2x_{n+1},2x_n)$ and $y\geq 2x_n$.  From the definition of $\psi^*$, inductive hypothesis, item \ref{item:prop_psi*3} and item \ref{item:prop_psi*2}, we obtain
 
 \[\psi^*(x)\leq\max\{\psi(2x_n),\psi^*(2x_n)\}=\psi^*(2x_n)\leq\psi^*(y).\]
 This proves item \ref{item:prop_psi*2} on the interval $[2x_{n+1},+\infty)$.
@@ -621,18 +598,18 @@ We note that
 \[\psi^*(x_{n+1})=\frac12\psi^*(2x_{n+1})\leq\psi^*(x_{n}).\]
 Consequently $\psi(x)\to 0$ when $x\to 0$. 
 Therefore $\psi^*$ is right continuous at $0$ and indeed it is right continuous on $[0,+\infty)$. 
-Moreover, since $\psi(x)=\psi^*(x)$ for $x\geq 2x_1$ being $\psi$ the right continuous derivative of an $N$-function, $\psi^*(x)\to +\infty$ when $x\to +\infty$. In this way
-\[\Psi^*(x):=\int_0^x\psi^*(t)dt.\]
-define an $N$-function.
+Moreover, since $\psi(x)=\psi^*(x)$ for $x\geq 2x_1$ being $\psi$ the right continuous derivative of an $N$-function, $\psi^*(x)\to +\infty$ when $x\to +\infty$. In this way,
+\[\Psi^*(x):=\int_0^x\psi^*(t)dt\]
+defines an $N$-function.
 
 Let's see that $\psi^*$ satisfies the $\Delta_2$-condition.
-It is sufficient to prove that $\psi^*$ satisfies the $ \Delta_2^0$ condition. 
+It is sufficient to prove that $\psi^*$ satisfies the $ \Delta_2^0$-condition. 
 To this end, suppose that  $x\leq x_1$ and take $n\in\mathbb{N}$ such that $x_{n+1}\leq x\leq x_n$. Then
 \[\psi^*(2x)\leq \psi^*(2x_n)=2\psi^*(2x_{n+1})=4\psi^*(x_{n+1})\leq 4\psi^*(x).\]
 Thus,  $\Psi^* \in  \Delta_2$ and $\Psi\leq \Psi^*$.
 
 It remains to show the inequality $\Psi^*(x)\leq a\Psi(x)$, 
-for every $a>1$ and sufficiently large $x$. We take $x_0$ sufficiently to have
+for every $a>1$ and sufficiently large $x$. We take $x_0$ sufficiently large to have
 \[\frac{1}{a-1}\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x_0).\]
 Therefore, if  $x>\max\{x_0,2x_1\}$ then
 \[\Psi^*(x)=\Psi(x)+\int_0^{2x_1}\psi^*(t)-\psi(t)dt<\Psi(x)+(a-1)\Psi(x)= a\Psi(x).\]
@@ -643,7 +620,7 @@ The last assessment of the lemma is consequence of   $\Psi(ax)>a\Psi(x)$ when $a
 
 
 
-The following lemma is essentially known,  this is basically consequence  of the fact that $\Psi\in\Delta_2^{\infty}$ if and only if $\Psi\closedprec\Psi$, of  \cite[Prop. 4, p. 20]{rao1991theory} and \cite[Cor. 10, p. 30]{rao1991theory}. 
+The following lemma is essentially known,  this is basically a consequence  of the fact that $\Psi\in\Delta_2^{\infty}$ if and only if $\Psi\closedprec\Psi$,  \cite[Prop. 4, p. 20]{rao1991theory} and \cite[Cor. 10, p. 30]{rao1991theory}. 
 However, we prefer to include an alternative proof, because we do not see clearly that the results of \cite{rao1991theory} contemplates the case of the following lemma with $N$-functions satisfying the $\Delta_2$-condition.
 
 
@@ -661,11 +638,11 @@ The next statements are equivalent:
 \end{lem}
 
 \begin{proof}
- In virtue of the comment that precedes the lemma, we only condider the case   $\Psi \in \Delta_2$.
+ In virtue of the comment that precedes the lemma, we only consider the case   $\Psi \in \Delta_2$.
 
 \ref{item1})$\Rightarrow$\ref{item2}).
-
-As a consequences of the $\Delta_2$-condition on $\Psi$, \eqref{compl_ind} and \eqref{delta2-potencias} we get for every $1<\nu<\alpha_{\Phi}$ a constant $K=K_{\nu}>0$  such that
+As a consequence of the $\Delta_2$-condition on $\Psi$, \eqref{compl_ind} and \eqref{delta2-potencias}, 
+we get for every $1<\nu<\alpha_{\Phi}$ a constant $K=K_{\nu}>0$  such that
 
 \begin{equation}\label{delta2-consecuencia}
 \Phi(r s)\geq Kr^{\nu}\Phi(s),
@@ -694,21 +671,21 @@ If we take $x=\Psi^{-1}_1(u)\geq \Psi^{-1}_1(\Phi^*(1))$ and $y=\Psi^{-1}(v)\geq
 Now, taking  $x\geq \max\{8,{\Psi^*}^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \Delta_2$.
 \end{proof}
 
-\begin{comentario} We note that if $\Phi^*$ satisfies \eqref{eq:caract_delta2} then $\Phi^*\prec \Phi$.
+\begin{comentario} Note that if $\Phi^*$ satisfies \eqref{eq:caract_delta2} then $\Phi^*\prec \Phi$.
  \end{comentario}
 
 
 
-
-
 \noindent\textbf{Proof Lemma \ref{lem_coer}} At first, we assume that $\Phi \in \Delta_2$. 
-Let $\Phi^*$ be an $N$ function satisfying \eqref{eq:caract_delta2}. By the inequality \eqref{amemiya-ine}, for $r>1$ we have
+Let $\Phi^*$ be an $N$-function satisfying \eqref{eq:caract_delta2}. 
+By the inequality \eqref{amemiya-ine}, for $r>1$ we have
 \[
 \int_0^T \Phi(|u|)\,dt\geq
 \Phi^*(r) \int_0^T \Phi(r^{-1}|u|)\,dt\geq
 \Phi^*(r)\{r^{-1}\|u\orlnor-1\}.
 \]
-Now, we choose $r=\frac{\|u\orlnor}{2}$, as $\|u\orlnor\to\infty$ we can assume $r>1$. From \cite[Thm. 2 (b)(v), p. 16]{rao1991theory} we get
+Now, we choose $r=\frac{\|u\orlnor}{2}$, as $\|u\orlnor\to\infty$ we can assume $r>1$. 
+From \cite[Thm. 2 (b)(v), p. 16]{rao1991theory} we get
 \[
 \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq
 \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi^*\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
@@ -735,7 +712,7 @@ implies  $\Psi\in\Delta_2^{\infty}$. \qed
 
 
 
-\begin{defi}We define the  functionals $J_{C,\varphi}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\varphi}:\rr^n\to \rr$, where $C>0$ and $\varphi:[0,+\infty)\to [0,+\infty)$ by
+\begin{defi}We define the  functionals $J_{C,\varphi}:\lphi\to (-\infty,+\infty]$ and $  H_{C,\varphi}:\rr^n\to \rr$, where $C>0$ and $\varphi:[0,+\infty)\to [0,+\infty)$, by
 \begin{equation}\label{func_phi}
   J_{C,\varphi}(u):= \rho_{\Phi}\left(u\right)-C\varphi\left(\|u\orlnor\right),
 \end{equation}
@@ -749,7 +726,7 @@ respectively.
 
 
 
-Next, we give the proof of the Theorem \ref{coercitividad-r}.  Here,  we will amend a mistake that was made in the end of the proof of  \cite[Thm. 6.2]{ABGMS2015},  where it was wrongly assumed that  the minimum of  $I$ is on the domain of differentiability of $I$. We avoid this problem minimizing $I$ on $\wphiet$, which is a subspace weak* closed contained in that domain.
+Next, we give the proof of Theorem \ref{coercitividad-r}.  Here,  we will amend a mistake that was made in the end of the proof of  \cite[Thm. 6.2]{ABGMS2015},  where it was wrongly assumed that  the minimum of  $I$ was on the domain of differentiability of $I$. We avoid this problem minimizing $I$ on $\wphiet$, which is a weak* closed subspace  contained in that domain.
 
 \noindent\textbf{Proof. Theorem \ref{coercitividad-r} }. By the decomposition $u=\overline{u}+\tilde{u}$,   Cauchy-Schwarz's inequality
 and \eqref{holder_cont-mu}, we have
@@ -771,7 +748,8 @@ C_1\|u'\orlnor,
 \end{equation}
  where $C_1=C_1(\|b_2\|_{L^1}, T)$. 
 
-We note that, since $\Phi_0'$ is an increasing function  and $\Phi_0'(x)\geq 0$ for $x\geq 0$, then $\Phi'_0(a+b)\leq \Phi'_0(2a)+\Phi'_0(2b)$ for every $a,b\geq 0$.
+Note that, since $\Phi_0'$ is an increasing function  and $\Phi_0'(x)\geq 0$ for $x\geq 0$, 
+$\Phi'_0(a+b)\leq \Phi'_0(2a)+\Phi'_0(2b)$ for every $a,b\geq 0$.
 In this way, we have
 \begin{equation}\label{pot-suma}
 \Phi'_0(|\overline{u}+s\tilde{u}(t)|)\leq
@@ -788,11 +766,10 @@ I_1&
 +\Phi'_0(C_3\|u'\orlnor) \|u'\orlnor\bigg\},
 \end{split}
 \end{equation}
-
+%%
 where $C_2=C_2(T, \|b_1\|_{L^1} )$ and $C_3=C_3(T)$. 
 Next, by Young's inequality with complementary functions $\Phi_1$ and $\Psi_1$, we obtain
-
-
+%
 \begin{equation}\label{cota-i1-parcial}
  \begin{split}
 \Phi_0'(2|\overline{u}|) \|u'\orlnor
@@ -801,11 +778,9 @@ Next, by Young's inequality with complementary functions $\Phi_1$ and $\Psi_1$, 
 \Phi_1(\|u'\orlnor).
 \end{split}
 \end{equation}
-
+%
 We have that any $N$-function $\Phi_0$ satisfies the inequality $x\Phi_0'(x)\leq \Phi_0(2x)$ (see \cite[p. 17]{rao1991theory} ). Moreover, since $\Phi_0\llcurly\Phi_1$ there exists $x_0=x_0(\Phi_0,\Phi_1,T)\geq 0$ such that $\Phi_0(2C_3x)\leq \Phi_1(x)$, for every $x\geq x_0$. Therefore, $\Phi_0(2C_3x)\leq \Phi_1(x)+C_4$, with $C_4=\Phi_0(2x_0)$. The previous observations imply that
-
-We have that any $N$-function $\Phi_0$ satisfies the inequality $x\Phi_0'(x)\leq \Phi_0(2x)$ (see \cite[p. 17]{rao1991theory} ). Moreover, since $\Phi_0\llcurly\Phi_2$ there exists $x_0=x_0(\Phi_0,\Phi_2,T)\geq 0$ such that $\Phi_0(2C_3x)\leq \Phi_2(x)$, for every $x\geq x_0$. Therefore, $\Phi_0(2C_3x)\leq \Phi_2(x)+C_4$, with $C_4=\Phi_0(2x_0)$. The previous observations imply that
-
+%%
 \begin{equation}\label{cota-i1-parcial-segunda}
 \Phi_0'(C_3\|u'\orlnor) \|u'\orlnor
 \leq 
@@ -892,44 +867,54 @@ From \cite[Eq. (26)]{ABGMS2015} we have
  $D_y\mathcal{L}(t,u(t),u'(t))\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$;
 and,  from  \cite[Eq. (24)]{ABGMS2015}, it follows that $D_x\mathcal{L}(t,u(t),u'(t))\in L^1([0,T],\rr^n)$. 
 Consequently, from \cite[p. 6]{mawhin2010critical} 
-(note that $\wphiet$  includes the periodic test functions) we obtain the absolutely continuity of $D_y\mathcal{L}(t,u(t),u'(t))$ and that the differential equations in \eqref{ProbPrin-gral} are verified. The strict convexity of $\mathcal{L}(t,x,y)$ with respect to $y$ and the $T$-periodicity with respect to $t$ imply the boundary conditions in  \eqref{ProbPrin-gral} (see \cite[Thm. 4.1]{ABGMS2015}).\qed
+(note that $\wphiet$  includes the periodic test functions) we obtain the absolutely continuity of $D_y\mathcal{L}(t,u(t),u'(t))$ and that the differential equations in \eqref{ProbPrin-gral} are satisfied. The strict convexity of $\mathcal{L}(t,x,y)$ with respect to $y$ and the $T$-periodicity with respect to $t$ imply the boundary conditions in  \eqref{ProbPrin-gral} (see \cite[Thm. 4.1]{ABGMS2015}).\qed
 
 
 
 
  \section{An example}\label{sec:examples}
 
- In this section we developed some applications of our main results
+ In this section we develop  an application of our main results
 so that the reader can appreciate the innovations that bring.
 
 
-One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,x,y)$ that not satisfy a power like grow condition in $y$.   
+One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,x,y)$ that do not satisfy a power-like grow condition in $y$.   
 
-We can applied Theorem \ref{coercitividad-r} to Lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with an exponential grow in $y$. For example, suppose
+In fact, it is possible to apply Theorem \ref{coercitividad-r} to lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with  exponential grow on the variable $y$. For example, suppose that
   \[\mathcal{L}(t,x,y)=f(y)+F(t,x),\]
-with $f:\rr^n\to\rr$ differentiable, stritly convex and $f(y)\geq e^{|y|}$. We define for $n\geq 1$
+with $f:\rr^n\to\rr$ differentiable, strictly convex and $f(y)\geq e^{|y|}$. We define for $n\geq 1$
 \[\Phi(y)=e^y-\sum\limits_{i=0}^{n-1}\frac{y^i}{i!}  \]
-It is easy to see that $\Phi:[0,+\infty)\to [0,+\infty)$  is $N$-function. From \cite[Ex. 3, p. 85]{M} we known that $\alpha_{\Phi}=n$. Therefore, as consequence of \eqref{compl_ind} we have $\beta_{\Psi}=\frac{n}{n-1}<\infty$. Consequently $\Psi\in\Delta_2$. From \eqref{delta2-potencias} we have that for evey $1<p<n$ there exists $C_p>0$ such that
+It is easy to see that $\Phi:[0,+\infty)\to [0,+\infty)$  is an $N$-function. 
+From \cite[Ex. 3, p. 85]{M} we know that $\alpha_{\Phi}=n$. 
+As consequence of \eqref{compl_ind} we have $\beta_{\Psi}=\frac{n}{n-1}<\infty$ and consequently $\Psi\in\Delta_2$. 
+From \eqref{delta2-potencias}, for every $1<p<n$ there exists $C_p>0$ such that
 \[\Phi(rs)\geq C_pr^p\Phi(s),\quad r>1,s>0.\]
-Then the complementary pair $(\Phi,\Psi)$ and the $N$-function $\Phi^*(r):=r^p$ satisfy Lemma \ref{lem_coer} for every $1<p<n$. Fix arbitrary real numbers $1<p_0<p_1<p<n$ and we consider $\Phi_i=r^{p_i}$, $i=0,1$. We have that $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
-The conditions  \eqref{holder_cont-mu} and     \eqref{eq:propiedad-coercividad-phi0} becomes
+Then, the complementary pair $(\Phi,\Psi)$ and the $N$-function $\Phi^*(r):=r^p$ satisfy Lemma \ref{lem_coer} for every $1<p<n$. 
+Now, we fix arbitrary real numbers $1<p_0<p_1<p<n$ and we consider $\Phi_i=r^{p_i}$, $i=0,1$. 
+Therefore $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
+The conditions  \eqref{holder_cont-mu} and     \eqref{eq:propiedad-coercividad-phi0} become
 
 \begin{equation}\label{eq:A6_ejem1}
-  \left| \nabla F(t,x) \right|\leq b_1(t)|x|^{p_0-1}+b_2(t), \quad b_1,b_2\in L^1([0,T])
+  \left| \nabla F(t,x) \right|\leq b_1(t)|x|^{p_0-1}+b_2(t), \quad b_1,b_2\in L^1([0,T]),
 \end{equation}
 and
 \begin{equation}\label{eq:ejem_propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{|x|^{(p_0-1)q_1 }}=+\infty,\quad q_1=p_1/(p_1-1)
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{|x|^{(p_0-1)q_1 }}=+\infty,\quad q_1=p_1/(p_1-1),
 \end{equation}
-respectively. Since $n$ is an arbitrary positive integer, the pair $p_0$ and $p_1$ of numbers with $1<p_0<p_1$ is also arbitrary. For clarity we suppose $F(t,x)=b(t)|x|^{\sigma}$, for some $1<\sigma<\infty$ and $b\in L^1([0,T])$. We note that this $F$ satisfies \eqref{item:condicion_a} and \eqref{item:condicion_c}. Now we can fix any $1<p_0$ with $p_0-1<\sigma<p_0$ and we took $p_1$ with $p_1>\sigma(\sigma-p_0+1)^{-1}$. Then \eqref{eq:A6_ejem1}
- and \eqref {eq:ejem_propiedad-coercividad-phi0} holds. In conclusion the system \eqref{ProbPrin-gral} has solution for the Lagrangian given by $\mathcal{L}(t,x,y)=f(y)+b(t)|x|^{\sigma}$ for any $1<\sigma$.
+respectively. Since $n$ is an arbitrary positive integer, the pair $p_0$ and $p_1$ of real numbers with $1<p_0<p_1$ is also arbitrary. 
+For clarity,  assume that $F(t,x)=b(t)|x|^{\sigma}$, for some $1<\sigma<\infty$ and $b\in L^1([0,T])$. 
+We note that this $F$ satisfies \ref{item:condicion_a} and \ref{item:condicion_c}. 
+Now, we choose any $1<p_0$ with $p_0-1<\sigma<p_0$ and we take $p_1$ with $p_1>\sigma(\sigma-p_0+1)^{-1}$. 
+Then, \eqref{eq:A6_ejem1}
+ and \eqref {eq:ejem_propiedad-coercividad-phi0} hold. 
+In conclusion, the system \eqref{ProbPrin-gral} has solution for the Lagrangian given by $\mathcal{L}(t,x,y)=f(y)+b(t)|x|^{\sigma}$ for any $1<\sigma$.
 
 
 
 
 
 \section*{Acknowledgments}
-The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
+The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant PROICO 30412. 
 
 
 
