@@ -25,6 +25,11 @@
 \usepackage{xcolor}
 \usepackage{adjustbox}
 \usepackage{hyperref}
+\usepackage{mathtools}
+
+\mathtoolsset{showonlyrefs}
+
+
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{cor}[thm]{Corollary}
@@ -120,8 +125,9 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 \begin{abstract}
 
-In this paper we obtain existence of periodic solutions, in the Orlicz-Sobolev space $\wphi([0,T])$, of hamiltonian systems with a potential  function $F$ satisfying the inequality  $|\nabla F(t,x)|\leq b_1(t) \Phi_0'(|x|)+b_2(t)$, with    $b_1, b_2\in L^1$ and for certain $N$-functions $\Phi_0$.
-ACLARAR QUE EL METODO ES DIRECTO????
+In this paper, we obtain existence results of periodic solutions of hamiltonian systems in the Orlicz-Sobolev space $\wphi([0,T])$.
+We employ the direct method of calculus of variations and we consider  a potential  function $F$ satisfying the inequality  
+$|\nabla F(t,x)|\leq b_1(t) \Phi_0'(|x|)+b_2(t)$, with  $b_1, b_2\in L^1$ and  certain $N$-functions $\Phi_0$. 
 \end{abstract}
 
 
@@ -155,14 +161,14 @@ where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the 
 \mathcal{L}_{p,F}(t,x,y)=\frac{|y|^p}{p}+F(t,x),
 \end{equation}
 for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral} for the lagrangian $\mathcal{L}_{2,F}$ and through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles, see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ are considered in  \cite{Tian2007192,tang2010periodic} and in this case \eqref{ProbPrin-gral}  is reduced to the $p$-laplacian system
-\begin{equation}\label{ProbP-lapla}
+\begin{equation*}\label{ProbP-lapla}
     \left\{%
 \begin{array}{ll}
    \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0.
 \end{array}%
 \right.
-\end{equation}
+\end{equation*}
 
 
 In this context, it  is customary to call $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respect to $x$ for a.e. $t\in [0,T]$ and the following conditions hold:
@@ -181,7 +187,7 @@ In \cite{ABGMS2015} it was treated  the case of a lagrangian $\mathcal{L}$ which
 \mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
 \end{equation}
 where  $\Phi$ is an $N$-function (see section \ref{preliminares} for the definition of this concept).  
-In the paper \cite{ABGMS2015} it was also assumed  a condition of \emph{bounded oscillation} on $F$  (see xxxxx below). 
+In the paper \cite{ABGMS2015} it was also assumed  a condition of \emph{bounded oscillation} on $F$  (see \cite{ABGMS2015},\cite{zhu2012analysis}). 
 In this paper we shall study the condition of \emph{sublinearity} (see  \cite{tang1998periodic,wu1999periodic,zhao2004periodic,tang2010periodic,zhao2005existence}) on $\nabla F$ for the lagrangian  $\mathcal{L}_{\Phi,F}$, or more generally for lagrangians which are lower bounded by $\mathcal{L}_{\Phi,F}$.
 
 
@@ -191,11 +197,8 @@ The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the eq
 I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
 
-The paper is organized as follows. In section \ref{preliminares} we give preliminaries facts on $N$-functions, Orlicz-Sobolev spaces of functions and we establish our main results. Section \ref{sec:proofs} contains the proofs and section \ref{sec:examples} provides examples of applications of our results to concrete cases.
+The paper is organized as follows. In section \ref{preliminares}, we give preliminaries facts on $N$-functions and Orlicz-Sobolev spaces of functions. Section 3 is devoted to the main result of this work and an auxiliary lemma. Section \ref{sec:proofs} contains the proofs and section \ref{sec:examples} provides an application of our result to a concrete case.
  
-LO SIGUIENTE NO CORRESPONDE PORQUE LA SECCION BO NO EXISTE O SI????
-
-Finally, in section \ref{sec:BO}, we compare the condition of sublinearity considered in this paper with the condition of bounded oscillations studied in \cite{ABGMS2015}.
 
 \section{Preliminaries}\label{preliminares}
 
@@ -368,16 +371,18 @@ The following simple  embedding lemma, whose proof can be found in \cite{ABGMS20
 \end{lem}
 
 
-\section{Main results}
+\section{Main result}
 
 We begin with a lemma which establishes the coercivity of the modular function $\rho_{\Phi}(u)$ with respect to certain functions of the Orlicz norm $\Phi_0(\|u\orlnor|)$. This lemma generalizes \cite[Lemma 5.2]{ABGMS2015} in two directions. 
-Namely, the function  $\Phi_0$ is more general and $\Delta_2$-condition  on $\Psi$ is relaxed to $\Delta_2^{\infty}$. 
+Namely, the power function is replaced by a more general one  $\Phi_0$ and 
+the $\Delta_2$-condition  on $\Psi$ is relaxed to $\Delta_2^{\infty}$. 
 It is worth noting that the second improvement is more important that the first one.
 And, we present the result here since the lemma introduces a function $\Phi^*$ that will play a significant role in our main theorem.
 
 \begin{lem}\label{lem_coer}
-Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2^{\infty}$. 
-Then there exists an $N$-function $\Phi^*$, with $\Phi^*\prec\Phi$, such that  for every $\Phi_0\llcurly\Phi^*$ and $k>0$
+Let $\Phi,\Psi$ be complementary $N$-functions with $\Psi \in \Delta_2^{\infty}$. Then, 
+there exists an $N$-function $\Phi^*$ with $\Phi^*\prec\Phi$, 
+such that  for every $N$-function $\Phi_0$ that satisfies $\Phi_0\llcurly\Phi^*$ and for every $k>0$, we have
 \begin{equation}\label{eq:coer_mod}
 \lim\limits_{\|u\orlnor\to \infty}
 \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}=\infty.
@@ -422,7 +427,7 @@ We only suppose that $\mathcal{L}$ is lower bounded by a function of this type. 
 %
 \begin{equation}\label{eq:control_inf}
 \mathcal{L} \geq \mathcal{L}_{\Phi,F},\quad \text{with}\;F\text{ satisfying \ref{item:condicion_a} \;and\; \ref{item:condicion_c},  
-\;\text{and}$\Phi$ being $N$-function}.\tag{$A_4$}
+\;\text{and}\;$\Phi$ being $N$-function}.\tag{$A_4$}
 \end{equation}
 %
 Moreover, as usual we suppose that the time integral of $F$ satisfies certain coercivity condition, see \eqref{eq:propiedad-coercividad-phi0} below.  However,  all these hypotheses are not enough. It is also necessary to assume extra conditions on the potential $F$.
@@ -676,7 +681,7 @@ Now, taking  $x\geq \max\{8,{\Psi^*}^{-1}(\Phi^*(1))\}$ we get that $\Psi \in \D
 
 
 
-\noindent\textbf{Proof Lemma \ref{lem_coer}} At first, we assume that $\Phi \in \Delta_2$. 
+\noindent\textbf{Proof Lemma \ref{lem_coer}} At first, we assume that $\Psi \in \Delta_2$. 
 Let $\Phi^*$ be an $N$-function satisfying \eqref{eq:caract_delta2}. 
 By the inequality \eqref{amemiya-ine}, for $r>1$ we have
 \[
@@ -685,16 +690,18 @@ By the inequality \eqref{amemiya-ine}, for $r>1$ we have
 \Phi^*(r)\{r^{-1}\|u\orlnor-1\}.
 \]
 Now, we choose $r=\frac{\|u\orlnor}{2}$, as $\|u\orlnor\to\infty$ we can assume $r>1$. 
-From \cite[Thm. 2 (b)(v), p. 16]{rao1991theory} we get
-\[
+From \cite[Thm. 2 (b)(v), p. 16]{rao1991theory}, there exists an $N$-function $\Phi_0$ such that $\Phi_0\llcurly \Phi^*$ 
+and we get
+\begin{equation}\label{eq:caso-delta-2}
 \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq
 \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi^*\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
 =\infty.
-\]
+\end{equation}
  If $\Psi\in\Delta_2^{\infty}$ but $\Psi\notin\Delta_2$, we  use Lemma \ref{lem:delta2-equiv-delta2-global}. 
 Then, there exists an $N$-function $\Psi_1$ such that $\Psi_1\in\Delta_2$ and  $\Psi_1\sim\Psi\leq \Psi_1$. 
 Let $\Phi_1$ be the complementary function of $\Psi_1$. Then $\Phi\sim\Phi_1\leq \Phi$ (see \cite[Thm. 3.1]{KR}) and $\|\cdot\orlnor$ and $\|\cdot\|_{L^{\Phi_1}}$ are equivalent norms  (see \cite[Thm. 13.2 and Thm. 13.3]{KR}). 
-By the previously proved WHAT????, there exists $\Phi_0$ satisfying  \eqref{eq:coer_mod} with $\Phi=\Phi_1$. 
+By \eqref{eq:caso-delta-2}, there exists an $N$-function $\Phi_0$ satisfying  \eqref{eq:coer_mod} 
+with the $N$-function $\Phi_1$ instead of $\Phi$. 
 Let $C>0$ be a constant such that  $\|\cdot\orlnor\leq C\|\cdot\|_{L^{\Phi_1}}$. Then
 
 \[\lim\limits_{\|u\orlnor \to \infty}\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi_1(|u|)dt}{\Phi_0(kC\|u\|_{L^{\Phi_1}})}=+\infty.\]
@@ -874,8 +881,8 @@ Consequently, from \cite[p. 6]{mawhin2010critical}
 
  \section{An example}\label{sec:examples}
 
- In this section we develop  an application of our main results
-so that the reader can appreciate the innovations that bring.
+ In this section we develop  an application of our main result
+so that the reader can appreciate the innovations that brings.
 
 
 One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,x,y)$ that do not satisfy a power-like grow condition in $y$.   
