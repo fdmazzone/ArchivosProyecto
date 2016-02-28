@@ -156,7 +156,18 @@ This paper deals with system  of equations of the type:
 \end{array}%
 \right.
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic was deeply addressed for the \emph{Lagrange function}
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. 
+
+The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the equation in  \eqref{ProbPrin-gral} is the Euler-Lagrange equation associated to the \emph{action integral}
+
+\begin{equation}\label{integral_accion}
+I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
+\end{equation}
+
+
+
+
+This topic was deeply addressed for the \emph{Lagrange function}
 \begin{equation}\label{eq:lagrange_cuad}
 \mathcal{L}_{p,F}(t,x,y)=\frac{|y|^p}{p}+F(t,x),
 \end{equation}
@@ -191,11 +202,7 @@ In the paper \cite{ABGMS2015} it was also assumed  a condition of \emph{bounded 
 In this paper we shall study the condition of \emph{sublinearity} (see  \cite{tang1998periodic,wu1999periodic,zhao2004periodic,tang2010periodic,zhao2005existence}) on $\nabla F$ for the lagrangian  $\mathcal{L}_{\Phi,F}$, or more generally for lagrangians which are lower bounded by $\mathcal{L}_{\Phi,F}$.
 
 
-The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the equation in  \eqref{ProbPrin-gral} is the Euler-Lagrange equation associated to the \emph{action integral}
 
-\begin{equation}\label{integral_accion}
-I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
-\end{equation}
 
 The paper is organized as follows. In section \ref{preliminares}, we give preliminaries facts on $N$-functions and Orlicz-Sobolev spaces of functions. Section 3 is devoted to the main result of this work and an auxiliary lemma. Section \ref{sec:proofs} contains the proofs and section \ref{sec:examples} provides an application of our result to a concrete case.
  
