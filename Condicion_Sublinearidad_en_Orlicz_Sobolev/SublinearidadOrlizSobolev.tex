@@ -419,7 +419,7 @@ Several hypotheses were tested in the past years. The so called \emph{subconvexi
 \begin{equation}\label{holder_cont}
   \left| F(t,x_2)- F(t,x_1) \right|\leq b_1(t)(1+|x_2-x_1|^{\mu}).
 \end{equation}
- was studied in \cite{ABGMS2015}. It is interesting to note, regarding the condition \eqref{holder_cont}, that it is not difficult to prove this inequality is equivalent to the condition $\|F(t,\cdot)\|_{BO}\in L^1([0,T])$, where $\|\cdot\|_{BO}$ denotes the seminorm defined in  \cite[p. 125]{zhu2012analysis} on the space of functions of bounded variations. 
+ was studied in \cite{ABGMS2015}. It is interesting to note, regarding the condition \eqref{holder_cont}, that it is not difficult to prove that this inequality is equivalent to the condition $\|F(t,\cdot)\|_{BO}\in L^1([0,T])$, where $\|\cdot\|_{BO}$ denotes the seminorm defined in  \cite[p. 125]{zhu2012analysis} on the space of functions of bounded variations.
  
  
  In \cite{tang1998periodic, tang2010periodic} the authors  dealt with the $p$-laplacian case where the potentials $F$ satisfied 
@@ -547,7 +547,7 @@ $\varphi\in\Delta_2$).
 
 The following lemma improves the result on the comment at the beginning of \cite[p. 24]{KR}.
 
-\begin{lem}\label{lem:delta2-equiv-delta2-global} Let $\Psi$ be an $N$-function satisfying the $\Delta_2^{\infty}$-condition. Then there exists an $N$-function $\Psi^*$  such that $\Psi^*\in\Delta_2$, $\Psi\leq\Psi^*$ and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that $\Psi^*(x)\leq a\Psi(x)$, for every $x\geq x_0$.  In other words,  every $\Delta_2$ near infinity  $N$-function is equivalent to a $\Delta_2$  $N$-function.
+\begin{lem}\label{lem:delta2-equiv-delta2-global} Let $\Psi$ be an $N$-function satisfying the $\Delta_2^{\infty}$-condition. Then there exists an $N$-function $\Psi^*$  such that $\Psi^*\in\Delta_2$, $\Psi\leq\Psi^*$ and for every $a>1$ there exists $x_0=x_0(a)\geq 0$ such that $\Psi^*(x)\leq a\Psi(x)$, for every $x\geq x_0$.  In particular,  every $\Delta_2$ near infinity  $N$-function is equivalent to a $\Delta_2$  $N$-function.
 \end{lem}
 
 \begin{proof} We can assume that the $\Delta_2$-condition on $\Psi$ fails near to $0$. Consequently, from Lemma \ref{lema:delta_2 y der}, we have that the right continuous derivative $\psi$ of $\Psi$ does not satisfy the $\Delta_2^0$-condition. 
@@ -580,7 +580,7 @@ We suppose $n=1$. Then items \ref{item:prop_psi*2} and \ref{item:prop_psi*3} are
 \[\psi(x_1)<\frac12\psi(2x_1)=\frac12\psi^*(2x_1).\]
 This inequality implies \ref{item:prop_psi*1}.
 
- Clearly $\psi^*$ is non decreasing on each interval $[2x_{n+1},x_n)$ and $[x_n,2x_n)$. And, since $\psi$ is right continuous, then $\psi^*$ is continuous at $x_n$. Therefore, $\psi^*$ is non decreasing on $[2x_{n+1},2x_n)$. Suppose $x\in[2x_{n+1},2x_n)$ and $y\geq 2x_n$.  From the definition of $\psi^*$, inductive hypothesis, item \ref{item:prop_psi*3} and item \ref{item:prop_psi*2}, we obtain
+Assume that properties \ref{item:prop_psi*1}- \ref{item:prop_psi*3} holds for $n>1$.  Clearly $\psi^*$ is non decreasing on each interval $[2x_{n+1},x_n)$ and $[x_n,2x_n)$. And, since $\psi$ is right continuous and $\psi(x_n)<2^{-1}\psi(2x_n)\leq 2^{-1}\psi^*(2x_n)$, $\psi^*$ is continuous at $x_n$. Therefore, $\psi^*$ is non decreasing on $[2x_{n+1},2x_n)$. Suppose $x\in[2x_{n+1},2x_n)$ and $y\geq 2x_n$.  From the definition of $\psi^*$, inductive hypothesis, item \ref{item:prop_psi*3} and item \ref{item:prop_psi*2}, we obtain
 
 \[\psi^*(x)\leq\max\{\psi(2x_n),\psi^*(2x_n)\}=\psi^*(2x_n)\leq\psi^*(y).\]
 This proves item \ref{item:prop_psi*2} on the interval $[2x_{n+1},+\infty)$.
@@ -589,15 +589,12 @@ and it is obvious for  $x\in[x_n,2x_n)$.
 If $ x\in[2x_{n+1},x_n)$, then $\psi(x)\leq\psi(x_n)\leq\psi^*(x_n)=\psi^*(x)$. 
 This proves  \ref{item:prop_psi*3} on the interval $[2x_{n+1},+\infty)$.
 
-Now, using \eqref{eq:prop_psi*} and the already proved item \ref{item:prop_psi*3} for $n+1$, we deduce
-\[\psi(x_{n+1})<\frac12\psi(2x_{n+1})\leq \frac12\psi^*(2x_{n+1}). \]
+Now, using \eqref{eq:prop_psi*} and the already proved item \ref{item:prop_psi*3} for $n+1$, we deduce $\psi(x_{n+1})<2^{-1}\psi(2x_{n+1})\leq 2^{-1}\psi^*(2x_{n+1})$.
 Then
 \[\psi^*(x_{n+1})=\max\left\{\psi(x_{n+1}),\frac12\psi^*(2x_{n+1}) \right\}=\frac12\psi^*(2x_{n+1}),\]
 i.e. we have proved item \ref{item:prop_psi*1}.
 
-We note that
-\[\psi^*(x_{n+1})=\frac12\psi^*(2x_{n+1})\leq\psi^*(x_{n}).\]
-Consequently $\psi(x)\to 0$ when $x\to 0$. 
+We note that $\psi^*(x_{n+1})=2^{-1}\psi^*(2x_{n+1})\leq 2^{-1}\psi^*(x_{n})$. Consequently $\psi^*(x)\to 0$ when $x\to 0$.
 Therefore $\psi^*$ is right continuous at $0$ and indeed it is right continuous on $[0,+\infty)$. 
 Moreover, since $\psi(x)=\psi^*(x)$ for $x\geq 2x_1$ being $\psi$ the right continuous derivative of an $N$-function, $\psi^*(x)\to +\infty$ when $x\to +\infty$. In this way,
 \[\Psi^*(x):=\int_0^x\psi^*(t)dt\]
@@ -637,6 +634,11 @@ The next statements are equivalent:
 \end{equation}
 \end{enumerate}
 \end{lem}
+
+\begin{comentario} We want emphasize that the difference in the conclusions, in the previous lemma, for the hypothesis $\Psi\in\Delta_2$ or $\Psi\in\Delta_2^{\infty}$ are that \eqref{eq:caract_delta2} holds for $s\geq 0$ or $s\geq 1$ respectively.
+
+\end{comentario}
+
 
 \begin{proof}
  In virtue of the comment that precedes the lemma, we only consider the case   $\Psi \in \Delta_2$.
@@ -686,8 +688,7 @@ By the inequality \eqref{amemiya-ine}, for $r>1$ we have
 \Phi^*(r)\{r^{-1}\|u\orlnor-1\}.
 \]
 Now, we choose $r=\frac{\|u\orlnor}{2}$, as $\|u\orlnor\to\infty$ we can assume $r>1$. 
-From \cite[Thm. 2 (b)(v), p. 16]{rao1991theory}, there exists an $N$-function $\Phi_0$ such that $\Phi_0\llcurly \Phi^*$ 
-and we get
+From \cite[Thm. 2 (b)(v), p. 16]{rao1991theory} and $\Phi_0\llcurly \Phi^*$  we get
 \begin{equation}\label{eq:caso-delta-2}
 \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq
 \lim\limits_{\|u\orlnor \to \infty} \frac{\Phi^*\left(\frac{\|u\orlnor}{2}\right)}{\Phi_0(k\|u\orlnor)}
@@ -695,9 +696,8 @@ and we get
 \end{equation}
  If $\Psi\in\Delta_2^{\infty}$ but $\Psi\notin\Delta_2$, we  use Lemma \ref{lem:delta2-equiv-delta2-global}. 
 Then, there exists an $N$-function $\Psi_1$ such that $\Psi_1\in\Delta_2$ and  $\Psi_1\sim\Psi\leq \Psi_1$. 
-Let $\Phi_1$ be the complementary function of $\Psi_1$. Then $\Phi\sim\Phi_1\leq \Phi$ (see \cite[Thm. 3.1]{KR}) and $\|\cdot\orlnor$ and $\|\cdot\|_{L^{\Phi_1}}$ are equivalent norms  (see \cite[Thm. 13.2 and Thm. 13.3]{KR}). 
-By \eqref{eq:caso-delta-2}, there exists an $N$-function $\Phi_0$ satisfying  \eqref{eq:coer_mod} 
-with the $N$-function $\Phi_1$ instead of $\Phi$. 
+Let $\Phi_1$ be the complementary function of $\Psi_1$. Then $\Phi\sim\Phi_1\leq \Phi$ (see \cite[Thm. 3.1]{KR}) and $\|\cdot\orlnor$ and $\|\cdot\|_{L^{\Phi_1}}$ are equivalent norms  (see \cite[Thm. 13.2 and Thm. 13.3]{KR}). Therefore, there exists an $N$-function $\Phi_1^*\prec \Phi_1$ (consequently $\Phi_1^*\prec \Phi$) satisfying  \eqref{eq:coer_mod}
+with the $N$-functions $\Phi_1$,$\Phi_1^*$ instead of $\Phi$ and $\Phi^*$ respectively.
 Let $C>0$ be a constant such that  $\|\cdot\orlnor\leq C\|\cdot\|_{L^{\Phi_1}}$. Then
 
 \[\lim\limits_{\|u\orlnor \to \infty}\frac{\int_0^T \Phi(|u|)\,dt}{\Phi_0(k\|u\orlnor)}\geq \lim\limits_{\|u\orlnor \to \infty} \frac{\int_0^T \Phi_1(|u|)dt}{\Phi_0(kC\|u\|_{L^{\Phi_1}})}=+\infty.\]
@@ -729,7 +729,9 @@ respectively.
 
 
 
-Next, we give the proof of Theorem \ref{coercitividad-r}.  Here,  we will amend a mistake that was made in the end of the proof of  \cite[Thm. 6.2]{ABGMS2015},  where it was wrongly assumed that  the minimum of  $I$ was on the domain of differentiability of $I$. We avoid this problem minimizing $I$ on $\wphiet$, which is a weak* closed subspace  contained in that domain.
+Next, we give the proof of Theorem \ref{coercitividad-r}.  Here,  we will amend the
+erroneous assumption that was made in the end of the proof of  \cite[Thm. 6.2]{ABGMS2015},  where it was assumed, without discussion, that  a minimum of  $I$ was on the domain of differentiability of $I$. We avoid  the need to prove this statement minimizing $I$ on $\wphiet$, which is a weak* closed subspace  contained in domain of differentiability of $I$. Moreover $\wphiet$ contains enough functions for that a minimum of $I$ on $\wphiet$ solves \eqref{ProbPrin-gral}.
+\vspace{.4cm}
 
 \noindent\textbf{Proof. Theorem \ref{coercitividad-r} }. By the decomposition $u=\overline{u}+\tilde{u}$,   Cauchy-Schwarz's inequality
 and \eqref{holder_cont-mu}, we have
@@ -804,7 +806,7 @@ I_1+I_2
 \end{equation}
 with $C_5$ depending on $\Phi_0, \Phi_1, T, \|b_1\|_{L^1}$ and $\|b_2\|_{L^1} $.
 
-Using  \eqref{cota-diferencia-F} and
+Using  \eqref{eq:control_inf},  \eqref{cota-diferencia-F} and
 \eqref{cota-i1-i2}, we get
 \begin{equation}\label{cota_inf_I}
 \begin{split}
@@ -821,14 +823,8 @@ C_5 \Psi_1(\Phi_0'(2|\overline{u}|))-
 C_5
 \\
 &\geq 
-\rho_{\Phi}( u')
--C_5 \Phi_1(\|u'\orlnor)
-+H_{C_5, \Psi_1\circ\Phi_0}(\overline{u})
--C_5
-\\
-&=
-J_{C_5,\Phi_0}(u')
-+H_{C_5, \Psi_1\circ\Phi_0}(\overline{u})
+J_{C_5,\Phi_1}(u')
++H_{C_5, \Psi_1\circ\Phi_0'}(\overline{u})
 -C_5.
 \end{split}
 \end{equation}
@@ -840,12 +836,12 @@ $\|u_n\sobnor\to\infty$ and we have to prove that $I(u_n)\to\infty$.
 On the contrary, suppose  that for a subsequence,
 still denoted by $u_n$, $I(u_n)$ is upper bounded, i.e. there exists $M>0$ such that $|I(u_{n})|\leq M$.
 As $\|u_n\sobnor\to\infty$, from Lemma \ref{infinito-a-prom-upunto},  we have $|\overline{u}_n|+\|u'_n\orlnor\to \infty$. Passing to a subsequence is necessary, still denoted $u_n$, we can assume that $|\overline{u}_n|\to \infty$ or $\|u'_n\orlnor\to \infty$.
-Now, Lemma \ref{lem_coer} implies that the functional $J_{C_5,\Phi_0}(u')$ is coercive;
+Now, Lemma \ref{lem_coer} implies that the functional $J_{C_5,\Phi_1}(u')$ is coercive;
 and, by \eqref{eq:propiedad-coercividad-phi0},
-the functional $H_{C_5,\Phi_0}(\overline{u})$ is also coercive, then
-$J_{C_5,\Phi_0}(u'_n) \to \infty$ or $H_{C_5,\Phi_0}(\overline{u}_n)\to \infty$.
-From the condition (A) on $F$, we have that on a bounded set the functional $H_{C_5,\Phi_0}(\overline{u}_n)$ is lower bounded and
-also $J_{C_5,\Phi_0}(u'_n)\geq 0$.
+the functional $H_{C_5,\Psi_1\circ\Phi_0'}(\overline{u})$ is also coercive, then
+$J_{C_5,\Phi_1}(u'_n) \to \infty$ or $H_{C_5,\Psi_1\circ\Phi_0'}(\overline{u}_n)\to \infty$.
+From the condition \eqref{item:condicion_a}  on $F$, we have that on a bounded set the functional $H_{C_5,\Psi_1\circ\Phi_0'}(\overline{u}_n)$ is lower bounded and
+also $J_{C_5,\Phi_0'}(u'_n)\geq 0$.
 Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
 
 Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
@@ -881,7 +877,7 @@ Consequently, from \cite[p. 6]{mawhin2010critical}
 so that the reader can appreciate the innovations that brings.
 
 
-One of the main novelties of our work is that we obtain existence of solutions for lagrangian functions $\mathcal{L}(t,x,y)$ that do not satisfy a power-like grow condition in $y$.   
+The main novelty  of our work is that we obtain existence of solutions by the direct method of calculus of variations for lagrangian functions $\mathcal{L}(t,x,y)$ that do not satisfy a power-like grow condition in $y$.
 
 In fact, it is possible to apply Theorem \ref{coercitividad-r} to lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with  exponential grow on the variable $y$. For example, suppose that
   \[\mathcal{L}(t,x,y)=f(y)+F(t,x),\]
@@ -894,7 +890,7 @@ From \eqref{delta2-potencias}, for every $1<p<n$ there exists $C_p>0$ such that
 \[\Phi(rs)\geq C_pr^p\Phi(s),\quad r>1,s>0.\]
 Then, the complementary pair $(\Phi,\Psi)$ and the $N$-function $\Phi^*(r):=r^p$ satisfy Lemma \ref{lem_coer} for every $1<p<n$. 
 Now, we fix arbitrary real numbers $1<p_0<p_1<p<n$ and we consider $\Phi_i=r^{p_i}$, $i=0,1$. 
-Therefore $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
+Then $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
 The conditions  \eqref{holder_cont-mu} and     \eqref{eq:propiedad-coercividad-phi0} become
 
 \begin{equation}\label{eq:A6_ejem1}
