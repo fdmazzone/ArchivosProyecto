@@ -46,23 +46,6 @@
 
 
 
-\title{Periodic solutions of
-Euler-Lagrange equations and sublinear pontentials   in an Orlicz-Sobolev space setting }
-\author{Sonia Acinas \thanks{SECyT-UNRC, UNSL and CONICET}\\
-Instituto de Matem\'atica Aplicada San Luis (IMASL)\\
-Universidad Nacional de San Luis and CONICET\\
-Ej\'ercito de los Andes 950,
-(D5700HDW) San Luis, Argentina\\
-Universidad Nacional de La Pampa\\
-(L6300CLB) Santa Rosa, La Pampa, Argentina\\
-\url{sonia.acinas@gmail.com}\\[3mm]
-Fernando D. Mazzone \thanks{SECyT-UNRC and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{fmazzone@exa.unrc.edu.ar}
-}
-
 \date{}
 
 \newcommand{\orlnor}{\|_{L^{\Phi}}}
@@ -100,23 +83,29 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \begin{document}
 
 \begin{frontmatter}
-\title{Some existence results on periodic solutions of
-Euler-Lagrange equations in an Orlicz-Sobolev space setting}
+\title{Periodic solutions of
+Euler-Lagrange equations with sublinear pontentials   in an Orlicz-Sobolev space setting}
 
 
 
-\author[imasl,unlpam]{S. ~Acinas \corref{corSonia}\fnref{fn1}}
+\author[unlpam]{S. ~Acinas \corref{corSonia}\fnref{fn1}}
 \ead{sonia.acinas@gmail.com}
-\author[unrc,unlpam]{F. ~Mazzone \corref{corFer}\fnref{fn2}}
+
+\author[unrc]{F. ~Mazzone \corref{corFer}\fnref{fn2}}
 \ead{ fmazzone@exa.unrc.edu.ar  }
 
 
 \cortext[corFer]{Principal correspondig author }
-\cortext[corFer]{Correspondig author}
-\fntext[fn1]{CONICET,UNSL,UNLPam}
+
+\cortext[corSonia]{Correspondig author}
+
+\fntext[fn1]{Instituto
+ de Matem\'atica Aplicada San Luis (CONICET-UNSL)
+,UNLPam}
+
 \fntext[fn2]{CONICET,UNRC,UNLPam}
-\address[imasl]{Instituto de Matem\'atica Aplicada San Luis (CONICET-UNSL),\\
-(5700) San Luis, Argentina.  }
+
+
 
 \address[unlpam]{Universidad Nacional de La Pampa,
 (6300) Santa Rosa, La Pampa, Argentina.  }
@@ -407,10 +396,9 @@ $b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$. We denote
 
 
 
-In
-\cite{ABGMS2015} it was shown that if $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$
+In \cite{ABGMS2015} it was shown that if $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$
 then there  exists the Gate\^aux derivative of the integral functional $I$ defined by \eqref{integral_accion},
-on the subspace $\wphie([0,T],\rr^d)$. We observe that the condition \ref{item:condicion_a} on the potential $F$ is equivalent to say that $\mathcal{L}_{\Phi,F}\in \mathfrak{A}(a,b,0,1,0,\Phi)$.
+on the subspace \linebreak$\wphie([0,T],\rr^d)$. We observe that the condition \ref{item:condicion_a} on the potential $F$ is equivalent to say that $\mathcal{L}_{\Phi,F}\in \mathfrak{A}(a,b,0,1,0,\Phi)$.
 
  Unlike what is usual in the literature, we do not assume the lagrangian $\mathcal{L}$  split into two terms,
 one of them function of $y$ and the other one function of $(t,x)$.
@@ -864,7 +852,8 @@ From the condition \ref{item:condicion_a}  on $F$, we have that on a bounded set
 also $J_{C_5,\Phi_0'}(u'_n)\geq 0$.
 Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
 
-Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem  $\inf\{I(u)|u\in\wphiet\}$.
+Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem
+\linebreak $\inf\{I(u)|u\in\wphiet\}$.
 Since  $I(u_n)$, $n=1,2,\ldots$,  is upper bounded, the previous part of the proof shows that $\{u_n\}$ is norm bounded on $\wphie$. Hence, by virtue of  \cite[Cor. 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous (therefore in $\ephi_T$)  function $u$. As $u'_n \in \ephi$ is a norm bounded sequence in $\lphi$,
 there exists a subsequence, again denoted by $u'_n$, that converges to a function $v\in\lphi$ in the weak* topology of $\lphi$.
 Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$.
@@ -884,7 +873,7 @@ therefore $I'(u)\in (\wphiet)^{\perp}$. Thus,
 \[\int_0^T D_y\mathcal{L}(t,u(t),u'(t))\cdot v'(t)dt =-\int_0^T D_x\mathcal{L}(t,u(t),u'(t))\cdot v(t)dt,\]
 for every  $v\in \wphiet$.
 From \cite[Eq. (26)]{ABGMS2015} we have
- $D_y\mathcal{L}(t,u(t),u'(t))\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n)$;
+\[D_y\mathcal{L}(t,u(t),u'(t))\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n);\]
 and,  from  \cite[Eq. (24)]{ABGMS2015}, it follows that $D_x\mathcal{L}(t,u(t),u'(t))\in L^1([0,T],\rr^n)$.
 Consequently, from \cite[p. 6]{mawhin2010critical}
 (note that $\wphiet$  includes the periodic test functions) we obtain the absolutely continuity of $D_y\mathcal{L}(t,u(t),u'(t))$ and that the differential equations in \eqref{ProbPrin-gral} are satisfied. The strict convexity of $\mathcal{L}(t,x,y)$ with respect to $y$ and the $T$-periodicity with respect to $t$ imply the boundary conditions in  \eqref{ProbPrin-gral} (see \cite[Thm. 4.1]{ABGMS2015}).\qed
