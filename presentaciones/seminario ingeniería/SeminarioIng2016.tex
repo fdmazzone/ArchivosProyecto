@@ -1,0 +1,142 @@
+%\documentclass[handout]{beamer}
+\documentclass[hyperref={colorlinks=true}]{beamer}
+%\documentclass[hyperref={colorlinks=true}]{beamer}
+
+
+
+\mode<all>
+{
+  \usetheme{Berkeley}
+  % oder ...
+  
+  \setbeamercovered{transparent}
+  % oder auch nicht
+}
+\usepackage{newtxtext,newtxmath}
+%\usepackage{mathptmx}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+%\usepackage[T1]{fontenc}
+\usepackage{amssymb,amsmath}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{multirow}
+%\usepackage{animate,movie15}
+%\usepackage{times}
+\usepackage{empheq}
+%\usepackage[spanish]{babel}
+%\usepackage[utf8x]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb,amsmath}%,amsthm}
+\usepackage{enumerate}
+\usepackage{verbatim}
+%\usepackage{ esint }
+\usepackage{pdfsync}
+%\usepackage{theorem}
+%\usepackage{pst-all}
+%\usepackage{pstricks-add}
+\usepackage{array}
+%\usepackage[T1]{fontenc}
+\usepackage{animate}
+%\usepackage{media9}
+%\usepackage{movie15}
+\usepackage{xparse}
+%\usepackage{listings}
+%\usepackage{ wasysym }
+%\usepackage{sagetex}
+\usepackage{hyperref}
+%\usepackage[margin=1.5cm]{geometry}
+\usepackage{tabularx}
+
+%% newcommand
+\newtheorem{thm}{Teorema}
+\newcommand{\orlnor}{\|_{L^{\Phi}}}
+\newcommand{\lurnor}{\|^{*}_{L^{\Phi}}}
+\newcommand{\linf}{\|_{L^{\infty}}}
+\newcommand{\lphi}{L^{\Phi}}
+\newcommand{\lpsi}{L^{\Psi}}
+\newcommand{\ephi}{E^{\Phi}}
+\newcommand{\claseor}{\widetilde{L}^{\Phi}}
+\newcommand{\wphi}{W^{1}\lphi}
+\newcommand{\sobnor}{\|_{W^{1}\lphi}}
+\newcommand{\domi}{W^{1}\left(\lphi,\Pi\left(\ephi,1\right)\right)}
+\newcommand{\com}{\mathbb{C}}
+\newcommand{\dis}{\mathbb{D}}
+\newcommand{\xb}{\bm{x}}
+\renewcommand{\b}[1]{\boldsymbol{#1}}
+
+\definecolor{myblue}{rgb}{.8, .8, 1}
+\newlength\mytemplen
+\newsavebox\mytempbox
+\makeatletter
+\newcommand\mybluebox{%
+    \@ifnextchar[%]
+       {\@mybluebox}%
+       {\@mybluebox[0pt]}}
+
+\def\@mybluebox[#1]{%
+    \@ifnextchar[%]
+       {\@@mybluebox[#1]}%
+       {\@@mybluebox[#1][0pt]}}
+
+\def\@@mybluebox[#1][#2]#3{
+    \sbox\mytempbox{#3}%
+    \mytemplen\ht\mytempbox
+    \advance\mytemplen #1\relax
+    \ht\mytempbox\mytemplen
+    \mytemplen\dp\mytempbox
+    \advance\mytemplen #2\relax
+    \dp\mytempbox\mytemplen
+    \colorbox{myblue}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
+
+\makeatother
+\DeclareDocumentCommand\boxedeq{ m g }{%
+    {\begin{empheq}[box={\mybluebox[2pt][2pt]}]{equation}% #1%
+        \IfNoValueF {#2} {\label{#2}}%
+       #1
+       \end{empheq}
+    }%
+}
+
+
+
+\title[Configuraciones centrales]
+{%
+Configuraciones centrales en el problema de los $N$-cuerpos
+}
+\author[F. Mazzone]{Fernando Mazzone\\
+ }
+\institute[UNRC-CONICET]{Depto de Matemática, Facultad de Ciencias Exactas, Físico-Químicas y Naturales, Universidad Nacional de Río Cuarto\\
+CONICET\\
+\includegraphics[scale=0.2]{unrc.jpg}\hspace{1cm} \includegraphics[scale=0.4]{logoC.png} }
+\date[27/09/2013]{XII Encuentro Nacional de Analistas A.P.Calderón}
+\subject{Asteroides}
+
+\begin{document}
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+
+
+\section{Introducción}
+
+\begin{frame}{Introducción}
+
+\end{frame} 
+ 
+
+
+
+\begin{frame}{}
+
+\huge{Muchas Gracias!!!} 
+\end{frame} 
+\end{document}
