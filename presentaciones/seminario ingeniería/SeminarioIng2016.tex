@@ -47,6 +47,7 @@
 %\usepackage{media9}
 %\usepackage{movie15}
 \usepackage{xparse}
+\usepackage{multirow}
 %\usepackage{listings}
 %\usepackage{ wasysym }
 %\usepackage{sagetex}
@@ -111,9 +112,9 @@
 
 
 
-\title[Configuraciones centrales]
+\title[Soluciones simétricas]
 {%
-Configuraciones centrales en el problema de los $N$-cuerpos
+Soluciones simétricas del problema de los $N$-cuerpos
 }
 \author[F. Mazzone]{Fernando Mazzone\\
  }
@@ -184,12 +185,12 @@ $G$ constante gravitación universal, supondremos $G=1$.
 	  0_{d\times d} & M_2           &\cdots & 0_{d\times d}\\
 	  \vdots        & \ddots         &      &\vdots        \\
 	  0_{d\times d} & \cdots         &      & M_N           \\
-       \end{pmatrix},\quad
+       \end{pmatrix},\,
        M_j=\begin{pmatrix}
             m_j     &  \cdots &  0   \\
            \vdots  & \ddots  & \vdots  \\
               0     &     \cdots     & m_j\\                
-           \end{pmatrix}
+           \end{pmatrix}\in\rr^{d\times d}
        \\
     U(\b{r})&=      \sum_{i<j}\frac{m_im_j}{r_{ij}}\quad\text{Potencial newtoniano}\\
     \Delta&=\{\b{r}_j=\b{r}_j| \text{ para algunos } i\neq j\},\\ 
@@ -216,15 +217,27 @@ $G$ constante gravitación universal, supondremos $G=1$.
 
 \end{frame} 
 
+\begin{frame}{Notaciones}
+\[
+  \begin{split}
+   I(\b{r})&= \frac12(\b{r}-\b{c})\cdot M(\b{r}-\b{c})=\frac12\sum_{j=1}^N m_j\|\b{r}_j-\b{c}\|^2,\\ &\text{(Momento de inercia)}\\
+  \end{split}
+\]
+
+\boxedeq{M\b{r}''(t)=\nabla U(\b{r}),\,\text{(Ecuación $N$-cuerpos)}}{}
+
+\end{frame} 
 
 
-
-
+ 
   \subsection{Simetrías}
- \begin{frame}{ \includegraphics[scale=.5]{Noether.jpg} Simetrías e integrales primeras}
+ \begin{frame}{ \begin{tabular}{cc} \multirow{2}{*}{\includegraphics[scale=.5]{Noether.jpg}} & Simetrías e integrales primeras \\  &(Emmy Noether)\\\end{tabular}}
  \begin{itemize}
-  \item<+-> \textbf{Simetría por traslaciones} ($\b{r}_j\rightarrow \b{r}_j+\b{v}_0t+\b{c}_0$, $\b{c}_0,\b{v}_0\in\rr^d$) $\Rightarrow$ conservación $\b{p}$  $\Rightarrow$ movimiento rectilineo uniforme de $\b{c}$ 
-    \item<+-> \textbf{Simetría por rotaciones} ($\b{r}_j\rightarrow Q\b{r}_j$, $Q\in O(d)$) $\Rightarrow$ conservación $\omega$   
+  \item<+-> \textbf{Simetría por traslaciones} ($\b{r}_j\rightarrow \b{r}_j+\b{v}_0t+\b{c}_0$, $\b{c}_0,\b{v}_0\in\rr^d$) $\Rightarrow$ \fbox{conservación $\b{p}=\b{c}'$}  $\Rightarrow$ movimiento rectilineo uniforme de $\b{c}$ 
+    \item<+-> \textbf{Simetría por rotaciones} ($\b{r}_j\rightarrow Q\b{r}_j$, $Q\in O(d)$) $\Rightarrow$ \fbox{conservación $\omega$}
+    \item<+-> La \textbf{energía total} $H:\underset{\text{Espacio fases}}{\underbrace{\left(\rr^d-\Delta\right)\times\rr^d}}\to  \rr$,
+    \[H(\b{r},\b{v})=K(\b{v})-U(\b{r}),\]
+    se conserva
   
  \end{itemize}
 
@@ -235,12 +248,24 @@ $G$ constante gravitación universal, supondremos $G=1$.
  
  
  
-\section{Soluciones homográficas}
-\begin{frame}{Soluciones homográficas}
-\begin{block}{Definición}
+\section{Configuraciones centrales}
+\begin{frame}{Configuraciones centrales (CC)}
+\onslide<+->\begin{block}{Definición} Una configuración de puntos masa, con masas $m_1,\ldots,m_N$ y posiciones $\b{r}_1,\ldots,\b{r}_N$ es central si existe $\lambda\in\rr$ tal que
+\[\nabla U(\b{r})+\lambda M(\b{r}-\b{c})=\nabla U(\b{r})+\lambda \nabla I(\b{r}-\b{c})=0.\]
  
 \end{block}
+\onslide<+->\textbf{Observación:} En una configuración central el vector aceleración sobre cada cuerpo apunta hacia $\b{c}$  y es proporcional a la distancia a $\b{c}$.
 
+\end{frame} 
+
+\begin{frame}{Existencia de CC}
+\begin{itemize}
+ \item<+-> Para masas arbitrarias la existencia es poco clara. 
+ \item<+-> \textbf{Soluciones sencillas} Si todas las masas son iguales $m_1=m_2=\cdots=m_N$ podemos ponerlas como vértices de un polítopo, polígono regular del plano, poliedro regular (sólido platónico), etc. Claramente la configuración es central
+\item<+-> Notoriamente en el caso del regular $d$-simplex, triángulo equilátero, tetraedro, etc, tenemos CC independientemente de las masas.
+\end{itemize}
+
+\onslide
 
 \end{frame} 
 
