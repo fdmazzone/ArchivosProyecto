@@ -1,5 +1,5 @@
 %\documentclass[handout]{beamer}
-\documentclass[hyperref={colorlinks=true}]{beamer}
+\documentclass[handout,hyperref={colorlinks=true}]{beamer}
 %\documentclass[hyperref={colorlinks=true}]{beamer}
 
 
@@ -53,7 +53,10 @@
 \usepackage{hyperref}
 %\usepackage[margin=1.5cm]{geometry}
 \usepackage{tabularx}
-
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{trees,positioning,arrows}
+\usetikzlibrary{mindmap}
 %% newcommand
 \newtheorem{thm}{Teorema}
 \newcommand{\orlnor}{\|_{L^{\Phi}}}
@@ -69,7 +72,9 @@
 \newcommand{\com}{\mathbb{C}}
 \newcommand{\dis}{\mathbb{D}}
 \newcommand{\xb}{\bm{x}}
-\renewcommand{\b}[1]{\boldsymbol{#1}}
+\newcommand{\rr}{\mathbb{R}}
+%\renewcommand{\b}[1]{\boldsymbol{#1}}
+\renewcommand{\b}[1]{\vec{#1}}
 
 \definecolor{myblue}{rgb}{.8, .8, 1}
 \newlength\mytemplen
@@ -115,7 +120,7 @@ Configuraciones centrales en el problema de los $N$-cuerpos
 \institute[UNRC-CONICET]{Depto de Matemática, Facultad de Ciencias Exactas, Físico-Químicas y Naturales, Universidad Nacional de Río Cuarto\\
 CONICET\\
 \includegraphics[scale=0.2]{unrc.jpg}\hspace{1cm} \includegraphics[scale=0.4]{logoC.png} }
-\date[27/09/2013]{XII Encuentro Nacional de Analistas A.P.Calderón}
+\date[8/4/2016]{Seminario de Investigación en Matemática Aplicada}
 \subject{Asteroides}
 
 \begin{document}
@@ -126,17 +131,118 @@ CONICET\\
 
 
 
-\section{Introducción}
+\section{Problema de los $N$-cuerpos}
+\subsection{Ecuación}
+\begin{frame}{Problema}
 
-\begin{frame}{Introducción}
+\onslide<+->\begin{block}{Sistema físico}
+
+\begin{description}
+\item[Espacio:] Espacio euclideano $d$ dimensional $d\geq 2$ ($\rr^d$).
+\item[Objetos:] $N$-puntos de masas $m_1,m_2,\ldots,m_N$,
+\item[Variables:] tiempo $t$, posiciones $\b{r}_i=\b{r}_i(t)\in \rr^d$, $i=1,\ldots,N$,
+ \item[Fuerzas:] gravitacionales,
+ \item[Leyes físicas:] Mecánica Newtoniana: Segunda Ley y Ley de gravitación universal.
+ 
+\end{description}
+ \end{block}
+ \end{frame} 
+
+
+
+\begin{frame}{Ecuación de los $N$-cuerpos}
+
+\onslide<+->\begin{block}{Ecuaciones $N$-cuerpos}
+\[\b{r}''_i(t)=G\sum_{j\neq i}m_j\frac{\b{r}_j-\b{r}_i}{\|\b{r}_j-\b{r}_i\|^3}.\]
+$G$ constante gravitación universal, supondremos $G=1$.
+\end{block}
+
+
+
+ \end{frame} 
+
+
+
+\begin{frame}{Problemas: mapa conceptual}
+\begin{center}
+\includegraphics[scale=.43]{diagrama.png}
+\end{center}
+
 
 \end{frame} 
  
 
+ 
+\begin{frame}{Notaciones}
+\[
+  \begin{split}
+    \b{r}&=(\b{r}_1,\ldots,\b{r}_N)\in\rr^{dN},\quad\text{Vector configuración},\\
+    r_{ij}&=\|\b{r}_i-\b{r}_j\|,\quad\text{distancias relativas},\\
+    M&=
+       \begin{pmatrix}
+	  M_1           & 0_{d\times d} &\cdots & 0_{d\times d}\\
+	  0_{d\times d} & M_2           &\cdots & 0_{d\times d}\\
+	  \vdots        & \ddots         &      &\vdots        \\
+	  0_{d\times d} & \cdots         &      & M_N           \\
+       \end{pmatrix},\quad
+       M_j=\begin{pmatrix}
+            m_j     &  \cdots &  0   \\
+           \vdots  & \ddots  & \vdots  \\
+              0     &     \cdots     & m_j\\                
+           \end{pmatrix}
+       \\
+    U(\b{r})&=      \sum_{i<j}\frac{m_im_j}{r_{ij}}\quad\text{Potencial newtoniano}\\
+    \Delta&=\{\b{r}_j=\b{r}_j| \text{ para algunos } i\neq j\},\\ 
+    \rr^{dN}-\Delta &\quad\text{ Espacio de configuraciones }.\\ 
+  \end{split}
+\]
 
-
-\begin{frame}{}
-
-\huge{Muchas Gracias!!!} 
 \end{frame} 
+
+
+ 
+\begin{frame}{Notaciones}
+\[
+  \begin{split}
+   \b{v}&=\b{r}'\quad\text{(Velocidades)}\\
+   K(\b{v})&=\frac12\b{v}\cdot M\b{v}=\frac12\sum_{j=1}^N m_j\|\b{v}_j\|^2,\quad \text{(Energía  cinética)}\\
+   \b{c}&=\frac{1}{m}\sum_{j=1}^Nm_j\b{r}_j,\quad\text{con }m:=\sum_{j=1}^Nm_j\quad\text{(Centro masas)}\\
+     \b{p}&=\sum_{j=1}^Nm_j\b{v}_j,\quad\text{(momento total)}\\
+     \omega_{kl}&=\sum_{j=1}^Nm_j \left(\b{r}_{jk}\b{v}_{jl}-\b{r}_{jl}\b{v}_{jk}\right),\,\, \text{(Momento angular total $\omega^t=-\omega$)}
+  \end{split}
+\]
+
+\[\boxed{M\b{r}''(t)=\nabla U(\b{r})},\quad \text{(Ecuación $N$-cuerpos)}\]
+
+\end{frame} 
+
+
+
+
+
+  \subsection{Simetrías}
+ \begin{frame}{ \includegraphics[scale=.5]{Noether.jpg} Simetrías e integrales primeras}
+ \begin{itemize}
+  \item<+-> \textbf{Simetría por traslaciones} ($\b{r}_j\rightarrow \b{r}_j+\b{v}_0t+\b{c}_0$, $\b{c}_0,\b{v}_0\in\rr^d$) $\Rightarrow$ conservación $\b{p}$  $\Rightarrow$ movimiento rectilineo uniforme de $\b{c}$ 
+    \item<+-> \textbf{Simetría por rotaciones} ($\b{r}_j\rightarrow Q\b{r}_j$, $Q\in O(d)$) $\Rightarrow$ conservación $\omega$   
+  
+ \end{itemize}
+
+
+
+\end{frame} 
+
+ 
+ 
+ 
+\section{Soluciones homográficas}
+\begin{frame}{Soluciones homográficas}
+\begin{block}{Definición}
+ 
+\end{block}
+
+
+\end{frame} 
+
+
 \end{document}
