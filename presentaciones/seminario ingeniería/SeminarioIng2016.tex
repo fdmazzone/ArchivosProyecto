@@ -1,6 +1,6 @@
 %\documentclass[handout]{beamer}
-\documentclass[handout,hyperref={colorlinks=true}]{beamer}
-%\documentclass[hyperref={colorlinks=true}]{beamer}
+%\documentclass[handout,hyperref={colorlinks=true}]{beamer}
+\documentclass[hyperref={colorlinks=true}]{beamer}
 
 
 
@@ -254,7 +254,7 @@ $G$ constante gravitación universal, supondremos $G=1$.
   \begin{frame}{Otras simetrías}
  \begin{itemize}
   \item<+-> $f:\rr^d\to \rr^m$ se denomina homogénea de grado $\alpha\in\rr$  si $f(t\b{x})=t^{\alpha}f(\b{x})$.
-  \item<+-> Si $f$ es homogénea de grado $\alpha$ entonces $\nabla f(x)$ es homkogénea de grado $\alpha-1$.
+  \item<+-> Si $f$ es homogénea de grado $\alpha$ entonces $\nabla f(x)$ es homogénea de grado $\alpha-1$.
   \item<+-> \textbf{Teorema Euler:} Si $f$ es homogénea de grado $\alpha$ entonces $\nabla f(x)\cdot x=\alpha f(x)$.
   \item<+-> $U$ es homogénea de grado $-1$,  $\nabla U$ es homogénea de grado $-2$ e $I$  es homogénea de grado $2$.
   \item<+-> \textbf{Invariancia por traslaciones:} si $\b{c}_0\in\rr^d\Rightarrow U(\b{x}+\b{c}_0)=U(\b{x})$.
@@ -266,8 +266,8 @@ $G$ constante gravitación universal, supondremos $G=1$.
 
 \end{frame}
  
- 
-\section{Configuraciones centrales}
+ \section{Soluciones homográficas}
+\subsection{Configuraciones Centrales}
 \begin{frame}{Configuraciones centrales (CC)}
 \onslide<+->\begin{block}{Definición} Una configuración de puntos masa, con masas $m_1,\ldots,m_N$ y posiciones $\b{x}_1,\ldots,\b{x}_N$ es central si existe $\lambda\in\rr$ tal que
 \[\nabla U(\b{x})+\lambda M(\b{x}-\b{c})=\nabla U(\b{x})+\lambda \nabla I(\b{x}-\b{c})=0.\]
@@ -287,7 +287,10 @@ $G$ constante gravitación universal, supondremos $G=1$.
 
 \end{frame}
 
-\subsection{Soluciones homográficas}
+
+
+
+
 \begin{frame}{Soluciones homográficas}
 
 \begin{block}{Definición}
@@ -302,7 +305,7 @@ $G$ constante gravitación universal, supondremos $G=1$.
 \end{frame} 
 
 
-
+\subsection{Soluciones homotéticas}
 \begin{frame}{Soluciones homotéticas}
 
 \onslide<+->\begin{block}{Definicion}
@@ -332,13 +335,287 @@ $r(t)$ es una solución del problema de Kepler unidimensional y $\b{x}_0$ es una 
 Imagen:    Richard Moeckel
 \end{frame}
 
+\subsection{Movimientos planos}
 
-\begin{frame}{Movimientos rígidos, equilibrios relativos}
+
+\begin{frame}{Movimiento plano}
+
+
+\onslide<+-> Suponiendo $d=2$ (movimiento plano):
+\[Q(t)=\begin{pmatrix}
+        \cos(\theta(t)) & \sen(\theta(t))\\
+         -\sen(\theta(t)) & \cos(\theta(t))\\
+       \end{pmatrix} \in SO(2)
+ \]
+
+\onslide<+-> Remplazando $\b{x}-\b{c}=rQ(\b{x}_0-\b{c}_0)$ en la ecuación 
+\[r''-r\theta'^2=-\frac{\lambda}{r^2},\quad r\theta''+2r'\theta'=0\quad \text{y } -\lambda M(\b{x}_0-\b{c}_0)=\nabla U(\b{x}_0)\]
+
+\onslide<+->  $r$, $\theta$ resuelven la ecuación (coordenadas polares) de la ecuación de los dos cuerpos. Los cuerpos describen elipses keplerianas homotéticas. 
+
+
+\end{frame}
+\subsection{Equilibrios relativos}
+\begin{frame}{Movimiento rígido (equilibrio relativo)}
+
+\onslide<+->\begin{block}{Definicion}
+ Si $r(t)\equiv 1$ la solución (independientemente que $d=2$)
+ se dice que es un moviento rígido o equilibrio relativo.
+\end{block}
+
 
 \begin{center}
-\animategraphics[controls,scale=.5]{15}{colapso/CC-}{0}{120}
+\animategraphics[controls,scale=.4]{15}{RE/RE-}{0}{200}
 \end{center}
 Imagen:    Richard Moeckel
 \end{frame}
+
+\subsection{Soluciones homográficas para $d>3$}
+
+\begin{frame}{Soluciones homográficas para $d\geq 3$}
+En $d=3$  la única solución no planar es el movimiento homotético \cite{wintner2014analytical,Moeckel1994,Moeckel2016}.
+
+\onslide<+-> En $d>3$ la situación es más compleja \cite{albouy1997probleme,chenciner2011lagrange,chenciner2013angular},  ver \cite{Moeckel2016}.
+
+
+
+
+\end{frame}
+
+\begin{frame}{Soluciones homográficas $d>3$}
+
+\onslide<+->\begin{block}{Teorema}
+Sea $\b{x}_0$ una CC y $C=\langle \b{x}_{01}-\b{c}_0,\ldots,  \b{x}_{0N}-\b{c}_0\rangle$. Supongamos que existe $J\in\rr^{d\times d}$ antisimétrica que satisface $J^2|_C=-I|_C$. Si $r,\theta$ son solución del problema de Kepler plano, entonces existe 
+\[\b{x}-\b{c}=r(t)Q(t)(\b{x}_0-\b{c}_0)\]
+con
+\[Q(t)=e^{\theta(t)J}.\]
+es una solución homográfica. Toda solución homográfica no rígida  es de esta forma.
+
+ 
+\end{block}
+
+
+
+\end{frame}
+
+
+\begin{frame}{Soluciones homográficas $d>3$}
+
+\onslide<+->\begin{block}{Definición}
+Si $A\in\rr^{d\times d}$ 
+\[e^A=I+A+\frac{1}{2!}A^2+\frac{1}{3!}A^3+\cdots\]
+
+ 
+\end{block}
+\onslide<+-> \textbf{Ejemplo:} $J=\begin{pmatrix}
+                      0 & -1\\
+                      1 &0\\
+                     \end{pmatrix}, e^{tJ}=\begin{pmatrix}
+                      \cos(t) & -\sen(t)\\
+                      \sen(t) &\cos(t)\\
+                     \end{pmatrix}$
+
+
+\onslide<+-> Si $A$ es antisimétrica $e^A$ es ortogonal:
+\[\left[e^A\right]^te^A=e^{A^t}e^A=e^{-A}e^A=e^{-A+A}=I.\]
+\end{frame}
+
+\begin{frame}{Estructuras Hermitianas}
+
+\begin{block}{Definición}
+Una estructura Hermitiana sobre un subespacio $H$ viene dada por producto interno  sobre $H$ y una función lineal $J:H\to H$ que es antisimétrica respecto al producto interno.             
+\end{block}
+Si $J$ es la matríz del Teorema
+\begin{itemize}
+ \item<+-> $H=C+JC$ tendrá una estructura Hermitiana, es invariante y $J^2|_H=-I|_H$.
+ \item<+-> Una transformación antisimétrica tiene rango par. Corolario: homográfico no homotétitco $\Rightarrow$ plano.
+  \item<+->  Es una condición necesaria que $C$ este contenido en un espacio con dimensión par.
+  \item<+-> A la vez es suficiente. 
+\end{itemize}
+
+ 
+ 
+
+\end{frame}
+
+
+\begin{frame}{Estructuras Hermitianas}
+
+\onslide<+->\begin{block}{Teorema}
+Para todo movimiento rígido existe una matriz de configuración $\b{x}_0$ (no necesariamente central) y una martriz antisimétrica $A\in\rr^{d\times d}$ tal que  
+\[\b{x}-\b{c}=Q(t)(\b{x}_0-\b{c}_0)\]
+con
+\[Q(t)=e^{\theta(t)A}.\] 
+\end{block}
+
+A su vez, para $d=4$,  existen $\b{x}_0$ no centrales tales que la fórmula anterior define un movimiento rígido.
+
+\end{frame}
+
+
+\section{Configuraciones Centrales}
+
+\subsection{Invariancias}
+\begin{frame}{Simetrías para CC}
+$\b{x}$ es CC si existe $\lambda\in\rr$ 
+\[\nabla U(\b{x})+\lambda \nabla I(\b{x}-\b{c})=0.\]
+con
+\[ U(\b{x})=      \sum_{i<j}\frac{m_im_j}{r_{ij}}\quad\text{e}\quad  I(\b{x})=\frac12\sum_{j=1}^N m_j\|\b{x}_j-\b{c}\|^2.\]
+
+
+\begin{itemize}
+\item<+-> Si $\b{x}$ es CC para $\lambda$ y $\b{c}_0\in\rr^d$ entonces $\b{x}+\b{c}_0$ es CC para el mismo $\lambda$.
+ \item<+-> Si $\b{x}$ es CC para $\lambda$ y $Q\in SO(d)$ entonces $Q\b{x}$ es CC para el mismo $\lambda$.
+ \item<+-> Si $\b{x}$ es CC para $\lambda$ y $\sigma\in \rr$ entoces $\sigma\b{x}$ es CC para $\sigma^{-3}\lambda$, 
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{Finitud de ER}
+
+\begin{frame}{Finitud de equlibrios relativos}
+\begin{block}{Definición}
+ Dos CC $\b{x}$ e $\b{y}$ son equivalentes si existe $\sigma\in\rr$, $Q\in SO(d)$ y $\b{c}_0\in\rr^d$ tales que $\b{y}=\sigma Q\b{x}+\b{c}_0$.
+\end{block}
+
+
+
+\begin{block}{Problema de Chazy-Wintner-Smale, Steve Smale, ``Mathematical problems for the next century'', \cite{arnold2000mathematics}}
+ \begin{quote} Existe un número finito de clases de equivalencias de CC.
+   \end{quote}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Finitud de equlibrios relativos ¿Qué sabemos? }
+\begin{itemize}
+ \item<+-> Para $N=2$ todo $\b{x}$ es $CC$, pero hay una sóla clase de equivalencia.
+ \item<+-> Para $N=3$ hay 5 clases distintas, Euler-Lagrange.
+ \item<+-> Para $N=4$. Dadas 4 masas $m_1,m_2,m_3,m_4$ el número de clases distintas está comprendido entre  32 y 8472  (\cite{hampton2006finiteness}).
+ \item<+-> Para $N=5$ y $d=2$. En \cite{albouy2012finiteness} se obtuvo finitud para todas las masas excepto en una variedad de codimensión 2 en el espacio de masas.
+\end{itemize}
+\end{frame}
+
+
+\subsection{Configuraciones de Euler, Lagrange y Moulton ($d=3$) }
+\begin{frame}{CC y teoría puntos críticos \cite{smale1970topologyI,smale1970topologyII}}
+\begin{itemize}
+ \item Cambiando de coordenadas a abricéntricas podemos asumir $\b{c}=0$.
+ \item Cambiando de escala podemos asumir $I(\b{x})=1$.
+\end{itemize}
+
+ Por la técnica de los multiplicadores de Lagrange, interpretamos
+\[\nabla U(\b{x})+\lambda \nabla I(\b{x})=0.\]
+como que una CC es un punto crítico del potencial con la restricción de que  $\b{x}\in S$ donde $S$  es el elipsoide
+\[S=\{\b{x}| I(\b{x})=1\}.\]
+
+\end{frame}
+
+
+\begin{frame}{Soluciones Lagrangianas ($d=2$)}
+\onslide<+->$U$ es función de las distancias relativas, $r_{ij}=\|\b{x}_i-\b{x}_j\|$. 
+
+Veamos que $I$ también
+
+\[
+ \begin{split}
+  \sum_{i,j=1}^N m_im_j\|\b{x}_i-\b{x}_j\|^2 &= 
+  \sum_{i,j=1}^N m_im_j\|\b{x}_i\|^2\\
+  &\,\,-
+  2\sum_{i,j=1}^N m_im_j\b{x}_i\cdot\b{x}_j +
+  \sum_{i,j=1}^N m_im_j\|\b{x}_j\|^2\\
+  &=4mI
+ \end{split}
+\]
+\onslide<+->Pongamos $\b{r}$ al vector de distancias relativas. Luego
+\[\frac{\partial U}{\partial \b{x}}+\lambda \frac{\partial I}{\partial \b{x}}
+ =\left(\frac{\partial U}{\partial \b{r}}+\lambda \frac{\partial I}{\partial \b{r}}\right) \frac{\partial \b{r}}{\partial \b{x}}\]
+
+
+
+\end{frame}
+\begin{frame}{Soluciones Lagrangianas ($d=2$)}
+
+
+Queremos ver que  si los cuerpos no estan alineados
+ \[0=\frac{\partial U}{\partial \b{x}}+\lambda \frac{\partial I}{\partial \b{x}}
+ \Leftrightarrow 0=\frac{\partial U}{\partial \b{r}}+\lambda \frac{\partial I}{\partial \b{r}}.\]
+ Pero
+ \[
+  \frac{\partial \b{r}}{\partial \b{x}}=
+  \begin{pmatrix}
+    \frac{\b{x}_1-\b{x}_2}{r_{12}}  & -  \frac{\b{x}_1-\b{x}_2}{r_{12}}  & 0\\
+     \frac{\b{x}_1-\b{x}_3}{r_{13}} & 0                                 & -\frac{\b{x}_1-\b{x}_3}{r_{13}}\\
+     0    & \frac{\b{x}_2-\b{x}_3}{r_{23}} & -  \frac{\b{x}_2-\b{x}_3}{r_{23}}
+  \end{pmatrix}\in\rr^{3\times 6}
+ \]
+La afirmación sale de que  si los cuerpos no estan alineados $\b{x}_1-\b{x}_2$ y  $\b{x}_1-\b{x}_3$ son LI, lo mismo 
+$\b{x}_1-\b{x}_2$ y  $\b{x}_2-\b{x}_3$ 
+ 
+
+
+\end{frame}
+\begin{frame}{Soluciones Lagrangianas ($d=2$)}
+Así tenemos que resolver
+ \[0=-\frac{m_im_j}{r_{ij}^2}+\lambda m_im_jr_{ij}\]
+Entonces
+\[r_{ij}=\lambda^{-1/3}.\]
+La configuración es un triángulo equilátero.
+ 
+
+
+\end{frame}
+
+\begin{frame}{Soluciones Lagrangianas }
+
+
+\begin{tabular}{p{5cm} p{5cm}}
+\includegraphics[scale=.2]{troyanos.jpg}
+ & 
+\includegraphics[scale=.2]{soho.jpg}
+\\Asteroides troyanos de Jupiter (\text{orbit\_calc}) &Sondas STEREO y SOHO\\
+\end{tabular}
+
+
+\end{frame}
+
+\begin{frame}{Configuraciones de Moulton (colineales)}
+ \onslide<+->\begin{block}{Definición}
+Una CC se denomina colineal si todos los cuerpos estan sobre una línea recta.  
+ \end{block}
+ \onslide<+->\begin{block}{Teorema \cite{moulton1910straight}}
+ Dadas $N$ masas existen $N!/2$ configuraciones  centrales colineales             
+ \end{block}
+
+ \onslide<+-> Discutiremos la idea de la demostración para $N=3$.
+ 
+\end{frame}
+
+\begin{frame}{Demostración Teorema de Moulton }
+ \onslide<+-> Usando un conveniente sistema de coordenadas podemos suponer las posiciones en $\rr$,   $x_1,x_2,x_3\in\rr$. Escribamos $\b{x}=(x_1,x_2,x_3)$. 
+ 
+ \onslide<+-> Sean $H=\{\b{x}| m_1x_1+m_2x_2+m_3x_3=0\}$, el elipsoide $S=\{\b{x}| m_1x_1^2+m_2x_2^2+m_3x_3^2=0\}$ y el conjunto de colisiones $\Delta=\{x_i=x_j|i\neq j\}$.  
+ 
+ \onslide<+-> Se observa que hay que encontrar un punto crítico de $U$ en el conjunto 
+ \[S\cap H\setminus \Delta.\]
+ 
+ \onslide<+-> $S\cap H$ es un elipsoide de una dimensión menor, en el caso $N=3$ es una elipse
+\end{frame}
+
+\begin{frame}{Demostración Teorema de Moulton }
+\begin{tabular}{c p{4cm}}
+ \includegraphics[scale=.25]{moulton.jpg} &\vspace{-3cm} Nos quedan $N!/2$ componentes conexas. Se demuestra que hay un mínimo (punto crítico) de $U$ en cada una de ellas y que  hay a lo sumo 1 punto crítico
+\end{tabular}
+
+
+\end{frame}
+
+
+  \bibliographystyle{apalike} 
+ \bibliography{biblio}
+
+
+
 
 \end{document}
