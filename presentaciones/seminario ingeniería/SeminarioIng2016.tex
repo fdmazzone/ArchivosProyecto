@@ -177,7 +177,7 @@ $G$ constante gravitación universal, supondremos $G=1$.
 \begin{frame}{Notaciones}
 \[
   \begin{split}
-    \b{x}&=(\b{x}_1,\ldots,\b{x}_N)\in\rr^{d\times N},\quad\text{Matríz configuración, $\b{x}$},\\
+    \b{x}&=(\b{x}_1,\ldots,\b{x}_N)\in\rr^{d N},\quad\text{vector configuración, $\b{x}$},\\
     r_{ij}&=\|\b{x}_i-\b{x}_j\|,\quad\text{distancias relativas},\\
     M&=
        \begin{pmatrix}
@@ -193,7 +193,7 @@ $G$ constante gravitación universal, supondremos $G=1$.
            \end{pmatrix}\in\rr^{d\times d}
        \\
     U(\b{x})&=      \sum_{i<j}\frac{m_im_j}{r_{ij}}\quad\text{Potencial newtoniano}\\
-    \Delta&=\{\b{x}_j=\b{x}_j| \text{ para algunos } i\neq j\},\\
+    \Delta&=\{\b{x}_i=\b{x}_j| i,j=1,\ldots, n;\, i\neq j\},\\
     \rr^{dN}-\Delta &\quad\text{ Espacio de configuraciones }.\\ 
   \end{split}
 \]
@@ -355,6 +355,22 @@ Imagen:    Richard Moeckel
 
 
 \end{frame}
+
+\begin{frame}{Movimiento plano}
+
+\begin{center}
+\animategraphics[controls,scale=.4]{15}{flor/flor-}{0}{200}
+\end{center}
+Imagen:    Richard Moeckel
+
+\end{frame}
+
+
+
+
+
+
+
 \subsection{Equilibrios relativos}
 \begin{frame}{Movimiento rígido (equilibrio relativo)}
 
@@ -428,7 +444,7 @@ Una estructura Hermitiana sobre un subespacio $H$ viene dada por producto intern
 Si $J$ es la matríz del Teorema
 \begin{itemize}
  \item<+-> $H=C+JC$ tendrá una estructura Hermitiana, es invariante y $J^2|_H=-I|_H$.
- \item<+-> Una transformación antisimétrica tiene rango par. Corolario: homográfico no homotétitco $\Rightarrow$ plano.
+ \item<+-> Una transformación antisimétrica tiene rango par.
   \item<+->  Es una condición necesaria que $C$ este contenido en un espacio con dimensión par.
   \item<+-> A la vez es suficiente. 
 \end{itemize}
@@ -442,13 +458,13 @@ Si $J$ es la matríz del Teorema
 \begin{frame}{Estructuras Hermitianas}
 
 \onslide<+->\begin{block}{Teorema}
-Para todo movimiento rígido existe una matriz de configuración $\b{x}_0$ (no necesariamente central) y una martriz antisimétrica $A\in\rr^{d\times d}$ tal que  
+Todo movimiento rígido ocurre en un espacio de dimensión par y existe una matriz de configuración $\b{x}_0$ (no necesariamente central) y una martriz antisimétrica $A\in\rr^{d\times d}$ tal que
 \[\b{x}-\b{c}=Q(t)(\b{x}_0-\b{c}_0)\]
 con
 \[Q(t)=e^{\theta(t)A}.\] 
 \end{block}
 
-A su vez, para $d=4$,  existen $\b{x}_0$ no centrales tales que la fórmula anterior define un movimiento rígido.
+A su vez, para $d=4$,  existe $\b{x}_0$ no central tal que la fórmula anterior define un movimiento rígido.
 
 \end{frame}
 
@@ -501,7 +517,7 @@ con
 \subsection{Configuraciones de Euler, Lagrange y Moulton ($d=3$) }
 \begin{frame}{CC y teoría puntos críticos \cite{smale1970topologyI,smale1970topologyII}}
 \begin{itemize}
- \item Cambiando de coordenadas a abricéntricas podemos asumir $\b{c}=0$.
+ \item Cambiando de coordenadas a baricéntricas podemos asumir $\b{c}=0$.
  \item Cambiando de escala podemos asumir $I(\b{x})=1$.
 \end{itemize}
 
@@ -595,7 +611,17 @@ Una CC se denomina colineal si todos los cuerpos estan sobre una línea recta.
 \begin{frame}{Demostración Teorema de Moulton }
  \onslide<+-> Usando un conveniente sistema de coordenadas podemos suponer las posiciones en $\rr$,   $x_1,x_2,x_3\in\rr$. Escribamos $\b{x}=(x_1,x_2,x_3)$. 
  
- \onslide<+-> Sean $H=\{\b{x}| m_1x_1+m_2x_2+m_3x_3=0\}$, el elipsoide $S=\{\b{x}| m_1x_1^2+m_2x_2^2+m_3x_3^2=0\}$ y el conjunto de colisiones $\Delta=\{x_i=x_j|i\neq j\}$.  
+ \onslide<+-> Sean
+ \[\begin{split}
+  H&=\{\b{x}| m_1x_1+m_2x_2+m_3x_3=0\}\quad\text{(hiperplano)}\\
+  S&=\{\b{x}| m_1x_1^2+m_2x_2^2+m_3x_3^2=0\}\quad\text{(elipsoide)}\\
+  \Delta&=\{x_i=x_j|i\neq j\}\quad\text{(conjunto de colisiones)}\\
+  \end{split}
+ \]
+
+
+
+
  
  \onslide<+-> Se observa que hay que encontrar un punto crítico de $U$ en el conjunto 
  \[S\cap H\setminus \Delta.\]
@@ -611,7 +637,16 @@ Una CC se denomina colineal si todos los cuerpos estan sobre una línea recta.
 
 \end{frame}
 
+\section{Otro tipo de soluciones}
 
+\begin{frame}{$N$ cuerpos en CC más 1 periódico}
+
+\onslide<+->En \cite{zhao2015nonplanar} se demostró que para $N=2,3$ existen soluciones donde $N$ cuerpos estan en una CC y uno se mueve periódicamente sobre el eje perpendicular que pasa por el centro de masas.
+
+\onslide<+->Será cierto para $N>3$ ?
+
+
+\end{frame}
   \bibliographystyle{apalike} 
  \bibliography{biblio}
 
