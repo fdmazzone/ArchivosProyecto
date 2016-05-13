@@ -1,0 +1,134 @@
+\documentclass[twoside]{article}
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathscinet}[2002/04/17 v1.05]
+\RequirePackage{textcmds}\relax
+\ProvideTextCommandDefault{\cprime}{\tprime}
+
+
+
+%\usepackage{hyperref}
+\usepackage{amssymb,amsthm}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{ esint }
+\usepackage{mathabx}
+\usepackage{MnSymbol}
+\usepackage{fancyhdr}
+\usepackage{times}
+
+\usepackage[latin1]{inputenc}
+
+\usepackage{comment}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{remark}
+\newtheorem{comentario}{Remark}
+
+
+\makeatletter
+\newcommand{\labitem}[2]{%
+\def\@itemlabel{\textbf{#1}}
+\item
+\def\@currentlabel{#1}\label{#2}}
+\makeatother
+
+
+
+
+
+
+\newcommand{\orlnor}{\|_{L^{\Phi}}}
+\newcommand{\lurnor}{\|^{*}_{L^{\Phi}}}
+\newcommand{\linf}{\|_{L^{\infty}}}
+\newcommand{\lphi}[2]{L^{\Phi}(#1,\rr^{#2})}
+\newcommand{\lphiuno}{L^{\Phi_1}}
+\newcommand{\lphidos}{L^{\Phi_2}}
+\newcommand{\lphii}{L^{\Phi_i}}
+\newcommand{\lpsi}{L^{\Psi}}
+\newcommand{\lpsiuno}{L^{\Psi_1}}
+\newcommand{\lpsidos}{L^{\Psi_2}}
+\newcommand{\lpsii}{L^{\Psi_i}}
+\newcommand{\lmuno}{L^{M_1}}
+\newcommand{\lmdos}{L^{M_2}}
+\newcommand{\lmj}{L^{M}}
+\newcommand{\lmn}{L^{M_n}}
+\newcommand{\ephi}{E^{\Phi}}
+\newcommand{\ephiuno}{E^{\Phi_1}}
+\newcommand{\ephidos}{E^{\Phi_2}}
+\newcommand{\ephin}{E^{\Phi_n}}
+\newcommand{\ephii}{E^{\Phi_i}}
+\newcommand{\claseor}{C^{\Phi}}
+\newcommand{\wphi}{W^{1}\lphi}
+\newcommand{\wphiuno}{W^{1}\lphiuno}
+\newcommand{\wphidos}{W^{1}\lphidos}
+\newcommand{\wphii}{W^{1}\lphii}
+\newcommand{\wphiet}{W^{1}\ephi_T}
+\newcommand{\wphie}{W^{1}\ephi}
+\newcommand{\sobnor}{\|_{W^{1}\lphi}}
+\newcommand{\domi}{\mathcal{E}^{\Phi}_d(\lambda)}
+\newcommand{\domiuno}{\mathcal{E}^{\Phi_1}_d(\lambda)}
+\newcommand{\domidos}{\mathcal{E}^{\Phi_2}_d(\lambda)}
+\newcommand{\domii}{\mathcal{E}^{\Phi_i}_d(\lambda)}
+\newcommand{\domin}{\mathcal{E}^{\Phi_n}_d(\lambda)}
+\renewcommand{\b}[1]{\boldsymbol{#1}}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\ccdot}{\b{\cdot}}
+\renewcommand{\leq}{\leqslant} 
+\renewcommand{\geq}{\geqslant} 
+\newcommand{\epsi}{E^{\Psi}}
+\newcommand{\franja}[2]{\Pi(\ephi_{#2},#1)} 
+
+
+\newcounter{example}
+
+\setcounter{example}{1}
+
+
+\newenvironment{example}{\noindent\textit{Example} \arabic{example}.}{\addtocounter{example}{1}}
+
+
+
+
+\begin{document}
+
+$d_1,d_2,d_3$ positive integer. 
+$\Omega\subset\rr^{d_1}$, $m(\Omega)<\infty$ y $f:\Omega\times \rr^{d_2}\to\rr^{d_3}$.
+
+For Orlicz Spaces we will use the Orlicz norm.
+
+
+Nemitski operator
+\[\b{f}u(x)=f(x,u(x)\]
+maps  $\rr^{d_2}$-valued functions defined on $\Omega\subset\rr^{d_1}$ into   
+$\rr^{d_3}$-valued funcitions defined on $\Omega\subset\rr^{d_1}$.  Measurability 
+seems follows the same lines that \cite[p. 349]{krasnosel2011integral}.???
+
+Let $\Phi_1:\rr^{d_2}\to\rr$ and $\Phi_2:\rr^{d_3}\to\rr$  be anisotropic $N$-functions. 
+
+Poner enunciado Theorem similar to \cite[Lemma 17.1]{KR}
+
+
+Let $u\in\franja{r}{d_2}$ be. Adapting  the \cite[Prop. 3, p. 92-93]{rao1991theory} 
+to $\rr^d$-valued functions (see also \cite{} By \cite[Th. 5.5]{schappacher2005notion}) 
+(???) we obtain $\|u_0\|_{\lphi{\Omega}{d_2}}<r$ where $u_0=u-\chi_A u$ for certain 
+set $A\subset\Omega$. 
+
+
+
+ \bibliographystyle{plain} 
+ \bibliography{biblio}
+
+
+\end{document}
