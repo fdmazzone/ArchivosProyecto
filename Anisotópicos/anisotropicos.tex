@@ -68,7 +68,7 @@
 % \newcommand{\ephidos}{E^{\Phi_2}}
 % \newcommand{\ephin}{E^{\Phi_n}}
 % \newcommand{\ephii}{E^{\Phi_i}}
-% \newcommand{\claseor}{C^{\Phi}}
+\newcommand{\claseor}[2]{\tilde{L}^{\Phi}(#1,\rr^{#2})}
 % \newcommand{\wphi}{W^{1}\lphi}
 % \newcommand{\wphiuno}{W^{1}\lphiuno}
 % \newcommand{\wphidos}{W^{1}\lphidos}
@@ -89,6 +89,7 @@
 % \renewcommand{\geq}{\geqslant} 
 % \newcommand{\epsi}{E^{\Psi}}
 \newcommand{\franja}[2]{\Pi(\ephi_{#2},#1)} 
+
 
 
 \newcounter{example}
@@ -140,11 +141,23 @@ Deber \#2 completar otros enunciados
 \end{proof}
 
 
-Deber #3  Acotación y continuidad
+Deber \#3  Acotacion y continuidad
 
 
-Deber #4   Nemitsky asociado a $f=\Phi'$. 
+Deber \#4   Nemitsky asociado a $f=\Phi'$. 
 
+
+
+\begin{lem}[Lemma 9.1 KR] Suppose that $d\geq 1$ and 
+$\|u\|_{L^{\Phi}(\Omega,\rr^d)}\leq 1$. Then $v(x)=\nabla \Phi(u(x))$ belong to 
+$\tilde{L}^{\Psi}(\Omega,\rr^d)$ and   $\rho_{\Psi}(v)\leq 1$.
+
+\end{lem}
+\begin{proof} Sale igual, sólo hay que evitar escribir módulos
+ 
+\end{proof}
+
+El Lemma 9.2 KR sale sin cambios. 
 
 
  \bibliographystyle{plain} 
