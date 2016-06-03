@@ -1,4 +1,5 @@
-\documentclass[twoside]{elsarticle}
+\documentclass[twoside]{article}
+
 
 
 
@@ -22,6 +23,7 @@
 \usepackage{adjustbox}
 \usepackage{hyperref}
 \usepackage{mathtools}
+\usepackage{authblk}
 
 \mathtoolsset{showonlyrefs}
 
@@ -76,44 +78,31 @@
 
 \newenvironment{example}{\noindent\textit{Example} \arabic{example}.}{\addtocounter{example}{1}}
 
+\title{Periodic solutions of
+Euler-Lagrange equations with sublinear potentials   in an Orlicz-Sobolev space setting}
 
 
-\journal{Journal of Mathematical Analysis and Applications}
+\author{Sonia Acinas\thanks{Partially supported by a  UNSL grant PROICO 30412, UNRC grant number 18/C417  and SCyT-FCEyN-UNLPam grant number PI67(M)}\\
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
+Universidad Nacional de La Pampa\\
+(6300) Santa Rosa, La Pampa, Argentina\\
+sonia.acinas@gmail.com\\
+\vspace{3mm}
+Fernando D. Mazzone \thanks{The author is partially supported by a UNRC grant number 18/C417 and SCyT-FCEyN-UNLPam grant number PI67(M).}\\
+\vspace{3mm}
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
+Universidad Nacional de R\'{i}o Cuarto\\
+(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
+fmazzone@exa.unrc.edu.ar\\}
+
+\date{}
+
+
+
 
 \begin{document}
 
-\begin{frontmatter}
-\title{Periodic solutions of
-Euler-Lagrange equations with sublinear pontentials   in an Orlicz-Sobolev space setting}
-
-
-
-\author[unlpam]{S. ~Acinas \corref{corSonia}\fnref{fn1}}
-\ead{sonia.acinas@gmail.com}
-
-\author[unrc]{F. ~Mazzone \corref{corFer}\fnref{fn2}}
-\ead{ fmazzone@exa.unrc.edu.ar  }
-
-
-\cortext[corFer]{Principal correspondig author }
-
-\cortext[corSonia]{Correspondig author}
-
-\fntext[fn1]{Instituto
- de Matem\'atica Aplicada San Luis (CONICET-UNSL)
-,UNLPam}
-
-\fntext[fn2]{CONICET,UNRC,UNLPam}
-
-
-
-\address[unlpam]{Universidad Nacional de La Pampa,
-(6300) Santa Rosa, La Pampa, Argentina.  }
-
-\address[unrc]{Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales,
-Universidad Nacional de R\'{i}o Cuarto,
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina. }
-
+\maketitle
 
 
 
@@ -126,11 +115,15 @@ In this paper, we obtain existence results of periodic solutions of hamiltonian 
 We employ the direct method of calculus of variations and we consider  a potential  function $F$ satisfying the inequality
 $|\nabla F(t,x)|\leq b_1(t) \Phi_0'(|x|)+b_2(t)$, with  $b_1, b_2\in L^1$ and  certain $N$-functions $\Phi_0$.
 \end{abstract}
-\begin{keyword}
-Periodic Solution \sep Orlicz-Sobolev Spaces \sep  Euler-Lagrange  \sep $N$-function   \sep Critical Points.
-\end{keyword}
+% \begin{keyword}
+% Periodic Solution \sep Orlicz-Sobolev Spaces \sep  Euler-Lagrange  \sep $N$-function   \sep Critical Points.
+% \end{keyword}
 
-\end{frontmatter}
+
+
+
+
+
 
 
 
@@ -922,8 +915,6 @@ In conclusion, the system \eqref{ProbPrin-gral} has solution for the Lagrangian 
 
 
 
-\section*{Acknowledgments}
-The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant PROICO 30412.
 
 
 
