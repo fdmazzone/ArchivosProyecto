@@ -1,4 +1,5 @@
-\documentclass[twoside]{elsarticle}
+\documentclass[12pt,twoside]{article}
+
 
 
 %\usepackage{hyperref}
@@ -19,6 +20,7 @@
 \usepackage{adjustbox}
 \usepackage{hyperref}
 \usepackage{mathtools}
+\usepackage{authblk}
 
 \mathtoolsset{showonlyrefs}
 
@@ -73,44 +75,31 @@
 
 \newenvironment{example}{\noindent\textit{Example} \arabic{example}.}{\addtocounter{example}{1}}
 
+\title{Periodic solutions of
+Euler-Lagrange equations with sublinear potentials   in an Orlicz-Sobolev space setting}
 
 
-\journal{Journal of Mathematical Analysis and Applications}
+\author{Sonia Acinas\thanks{Partially supported by a  UNSL grant PROICO 30412, UNRC grant number 18/C417  and SCyT-FCEyN-UNLPam grant number PI67(M)}\\
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
+Universidad Nacional de La Pampa\\
+(6300) Santa Rosa, La Pampa, Argentina\\
+sonia.acinas@gmail.com\\
+\vspace{3mm}
+Fernando D. Mazzone \thanks{The author is partially supported by a UNRC grant number 18/C417 and SCyT-FCEyN-UNLPam grant number PI67(M).}\\
+\vspace{3mm}
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
+Universidad Nacional de R\'{i}o Cuarto\\
+(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
+fmazzone@exa.unrc.edu.ar\\}
+
+\date{}
+
+
+
 
 \begin{document}
 
-\begin{frontmatter}
-\title{Periodic solutions of
-Euler-Lagrange equations with sublinear pontentials   in an Orlicz-Sobolev space setting}
-
-
-
-\author[unlpam]{S. ~Acinas \corref{corSonia}\fnref{fn1}}
-\ead{sonia.acinas@gmail.com}
-
-\author[unrc]{F. ~Mazzone \corref{corFer}\fnref{fn2}}
-\ead{ fmazzone@exa.unrc.edu.ar  }
-
-
-\cortext[corFer]{Principal correspondig author }
-
-\cortext[corSonia]{Correspondig author}
-
-\fntext[fn1]{Instituto
- de Matem\'atica Aplicada San Luis (CONICET-UNSL)
-,UNLPam}
-
-\fntext[fn2]{CONICET,UNRC,UNLPam}
-
-
-
-\address[unlpam]{Universidad Nacional de La Pampa,
-(6300) Santa Rosa, La Pampa, Argentina.  }
-
-\address[unrc]{Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales,
-Universidad Nacional de R\'{i}o Cuarto,
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina. }
-
+\maketitle
 
 
 
@@ -123,11 +112,15 @@ In this paper, we obtain existence results of periodic solutions of hamiltonian 
 We employ the direct method of calculus of variations and we consider  a potential  function $F$ satisfying the inequality
 $|\nabla F(t,x)|\leq b_1(t) \Phi_0'(|x|)+b_2(t)$, with  $b_1, b_2\in L^1$ and  certain $N$-functions $\Phi_0$.
 \end{abstract}
-\begin{keyword}
-Periodic Solution \sep Orlicz-Sobolev Spaces \sep  Euler-Lagrange  \sep $N$-function   \sep Critical Points.
-\end{keyword}
+% \begin{keyword}
+% Periodic Solution \sep Orlicz-Sobolev Spaces \sep  Euler-Lagrange  \sep $N$-function   \sep Critical Points.
+% \end{keyword}
 
-\end{frontmatter}
+
+
+
+
+
 
 
 
@@ -917,16 +910,107 @@ In conclusion, the system \eqref{ProbPrin-gral} has solution for the Lagrangian 
 
 
 
+\def\cprime{$'$}
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{mawhin2010critical}
+J.~{M}awhin, M.~{W}illem, Critical point theory and {H}amiltonian systems,
+  Springer-Verlag, New York, 1989.
+
+\bibitem{tang1995periodic}
+C.-L. Tang, Periodic solutions of non-autonomous second-order systems with
+  $\gamma$-quasisubadditive potential, Journal of Mathematical Analysis and
+  Applications 189~(3) (1995) 671--675.
+
+\bibitem{tang1998periodic}
+C.-L. Tang, Periodic solutions for nonautonomous second order systems with
+  sublinear nonlinearity, Proc. Amer. Math. Soc. 126~(11) (1998) 3263--3270.
+
+\bibitem{wu1999periodic}
+X.-P. Wu, C.-L. Tang, Periodic solutions of a class of non-autonomous
+  second-order systems, J. Math. Anal. Appl. 236~(2) (1999) 227--235.
+
+\bibitem{tang2001periodic}
+C.~L. Tang, X.-P. Wu, Periodic solutions for second order systems with not
+  uniformly coercive potential, J. Math. Anal. Appl. 259~(2) (2001) 386--397.
+
+\bibitem{zhao2004periodic}
+F.~Zhao, X.~Wu, Periodic solutions for a class of non-autonomous second order
+  systems, J. Math. Anal. Appl. 296~(2) (2004) 422--434.
+
+\bibitem{Tian2007192}
+Y.~Tian, W.~Ge, Periodic solutions of non-autonomous second-order systems with
+  a {$p$}-{L}aplacian, Nonlinear Anal. 66~(1) (2007) 192--203.
+
+\bibitem{tang2010periodic}
+X.~Tang, X.~Zhang, Periodic solutions for second-order {H}amiltonian systems
+  with a {$p$}-{L}aplacian, Ann. Univ. Mariae Curie-Sk\l odowska Sect. A 64~(1)
+  (2010) 93--113.
+
+\bibitem{ABGMS2015}
+S.~{A}cinas, L.~{B}uri, G.~Giubergia, F.~Mazzone, E.~Schwindt, Some existence
+  results on periodic solutions of {E}uler-{L}agrange equations in an
+  {O}rlicz-{S}obolev space setting, Nonlinear Analysis, TMA. 125 (2015) 681 --
+  698.
+
+\bibitem{zhao2005existence}
+F.~Zhao, X.~Wu, Existence and multiplicity of periodic solution for
+  non-autonomous second-order systems with linear nonlinearity, Nonlinear
+  Analysis: Theory, Methods \& Applications 60~(2) (2005) 325--335.
+
+\bibitem{adams_sobolev}
+R.~Adams, J.~Fournier, Sobolev spaces, Elsevier/Academic Press, Amsterdam,
+  2003.
+
+\bibitem{KR}
+M.~A. Krasnosel{\cprime}ski{\u\i}, J.~B. Ruticki{\u\i}, Convex functions and
+  {O}rlicz spaces, P. Noordhoff Ltd., Groningen, 1961.
+
+\bibitem{rao1991theory}
+M.~M. Rao, Z.~D. Ren, Theory of {O}rlicz spaces, Vol. 146, Marcel Dekker, Inc.,
+  New York, 1991.
+
+\bibitem{M}
+L.~Maligranda, Orlicz spaces and interpolation, Vol.~5 of Semin\'arios de
+  Matem\'atica [Seminars in Mathematics], Universidade Estadual de Campinas,
+  Departamento de Matem\'atica, Campinas, 1989.
+
+\bibitem{Gustavsson1977}
+J.~Gustavsson, J.~Peetre, \href{http://eudml.org/doc/218150}{Interpolation of
+  orlicz spaces}, Studia Mathematica 60~(1) (1977) 33--59.
+\newline\urlprefix\url{http://eudml.org/doc/218150}
+
+\bibitem{fiorenza1997indices}
+A.~Fiorenza, M.~Krbec, Indices of {O}rlicz spaces and some applications,
+  Commentationes Mathematicae Universitatis Carolinae 38~(3) (1997) 433--452.
+
+\bibitem{hudzik2000amemiya}
+H.~Hudzik, L.~Maligranda, Amemiya norm equals {O}rlicz norm in general, Indag.
+  Math. (N.S.) 11~(4) (2000) 573--585.
+
+\bibitem{xu2007some}
+B.~Xu, C.-L. Tang, Some existence results on periodic solutions of ordinary
+  {$p$}-{L}aplacian systems, J. Math. Anal. Appl. 333~(2) (2007) 1228--1236.
+
+\bibitem{zhu2012analysis}
+K.~Zhu, Analysis on Fock Spaces, Graduate Texts in Mathematics, Springer, 2012.
+
+\bibitem{Conway1977}
+J.~B. Conway, A Course in Functional Analysis, Springer, USA, 1977.
+
+\end{thebibliography}
 
 
-\section*{Acknowledgments}
-The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant PROICO 30412.
 
 
 
-
- \bibliographystyle{elsarticle-num}
- \bibliography{biblio}
+ %\bibliographystyle{elsarticle-num}
+ %\bibliography{biblio}
 
 
 \end{document}
