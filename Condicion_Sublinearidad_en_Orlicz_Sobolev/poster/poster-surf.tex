@@ -1,0 +1,405 @@
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{grffile}
+\mode<presentation>{\usetheme{I6pd2}}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+%\usepackage{times}\usefonttheme{professionalfonts}  % obsolete
+%\usefonttheme[onlymath]{serif}
+%\boldmath
+\usepackage[orientation=portrait,width=900mm,height=1200mm,debug]{beamerposter}
+% change list indention level
+% \setdefaultleftmargin{3em}{}{}{}{}{}
+
+
+%\usepackage{snapshot} % will write a .dep file with all dependencies, allows for easy bundling
+
+\usepackage{array,booktabs,tabularx}
+\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+\newcommand{\pphantom}{\textcolor{ta3aluminium}} % phantom introduces a vertical space in p formatted table columns??!!
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{exmp}[thm]{Example}
+\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{figures/}}
+ 
+\title{\huge Métodos Variacionales y Sistemas Hamiltonianos
+\vspace{1cm}\\
+{Jornadas de Ciencia y Técnica 2016, UNLPam\\
+20 años de las Jornadas de Ciencia y Técnica}\\
+}
+\author{Fernando Mazzone${}^{(1,2,3)}$, Sonia Acinas${}^{(1)}$, Lorenzo Sierras${}^{(1)}$, Stefanía Demarías${}^{(2,3)}$ y Leopoldo Buri${}^{(2)}$ }
+\institute[UNRC]{ 
+ ${}^{(1)}$ Dpto. de Matemática, Facultad de Ciencias Exactas y Naturales, Universidad Nacional de La Pampa.\\
+ ${}^{(2)}$ Depto. de Matemática. Universidad Nacional de R\'{\i}o Cuarto.\\
+${}^{(3)}$ CONICET
+}
+\date[14 de Octubre de 2016]{ Jornadas de Ciencia y Técnica 2016}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\columnheight}
+\setlength{\columnheight}{105cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\newcommand{\orlnor}{\|_{L^{\Phi}}}
+\newcommand{\lurnor}{\|^{*}_{L^{\Phi}}}
+\newcommand{\linf}{\|_{L^{\infty}}}
+\newcommand{\lphi}{L^{\Phi}}
+\newcommand{\lpsi}{L^{\Psi}}
+\newcommand{\ephi}{E^{\Phi}}
+\newcommand{\claseor}{C^{\Phi}}
+\newcommand{\wphi}{W^{1}\lphi}
+\newcommand{\sobnor}{\|_{W^{1}\lphi}}
+\newcommand{\domi}{\mathcal{E}^{\Phi}_d(\lambda)}
+\renewcommand{\b}[1]{#1}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\ccdot}{\b{\cdot}}
+\renewcommand{\leq}{\leqslant} 
+\newcommand{\epsi}{E^{\Psi}}
+
+
+
+\newcommand{\pro}{\operatornamewithlimits{\int\hspace{-4.6mm}{\diagup}}}
+\newcommand{\es}{\operatornamewithlimits{\hbox{ess sup }}}
+\newcommand{\dive}{\hbox{div }}
+
+
+
+\begin{frame}
+  \begin{columns}
+    % ---------------------------------------------------------%
+    % Set up a column
+    \begin{column}{.49\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.95\textwidth}  % tweaks the width, makes a new \textwidth
+          \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
+            % Since all columns are the same length, it is all nice and tidy.  You have to get the height empirically
+            % ---------------------------------------------------------%
+            % fill each column with content
+            \begin{block}{Ecuaciones de Euler-Lagrange}
+
+	      Muchos sistemas físicos se modelan con un sistema de ecuaciones del tipo
+	       \begin{equation}\label{ProbPrin}
+                    \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)
+              \end{equation}
+              donde $T>0$, $\b{u}:[0,T]\to\rr^d$ y la función   $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ se denomina \emph{Lagrangiano}.
+
+
+
+
+            \end{block}
+\begin{block}{Ejemplos}
+ \begin{itemize}
+  \item Las ecuaciones que gobiernan el movimiento de un cuerpo de masa $m$ sujeta a un  resorte son de la forma \eqref{ProbPrin} con $\mathcal{L}=m\frac{y^2}{2}+k\frac{x^2}{2}$. En este caso $x$ representa el desplazamiento de la masa  desde su posición de equilibrio.
+ \item Las ecuaciones que gobiernan el movimiento de una masa sujeta a un péndulo son de la forma \eqref{ProbPrin} con $\mathcal{L}=m\frac{y^2}{2}+\sqrt{\frac{g}{l}}\sin(x)$. En este caso $x$ representa el desplazamiento angular desde la vertical del péndulo.
+
+ \item Las ecuaciones que gobiernan el movimiento de $n$-cuerpos graves interactuando entre si a traves de sus campos gravitatorios son de la forma \eqref{ProbPrin} con
+ \[\mathcal{L}(t,x,y)=\frac12\sum_{i}^nm_i\|y_i\|^2+G\sum_{i<j}\frac{m_im_j}{\|x_i-x_j\|},\]
+ aquí $x=(x_1,\ldots,x_n)$ con $x_i(t)\in\mathbb{R}^3$ son las posiciones de los cuerpos.
+ \item En general las ecuaciones \eqref{ProbPrin} son características de sistemas mecánicos conservativos. Esto es, sistemas donde la energía total $E=T+U$, con $T$ la energía cinética y $U$ la energía potencial se conserva. En este caso $\mathcal{L}=T-U$.
+
+ \end{itemize}
+
+\end{block}
+
+
+  \begin{block}{Soluciones Periódicas}
+
+  Es importante conocer si los sistemas mecánicos tienen soluciones periódicas. Por ejemplo, si se trata del problema de los $n$-cuerpos esto es importante para la planificación de misiones espaciales.
+
+
+
+  Soluciones periódicas se hallan resolviendo las ecuaciones \eqref{ProbPrin} sujeta a las condiciones de contorno
+  \begin{equation}\label{eq:cond_contorno} u(0)-u(T)=u'(0)-u'(T)=0.\end{equation}
+
+  Vamos a presentar nuestros resultados en dos grupos: resultados de derivabilidad G\^ateaux y resultados de coeritividad. La semicontinuidad inferior de nuestras integrales de acción es obtenida de resultados generales que esencialmente ya existían en la literatura. 
+
+  \end{block}
+
+
+
+
+
+
+
+
+
+
+
+  \begin{block}{Objetivos-Metodología}
+  En este proyecto planeamos encontrar soluciones de \eqref{ProbPrin} sujeta a  \eqref{eq:cond_contorno} a través de métodos variacionales.
+
+  Esto se fundamenta en la observación de que las soluciones del problema de contorno
+  son putnos críticos de la \emph{integral de acción}
+              \begin{equation}\label{integral_accion}
+                I(\b{u})=\int_{0}^T \mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))\ dt.
+              \end{equation}
+
+  Un punto crítico es una función $u$ tal que cuando la integral de acción es perturbada infinitesimalmente $I(u+\epsilon v)$ la integral de acción cambia en un infinésimo menor al de la perturbación para toda función $v$ que satisface las condiciones de contorno. Esto es decir
+
+  \begin{equation}
+   \lim_{\epsilon\to 0}\frac{1}{\epsilon}\int_0^T(\mathcal{L}(t,u+\epsilon v,u'+\epsilon v')-\mathcal{L}(t,u,u'))dt=0.
+  \end{equation}
+
+Cuando el límite anterior existe (independientemente que de 0) y el resultado del límite es una función lineal y acotada $\Lambda$ de $v$. Se dice que $\Lambda$ es la  \textbf{derivada G\^ateaux} de $I$. Decir que $\lambda$ es función lineal y acotada  es afirmar que $\Lambda$ pertenece al espacio dual del espacio en el que consideremos a $u$.
+Un problema importante es hallar condiciones sobre $  \mathcal{L}$ para que $I$ tenga una derivada G\^ateaux.
+
+Hay una variedad muy grande métodos variacionales: método directo, método dual, Teorema punto silla de Rabinowitz, Teoría de Morse, Teoría de Leray-Schauder, Teoremas minimax, etc.
+
+En una primera etapa estamos investigando la aplicabilidad del método directo y el método dual a cierto tipo especial de Lagrangianos.
+
+ \end{block}
+
+ \begin{block}{El método directo}
+  Se basa en el hecho que los puntos extremos de $I$ son puntos críticos. Luego quisieramos elaborar condiciones que garanticen la existencia de puntos extremos, normalmente mínimos.
+
+ Las funciones $u$ deben pertencer a cierto espacio $X$ normado (Banach) de funciones.
+ El éxito del método radica en establecer la \textbf{semicontinuidad inferior} de $I$, estos que si $u_n\to u$ entonces
+
+ \[I(u)\leq \liminf_{n\to\infty}I(u_n),\]
+
+ y la  \textbf{coercitividad} de $I$, esto es
+
+ \[\lim_{\|u\|\to\infty} I(u)=\infty.\]
+
+
+
+ \end{block}
+
+
+ %         \vfill
+
+
+   \begin{block}{Lagrangianos, integrales de acción y sus dominios}
+Nuestro interés es estudiar Lagrangianos que satisfacen las siguientes condiciones estructurales
+ \begin{equation}\label{cotaL}
+                |\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right)
+              \end{equation}
+     \begin{equation}\label{cotaDxL}
+|D_{\b{x}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(b(t)+ \Phi\left(\frac{|\b{y}|}{\lambda}+f(t) \right)\right),
+\end{equation}
+  \begin{equation}\label{cotaDyL}
+|D_{\b{y}}\mathcal{L}(t,\b{x},\b{y})| &\leq a(|\b{x}|)\left(c(t)+ \varphi\left(\frac{|\b{y}|}{\lambda}+f(t)\right)  \right).
+\end{equation}
+
+Aquí hemos introducido varias entes nuevos, a saber
+
+              \begin{itemize}
+              \item $\lambda$ un número positivo
+
+              \item  $a:\mathbb{R}^+\to \mathbb{R}^+$ continua.
+
+              \item  $\Phi$ es una $N$-función. Este es un concepto algo técnico que remitimos a \cite{KR} para su tratamiento.
+
+              \item $b\in L^1([0,T])$, $c\in \lpsi$ y $f\in\ephi$, donde $\Psi$ es la $N$-función complementaria de $\Phi$ y $L^1$ es el espacio de Banach clásico de funciones integrables y $\lphi$, $\lpsi$ y $\ephi$ son espacios de Orlicz y ciertos subespacios de ellos (ver \cite{KR} ).
+
+              \item $f\in\ephi$.
+
+              \end{itemize}
+
+La idea de considerar la estructura anterior para los Lagrangianos se basa en que este tipo de estructura generaliza a la tratada previamente en la literatura y por nuestra experiencia previa tratando con $N$-funciones.
+
+Las condiciones de estructura \eqref{cotaL},\eqref{cotaDxL} y \eqref{cotaDyL} garantizan que nuestras integrales de acción tienen como dominios espacios de Sobolev-Orlicz \cite{adams_sobolev, ABGMS2015}.
+
+\end{block}
+
+            \vfill
+}
+\end{minipage}
+\end{beamercolorbox}
+\end{column}
+
+
+
+
+
+
+
+% ---------------------------------------------------------%
+    % end the column
+
+    % ---------------------------------------------------------%
+    % Set up a column
+    \begin{column}{.49\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.95\textwidth} % tweaks the width, makes a new \textwidth
+          \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
+            % Since all columns are the same length, it is all nice and tidy.  You have to get the height empirically
+            % ---------------------------------------------------------%
+            % fill each column with content
+
+
+      %      \vfill
+
+  \begin{block}{Critical points}
+
+
+Now we are in condition  to show that  solutions of  \eqref{ProbPrin} are
+critical points of $I$ on $\wphi_T$, where $\wphi_T$ denotes the subspace of $\wphi$ consisting of $T$-periodic functions.
+
+
+\begin{minipage}[T]{.9\textwidth}
+\begin{thm}\label{critpoint} Let $\b{u}\in\domi$ be  a $T$-periodic function. The following statements are equivalent:
+\begin{itemize}
+ \item\label{T1item3b} $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$.
+ \item  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is an absolutely continuous function and $\b{u}$ solves the following boundary value problem
+ \begin{equation}\label{ecualagran2}
+    \left\{%
+\begin{array}{ll}
+   \frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+    \b{u}(0)-\b{u}(T)=D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\dot{u}}(0))-D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=0.
+\end{array}%
+\right.
+\end{equation}
+\end{itemize}
+Moreover if $D_{\b{y}}\mathcal{L}(t,x,y)$ is $T$-periodic with respect to the variable $t$ and strictly convex with respect to $\b{y}$, then
+$D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\b{\dot{\b{u}}}}(0))-D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=0$ is equivalent to $\b{\dot{u}}(0)=\b{\dot{u}}(T)$.
+\end{thm}
+\end{minipage}
+\end{block}
+            \begin{block}{Coercivity}
+
+As usual, in order to establish coercivity of our action integral we need to suppose an adequate  bound from below of the lagrangian function. In this respect we assume that
+
+\begin{equation}\label{cota_inf}
+\mathcal{L}(t,\b{x},\b{y})\geq \alpha_0\Phi\left(\frac{|\b{y}|}{\Lambda}\right)+ F(t,\b{x}),
+\end{equation}
+where $\alpha_0,\Lambda>0$ and  $F:\rr\times\rr^d\to\rr$ is a Carath\'eodory function, i.e. $F(t,\b{x})$ is  measurable with respect to $t$ for every fixed  $\b{x}\in\rr^d$ and $F$ is continuous at $\b{x}$ for a.e. $t\in [0,T]$. We need to assume
+\begin{equation}\label{condA1} |F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for \,a.e. }t\in [0,T] \quad\text{and for every } \b{x}\in\rr^d,
+\end{equation}
+where $b_0\in L^1_1$.
+
+
+We say that $F$ satisfies the condition (A) if  $F(t,\b{x})$ is a Carath\'eo\-dory function, $F$ verifies \eqref{condA1} and $F$ is continuously differentiable with respect to $\b{x}$. Moreover, the next inequality holds
+\begin{equation}\label{condA2} |D_{\b{x}}F(t,\b{x})|\leq a(|\b{x}|)b_0(t),\quad\text{for a.e. }t\in [0,T] \text{ and for every }\b{x}\in\rr^d.
+\end{equation}
+
+We can show that the coercivity of the action integral $I$ is obtained if the functional
+\begin{equation}\label{func_phi}
+  J_{C,\nu}(\b{u}):= \rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)-C\|\b{u}\orlnor^{\nu},
+\end{equation}
+is coercive for $C,\nu>0$.
+
+
+
+
+ If $\Phi(x)=|x|^p/p$ then $J_{C,\nu}$ is clearly coercive for $\nu<p$. For more general $\Phi$ the situation is more interesting.
+
+
+\begin{minipage}[T]{.9\textwidth}
+\begin{lem}\label{lem_coer} Let $\Phi$ and $\Psi$ be complementary $N$-functions. Then:
+\begin{itemize}
+  \item If $C\Lambda<1$, then $J_{C,1}$ is coercive.
+
+  \item If $\Psi \in \Delta_2$ globally, then there exists a constant $\alpha_{\Phi}>1$ such that, for any $0<\mu<\alpha_{\Phi}$,
+\begin{equation}\label{coer_modular} \lim\limits_{\|\b{u}\orlnor \to \infty} \frac{\rho_{\Phi}\left(\frac{\b{u}}{\Lambda}\right)}{\|\b{u}\orlnor^{\mu}}=+\infty.
+\end{equation}
+In particular, the functional $J_{C,\mu}$ is coercive for every $C>0$ and  $0<\mu<a_{\Phi}$. The constant $\alpha_{\Phi}$ is one of the so-called \emph{ Matuszewska-Orlicz indices}.
+\item If $J_{C,1}$ is coercive with $C\Lambda>1$, then $\Psi \in \Delta_2$.
+\end{itemize}
+\end{lem}
+\end{minipage}
+
+\begin{minipage}[T]{.9\textwidth}
+\begin{thm}[Coercivity I]\label{coercitividad1}
+Let  $\mathcal{L}$ be a lagrangian function satisfying \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf} and \eqref{condA1}. We assume the following conditions:
+\begin{itemize}
+\item There exist a non negative function  $b_1 \in L^1_1$ and a constant $\mu>0$  such that for any $\b{x_1},\b{x_2}\in\rr^d$ and a.e. $t\in [0,T]$
+\begin{equation}\label{holder_cont}
+  \left| F(t,\b{x_2})- F(t,\b{x_1}) \right|\leq b_1(t)(1+|\b{x_2}-\b{x_1}|^{\mu}).
+\end{equation}
+We suppose that $\mu< \alpha_{\Phi}$,  with $\alpha_{\Phi}$ as in previous lemma, in the case that $\Psi\in\Delta_2$; and, we suppose $\mu=1$  if $\Psi$ is an  arbitrary $N$-function.
+\item
+\begin{equation}\label{propiedad1coercividad}
+\int_{0}^{T}F(t,\b{x})\ dt \rightarrow \infty \quad \hbox{as} \quad |\b{x}|\rightarrow \infty.
+\end{equation}
+\item\label{hipot_coer}  $\Psi\in\Delta_2$ or, alternatively,
+$\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$.
+\end{itemize}
+Then  the action integral $I$ is coercive.
+\end{thm}
+\end{minipage}
+
+\begin{minipage}[T]{.9\textwidth}
+
+We can formulate an alternative coercivity result. We need to mention  the following technical fact.
+
+\begin{lem}[Mawhin-Willem]\label{lema_pto_cri} Suppose that $F$ satisfies condition (A) and \eqref{propiedad1coercividad}, $F(t,\cdot)$ is  differentiable and convex  a.e. $t\in [0,T]$. Then, there exists $\b{x}_0\in\rr^d$ such that
+\begin{equation}\label{der_cero}
+ \int_0^T D_{\b{x}} F(t,\b{x}_0)\ dt=0.
+\end{equation}
+\end{lem}
+\end{minipage}
+
+\begin{minipage}[T]{.9\textwidth}
+\begin{thm}[Coercivity II]\label{segcoerthm}
+Let $\mathcal{L}$ be as in Theorem (Coercitivity I) and let $F$ be as in previous lemma. Moreover, assume that $\Psi\in\Delta_2$ or, alternatively  $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)a(|\b{x}_0|)\|b_0\|_{L^1} \Lambda<1$, with $a$ and $b_0$ as in \eqref{condA1} and $\b{x}_0\in\rr^d$  any point satisfying  \eqref{der_cero}. Then $I$ is coercive.
+
+\end{thm}
+\end{minipage}
+
+
+
+
+            \end{block}
+         %   \vfill
+            \begin{block}{Main results}
+
+% \begin{minipage}[T]{.9\textwidth}
+% \begin{thm}
+Let $\Phi$ and $\Psi$ be complementary $N$-functions.
+Suppose that the Cara\-th\'eodory function $\mathcal{L}(t,\b{x},\b{y})$ is strictly convex at $\b{y}$, $D_{\b{y}}\mathcal{L}$ is $T$-periodic with respect to $T$  and \eqref{cotaL}, \eqref{cotaDxL}, \eqref{cotaDyL}, \eqref{cota_inf}, \eqref{condA1} and \eqref{propiedad1coercividad} are satisfied. In addition, assume that some of the following statements hold (we recall the definitions and properties of $\alpha_0$, $b_1$, $\b{x}_0$ and $b_0$ from \eqref{cota_inf}, \eqref{holder_cont}, \eqref{der_cero} and \eqref{condA2} respectively):
+\begin{itemize}
+  \item\label{item1prin} $\Psi\in\Delta_2$ and  \eqref{holder_cont}.
+\item \eqref{holder_cont} and  $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$.
+
+\item\label{item3prin} $\Psi\in\Delta_2$,  $F$ satisfies condition (A) and  $F(t,\cdot)$ is  convex  a.e. $t\in [0,T]$.
+
+\item\label{item4prin} As previous  item  but with $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)a(|\b{x}_0|)\|b_0\|_{L^1} \Lambda<1$ instead of $\Psi\in\Delta_2$.
+
+\end{itemize}
+Then, problem \eqref{ProbPrin} has a solution.
+% \end{thm}
+% \end{minipage}
+
+                      \end{block}
+\begin{block}{Bibliografía}
+  \bibliographystyle{apalike}
+ \bibliography{biblio}
+\end{block}
+
+
+
+
+                      \vfill
+
+          }
+          % ---------------------------------------------------------%
+          % end the column
+        \end{minipage}
+      \end{beamercolorbox}
+    \end{column}
+    % ---------------------------------------------------------%
+    % end the column
+  \end{columns}
+
+\end{frame}
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% End:
