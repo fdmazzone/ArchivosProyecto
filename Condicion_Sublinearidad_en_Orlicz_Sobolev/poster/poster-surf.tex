@@ -30,23 +30,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{figures/}}
  
-\title{\huge Métodos Variacionales y Sistemas Hamiltonianos
+\title{\huge MÃ©todos Variacionales y Sistemas Hamiltonianos
 \vspace{1cm}\\
-{Jornadas de Ciencia y Técnica 2016 -  UNLPam\\
-20 años de las Jornadas de Ciencia y Técnica}\\
-\normalsize{Resolución CD N$^\circ$ 38/16 - Período: 01/01/2016-31/12/2018.}
+{Jornadas de Ciencia y TÃ©cnica 2016 -  UNLPam\\
+20 aÃ±os de las Jornadas de Ciencia y TÃ©cnica}\\
+\normalsize{ResoluciÃ³n CD FCEyN N$^\circ$ 38/16 - PerÃ­odo: 01/01/2016-31/12/2018.}
 }
 \author{{\bf Director}: Fernando Mazzone${}^{(1,2,3)}$.
 \\
-{\bf Integrantes}: Sonia Acinas${}^{(1)}$, Lorenzo Sierra${}^{(4)}$, Stefanía Demaría${}^{(2,3)}$ y Leopoldo Buri${}^{(2)}$. }
+{\bf Integrantes}: Sonia Acinas${}^{(1)}$, Lorenzo Sierra${}^{(4)}$, StefanÃ­a DemarÃ­a${}^{(2,3)}$ y Leopoldo Buri${}^{(2)}$. }
 \institute[UNRC]{ 
- ${}^{(1)}$ Dpto. de Matemática, Facultad de Ciencias Exactas y Naturales, Universidad Nacional de La Pampa.\\
- ${}^{(2)}$ Dpto. de Matemática, Universidad Nacional de R\'{\i}o Cuarto.\\
+ ${}^{(1)}$ Dpto. de MatemÃ¡tica, Facultad de Ciencias Exactas y Naturales, Universidad Nacional de La Pampa.\\
+ ${}^{(2)}$ Dpto. de MatemÃ¡tica, Universidad Nacional de R\'{\i}o Cuarto.\\
 ${}^{(3)}$ CONICET.
 \\
-${}^{(4)}$ Facultad de Ingeniería, Universidad Nacional de La Pampa.
+${}^{(4)}$ Facultad de IngenierÃ­a, Universidad Nacional de La Pampa.
 }
-\date[14 de Octubre de 2016]{ Jornadas de Ciencia y Técnica 2016}
+\date[14 de Octubre de 2016]{ Jornadas de Ciencia y TÃ©cnica 2016}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newlength{\columnheight}
@@ -94,11 +94,11 @@ ${}^{(4)}$ Facultad de Ingeniería, Universidad Nacional de La Pampa.
             % fill each column with content
             \begin{block}{Ecuaciones de Euler-Lagrange}
 
-	      Muchos sistemas físicos se modelan con un sistema de ecuaciones del tipo
+	      Muchos sistemas fÃ­sicos se modelan con un sistema de ecuaciones del tipo
 	       \begin{equation}\label{ProbPrin}
                     \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),\dot{u}(t))= D_{x}\mathcal{L}(t,u(t),\dot{u}(t)) \quad \hbox{en c.t.p.}\ t \in (0,T)
               \end{equation}
-              donde $T>0$, $u:[0,T]\to\rr^d$ y la función   $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ se denomina \emph{Lagrangiano}.
+              donde $T>0$, $u:[0,T]\to\rr^d$ y la funciÃ³n   $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ se denomina \emph{Lagrangiano}.
 
 
 
@@ -106,24 +106,24 @@ ${}^{(4)}$ Facultad de Ingeniería, Universidad Nacional de La Pampa.
             \end{block}
 \begin{block}{Ejemplos}
  \begin{itemize}
-  \item Las ecuaciones que gobiernan el movimiento de un cuerpo de masa $m$ sujeta a un  resorte son de la forma \eqref{ProbPrin} con $\mathcal{L}=m\frac{y^2}{2}+k\frac{x^2}{2}$. Aquí $x$ representa el desplazamiento de la masa  desde su posición de equilibrio.
- \item Las ecuaciones que gobiernan el movimiento de una masa sujeta a un péndulo son de la forma \eqref{ProbPrin} con $\mathcal{L}=m\frac{y^2}{2}+\sqrt{\frac{g}{l}}\sin(x)$. En este caso, $x$ representa el desplazamiento angular desde la vertical del péndulo.
- \item Las ecuaciones que gobiernan el movimiento de $n$-cuerpos graves interactuando entre sí a través de sus campos gravitatorios son de la forma \eqref{ProbPrin} con
+  \item Las ecuaciones que gobiernan el movimiento de un cuerpo de masa $m$ sujeta a un  resorte son de la forma \eqref{ProbPrin} con $\mathcal{L}=m\frac{y^2}{2}+k\frac{x^2}{2}$. AquÃ­ $x$ representa el desplazamiento de la masa  desde su posiciÃ³n de equilibrio.
+ \item Las ecuaciones que gobiernan el movimiento de una masa sujeta a un pÃ©ndulo son de la forma \eqref{ProbPrin} con $\mathcal{L}=m\frac{y^2}{2}+\sqrt{\frac{g}{l}}\sin(x)$. En este caso, $x$ representa el desplazamiento angular desde la vertical del pÃ©ndulo.
+ \item Las ecuaciones que gobiernan el movimiento de $n$-cuerpos graves interactuando entre sÃ­ a travÃ©s de sus campos gravitatorios son de la forma \eqref{ProbPrin} con
  \[\mathcal{L}(t,x,y)=\frac12\sum_{i}^nm_i\|y_i\|^2+G\sum_{i<j}\frac{m_im_j}{\|x_i-x_j\|},\]
  con $x=(x_1,\ldots,x_n)$ siendo $x_i(t)\in\mathbb{R}^3$ las posiciones de los cuerpos.
- \item En general, las ecuaciones \eqref{ProbPrin} son características de sistemas mecánicos conservativos. O sea, sistemas donde la energía total $E=T+U$ se conserva, con $T$ la energía cinética, $U$ la energía potencial y $\mathcal{L}=T-U$.
+ \item En general, las ecuaciones \eqref{ProbPrin} son caracterÃ­sticas de sistemas mecÃ¡nicos conservativos. O sea, sistemas donde la energÃ­a total $E=T+U$ se conserva, con $T$ la energÃ­a cinÃ©tica, $U$ la energÃ­a potencial y $\mathcal{L}=T-U$.
 
  \end{itemize}
 
 \end{block}
 
 
-  \begin{block}{Soluciones Periódicas}
+  \begin{block}{Soluciones PeriÃ³dicas}
 
-  Es importante saber si los sistemas mecánicos poseen soluciones periódicas. 
-	Por ejemplo, si se trata del problema de los $n$-cuerpos esta información resulta útil para la planificación de misiones espaciales.
+  Es importante saber si los sistemas mecÃ¡nicos poseen soluciones periÃ³dicas. 
+	Por ejemplo, si se trata del problema de los $n$-cuerpos esta informaciÃ³n resulta Ãºtil para la planificaciÃ³n de misiones espaciales.
 
-  Soluciones periódicas se hallan resolviendo las ecuaciones del sistema \eqref{ProbPrin} sujeto a las condiciones de contorno
+  Soluciones periÃ³dicas se hallan resolviendo las ecuaciones del sistema \eqref{ProbPrin} sujeto a las condiciones de contorno
   \begin{equation}\label{eq:cond_contorno} u(0)-u(T)=u'(0)-u'(T)=0.\end{equation}
 
     \end{block}
@@ -138,39 +138,39 @@ ${}^{(4)}$ Facultad de Ingeniería, Universidad Nacional de La Pampa.
 
 
 
-  \begin{block}{Objetivo y Metodología}
-  En este proyecto pretendemos encontrar soluciones de \eqref{ProbPrin} sujeto a  \eqref{eq:cond_contorno} a través de métodos variacionales.
+  \begin{block}{Objetivo y MetodologÃ­a}
+  En este proyecto pretendemos encontrar soluciones de \eqref{ProbPrin} sujeto a  \eqref{eq:cond_contorno} a travÃ©s de mÃ©todos variacionales.
 
-  Estos métodos se basan en la observación de que las soluciones del problema de contorno
-  son puntos críticos de la \emph{integral de acción}
+  Estos mÃ©todos se basan en la observaciÃ³n de que las soluciones del problema de contorno
+  son puntos crÃ­ticos de la \emph{integral de acciÃ³n}
               \begin{equation}\label{integral_accion}
                 I(u)=\int_{0}^T \mathcal{L}(t,u(t),\dot{u}(t))\ dt.
               \end{equation}
 
-  Un punto crítico es una función $u$ tal que cuando la integral de acción es perturbada infinitesimalmente $I(u+\epsilon v)$, la integral de acción cambia en un infinitésimo menor al de la perturbación para toda función $v$ que satisface las condiciones de contorno. O sea, 
+  Un punto crÃ­tico es una funciÃ³n $u$ tal que cuando la integral de acciÃ³n es perturbada infinitesimalmente $I(u+\epsilon v)$, la integral de acciÃ³n cambia en un infinitÃ©simo menor al de la perturbaciÃ³n para toda funciÃ³n $v$ que satisface las condiciones de contorno. O sea, 
 
   \begin{equation}
    \lim_{\epsilon\to 0}\frac{1}{\epsilon}\int_0^T(\mathcal{L}(t,u+\epsilon v,u'+\epsilon v')-\mathcal{L}(t,u,u'))dt=0.
   \end{equation}
 
-Cuando el límite anterior existe (independientemente que de 0) y el resultado del límite es una función lineal y acotada $\Lambda$ de $v$, se dice que $\Lambda$ es la  \textbf{derivada G\^ateaux} de $I$. Decir que $\Lambda$ es función lineal y acotada  es afirmar que $\Lambda$ pertenece al espacio dual del espacio en el que consideramos a $u$.
+Cuando el lÃ­mite anterior existe (independientemente que de 0) y el resultado del lÃ­mite es una funciÃ³n lineal y acotada $\Lambda$ de $v$, se dice que $\Lambda$ es la  \textbf{derivada G\^ateaux} de $I$. Decir que $\Lambda$ es funciÃ³n lineal y acotada  es afirmar que $\Lambda$ pertenece al espacio dual del espacio en el que consideramos a $u$.
 
 Un problema importante es hallar condiciones sobre $  \mathcal{L}$ para que $I$ tenga una derivada G\^ateaux.
 
-Hay una variedad muy grande de métodos variacionales: directo,  dual, teorema de punto silla de Rabinowitz, teoría de Morse, teoría de Leray-Schauder, teoremas minimax, etc.
+Hay una variedad muy grande de mÃ©todos variacionales: directo,  dual, teorema de punto silla de Rabinowitz, teorÃ­a de Morse, teorÃ­a de Leray-Schauder, teoremas minimax, etc.
 
-En una primera etapa estamos investigando la aplicabilidad del método directo y del método dual a cierto tipo especial de Lagrangianos.
+En una primera etapa estamos investigando la aplicabilidad del mÃ©todo directo y del mÃ©todo dual a cierto tipo especial de Lagrangianos.
 
 
 
 
  \end{block}
 %==============================================================================
- \begin{block}{Método directo}
-  Se basa en el hecho de que los puntos extremos de $I$ son puntos críticos. 
-	Es así que, pretendemos determinar condiciones que garanticen la existencia de puntos extremos, normalmente mínimos.
+ \begin{block}{MÃ©todo directo}
+  Se basa en el hecho de que los puntos extremos de $I$ son puntos crÃ­ticos. 
+	Es asÃ­ que, pretendemos determinar condiciones que garanticen la existencia de puntos extremos, normalmente mÃ­nimos.
 
- El éxito del método radica en establecer: 
+ El Ã©xito del mÃ©todo radica en establecer: 
 \begin{itemize}
 \item \textbf{semicontinuidad inferior} de $I$, o sea, si $u_n\to u$ entonces
 % \[
@@ -190,8 +190,8 @@ $\lim_{\|u\|\to\infty} I(u)=\infty.$
  %         \vfill
 
 %===========================================================================
-   \begin{block}{Lagrangianos, integrales de acción y sus dominios}
-Nuestro interés es estudiar 
+   \begin{block}{Lagrangianos, integrales de acciÃ³n y sus dominios}
+Nuestro interÃ©s es estudiar 
 Lagrangianos que satisfacen las siguientes condiciones estructurales
  \begin{equation}\label{cotaL}
                 |\mathcal{L}(t,x,y)| \leq a(|x|)\left(b(t)+ \Phi\left(\frac{|y|}{\lambda}+f(t) \right)\right)
@@ -203,16 +203,16 @@ Lagrangianos que satisfacen las siguientes condiciones estructurales
 |D_{y}\mathcal{L}(t,x,y)| \leq a(|x|)\left(c(t)+ \varphi\left(\frac{|y|}{\lambda}+f(t)\right)  \right).
 \end{equation}
 
-Aquí hemos introducido varios entes nuevos, a saber
+AquÃ­ hemos introducido varios entes nuevos, a saber
 
               \begin{itemize}
-              \item $\lambda$ un número positivo.
+              \item $\lambda$ un nÃºmero positivo.
 
               \item  $a:\mathbb{R}^+\to \mathbb{R}^+$ continua.
 
-              \item  $\Phi$ es una $N$-función (este es un concepto  técnico y remitimos a \cite{KR} para su tratamiento) y $\varphi=\Phi'$.
+              \item  $\Phi$ es una $N$-funciÃ³n (este es un concepto  tÃ©cnico y remitimos a \cite{KR} para su tratamiento) y $\varphi=\Phi'$.
 
-              \item $b\in L^1([0,T])$, $c\in \lpsi$ y $f\in\ephi$, donde $\Psi$ es la $N$-función complementaria de $\Phi$ y $L^1$ es el espacio de Banach clásico de funciones integrables y $\lphi$, $\lpsi$ y $\ephi$ son espacios de Orlicz y ciertos subespacios de ellos (ver \cite{KR} ).
+              \item $b\in L^1([0,T])$, $c\in \lpsi$ y $f\in\ephi$, donde $\Psi$ es la $N$-funciÃ³n complementaria de $\Phi$ y $L^1$ es el espacio de Banach clÃ¡sico de funciones integrables y $\lphi$, $\lpsi$ y $\ephi$ son espacios de Orlicz y ciertos subespacios de ellos (ver \cite{KR} ).
 
               \item $f\in\ephi$.
 
@@ -220,13 +220,13 @@ Aquí hemos introducido varios entes nuevos, a saber
 
 Consideramos este tipo de estructura para los Lagrangianos porque generaliza  la tratada previamente en la literatura y por nuestra experiencia en el trabajo con $N$-funciones.
 
-Las condiciones de estructura \eqref{cotaL},\eqref{cotaDxL} y \eqref{cotaDyL} garantizan que nuestras integrales de acción tienen como dominios espacios de Sobolev-Orlicz \cite{adams_sobolev, ABGMS2015}.
+Las condiciones de estructura \eqref{cotaL},\eqref{cotaDxL} y \eqref{cotaDyL} garantizan que nuestras integrales de acciÃ³n tienen como dominios espacios de Sobolev-Orlicz \cite{adams_sobolev, ABGMS2015}.
 \end{block}
 
 \begin{block}{Algunos resultados}
 Presentaremos resultados de derivabilidad G\^ateaux y resultados de coercitividad. 
 
-La semicontinuidad inferior de las integrales de acción se obtiene a partir de resultados generales que esencialmente ya existen en la literatura. 
+La semicontinuidad inferior de las integrales de acciÃ³n se obtiene a partir de resultados generales que esencialmente ya existen en la literatura. 
 
 
 \end{block}
@@ -261,32 +261,7 @@ La semicontinuidad inferior de las integrales de acción se obtiene a partir de r
 
       %      \vfill
 %===========================PUNTOS CRITICOS================================
-  \begin{block}{Critical points?????}
-%
-%
-%Now we are in condition  to show that  solutions of  \eqref{ProbPrin} are
-%critical points of $I$ on $\wphi_T$, where $\wphi_T$ denotes the subspace of $\wphi$ consisting of $T$-periodic functions.
-%
-%
-%\begin{minipage}[T]{.9\textwidth}
-%\begin{thm}\label{critpoint} Let $\b{u}\in\domi$ be  a $T$-periodic function. The following statements are equivalent:
-%\begin{itemize}
- %\item\label{T1item3b} $I'(\b{u})\in\left( \wphi_T\right)^{\perp}$.
- %\item  $D_{\b{y}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))$ is an absolutely continuous function and $\b{u}$ solves the following boundary value problem
- %\begin{equation}\label{ecualagran2}
-    %\left\{%
-%\begin{array}{ll}
-   %\frac{d}{dt} D_{y}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t))= D_{\b{x}}\mathcal{L}(t,\b{u}(t),\b{\dot{u}}(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
-    %\b{u}(0)-\b{u}(T)=D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\dot{u}}(0))-D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=0.
-%\end{array}%
-%\right.
-%\end{equation}
-%\end{itemize}
-%Moreover if $D_{\b{y}}\mathcal{L}(t,x,y)$ is $T$-periodic with respect to the variable $t$ and strictly convex with respect to $\b{y}$, then
-%$D_{\b{y}}\mathcal{L}(0,\b{u}(0),\b{\b{\dot{\b{u}}}}(0))-D_{\b{y}}\mathcal{L}(T,\b{u}(T),\b{\dot{u}}(T))=0$ is equivalent to $\b{\dot{u}}(0)=\b{\dot{u}}(T)$.
-%\end{thm}
-%\end{minipage}
-\end{block}
+
 
 
 \begin{block}{Derivabilidad G\^ateaux}
@@ -302,6 +277,10 @@ D_y\mathcal{L}(t,u(t),u'(t))\cdot v'(t)
 \}\,dt.
 \]
 \end{block}
+
+De este resultado se infiere que los puntos crÃ­ticos de \eqref{integral_accion}
+son soluciÃ³n de \eqref{ProbPrin}.
+
 \end{minipage}
 \end{block}
 
@@ -312,7 +291,7 @@ D_y\mathcal{L}(t,u(t),u'(t))\cdot v'(t)
             \begin{block}{Coercitividad}
 Sea  $\mathcal{L}$ Lagrangiano que satisface \eqref{cotaL}, \eqref{cotaDxL} y \eqref{cotaDyL}.
 
-Además consideramos 
+AdemÃ¡s consideramos 
 \begin{equation}\label{cota_inf}
 \mathcal{L}(t,x,y)\geq \Phi\left(|y|\right)+ F(t,x),
 \end{equation}
@@ -323,7 +302,7 @@ Y supongamos  que
 \int_{0}^{T}F(t,x)\ dt \rightarrow \infty \quad \hbox{as} \quad |x|\rightarrow \infty.
 \end{equation}
 
-Entonces, la integral de acción $I$ es coercitiva si
+Entonces, la integral de acciÃ³n $I$ es coercitiva si
 
 \begin{minipage}[T]{.9\textwidth}
 \begin{block}{Teorema \cite{ABGMS2015}: Coercitividad I}\label{coercitividad1}
@@ -331,17 +310,17 @@ Entonces, la integral de acción $I$ es coercitiva si
 \item existen $b_0\in L^1([0,T])$ y $a:\mathbb{R}^+\to \mathbb{R}^+$ continua tales que 
 \begin{equation}\label{condA1} |F(t,x)|\leq a(|x|)b_0(t),\quad\text{en c.t.p. }t\in [0,T] \quad\text{y para cada } x\in\rr^d;
 \end{equation}
-\item existen una función no negativa  $b_1 \in L^1([0,T])$ y constantes $0<\mu<\alpha_{\Phi}$ 
+\item existen una funciÃ³n no negativa  $b_1 \in L^1([0,T])$ y constantes $0<\mu<\alpha_{\Phi}$ 
 tales que para cualquier  $x_1,x_2\in\rr^d$ y en c.t.p. $t\in [0,T]$
 \begin{equation}\label{holder_cont}
   \left| F(t,x_2)- F(t,x_1) \right|\leq b_1(t)(1+|x_2-x_1|^{\mu}),
 \end{equation}
 % con $\mu< \alpha_{\Phi}$,  
-%en el caso que $\Psi\in\Delta_2$; y,  $\mu=1$ si $\Psi$ es una $N$-función arbitraria;
+%en el caso que $\Psi\in\Delta_2$; y,  $\mu=1$ si $\Psi$ es una $N$-funciÃ³n arbitraria;
 \item\label{hipot_coer}  $\Psi\in\Delta_2$.
 %or, alternatively, $\alpha_0^{-1}T\Phi^{-1}\left(1/T\right)\|b_1\|_{L^1}\Lambda<1$.
 \end{itemize}
-%Entonces, la integral de acción $I$ es coercitiva.
+%Entonces, la integral de acciÃ³n $I$ es coercitiva.
 \end{block}
 \end{minipage}
 
@@ -365,7 +344,7 @@ tales que para cualquier  $x_1,x_2\in\rr^d$ y en c.t.p. $t\in [0,T]$
 
 
 
-\begin{block}{Herramientas para coercitividad????Conviene agregar esto????}
+\begin{block}{Herramientas para coercitividad}
 	\begin{minipage}[T]{.9\textwidth}
 	\begin{block}{Lema CM$\rho$: Coercitividad del modular $\rho_{\Phi}(u)$}
 	\label{lem_coer}
@@ -387,13 +366,13 @@ Rec\'iprocamente, si  \eqref{eq:coer_mod} vale para alguna $N$-funci\'on $\Phi_0
 
 
 
-\begin{block}{GPS: Dónde estamos y hacia dónde vamos}
+\begin{block}{GPS: DÃ³nde estamos y hacia dÃ³nde vamos}
 \begin{minipage}[T]{.9\textwidth}
-Estamos estudiando....
+
 \begin{itemize}
-\item Espacios de Orlicz anisotrópicos
-\item Método dual
-\item....
+\item Espacios de Orlicz anisotrÃ³picos. Nos interesa estudiar funciones con valores en $\rr^d$  en espacios normados cuya norma es disÃ­mil respecto a la direcciÃ³n  (anisotropÃ­a). Esto hemos visto que tiene aplicaciones al siguiente punto.
+\item MÃ©todo dual. Este mÃ©todo consiste en pasar las ecuaciones de Euler-Lagrange a ecuaciones Hamiltonianas, y considerar, para ellas, la llamada acciÃ³n dual . Este mÃ©todo provee soluciones del las ecuaciones originales (dualizaciÃ³n de Clarke). El mÃ©todo fue empleado con Ã©xito  en espacios de Sobolev $W^{1,p}$ (\cite{Tian2007192}). Queremos generalizar estos resultados.
+
 \end{itemize}
 \end{minipage}
 \end{block}
@@ -406,7 +385,7 @@ Estamos estudiando....
          %   \vfill
 				%=================================================MAIN RESULT=================================================
            
-\begin{block}{Bibliografía}
+\begin{block}{BibliografÃ­a}
   \bibliographystyle{apalike}
  \bibliography{biblio}
 \end{block}
