@@ -1,0 +1,600 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{amsmath, amsthm, amssymb, latexsym}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage[left=3cm,top=2.5 cm,right=2.8 cm,bottom=2.3cm]{geometry} 
+
+%\ProvidesPackage{thesis}
+%\ProvidesPackage{hepthesis}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{lem}[thm]{Lema}
+\newtheorem{prop}[thm]{Proposici\'on}
+\newtheorem{cor}[thm]{Corolario }
+\newtheorem{defi}[thm]{Definici\'on}
+
+\theoremstyle{remark}
+\newtheorem{rem}{Observaci\'on}
+\theoremstyle{remark}
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{propo}[thm]{Proposici\'on}
+\newtheorem{lema}[thm]{Lema}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\cc}{\mathbb{C}}
+\newcommand{\bb}{\mathcal{B}}
+
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\fnet}{\boldsymbol{f}}
+
+
+%\newtheorem{example}[thm]{Example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%======================Document============================================
+
+\numberwithin{equation}{section}
+
+\usepackage{graphicx}
+\graphicspath{%
+    {converted_graphics/}% inserted by PCTeX
+    {/}% inserted by PCTeX
+}
+\begin{document}
+\setlength{\baselineskip}{20pt}
+\newcommand{\sig}{\hbox{\normalfont sign}}
+\newcommand{\pro}{P_{\la}}
+\newcommand{\di}{\displaystyle}
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%TOP MATTER%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555
+    \title{ Espacios de Orlicz anisotr\'opicos vectoriales\\
+2016}
+    \author{Fernando y Sonia }
+  
+
+    \maketitle
+    \markboth{OAV-2016}
+{OAV-2106}
+
+\section{Funciones convexas}
+
+\begin{defi}
+Sea $\varphi$ una funci\'on de $\rr^n$ en $\rr$. Se dice que $\varphi$ es convexa si para cualquier
+$x, y \in \rr ^n$ y  $0<\lambda<1$ se verifica  la siguiente desigualdad:
+\[
+\varphi[ \lambda x + (1  - \lambda )y] 
+\leq
+\lambda \varphi(x) + (1 - \lambda) \varphi(y).
+\]
+Si $\varphi(0)=0$, entonces $\varphi(\lambda x)\leq \lambda \varphi(x)$ si $0\leq \lambda\leq 1$ y $\varphi(\lambda x)\geq \lambda \varphi(x)$ si $\lambda \geq 1$.
+\end{defi}
+
+\begin{defi}
+Sea $\varphi$ una funci\'on no trivial de $\rr^n$ en $[0,\infty]$. Se dice que $\varphi$ es coercitiva si y s\'olo si $\lim\limits_{|x|\to \infty}\frac{\varphi(x)}{|x|}=\infty$.
+\end{defi}
+
+\begin{defi}
+Sea $\varphi$ una funci\'on convexa de $\rr^n$ en $[0,\infty]$. La conjugada (de Fenchel??? se llamar\'a as\'i???) $\varphi^*$ de $\varphi$ est\'a dada por
+\[
+\begin{split}
+\varphi^*:\rr^n\to [0,\infty]
+\\
+\varphi^*(x)=\sup\limits_{x\in \rr^n}\{ \langle x^*,x \rangle-\varphi(x)  \}
+\end{split}
+\]
+\end{defi}
+La desigualdad de Fenchel/Young??? se satisface para todo $x,x^* \in \rr^n$ y dice 
+\[
+\langle x,x^*\rangle \leq \varphi(x)+\varphi^*(x^*)
+\]
+
+Por Aubin, Thm. 4.3, p. 63 (chequear), para una funci\'on $\varphi$ y $x \in \rr^n$ tal que $\varphi(x)<\infty$ es posible encontrar $x^*\in \rr^n$ tal que 
+\[
+\langle x,x^*\rangle = \varphi(x)+\varphi^*(x^*)
+\]
+
+\begin{defi}
+Una funci\'on no trivial  $\varphi$ de $\rr^n$ en $\rr$ se dice semicontinua inferior d\'ebil en $x_0$ si 
+\[
+\varphi(x_0)\leq \liminf\limits_{x\to x_0} \varphi(x)
+\]
+\end{defi}
+
+La funci\'on  $\varphi$ se dice semicontinua inferior, si $\varphi$ es semicontinua inferior en cada punto de $x\in\rr^n$.
+\begin{thm}
+Sea $\varphi$ no trivial, convexa de $\rr^n$ en $[0,\infty]$. Entonces son equivalentes:
+\begin{enumerate}
+\item $\varphi$ es acotada sobre un subconjunto abierto de $\rr^n$,
+\item $\varphi$ es localmente Lipschitz en el interior del dominio efectivo de $\varphi$, o sea, sobre
+el interior de $Dom(\varphi)=\{x \in \rr^n: \varphi(x)<\infty\}$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof} 
+Chequear prueba en Aubin, Thm 2.1, p. 25.
+\end{proof}
+
+Notemos que si $\varphi$ es acotada sobre subconjuntos acotados de $\rr^n$, entonces $Dom(\varphi)=\rr^n$ y $\varphi$ es continua en $\rr^n$.
+
+\begin{thm}
+Sea $\varphi$ una funci\'on no trivial, convexa y semicontinua inferior de $\rr^n$ en $[0,\infty]$ y $\varphi^*$ la conjugada de Fenchel de $\varphi$. Son equivalentes:
+\begin{enumerate}
+\item $\varphi$ es acotada sobre subconjuntos acotados de $\rr^n$,
+\item $\varphi^*$ es coercitiva.
+\end{enumerate}
+\end{thm}
+
+
+\begin{proof}
+Gudrun p.360 para espacios de Banach gral.
+\end{proof}
+
+Las propiedades de crecimiento de funciones convexas $\varphi$ son importantes en la dualidad, reflexividad o separabilidad de espacios de Orlicz a valores vectoriales.  Las condiciones de crecimiento m\'as importantes que son las condiciones $\Delta_2$ y $\nabla_2$ aseguran que la funci\'on convexa $\varphi$ puede ser comparada con las funciones $\varphi_p$ donde $\varphi_p(x)=|x|^p$ para $p>1$. En la teor\'ia cl\'asica de espacios de Orlicz, este resultado se encuentra en la Prop. 12 de Rao. En el caso de $\rr^n$, prueba se encuentra en Desch. CHEQUEAR!!!!
+
+
+\begin{defi}
+Sea $\varphi$ una funci\'on de $\rr^n$ a $[0,\infty]$.
+
+La funci\'on $\varphi$ se dice que satisface la condici\'on $\Delta_2$ si existen $L>1$ y $M\geq 0$ tal que 
+$\varphi(2x)\leq L \varphi(x)$ para todo $x \in \rr^n$ con $|x|\geq M$.
+
+La funci\'on $\varphi$ se dice que satisface la condici\'on $\nabla_2$ si existen $l>1$ y $M\geq 0$ tal que 
+$\varphi(x)\leq \frac{1}{2l} \varphi(\frac{x}{l})$ para todo $x \in \rr^n$ con $|x|\geq M$.
+\end{defi}
+
+Hay una relaci\'on muy importante entre las condiciones de crecimiento de $\varphi$ y su conjungada de Fenchel $\varphi^*$. 
+Para funciones convexas $\varphi:\rr\to [0,\infty)$ las relaciones est\'an bien estudiadas en RAO. 
+En DESCH (buscarlo!!!), se prueba el siguiente resultado.
+
+\begin{rem}
+Sea $\varphi:\rr^n  \to [0,\infty]$ y sea $\varphi^*$ su conjugada de Fenchel.
+Sean $\varphi$ y $\varphi^*$ coercitivas. Entonces, 
+$\varphi \in \Delta_2$ si y s\'olo si $\varphi^* \in \nabla_2$.
+\end{rem}
+
+
+\section{Espacios de Orlicz}
+Notamos con $\mathcal{M}:=\mathcal{M}([0,T],\rr^n)$  el conjunto de todas las funciones medibles definidas sobre $[0,T]$ con valores en $\mathbb{R}^n$ y escribimos $u=(u_1,\dots,u_n)$ for  $u\in \mathcal{M}$. 
+
+Definimos el espacio de Orlicz
+\[
+L^{\Phi}(\rr^n)=\{ u \in \mathcal{M}: \exists \lambda>0, \int_0^T \Phi(\lambda^{-1}u)\,dx<\infty  \}
+\]
+A continuaci\'on definimos la clase de Orlicz $C^{\Phi}=C^{\Phi}([0,T],\rr^n)$ del siguiente modo
+\[
+C^{\Phi}:=\{u \in L^{\Phi}(\rr^n):\int_0^T \Phi(u)<\infty\}
+\]
+Para $u \in L^{\Phi}(\rr^n)$ definimos
+\[
+\| u \|_{L^{\Phi}}=\inf\{   \lambda>0:\int_0^T \Phi(\lambda^{-1}u)\,dx\leq 1\}
+\]
+En la teor\'ia cl\'asica $\|\cdot\|_{L^{\Phi}}$ es llamada norma de Luxemburgo de $u$.
+
+\begin{thm}
+$\|\cdot\|_{L^{\Phi}}$ es semicontinua inferior, o sea, para cada sucesi\'on $\{u_n\}_{n\in \nn}\subseteq L^{\Phi}(\rr^n)$ que converge en c.t.p.a alguna funci\'on $u \in L^{\Phi}(\rr^n)$ se tiene que 
+\[
+\|u\|_{L^{\Phi}}\leq \liminf \limits_{n \to \infty} \| u_n\|_{L^{\Phi}}
+\]
+\end{thm}
+
+\begin{proof}
+La prueba para el caso cl\'asico est\'a en \cite[Prop. 4, pp. 56-57]{RR91}. Se supone que sale con modificaciones menores CHEQUEAR!!!!!!!
+\end{proof}
+
+
+\begin{thm}
+$L^{\Phi}(\rr^n)$ es un espacio lineal si y s\'olo si $\Phi \in \Delta_2$.
+\end{thm}
+
+\begin{proof}
+$\Rightarrow)$  Sigue de \cite[Thm. 2, pp. 46-47]{RR91}. Y, la otra parte sale como en el Gudrum sin necesidad de aclarar que la medida es difusa ni que  [0,T] tiene medida finita. 
+\end{proof}
+
+
+Los siguientes resultados siguen las consideraciones de \cite[Sub-cap 4]{skaff1969}.
+
+\begin{thm}
+Si $E\in \mathcal{A}$,  $|E|>0$ y $\Phi \in \Delta_2$. Entonces existe $u \in C^{\Phi}$ tal que $\beta u \notin L^{\Phi}(\rr^n)$ para todo $\beta>1$.
+\end{thm}
+
+\begin{cor}
+Suspongamos que $\Phi \notin \Delta_2$, $E \in \mathcal{A}$, $|E|>0$. Entonces existe $u \in L^{\Phi}(\rr^n)$ tal que
+$\beta u \in C^{\Phi}$ para todo $0\leq \beta <1$ y $\beta u \notin C^{\Phi}$ para todo $\beta \geq 1$. 
+\end{cor}
+
+\section{Normas absolutamente continuas}
+
+\begin{defi}
+Sea $\{u_n\}\subseteq L^{\Phi}(\rr^n)$, $u \in L^{\Phi}(\rr^n)$. Decimos que $u_n$ converge mon\'otonamente a $u$ si existe una sucesi\'on $\{\alpha_n\}_{n \in \nn}\in L^1([0,T],\rr)$ con $0\leq \alpha_n(t)\leq \alpha_{n+1}(t)\leq 1$, $\alpha_n \to 1$ en c.t.p y $u_n(t)=\alpha_n(t)u(t)$.
+\end{defi}
+
+
+
+\begin{lem}
+Sea $\Phi \in \Delta_2$ y $u_n \to u$ mon\'otonamente. Entonces $\lim\limits_{n \to \infty} \| u-u_n\|_{L^{\Phi}}=0$.
+\end{lem}
+
+\begin{proof}
+Ver \cite{DG2001} para demostracii\'on en detalle.
+\end{proof}
+
+
+\begin{prop}
+Si $\Phi \notin \Delta_2$, entonces existe $u \in L^{\Phi}(\rr^n)$ y una sucesi\'on $\{u_n\}\subseteq L^{\Phi}(\rr^n)$ tal que $u_n \to u$ mon\'otonamente, pero $\| u-u_n\|_{L^{\Phi}}$ no converge a 0. 
+\end{prop}
+
+\begin{proof}
+\cite{Schap2005}
+\end{proof}
+
+
+\begin{lem}
+Sea $\{u_n\}_{n\in \nn}\subseteq L^{\infty}([0,T],\rr^n)$. Si $\{ u_n\}_{n \in \nn}$ es uniformemente acotada y $u_n$ converge a 0 en c.t.p. Entonces $\|u_n \|_{L^{\Phi}} \to 0$ para $n \to \infty$. 
+\end{lem}
+
+\begin{proof}
+Ver \cite{DG2001}.
+\end{proof}
+
+
+\begin{defi}
+Sea $(\Omega,\mathcal{A},\mu)$ un espacio de medida y $(B,\|\cdot\|)$ un espacio vectorial normado de funciones medibles de $\Omega$ en $X$.
+Sea $u \in B$
+\begin{enumerate}
+\item Decimos que $u$ tiene {\bf norma absolutamente continua en el sentido fuerte} si y s\'olo si $\|\chi E_n u\|\to 0$ para cada  sucesi\'on $E_n \in \mathcal{A}$ con $\chi E_n (w)\to 0$ para casi todo $w \in \Omega$.
+\item Decimos que $u$ tiene {\bf norma absolutamente continua en el sentido d\'ebil} si y s\'olo si $\|\chi E_n u\|\to 0$ para cada sucesi\'on $E_n \in \mathcal{A}$ con $\mu (E_n)\to 0$.
+\end{enumerate}
+\end{defi}
+
+A continuaci\'on presentamos un ejemplo de que la absoluta continuidad de la norma en el sentido d\'ebil no implica la absoluta continuidad de la norma en el sentido fuerte.
+
+\begin{lem}
+Sea $\varphi:[0,\infty) \to [0,\infty)$ continua, mon\'otona creciente con $\varphi(0)=0$ y tal que 
+\[
+\lim\limits_{x \to 0^+} \frac{\varphi(2x)}{\varphi(x)}=\infty.
+\]
+Entonces existe una funci\'on  medible $u:[0,\infty) \to [0,1]$ tal que
+\[
+\int_0^{\infty} \varphi(u(t))\,dt \leq 1, \;\;y\;\;\int_0^{\infty} \varphi(2u(t))\,dt=\infty.
+\]
+\end{lem}
+
+\begin{ejem}
+Sea $\varphi(x)=\int_0^{|x|} (|x|-y)e^{\frac{-1}{y}}\,dy$, entonces $\varphi$ es convexa, par, creciente en $[0,\infty)$, $\varphi(0)=\varphi'(0)=0$ y $\lim\limits_{x\to 0^+}\frac{\varphi(2x)}{\varphi(x)}=\infty$.
+
+Sea $\|\cdot\|$ la norma de Luxemburgo con respecto a $\varphi$. Sea $u$ constru\'ida de acuerdo al Lema anterior, entonces $u$ tiene norma absolutamente continua en el sentido d\'ebil pero no en el sentido fuerte.
+\begin{proof}
+Ver \cite[p.366]{Schap2005}.
+\end{proof}
+\end{ejem}
+
+
+
+Sea $D^{\Phi}(\rr^n)$ el espacio lineal de todas las funciones de $L^{\Phi}(\rr^n)$ que tienen norma absolutamente continua en el sentido d\'ebil.
+
+
+\begin{thm}
+Sea $u \in L^{\Phi}(\rr^n)$. Entonces, son equivalentes:
+\begin{enumerate}
+\item $u \in D^{\Phi}(\rr^n)$ 
+\item toda sucesi\'on $\{u_n\}$ que converge mon\'otonamente a $u$ tambi\'en converge en norma, o sea, $\|u-u_n\|_{\Phi}\to 0$.
+\end{enumerate}
+\end{thm}
+
+
+\begin{proof}
+Ver \cite[pp. 366-367]{Schap2005}.
+\end{proof}
+
+\begin{thm}
+Sea $u \in L^{\Phi}(\rr^n)$. Entonces son equivalentes:
+\begin{enumerate}
+\item $u$ tiene norma absolutamente continua en el sentido fuerte;
+\item $u$ tiene norma absolutamente continua en el sentido d\'ebil y existe una sucesi\'on 
+$\Omega_1\subset \Omega_2\subset\dots\subset[0,T]$ tal que $\|(1-\chi \Omega_k)u\|_{\Phi}\to 0$.
+\item Si $u_n \to u$ mon\'otonamente, entonces $\|u-u_n\|_{\Phi}\to 0$
+\end{enumerate}
+\end{thm}
+
+
+\begin{proof}
+Ver \cite[p. 368]{Schap2005}
+\end{proof}
+
+
+\section{La clausura de $L^{\Phi}$}
+
+\begin{defi}
+Con $E^{\Phi}(\rr^n)$ notamos el conjunto de todas las funciones $u \in \mathcal{M}$ tal que existe una sucesi\'on de funciones acotadas
+$\{u_n\}_{n \in \nn}\subseteq L^{\Phi}(\rr^n)$ con $\|u-u_n\|_{\Phi}\to 0$ para $n \to \infty$.
+\end{defi}
+
+\begin{rem}
+$E^{\Phi}(\rr^n)$ es un subespacio lineal de $L^{\Phi}(\rr^n)$.
+\end{rem}
+
+\begin{proof}
+\cite[p. 369]{Schap2005}.
+\end{proof}
+
+\begin{thm}
+$E^{\Phi}(\rr^n)\subset C^{\Phi}(\rr^n)$.
+\end{thm}
+
+\begin{proof}
+\cite[pp. 369-370]{Schap2005}.
+\end{proof}
+
+
+\begin{thm}
+$\varphi \in \Delta_2$ sii $E^{\Phi}(\rr^n)=L^{\Phi}(\rr^n)$.
+\end{thm}
+
+\begin{proof}
+Corolario 5.1 en \cite[pp. 371]{Schap2005}.
+\end{proof}
+
+\begin{thm}
+Si $u$ tiene norma absolutamente continua en el sentido fuerte, entonces $u \in E^{\Phi}(\rr^n)$. 
+Y como $[0,T]$ tiene medida finita, lo mismo es cierto para cualquier $u$ con norma absolutamente continua  en el sentido d\'ebil, o 
+sea $D^{\Phi}(\rr^n)\subseteq E^{\Phi}(\rr^n)$.
+\end{thm}
+
+\begin{proof}
+\cite[p. 372]{Schap2005}.
+\end{proof}
+
+De acuerdo a lo que sigue, lo anterior no tiene importancia!!!!!
+
+
+M\'as a\'un,
+\begin{thm}
+Como $\Phi$ est\'a acotada sobre conjuntos acotados y $[0,T]$ tiene medida finita, entonces $D^{\Phi}(\rr^n)=E^{\Phi}(\rr^n)$.
+\end{thm}
+
+\begin{proof}
+\cite[p.373]{Schap2005}
+\end{proof}
+
+\begin{cor}
+Toda $u \in L^{\Phi}(\rr^n)$ tiene norma absolutamente continua en el sentido d\'ebil sii $\Phi \in \Delta_2$.
+\end{cor}
+
+\begin{proof}
+Cor. 5.2 en \cite[p. 373]{Schap2005}
+\end{proof}
+
+\begin{cor}
+Sea $\{u_n\}_{n \in \nn} \subseteq E^{\Phi}(\rr^n)$ una sucesi\'on  que converge mon\'otonamente a alguna $u \in E^{\Phi}(\rr^n)$, entonces
+$\|u-u_n\|_{\Phi}\to 0$. 
+\end{cor}
+
+\begin{proof}
+Cor. 5.3 en \cite[p.373]{Schap2005}
+\end{proof}
+
+\begin{defi}
+Para cualquier $u \in L^{\Phi}(\rr^n)$ definimos
+\[
+d_{E^{\Phi}(\rr^n)}(u):=\inf\{ \| u-v\|_{\Phi}, v \in E^{\Phi}(\rr^n)\}.
+\]
+\end{defi}
+
+Valen las siguientes propiedades:
+\begin{enumerate}
+\item $d_{E^{\Phi}(\rr^n)}(u+v)\leq d_{E^{\Phi}(\rr^n)}(u)+d_{E^{\Phi}(\rr^n)}(v)$, para todos $u,v \in L^{\Phi}(\rr^n)$,
+\item $d_{E^{\Phi}(\rr^n)}(\beta u)=|\beta| d_{E^{\Phi}(\rr^n)}(u)$, para todo $u \in L^{\Phi}(\rr^n)$ y para todo $\beta \in \rr$.
+\end{enumerate}
+
+
+\begin{thm}
+Si $u \in L^{\Phi}(\rr^n)$ y 
+\[
+u_n(w)=\left\{\begin{array}{ll}
+u(w)&\|u(u)\|_{\Phi}\leq n
+\\
+0&en otro caso
+\end{array}
+\right.
+\]
+entonces $d_{E^{\Phi}(\rr^n)}(u)=\liminf \limits_{n \to \infty} \|u-u_n\|_{\Phi}$.
+\end{thm}
+
+\begin{proof}
+La prueba sigue la demostraci\'on de \cite[Prop. 3, pp. 92-92]{RR91}.
+\end{proof}
+
+
+\begin{defi}
+Definimos los subconjuntos de $L^{\Phi}(\rr^n)$:
+\[
+S^{\Phi}:=\{ u \in L^{\Phi}(\rr^n): d_{E^{\Phi}(\rr^n)}(u)<1\}
+\]
+\[
+\overline{S}^{\Phi}:=\{ u \in L^{\Phi}(\rr^n): d_{E^{\Phi}(\rr^n)}(u)\leq 1\}
+\]
+
+\end{defi}
+
+\begin{thm}
+\[
+S^{\Phi}\subseteq C^{\Phi} \subseteq \overline{S}^{\Phi}
+\]
+Si $\Phi\notin \Delta_2$, 
+\[
+S^{\Phi}\subset C^{\Phi} \subset \overline{S}^{\Phi}
+\]
+\end{thm}
+
+\begin{proof}
+\cite[pp. 374-375]{Schap2005}
+\end{proof}
+
+
+\section{Completitud y separabilidad de $L^{\Phi}(\rr^n)$}
+
+\begin{thm}
+Sea $\{u_n\}_{n \in \nn}\subseteq L^{\Phi}(\rr^n)$ una sucesi\'on de Cauchy, i.e.
+ para cada $\epsilon>0$ existe $n_0 \in \nn$ tal que $\|u_{n+m}-u_n\|_{\Phi}<\epsilon$
+para todo $n \geq n_0$ y $m\geq 1$.
+Entonces existe $u \in L^{\Phi}(\rr^n)$ tal que $\|u-u_n\|_{\Phi}\to 0$ para $n \to \infty$.
+\end{thm}
+
+\begin{proof}
+\cite[pp. 375-376]{Schap2005}
+\end{proof}
+
+\begin{thm}
+Si $\Phi \notin \Delta_2$, entonces $L^{\Phi}(\rr^n)$ NO es separable.
+\end{thm}
+
+\begin{proof}
+\cite[p. 376]{Schap2005}
+\end{proof}
+
+\begin{thm}
+$E^{\Phi}(\rr^n)$ es separable.
+\end{thm}
+
+\begin{proof}
+\cite[p. 376]{Schap2005}
+\end{proof}
+
+\begin{cor}
+$L^{\Phi}(\rr^n)$ es separable sii $\Phi \in \Delta_2$.
+\end{cor}
+
+\section{Propiedades de dualidad de $L^{\Phi}(\rr^n)$}
+
+\begin{defi}
+Por $(L^{\Phi}(\rr^n))^*$ notamos el conjunto de todas las funciones $F:L^{\Phi}(\rr^n)\to \rr$ con las siguientes propiedades:
+\begin{enumerate}
+\item $F$ es lineal
+\item existe $M>0$ tal que $|F(u)|\leq M \|u\|_{\Phi}$ para toda $u \in L^{\Phi}(\rr^n)$ y 
+$O_{\Phi}(F):=\inf\{M>0: \forall u\in L^{\Phi}(\rr^n), |F(u)|\leq M\|u\|_{\Phi}\}$
+\end{enumerate}
+\end{defi}
+
+\begin{defi}
+$F \in (L^{\Phi}(\rr^n))^*$ se dice que tiene la propiedad de la convergencia mon\'otona  sii
+para cada $u \in L^{\Phi}(\rr^n)$ y para cada sucesi\'on $\{u_n\}_{n \in \nn}\subseteq L^{\Phi}(\rr^n)$
+que converge mon\'otonamente a u se tiene que $F(u_n) \to F(u)$.
+\end{defi}
+
+Sea $P^{\Phi^*}(\rr^n)$ el conjunto de todas las funciones con la propiedad de la convergencia mon\'otona
+y $P^{\Phi^*}(\rr^n)\subseteq (L^{\Phi}(\rr^n))^* $. 
+
+\begin{thm}
+$(L^{\Phi}(\rr^n))^*=P^{\Phi^*}(\rr^n)$
+\end{thm}
+
+
+FALTA EL RESTO DEL TRABAJO DE \cite{Schap2005}
+
+\section{Operadores de Nemitsky}
+
+
+Sean $f:\Omega\times\rr^{d_2}\to \rr^{d_3}$, $u:\Omega\to \rr^{d_2}$ y
+$\fnet u(x)=f(x,u(x))\in \rr^{d_3}$ con $x\in \rr^{d_1}$.
+
+\begin{defi}
+Sea $u:\Omega \to \rr^{d_2}$. Diremos que $u$ es medible sii $u^{-1}(B)\in \bb_{d_1}(\Omega)$
+$\forall B \in \bb(\rr^{d_2})$ donde $\bb(E)=\sigma$-\'algebra de Borel. 
+\end{defi}
+
+\begin{defi}
+$f$ satisface la condici\'on de Caratheodory si $f(x,u)$ es medible en $x$ $\forall u$ y es continua en $u$
+para c.t.p $x \in \Omega$.
+\end{defi}
+
+Notamos con $\mathcal {M}(\Omega,\rr^d)$ al conjunto de las funciones medibles Borel de $\Omega $ en $\rr^d$.
+
+\begin{thm} 
+Sea $u: \Omega \to \rr^{d_1}$.
+Si $u$ es medible, entonces $\fnet (u) \in \mathcal{M}(\Omega, \rr^{d_3})$.
+\end{thm}
+
+\begin{proof}
+Veamos que si $u \in \mathcal{M}(\Omega, \rr^{d_1})$, entonces $u_i \in  \mathcal{M}(\Omega, \rr)$ para $i=1,\dots,d_1$ y 
+donde $u_i=p_i\circ u$ siendo $p_i$ la proyecci\'on.
+
+Si $B\in \bb(\rr)$, $u_i^{-1}(B)=u^{-1}(p^{-1}_i(B))\in \bb(\Omega)$ con $p^{-1}_i(B)\in \bb(\rr^{d_1})$.
+
+
+Si $u$ es simple, $u(s)=\sum\limits_{i=1}^{n} \alpha_i \chi_{A_i}$ para $\alpha_i \in \rr^{d_1}$.
+
+Luego $\fnet(u)(x)=f(x,u(x))=\sum\limits_{i=1}^n f(x,\alpha_i \chi_{A_i})-(n-1)f(x,0)$
+resulta medible porque, debido a la condici\'on de Caratheodory tanto $f(x,0)$ como cada $f(x,\alpha_i \chi_{A_i})$ son medibles.
+Observemos que 
+\[
+f(x,\alpha \chi_{A})=\left\{
+\begin{array}{lll}
+f(x,0)&en&A^C
+\\
+f(x,\alpha)&en&A
+\end{array}
+\right.
+\]
+siendo $f(x,0)$ y $f(x,\alpha)$ medibles en $\Omega$.
+
+Si $u$ es medible de $\Omega \to \rr^{d_1}$, existen funciones simples $u_n$ tales que $u_n \to u$ ``puntualmente''. 
+Ahora, 
+\[
+f(x,u(x))=\lim\limits_{n \to \infty} f(x,u_n(x))
+\] 
+en c.t.p $x \in \Omega$ siendo $u_n$ medibles (por el paso anterior) porque $f$ es continua en $u$ para c.t.p de $\Omega$.
+Adem\'as $f(x,u_n(x))$ es medible en $x$ para todo $u_n$, luego $f(x,u(x))$ es medible en $\Omega$
+(en c.t.p $x \in \Omega$, $f(x,u(x))$ es medible por ser el l\'imite de medibles y en el conjunto de medida nula porque la pre-imagen es medible).
+\end{proof}
+
+\begin{lem}
+Supongamos que $f(x,u)$ satisface la condici\'on de Caratheodory, entonces $\forall \delta >0$ $\exists \Omega_{\delta}\subset \Omega$
+tal que $m(\Omega-\Omega_{\delta})<\delta$, entonces $f:\Omega_{\delta}\times \rr^{d_2}\to \rr^{d_3}$ continua (con respecto a la variable combinada $(x,u)$).
+\end{lem}
+
+\begin{proof} Siguiendo las mismas líneas que la demostración de  \cite[Lemma 17.1]{krasnosel2011integral} obtenemos que para todo $n_0\in \mathbb{N}$ y $\delta>0$, obtenemos un $G=G(n_0,\delta)$ y un $\eta=\eta(\delta,n_0)$ tal que
+\[
+|\Omega-G|<2^{-n_0-1}\delta
+\]
+y
+\[
+|u_1-u_2|<\eta,\quad u_1,u_2\in [-n_0,n_0]^{d_2} \text{ y } x\in G \Rightarrow |f(x,u_1)-f(x,u_2)|\leq \frac{1}{n_0}
+\]
+
+Ahora consideramos una partici\'on  $[-n_0,n_0]^{d_2}$ en $d$-simplexes  $Q_k$, donde
+$\text{diam}(Q_j)< \eta$, $Q^0_k\cap Q^0_j=\emptyset$ y los vértices de $Q^0_k$ . Sean  $u_1,\ldots,u_q$ los vértices de los simplexes $Q_k$ (cada $u_j$ puede pertenecer a varios $Q_k$).
+
+$\overline{B(0,n_0)}=\bigcup_{i=1}^{q} B(u_i,\frac{1}{2k_0})$
+Por el Teorema de Luisin, existe para cada funci\'on $f(s,u_i)$ un conjunto cerrado $G_{n_0}^{(i)}$ tal que 
+\[
+|G_{k_0}-G_{n_0}^{(i)}|<\frac{\delta}{2^{n_0+1}q}\;i=1,\dots,q
+\]
+y donde $f(s,u_i)$ es continua.
+
+Ponemos $\Omega_{n_0}=\bigcap_{i=1}^q G_{n_0}^{(i)}$, entonces
+\[
+|G_{k_0}-\Omega_{n_0}|=|G_{k_0}-\bigcap_{i=1}^q G_{n_0}^{(i)}|\leq 
+\sum\limits_{i=1}^q |G_{k_0}-G_{n_0}^{(i)}|\leq 2^{-n_0-1}\delta
+\]
+y como $|\Omega-\Omega_{n_0}|<2^{-n_0-1}\delta$, entonces
+$|\Omega-G_{k_0}|<2^{-n_0}\delta$.
+
+Consideramos la funci\'on $f_{n_0}(s,u)$, $s \in  \Omega_{n_0}$, $u \in \overline{B(0,n_0)}$
+definida por su valor en $u=???$ combinaci\'on convexa o algo as\'i!!!!
+BUSCAR PROGRAMACI\'ON LINEAL SIMPLEX!!!!
+\end{proof}
+%=============================================================================================
+\bibliographystyle{alpha}
+%\bibliography{apalike}
+%Para tener las referencias con etiquetas con n?meros, usar la opci?n {plain}.
+%\bibliography{plain}
+
+\bibliography{biblio,biblio-aniso}
+
+\end{document}
