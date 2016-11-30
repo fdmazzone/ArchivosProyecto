@@ -1,10 +1,7 @@
 \documentclass[twoside]{article}
 
 
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mathscinet}[2002/04/17 v1.05]
-\RequirePackage{textcmds}\relax
-\ProvideTextCommandDefault{\cprime}{\tprime}
+
 
 
 
@@ -142,7 +139,6 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 \begin{abstract}
 
-In this paper we obtain existence of periodic solutions, in the Orlicz-Sobolev space $\wphi([0,T])$, of hamiltonian systems with a potential  function $F$ satisfying the inequality  $|\nabla F(t,x)|\leq b_1(t) \Phi_0'(|x|)+b_2(t)$, with    $b_1, b_2\in L^1$ and for certain $N$-functions $\Phi_0$ employing the dual least action principle.
 
 \end{abstract}
 
@@ -172,7 +168,7 @@ This paper deals with system  of equations of the type:
 \end{array}%
 \right.,
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic was deeply addressed???(studied, treated????) for the \emph{Lagrange function}
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic was deeply addressed for the \emph{Lagrange function}
 \begin{equation}\label{eq:lagrange_cuad}
 \mathcal{L}_{p,F}(t,x,y)=\frac{|y|^p}{p}+F(t,x),
 \end{equation}
@@ -202,25 +198,16 @@ In \cite{ABGMS2015} it was treated  the case of a lagrangian $\mathcal{L}$ which
 \begin{equation}\label{eq:lagrange_phi}
 \mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
 \end{equation}
-
 where  $\Phi$ is an $N$-function (see section \ref{preliminares} for the definition of this concept).  
 In the paper \cite{ABGMS2015} it was assumed  a condition of \emph{bounded oscillation} on $F$  (see xxxxx below). 
-In this paper we shall study the condition of \emph{sublinearity} (see  \cite{tang1998periodic,wu1999periodic,zhao2004periodic,tang2010periodic,zhao2005existence}) on $\nabla F$ for the lagrangian  $\mathcal{L}_{\Phi,F}$, or more generally for lagrangians which are lower bounded by $\mathcal{L}_{\Phi,F}$.
+In this paper  we apply the dual method (\cite[Ch. 3]{mawhin2010critical}) to obtain solutions of \eqref{ProbPrin-gral}.
 
 
-
-The problem \eqref{ProbPrin-gral} comes from a variational one, that is,  the equation in  \eqref{ProbPrin} ESTA EQ DESAPARECIO!!!!  
-is the Euler-Lagrange equation associated to the \emph{action integral}
-\begin{equation}\label{integral_accion}
-I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
-\end{equation}
-
-The paper is organized as follows. .....
 
 \section{Preliminaries}\label{preliminares}
 
-
-For reader convenience, we give a short introduction to Orlicz and Orlicz-Sobolev spaces of vector valued functions. Classic references for these topics are \cite{adams_sobolev,KR,rao1991theory}. 
+In this section, we give a short introduction to Orlicz and Orlicz-Sobolev spaces of vector valued functions and other brief introduction to superposition operators between these spaces. References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001} and
+\cite{zbMATH04038592,zbMATH04009182,zbMATH03983966,zbMATH03942215}. 
 
 Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^+\to \mathbb{R}^+ $ is called an \emph{$N$-function} if $\Phi$ is convex and it also satisfies that
 \[
@@ -426,7 +413,7 @@ then
 \end{thm}
 
 \begin{proof}
-If $(u,v)\in  \left(\prod\limits_{i=1}^n \linf_d\right) \times \left(\prod\limits_{i=1}^n \Pi(E_d^{\Phi_i},\lambda=1)\right)$.
+If $(u,v)\in \left(\prod\limits_{i=1}^n L^{\infty}([0,T],\rr^d)\right) \times \left(\prod\limits_{i=1}^n \Pi(E_d^{\Phi_i},\lambda=1)\right)$.
 By \cite[ Thm. 17.6]{KR} (y otras cosas), we get 
  \[|\mathfrak{f}u(t)|=|f(t,u(t),v(t))| \leq 
 M_a [b_j(t) +\sum_{i=1}^{n} M_j^{-1}(\Phi_i(|v_i(t)|))]
@@ -625,7 +612,7 @@ The authors are partially supported by a UNRC grant number 18/C417. The first au
 
 
 
- \bibliographystyle{elsarticle-num} 
+ \bibliographystyle{plain}
  \bibliography{biblio}
 
 
