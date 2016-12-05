@@ -210,7 +210,9 @@ Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 The coercivity of a $\Phi$ implies that 
 %the existence of a function $F:\rr^+\to \rr^+$
  for every $K>0$ there exists a function $F:=F(K)$ 
-such that if $|x|>F(K)$ then $\Phi(x)\geq K$.
+such that if $|x|>F(K)$ then $\Phi(x)> K$.
+
+Con menores estrictos????
 
 It is possible to define  a function $F$ that satisfies the property above as follows:
 \begin{equation}
@@ -360,11 +362,29 @@ And, we introduce the following subspaces of $\wphi$
 \\
 & \left \|\Phi\left( \frac{u}{2\max\{1,T\}\|u\sobnor}\right)\right\|_{L^{\infty}} \leq \frac{1}{T}\tag{Sobolev's inequality}\label{sobolev}
 \end{align}
+Versiones con F!!!
+\begin{align}
+ &|u(t)-u(s)| \leq
+ \|u'\orlnor |s-t|F\left(\frac{1}{|s-t|}\right)\tag{Morrey's inequality}\label{in-sob-cont}
+\\
+& \| u\linf \leq 2F\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{sobolev}
+\end{align}
+
+
+
+
+
+
 \item We have $\widetilde{u}\in L^{\infty}([0,T],\rr^d)$ and
 \begin{align}
-& \left\| \Phi\left( \frac{\widetilde{u}}{\|u\orlnor T}\right) \right\|_{L^{\infty}}\leq \frac{1}{T}
+& \left\| \Phi\left( \frac{\widetilde{u}}{\|u'\orlnor T}\right) \right\|_{L^{\infty}}\leq \frac{1}{T}
 \tag{Sobolev-Wirtinger's inequality}\label{wirtinger}
 \end{align}
+
+\[
+\|\widetilde u \linf \leq T F\left(\frac{1}{T}\right)\|u'\orlnor
+\tag{Sobolev-Wirtinger's inequality}\label{wirtinger}
+\]
 \item\label{it:embeding} The space $\wphi([0,T],\rr^d)$ is compactly embedded in the space of continuous functions $C([0,T],\rr^d)$.
 \end{enumerate}
 \end{lem}
@@ -375,10 +395,15 @@ And, we introduce the following subspaces of $\wphi$
  \begin{split}
     \Phi\left( \frac{u(t)-u(s)}{\|u'\orlnor |s-t|}\right) &\leq  \Phi\left( \frac{1}{ |s-t|}\int_s^t  \frac{u'(r)}{\|u'\orlnor }dr\right)\\
     &\leq   \frac{1}{ |s-t|}\int_s^t  \Phi\left(\frac{u'(r)}{\|u'\orlnor }\right)dr
-    \leq \frac{1}{ |s-t|},
+    \leq \frac{1}{ |s-t|}.
  \end{split}
 \]
-which proves  \ref{inclusion orlicz_item1}.
+As $\Phi$ is coercive, by (quiz\'as referencia a la intro???) there exists a function $F:\rr^+\to \rr^+$ such that 
+\[
+    \frac{|u(t)-u(s)|}{\|u'\orlnor |s-t|} 
+    \leq  F\left(\frac{1}{ |s-t|}\right),
+\]
+then  \ref{inclusion orlicz_item1} holds.
 
 \ref{in-sob-cont}  implies \ref{wirtinger} by the following argument.  Taking into account that $\alpha\Phi(x/\alpha)$ is a non increasing function with respect to $\alpha\in [0,\infty)$ for every $x\in\rr^d$ we have
 \[\Phi\left( \frac{u(t)-u(s)}{\|u'\orlnor T}\right)\leq \frac{1}{T}.\]
@@ -386,7 +411,9 @@ Dividing by $T$ this inequality, integrating respect to $s$ and using Jensen's i
 \[\Phi\left( \int_0^T \frac{u(t)-u(s)}{\|u'\orlnor T^2}ds \right)\leq \frac{1}{T}.\]
 which implies
 \[\Phi\left( \frac{u(t)-\overline{u}}{\|u'\orlnor T} \right)\leq \frac{1}{T}.\]
-i.e. Sobolev-Wirtinger's inequality.
+Then, by \ref{} there exists $F:\rr^+\to \rr^+$ such that 
+\[\frac{|u(t)-\overline{u}|}{\|u'\orlnor T} \leq F\left(\frac{1}{T}\right),\]
+and Sobolev-Wirtinger's inequality follows easily.
 
 For the Sobolev's inequality we note that (we write $T^*=\max\{1,T\}$)
 
@@ -406,7 +433,12 @@ Using Jensen's inequality and that $T^*\geq 1$ we have
 \[ 2I_2 = \Phi\left( \frac{1}{T}\int_0^T\frac{u(s)}{T^*\|u\orlnor}ds\right) \leq
 \frac{1}{T}\int_0^T\Phi\left(\frac{u(s)}{\|u\orlnor}\right)ds\leq\frac{1}{T}
 \]
-Then $I_1+I_2\leq 1/T$, which completes the proof of \ref{sobolev}.
+Then $I_1+I_2\leq 1/T$. 
+Now, by \ref{} there exists a function $F:\rr^+\to \rr^+$ such that 
+\[
+\frac{|u|}{2T^*\|u\sobnor}\leq F\left(\frac{1}{T}\right)
+\]
+and we obtain \ref{sobolev}  immediately.
 
 Next we prove part \ref{it:embeding} of the lemma. First we prove that there exists a non decreasing function $F:(0,+\infty)\to (0,+\infty)$ sucht that $\|u\linf\leq F(\|\Phi(u)\linf)$. In fact, since $\Phi(x)\to+\infty$ when $\|x\|\to+\infty$, for every $K>0$ there exist $G(K)>0$ such that $|x|\geq G(K)$ then $\Phi(x)\geq K$. Suppose that, for certain $u$,  $\|u\linf > G(\|\Phi(u)\linf)$. Then there exists a set $A\subset [0,T]$ with positive measure such $|u(t)| > G(\|\Phi(u)\linf)$, when $t\in A$. Then $\Phi(u(t))>\|\Phi(u)\linf$, for $t\in A$, which is a contradiction. Now we take $F(K):=\sup\{G(s)|0<s\leq k\}$. 
 
