@@ -1,10 +1,6 @@
 \documentclass[twoside]{article}
 
 
-
-
-
-
 %\usepackage{hyperref}
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
@@ -45,15 +41,12 @@
 
 \title{Periodic solutions of 
 Euler-Lagrange equations in an Orlicz-Sobolev space setting by the dual least action principle }
-\author{Sonia Acinas \thanks{SECyT-UNRC, UNSL and CONICET}\\
-Instituto de Matem\'atica Aplicada San Luis (IMASL)\\ 
-Universidad Nacional de San Luis and CONICET\\
-Ej\'ercito de los Andes 950,
-(D5700HDW) San Luis, Argentina\\
+\author{Sonia Acinas \thanks{SECyT-UNRC and  FCEyN-UNLPam}\\
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
 Universidad Nacional de La Pampa\\
 (L6300CLB) Santa Rosa, La Pampa, Argentina\\
 \url{sonia.acinas@gmail.com}\\[3mm]
-Fernando D. Mazzone \thanks{SECyT-UNRC and CONICET}\\
+Fernando D. Mazzone \thanks{SECyT-UNRC, FCEyN-UNLPam and CONICET}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
@@ -190,7 +183,7 @@ In this context, it  is customary to call $F$ a  \emph{potential function}, and 
 \begin{equation}
 |F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t).
 \end{equation}
-In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and nondecreasing and $0\leq b\in L^1([0,T],\rr)$.
+In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and non decreasing and $0\leq b\in L^1([0,T],\rr)$.
 \end{enumerate}
 
 
@@ -211,14 +204,41 @@ In this section, we give a short introduction to known results on Orlicz and Orl
 
 Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$.
 
-Following \cite{Orliczvectorial2005} we say tha $\Phi$ is \emph{coercive} if
+Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
+
+We point ouu that the coercivity of $\Phi$ implies that for every $K>0$ there exists a function $F:=F(K)$ such that if $|x|>F(K)$ then $\Phi(x)\geq K$.
+
+It is possible to define  a function $F$ that satisfies the property above as follows.
+\begin{equation}
+F(s)=\sup\{|x|:\Phi(x)\leq s\}
+\end{equation}
+
+We note that the function $\alpha F(\frac{x}{\alpha})$ is increasing with respect to $\alpha$. That is,
+if $\alpha \leq \beta$, we have 
+\[
+\begin{split}
+\alpha F\left(\frac{s}{\alpha}\right)=
+\sup\left\{|x|:\Phi(x)\leq \frac{s}{\alpha}\}=\sup\{\alpha|x|:\alpha\Phi(x)\leq s\right\}=
+\\
+\sup\left\{|y|:\alpha\Phi\left(\frac{y}{\alpha}\right)\leq s\}\leq \sup\{|y|:\beta\Phi\left(\frac{y}{\beta}\right)\leq s\right\}=
+\\
+\sup\left\{\beta|x|:\beta \Phi(x)\leq s\}=\sup\beta \{|x|:\Phi(x)\leq\frac{x}{\beta} \right\}=
+\\
+\beta F\left(\frac{x}{\beta}\right)
+\end{split}
+\]
+
+It is easy to see that  $|x|\leq F(\Phi(x))$ and if  $\Phi$ is a scalar function, then $F=\Phi^{-1}$.
+
+
+
 
 We also say that a non decreasing function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\eta \in \Delta_2^{\infty}$,
 if there exist  constants $K>0$ and  $M\geq 0$ such that
 \begin{equation}\label{delta2defi}\eta(2x)\leq K\eta(x),
 \end{equation}
-for every $\|x\|\geq M$.
+for every $|x|\geq M$.
 
 
 If $\Phi$ is a Young function we define its \emph{Fenchel conjugate}   $\Phi^*:\mathbb{R}^d\to \mathbb{R}_+ $by:
@@ -250,7 +270,7 @@ equivalently,
 is a Banach space. By $u\b{\cdot} v$ we denote the usual dot product in $\mathbb{R}^{d}$ between $u$ and $v$.
 
 
-The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  (see \cite[Th. 5.1]{Orliczvectorial2005}) $u\in\ephi$  if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2^{\infty}$ (see \cite[Th. 5.2]{Orliczvectorial2005}). Another alternative characterization of $\ephi$, which is particularly usefull for us, is that $u\in\ephi$ if and only if $u$ has  \emph{absolutely continuous norm}, i.e.   if $E_n\subset [0,T]$, $n=1,2,\ldots$ then $\|\chi_{E_n}u\|\to 0$ when $|E_n|\to 0$.
+The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  (see \cite[Thm. 5.1]{Orliczvectorial2005}) $u\in\ephi$  if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2^{\infty}$ (see \cite[Thm. 5.2]{Orliczvectorial2005}). Another alternative characterization of $\ephi$, which is particularly useful for us, is that $u\in\ephi$ if and only if $u$ has  \emph{absolutely continuous norm}, i.e.   if $E_n\subset [0,T]$, $n=1,2,\ldots$ then $\|\chi_{E_n}u\|\to 0$ when $|E_n|\to 0$.
 
 A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 4.1]{Skaff1969}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
 \begin{equation}\label{holder}
@@ -263,7 +283,7 @@ Like in \cite{KR} we will consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
 This set is related to the Orlicz class $\claseor$ by means of inclusions, namely,
 \begin{equation}\label{inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
 \end{equation}
-for any positive $r$ (see \cite[Th. 5.6]{Orliczvectorial2005}).
+for any positive $r$ (see \cite[Thm. 5.6]{Orliczvectorial2005}).
 If $\Phi \in \Delta_2^{\infty}$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
 
 Following to \cite{Desch2001} we introduce the next definition.
@@ -278,9 +298,9 @@ $\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequal
 \begin{equation}\label{pairing}
   F_v(u):=\langle v,u\rangle=\int_0^Tv\cdot u\ dt,
 \end{equation}
- In  \cite[Theorem 2.9]{Desch2001}  it was characterized a subspace of   $\left[\lphi\right]^*$ which is identified with $\lpsi$. Namely $\lpsi=P^{\Phie}([0,T],\rr^d)$ where $F\in P^{\Phie}([0,T],\rr^d)$ if and only if $F\in\left[\lphi\right]^*$ and satisfying the \emph{monotone convergence property}, which is if $u_n$ converges monotonically to $u$ then $F(u_n)\to F(u)$.
+ In  \cite[Thm 2.9]{Desch2001}  it was characterized a subspace of   $\left[\lphi\right]^*$ which is identified with $\lpsi$. Namely $\lpsi=P^{\Phie}([0,T],\rr^d)$ where $F\in P^{\Phie}([0,T],\rr^d)$ if and only if $F\in\left[\lphi\right]^*$ and satisfying the \emph{monotone convergence property}, which is if $u_n$ converges monotonically to $u$ then $F(u_n)\to F(u)$.
 
- If $\Phi \in \Delta_2^{\infty}$ and $\Phi$ is coercive then $\lpsi([0,T],\rr^d)= \left[\lphi([0,T],\rr^d)\right]^*$ is satisfied (see \cite[Th. 2.9 , 2.10]{Desch2001}).
+ If $\Phi \in \Delta_2^{\infty}$ and $\Phi$ is coercive then $\lpsi([0,T],\rr^d)= \left[\lphi([0,T],\rr^d)\right]^*$ is satisfied (see \cite[Thm. 2.9 , Thm. 2.10]{Desch2001}).
 
 % It is easy to see that, for every coercive $\Phi$ we have that $L^{\infty}\hookrightarrow\lphi \hookrightarrow L^1$.
 
@@ -306,7 +326,7 @@ And, we introduce the following subspaces of $\wphi$
 %
  We will use repeatedly the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
 
- The following lemma is an elementary generalization to anistropic Sobolev-Orlicz spaces of known results of Sobolev spaces.
+ The following lemma is an elementary generalization to anisotropic Sobolev-Orlicz spaces of known results of Sobolev spaces.
 
 
 %
@@ -357,15 +377,15 @@ And, we introduce the following subspaces of $\wphi$
 \]
 which proves  \ref{inclusion orlicz_item1}.
 
-\ref{in-sob-cont}  implies \ref{wirtinger} by the following argument.  Taking account that $\alpha\Phi(x/\alpha)$ is a non increasing function with respect to $\alpha\in [0,\infty)$ for every $x\in\rr^d$ we have
+\ref{in-sob-cont}  implies \ref{wirtinger} by the following argument.  Taking into account that $\alpha\Phi(x/\alpha)$ is a non increasing function with respect to $\alpha\in [0,\infty)$ for every $x\in\rr^d$ we have
 \[\Phi\left( \frac{u(t)-u(s)}{\|u'\orlnor T}\right)\leq \frac{1}{T}.\]
-Dividing by $T$ this inequality, integrating respect to $s$ and using Jensen inequality again
+Dividing by $T$ this inequality, integrating respect to $s$ and using Jensen's inequality again
 \[\Phi\left( \int_0^T \frac{u(t)-u(s)}{\|u'\orlnor T^2}ds \right)\leq \frac{1}{T}.\]
 which implies
 \[\Phi\left( \frac{u(t)-\overline{u}}{\|u'\orlnor T} \right)\leq \frac{1}{T}.\]
-i.e. Sobolev-Wirtinger inequality.
+i.e. Sobolev-Wirtinger's inequality.
 
-For the Sobolev inequality we note that (we write $T^*=\max\{1,T\}$)
+For the Sobolev's inequality we note that (we write $T^*=\max\{1,T\}$)
 
 \[
  \begin{split}
@@ -379,13 +399,13 @@ we get
 \[2I_1\leq\Phi\left( \frac{\tilde{u}}{T\|u'\orlnor}\right)\leq \frac{1}{T}
 \]
 
-Using Jensen inequality and that $T^*\geq 1$ we have
+Using Jensen's inequality and that $T^*\geq 1$ we have
 \[ 2I_2 = \Phi\left( \frac{1}{T}\int_0^T\frac{u(s)}{T^*\|u\orlnor}ds\right) \leq
 \frac{1}{T}\int_0^T\Phi\left(\frac{u(s)}{\|u\orlnor}\right)ds\leq\frac{1}{T}
 \]
 Then $I_1+I_2\leq 1/T$, which completes the proof of \ref{sobolev}.
 
-Next we prove part \ref{it:embeding} of the lemma. First we prove that there exist a non decreasing function $F:(0,+\infty)\to (0,+\infty)$ sucht that $\|u\linf\leq F(\|\Phi(u)\linf)$. In fact, since $\Phi(x)\to+\infty$ when $\|x\|\to+\infty$, for every $K>0$ there exist $G(K)>0$ such that $|x|\geq G(K)$ then $\Phi(x)\geq K$. Suppose that, for certain $u$,  $\|u\linf > G(\|\Phi(u)\linf)$. Then there exists a set $A\subset [0,T]$ with positive measure such $|u(t)| > G(\|\Phi(u)\linf)$, when $t\in A$. Then $\Phi(u(t))>\|\Phi(u)\linf$, for $t\in A$, which is a contradiction. Now we take $F(K):=\sup\{G(s)|0<s\leq k\}$. 
+Next we prove part \ref{it:embeding} of the lemma. First we prove that there exists a non decreasing function $F:(0,+\infty)\to (0,+\infty)$ sucht that $\|u\linf\leq F(\|\Phi(u)\linf)$. In fact, since $\Phi(x)\to+\infty$ when $\|x\|\to+\infty$, for every $K>0$ there exist $G(K)>0$ such that $|x|\geq G(K)$ then $\Phi(x)\geq K$. Suppose that, for certain $u$,  $\|u\linf > G(\|\Phi(u)\linf)$. Then there exists a set $A\subset [0,T]$ with positive measure such $|u(t)| > G(\|\Phi(u)\linf)$, when $t\in A$. Then $\Phi(u(t))>\|\Phi(u)\linf$, for $t\in A$, which is a contradiction. Now we take $F(K):=\sup\{G(s)|0<s\leq k\}$. 
 
 
 
@@ -413,7 +433,7 @@ Referencias y alguna propiedad interesante medibles en medibles? \cite{krasnosel
 Let $\Phi_1,\Phi_2,\dots,\Phi_n$ be $N$-functions. 
 Assume that $M$ is another $N$-functions that satisfy the $\Delta_2$-condition. 
 We write $x=(x_1,\dots,x_n)$  and $y=(y_1,\dots,y_n)$ with $x_i\in \rr^d$, $y_i\in \rr^d$.
-Let $f(t,x_1,\ldots,x_n,y_1,\ldots,y_n)$ be a function Chatratheodory? with $f:[0,T]\times {(\rr^d)}^n\times {(\rr^d)}^n \to \rr^{d'}$.
+Let $f(t,x_1,\ldots,x_n,y_1,\ldots,y_n)$ be a function Charath\'eodory? with $f:[0,T]\times {(\rr^d)}^n\times {(\rr^d)}^n \to \rr^{d'}$.
 
 Suppose that $a:(\rr^d)^n\to [0,+\infty)$ is a bounded function on bounded sets and 
 $b \in L^{M}([0,T])$, for a.e. $t \in [0, T]$ such that 
