@@ -207,35 +207,41 @@ Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers
 Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
-The coercivity of a $\Phi$ implies that 
+The coercivity of a Young's function $\Phi$ implies that 
 %the existence of a function $F:\rr^+\to \rr^+$
  for every $K>0$ there exists a function $F:=F(K)$ 
 such that if $|x|>F(K)$ then $\Phi(x)> K$.
 
-Con menores estrictos????
+{\color{red} Con menores estrictos????}
 
-It is possible to define  a function $F$ that satisfies the property above as follows:
-\begin{equation}
-F(s)=\sup\{|x|:\Phi(x)\leq s\}
+It is possible to define a function $F$ that satisfies the property above as follows
+\begin{equation}\label{eq:inversa-gral}
+F(s)=\sup\{|x|:\Phi(x)\leq s\},
 \end{equation}
+where $\Phi$ is a coercive Young's function.
 
-We note that the function $\alpha F(\frac{x}{\alpha})$ is increasing with respect to $\alpha$. That is,
-if $\alpha \leq \beta$, we have 
+As $\alpha \Phi(\frac{x}{\alpha})$ is non decreasing with respect to $\alpha$, 
+we get that the function $\alpha F(\frac{x}{\alpha})$ is also increasing with respect to $\alpha$. That is,
+if $0<\alpha \leq \beta$, we have
 \[
 \begin{split}
 \alpha F\left(\frac{s}{\alpha}\right)=
-\sup\left\{|x|:\Phi(x)\leq \frac{s}{\alpha}\}=\sup\{\alpha|x|:\alpha\Phi(x)\leq s\right\}=
+\alpha\sup\left\{|x|:\Phi(x)\leq \frac{s}{\alpha}\right\}=\sup\left\{\alpha|x|:\alpha\Phi(x)\leq s\right\}=
 \\
-\sup\left\{|y|:\alpha\Phi\left(\frac{y}{\alpha}\right)\leq s\}\leq \sup\{|y|:\beta\Phi\left(\frac{y}{\beta}\right)\leq s\right\}=
+\sup\left\{|y|:\alpha\Phi\left(\frac{y}{\alpha}\right)\leq s\right\}
+\leq \sup\left\{|y|:\beta\Phi\left(\frac{y}{\beta}\right)\leq s\right\}=
 \\
 \sup\left\{\beta|x|:\beta \Phi(x)\leq s\}=\sup\beta \{|x|:\Phi(x)\leq\frac{x}{\beta} \right\}=
 \\
-\beta F\left(\frac{x}{\beta}\right)
+\beta F\left(\frac{x}{\beta}\right).
 \end{split}
 \]
 
-It is easy to see that  $|x|\leq F(\Phi(x))$ and if  $\Phi$ is a scalar function, then $F=\Phi^{-1}$.
+It is easy to see that  $|x|\leq F(\Phi(x))$; 
+and, if  $\Phi$ is a scalar function, then $F=\Phi^{-1}$.
 
+{\color{red} No me convence como est\'a escrito lo anterior porque no s\'e 
+c\'omo referenciarlo cuando lo aplicamos para obtener las desigualdades.}
 
 
 
@@ -353,7 +359,9 @@ And, we introduce the following subspaces of $\wphi$
 %
 
 
-\begin{lem}\label{inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be a Young's function and let $u\in\wphi([0,T],\rr^d)$ . Then
+\begin{lem}\label{inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be a Young's function and let $u\in\wphi([0,T],\rr^d)$ . 
+
+{\color{red} Let $F: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}.}
 \begin{enumerate}
 \item\label{inclusion orlicz_item1} For every $s,t\in [0,T]$, $s\neq t$,
 \begin{align}
@@ -389,7 +397,7 @@ Versiones con F!!!
 \end{enumerate}
 \end{lem}
 
-\begin{proof} By the absolutely continuity of $u$ and Jensen's inequality we have
+\begin{proof} By the absolutely continuity of $u$ and Jensen's inequality, we have
 
 \[
  \begin{split}
@@ -398,20 +406,21 @@ Versiones con F!!!
     \leq \frac{1}{ |s-t|}.
  \end{split}
 \]
-As $\Phi$ is coercive, by (quiz\'as referencia a la intro???) there exists a function $F:\rr^+\to \rr^+$ such that 
+{\color{red} As $\Phi$ is coercive, by (quiz\'as referencia a la intro???) there exists a function $F:\rr^+\to \rr^+$ such that}
 \[
     \frac{|u(t)-u(s)|}{\|u'\orlnor |s-t|} 
     \leq  F\left(\frac{1}{ |s-t|}\right),
 \]
 then  \ref{inclusion orlicz_item1} holds.
 
-\ref{in-sob-cont}  implies \ref{wirtinger} by the following argument.  Taking into account that $\alpha\Phi(x/\alpha)$ is a non increasing function with respect to $\alpha\in [0,\infty)$ for every $x\in\rr^d$ we have
+\ref{in-sob-cont}  implies \ref{wirtinger} according to the following argument.  
+Taking into account that $\alpha\Phi(x/\alpha)$ is a non increasing function with respect to $\alpha\in [0,\infty)$ for every $x\in\rr^d$ we have
 \[\Phi\left( \frac{u(t)-u(s)}{\|u'\orlnor T}\right)\leq \frac{1}{T}.\]
 Dividing by $T$ this inequality, integrating respect to $s$ and using Jensen's inequality again
 \[\Phi\left( \int_0^T \frac{u(t)-u(s)}{\|u'\orlnor T^2}ds \right)\leq \frac{1}{T}.\]
 which implies
 \[\Phi\left( \frac{u(t)-\overline{u}}{\|u'\orlnor T} \right)\leq \frac{1}{T}.\]
-Then, by \ref{} there exists $F:\rr^+\to \rr^+$ such that 
+Then, {\color{red} by \ref{} there exists $F:\rr^+\to \rr^+$ such that}
 \[\frac{|u(t)-\overline{u}|}{\|u'\orlnor T} \leq F\left(\frac{1}{T}\right),\]
 and Sobolev-Wirtinger's inequality follows easily.
 
@@ -434,7 +443,7 @@ Using Jensen's inequality and that $T^*\geq 1$ we have
 \frac{1}{T}\int_0^T\Phi\left(\frac{u(s)}{\|u\orlnor}\right)ds\leq\frac{1}{T}
 \]
 Then $I_1+I_2\leq 1/T$. 
-Now, by \ref{} there exists a function $F:\rr^+\to \rr^+$ such that 
+Now, {\color{red} by \ref{} there exists a function $F:\rr^+\to \rr^+$ such tha} 
 \[
 \frac{|u|}{2T^*\|u\sobnor}\leq F\left(\frac{1}{T}\right)
 \]
