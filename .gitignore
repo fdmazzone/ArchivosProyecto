@@ -3,6 +3,7 @@
 *.alg
 *.aux
 *.bbl
+*.bak
 *.blg
 *.dvi
 *.fdb_latexmk
