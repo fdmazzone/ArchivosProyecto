@@ -361,16 +361,16 @@ $F: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. Then
 \item\label{inclusion orlicz_item1} For every $s,t\in [0,T]$, $s\neq t$,
 \begin{align}
  &|u(t)-u(s)| \leq
- \|u'\orlnor |s-t|F\left(\frac{1}{|s-t|}\right)\tag{Morrey's inequality}\label{in-sob-cont}
+ \|u'\orlnor |s-t|G^{-1}\left(\frac{1}{|s-t|}\right)\tag{Morrey's inequality}\label{in-sob-cont}
 \\
-& \| u\linf \leq F\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{sobolev}
+& \| u\linf \leq G^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{sobolev}
 \end{align}
 \item We have $\widetilde{u}\in L^{\infty}([0,T],\rr^d)$ and
 \[
-\|\widetilde u \linf \leq T F\left(\frac{1}{T}\right)\|u'\orlnor
+\|\widetilde u \linf \leq T G^{-1}\left(\frac{1}{T}\right)\|u'\orlnor
 \tag{Sobolev-Wirtinger's inequality}\label{wirtinger}
 \]
-\item\label{it:embeding} The space $\wphi([0,T],\rr^d)$ is compactly embedded in the space of continuous functions $C([0,T],\rr^d)$.
+\item\label{it:embeding} If $\Phi$ is coercive then the space $\wphi([0,T],\rr^d)$ is compactly embedded in the space of continuous functions $C([0,T],\rr^d)$.
 \end{enumerate}
 \end{lem}
 
@@ -384,17 +384,17 @@ the Luxemburg norm, we have
     \leq \frac{1}{ |s-t|}.
  \end{split}
 \]
-By \eqref{eq:inversa-gral} we get
+By \eqref{eq:inversa-gral}????? we get
 \[
     \frac{|u(t)-u(s)|}{\|u'\orlnor |s-t|} 
-    \leq  F\left(\frac{1}{ |s-t|}\right),
+    \leq  G^{-1}\left(\frac{1}{ |s-t|}\right),
 \]
 then  \ref{inclusion orlicz_item1} holds.
 
 \ref{in-sob-cont}  implies \ref{wirtinger} according to the following argument.  
-Taking into account that $\alpha F(1/\alpha)$ is an increasing function 
+Taking into account that $\alpha G^{-1}(1/\alpha)$ is an increasing ???? function
 with respect to $\alpha\in [0,\infty)$ we have
-\[|u(t)-\overline{u}|\leq  \|u'\orlnor T F\left(\frac{1}{T}\right),\]
+\[|u(t)-\overline{u}|\leq  \|u'\orlnor T G^{-1}\left(\frac{1}{T}\right),\]
 and Sobolev-Wirtinger's inequality follows easily.
 
 In order to prove the Sobolev's inequality, we note that, using Jensen's inequality and 
@@ -403,14 +403,14 @@ the definition of $\|u\orlnor$, we obtain
 \frac{1}{T}\int_0^T\Phi\left(\frac{u(s)}{\|u\orlnor}\right)ds\leq\frac{1}{T}
 \]
 Then
-\[|\overline{u}|\leq F\left(\frac{1}{T}\right) \|u\orlnor.\]
+\[|\overline{u}|\leq G^{-1}\left(\frac{1}{T}\right) \|u\orlnor.\]
 Therefore, from this and \eqref{wirtinger} we get
 
 \[\begin{split}
  \|u\linf &\leq |\overline{u}|+\|\tilde{u}\linf\\
  &\leq  
- F\left(\frac{1}{T}\right) \|u\orlnor+T F\left(\frac{1}{T}\right)\|u'\orlnor\\
- &\leq F\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor
+ G^{-1}\left(\frac{1}{T}\right) \|u\orlnor+T G^{-1}\left(\frac{1}{T}\right)\|u'\orlnor\\
+ &\leq G^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor
  \end{split}
  \]
  
@@ -419,7 +419,7 @@ Therefore, from this and \eqref{wirtinger} we get
 
 We take a bounded sequence
 $u_n$ in $\wphi([0,T],\rr^d)$ and suppose that $u_n$ has not convergent subsequence.
-
+From \eqref{in-sob-cont} and ???????   we infer that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C([0,T],\rr^d)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C([0,T],\rr^d)$ with $u_{n_k}\to u$ in $C([0,T],\rr^d)$.
 
 \end{proof}
 
@@ -428,7 +428,6 @@ $u_n$ in $\wphi([0,T],\rr^d)$ and suppose that $u_n$ has not convergent subseque
 
 \section{Superposition operators in anisotropic Orlicz spaces}
 
-Vamos escribiendo lo que queremos...(de acuerdo a mis apuntes y sin ver las hojitas de la semana pasada)
 
 For $f:[0,T]\times \rr^d\to\rr$  we denote by $\mathfrak{f}$ the Nemytskii (o superposition) operator defined for functions $u:[0,T]\to\rr^d$ by 
 \[\mathfrak{f}u(t)=f(t,u(t))\]
