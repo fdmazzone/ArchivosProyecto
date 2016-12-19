@@ -207,25 +207,23 @@ Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers
 Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
-We define the function the $G$ by
+We define the function $G$ by
 \begin{equation}\label{eq:inversa-gral}
 G(s)=\min\{\Phi(x):|x|=s\},
 \end{equation}
 where $\Phi$ is a Young's function. 
 
-The function $F$ defined above is the greatest radial minorant. That is .....????
+We point out that the function $G$ is the greatest radial minorant of $\Phi$, then $G(|x|)\leq \Phi (x)$. 
 
-A simple consequence of the previous fact is the next inequality $G(|x|)\leq \Phi (x)$. 
+We can see that $G$ is monotonous, continuous and $G(s) \to \infty$ as $s \to \infty$.
+{\color{red}Agregar algunas pruebas de lo anterior, c\'omo sale la monoton\'ia ????}
 
-The function $G$ is monotonous, continuous and $G(s) \to \infty$ as $s \to \infty$.
-Pruebas de lo anterior o c\'omo sale....????
-
-Then, there exists its inverse function $G^{-1}$.
-And, from \eqref{} it is easy to see that $G^{-1}(\Phi(x))\geq |x|$.
+Therefore, there exists its inverse function $G^{-1}$ and
+ we get that $G^{-1}(\Phi(x))\geq |x|$.
 
 As $\frac{\Phi(\alpha x)}{\alpha}$ is increasing with respect to $\alpha$, 
-we get that $\frac{G(\alpha s)}{\alpha}$ is also increasing 
-with respect to $\alpha$??????
+$\frac{G(\alpha s)}{\alpha}$ is also increasing 
+with respect to $\alpha$.
 In fact, 
 if $0<\alpha \leq \beta$, we have
 \[
@@ -238,19 +236,21 @@ if $0<\alpha \leq \beta$, we have
 \min\left\{\frac{\Phi(\alpha y)}{\alpha}:|y|=s \right\}
 \leq \min \left\{\frac{\Phi(\beta y)}{\beta}: |y|=s \right\}=
 \\
-\frac{\min\{\Phi(\beta y): |y|=s\}}{\beta}=
-\frac{\min \left\{ \Phi(x): \frac{|x|}{\beta}=s\right\}}{\beta}=
+%\frac{\min\{\Phi(\beta y): |y|=s\}}{\beta}=
+\min \left\{ \frac{\Phi(x)}{\beta}: \frac{|x|}{\beta}=s\right\}=
 \frac{\min\{\Phi(x): |x|=\beta s\}}{\beta}=
-\\
 \frac{G(\beta s)}{\beta}.
 \end{split}
 \]
 
+
+
+Performing the change of variables $\alpha s=G^{-1}(\frac{t}{\beta})$ on $\frac{G(\alpha s)}{\alpha}$, 
+we can see that $\beta G^{-1}(\frac{t}{\beta})$ is an increasing function with respect to 
+$\beta$. {\color{red}(en las cuentas, usamos que $G$ es creciente??????)}
+
 And, in the event that $\Phi$ is an N-function, we obtain that $\frac{G(\alpha s)}{\alpha}\to \infty$
 as $\alpha \to \infty$.
-
-
-Performing some change of variables on....., we can see that $\alpha G^{-1}(\frac{s}{\alpha})$ is an increasing function too.
 
 
 %We note that  for every $K>0$, if $|x|>F(K)$ 
