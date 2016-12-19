@@ -207,34 +207,55 @@ Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers
 Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
-We define the function the $F$ by
+We define the function the $G$ by
 \begin{equation}\label{eq:inversa-gral}
-F(s)=\sup\{|x|:\Phi(x)\leq s\},
+G(s)=\min\{\Phi(x):|x|=s\},
 \end{equation}
 where $\Phi$ is a Young's function. 
 
+The function $F$ defined above is the greatest radial minorant. That is .....????
 
-As $\alpha \Phi(\frac{x}{\alpha})$ is decreasing with respect to $\alpha$, 
-we get that the function $\alpha F(\frac{x}{\alpha})$ is increasing 
-with respect to $\alpha$. That is,
+A simple consequence of the previous fact is the next inequality $G(|x|)\leq \Phi (x)$. 
+
+The function $G$ is monotonous, continuous and $G(s) \to \infty$ as $s \to \infty$.
+Pruebas de lo anterior o c\'omo sale....????
+
+Then, there exists its inverse function $G^{-1}$.
+And, from \eqref{} it is easy to see that $G^{-1}(\Phi(x))\geq |x|$.
+
+As $\frac{\Phi(\alpha x)}{\alpha}$ is increasing with respect to $\alpha$, 
+we get that $\frac{G(\alpha s)}{\alpha}$ is also increasing 
+with respect to $\alpha$??????
+In fact, 
 if $0<\alpha \leq \beta$, we have
 \[
 \begin{split}
-\alpha F\left(\frac{s}{\alpha}\right)=
-\alpha\sup\left\{|x|:\Phi(x)\leq \frac{s}{\alpha}\right\}=\sup\left\{\alpha|x|:\alpha\Phi(x)\leq s\right\}=
+ \frac{G(\alpha s)}{\alpha}=
+\frac{\min\{\Phi(x):|x|=\alpha s\}}{\alpha}=
+\min 
+\left\{\frac{\Phi(x)}{\alpha}:\frac{|x|}{\alpha}=s \right\}=
 \\
-\sup\left\{|y|:\alpha\Phi\left(\frac{y}{\alpha}\right)\leq s\right\}
-\leq \sup\left\{|y|:\beta\Phi\left(\frac{y}{\beta}\right)\leq s\right\}=
+\min\left\{\frac{\Phi(\alpha y)}{\alpha}:|y|=s \right\}
+\leq \min \left\{\frac{\Phi(\beta y)}{\beta}: |y|=s \right\}=
 \\
-\sup\left\{\beta|x|:\beta \Phi(x)\leq s\}=\sup\beta \{|x|:\Phi(x)\leq\frac{x}{\beta} \right\}=
+\frac{\min\{\Phi(\beta y): |y|=s\}}{\beta}=
+\frac{\min \left\{ \Phi(x): \frac{|x|}{\beta}=s\right\}}{\beta}=
+\frac{\min\{\Phi(x): |x|=\beta s\}}{\beta}=
 \\
-\beta F\left(\frac{x}{\beta}\right).
+\frac{G(\beta s)}{\beta}.
 \end{split}
 \]
 
-We note that  for every $K>0$, if $|x|>F(K)$ 
-then $\Phi(x)> K$ and therefore we see that  $|x|\leq F(\Phi(x))$. If $d=1$ 
-then $F=\Phi^{-1}$.
+And, in the event that $\Phi$ is an N-function, we obtain that $\frac{G(\alpha s)}{\alpha}\to \infty$
+as $\alpha \to \infty$.
+
+
+Performing some change of variables on....., we can see that $\alpha G^{-1}(\frac{s}{\alpha})$ is an increasing function too.
+
+
+%We note that  for every $K>0$, if $|x|>F(K)$ 
+%then $\Phi(x)> K$ and therefore we see that  $|x|\leq F(\Phi(x))$. If $d=1$ 
+%then $F=\Phi^{-1}$.
 
 
 
@@ -246,8 +267,7 @@ if there exist  constants $K>0$ and  $M\geq 0$ such that
 \end{equation}
 for every $|x|\geq M$.
 
-
-If $\Phi$ is a Young function we define its \emph{Fenchel conjugate}   $\Phi^*:\mathbb{R}^d\to \mathbb{R}_+ $by:
+If $\Phi$ is a Young function we define its \emph{Fenchel conjugate}   $\Phi^*:\mathbb{R}^d\to \mathbb{R}^+ $ by:
 \begin{equation}\label{eq:conjugada}
  \Phi^*(y)=\sup\limits_{x\in\mathbb{R}^d} x\cdot y-\Phi(x)
 \end{equation}
