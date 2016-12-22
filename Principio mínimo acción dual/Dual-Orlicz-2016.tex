@@ -10,7 +10,7 @@
 \usepackage{MnSymbol}
 \usepackage{fancyhdr}
 \usepackage{times}
-
+\usepackage{enumitem}
 \usepackage[latin1]{inputenc}
 
 \usepackage{comment}
@@ -35,11 +35,17 @@
 \item
 \def\@currentlabel{#1}\label{#2}}
 \makeatother
+\makeatletter
+\def\namedlabel#1#2{\begingroup
+    #2%
+    \def\@currentlabel{#2}%
+    \phantomsection\label{#1}\endgroup
+}
+\makeatother
 
 
 
-
-\title{Periodic solutions of 
+\title{Periodic solutions of
 Euler-Lagrange equations in an Orlicz-Sobolev space setting by the dual least action principle }
 \author{Sonia Acinas \thanks{SECyT-UNRC and  FCEyN-UNLPam}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
@@ -197,10 +203,9 @@ In this paper  we apply the dual method (\cite[Ch. 3]{mawhin2010critical}) to ob
 
 
 
-\section{Preliminaries}\label{preliminares}
+\section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to known results on Orlicz and Orlicz-Sobolev spaces of vector valued functions (anisotropic Orlicz Spaces) and other brief introduction to superposition operators between these spaces. References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001} and
-\cite{zbMATH04038592,zbMATH04009182,zbMATH03983966,zbMATH03942215}. 
+In this section, we give a short introduction to known results on Orlicz and Orlicz-Sobolev spaces of vector valued functions (anisotropic Orlicz Spaces). References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}.
 
 Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$.
 
@@ -209,61 +214,29 @@ Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 
 We define the function $G$ by
 \begin{equation}\label{eq:inversa-gral}
-G(s)=\min\{\Phi(x):|x|=s\},
+G(s)=\min\{\Phi(x):|x|\leq s\},
 \end{equation}
 where $\Phi$ is a Young's function. 
 
-We point out that the function $G$ is the greatest radial minorant of $\Phi$, then $G(|x|)\leq \Phi (x)$. 
-
-We can see that $G$ is monotonous, continuous and $G(s) \to \infty$ as $s \to \infty$.
-{\color{red}Agregar algunas pruebas de lo anterior, c\'omo sale la monoton\'ia ????}
-
-Therefore, there exists its inverse function $G^{-1}$ and
- we get that $G^{-1}(\Phi(x))\geq |x|$.
-
-As $\frac{\Phi(\alpha x)}{\alpha}$ is increasing with respect to $\alpha$, 
-$\frac{G(\alpha s)}{\alpha}$ is also increasing 
-with respect to $\alpha$.
-In fact, 
-if $0<\alpha \leq \beta$, we have
-\[
-\begin{split}
- \frac{G(\alpha s)}{\alpha}=
-\frac{\min\{\Phi(x):|x|=\alpha s\}}{\alpha}=
-\min 
-\left\{\frac{\Phi(x)}{\alpha}:\frac{|x|}{\alpha}=s \right\}=
-\\
-\min\left\{\frac{\Phi(\alpha y)}{\alpha}:|y|=s \right\}
-\leq \min \left\{\frac{\Phi(\beta y)}{\beta}: |y|=s \right\}=
-\\
-%\frac{\min\{\Phi(\beta y): |y|=s\}}{\beta}=
-\min \left\{ \frac{\Phi(x)}{\beta}: \frac{|x|}{\beta}=s\right\}=
-\frac{\min\{\Phi(x): |x|=\beta s\}}{\beta}=
-\frac{G(\beta s)}{\beta}.
-\end{split}
-\]
-
-
-
-Performing the change of variables $\alpha s=G^{-1}(\frac{t}{\beta})$ on $\frac{G(\alpha s)}{\alpha}$, 
-we can see that $\beta G^{-1}(\frac{t}{\beta})$ is an increasing function with respect to 
-$\beta$. {\color{red}(en las cuentas, usamos que $G$ es creciente??????)}
-
-And, in the event that $\Phi$ is an N-function, we obtain that $\frac{G(\alpha s)}{\alpha}\to \infty$
-as $\alpha \to \infty$.
-
-
-%We note that  for every $K>0$, if $|x|>F(K)$ 
-%then $\Phi(x)> K$ and therefore we see that  $|x|\leq F(\Phi(x))$. If $d=1$ 
-%then $F=\Phi^{-1}$.
+We point out that the function $G(|x|)$ has the following properties, as reader can easily check,
+\begin{enumerate}
+ \item[\namedlabel{it:g1}{(G1)}] $G$ is monotonous increasing, continuous and $G(s) \to \infty$ as $s \to \infty$.
+ \item[\namedlabel{it:g2}{(G2)}] $G$ is the \emph{greatest radial minorant} of $\Phi(x)$, i.e.  $G(|x|)\leq \Phi (x)$ and $G(|x|)$ is the biggest radial function with this property.
+ \item[\namedlabel{it:g3}{(G3)}] There exists  $G^{-1}$ and  $G^{-1}(\Phi(x))\geq |x|$.
+ \item[\namedlabel{it:g4}{(G4)}] As $\Phi(\alpha x)/\alpha$ is increasing with respect to $\alpha$ for evey $x>0$,
+$G(\alpha s)/\alpha$ is also increasing
+with respect to $\alpha$ for every $s>0$. Alternatively  $\beta G^{-1}(t/\beta)$ is an increasing function with respect to
+$\beta$ for every $t>0$.
+\item[\namedlabel{it:g5}{(G5)}] In the event that $\Phi$ is coervive, then $G$ is also coercive. Alternatively $G^{-1}(s)/s\to 0$ when $s\to+\infty$.
+\end{enumerate}
 
 
 
 
 
-We also say that a non decreasing function $\eta:\mathbb{R}^+\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\eta \in \Delta_2^{\infty}$,
+We also say that $\Phi:\mathbb{R}^d\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
 if there exist  constants $K>0$ and  $M\geq 0$ such that
-\begin{equation}\label{delta2defi}\eta(2x)\leq K\eta(x),
+\begin{equation}\label{delta2defi}\Phi(2x)\leq KH(x),
 \end{equation}
 for every $|x|\geq M$.
 
@@ -273,7 +246,7 @@ If $\Phi$ is a Young's function we define its \emph{Fenchel conjugate}   $\Phi^*
 \end{equation}
 
 
-Let $d$ be a positive integer. We denote by $\mathcal{M}:=\mathcal{M}([0,T],\rr^d)$  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$. For the set of functions $\mathcal{M}$, as for other similar sets, we will omit the reference to codomain $\mathbb{R}^d$ when $d=1$.
+ We denote by $\mathcal{M}:=\mathcal{M}([0,T],\rr^d)$, with $d\geq 1$,  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$. For the set of functions $\mathcal{M}$, as for other similar sets, we will omit the reference to codomain $\mathbb{R}^d$ when $d=1$.
 
 
 Given  an $N$-function $\Phi$ we define the \emph{modular function} 
@@ -314,19 +287,26 @@ If $\Phi \in \Delta_2^{\infty}$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$
 
 Following to \cite{Desch2001} we introduce the next definition.
 
-\begin{defi} Let $u_n,u\lphi([0,T],\rr^d)$. We say that $u_n$ converges monotonically to $u$ if there exists $\alpha_n\in\linf([0,T],\rr^d)$, $n=1,2,\ldots$, such that $0\leq \alpha_n(t)\leq \alpha_{n+1}(t)$, $\alpha_n(t)\to 1$ a.e., when $n\to\infty$ and $u_n(t)=\alpha_n(t)u(t)$.
+\begin{defi} Let $u_n,u\in\lphi([0,T],\rr^d)$. We say that $u_n$ converges monotonically to $u$ if there exists $\alpha_n\in L^{\infty}([0,T],\rr)$, $n=1,2,\ldots$, such that $0\leq \alpha_n(t)\leq \alpha_{n+1}(t)$, $\alpha_n(t)\to 1$ a.e., when $n\to\infty$ and $u_n(t)=\alpha_n(t)u(t)$.
 
 \end{defi}
 
  
 As usual, if $(X,\|\cdot\|_X)$ is a normed space and $(Y,\|\cdot \|_Y)$ is a linear subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when there exists $C>0$ such that
-$\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lpsi\hookrightarrow  \left[\lphi\right]^*$, where a function $v\in\lpsi$ is associated  to $F_v\in \left[\lphi\right]^*$ where
+$\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lpsi\hookrightarrow  \left[\lphi\right]^*$, where a function $v\in\lpsi$ is associated  to $\xi_v\in \left[\lphi\right]^*$ being
 \begin{equation}\label{pairing}
-  F_v(u):=\langle v,u\rangle=\int_0^Tv\cdot u\ dt,
+  \xi_v(u)=\langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
 \end{equation}
- In  \cite[Thm 2.9]{Desch2001}  it was characterized a subspace of   $\left[\lphi\right]^*$ which is identified with $\lpsi$. Namely $\lpsi=P^{\Phie}([0,T],\rr^d)$ where $F\in P^{\Phie}([0,T],\rr^d)$ if and only if $F\in\left[\lphi\right]^*$ and satisfying the \emph{monotone convergence property}, which is if $u_n$ converges monotonically to $u$ then $F(u_n)\to F(u)$.
+ In  \cite[Thm 2.9]{Desch2001}  it was characterized a subspace of   $\left[\lphi\right]^*$ which can be identified with $\lpsi$.
 
- If $\Phi \in \Delta_2^{\infty}$ and $\Phi$ is coercive then $\lpsi([0,T],\rr^d)= \left[\lphi([0,T],\rr^d)\right]^*$ is satisfied (see \cite[Thm. 2.9 , Thm. 2.10]{Desch2001}).
+ \begin{prop} Let $F\in\left[\lphi([0,T],\rr^d)\right]^*$. Then the following statements are equivalent
+ \begin{enumerate}
+  \item $\xi\in \lpsi([0,T],\rr^d)$
+  \item $\xi$ satisfies the \emph{monotone convergence property}, which is if $u_n$ converges monotonically to $u$ then $\langle \xi,u_n\rangle\to \langle \xi,u\rangle$.
+ \end{enumerate}
+ \end{prop}
+
+ If $\Phi \in \Delta_2^{\infty}$ and $\Phi$ is coercive then $\lpsi([0,T],\rr^d)= \left[\lphi([0,T],\rr^d)\right]^*$  (see \cite[Thm. 2.9 , Thm. 2.10]{Desch2001}).
 
 % It is easy to see that, for every coercive $\Phi$ we have that $L^{\infty}\hookrightarrow\lphi \hookrightarrow L^1$.
 
@@ -376,7 +356,7 @@ And, we introduce the following subspaces of $\wphi$
 
 \begin{lem}\label{inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be a Young's 
 function and let $u\in\wphi([0,T],\rr^d)$. Let 
-$F: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. Then 
+$G: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. Then
 \begin{enumerate}
 \item\label{inclusion orlicz_item1} For every $s,t\in [0,T]$, $s\neq t$,
 \begin{align}
@@ -404,7 +384,7 @@ the Luxemburg norm, we have
     \leq \frac{1}{ |s-t|}.
  \end{split}
 \]
-By \eqref{eq:inversa-gral}????? we get
+By  \ref{it:g1} and \ref{it:g3} we get
 \[
     \frac{|u(t)-u(s)|}{\|u'\orlnor |s-t|} 
     \leq  G^{-1}\left(\frac{1}{ |s-t|}\right),
@@ -412,8 +392,8 @@ By \eqref{eq:inversa-gral}????? we get
 then  \ref{inclusion orlicz_item1} holds.
 
 \ref{in-sob-cont}  implies \ref{wirtinger} according to the following argument.  
-Taking into account that $\alpha G^{-1}(1/\alpha)$ is an increasing ???? function
-with respect to $\alpha\in [0,\infty)$ we have
+Taking into account that $\alpha G^{-1}(1/\alpha)$ is an increasing function
+with respect to $\alpha\in (0,\infty)$ we have
 \[|u(t)-\overline{u}|\leq  \|u'\orlnor T G^{-1}\left(\frac{1}{T}\right),\]
 and Sobolev-Wirtinger's inequality follows easily.
 
@@ -422,7 +402,7 @@ the definition of $\|u\orlnor$, we obtain
 \[ \Phi\left( \frac{ \overline{u}}{\|u\orlnor} \right) \leq
 \frac{1}{T}\int_0^T\Phi\left(\frac{u(s)}{\|u\orlnor}\right)ds\leq\frac{1}{T}
 \]
-Then
+Then by  \ref{it:g1} and \ref{it:g3}
 \[|\overline{u}|\leq G^{-1}\left(\frac{1}{T}\right) \|u\orlnor.\]
 Therefore, from this and \eqref{wirtinger} we get
 
@@ -437,9 +417,8 @@ Therefore, from this and \eqref{wirtinger} we get
 
 
 
-We take a bounded sequence
-$u_n$ in $\wphi([0,T],\rr^d)$ and suppose that $u_n$ has not convergent subsequence.
-From \eqref{in-sob-cont} and ???????   we infer that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C([0,T],\rr^d)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C([0,T],\rr^d)$ with $u_{n_k}\to u$ in $C([0,T],\rr^d)$.
+In order to prove item 3, we take a bounded sequence
+$u_n$ in $\wphi([0,T],\rr^d)$. From \eqref{in-sob-cont} and \ref{it:g5}  we infer that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C([0,T],\rr^d)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C([0,T],\rr^d)$ with $u_{n_k}\to u$ in $C([0,T],\rr^d)$.
 
 \end{proof}
 
@@ -447,221 +426,37 @@ From \eqref{in-sob-cont} and ???????   we infer that $u_n$ are equicontinuous. F
 
 
 \section{Superposition operators in anisotropic Orlicz spaces}
+In this section we give a brief introduction to superposition operators between anistropic Orlicz Spaces.  We apply these results to obtain Gate\^aux differentiability of                                                                                action integrals associated to lagrangian functions defined in Sobolev-Orlicz spaces.
+
+Henceforth we assume that $f$ is a \emph{Carath\'eodory function},
+
+\begin{enumerate}
+ \item[\namedlabel{eq:carathe}{(C)}] $f$ is measurable with respect to $t\in [0,T]$ for every  $x\in\rr^d$, and $f$ is a continuous function with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
+\end{enumerate}
 
 
-For $f:[0,T]\times \rr^d\to\rr$  we denote by $\mathfrak{f}$ the Nemytskii (o superposition) operator defined for functions $u:[0,T]\to\rr^d$ by 
-\[\mathfrak{f}u(t)=f(t,u(t))\]
-
-Referencias y alguna propiedad interesante medibles en medibles? \cite{krasnosel2011integral,KR}
 
 
-\begin{thm}
-Let $\Phi_1,\Phi_2,\dots,\Phi_n$ be $N$-functions. 
-Assume that $M$ is another $N$-functions that satisfy the $\Delta_2$-condition. 
-We write $x=(x_1,\dots,x_n)$  and $y=(y_1,\dots,y_n)$ with $x_i\in \rr^d$, $y_i\in \rr^d$.
-Let $f(t,x_1,\ldots,x_n,y_1,\ldots,y_n)$ be a function Charath\'eodory? with $f:[0,T]\times {(\rr^d)}^n\times {(\rr^d)}^n \to \rr^{d'}$.
+\begin{defi}
+ For $f:[0,T]\times \rr^d\to\rr$  we denote by $\b{f}$ the Nemytskii (o superposition) operator defined for functions $u:[0,T]\to\rr^d$ by
+\[\b{f}u(t)=f(t,u(t))\]
+\end{defi}
 
-Suppose that $a:(\rr^d)^n\to [0,+\infty)$ is a bounded function on bounded sets and 
-$b \in L^{M}([0,T])$, for a.e. $t \in [0, T]$ such that 
-\begin{equation}\label{eq:condicion estru gral}
-|f|\leq a(x)[ b(t)+\sum_{i=1}^{n} M^{-1}(\Phi_i(|y_i|))],
-\end{equation}
-then 
-\[
-\mathfrak{f}:\left(\prod\limits_{i=1}^n L^{\infty}([0,T],\rr^d)\right) \times \left(\prod\limits_{i=1}^n \Pi(E^{\Phi_i}([0,T],\rr^d),\lambda=1)\right)
-\to \lmj.\]
+In the following Theorem we enumerate  some known properties for superposition operators definied in anisotropic Orlicz spaces of vectorial functions.   For the proofs of these results and additional  discussions see
+\cite{zbMATH04038592,zbMATH03983966,zbMATH03942215}.
+
+\begin{thm} We assume that $f$ satisfies condition \eqref{eq:carathe}. Then
+\begin{enumerate}
+ \item\label{it:measure}\emph{Measurability.}  The operator $\b{f}$ maps  masurable function into measurable functions
+ \item\label{it:exten}\emph{Extensibility.?} If
+ \item\label{it:exten}\emph{Continuity.?} If
+
+\end{enumerate}
+
+
+
+
 \end{thm}
-
-\begin{proof}
-If $(u,v)\in \left(\prod\limits_{i=1}^n L^{\infty}([0,T],\rr^d)\right) \times \left(\prod\limits_{i=1}^n \Pi(E_d^{\Phi_i},\lambda=1)\right)$.
-By \cite[ Thm. 17.6]{KR} (y otras cosas), we get 
- \[|\mathfrak{f}u(t)|=|f(t,u(t),v(t))| \leq 
-M_a [b_j(t) +\sum_{i=1}^{n} M_j^{-1}(\Phi_i(|v_i(t)|))]
-\in
- L_1^{M_j}.\]
-\end{proof}
-
-We define the space $X$ by
-$X=\{v=(v_1,v_2):v_1 \in W^{1}L^{\Phi_1}_T,v_2\in W^{1}L^{\Phi_2}_T\}$
-and 
-$X^*=\{v=(v_1,v_2):v_1 \in (W^{1}L^{\Phi_1}_T)^*,v_2\in (W^{1}L^{\Phi_2}_T)^*\}$
-where $(W^{1}L^{\Phi_i}_T)^*$ stands for the conjugate space of $W^{1}L^{\Phi_i}_T$ for $i=1,2$.
-
-\begin{cor}
-We will consider the Lagrange function
-$\mathcal{L}:[0,T]\times\rr^d\times\rr^d\times\rr^d\times\rr^d\to\rr$, $(t,x_1,x_2,y_1,y_2)\to \mathcal{L}(t,x_1,x_2,y_1,y_2)$
-which is measurable in $t$ for each $(x_1,x_2,y_1,y_2)\in \rr^d\times\rr^d\times\rr^d\times\rr^d$ and continuously differentiable 
-in $(x_1,x_2,y_1,y_2)$ for almost every $t \in [0,T]$. 
-
-Let $x=(x_1,x_2)$, $y=(y_1,y_2)$ with $x_i \in \rr^d$ and $y_i \in \rr^d$ and let 
-\begin{equation}\label{integral_accion}
-I(x)=\int_{0}^T \mathcal{L}(t,x,y)\ dt
-\end{equation}
-
-
-If there exist $a\in C(\rr^+,\rr^+)$, $i=1,2,$
-$b \in L^1_1([0,T])$, $j=1,\dots,d'$ for a.e. $t \in [0, T]$ and 
-every $(x_1,x_2,y_1,y_2)\in \rr^d\times\rr^d\times\rr^d\times\rr^d$ satisfying the structure conditions 
-% \begin{eqnarray}
-% |\mathcal{L}(t,x,y)|+ \sum_{i=1}^2
-% |D_{x_i}\mathcal{L}(t,x,y)|&\leq a(|x|)(b(t)+ \Phi_1(|y_1|)+\Phi_2(|y_2|)),\label{cotaL}\\
-% |D_{y_i}\mathcal{L}(t,x,y)| &\leq a(|x|)(c_i(t)+\sum_{j=1}^n \Phie^{-1}_i(\Phi_j(|y_j|))\;i=1,2.\label{cotaDyL}
-% \end{eqnarray}
-
-
-The nonlinear operator $(x_1,x_2)\mapsto D_x\mathcal{L}(t,x_1,y_1, y_2)$ is continuous from $\domiuno\times\domidos\times\dots\times\domin$ with the strong topology  into $L^1([0,T])$  with the strong topology on both sets.
-
-The nonlinear operator $(x_1,x_2)\mapsto D_y\mathcal{L}(t,x_1,y_1, y_2)$ is continuous from $\domiuno\times\domidos\times\dots\times\domin$ with the strong topology  into $X$  with the weak$^*$ topology.
-
-
-The function  $I$ is G\^ateaux differentiable on $\domiuno\times \domidos$ and  its derivative $I'$ is demicontinuous from $\domiuno\times\domidos$  into $X^*$. Moreover, $I'$ is given by the following expression
-\begin{equation}\label{DerAccion}
-\begin{split}
-\left\langle I'(x),w \right\rangle=\int_0^T 
-[
-(D_{x_1}\mathcal{L}(t,x_1(t),x_2(t),y_1(t),y_2(t)),w_1(t))+
-\\
-(D_{x_2}\mathcal{L}(t,x_1(t),x_2(t),y_1(t),y_2(t)),w_2(t))+
-\\
-(D_{y_1}\mathcal{L}(t,x_1(t),x_2(t),y_1(t),y_2(t)),w'_1(t))+
-\\
-(D_{y_2}\mathcal{L}(t,x_1(t),x_2(t),y_1(t),y_2(t)),w'_2(t))
-]\,dt
-\end{split}
-\end{equation}
-
-If  $\Phie \in \Delta_2$ then
-  $I'$ is continuous from $\domiuno\times\domidos$ into $X^*$ when both spaces are equipped with the strong topology.
-\end{cor}
-
-
-We denote by $\mathfrak{A}(a,b,c,\lambda,f,\Phi)$ the set of all Lagrange functions satisfying  \eqref{eq:estru1}, \eqref{eq:estru2} and \eqref{eq:estru3}.
-
-
-\begin{proof} 
-
-{\bf OJO!!!! Es algo que ten\'iamos del trabajo anterior!!! 
-con algunas adaptaciones a 2 variables sin controlar y a lo bruto!!!!!}
-
-Let $u\in \domiuno\times\domidos$.
-
-\noindent\emph{Step 1. The non linear operator  $(x_1,x_2) \mapsto (D_{x_1}\mathcal{L}(t,x_1,x_2,y_1,y_2),
-D_{x_1}\mathcal{L}(t,x_1,x_2,y_1,y_2))$ is continuous from $\domiuno\times\domidos$ into $L^{1}_d([0,T])\times L^1_d([0,T])$ with the strong topology on both sets.} 
-
-
-If $u\in \domiuno\times\domidos$, from \eqref{cotaDxL} and \eqref{inclusion3}, we obtain 
-Let   $\{x_n=({x_1}_n,{x_2}_n)\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\domiuno\times\domidos$  and let 
-$x=(x_1,x_2)\in \domiuno\times\domidos$  such that $x_n\rightarrow x$ in $X$.
-From  ${x_i}_n\rightarrow x_i$ in $\lphii$, there exists a subsequence ${x_i}_{n_k}$ such that ${x_i}_{n_k}\rightarrow x_i \quad\text{a.e.}$; and, as ${x_i}_n\rightarrow x_i \in\domi$, by 
-  Lemma \ref{segundo lema}, there exist a subsequence of  ${x_i}_{n_k}$ (again denoted ${x_i}_{n_k}$) and a function  $h_i\in \Pi(\ephi_1,\lambda))$
-such that  ${x_i}_{n_k}\rightarrow u_i \quad\text{a.e.}$ and $|{x_i}_{n_k}|\leq h_i\quad\text{a.e}$.  
-Since ${x_i}_{n_k}$, $k=1,2,\ldots,$ is a strong convergent sequence in $\wphii_d$, it is a bounded sequence in $\wphii_d$. According to Lemma \ref{inclusion orlicz} and Corollary \ref{a_bound}, there exist $M_i>0$ such that $\|\b{a}({x_i}_{n_k})\|_{L^{\infty}} \leq M_i$, $k=1,2,\ldots$.  From the previous facts and \eqref{DxL1}, we get
-\begin{equation*}\label{DxL1-bis}
-|D_{x_i}\mathcal{L}(\cdot,{x_1}_{n_k},{x_2}_{n_k},{y_1}_{n_k},{y_2}_{n_k})|\leq 
-M_i (b+\Phi_i(|h_i|)) \in L^1_1\;\;i=1,2.
-\end{equation*}
-On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
-\[D_{x_i}\mathcal{L}(t,{x_i}_{n_k}(t),{y_i}_{n_k}(t))\to D_{x_i}\mathcal{L}(t,x_i(t), y_i(t))\quad\hbox{ for a.e. } t\in[0,T].\]
-Applying the Dominated Convergence Theorem we conclude the proof of step 1.
-
-\noindent\emph{Step 2. The non linear operator   
-$(x_1,x_2)\mapsto (D_{y_1}\mathcal{L}(t,x_1,y_1, D_{y_2}\mathcal{L}(t,x_2,y_2)$ is continuous from $\domiuno\times\domidos$ with the strong topology  into $X$  with the weak$^*$ topology.}
-
-
- Note that \eqref{DxL1},  \eqref{DyLpsi} and the imbeddings $\wphi_d \hookrightarrow L_d^{\infty}$ and  $\lpsi_d\hookrightarrow  \left[\lphi\right]^*$ imply that the second member of
-\eqref{DerAccion} defines an element in $\left[\wphi_d\right]^*$.
-
-Let $({x_1}_n,{x_2}_n)\in \domi$ such that $({x_1}_n,{x_2}_n)\to (x_1,x_2)$ in the norm of $X$. 
-We must prove that  $D_{y_i}\mathcal{L}(\cdot,{x_1}_n,{x_2}_n)\overset{w^*}{\rightharpoonup} 
-D_{y_i}\mathcal{L}(\cdot,x_1,x_2,y_1,y_2)$ para $i=1,2$.
-On the contrary, there exist $v=(v_1,v_2)\in\lphiuno\times\lphidos$, $\epsilon>0$ and a subsequence of $\{x_n\}$ (denoted  $\{x_n\}$ for simplicity)  such that
-\begin{equation}\label{cota_eps}
- \left| \langle D_{y_i}\mathcal{L}(\cdot, {x_1}_n,{x_2}_n,{y_1}_n,{y_2}_n),\
-v \rangle - \langle  D_{y_i}\mathcal{L}(\cdot,x_1,x_2, y_1,y_2,v \rangle\right|\geq \epsilon.
-\end{equation}
-We have $x_n \rightarrow x$ in $X$ and
-$y_n\rightarrow y$ in $X$. By Lemma \ref{segundo lema}, 
-there exist a subsequence $x_{n_k}$ and a function $h\in \Pi(\ephiuno_1,\lambda)\times\Pi(\ephidos_1,\lambda) $ such that $x_{n_k}\rightarrow x \quad\text{a.e.}$, $y_{n_k}\rightarrow y \quad\text{a.e.}$ and $|y_{n_k}|\leq h\quad\text{a.e.}$ 
-As in the previous step, since $x_n$ is a convergent sequence, the Corollary \ref{a_bound} implies that $a(|y_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
-Therefore,  with $x_{n_k}$ instead of $x$, inequality  \eqref{DyLpsi} becomes 
-% \begin{equation}\label{Dy-suc}
-%   \left | D_{y_i}\mathcal{L}(\cdot,x_{n_k},y_{n_k})  \right|
-% 	\leq M_i(c_i+\varphi_i(h_i)+\Phie_i^{-1}(\Phi_j(|y_j|)))\in \lpsii_1.
-% \end{equation}
-Consequently, as $v \in \lphi$ and employing H\"older's inequality, we obtain that
-\[\sup_k|D_{\b{y}}\mathcal{L}(\cdot,u_{n_k},\b{\dot{u}}_{n_k})\ccdot v| \in L^1_1.\]
-  Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
-\begin{equation}\label{conv_debil}\int_0^T  D_{\b{y}}\mathcal{L}(t,u_{n_k},\b{\dot{u}}_{n_k})\ccdot\b{ v} \ dt \to \int_0^T D_{\b{y}}\mathcal{L}(t,u,\b{\dot{u}})\ccdot\b{ v}\ dt \end{equation}
-which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
-
-\emph{Step 3.} We will prove \eqref{DerAccion}. The proof follows similar lines as \cite[Thm. 1.4]{mawhin2010critical}. For $u\in \domi$ and $\b{0}\neq v\in\wphi_d$, we define the function
-\[H(s,t):=\mathcal{L}(t,u(t)+sv(t),\b{\dot{u}}(t)+s\b{\dot{v}}(t)).\]
-
-From \cite[Lemma 10.1]{KR} (or \cite[Thm. 5.5]{Orliczvectorial2005} ) we obtain that if $|u|\leq |v|$ then    $d(u,\ephi)\leq d(v,\ephi)$.
-Therefore, for  $|s|\leq s_0:=\left(\lambda-d(\b{\dot{u}},\ephi)\right)/\|v\sobnor$ we have
-\[
-d \left(\b{\dot{u}}+s\b{\dot{v}}, \ephi \right)
-\leq
-d \left(|\b{\dot{u}}|+s|\b{\dot{v}}|, \ephi_1 \right)
-\leq d \left(|\b{\dot{u}}|,\ephi_1 \right)+ s \|\b{\dot{v}}\orlnor < \lambda.
-\]
-Thus $\b{\dot{u}}+s\b{\dot{v}} \in \Pi(\ephi,\lambda)$ and  $|\b{\dot{u}}|+s|\b{\dot{v}}| \in \Pi(\ephi_1,\lambda)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion} item \ref{T1item1}, that $I(u+sv)$ is well defined and finite for $|s|\leq s_0$.
-And, using  Corollary \ref{a_bound}, we also see that
-\[ \|a(|u+sv|)\|_{L^{\infty}}\leq  A(\|u+sv\sobnor)\leq
- A(\|u\sobnor+s_0\|v\sobnor)=:M
-\]
-Now, applying Chain Rule, \eqref{DxL1}, \eqref{DyLpsi} the monotonicity of $\varphi$ and $\Phi$, 
-the fact that $v\in L^{\infty}_d$ and $\b{\dot{v}}\in\lphi$ and H\"older's inequality, we get
-\begin{equation}\label{ctg}
-\begin{split}
-|D_s H(s,t)|&=\left| D_{\b{x}}\mathcal{L}(t,u+sv,\b{\dot{u}}+s\b{\dot{v}})\ccdot v +  D_{\b{y}}\mathcal{L}(t,u+sv,\b{\dot{u}}+s\b{\dot{v}})\ccdot\b{\dot{v}}\right| \\
- & \leq M \left[\left( b(t)+ \Phi\left(\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}+f(t)\right)\right)|v|\right.\\
-&\left. \quad+ \left(c(t)+ \varphi\left (\frac{|\b{\dot{u}}|+s_0|\b{\dot{v}}|}{\lambda}+f(t)\right)\right)|\b{\dot{v}}| \right]\in L^1_1.
-\end{split}
-\end{equation}
-Consequently, $I$ has a directional derivative and
-\[
-\langle I'(u),v \rangle=\frac{d}{ds}I(u+sv)\big|_{s=0}=\int_0^T
-\left\{D_{\b{x}}\mathcal{L}(t,u,\b{\dot{u}})\ccdot v+ D_{\b{y}}\mathcal{L}(t,u,\b{\dot{u}})\ccdot\b{\dot{v}}\right\} \ dt.
-\]
-Moreover, from \eqref{DxL1}, \eqref{DyLpsi}, Lemma \ref{inclusion orlicz} and the previous formula, we obtain
-\[
-|\langle I'(u),v \rangle| \leq \|D_{\b{x}}\mathcal{L}\|_{L^1} \| v\linf +
-\|D_{\b{y}}\mathcal{L}\|_{\lpsi} \|\b{\dot{v}}\orlnor \leq C \|v\sobnor
-\]
-with a appropriate constant $C$.
-This completes the proof of the G\^ateaux differentiability of $I$. 
-
-\emph{Step 4. The operator $I':\domi  \to \left[\wphi_d
-\right]^* $ is demicontinuous.}
-This is a consequence  of the continuity of the mappings $u \mapsto D_{\b{x}}\mathcal{L}(t,u,\b{\dot{u}})$ and $u \mapsto
-D_{\b{y}}\mathcal{L}(t,u,\b{\dot{u}})$. Indeed, if $u_n,u\in \domi$ with $u_n\to u$ in the norm of $\wphi_d$ and $v \in
-\wphi_d$, then
-\[
-\begin{split}
-\left\langle  I'(u_{n}),v \right\rangle &= \int_0^T \left\{  D_{\b{x}}\mathcal{L}\left(t,u_n,\b{\dot{u}}_n\right)\ccdot
-v +
- D_{\b{y}}\mathcal{L}\left(t,u_n,\b{\dot{u}}_n\right)\ccdot\b{\dot{v}}\right\} \ dt\\
-&\rightarrow \int_0^T \left\{ D_{\b{x}}\mathcal{L}\left(t,u,\b{\dot{u}}\right)\ccdot v+
-D_{\b{y}}\mathcal{L}\left(t,u,\b{\dot{u}}\right)\ccdot\b{\dot{v}}\right\} \ dt\\
-&=\left\langle  I'(u),v \right\rangle.
-\end{split}
-\]
-
-
-In order to prove item  \ref{T1item4}, it is necessary to see that the maps $u\mapsto D_{\b{x}}\mathcal{L}(t,u,\b{\dot{u}})$  and $u\mapsto D_{\b{y}}\mathcal{L}(t,u,\b{\dot{u}})$  are norm continuous
-from $\domi $ into $L^1_d$ and
- $\lpsi_d$ respectively.  The continuity of the first map has already been proved in step 1. 
-Let $u_n, u \in \domi$ with $\|u_n- u\sobnor\to 0$. Therefore,   there exist a subsequence $u_{n_k}\in \domi$ and a function $h\in\Pi(\ephi_1,\lambda)$  such that   \eqref{Dy-suc} holds true.
-And, as  $\Phie\in\Delta_2$ then   the right hand side of  \eqref{Dy-suc} belongs to $\epsi_1$.
-Now, invoking  Lemma \ref{lema_conv_may}, we  prove that
-  from any sequence $u_n$ which converges to $u$ in $\wphi_d$ we can
-extract a subsequence such that   $D_{\b{y}}\mathcal{L}(t,u_{n_k},\b{\dot{u}}_{n_k})\to D_{\b{y}}\mathcal{L}(t,u,\b{\dot{u}})$ in the strong topology. The desired result is obtained by a standard argument.
-
-The continuity of $I'$  follows  from the continuity 
-of $D_{\b{x}}\mathcal{L}$ and $D_{\b{y}}\mathcal{L}$ using the formula \eqref{DerAccion}.
-\end{proof}
-
 
 
 
