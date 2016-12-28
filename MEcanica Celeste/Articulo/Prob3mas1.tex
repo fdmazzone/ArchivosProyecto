@@ -9,9 +9,9 @@
 \usepackage{mathabx}
 \usepackage{MnSymbol}
 \usepackage{fancyhdr}
-\usepackage{times}
+%\usepackage{times}
 
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
 
 \usepackage{comment}
 \usepackage{url}
@@ -39,9 +39,8 @@
 
 
 
-\title{Nonplanar periodic solutions for
-Euler configurations plus a massless particle}
-\author{Gast\'on                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        n Beltritti \thanks{SECyT-UNRC and CONICET}\\
+\title{Periodic solutions for a Sitnikov restricted four-body problem with primaries in a colinear configuration}
+\author{Gast\'on Beltritti \thanks{SECyT-UNRC and CONICET}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
@@ -50,7 +49,7 @@ Fernando D. Mazzone \thanks{SECyT-UNRC, FCEyN-UNLPam}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{fmazzone@exa.unrc.edu.ar}
+\url{fmazzone@exa.unrc.edu.ar}\\
 Martina G. Oviedo \thanks{SECyT-UNRC, CIN}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\\
@@ -119,8 +118,60 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 \section{Introduction}
+In this paper we obtain existence of periodic solutions for the following restricted nonplanar Newtonian four-body problem (see figure \ref{fig:conf_esp}):
+\begin{itemize}
+ \item We have three primary bodies of masses $m_1,m_2,m_3$. The fourth body is masless.
+ \item The primary bodies are in a central colinear rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is carried out in a plane $\Pi$.
+ \item The massless particle is moving on tha perpendicular line to $\Pi$ passing through the center of masses.
+\end{itemize}
 
-\cite{XiaoxiaoZhao271}
+
+\begin{figure}[h]
+ \begin{center}
+
+
+\setlength{\unitlength}{4cm}
+\begin{picture}(2.5, 1)(-.5, -.5)
+  \qbezier(0, 0)(0,.25)(.5, .25)
+  \qbezier(1, 0)(1,.25)(.5, .25)
+    \qbezier(0, 0)(0,-.25)(.5, -.25)
+  \qbezier(1, 0)(1,-.25)(.5, -.25)
+  \setlength{\unitlength}{2cm}
+    \put(.5,0){
+    \qbezier(0, 0)(0,.25)(.5, .25)
+  \qbezier(1, 0)(1,.25)(.5, .25)
+    \qbezier(0, 0)(0,-.25)(.5, -.25)
+  \qbezier(1, 0)(1,-.25)(.5, -.25)
+}
+  \setlength{\unitlength}{5cm}
+    \put(-.1,0){
+    \qbezier(0, 0)(0,.25)(.5, .25)
+  \qbezier(1.01, 0)(1.01,.25)(.5, .25)
+    \qbezier(0, 0)(0,-.25)(.5, -.25)
+  \qbezier(1.01, 0)(1.01,-.25)(.5, -.25)
+}
+\put(-.2,0){\line(1,0){1.2}}
+\put(-0.1,0){\circle*{.04}} \put(-0.19,-0.05){$m_1$}
+\put(0.6,0){\circle*{.04}} \put(0.61,-0.05){$m_2$}
+\put(0.8,0){\circle*{.04}}\put(0.805,-0.05){$m_3$}
+\put(0.5,0){\circle*{.03}}\put(0.44,-0.05){$c$}
+\put(0.5,-0.08){\line(0,1){.6}}
+\put(0.5,0.4){\circle*{.04}}\put(0.53,0.4){$m_4\approx 0$}
+\put(-.3,-0.3){\line(1,0){1.5}}
+\put(-.3,-0.3){\line(1,5){.12}}
+\put(1.2,-0.3){\line(-1,5){.12}}
+\put(-0.18,0.3){\line(1,0){1.26}}
+\put(1.1,-0.25){$\Pi$}
+\end{picture}\caption{Four-body problem}\label{fig:conf_esp}
+ \end{center}
+
+\end{figure}
+
+Problems like the one presented have been extensively discussed in the literature. In \cite{sitnikov1960existence} K. Sitnikov considered the problem of two body in a Keplerian motion and a massless particle moving in the perpendicular line to the orbital plane passing
+through the center of masses. Sitnikov obtained deep results about existence of solutions, some of them periodic (see \cite[III(5)]{moser2016stable}. Since then many  other authors have studied Sitnikov problem, for instance Llibre and Ortega \cite{llibre2008families}, Chesley \cite{chesley1999global}, Hagel and Trnkler \cite{hagel1993computer}, Dvorak \cite{dvorak1993numerical}, {P{\'e}rez, Jim{\'e}nez and Lacomba \cite{perez2009periodic}, Liu, Zhou, and Sun \cite{liu1991numerical},
+Llibre, Meyer and Soler \cite{llibre1999bridges},  Jim{\'e}nez-Lara a and Escalona-Buend{\'\i}a \cite{jimenez2001symmetries}, Dankowicz and Holmes \cite{dankowicz1995existence},
+
+
 
 \section*{Acknowledgments}
 
