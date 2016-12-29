@@ -118,11 +118,11 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 \section{Introduction}
-In this paper we obtain existence of periodic solutions for the following restricted nonplanar Newtonian four-body problem (see figure \ref{fig:conf_esp}):
+In this paper we obtain existence of periodic solutions for the following restricted nonplanar Newtonian four-body problem $P$ (see figure \ref{fig:conf_esp}):
 \begin{itemize}
- \item We have three primary bodies of masses $m_1,m_2,m_3$. The fourth body is masless.
- \item The primary bodies are in a central colinear rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is carried out in a plane $\Pi$.
- \item The massless particle is moving on tha perpendicular line to $\Pi$ passing through the center of masses.
+ \item[$P_1$] We have three primary bodies of masses $m_1,m_2,m_3$. The fourth body is masless.
+ \item[$P_2$] The primary bodies are in a central colinear configuration rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is carried out in a plane $\Pi$.
+ \item[$P_3$] The massless particle is moving on tha perpendicular line to $\Pi$ passing through the center of masses.
 \end{itemize}
 
 
@@ -168,8 +168,14 @@ In this paper we obtain existence of periodic solutions for the following restri
 \end{figure}
 
 Problems like the one presented have been extensively discussed in the literature. In \cite{sitnikov1960existence} K. Sitnikov considered the problem of two body in a Keplerian motion and a massless particle moving in the perpendicular line to the orbital plane passing
-through the center of masses. Sitnikov obtained deep results about existence of solutions, some of them periodic (see \cite[III(5)]{moser2016stable}. Since then many  other authors have studied Sitnikov problem, for instance Llibre and Ortega \cite{llibre2008families}, Chesley \cite{chesley1999global}, Hagel and Trnkler \cite{hagel1993computer}, Dvorak \cite{dvorak1993numerical}, {P{\'e}rez, Jim{\'e}nez and Lacomba \cite{perez2009periodic}, Liu, Zhou, and Sun \cite{liu1991numerical},
-Llibre, Meyer and Soler \cite{llibre1999bridges},  Jim{\'e}nez-Lara a and Escalona-Buend{\'\i}a \cite{jimenez2001symmetries}, Dankowicz and Holmes \cite{dankowicz1995existence},
+through the center of masses. Sitnikov obtained deep results about existence of solutions, some of them periodic (see \cite[III(5)]{moser2016stable}. Since then many  other authors have studied Sitnikov problem, for instance  Liu, Zhou, and Sun \cite{liu1991numerical},  Hagel and Trenkler \cite{hagel1993computer}, Dvorak \cite{dvorak1993numerical}, Dankowicz and Holmes \cite{dankowicz1995existence}, Llibre, Meyer and Soler \cite{llibre1999bridges}, Chesley \cite{chesley1999global}, Jim{\'e}nez-Lara a and Escalona-Buend{\'\i}a \cite{jimenez2001symmetries},
+ Llibre and Ortega \cite{llibre2008families}, P{\'e}rez, Jim{\'e}nez and Lacomba \cite{perez2009periodic}.
+
+Problems like the Sitnikov problem for four bodies  were addressed more recently.
+In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$, where in place to have a Eulerian colinear configuration they had a Lagrangian equilateral triangle configuration for the primaries bodies, which are supposed to have the same mass $m_1=m_2=m_3$. Later, In \cite{baltagiannis2011families} Baltagiannis nad Papadakis considered more general masses and in \cite{pandey2013periodic} Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
+In \cite{zhao2015nonplanar}, Zhao and Zhang proved existence of periodic solutions for a problem similar to the one dealt with in \cite{soulis2008periodic}.  They used a variational approach. In the present paper we extend the analysis in \cite{zhao2015nonplanar} to the case of a colinear central configuration for the primaries.
+Given that in our problem the primaries are no longer equidistant and their relative position is determined by a polynomial equation of the fifth degree, the calculations involved here are tedious to reproduce completely and difficult for the reader to check them by hand. For this reason we have prepared a jupyter-notebook with some of these calculations. With a little knowledge of Python-Sympy (see \cite{sympy}) the reader can check and reproduce them easily.
+
 
 
 
@@ -178,7 +184,7 @@ Llibre, Meyer and Soler \cite{llibre1999bridges},  Jim{\'e}nez-Lara a and Escalo
 
 
 
- \bibliographystyle{apalike}
+ \bibliographystyle{apalike-url}
  \bibliography{mecanica_celeste}
 
 
