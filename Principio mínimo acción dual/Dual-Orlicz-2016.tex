@@ -167,9 +167,9 @@ This paper deals with system  of equations of the type:
 \end{array}%
 \right.,
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system of ordinary equations}. This topic was deeply addressed for the \emph{Lagrange function}
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system}. This topic was deeply addressed for the \emph{Lagrange function}
 \begin{equation}\label{eq:lagrange_cuad}
-\mathcal{L}_{p,F}(t,x,y)=\frac{|y|^p}{p}+F(t,x),
+\mathcal{L}_{p,F}(t,x,y):=\frac{|y|^p}{p}+F(t,x),
 \end{equation}
 for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{2,F}$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles, see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic} and in this case \eqref{ProbPrin-gral}  is reduced to the $p$-laplacian system
 \begin{equation}\label{ProbP-lapla}
@@ -205,18 +205,18 @@ In this paper  we apply the dual method (\cite[Ch. 3]{mawhin2010critical}) to ob
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to known results on Orlicz and Orlicz-Sobolev spaces of vector valued functions (anisotropic Orlicz Spaces). References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}.
+In this section, we give a short introduction to n Orlicz and Orlicz-Sobolev spaces of vector valued functions (anisotropic Orlicz Spaces). References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}. The choice of anisotropic Orlicz-Sobolev spaces is justified since they allow to simplify the writing, and they provide the natural frame of statements of the type \cite[Lemma 3.1]{Tian2007192}.
 
-Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$.
+Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$. Additionally we assume that the Young's functions which we deal with, satisfy that $\Phi(x)>0$ when $x\neq 0$.
 
 Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
-We define the function $G$ by
+Given a Young's function $\Phi$, we define the function $\hat{\Phi}}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
-G(s)=\min\{\Phi(x):|x|\leq s\},
+\hat{\Phi}(s)=\sup\{|x|:\Phi(x)\leq s\},
 \end{equation}
-where $\Phi$ is a Young's function. 
+
 
 We point out that the function $G(|x|)$ has the following properties, as reader can easily check,
 \begin{enumerate}
