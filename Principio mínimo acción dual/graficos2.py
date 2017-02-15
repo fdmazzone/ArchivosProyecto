@@ -5,9 +5,9 @@ Created on Tue Feb 14 13:31:24 2017
 @author: fernando
 """
 #valores que se pueden cambiar
-r=15
-p1=1.1
-p2=1.5
+r=1
+p1=1.5
+p2=2.5
 Gr=r**p1/p1 #1/p1-1/p2+r**2/2
 
 #
