@@ -176,10 +176,22 @@ In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, li
 In \cite{zhao2015nonplanar}, Zhao and Zhang proved existence of periodic solutions for a problem similar to the one dealt with in \cite{soulis2008periodic}.  They used a variational approach. In the present paper we extend the analysis in \cite{zhao2015nonplanar} to the case of a colinear central configuration for the primaries.
 In \cite{li2013characterization} Li, Zhang and Zhao studied a special type of
 restricted circular $N+1$-body problem  with equal masses for the primaries. 
+
 Given that in our problem the primaries are no longer equidistant and their relative position is determined by a polynomial equation of fifth degree, the calculations involved here are tedious to reproduce completely and difficult for that the reader to check them by hand. For this reason we have prepared a jupyter-notebook (see \cite{CalAux}) with some of these calculations. With a little knowledge of Python-Sympy (see \cite{sympy}) the reader can check and reproduce them easily.
 
 
 \section{Preliminaries and Main Results}
+
+We start considering $n$ bodies, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $x_1(t),\ldots,x_n(t)$ are the coordinates of the bodies in some inertial Cartesian coordinate system. Then the system satisfies the Newtonian equations of motion
+\begin{equation}\label{eq:newton}
+ m_j\ddot{x}_j=\sum_{i\neq j}\frac{m_im_j(x_i-x_j)}{r_{ij}^3},\quad j=1,\ldots,n,
+\end{equation}
+where $r_{ij}=|x_i-x_j|$ is the Euclidean distance between $x_i$ and $x_j$. As is customary we introduce the potential function
+\begin{equation}\label{eq:potencial}
+ U(x)=\sum_{i<j}\frac{m_im_j}{r_{ij}}
+\end{equation}
+
+
 
 
 \section*{Acknowledgments}

@@ -5,10 +5,10 @@ Created on Tue Feb 14 13:31:24 2017
 @author: fernando
 """
 #valores que se pueden cambiar
-r=1
-p1=1.5
-p2=2.5
-Gr=r**p1/p1 #1/p1-1/p2+r**2/2
+r=3**0.5/2**(1/6.0)
+p1=1
+p2=4
+Gr=(3**0.5/2**(1/6.0))**4/4#r**p1/p1 #1/p1-1/p2+r**2/2
 
 #
 X=arange(-1.2*r,1.2*r,.01)
