@@ -170,7 +170,7 @@ This paper deals with system  of equations of the type:
   \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right.,
+\right. ,\tag{$P_1$}
 \end{equation}
 where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system}. This topic was deeply addressed for the \emph{Lagrange function}
 \begin{equation}\label{eq:lagrange_cuad}
@@ -183,7 +183,7 @@ for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals
    \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0.
 \end{array}%
-\right.
+\right.\tag{$P_2$}
 \end{equation}
 
 
@@ -227,7 +227,7 @@ Then the equations \eqref{ProbPrin-gral} becomes
   \frac{d}{dt}\left(|u_2'|^{p_2-2}u_2'\right)=F_{x_2}(t,u) \quad \hbox{a.e.}\ t \in (0,T)\\
    u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right.,
+\right., \tag{$P_3$}
 \end{equation}
 
 
@@ -238,23 +238,36 @@ On the other hand, anisotropic Orlicz-Sobolev spaces allow to simplify the writi
 Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$. Additionally, we assume that the Young's functions which we deal with, satisfy that $\Phi(x)>0$ when $x\neq 0$. Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
-Given a Young's function $\Phi$, we define function $\hat{\Phi}:\rr^+\to\rr^+$ by
+Given a Young's function $\Phi$, we define function $A_{\Phi}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
-\hat{\Phi}(s)=\sup\{|x|:\Phi(x)\leq s\},
+A_{\Phi}(s)=\min\left\{\Phi(x)\,\big|\,\|x\|=s\right\},
 \end{equation}
 
-
-We point out that the function $G(|x|)$ has the following properties, as reader can easily check,
+Let us establish some elementary properties of $A_{\Phi}$ that we will use in this article.
+\begin{prop} The function $A_{\Phi}$ has the following properties:
 \begin{enumerate}
- \item[\namedlabel{it:g1}{(G1)}] $G$ is monotonous increasing, continuous and $G(s) \to \infty$ as $s \to \infty$.
- \item[\namedlabel{it:g2}{(G2)}] $G$ is the \emph{greatest radial minorant} of $\Phi(x)$, i.e.  $G(|x|)\leq \Phi (x)$ and $G(|x|)$ is the biggest radial function with this property.
- \item[\namedlabel{it:g3}{(G3)}] There exists  $G^{-1}$ and  $G^{-1}(\Phi(x))\geq |x|$.
- \item[\namedlabel{it:g4}{(G4)}] As $\Phi(\alpha x)/\alpha$ is increasing with respect to $\alpha$ for evey $x>0$,
-$G(\alpha s)/\alpha$ is also increasing
-with respect to $\alpha$ for every $s>0$. Alternatively  $\beta G^{-1}(t/\beta)$ is an increasing function with respect to
-$\beta$ for every $t>0$.
-\item[\namedlabel{it:g5}{(G5)}] In the event that $\Phi$ is coervive, then $G$ is also coercive. Alternatively $G^{-1}(s)/s\to 0$ when $s\to+\infty$.
+ \item\label{it:prop1} $A_{\Phi}$ is continuous,
+ \item\label{it:prop2} $A_{\Phi}(s)/s$ is increasing,
+ \item\label{it:prop3} $A_{\Phi}$ is the \emph{greatest radial minorant} of 
+ $\Phi(x)$,
+ \item\label{it:prop4} $\Phi$ is coercive if and only if $A_{\Phi}$ is.
 \end{enumerate}
+\end{prop}
+
+\begin{proof} It is well known that finite and convex functions defined in finite dimensional 
+vectorial spaces are locally Lipschitz functions (see \cite{clarke2013functional}). This fact 
+imply item \ref{it:prop1} immediately. 
+
+In order to prove item \ref{it:prop2}, suppose $0<r<s$ and $x\in\rr^d$ with $A_{\Phi}(s)
+=\Phi(x)$. Then, from the definition of $A_{\Phi}$ and the convexity of $\Phi$,
+\[\frac{A_{\Phi}(r)}{r}\leq \frac{\Phi\left(\frac{r}{s}x\right)}{r}\leq \frac{\Phi\left(x\right)}{s}=
+ \frac{A_{\Phi}(s)}{s}.
+\]
+Property in items \ref{it:prop3} and \ref{it:prop4} are obtained easily.
+
+ 
+\end{proof}
+
 
 
 
