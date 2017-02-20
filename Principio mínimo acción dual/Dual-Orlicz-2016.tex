@@ -19,6 +19,7 @@
 \usepackage{adjustbox}
 \usepackage{hyperref}
 
+
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lem}[thm]{Lemma}
@@ -108,7 +109,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \setcounter{example}{1}
 
 
-\newenvironment{example}{\noindent\textit{Example} \arabic{example}.}{\addtocounter{example}{1}}
+\newenvironment{example}{\noindent\textbf{Example \arabic{example}}.}{\addtocounter{example}{1}}
 
 
 
@@ -144,6 +145,8 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 
+
+
 \pagestyle{fancy} \headheight 35pt \fancyhead{} \fancyfoot{}
 
 \fancyfoot[C]{\thepage} \fancyhead[CE]{\nouppercase{S. Acinas and F.D. Mazzone }} \fancyhead[CO]{\nouppercase{\section}}
@@ -157,6 +160,8 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 \section{Introduction}
+
+
 This paper deals with system  of equations of the type:
 
 \begin{equation}\label{ProbPrin-gral}
@@ -205,14 +210,35 @@ In this paper  we apply the dual method (\cite[Ch. 3]{mawhin2010critical}) to ob
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to n Orlicz and Orlicz-Sobolev spaces of vector valued functions (anisotropic Orlicz Spaces). References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}. The choice of anisotropic Orlicz-Sobolev spaces is justified since they allow to simplify the writing, and they provide the natural frame of statements of the type \cite[Lemma 3.1]{Tian2007192}.
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic Young functions $\Phi:\rr^n\to\rr_+$, i.e. functions such that $\Phi(x)$ depends on the direction of $x$, unlike the radial case where $\Phi(x)=\Phi(|x|)$.  References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}.
 
-Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$. Additionally we assume that the Young's functions which we deal with, satisfy that $\Phi(x)>0$ when $x\neq 0$.
+In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p$-laplacian equations as the following example shows.
 
-Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
+
+\begin{example} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^2\to\rr_+$  by
+\[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|}{p_1}+\frac{|y_2|}{p_2}.\]
+Suppose the following Lagrange function
+\[\mathcal{L}(t,x,y)=\Phi_{p_1,p_2}(y)+F(t,x).\]
+Then the equations \eqref{ProbPrin-gral} becomes
+\begin{equation}\label{eq:sist-p_lapa}
+    \left\{%
+\begin{array}{ll}
+  \frac{d}{dt}\left(|u_1'|^{p_1-2}u_1'\right)=F_{x_1}(t,u) \quad \hbox{a.e.}\ t \in (0,T)\\
+  \frac{d}{dt}\left(|u_2'|^{p_2-2}u_2'\right)=F_{x_2}(t,u) \quad \hbox{a.e.}\ t \in (0,T)\\
+   u(0)-u(T)=u'(0)-u'(T)=0,
+\end{array}%
+\right.,
+\end{equation}
+
+
+\end{example}
+
+On the other hand, anisotropic Orlicz-Sobolev spaces allow to simplify the writing, and they provide the natural frame of statements of the type \cite[Lemma 3.1]{Tian2007192}. This type of question was what motivated us to use these spaces.
+
+Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$. Additionally, we assume that the Young's functions which we deal with, satisfy that $\Phi(x)>0$ when $x\neq 0$. Following \cite{Orliczvectorial2005} we say that $\Phi$ is \emph{coercive} if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
-Given a Young's function $\Phi$, we define the function $\hat{\Phi}}:\rr^+\to\rr^+$ by
+Given a Young's function $\Phi$, we define function $\hat{\Phi}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
 \hat{\Phi}(s)=\sup\{|x|:\Phi(x)\leq s\},
 \end{equation}
