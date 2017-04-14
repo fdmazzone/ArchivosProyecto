@@ -215,8 +215,9 @@ In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spac
 In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p$-laplacian equations as the following example shows.
 
 
-\begin{example} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^2\to\rr_+$  by
+\begin{example} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^n\to\rr_+$   by
 \[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|}{p_1}+\frac{|y_2|}{p_2}.\]
+where $|\cdot|$ is the Euclidean norm on $\rr^n$.
 Suppose the following Lagrange function
 \[\mathcal{L}(t,x,y)=\Phi_{p_1,p_2}(y)+F(t,x).\]
 Then the equations \eqref{ProbPrin-gral} becomes
@@ -230,8 +231,43 @@ Then the equations \eqref{ProbPrin-gral} becomes
 \right., \tag{$P_3$}
 \end{equation}
 
+EN CONSTRUCCION!!!!...FALTA ORDENAR, REVISAR, AGREGAR O QUITAR....
+
+Las F de arriba....qu\'e hacemos???? 
+
+ 
+We apply the method of Lagrange multipliers to solve the  problem
+\[
+G(r)=\min\{\Phi(x,y):\frac{1}{2}\|(x,y)\|_2^2=\frac{r^2}{2}\}\]
+then 
+$F(x,y)=\Phi(x,y)-\lambda \frac{1}{2}\|(x,y)\|_2^2$.
+
+Now, the first order equations are
+\[
+\left
+\{
+\begin{array}{ccc}
+|x|^{p_1-2}x+ \lambda x&=&0
+\\
+|y|^{p_2-2}y+\lambda y&=&0
+\\ 
+|x|^2+|y|^2&=&r^2
+\end{array}
+\right.
+\]
+The critics points are $(x,0,-|x|^{p_1-2})$ and $(0,y,-|y|^{p_2-2})$ with $|x|=r$ and $|y|=r$ respectively.
+
+In case of $2\leq p_1\leq p_2$, the critic values are $\Phi(x,0)=\frac{r^{p_1}}{p_1}$ and $\Phi(0,y)=\frac{r^{p_2}}{p_2}$
+
+Now, suppose that  $x\neq 0$ and $y \neq 0$ then $|x|^2+|y|^2=r^2$ and $|y|=|x|^{\frac{p_1-2}{p_2-2}}$and $\lambda=-|x|^{p_1-2}$. 
+ 
+If  $r$ is bigger enough then $G(r)\sim r^{p_1}$. And, if $r$ is small enough we have $G(r)\sim r^{p_2}$????
+
+ If $p_1\leq 2$ and $p_2\leq 2$ with one of them different to 2,  the second order criterium \cite[Thm. ---]{Ye} 
+implies that the minimum appear in $x=0$ or $y=0$.
 
 \end{example}
+
 
 These equations are known in the literature as $(p_1,p_2)$-Laplacian system, see
 \cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some}.
