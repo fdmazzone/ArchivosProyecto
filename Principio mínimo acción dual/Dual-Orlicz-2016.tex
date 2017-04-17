@@ -514,21 +514,31 @@ ${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k
 
 
 \begin{proof}
-Let $r:=d({u},\ephi)<1$. As ${u}_n$ converges to ${u}$, there exists a subsequence (again denoted $u_n$ such that $u_n\to u$ a.e. and $d(u_n,u)<(1-r)/2^{n+1}$. We define the numbers 
-\[\lambda_1:=d(u_1,\ephi)<\frac{1+r}{2},\quad   \lambda_n=\|{u}_{n}-{u}_{n-1}\orlnor<\frac{1-r}{2^{n-1}},\quad\hbox{for } n\geq 2.\]
-We take $v\in\ephi$ such that $d(u_1,v)<(1+r)/{2}$ and define 
-Let $h:[0,T]\rightarrow\mathbb{R}$ by
-\begin{equation}\label{eq:serie} h(x)= \lambda_1\Phi(\frac{v}{\lambda_1})+\Phi(\frac{u_1-v}{\lambda_1}   |{u}_{n_1}(x)|+\sum_{k=2}^{\infty}|{u}_{n_k}(x)-{u}_{n_{k-1}}(x)|.
+Since $d({u},\ephi)<1$ and ${u}_n$ converges to ${u}$, there exists $u_0\in\ephi$, a subsequence of $u_n$ (again denoted $u_n$) and $0<r<1$  such that $d(u_n,u_0)<r$. Let $\lambda_0\in (r,1)$.  By extracting more subsequences, if necessary, we can assume that $u_n\to u$ a.e. and
+\[\lambda_n:=\|{u}_{n+1}-{u}_{n}\orlnor<\frac{1-\lambda_0}{2^n},\quad\hbox{for } n\geq 1.\]
+We can assume $\lambda_n>0$ for every $n=0,\ldots$.
+
+Let $\lambda:=1-\sum_{n=0}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mathbb{R}$  by
+\begin{equation}\label{eq:serie} h(x)= \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{n=0}^{\infty}\lambda_n\Phi\left(\frac{u_{n+1}-u_n}{\lambda_n}\right).
 \end{equation}
-As a consequence  of \cite[Lemma 10.1]{KR} (see \cite[Thm. 5.5]{Orliczvectorial2005} for vector valued functions),  we have that $d({v},\ephi_d)=d(|{v}|,\ephi_1)$ for any ${v}\in\lphi_d$. 
-Now
-\[d(|{u}_{n_1}|,\ephi_1)= d({u}_{n_1},\ephi_d)\leq d({u}_{n_1},{u})+d({u},\ephi_d)<\frac{\lambda+r}{2}.\]
-Then
-\[d(h,\ephi_1)\leq d(h,|{u}_{n_1}|)+d(|{u}_{n_1}|,\ephi_1)< \lambda.\]
-Therefore, $h\in\Pi(\ephi_1,\lambda)$ and  $|h|<\infty$ a.e. 
-We conclude that the series  ${u}_{n_1}(x)+\sum_{k=2}^{\infty}({u}_{n_k}(x)-{u}_{n_{k-1}}(x))$
-is absolutely convergent a.e. and this fact implies that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ 
-The inequality $|{u}_{n_k}|\leq h$ follows straightforwardly from the definition of $h$.
+Note that $\sum_{n=0}^{\infty}\lambda_n+\lambda=1$, therefore for any $n=1,\ldots$
+
+
+\[
+ \begin{split}
+   \Phi(u_n) &=\Phi\left(  \lambda\frac{u_0}{\lambda}+   \sum_{j=0}^{n-1}\lambda_j\frac{u_{j+1}-u_j}{\lambda_j} \right)\\
+   &\leq
+   \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{j=0}^{n-1}\lambda_j\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right) \leq h
+ \end{split}
+\]
+
+Since $v\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$. On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
+\[
+ \int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right)dt\leq 1.
+\]
+Then $h\in L^1([0,T],\rr)$.
+
+
 \end{proof}
 
 
