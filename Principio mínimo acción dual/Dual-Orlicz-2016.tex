@@ -215,8 +215,9 @@ In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spac
 In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p$-laplacian equations as the following example shows.
 
 
-\begin{example} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^2\to\rr_+$  by
+\begin{example} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^n\to\rr_+$   by
 \[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|}{p_1}+\frac{|y_2|}{p_2}.\]
+where $|\cdot|$ is the Euclidean norm on $\rr^n$.
 Suppose the following Lagrange function
 \[\mathcal{L}(t,x,y)=\Phi_{p_1,p_2}(y)+F(t,x).\]
 Then the equations \eqref{ProbPrin-gral} becomes
@@ -230,8 +231,43 @@ Then the equations \eqref{ProbPrin-gral} becomes
 \right., \tag{$P_3$}
 \end{equation}
 
+EN CONSTRUCCION!!!!...FALTA ORDENAR, REVISAR, AGREGAR O QUITAR....
+
+Las F de arriba....qu\'e hacemos???? 
+
+ 
+We apply the method of Lagrange multipliers to solve the  problem
+\[
+G(r)=\min\{\Phi(x,y):\frac{1}{2}\|(x,y)\|_2^2=\frac{r^2}{2}\}\]
+then 
+$F(x,y)=\Phi(x,y)-\lambda \frac{1}{2}\|(x,y)\|_2^2$.
+
+Now, the first order equations are
+\[
+\left
+\{
+\begin{array}{ccc}
+|x|^{p_1-2}x+ \lambda x&=&0
+\\
+|y|^{p_2-2}y+\lambda y&=&0
+\\ 
+|x|^2+|y|^2&=&r^2
+\end{array}
+\right.
+\]
+The critics points are $(x,0,-|x|^{p_1-2})$ and $(0,y,-|y|^{p_2-2})$ with $|x|=r$ and $|y|=r$ respectively.
+
+In case of $2\leq p_1\leq p_2$, the critic values are $\Phi(x,0)=\frac{r^{p_1}}{p_1}$ and $\Phi(0,y)=\frac{r^{p_2}}{p_2}$
+
+Now, suppose that  $x\neq 0$ and $y \neq 0$ then $|x|^2+|y|^2=r^2$ and $|y|=|x|^{\frac{p_1-2}{p_2-2}}$and $\lambda=-|x|^{p_1-2}$. 
+ 
+If  $r$ is bigger enough then $G(r)\sim r^{p_1}$. And, if $r$ is small enough we have $G(r)\sim r^{p_2}$????
+
+ If $p_1\leq 2$ and $p_2\leq 2$ with one of them different to 2,  the second order criterium \cite[Thm. ---]{Ye} 
+implies that the minimum appear in $x=0$ or $y=0$.
 
 \end{example}
+
 
 These equations are known in the literature as $(p_1,p_2)$-Laplacian system, see
 \cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some}.
@@ -467,6 +503,32 @@ Therefore, from this and \eqref{wirtinger} we get
 In order to prove item 3, we take a bounded sequence
 $u_n$ in $\wphi([0,T],\rr^d)$. Since $\Phi$ is $N_{\infty}$, from Proposition \ref{prop:AsubPhi}\eqref{it:prop4}  we obtain $sA_{\Phi}^{-1}(1/s)\to 0$ when $s\to 0$. Therefore \eqref{in-sob-cont} implies that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C([0,T],\rr^d)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C([0,T],\rr^d)$ with $u_{n_k}\to u$ in $C([0,T],\rr^d)$.
 
+\end{proof}
+
+
+\begin{lem}\label{segundo lema}
+Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\Pi(\ephi,1)$ converging to  ${u}\in \Pi(\ephi,1)$  in the $\lphi$-norm. Then, there exist a subsequence
+${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ and $\Phi({u}_{n_k})\leq h\quad\text{a.e.}$
+\end{lem}
+
+
+
+\begin{proof}
+Let $r:=d({u},\ephi)<1$. As ${u}_n$ converges to ${u}$, there exists a subsequence (again denoted $u_n$ such that $u_n\to u$ a.e. and $d(u_n,u)<(1-r)/2^{n+1}$. We define the numbers 
+\[\lambda_1:=d(u_1,\ephi)<\frac{1+r}{2},\quad   \lambda_n=\|{u}_{n}-{u}_{n-1}\orlnor<\frac{1-r}{2^{n-1}},\quad\hbox{for } n\geq 2.\]
+We take $v\in\ephi$ such that $d(u_1,v)<(1+r)/{2}$ and define 
+Let $h:[0,T]\rightarrow\mathbb{R}$ by
+\begin{equation}\label{eq:serie} h(x)= \lambda_1\Phi(\frac{v}{\lambda_1})+\Phi(\frac{u_1-v}{\lambda_1}   |{u}_{n_1}(x)|+\sum_{k=2}^{\infty}|{u}_{n_k}(x)-{u}_{n_{k-1}}(x)|.
+\end{equation}
+As a consequence  of \cite[Lemma 10.1]{KR} (see \cite[Thm. 5.5]{Orliczvectorial2005} for vector valued functions),  we have that $d({v},\ephi_d)=d(|{v}|,\ephi_1)$ for any ${v}\in\lphi_d$. 
+Now
+\[d(|{u}_{n_1}|,\ephi_1)= d({u}_{n_1},\ephi_d)\leq d({u}_{n_1},{u})+d({u},\ephi_d)<\frac{\lambda+r}{2}.\]
+Then
+\[d(h,\ephi_1)\leq d(h,|{u}_{n_1}|)+d(|{u}_{n_1}|,\ephi_1)< \lambda.\]
+Therefore, $h\in\Pi(\ephi_1,\lambda)$ and  $|h|<\infty$ a.e. 
+We conclude that the series  ${u}_{n_1}(x)+\sum_{k=2}^{\infty}({u}_{n_k}(x)-{u}_{n_{k-1}}(x))$
+is absolutely convergent a.e. and this fact implies that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ 
+The inequality $|{u}_{n_k}|\leq h$ follows straightforwardly from the definition of $h$.
 \end{proof}
 
 
