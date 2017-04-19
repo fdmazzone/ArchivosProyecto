@@ -215,7 +215,7 @@ In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spac
 In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p$-laplacian equations as the following example shows.
 
 
-\begin{example} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^n\to\rr_+$   by
+\begin{example}\label{ex:phip1p2} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^n\times \rr^n\to\rr_+$   by
 \[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|}{p_1}+\frac{|y_2|}{p_2}.\]
 where $|\cdot|$ is the Euclidean norm on $\rr^n$.
 Suppose the following Lagrange function
@@ -231,40 +231,7 @@ Then the equations \eqref{ProbPrin-gral} becomes
 \right., \tag{$P_3$}
 \end{equation}
 
-EN CONSTRUCCION!!!!...FALTA ORDENAR, REVISAR, AGREGAR O QUITAR....
 
-Las F de arriba....qu\'e hacemos???? 
-
- 
-We apply the method of Lagrange multipliers to solve the  problem
-\[
-G(r)=\min\{\Phi(x,y):\frac{1}{2}\|(x,y)\|_2^2=\frac{r^2}{2}\}\]
-then 
-$F(x,y)=\Phi(x,y)-\lambda \frac{1}{2}\|(x,y)\|_2^2$.
-
-Now, the first order equations are
-\[
-\left
-\{
-\begin{array}{ccc}
-|x|^{p_1-2}x+ \lambda x&=&0
-\\
-|y|^{p_2-2}y+\lambda y&=&0
-\\ 
-|x|^2+|y|^2&=&r^2
-\end{array}
-\right.
-\]
-The critics points are $(x,0,-|x|^{p_1-2})$ and $(0,y,-|y|^{p_2-2})$ with $|x|=r$ and $|y|=r$ respectively.
-
-In case of $2\leq p_1\leq p_2$, the critic values are $\Phi(x,0)=\frac{r^{p_1}}{p_1}$ and $\Phi(0,y)=\frac{r^{p_2}}{p_2}$
-
-Now, suppose that  $x\neq 0$ and $y \neq 0$ then $|x|^2+|y|^2=r^2$ and $|y|=|x|^{\frac{p_1-2}{p_2-2}}$and $\lambda=-|x|^{p_1-2}$. 
- 
-If  $r$ is bigger enough then $G(r)\sim r^{p_1}$. And, if $r$ is small enough we have $G(r)\sim r^{p_2}$????
-
- If $p_1\leq 2$ and $p_2\leq 2$ with one of them different to 2,  the second order criterium \cite[Thm. ---]{Ye} 
-implies that the minimum appear in $x=0$ or $y=0$.
 
 \end{example}
 
@@ -280,7 +247,7 @@ Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers
 
 Given a Young's function $\Phi$, we define function $A_{\Phi}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
-A_{\Phi}(s)=\min\left\{\Phi(x)\,\big|\,\|x\|=s\right\},
+A_{\Phi}(s)=\min\left\{\Phi(x)\,\big|\,|x|=s\right\},
 \end{equation}
 
 Let us establish some elementary properties of $A_{\Phi}$ that we will use in this article.
@@ -308,6 +275,37 @@ Property in items \ref{it:prop3} and \ref{it:prop4} are obtained easily.
  
 \end{proof}
 
+\begin{example} We compute $A_{\Phi}$ for the function $\Phi=\Phi_{p_1,p_2}$ given in Example \eqref{ex:phip1p2}.
+ EN CONSTRUCCION!!!!...FALTA ORDENAR, REVISAR, AGREGAR O QUITAR....
+
+
+
+We apply the method of Lagrange multipliers to solve the  problem
+\[
+G(r)=\min\left\{\Phi(x,y):|(x,y)|_2^2=r^2\right\}\]
+
+The first order equations are
+\[
+\left
+\{
+\begin{array}{ccc}
+|x|^{p_1-2}x+ \lambda x&=&0
+\\
+|y|^{p_2-2}y+\lambda y&=&0
+\\
+|x|^2+|y|^2&=&r^2
+\end{array}
+\right.
+\]
+These equations are resolved, among others, by the following sets (if $n>1$ infinite) of citical values: a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. Associated a these critical points we have the following critical values: a) $r^{p_1}/p_1$ and b) $r^{p_2}/p_2$.
+
+Now, suppose that  $x\neq 0$ and $y \neq 0$ then $|x|^2+|y|^2=r^2$ and $|y|=|x|^{\frac{p_1-2}{p_2-2}}$and $\lambda=-|x|^{p_1-2}$.
+
+If  $r$ is bigger enough then $G(r)\sim r^{p_1}$. And, if $r$ is small enough we have $G(r)\sim r^{p_2}$????
+
+ If $p_1\leq 2$ and $p_2\leq 2$ with one of them different to 2,  the second order criterium \cite[Thm. ---]{Ye}
+implies that the minimum appear in $x=0$ or $y=0$.
+\end{example}
 
 
 
@@ -532,7 +530,7 @@ Note that $\sum_{n=0}^{\infty}\lambda_n+\lambda=1$, therefore for any $n=1,\ldot
  \end{split}
 \]
 
-Since $v\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$. On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
+Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$. On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
 \[
  \int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right)dt\leq 1.
 \]
