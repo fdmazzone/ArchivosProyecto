@@ -198,7 +198,7 @@ In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ i
 \end{enumerate}
 
 
-In \cite{ABGMS2015} it was treated  the case of a lagrangian $\mathcal{L}$ which is lower bounded by a Lagrange function
+In \cite{ABGMS2015} it is treated  the case of a lagrangian $\mathcal{L}$ which is lower bounded by a Lagrange function like
 \begin{equation}\label{eq:lagrange_phi}
 \mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
 \end{equation}
@@ -218,9 +218,9 @@ In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p
 \begin{example}\label{ex:phip1p2} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^n\times \rr^n\to\rr_+$   by
 \[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|}{p_1}+\frac{|y_2|}{p_2}.\]
 where $|\cdot|$ is the Euclidean norm on $\rr^n$.
-Suppose the following Lagrange function
+And, we consider the following Lagrange function
 \[\mathcal{L}(t,x,y)=\Phi_{p_1,p_2}(y)+F(t,x).\]
-Then the equations \eqref{ProbPrin-gral} becomes
+Then the equations \eqref{ProbPrin-gral} become
 \begin{equation}\label{eq:sist-p_lapa}
     \left\{%
 \begin{array}{ll}
@@ -236,13 +236,13 @@ Then the equations \eqref{ProbPrin-gral} becomes
 \end{example}
 
 
-These equations are known in the literature as $(p_1,p_2)$-Laplacian system, see
+In the literature, these equations are known as $(p_1,p_2)$-Laplacian system, see
 \cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some}.
 
 
-On the other hand, anisotropic Orlicz-Sobolev spaces allow to simplify the writing, and they provide the natural frame of statements of the type \cite[Lemma 3.1]{Tian2007192}. This type of question was what motivated us to use these spaces.
+On the other hand, anisotropic Orlicz-Sobolev spaces allow us to simplify the writing, and they provide the natural frame for statements of the type \cite[Lemma 3.1]{Tian2007192}. This type of question motivated us to use these spaces.
 
-Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$. Additionally, we assume that the Young's functions which we deal with, satisfy that $\Phi(x)>0$ when $x\neq 0$. Following \cite{Orliczvectorial2005} we say that $\Phi$ is an $N_{\infty}$-function  if
+Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$. Additionally, we assume that  Young's functions which we deal with, satisfy that $\Phi(x)>0$ when $x\neq 0$. Following \cite{Orliczvectorial2005} we say that $\Phi$ is an $N_{\infty}$-function  if
 \[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
 
 Given a Young's function $\Phi$, we define function $A_{\Phi}:\rr^+\to\rr^+$ by
@@ -261,9 +261,9 @@ Let us establish some elementary properties of $A_{\Phi}$ that we will use in th
 \end{enumerate}
 \end{prop}
 
-\begin{proof} It is well known that finite and convex functions defined in finite dimensional 
-vectorial spaces are locally Lipschitz functions (see \cite{clarke2013functional}). This fact 
-imply item \ref{it:prop1} immediately. 
+\begin{proof} It is well known that finite and convex functions defined on finite dimensional 
+vector spaces are locally Lipschitz functions (see \cite{clarke2013functional}). This fact 
+implies item \ref{it:prop1} immediately. 
 
 In order to prove item \ref{it:prop2}, suppose $0<r<s$ and $x\in\rr^d$ with $A_{\Phi}(s)
 =\Phi(x)$. Then, from the definition of $A_{\Phi}$ and the convexity of $\Phi$,
@@ -276,9 +276,6 @@ Property in items \ref{it:prop3} and \ref{it:prop4} are obtained easily.
 \end{proof}
 
 \begin{example} We compute $A_{\Phi}$ for the function $\Phi=\Phi_{p_1,p_2}$ given in Example \eqref{ex:phip1p2}.
- EN CONSTRUCCION!!!!...FALTA ORDENAR, REVISAR, AGREGAR O QUITAR....
-
-
 
 We apply the method of Lagrange multipliers to solve the  problem
 \[
@@ -297,14 +294,31 @@ The first order equations are
 \end{array}
 \right.
 \]
-These equations are resolved, among others, by the following sets (if $n>1$ infinite) of citical values: a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. Associated a these critical points we have the following critical values: a) $r^{p_1}/p_1$ and b) $r^{p_2}/p_2$.
+These equations are solved, among others, by the following sets (if $n>1$ infinite) of citical values: 
+a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. 
+Associated with these critical points we have the following critical values: a) $r^{p_1}/p_1$ and b) $r^{p_2}/p_2$.
 
 Now, suppose that  $x\neq 0$ and $y \neq 0$ then $|x|^2+|y|^2=r^2$ and $|y|=|x|^{\frac{p_1-2}{p_2-2}}$and $\lambda=-|x|^{p_1-2}$.
 
-If  $r$ is bigger enough then $G(r)\sim r^{p_1}$. And, if $r$ is small enough we have $G(r)\sim r^{p_2}$????
+We have to split the analysis in several cases. 
 
- If $p_1\leq 2$ and $p_2\leq 2$ with one of them different to 2,  the second order criterium \cite[Thm. ---]{Ye}
-implies that the minimum appear in $x=0$ or $y=0$.
+Now, we consider $p_1\leq 2$ and $p_2\leq 2$ with of them different to 2.
+
+There exists $(z,w)$ such that $zx^t+wy^t=0$ (z=-y, w=x) where 
+$H=|\lambda||y|^2|x|^2[(p_1-2)|x|^{-2}+(p_2-2)|y|^{-2}]<0$
+ 
+{\bf (aclarar algo de H, poner un nombre adecuado y cambiar el formato de letra)}
+
+Then, by the second order criteria \cite[Thm....]{Ye}, 
+at $(x,y)$ there cannot be a minimum. Therefore, the minima occur at $x=0$ or $y=0$.
+
+The remaining cases can be treated with similar techniques. 
+
+Finally, we conclude that 
+\[
+K_1\min\{r^{p_1}, r^{p_2}\}\leq A_{\Phi}\leq K_2\max\{r^{p_1}, r^{p_2}\}
+\]
+with $K_1,K_2>0$.
 \end{example}
 
 
@@ -530,7 +544,8 @@ Note that $\sum_{n=0}^{\infty}\lambda_n+\lambda=1$, therefore for any $n=1,\ldot
  \end{split}
 \]
 
-Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$. On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
+Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$. 
+On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
 \[
  \int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right)dt\leq 1.
 \]
@@ -543,7 +558,8 @@ Then $h\in L^1([0,T],\rr)$.
 
 
 \section{Differentiability Gate\^aux of action integrals in anisotropic Orlicz spaces}
-In this section we give a brief introduction to superposition operators between anistropic Orlicz Spaces.  We apply these results to obtain Gate\^aux differentiability of                                                                                action integrals associated to lagrangian functions defined in Sobolev-Orlicz spaces.
+In this section we give a brief introduction to superposition operators between anistropic Orlicz Spaces.  
+We apply these results to obtain Gate\^aux differentiability of                                                                                action integrals associated to lagrangian functions defined on Sobolev-Orlicz spaces.
 
 Henceforth we assume that  $f:[0,T]\times \rr^d\to\rr^d$is a \emph{Carath\'eodory function}, i.e.
 
@@ -559,14 +575,14 @@ Henceforth we assume that  $f:[0,T]\times \rr^d\to\rr^d$is a \emph{Carath\'eodor
 \[\b{f}u(t)=f(t,u(t))\]
 \end{defi}
 
-In the following Theorem we enumerate  some known properties for superposition operators definied in anisotropic Orlicz spaces of vectorial functions.   For the proofs see \cite{krasnosel2011integral} for scalar functions  and
+In the following Theorem we enumerate  some known properties for superposition operators defined on anisotropic Orlicz spaces of vector functions.   For the proofs see \cite{krasnosel2011integral} for scalar functions  and
 \cite{zbMATH04038592,zbMATH03983966,zbMATH03942215} for the generalization to  $\mathbb{R}^d$-valued  (moreover Banach spaces valued)  functions in a anisotropic Orlicz Spaces (moreover modular anisotropic spaces).
 
 \begin{thm} We assume that $f$ satisfies condition \eqref{eq:carathe} and that $\Phi_1,\Phi_2:\rr^d\to [0,+\infty)$ are anisotropic Young functions. Then
 \begin{enumerate}
- \item\label{it:measure}\emph{Measurability.}  The operator $\b{f}$ maps  masurable function into measurable functions
+ \item\label{it:measure}\emph{Measurability.}  The operator $\b{f}$ maps  measurable function into measurable functions
  \item\label{it:exten}\emph{Extensibility.}  If the operator $\b{f}$ acts from the ball $B_{L^{\Phi_1}}(r):=\{ u\in L^{\Phi_1}| \|u\|_{L^{\Phi_1}}<r\}$ into the space $L^{\Phi_2}$ or the space $E^{\Phi_2}$ then $\b{f}$ can be extended  to $\Pi(E^{\Phi_1},r)$ into space $L^{\Phi_2}$ or  $E^{\Phi_2}$ respectively.
- \item\label{it:exten}\emph{Continuity.} If the operator $\b{f}$ acts from $\Pi(E^{\Phi_1},r)$ into space $E^{\Phi_2}$, then $\b{f}$ is continous.
+ \item\label{it:exten}\emph{Continuity.} If the operator $\b{f}$ acts from $\Pi(E^{\Phi_1},r)$ into space $E^{\Phi_2}$, then $\b{f}$ is continuous.
 \end{enumerate}
 
 
