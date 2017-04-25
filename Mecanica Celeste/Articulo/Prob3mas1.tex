@@ -39,7 +39,7 @@
 
 
 
-\title{Periodic solutions for a Sitnikov restricted four-body problem with primaries in a colinear configuration}
+\title{Periodic solutions for a Sitnikov restricted $n+1$-body problem with primaries in rigid motion}
 \author{Gast\'on Beltritti \thanks{SECyT-UNRC and CONICET}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\
@@ -217,11 +217,60 @@ The particle $q$ satisfies the Newtonian equations of motion
 
 
 
+\begin{lem}\label{lem:1} For $c>0$ we define the function $y_c(t):=(c+t)^{-3/2}$. If $0<t_1<t_2<\ldots<t_k$ then the functions $y_j(t):=y_{t_j}(t)$  are linearly independent on  each open interval   $I\subset \mathbb{R}^+$.
+\end{lem}
+\begin{proof} It is sufficient to prove that Wronskian
 
-\begin{thm} There exists a solution of \eqref{eq:newton} with $x(t)=y(t)=0$ if and only if $q^0_1,\ldots,q^ 0_n$ satisfy that for any $r>0$ such that the set
+ \[W:=W(y_1,\ldots,y_k)(t)=\det\begin{pmatrix}
+			      y_1 & \cdots & y_k\\
+			      \frac{dy_1}{dt}&  \cdots & \frac{dy_k}{dt}\\
+			      \vdots & \ddots & \vdots \\
+			      \frac{d^{k-1}y_1}{dt^{k-1}}&  \cdots & \frac{d^{k-1}y_k}{dt^{k-1}}\\
+                           \end{pmatrix}
+\]
+is not null on $I$.
+
+Using induction is easy to show that
+\begin{equation}\label{eq:der_ind}\frac{d^iy_c}{dt^i}=\beta_{i}y_{c}^{\frac{2i+3}{3}},\quad\hbox{for some }\beta_{i}\neq 0, \hbox{ and for all }i=1,\ldots.
+\end{equation}
+Fix any $t\in I$. Then, according to \eqref{eq:der_ind} and writing $\lambda_j:=(t+t_j)^{-1}$, we have
+
+\[
+\begin{split}
+  W(t)&=\det
+    \begin{pmatrix}
+      \lambda_1^{3/2} & \lambda_2^{3/2} &\cdots & \lambda_k^{3/2} \\
+      \beta_1\lambda_1^{5/2} &\beta_1 \lambda_2^{5/2} &\cdots &\beta_1 \lambda_k^{5/2}\\
+      \vdots & \vdots &\ddots & \vdots\\
+      \beta_{k-1}\lambda_1^{k+1/2} & \beta_{k-1}\lambda_2^{k+1/2} &\cdots & \beta_{k-1}\lambda_k^{k+1/2}
+    \end{pmatrix}
+  \\
+  &= \beta_1\beta_2\cdots\beta_{k-1} \lambda_1^{3/2}\lambda_2^{3/2}\cdots \lambda_k^{3/2}
+     \det \begin{pmatrix}
+      1& 1 &\cdots & 1 \\
+      \lambda_1 & \lambda_2 &\cdots & \lambda_k\\
+      \vdots & \vdots &\ddots & \vdots\\
+      \lambda_1^{k-1} & \lambda_2^{k-1} &\cdots & \lambda_k^{k-1}
+    \end{pmatrix}
+  \\
+  &= \beta_1\beta_2\cdots\beta_{k-1} \lambda_1^{3/2}\lambda_2^{3/2}\cdots \lambda_k^{3/2}
+  \prod_{1\leq i<j\leq n}(\lambda_j-\lambda_i)
+,
+\end{split}
+\]
+where the last equality follows of the well known Vandermonde determinant identity. Therefore $W\neq 0$ if and only if $\lambda_i\neq\lambda_j$, $i\neq j$,
+which in turn is equivalent to $t_i\neq t_j$, $i\neq j$.
+\end{proof}
+
+
+
+
+
+
+\begin{thm} There exists a non-stationary  solution of \eqref{eq:newton} with $x(t)=y(t)=0$ if and only if $q^0_1,\ldots,q^ 0_n$ satisfy that for any $r>0$ such that the set
 \[F_r=\{i:|q_i^ 0|=r\}\]
 is non empty, then
-\[\sum_{i\in F_r}m_iq_i^ 0=0.\]
+\begin{equation}\label{eq:suma0}\sum_{i\in F_r}m_iq_i^ 0=0.\end{equation}
 \end{thm}
 
 \begin{proof} We use a rotating coordinate system where the primaries are fixed. Concretely we  put
@@ -236,19 +285,25 @@ where
        0 & -1\\
        1 & 0\\
      \end{pmatrix}\quad\hbox{and}\quad C=\begin{pmatrix}
-       -I_{2\times 2} & 0_{2\times 1}\\
+       -I_{2} & 0_{2\times 1}\\
        0_{1\times 2} & 0\\
-     \end{pmatrix}
+     \end{pmatrix},
 \]
-Assuming that the masless particle is moving on the $z$-axis then $\xi=q=(0,0,z)$ and the Coriolis and centrifugal forces,   $2\nu B\dot{\xi}$ and $\nu^2 C\xi$ respectively, are null. Therefore, taking account in the first two equation in \eqref{eq:mov_rot} and identifying the vectors $q_i^0$, $i=1,\ldots,n$ with their versions in $\rr^2$, we have
+where $0_{n\times m}$ and $I_{n}$ denote the null $n\times m$ matrix  and the identity $n\times n$ matrix respectively. Assuming that the masless particle is moving on the $z$-axis then $\xi=q=(0,0,z)$ and the Coriolis and centrifugal forces,   $2\nu B\dot{\xi}$ and $\nu^2 C\xi$ respectively, are null. Therefore, taking account in the first two equation in \eqref{eq:mov_rot} and identifying the vectors $q_i^0$, $i=1,\ldots,n$ with vectors in $\rr^2$, we have
 \[
 \sum_{i=1}^n\frac{m_iq_i^0}{|q_i^0-\xi|^3}=0.
 \]
-Let $D=\{|q_i^0|: i=1,\ldots,n\}$.  Suppose that $D=\{r_1,\ldots,r_k\}$ and  $\{1,\ldots,n\}=F_1\cup \cdots\cup F_k$, where if $i\in F_j$ then $|q_i^0|=r_j$. Then
-\[\sum_{j=1}^k\left\{\frac{1}{(r_j^2+z^2)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0\]
 
-We suppose that $z(t_0)\neq 0\neq \dot{z}(t_0)$. 
+Let $D=\{|q_i^0|: i=1,\ldots,n\}$.  Suppose that $D=\{r_1,\ldots,r_k\}$, with $r_i\neq r_j$ for $i\neq j$, and  $\{1,\ldots,n\}=F_1\cup \cdots\cup F_k$, where if $i\in F_j$ then $|q_i^0|=r_j$. Then
+\[\sum_{j=1}^k\left\{\frac{1}{(r_j^{2}+z^2)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0.\]
+
+Since we are considering a non-stationary solution, we have that $z(t)$ is not constant. Therefore there exists an interval $I\subset\rr^+$ where
+\[\sum_{j=1}^k\left\{\frac{1}{(r_j^{2}+s)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0,\quad s\in I.\]
+Then, according to Lemma \ref{lem:1}, we obtain \eqref{eq:suma0}.
 \end{proof}
+
+
+
 
 
 
