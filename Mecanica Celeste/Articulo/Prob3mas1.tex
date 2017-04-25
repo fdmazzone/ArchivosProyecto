@@ -226,7 +226,7 @@ is non empty, then
 
 \begin{proof} We use a rotating coordinate system where the primaries are fixed. Concretely we  put
 \[\xi=Q(-\nu t)q.\]
-In this system the moption equation are
+In this system the motion equations are
 \begin{equation}\label{eq:mov_rot}\ddot{\xi}+2\nu B\dot{\xi}+\nu^2 C\xi=\sum_{i=1}^n\frac{m_i(q_i^0-\xi)}{|q_i^0-\xi|^3},\end{equation}
 where
 \[B:=\begin{pmatrix}
@@ -245,7 +245,9 @@ Assuming that the masless particle is moving on the $z$-axis then $\xi=q=(0,0,z)
 \sum_{i=1}^n\frac{m_iq_i^0}{|q_i^0-\xi|^3}=0.
 \]
 Let $D=\{|q_i^0|: i=1,\ldots,n\}$.  Suppose that $D=\{r_1,\ldots,r_k\}$ and  $\{1,\ldots,n\}=F_1\cup \cdots\cup F_k$, where if $i\in F_j$ then $|q_i^0|=r_j$. Then
-\sum_{j=1}^k\sum_{i\in F_j}\frac{m_iq_i^0}{
+\[\sum_{j=1}^k\left\{\frac{1}{(r_j^2+z^2)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0\]
+
+We suppose that $z(t_0)\neq 0\neq \dot{z}(t_0)$. 
 \end{proof}
 
 
