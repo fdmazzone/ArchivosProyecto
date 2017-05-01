@@ -39,7 +39,7 @@
 
 
 
-\title{Periodic solutions for a Sitnikov restricted four-body problem with primaries in a colinear configuration}
+\title{Periodic solutions for a Sitnikov restricted $n+1$-body problem with primaries in rigid motion}
 \author{Gast\'on Beltritti \thanks{SECyT-UNRC and CONICET}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\
@@ -118,11 +118,11 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 \section{Introduction}
-In this paper we obtain existence of periodic solutions for the following restricted nonplanar Newtonian four-body problem $P$ (see figure \ref{fig:conf_esp}):
+In this paper we discuss existence of periodic solutions for the following restricted nonplanar Newtonian $n+1$-body problem $P$ (see figure \ref{fig:conf_esp}):
 \begin{itemize}
- \item[$P_1$] We have three primary bodies of masses $m_1,m_2,m_3$. The fourth body is masless.
- \item[$P_2$] The primary bodies are in a central colinear configuration rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is carried out in a plane $\Pi$.
- \item[$P_3$] The massless particle is moving on tha perpendicular line to $\Pi$ passing through the center of masses.
+ \item[$P_1$] We have $n$ primary bodies of masses $m_1,\ldots,m_n$ and an additional masless body.
+ \item[$P_2$] The primary bodies are in a central  configuration rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is carried out in a plane $\Pi$.
+ \item[$P_3$] The massless particle is moving on the perpendicular line to $\Pi$ passing through the center of masses.
 \end{itemize}
 
 
@@ -162,7 +162,7 @@ In this paper we obtain existence of periodic solutions for the following restri
 \put(1.2,-0.3){\line(-1,5){.12}}
 \put(-0.18,0.3){\line(1,0){1.26}}
 \put(1.1,-0.25){$\Pi$}
-\end{picture}\caption{Four-body problem}\label{fig:conf_esp}
+\end{picture}\caption{Four-body problem with three primaries}\label{fig:conf_esp}
  \end{center}
 
 \end{figure}
@@ -187,14 +187,123 @@ can check and reproduce them easily.
 
 \section{Preliminaries and Main Results}
 
-We start considering $n$ bodies, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $x_1(t),\ldots,x_n(t)$ are the coordinates of the bodies in some inertial Cartesian coordinate system. Then the system satisfies the Newtonian equations of motion
-\begin{equation}\label{eq:newton}
- m_j\ddot{x}_j=\sum_{i\neq j}\frac{m_im_j(x_i-x_j)}{r_{ij}^3},\quad j=1,\ldots,n,
-\end{equation}
-where $r_{ij}=|x_i-x_j|$ is the Euclidean distance between $x_i$ and $x_j$. As is customary we introduce the potential function
+We start considering $n$ bodies, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $q_1(t),\ldots,q_n(t)$ are the coordinates (column vectors) of the bodies in some inertial Cartesian coordinate system. We denote by $r_{ij}=|q_i-q_j|$  the  Euclidean distance between $q_i$ and $q_j$. We can suppose without any loos generality, we can assume the center of mass   $c:=\sum_jm_jq_j/M$ ($M:=\sum_j m_j$) is fixed at the origin ($c=0$).
+
+We assume that these bodies are in a \emph{rigid motion}. We recall that a \emph{rigid  motion}, is a solution of motions equations with $r_{ij}$ constant.  It is known (see -buscar referencias ) that in a rigid motion is performed in a plane $\Pi$. We assume that $\Pi$ is the plane determined by the first two coordinates axes. Then a rigid motion has the form
+\[q_j(t)=Q(\nu t)q^0_j,\]
+where
+\[
+ Q(\nu t)=\begin{pmatrix}
+           \cos(\nu t) & -\sin(\nu t) & 0\\
+           \sin(\nu t) & \cos(\nu t) & 0\\
+           0            &     0     &  1\\
+          \end{pmatrix}
+\]
+and $q^0_j\in\Pi$, $j=1,\ldots,n$ are vectors in a planar \emph{central configuration} (CC) in $\rr^3$, i.e. there exists $\lambda\in\rr$ such that
+\[ \nabla_jU(q^0_1,\ldots,q^0_n)+\lambda m_jq^0_j=0,\quad j=1,\ldots,n.\]
+where the \emph{potential function} $U$ is defined by:
 \begin{equation}\label{eq:potencial}
- U(x)=\sum_{i<j}\frac{m_im_j}{r_{ij}}
+ U(x)=\sum_{i<j}\frac{m_im_j}{r_{ij}},
 \end{equation}
+and $\nabla_j$ denotes the $3$-dimensional partial gradient with respect to $q_j$.
+According to \cite[Eq. (2.16)]{JaumeLlibre276} we have $\nu^2=\lambda$. The primaries bodies perform a periodic motion with period $T:=2\pi/\nu$ .
+
+We suppose that we have a massless particle with coordinates $q(t)=(x(t),y(t),z(t))\in\rr^3$. This particle does not disturb the rigid motion of  primaries.  We want to find conditions under which this particle perform a $T$-periodic motion on the third axis of coordinates.
+
+The particle $q$ satisfies the Newtonian equations of motion
+\begin{equation}\label{eq:newton}
+ \ddot{q}=\sum_{i=1}^n\frac{m_i(q_i-q)}{|q_i-q|^3},
+\end{equation}
+
+
+
+\begin{lem}\label{lem:1} For $c>0$ we define the function $y_c(t):=(c+t)^{-3/2}$. If $0<t_1<t_2<\ldots<t_k$ then the functions $y_j(t):=y_{t_j}(t)$  are linearly independent on  each open interval   $I\subset \mathbb{R}^+$.
+\end{lem}
+\begin{proof} It is sufficient to prove that Wronskian
+
+ \[W:=W(y_1,\ldots,y_k)(t)=\det\begin{pmatrix}
+			      y_1 & \cdots & y_k\\
+			      \frac{dy_1}{dt}&  \cdots & \frac{dy_k}{dt}\\
+			      \vdots & \ddots & \vdots \\
+			      \frac{d^{k-1}y_1}{dt^{k-1}}&  \cdots & \frac{d^{k-1}y_k}{dt^{k-1}}\\
+                           \end{pmatrix}
+\]
+is not null on $I$.
+
+Using induction is easy to show that
+\begin{equation}\label{eq:der_ind}\frac{d^iy_c}{dt^i}=\beta_{i}y_{c}^{\frac{2i+3}{3}},\quad\hbox{for some }\beta_{i}\neq 0, \hbox{ and for all }i=1,\ldots.
+\end{equation}
+Fix any $t\in I$. Then, according to \eqref{eq:der_ind} and writing $\lambda_j:=(t+t_j)^{-1}$, we have
+
+\[
+\begin{split}
+  W(t)&=\det
+    \begin{pmatrix}
+      \lambda_1^{3/2} & \lambda_2^{3/2} &\cdots & \lambda_k^{3/2} \\
+      \beta_1\lambda_1^{5/2} &\beta_1 \lambda_2^{5/2} &\cdots &\beta_1 \lambda_k^{5/2}\\
+      \vdots & \vdots &\ddots & \vdots\\
+      \beta_{k-1}\lambda_1^{k+1/2} & \beta_{k-1}\lambda_2^{k+1/2} &\cdots & \beta_{k-1}\lambda_k^{k+1/2}
+    \end{pmatrix}
+  \\
+  &= \beta_1\beta_2\cdots\beta_{k-1} \lambda_1^{3/2}\lambda_2^{3/2}\cdots \lambda_k^{3/2}
+     \det \begin{pmatrix}
+      1& 1 &\cdots & 1 \\
+      \lambda_1 & \lambda_2 &\cdots & \lambda_k\\
+      \vdots & \vdots &\ddots & \vdots\\
+      \lambda_1^{k-1} & \lambda_2^{k-1} &\cdots & \lambda_k^{k-1}
+    \end{pmatrix}
+  \\
+  &= \beta_1\beta_2\cdots\beta_{k-1} \lambda_1^{3/2}\lambda_2^{3/2}\cdots \lambda_k^{3/2}
+  \prod_{1\leq i<j\leq n}(\lambda_j-\lambda_i)
+,
+\end{split}
+\]
+where the last equality follows of the well known Vandermonde determinant identity. Therefore $W\neq 0$ if and only if $\lambda_i\neq\lambda_j$, $i\neq j$,
+which in turn is equivalent to $t_i\neq t_j$, $i\neq j$.
+\end{proof}
+
+
+
+
+
+
+\begin{thm} There exists a non-stationary  solution of \eqref{eq:newton} with $x(t)=y(t)=0$ if and only if $q^0_1,\ldots,q^ 0_n$ satisfy that for any $r>0$ such that the set
+\[F_r=\{i:|q_i^ 0|=r\}\]
+is non empty, then
+\begin{equation}\label{eq:suma0}\sum_{i\in F_r}m_iq_i^ 0=0.\end{equation}
+\end{thm}
+
+\begin{proof} We use a rotating coordinate system where the primaries are fixed. Concretely we  put
+\[\xi=Q(-\nu t)q.\]
+In this system the motion equations are
+\begin{equation}\label{eq:mov_rot}\ddot{\xi}+2\nu B\dot{\xi}+\nu^2 C\xi=\sum_{i=1}^n\frac{m_i(q_i^0-\xi)}{|q_i^0-\xi|^3},\end{equation}
+where
+\[B:=\begin{pmatrix}
+       J & 0_{2\times 1}\\
+       0_{1\times 2} & 0\\
+     \end{pmatrix},\quad J:=\begin{pmatrix}
+       0 & -1\\
+       1 & 0\\
+     \end{pmatrix}\quad\hbox{and}\quad C=\begin{pmatrix}
+       -I_{2} & 0_{2\times 1}\\
+       0_{1\times 2} & 0\\
+     \end{pmatrix},
+\]
+where $0_{n\times m}$ and $I_{n}$ denote the null $n\times m$ matrix  and the identity $n\times n$ matrix respectively. Assuming that the masless particle is moving on the $z$-axis then $\xi=q=(0,0,z)$ and the Coriolis and centrifugal forces,   $2\nu B\dot{\xi}$ and $\nu^2 C\xi$ respectively, are null. Therefore, taking account in the first two equation in \eqref{eq:mov_rot} and identifying the vectors $q_i^0$, $i=1,\ldots,n$ with vectors in $\rr^2$, we have
+\[
+\sum_{i=1}^n\frac{m_iq_i^0}{|q_i^0-\xi|^3}=0.
+\]
+
+Let $D=\{|q_i^0|: i=1,\ldots,n\}$.  Suppose that $D=\{r_1,\ldots,r_k\}$, with $r_i\neq r_j$ for $i\neq j$, and  $\{1,\ldots,n\}=F_1\cup \cdots\cup F_k$, where if $i\in F_j$ then $|q_i^0|=r_j$. Then
+\[\sum_{j=1}^k\left\{\frac{1}{(r_j^{2}+z^2)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0.\]
+
+Since we are considering a non-stationary solution, we have that $z(t)$ is not constant. Therefore there exists an interval $I\subset\rr^+$ where
+\[\sum_{j=1}^k\left\{\frac{1}{(r_j^{2}+s)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0,\quad s\in I.\]
+Then, according to Lemma \ref{lem:1}, we obtain \eqref{eq:suma0}.
+\end{proof}
+
+
+
 
 
 
