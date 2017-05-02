@@ -668,12 +668,13 @@ According to Lemma \ref{lem:inclusion orlicz} and Corollary 2.3 in \cite{ABGMS20
 there exists $M>0$ such that $\|\b{a}(u_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  
 From the previous facts and \eqref{eq:DxL1}, we get
 \begin{equation*}\label{eq:DxL1-bis}
-|D_{x}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})|\leq a(|u_{n_k}|)(b(t)+\Phi(\dot{u}_{n_k})\leq
-M (b(t)+h) \in L^1.
+|D_{x}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})|\leq a(|u_{n_k}|)(b+\Phi(\dot{u}_{n_k})\leq
+M (b+h) \in L^1.
 \end{equation*}
 On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
 \[D_{x}\mathcal{L}(t,u_{n_k}(t),\dot{u}_{n_k}(t))\to D_{x}\mathcal{L}(t,u(t),\dot{u}(t))\quad\hbox{ for a.e. } t\in[0,T].\]
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
+
 
 \noindent\emph{Step 2. The non linear operator   $u
  \mapsto  D_{y}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ with the strong topology  
@@ -681,11 +682,11 @@ into $\left[\lphi\right]^*$  with the weak$^*$ topology.}
 
  Let $u\in \domi$.  From  \eqref{eq:condicion-estructura} and Corollary 2.3 in \cite{ABGMS2015} it follows that 
 \begin{equation}\label{eq:DyLpsi}
-\Psi(D_y\mathcal{L}(t,u,\dot{u}))\leq a(|u|)(b(t)+\Phi(\dot{u}))\in L^1
+\Psi(D_y\mathcal{L}(\cdot,u,\dot{u}))\leq a(|u|)(b+\Phi(\dot{u}))\in L^1
 \end{equation}
 then
 \begin{equation}\label{eq:DyLpsi-clase}
-D_{y}\mathcal{L}(t,x,y)\in C^{\Psi}.
+D_{y}\mathcal{L}(\cdot,u,\dot{u})\in C^{\Psi}.
 \end{equation}
 
 
@@ -711,19 +712,99 @@ $u_{n_k}\rightarrow u \quad\text{a.e.}$, $\dot{u}_{n_k}\rightarrow \dot{u} \quad
 As in the previous step, since $u_n$ is a convergent sequence, 
 Corollary 2.3 in \cite{ABGMS2015} implies that $a(|u_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
 Therefore,  with $u_{n_k}$ instead of $u$, inequality  \eqref{eq:DyLpsi} becomes 
-\begin{equation}\label{Dy-suc}
-  \left \Psi(D_{\b{y}}\mathcal{L}(\cdot,\b{u}_{n_k},\b{\dot{u}}_{n_k}))   
-	\leq M\left(b(t)+h(t))\in L_1.
+\begin{equation}\label{eq:Dy-suc}
+  \left \Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))   
+	\leq M (b+h)\in L^1.
 \end{equation}
-Consequently, as $v \in \lphi$ there exists $\lambda>0$ such that $\Phi(\frac{v}{\lambda})\in L^1$, then
-arreglar!!!!!
-
-and employing H\"older's inequality, we obtain that
-\[\sup_k|D_{\b{y}}\mathcal{L}(\cdot,\b{u}_{n_k},\b{\dot{u}}_{n_k})\ccdot v| \in L^1_1.\]
+As $v \in \lphi$ there exists $\lambda>0$ such that $\Phi(\frac{v}{\lambda})\in L^1$. 
+Now, by Young inequality and \eqref{eq:Dy-suc}, we have
+\begin{equation}\label{eq:Dy_lambda-Psi}
+\begin{split}
+&\lambda D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})\ccdot \frac{v(t)}{\lambda} 
+\\
+&
+\leq 
+\lambda\left[\Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))+\Phi\left(\frac{v}{\lambda}\right)\right]
+\\
+&\leq \lambda M (b+h)+\lambda \Phi\left(\frac{v}{\lambda}\right)\in L^1
+\end{split}
+\end{equation}
   Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
-\begin{equation}\label{conv_debil}\int_0^T  D_{\b{y}}\mathcal{L}(t,\b{u}_{n_k},\b{\dot{u}}_{n_k})\ccdot\b{ v} \ dt \to \int_0^T D_{\b{y}}\mathcal{L}(t,\b{u},\b{\dot{u}})\ccdot\b{ v}\ dt \end{equation}
+\begin{equation}\label{conv_debil}
+\int_0^T  D_{y}\mathcal{L}(t,u_{n_k},\dot{u}_{n_k})
+\ccdot  v \,dt 
+\to 
+\int_0^T D_{y}\mathcal{L}(t,u,\dot{u})\ccdot v\, dt \end{equation}
 which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
+\emph{Step 3.} We will prove \eqref{eq:DerAccion}. 
+%The proof follows similar lines as \cite[Thm. 1.4]{mawhin2010critical}. 
+For $u\in \domi$ and $0\neq v\in\wphi$, we define the function
+\[H(s,t):=\mathcal{L}(t,u(t)+s v(t),\dot{u}(t)+s\dot{v}(t)).\]
+
+%From \cite[Lemma 10.1]{KR} (or \cite[Thm. 5.5]{Orliczvectorial2005} ) 
+%we obtain that if $|u|\leq |v|$ then    $d(u,\ephi)\leq d(v,\ephi)$. Esto va????
+
+For  $|s|\leq s_0:=\left(1-d(\dot{u},\ephi)\right)/\|v\sobnor$ we have
+\[
+d \left(\dot{u}+s \dot{v}, \ephi \right)
+\leq
+d (\dot{u}+s\dot{v}, \dot{u})+ d(\dot{u},\ephi)<1
+\]
+
+????Thus $\dot{u}+s\dot{v} \in \Pi(\ephi,1)$ and  $|\dot{u}|+s|\dot{v}| \in \Pi(\ephi,1)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion} item \ref{T1item1}, that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
+Estaba en la versi\'on original, y ac\'a???
+
+We also have 
+$
+\|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
+$
+then, by Corollary 2.3 in \cite{ABGMS2015}, there exists $M>0$ such that 
+$\|a(|u+sv|)\linf\leq M$.
+
+Let $\lambda>0$ such that $\Phi(\frac{\dot{v}}{\lambda})\in L^1$.
+On the other hand, if $\dot{v}\in\lphi$ and $|s|\leq s_0 $,
+from the convexity of $\Phi$ we get
+\[
+\begin{split}
+&\Phi(\dot{u}+s\dot{v})=
+\Phi\left((1-s_0)\frac{\dot{u}}{1-s_0}+s_0 \frac{s}{s_0}\dot{v}\right)
+\leq
+(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi\left(\frac{s}{s_0}\dot{v}\right)
+\\
+&\leq
+(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s \Phi(\dot{v})
+\leq
+(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi(\dot{v})\in L^1
+\end{split}
+\]
+$\dot{u}\in\Pi(\ephi,1)$, porque anotamos
+\[
+d(\frac{\dot{u}}{1-s_0},E^{\Phi})=\frac{1}{1-s_0}d(\dot{u}, E^{\Phi})<1
+\]
+Para qu\'e????
+
+Now, applying \eqref{eq:DxL1}, \eqref{eq:Dy_lambda-Psi}, \eqref{eq:DyLpsi} 
+%the monotonicity of $\varphi$ and $\Phi$, 
+the fact that $v \in L^{\infty}$ and $\dot{v}\in\lphi$, 
+%and H\"older's inequality, 
+we get
+\begin{equation}\label{ctg}
+\begin{split}
+|D_s H(s,t)|&=\left| D_{x}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v})\ccdot v +  
+\lambda D_{y}\mathcal{L}(t, u+s v, \dot{u}+s\dot{v})\ccdot\frac{\dot{v}}{\lambda}\right| \\
+ & \leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\}\\
+&+ \lambda\left[\Psi(D_{y}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v}))+\Phi\left(\frac{\dot{v}}{\lambda}\right) \right]
+\\
+&\leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\}+
+\lambda M[ b(t)+ \Phi(\dot{u}+s\dot{v})]+\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+\\&=
+M [ b(t)+ \Phi(\dot{u}+s\dot{v})] (|v|+\lambda) +\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+\in L^1_1.
+\end{split}
+\end{equation}
+
+FALTA PASAR DESDE LA P\'AGINA 8 DEL APUNTE 
 
 
 \end{proof}
