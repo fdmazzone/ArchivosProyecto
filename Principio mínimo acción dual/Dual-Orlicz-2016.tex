@@ -69,7 +69,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\lphiuno}{L^{\Phi_1}}
 \newcommand{\lphidos}{L^{\Phi_2}}
 \newcommand{\lphii}{L^{\Phi_i}}
-\newcommand{\lpsi}{L^{\Phi^*}}
+\newcommand{\lpsi}{L^{\Psi}}
 \newcommand{\lpsiuno}{L^{\Phie_1}}
 \newcommand{\lpsidos}{L^{\Phie_2}}
 \newcommand{\lpsii}{L^{\Phie_i}}
@@ -90,7 +90,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\wphiet}{W^{1}\ephi_T}
 \newcommand{\wphie}{W^{1}\ephi}
 \newcommand{\sobnor}{\|_{W^{1}\lphi}}
-\newcommand{\domi}{\mathcal{E}^{\Phi}_d(\lambda)}
+\newcommand{\domi}{\mathcal{E}^{\Phi}(\lambda)}
 \newcommand{\domiuno}{\mathcal{E}^{\Phi_1}_d(\lambda)}
 \newcommand{\domidos}{\mathcal{E}^{\Phi_2}_d(\lambda)}
 \newcommand{\domii}{\mathcal{E}^{\Phi_i}_d(\lambda)}
@@ -172,11 +172,18 @@ This paper deals with system  of equations of the type:
 \end{array}%
 \right. ,\tag{$P_1$}
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange system}. This topic was deeply addressed for the \emph{Lagrange function}
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange systems of ordinary equations}.
+
+This topic was deeply addressed for the several types of \emph{Lagrange functions}. 
+
+
+
+
+For example,
 \begin{equation}\label{eq:lagrange_cuad}
 \mathcal{L}_{p,F}(t,x,y):=\frac{|y|^p}{p}+F(t,x),
 \end{equation}
-for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{2,F}$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles, see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic} and in this case \eqref{ProbPrin-gral}  is reduced to the $p$-laplacian system
+for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{2,F}$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic} and in this case \eqref{ProbPrin-gral}  is reduced to the $p$-laplacian system
 \begin{equation}\label{ProbP-lapla}
     \left\{%
 \begin{array}{ll}
@@ -197,20 +204,6 @@ In this context, it  is customary to call $F$ a  \emph{potential function}, and 
 In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and non decreasing and $0\leq b\in L^1([0,T],\rr)$.
 \end{enumerate}
 
-
-In \cite{ABGMS2015} it is treated  the case of a lagrangian $\mathcal{L}$ which is lower bounded by a Lagrange function like
-\begin{equation}\label{eq:lagrange_phi}
-\mathcal{L}_{\Phi,F}(t,x,y)=\Phi(|y|)+F(t,x),
-\end{equation}
-where  $\Phi$ is an $N$-function (see section \ref{preliminares} for the definition of this concept).  
-In the paper \cite{ABGMS2015} it was assumed  a condition of \emph{bounded oscillation} on $F$  (see xxxxx below). 
-In this paper  we apply the dual method (\cite[Ch. 3]{mawhin2010critical}) to obtain solutions of \eqref{ProbPrin-gral}.
-
-
-
-\section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
-
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic Young functions $\Phi:\rr^n\to\rr_+$, i.e. functions such that $\Phi(x)$ depends on the direction of $x$, unlike the radial case where $\Phi(x)=\Phi(|x|)$.  References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}.
 
 In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p$-laplacian equations as the following example shows.
 
@@ -238,6 +231,20 @@ Then the equations \eqref{ProbPrin-gral} become
 
 In the literature, these equations are known as $(p_1,p_2)$-Laplacian system, see
 \cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some}.
+
+
+
+In \cite{ABGMS2015} it is treated  the case of a lagrangian $\mathcal{L}$ which is lower bounded by a Lagrange function like
+\begin{equation}\label{eq:lagrange_phi}
+\mathcal{L}_{\Phi,F}(t,x,y):=\Phi(|y|)+F(t,x),
+\end{equation}
+where  $\Phi$ is an $N$-function (see section \ref{preliminares} for the definition of this concept).
+
+
+\section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
+
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic Young functions $\Phi:\rr^n\to\rr_+$, i.e. functions such that $\Phi(x)$ depends on the direction of $x$, unlike the radial case where $\Phi(x)=\Phi(|x|)$.  References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}.
+
 
 
 On the other hand, anisotropic Orlicz-Sobolev spaces allow us to simplify the writing, and they provide the natural frame for statements of the type \cite[Lemma 3.1]{Tian2007192}. This type of question motivated us to use these spaces.
@@ -371,7 +378,7 @@ A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (se
 Like in \cite{KR} we will consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
 \[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}.\]
 This set is related to the Orlicz class $\claseor$ by means of inclusions, namely,
-\begin{equation}\label{inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
+\begin{equation}\label{eq:inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
 \end{equation}
 for any positive $r$ (see \cite[Thm. 5.6]{Orliczvectorial2005}).
 If $\Phi \in \Delta_2^{\infty}$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
@@ -444,7 +451,7 @@ And, we introduce the following subspaces of $\wphi$
 %
 %
 
-\begin{lem}\label{inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be a Young's 
+\begin{lem}\label{lem:inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be a Young's 
 function and let $u\in\wphi([0,T],\rr^d)$. Let 
 $A_{\Phi}: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. Then
 \begin{enumerate}
@@ -453,7 +460,7 @@ $A_{\Phi}: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. 
  &|u(t)-u(s)| \leq
  \|u'\orlnor |s-t|A_{\Phi}^{-1}\left(\frac{1}{|s-t|}\right)\tag{Morrey's inequality}\label{in-sob-cont}
 \\
-& \| u\linf \leq A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{sobolev}
+& \| u\linf \leq A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{eq:sobolev}
 \end{align}
 \item We have $\widetilde{u}\in L^{\infty}([0,T],\rr^d)$ and
 \[
@@ -581,16 +588,233 @@ In the following Theorem we enumerate  some known properties for superposition o
 \begin{thm} We assume that $f$ satisfies condition \eqref{eq:carathe} and that $\Phi_1,\Phi_2:\rr^d\to [0,+\infty)$ are anisotropic Young functions. Then
 \begin{enumerate}
  \item\label{it:measure}\emph{Measurability.}  The operator $\b{f}$ maps  measurable function into measurable functions
- \item\label{it:exten}\emph{Extensibility.}  If the operator $\b{f}$ acts from the ball $B_{L^{\Phi_1}}(r):=\{ u\in L^{\Phi_1}| \|u\|_{L^{\Phi_1}}<r\}$ into the space $L^{\Phi_2}$ or the space $E^{\Phi_2}$ then $\b{f}$ can be extended  to $\Pi(E^{\Phi_1},r)$ into space $L^{\Phi_2}$ or  $E^{\Phi_2}$ respectively.
+ \item\label{it:exten}\emph{Extensibility.}  If the operator $\b{f}$ acts from the ball $B_{L^{\Phi_1}}(r):=\{ u\in L^{\Phi_1}| \|u\|_{L^{\Phi_1}}<r\}$ into the space $L^{\Phi_2}$ or the space $E^{\Phi_2}$ then $\b{f}$ can be extended  from $\Pi(E^{\Phi_1},r)$ into space $L^{\Phi_2}$ or  $E^{\Phi_2}$, respectively.
  \item\label{it:exten}\emph{Continuity.} If the operator $\b{f}$ acts from $\Pi(E^{\Phi_1},r)$ into space $E^{\Phi_2}$, then $\b{f}$ is continuous.
 \end{enumerate}
+\end{thm}
+
+HABR\'IA QUE VER D\'ONDE SE UBICA LA CONDICI\'ON DE ESTRUCTURA...QUIZ\'AS EN LA INTRODUCCI\'ON?....
+
+We assume that the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is 
+Carath\'eodory and differentiable function satisfying 
+\begin{equation}\label{eq:condicion-estructura}
+|\mathcal{L}(t,x,y)|+ |D_{x}\mathcal{L}(t,x,y)|+\Psi(D_{y}\mathcal{L}(t,x,y))
+\leq
+a(|x|)\left(b(t)+ \Phi(y)),
+\end{equation}
+where  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $b\in L^1_1([0,T]) $, $\Phi$ and $\Psi$ are $N_{\infty}$-functions (complementary???? o en el teorema o nunca?)
+
+Next, we deal with the differentiability of the action integral 
+\begin{equation}\label{eq:integral_accion}
+I(\b{u})=\int_{0}^T \mathcal{L}(t,u(t),\dot{u}(t))\ dt.
+\end{equation}
 
 
+\begin{thm}\label{teo:diferenciabilidad}
+Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{eq:condicion-estructura}.
+Then the following statements hold:
+\begin{enumerate}
+\item \label{it:T1item1} \label{A1} The action integral given by \eqref{eq:integral_accion}
+is finitely defined on $\domi:=W^{1}\lphi\cap\{u|\dot{u}\in\Pi(\ephi,1)\}$.
 
+\item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is demicontinuous from 
+$\domi$  into $\left[\wphi \right]^*$. Moreover, $I'$ is given by the following expression
+\begin{equation}\label{eq:DerAccion}
+\langle  I'(u),v\rangle= \int_0^T \left\{D_{x}\mathcal{L}\big(t,u,\dot{u}\big)\ccdot v
++ D_{y}\mathcal{L}\big(t,u,\dot{u}\big)\ccdot\dot{v}\right\} \ dt.
+\end{equation}
 
+\item\label{T1item4}  If  $\Psi \in \Delta_2$ then 
+  $I'$ is continuous from $\domi$ into $\left[\wphi\right]^*$ when both spaces are equipped with the strong topology.
+\end{enumerate}
 \end{thm}
 
 
+\begin{proof}
+Let $u\in \domi$.
+As 
+\begin{equation}\label{eq:inclusion3}
+\dot{u}\in\Pi(\ephi,1)\subset \claseor_1
+\end{equation}
+and \eqref{eq:inclusiones}, then $\Phi( \dot{u}(t)) \in L^1$.
+Now,
+ \[|\mathcal{L}(\cdot,u,\dot{u}})| \leq A(\|u\sobnor ) (b+ \Phi (\dot{u})) \in
+ L^1,\]
+by Corollary 2.3 in  \cite{ABGMS2015} and \eqref{eq:condicion-estructura}.
+Thus item \eqref{it:T1item1} is proved.
+
+Aqu\'i conviene escribir lo de arriba o decir directamente que se prueba como en teorema del \cite{ABGMS2015}????
+Y $\domi$ contiene $\lambda$ y  ahora estamos trabajando con $\lambda=1$, qu\'e hacemos????
+
+
+ We split up the proof of item \ref{it:T1item3} into four steps.
+
+\noindent\emph{Step 1. The non linear operator  $u \mapsto D_{x}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ into $L^{1}_([0,T])$ with the strong topology on both sets.} 
+
+
+If $u\in \domi$, from \eqref{eq:condicion-estructura} and \eqref{eq:inclusion3}, we obtain 
+\begin{equation}\label{eq:DxL1}
+|D_{x}\mathcal{L}(\cdot,u,\dot{u})|\leq A(\|u\sobnor) \left(b+\Phi\left(\dot{u})\right) \in L^1.
+\end{equation}
+
+Se podr\'ia poner n\'umero a la primera ecuaci\'on de la demo y decir que se razona igual????
+
+Let   $\{u_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\domi$  
+and let $u\in \domi$  such that $u_n\rightarrow u$ in $\wphi$.
+By \eqref{eq:sobolev}, we have 
+\[
+|u_n(t)-u(t)|\leq T A_{\Phi}^{-1}\left(\frac{1}{T}\right) \|u_n-u\orlnor
+\]
+then $u_n \to u$ uniformly.
+As $\dot{u}_n\rightarrow \dot{u}\in\domi$, by 
+  Lemma \ref{segundo lema}, there exist a subsequence of  $\dot{u}_{n_k}$ (again denoted $\dot{u}_{n_k}$) and a function  $h\in \Pi(\ephi,1))$
+	such that  $\dot{u}_{n_k}\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_{n_k})\leq h\quad\text{a.e}$.  
+
+Since $u_{n_k}$, $k=1,2,\ldots,$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wph$. 
+According to Lemma \ref{lem:inclusion orlicz} and Corollary 2.3 in \cite{ABGMS2015}, 
+there exists $M>0$ such that $\|\b{a}(u_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  
+From the previous facts and \eqref{eq:DxL1}, we get
+\begin{equation*}\label{eq:DxL1-bis}
+|D_{x}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})|\leq a(|u_{n_k}|)(b+\Phi(\dot{u}_{n_k})\leq
+M (b+h) \in L^1.
+\end{equation*}
+On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
+\[D_{x}\mathcal{L}(t,u_{n_k}(t),\dot{u}_{n_k}(t))\to D_{x}\mathcal{L}(t,u(t),\dot{u}(t))\quad\hbox{ for a.e. } t\in[0,T].\]
+Applying the Dominated Convergence Theorem we conclude the proof of step 1.
+
+
+\noindent\emph{Step 2. The non linear operator   $u
+ \mapsto  D_{y}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ with the strong topology  
+into $\left[\lphi\right]^*$  with the weak$^*$ topology.}
+
+ Let $u\in \domi$.  From  \eqref{eq:condicion-estructura} and Corollary 2.3 in \cite{ABGMS2015} it follows that 
+\begin{equation}\label{eq:DyLpsi}
+\Psi(D_y\mathcal{L}(\cdot,u,\dot{u}))\leq a(|u|)(b+\Phi(\dot{u}))\in L^1
+\end{equation}
+then
+\begin{equation}\label{eq:DyLpsi-clase}
+D_{y}\mathcal{L}(\cdot,u,\dot{u})\in C^{\Psi}.
+\end{equation}
+
+
+
+ Note that \eqref{eq:DxL1},  \eqref{eq:DyLpsi-clase} and the imbeddings $\wphi \hookrightarrow L^{\infty}$ and  
+$\lpsi\hookrightarrow  \left[\lphi\right]^*$ imply that the second member of
+\eqref{eq:DerAccion} defines an element of $\left[\wphi\right]^*$.
+
+
+
+Let $u_n,u\in \domi$ such that $u_n\to u$ in the norm of $\wphi$. 
+We must prove that  $D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n)\overset{w^*}{\rightharpoonup} 
+D_{y}\mathcal{L}(\cdot,u,\dot{u})$. 
+On the contrary, there exist $v\in\lphi$, $\epsilon>0$ and a subsequence of $\{u_n\}$ (denoted  $\{u_n\}$ for simplicity)  such that
+\begin{equation}\label{cota_eps}
+ \left| \langle D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n),v \rangle - 
+\langle  D_{y}\mathcal{L}(\cdot,u,\dot{u}),v \rangle\right|\geq \epsilon.
+\end{equation}
+We have $u_n\rightarrow u$ in $\lphi$ and
+$\dot{u}_n\rightarrow \dot{u}$ in $\lphi$.
+ By Lemma \ref{segundo lema}, there exist a subsequence $u_{n_k}$ and a function $h\in \Pi(\ephi,1)$ such that 
+$u_{n_k}\rightarrow u \quad\text{a.e.}$, $\dot{u}_{n_k}\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_{n_k})\leq h\quad\text{a.e.}$ 
+As in the previous step, since $u_n$ is a convergent sequence, 
+Corollary 2.3 in \cite{ABGMS2015} implies that $a(|u_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
+Therefore,  with $u_{n_k}$ instead of $u$, inequality  \eqref{eq:DyLpsi} becomes 
+\begin{equation}\label{eq:Dy-suc}
+  \left \Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))   
+	\leq M (b+h)\in L^1.
+\end{equation}
+As $v \in \lphi$ there exists $\lambda>0$ such that $\Phi(\frac{v}{\lambda})\in L^1$. 
+Now, by Young inequality and \eqref{eq:Dy-suc}, we have
+\begin{equation}\label{eq:Dy_lambda-Psi}
+\begin{split}
+&\lambda D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})\ccdot \frac{v(t)}{\lambda} 
+\\
+&
+\leq 
+\lambda\left[\Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))+\Phi\left(\frac{v}{\lambda}\right)\right]
+\\
+&\leq \lambda M (b+h)+\lambda \Phi\left(\frac{v}{\lambda}\right)\in L^1
+\end{split}
+\end{equation}
+  Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
+\begin{equation}\label{conv_debil}
+\int_0^T  D_{y}\mathcal{L}(t,u_{n_k},\dot{u}_{n_k})
+\ccdot  v \,dt 
+\to 
+\int_0^T D_{y}\mathcal{L}(t,u,\dot{u})\ccdot v\, dt \end{equation}
+which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
+
+\emph{Step 3.} We will prove \eqref{eq:DerAccion}. 
+%The proof follows similar lines as \cite[Thm. 1.4]{mawhin2010critical}. 
+For $u\in \domi$ and $0\neq v\in\wphi$, we define the function
+\[H(s,t):=\mathcal{L}(t,u(t)+s v(t),\dot{u}(t)+s\dot{v}(t)).\]
+
+%From \cite[Lemma 10.1]{KR} (or \cite[Thm. 5.5]{Orliczvectorial2005} ) 
+%we obtain that if $|u|\leq |v|$ then    $d(u,\ephi)\leq d(v,\ephi)$. Esto va????
+
+For  $|s|\leq s_0:=\left(1-d(\dot{u},\ephi)\right)/\|v\sobnor$ we have
+\[
+d \left(\dot{u}+s \dot{v}, \ephi \right)
+\leq
+d (\dot{u}+s\dot{v}, \dot{u})+ d(\dot{u},\ephi)<1
+\]
+
+????Thus $\dot{u}+s\dot{v} \in \Pi(\ephi,1)$ and  $|\dot{u}|+s|\dot{v}| \in \Pi(\ephi,1)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion} item \ref{T1item1}, that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
+Estaba en la versi\'on original, y ac\'a???
+
+We also have 
+$
+\|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
+$
+then, by Corollary 2.3 in \cite{ABGMS2015}, there exists $M>0$ such that 
+$\|a(|u+sv|)\linf\leq M$.
+
+Let $\lambda>0$ such that $\Phi(\frac{\dot{v}}{\lambda})\in L^1$.
+On the other hand, if $\dot{v}\in\lphi$ and $|s|\leq s_0 $,
+from the convexity of $\Phi$ we get
+\[
+\begin{split}
+&\Phi(\dot{u}+s\dot{v})=
+\Phi\left((1-s_0)\frac{\dot{u}}{1-s_0}+s_0 \frac{s}{s_0}\dot{v}\right)
+\leq
+(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi\left(\frac{s}{s_0}\dot{v}\right)
+\\
+&\leq
+(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s \Phi(\dot{v})
+\leq
+(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi(\dot{v})\in L^1
+\end{split}
+\]
+$\dot{u}\in\Pi(\ephi,1)$, porque anotamos
+\[
+d(\frac{\dot{u}}{1-s_0},E^{\Phi})=\frac{1}{1-s_0}d(\dot{u}, E^{\Phi})<1
+\]
+Para qu\'e????
+
+Now, applying \eqref{eq:DxL1}, \eqref{eq:Dy_lambda-Psi}, \eqref{eq:DyLpsi} 
+%the monotonicity of $\varphi$ and $\Phi$, 
+the fact that $v \in L^{\infty}$ and $\dot{v}\in\lphi$, 
+%and H\"older's inequality, 
+we get
+\begin{equation}\label{ctg}
+\begin{split}
+|D_s H(s,t)|&=\left| D_{x}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v})\ccdot v +  
+\lambda D_{y}\mathcal{L}(t, u+s v, \dot{u}+s\dot{v})\ccdot\frac{\dot{v}}{\lambda}\right| \\
+ & \leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\}\\
+&+ \lambda\left[\Psi(D_{y}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v}))+\Phi\left(\frac{\dot{v}}{\lambda}\right) \right]
+\\
+&\leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\}+
+\lambda M[ b(t)+ \Phi(\dot{u}+s\dot{v})]+\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+\\&=
+M [ b(t)+ \Phi(\dot{u}+s\dot{v})] (|v|+\lambda) +\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+\in L^1_1.
+\end{split}
+\end{equation}
+
+FALTA PASAR DESDE LA P\'AGINA 8 DEL APUNTE 
+
+
+\end{proof}
 
 
 \section*{Acknowledgments}
