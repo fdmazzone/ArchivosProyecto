@@ -90,7 +90,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\wphiet}{W^{1}\ephi_T}
 \newcommand{\wphie}{W^{1}\ephi}
 \newcommand{\sobnor}{\|_{W^{1}\lphi}}
-\newcommand{\domi}{\mathcal{E}^{\Phi}(\lambda)}
+\newcommand{\domi}{\mathcal{E}^{\Phi}}
 \newcommand{\domiuno}{\mathcal{E}^{\Phi_1}_d(\lambda)}
 \newcommand{\domidos}{\mathcal{E}^{\Phi_2}_d(\lambda)}
 \newcommand{\domii}{\mathcal{E}^{\Phi_i}_d(\lambda)}
@@ -209,10 +209,12 @@ In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p
 
 
 \begin{example}\label{ex:phip1p2} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^n\times \rr^n\to\rr_+$   by
-\[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|}{p_1}+\frac{|y_2|}{p_2}.\]
+\[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2}.\]
 where $|\cdot|$ is the Euclidean norm on $\rr^n$.
 And, we consider the following Lagrange function
 \[\mathcal{L}(t,x,y)=\Phi_{p_1,p_2}(y)+F(t,x).\]
+where $y=(y_1,y_2), x=(x_1,x_2)\in \rr^{2n}$...o algo as\'i?????
+
 Then the equations \eqref{ProbPrin-gral} become
 \begin{equation}\label{eq:sist-p_lapa}
     \left\{%
@@ -593,6 +595,29 @@ In the following Theorem we enumerate  some known properties for superposition o
 \end{enumerate}
 \end{thm}
 
+
+
+Given a continuous function $a\in C(\mathbb{R}^n,\mathbb{R}^+)$, we define the composition operator $a:\mathcal{M}_d\to \mathcal{M}_d$ by $\b{a}(u)(x)= a(u(x))$.
+
+We will often use the following result whose proof can be performed as that of  Corollary 2.3 in \cite{ABGMS2015}. 
+\begin{lem}\label{lem:cota-a}
+\label{a_bound} If $a\in C(\mathbb{R}^d,\mathbb{R}^+)$ then $\b{a}:\wphi\to L^{\infty}([0,T])$ is bounded. 
+More concretely,  there exists a non decreasing function $A:\mathbb{R}^+\to\mathbb{R}^+$ such that
+ $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
+\end{lem}
+
+Quiz\'as no sea necesaria la prueba, si dejamos  el comentario de arriba???
+
+\begin{proof}  Let $A \in C(\mathbb{R}^+,\mathbb{R}^+)$ be a  non decreasing, continuous function defined by  
+$\alpha(s):=\sup_{\|x\|\leq s, x \in \rr^d}|a(x)|$.  If $u \in \wphi_d$ then, by  \ref{eq:sobolev}, 
+\[a(u(x))\leq \alpha (\|u\|_{L^{\infty}})\leq 
+\alpha \left(
+A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\right)=: 
+A(\|u\sobnor).\]
+\end{proof}
+
+
+
 HABR\'IA QUE VER D\'ONDE SE UBICA LA CONDICI\'ON DE ESTRUCTURA...QUIZ\'AS EN LA INTRODUCCI\'ON?....
 
 We assume that the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is 
@@ -606,7 +631,7 @@ where  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $b\in L^1_1([0,T]) $, $\Phi$ and $\P
 
 Next, we deal with the differentiability of the action integral 
 \begin{equation}\label{eq:integral_accion}
-I(\b{u})=\int_{0}^T \mathcal{L}(t,u(t),\dot{u}(t))\ dt.
+I(u)=\int_{0}^T \mathcal{L}(t,u(t),\dot{u}(t))\ dt.
 \end{equation}
 
 
@@ -638,26 +663,25 @@ As
 \end{equation}
 and \eqref{eq:inclusiones}, then $\Phi( \dot{u}(t)) \in L^1$.
 Now,
- \[|\mathcal{L}(\cdot,u,\dot{u}})| \leq A(\|u\sobnor ) (b+ \Phi (\dot{u})) \in
- L^1,\]
-by Corollary 2.3 in  \cite{ABGMS2015} and \eqref{eq:condicion-estructura}.
+ \begin{equation}\label{eq:cota-condicion-estructura}
+|\mathcal{L}(\cdot,u,\dot{u})|+ |D_{x}\mathcal{L}(\cdot,u,\dot{u})|
++\Psi(D_{y}\mathcal{L}(\cdot,u,\dot{u}))
+\leq A(\|u\sobnor ) (b+ \Phi (\dot{u})) \in
+ L^1,
+\end{equation}
+by  \eqref{eq:condicion-estructura} and Lemma \ref{lem:cota-a}.
 Thus item \eqref{it:T1item1} is proved.
 
-Aqu\'i conviene escribir lo de arriba o decir directamente que se prueba como en teorema del \cite{ABGMS2015}????
-Y $\domi$ contiene $\lambda$ y  ahora estamos trabajando con $\lambda=1$, qu\'e hacemos????
+We split up the proof of item \ref{it:T1item3} into four steps.
+
+\noindent\emph{Step 1. The non linear operator  $u \mapsto D_{x}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ into $L^{1}([0,T])$ with the strong topology on both sets.} 
 
 
- We split up the proof of item \ref{it:T1item3} into four steps.
+%If $u\in \domi$, from \eqref{eq:condicion-estructura} and \eqref{eq:inclusion3}, we obtain 
+%\begin{equation}\label{eq:DxL1}
+%|D_{x}\mathcal{L}(\cdot,u,\dot{u})|\leq A(\|u\sobnor) \left(b+\Phi\left(\dot{u})\right) \in L^1.
+%\end{equation}
 
-\noindent\emph{Step 1. The non linear operator  $u \mapsto D_{x}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ into $L^{1}_([0,T])$ with the strong topology on both sets.} 
-
-
-If $u\in \domi$, from \eqref{eq:condicion-estructura} and \eqref{eq:inclusion3}, we obtain 
-\begin{equation}\label{eq:DxL1}
-|D_{x}\mathcal{L}(\cdot,u,\dot{u})|\leq A(\|u\sobnor) \left(b+\Phi\left(\dot{u})\right) \in L^1.
-\end{equation}
-
-Se podr\'ia poner n\'umero a la primera ecuaci\'on de la demo y decir que se razona igual????
 
 Let   $\{u_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\domi$  
 and let $u\in \domi$  such that $u_n\rightarrow u$ in $\wphi$.
@@ -667,15 +691,17 @@ By \eqref{eq:sobolev}, we have
 \]
 then $u_n \to u$ uniformly.
 As $\dot{u}_n\rightarrow \dot{u}\in\domi$, by 
-  Lemma \ref{segundo lema}, there exist a subsequence of  $\dot{u}_{n_k}$ (again denoted $\dot{u}_{n_k}$) and a function  $h\in \Pi(\ephi,1))$
+  Lemma \ref{segundo lema}, there exist a subsequence of  $\dot{u}_{n_k}$ (again denoted $\dot{u}_{n_k}$) and a function  
+	$h\in L^1([0,T],\rr)$
 	such that  $\dot{u}_{n_k}\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_{n_k})\leq h\quad\text{a.e}$.  
 
-Since $u_{n_k}$, $k=1,2,\ldots,$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wph$. 
-According to Lemma \ref{lem:inclusion orlicz} and Corollary 2.3 in \cite{ABGMS2015}, 
+Since $u_{n_k}$, $k=1,2,\ldots,$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wphi$. 
+According to item \eqref{it:embeding} of   Lemma \ref{lem:inclusion orlicz}, 
+% and Lemma \eqref{lem:cota-a}, 
 there exists $M>0$ such that $\|\b{a}(u_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  
-From the previous facts and \eqref{eq:DxL1}, we get
+From the previous facts and \eqref{eq:cota-condicion-estructura}, we get
 \begin{equation*}\label{eq:DxL1-bis}
-|D_{x}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})|\leq a(|u_{n_k}|)(b+\Phi(\dot{u}_{n_k})\leq
+|D_{x}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})|\leq a(|u_{n_k}|)(b+\Phi(\dot{u}_{n_k}))\leq
 M (b+h) \in L^1.
 \end{equation*}
 On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
@@ -687,18 +713,18 @@ Applying the Dominated Convergence Theorem we conclude the proof of step 1.
  \mapsto  D_{y}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ with the strong topology  
 into $\left[\lphi\right]^*$  with the weak$^*$ topology.}
 
- Let $u\in \domi$.  From  \eqref{eq:condicion-estructura} and Corollary 2.3 in \cite{ABGMS2015} it follows that 
-\begin{equation}\label{eq:DyLpsi}
-\Psi(D_y\mathcal{L}(\cdot,u,\dot{u}))\leq a(|u|)(b+\Phi(\dot{u}))\in L^1
-\end{equation}
-then
+ Let $u\in \domi$.  From  \eqref{eq:cota-condicion-estructura} it follows that 
+%\begin{equation}\label{eq:DyLpsi}
+%\Psi(D_y\mathcal{L}(\cdot,u,\dot{u}))\leq a(|u|)(b+\Phi(\dot{u}))\in L^1
+%\end{equation}
+%then
 \begin{equation}\label{eq:DyLpsi-clase}
 D_{y}\mathcal{L}(\cdot,u,\dot{u})\in C^{\Psi}.
 \end{equation}
 
+As\'i? o conviene poner la cota de $\Psi(D_y)$ expl\'icitamente???
 
-
- Note that \eqref{eq:DxL1},  \eqref{eq:DyLpsi-clase} and the imbeddings $\wphi \hookrightarrow L^{\infty}$ and  
+ Note that \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase} and the imbeddings $\wphi \hookrightarrow L^{\infty}$ and  
 $\lpsi\hookrightarrow  \left[\lphi\right]^*$ imply that the second member of
 \eqref{eq:DerAccion} defines an element of $\left[\wphi\right]^*$.
 
@@ -714,13 +740,14 @@ On the contrary, there exist $v\in\lphi$, $\epsilon>0$ and a subsequence of $\{u
 \end{equation}
 We have $u_n\rightarrow u$ in $\lphi$ and
 $\dot{u}_n\rightarrow \dot{u}$ in $\lphi$.
- By Lemma \ref{segundo lema}, there exist a subsequence $u_{n_k}$ and a function $h\in \Pi(\ephi,1)$ such that 
-$u_{n_k}\rightarrow u \quad\text{a.e.}$, $\dot{u}_{n_k}\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_{n_k})\leq h\quad\text{a.e.}$ 
+ By Lemma \ref{segundo lema}, there exist a subsequence of $\{u_n\}$ (again denoted  $\{u_n\}$ for simplicity) 
+and a function $h\in L^1([0,T],\rr)$ such that 
+$u_n\rightarrow u$ uniformly, $\dot{u}_n\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_n)\leq h\quad\text{a.e.}$ 
 As in the previous step, since $u_n$ is a convergent sequence, 
-Corollary 2.3 in \cite{ABGMS2015} implies that $a(|u_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
-Therefore,  with $u_{n_k}$ instead of $u$, inequality  \eqref{eq:DyLpsi} becomes 
+Lemma \ref{lem:cota-a} implies that $a(|u_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
+Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_{n_k}$ instead of $u$, we have 
 \begin{equation}\label{eq:Dy-suc}
-  \left \Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))   
+  \Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))   
 	\leq M (b+h)\in L^1.
 \end{equation}
 As $v \in \lphi$ there exists $\lambda>0$ such that $\Phi(\frac{v}{\lambda})\in L^1$. 
@@ -752,26 +779,23 @@ For $u\in \domi$ and $0\neq v\in\wphi$, we define the function
 %From \cite[Lemma 10.1]{KR} (or \cite[Thm. 5.5]{Orliczvectorial2005} ) 
 %we obtain that if $|u|\leq |v|$ then    $d(u,\ephi)\leq d(v,\ephi)$. Esto va????
 
-For  $|s|\leq s_0:=\left(1-d(\dot{u},\ephi)\right)/\|v\sobnor$ we have
-\[
-d \left(\dot{u}+s \dot{v}, \ephi \right)
-\leq
-d (\dot{u}+s\dot{v}, \dot{u})+ d(\dot{u},\ephi)<1
-\]
-
-????Thus $\dot{u}+s\dot{v} \in \Pi(\ephi,1)$ and  $|\dot{u}|+s|\dot{v}| \in \Pi(\ephi,1)$. These facts imply, in virtue of Theorem \ref{teorema_acotacion} item \ref{T1item1}, that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
-Estaba en la versi\'on original, y ac\'a???
+For  $|s|\leq s_0:=\min\{\left(1-d(\dot{u},\ephi)\right)/\|v\sobnor, 1-d(\dot{u},\ephi)\}$, 
+using triangle inequality we get 
+$
+d \left(\dot{u}+s \dot{v}, \ephi \right)<1$ and thus $\dot{u}+s\dot{v} \in \Pi(\ephi,1)$. 
+These facts imply, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
+that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
 
 We also have 
 $
 \|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
 $
-then, by Corollary 2.3 in \cite{ABGMS2015}, there exists $M>0$ such that 
-$\|a(|u+sv|)\linf\leq M$.
+then, by Lemma \ref{lem:cota-a}, there exists $M>0$ such that 
+$\|a(u+sv)\linf\leq M$.
 
 Let $\lambda>0$ such that $\Phi(\frac{\dot{v}}{\lambda})\in L^1$.
-On the other hand, if $\dot{v}\in\lphi$ and $|s|\leq s_0 $,
-from the convexity of $\Phi$ we get
+On the other hand, if $\dot{v}\in\lphi$ and $|s|\leq s_0 \lambda^{-1}$,
+from the convexity and the parity of $\Phi$, we get
 \[
 \begin{split}
 &\Phi(\dot{u}+s\dot{v})=
@@ -780,18 +804,17 @@ from the convexity of $\Phi$ we get
 (1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi\left(\frac{s}{s_0}\dot{v}\right)
 \\
 &\leq
-(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s \Phi(\dot{v})
-\leq
-(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi(\dot{v})\in L^1
+(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi\left(\frac{\dot{v}}{\lambda}\right)
+\in L^1
 \end{split}
 \]
-$\dot{u}\in\Pi(\ephi,1)$, porque anotamos
+As $\dot{u}\in\Pi(\ephi,1)$ then
 \[
-d(\frac{\dot{u}}{1-s_0},E^{\Phi})=\frac{1}{1-s_0}d(\dot{u}, E^{\Phi})<1
+d\left(\frac{\dot{u}}{1-s_0},E^{\Phi}\right)=\frac{1}{1-s_0}d(\dot{u}, E^{\Phi})<1
 \]
-Para qu\'e????
+and therefore $\frac{\dot{u}}{1-s_0}\in C^\Phi$.
 
-Now, applying \eqref{eq:DxL1}, \eqref{eq:Dy_lambda-Psi}, \eqref{eq:DyLpsi} 
+Now, applying \eqref{eq:cota-condicion-estructura}, \eqref{eq:Dy_lambda-Psi},  
 %the monotonicity of $\varphi$ and $\Phi$, 
 the fact that $v \in L^{\infty}$ and $\dot{v}\in\lphi$, 
 %and H\"older's inequality, 
@@ -807,7 +830,7 @@ we get
 \lambda M[ b(t)+ \Phi(\dot{u}+s\dot{v})]+\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
 \\&=
 M [ b(t)+ \Phi(\dot{u}+s\dot{v})] (|v|+\lambda) +\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
-\in L^1_1.
+\in L^1.
 \end{split}
 \end{equation}
 
