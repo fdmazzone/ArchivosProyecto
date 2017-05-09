@@ -649,7 +649,7 @@ $\domi$  into $\left[\wphi \right]^*$. Moreover, $I'$ is given by the following 
 + D_{y}\mathcal{L}\big(t,u,\dot{u}\big)\ccdot\dot{v}\right\} \ dt.
 \end{equation}
 
-\item\label{T1item4}  If  $\Psi \in \Delta_2$ then 
+\item\label{it:T1item4}  If  $\Psi \in \Delta_2$ then 
   $I'$ is continuous from $\domi$ into $\left[\wphi\right]^*$ when both spaces are equipped with the strong topology.
 \end{enumerate}
 \end{thm}
@@ -745,9 +745,9 @@ and a function $h\in L^1([0,T],\rr)$ such that
 $u_n\rightarrow u$ uniformly, $\dot{u}_n\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_n)\leq h\quad\text{a.e.}$ 
 As in the previous step, since $u_n$ is a convergent sequence, 
 Lemma \ref{lem:cota-a} implies that $a(|u_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
-Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_{n_k}$ instead of $u$, we have 
+Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n}$ instead of $u$, we have 
 \begin{equation}\label{eq:Dy-suc}
-  \Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))   
+  \Psi(D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n))   
 	\leq M (b+h)\in L^1.
 \end{equation}
 As $v \in \lphi$ there exists $\lambda>0$ such that $\Phi(\frac{v}{\lambda})\in L^1$. 
@@ -834,8 +834,73 @@ M [ b(t)+ \Phi(\dot{u}+s\dot{v})] (|v|+\lambda) +\lambda \Phi\left(\frac{\dot{v}
 \end{split}
 \end{equation}
 
-FALTA PASAR DESDE LA P\'AGINA 8 DEL APUNTE 
+Consequently, $I$ has a directional derivative and
+\[
+\langle I'(u),v \rangle=\frac{d}{ds}I(u+s v)\big|_{s=0}=\int_0^T  
+\left\{D_{x}\mathcal{L}(t,u,\dot{u})\ccdot v+ D_{y}\mathcal{L}(t,u,\dot{u})\ccdot \dot{v}\right\} \ dt.
+\]
+Moreover, from the previous formula, \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase}, and
+Lemma \ref{lem:inclusion orlicz}, we obtain
+\[
+|\langle I'(u),v \rangle| \leq \|D_{x}\mathcal{L}\|_{L^1} \| v\linf + 
+\|D_{y}\mathcal{L}\|_{\lpsi} \|\dot{v}\orlnor \leq C \|v\sobnor
+\]
+with a appropriate constant $C$.
 
+This completes the proof of the G\^ateaux differentiability of $I$. 
+
+
+
+
+LO QUE SIGUE NO IR\'IA ???? PORQUE TOMAR\'IAMOS $\Psi \in \Delta_2$
+
+\emph{Step 4. The operator $I':\domi  \to \left[\wphi_d
+\right]^* $ is demicontinuous.}
+This is a consequence  of the continuity of the mappings $u \mapsto D_{x}\mathcal{L}(t,u,\dot{u})$ and $u \mapsto
+D_{y}\mathcal{L}(t,u,\dot{u})$. Indeed, if $u_n,u\in \domi$ with $u_n\to u$ in the norm of $\wphi$ and $v \in
+\wphi$, then
+\[
+\begin{split}
+\left\langle  I'(u_{n}),v \right\rangle &= \int_0^T \left\{  D_{x}\mathcal{L}\left(t,u_n,\dot{u}_n\right)\ccdot
+v +
+ D_{y}\mathcal{L}\left(t,u_n,\dot{u}_n\right)\ccdot \dot{v}\right\} \ dt\\
+&\rightarrow \int_0^T \left\{ D_{x}\mathcal{L}\left(t,u,\dot{u}\right)\ccdot v+ 
+D_{y}\mathcal{L}\left(t,u,\dot{u}\right)\ccdot \dot{v}\right\} \ dt\\
+&=\left\langle  I'(u),v \right\rangle.
+\end{split}
+\]
+
+
+In order to prove item  \ref{it:T1item4}, it is necessary to see that the maps $u\mapsto D_{x}\mathcal{L}(t,u,\dot{u})$  
+and $u\mapsto D_{y}\mathcal{L}(t,u,\dot{u})$  are norm continuous
+from $\domi $ into $L^1$ and
+ $\lpsi$, respectively.  
+
+The continuity of the first map has already been proved in step 1. 
+
+Let $u_n, u \in \domi$ with $\|u_n- u\sobnor\to 0$ and suppose that 
+$D_y\mathcal{L}(t,u_n,\dot{u}_n)$ does not converge to $D_y\mathcal{L}(t,u,\dot{u})$ in $L^{\Psi}$.
+Applying Lemma \ref{segundo lema}  there exist a subsequence of $u_n$ 
+(denoted $u_n$ for simplicity)
+$u_n \in \domi$ and a function  $h \in L^1$  such that  $\Psi(u_n)\leq h$ and $u_n \to u$ a.e.
+Then, by \eqref{eq:Dy_lambda-Psi} we have
+ $ \Psi(v_n) 
+	\leq m(t) \in L^1$
+ being  $v_n:=D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n)$ and $m(t):= M (b+h)$, 
+and $v_n \to v$ a.e. where $D_y\mathcal{L}(\cdot,u,\dot{u})$.
+
+As  $\Psi\in\Delta_2$, there exists $c:\rr^+\to C^{}$ such that 
+$\Psi(\lambda x)\leq c(|\lambda|)\Psi(x)$. 
+
+FALTA LA \'ULTIMA PARTE DE HOJA 9!!
+%then   the right hand side of  \eqref{Dy-suc} belongs to $\epsi$. 
+%Now, invoking  Lemma \ref{lema_conv_may}, we  prove that
+  %from any sequence $u_n$ which converges to $u$ in $\wphi$ we can
+%extract a subsequence such that   $D_{y}\mathcal{L}(t,u_{n_k},\dot{u}_{n_k})\to 
+%D_{y}\mathcal{L}(t,u,\dot{u})$ in the strong topology. The desired result is obtained by a standard argument.
+
+The continuity of $I'$  follows  from the continuity 
+of $D_{x}\mathcal{L}$ and $D_{y}\mathcal{L}$ using the formula \eqref{eq:DerAccion}.
 
 \end{proof}
 
