@@ -12,6 +12,7 @@
 \usepackage{times}
 \usepackage{enumitem}
 \usepackage[latin1]{inputenc}
+\usepackage{yfonts}
 
 \usepackage{comment}
 \usepackage{url}
@@ -281,11 +282,11 @@ Property in items \ref{it:prop3} and \ref{it:prop4} are obtained easily.
 
 \begin{example} We compute $A_{\Phi}$ for the function $\Phi=\Phi_{p_1,p_2}$ given in Example \eqref{ex:phip1p2}.
 
-We apply the method of Lagrange multipliers to solve the  problem
+We apply the method of Lagrange multipliers to solve the next minimization problem subject to a constraint
 \[
-G(r)=\min\left\{\Phi(x,y):|(x,y)|_2^2=r^2\right\}\]
+G(r)=\min\left\{\Phi(x,y):|(x,y)|_2^2=r^2\right\}\].
 
-The first order equations are
+The first order conditions  are
 \[
 \left
 \{
@@ -298,22 +299,42 @@ The first order equations are
 \end{array}
 \right.
 \]
-These equations are solved, among others, by the following sets (if $n>1$ infinite) of citical values: 
+These equations can be solved, among others, by the following sets (if $n>1$ infinite) of citical values: 
 a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. 
 Associated with these critical points we have the following critical values: a) $r^{p_1}/p_1$ and b) $r^{p_2}/p_2$.
 
 Now, suppose that  $x\neq 0$ and $y \neq 0$ then $|x|^2+|y|^2=r^2$ and $|y|=|x|^{\frac{p_1-2}{p_2-2}}$and $\lambda=-|x|^{p_1-2}$.
 
-We have to split the analysis in several cases. 
+In order to employ second order conditions for constrained problems,
+we define the tangent plane at the point $(x,y)\in \rr^{2n}$ as 
+$M=\{(z,w) \in \rr^{2n}: zx^T+wy^T=0\}$.
+%And, we are interested in knowing if the 
+%matrix of second partial derivatives 
+%$D^2 \Phi+ \lambda D^2 H$
+%, with respect to the vector $(x,y)\in  \rr^{2n}$, 
+%of 
+We also consider the Lagrangian $\mathcal{L}(x,y,\lambda)=\Phi(x,y)+\lambda H(x,y)$ being $H=0$ the constraint.
+And, we are interested in knowing how to behave the matrix 
+of second partial derivatives of $\mathcal L$
+with respect to the vector $(x,y)\in  \rr^{2n}$, given by $\mathcal{H}=D^2 \Phi+ \lambda D^2 H$,
+on the subspace $M$.
 
-Now, we consider $p_1\leq 2$ and $p_2\leq 2$ with of them different to 2.
-
-There exists $(z,w)$ such that $zx^t+wy^t=0$ (z=-y, w=x) where 
-$H=|\lambda||y|^2|x|^2[(p_1-2)|x|^{-2}+(p_2-2)|y|^{-2}]<0$
  
-{\bf (aclarar algo de H, poner un nombre adecuado y cambiar el formato de letra)}
+We have to split the analysis in several cases according to the values of $p_1$ and $p_2$.
 
-Then, by the second order criteria \cite[Thm....]{Ye}, 
+First, we deal with $p_1\leq 2$ and $p_2\leq 2$ being one of them different from 2.
+
+We compute
+\[(z,w)\mathcal{H}(z,w)^T=
+%(z,w) (D^2\Phi+\lambda D^H) (z,w)^T=
+|\lambda| (zx^T)^2 [|x|^{-2})(p_1-2)+(p_2-2)|y|^{-2}],\]
+on the subspace $M$. 
+
+As there exists $(z,w)=(-y,x)$  such that $zx^t+wy^t=0$, we obtain that
+
+$(-y,x)\mathcal{H}(-y,x)^T=|\lambda||y|^2|x|^2[(p_1-2)|x|^{-2}+(p_2-2)|y|^{-2}]<0.$
+ 
+Then, by second order necessary conditions \cite[p.333]{luenberger2015linear}, 
 at $(x,y)$ there cannot be a minimum. Therefore, the minima occur at $x=0$ or $y=0$.
 
 The remaining cases can be treated with similar techniques. 
@@ -331,7 +352,7 @@ with $K_1,K_2>0$.
 
 We also say that $\Phi:\mathbb{R}^d\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
 if there exist  constants $K>0$ and  $M\geq 0$ such that
-\begin{equation}\label{delta2defi}\Phi(2x)\leq KH(x),
+\begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x),
 \end{equation}
 for every $|x|\geq M$.
 
@@ -612,6 +633,7 @@ Next, we deal with the differentiability of the action integral
 I(u)=\int_{0}^T \mathcal{L}(t,u(t),\dot{u}(t))\ dt.
 \end{equation}
 
+PEDIMOS $\Psi \in \Delta_2$ de entrada y eliminamos la parte de la demicontinuidad????
 
 \begin{thm}\label{teo:diferenciabilidad}
 Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{eq:condicion-estructura}.
@@ -856,30 +878,39 @@ from $\domi $ into $L^1$ and
 
 The continuity of the first map has already been proved in step 1. 
 
-Let $u_n, u \in \domi$ with $\|u_n- u\sobnor\to 0$ and suppose that 
-$D_y\mathcal{L}(t,u_n,\dot{u}_n)$ does not converge to $D_y\mathcal{L}(t,u,\dot{u})$ in $L^{\Psi}$.
-Applying Lemma \ref{segundo lema}  there exist a subsequence of $u_n$ 
-(denoted $u_n$ for simplicity)
-$u_n \in \domi$ and a function  $h \in L^1$  such that  $\Psi(u_n)\leq h$ and $u_n \to u$ a.e.
+Si eliminamos la demicontinuidad del segundo item, hay que copiar 
+la continuidad de $D_x$ aqu\'i!!!
+
+Let $u_n, u \in \domi$ with $\|u_n- u\sobnor\to 0$.  
+
+Applying Lemma \ref{segundo lema} to $\dot{u}_n$, 
+there exists a subsequence (denoted $\dot{u}_n$ for simplicity)
+such that
+$\dot{u}_n \in L^\Phi$ and a function  $h \in L^1$  such that  $\Psi(\dot{u}_n)\leq h$ and $\dot{u}_n \to \dot{u}$ a.e.
+
 Then, by \eqref{eq:Dy_lambda-Psi} we have
  $ \Psi(v_n) 
 	\leq m(t) \in L^1$
- being  $v_n:=D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n)$ and $m(t):= M (b+h)$, 
-and $v_n \to v$ a.e. where $D_y\mathcal{L}(\cdot,u,\dot{u})$.
+ being  $v_n:=D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n)$ and $m(t):= M (b+h)$. 
+In addition, from the continuous differentiability of $\mathcal{L}$, we have that
+$v_n \to v$ a.e. where $D_y\mathcal{L}(\cdot,u,\dot{u})$.
 
-As  $\Psi\in\Delta_2$, there exists $c:\rr^+\to C^{}$ such that 
+As  $\Psi\in\Delta_2$, there exists $c:\rr^+\to ???$ such that 
 $\Psi(\lambda x)\leq c(|\lambda|)\Psi(x)$. 
+Then, $\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|)\Psi(v_n-v)$ for every $\lambda \in \rr$.
 
-FALTA LA \'ULTIMA PARTE DE HOJA 9!!
-%then   the right hand side of  \eqref{Dy-suc} belongs to $\epsi$. 
-%Now, invoking  Lemma \ref{lema_conv_may}, we  prove that
-  %from any sequence $u_n$ which converges to $u$ in $\wphi$ we can
-%extract a subsequence such that   $D_{y}\mathcal{L}(t,u_{n_k},\dot{u}_{n_k})\to 
-%D_{y}\mathcal{L}(t,u,\dot{u})$ in the strong topology. The desired result is obtained by a standard argument.
+Therefore, $\Psi(\frac{v_n-v}{\lambda})\to 0$ a.e. as $n \to \infty$ and 
+$\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|K\Psi(v_n)+\Psi(v))
+\leq c(|\lambda| K [m(t)+\Psi(v)])\in L^1$.
+
+Now, by Dominated Convergence Theorem, we get
+$
+\int \Psi(\frac{v_n-v}{\lambda})\,dt \to 0
+$
+for every $\lambda>0$. Thus, $v_n \to v$ in $L^{\Psi}$.
 
 The continuity of $I'$  follows  from the continuity 
 of $D_{x}\mathcal{L}$ and $D_{y}\mathcal{L}$ using the formula \eqref{eq:DerAccion}.
-
 \end{proof}
 
 
