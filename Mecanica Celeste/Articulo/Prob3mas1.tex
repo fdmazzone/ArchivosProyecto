@@ -132,16 +132,8 @@ In this paper we discuss existence of periodic solutions for the following restr
 
 \setlength{\unitlength}{4cm}
 \begin{picture}(2.5, 1)(-.5, -.5)
-  \qbezier(0, 0)(0,.25)(.5, .25)
-  \qbezier(1, 0)(1,.25)(.5, .25)
-    \qbezier(0, 0)(0,-.25)(.5, -.25)
-  \qbezier(1, 0)(1,-.25)(.5, -.25)
   \setlength{\unitlength}{2cm}
     \put(.5,0){
-    \qbezier(0, 0)(0,.25)(.5, .25)
-  \qbezier(1, 0)(1,.25)(.5, .25)
-    \qbezier(0, 0)(0,-.25)(.5, -.25)
-  \qbezier(1, 0)(1,-.25)(.5, -.25)
 }
   \setlength{\unitlength}{5cm}
     \put(-.1,0){
@@ -152,8 +144,8 @@ In this paper we discuss existence of periodic solutions for the following restr
 }
 \put(-.2,0){\line(1,0){1.2}}
 \put(-0.1,0){\circle*{.04}} \put(-0.19,-0.05){$m_1$}
-\put(0.6,0){\circle*{.04}} \put(0.61,-0.05){$m_2$}
-\put(0.8,0){\circle*{.04}}\put(0.805,-0.05){$m_3$}
+\put(0.65,-0.24){\circle*{.04}} \put(0.61,-0.2){$m_2$}
+\put(0.6,.235){\circle*{.04}}\put(0.55,.18){$m_3$}
 \put(0.5,0){\circle*{.03}}\put(0.44,-0.05){$c$}
 \put(0.5,-0.08){\line(0,1){.6}}
 \put(0.5,0.4){\circle*{.04}}\put(0.53,0.4){$m_4\approx 0$}
@@ -168,12 +160,12 @@ In this paper we discuss existence of periodic solutions for the following restr
 \end{figure}
 
 Problems like the one presented have been extensively discussed in the literature. In \cite{sitnikov1960existence} K. Sitnikov considered the problem of two body in a Keplerian motion and a massless particle moving in the perpendicular line to the orbital plane passing
-through the center of masses. Sitnikov obtained deep results about existence of solutions, some of them periodic (see \cite[III(5)]{moser2016stable}. Since then many  other authors have studied Sitnikov problem, for instance  Liu, Zhou, and Sun \cite{liu1991numerical},  Hagel and Trenkler \cite{hagel1993computer}, Dvorak \cite{dvorak1993numerical}, Dankowicz and Holmes \cite{dankowicz1995existence}, Llibre, Meyer and Soler \cite{llibre1999bridges}, Chesley \cite{chesley1999global}, Jim{\'e}nez-Lara a and Escalona-Buend{\'\i}a \cite{jimenez2001symmetries},
+through the center of masses. Sitnikov obtained deep results about existence of solutions, some of them periodic (see \cite[III(5)]{moser2016stable}). Since then many  other authors have studied Sitnikov problem, for instance  Liu, Zhou, and Sun \cite{liu1991numerical},  Hagel and Trenkler \cite{hagel1993computer}, Dvorak \cite{dvorak1993numerical}, Dankowicz and Holmes \cite{dankowicz1995existence}, Llibre, Meyer and Soler \cite{llibre1999bridges}, Chesley \cite{chesley1999global}, Jim{\'e}nez-Lara a and Escalona-Buend{\'\i}a \cite{jimenez2001symmetries},
  Llibre and Ortega \cite{llibre2008families}, P{\'e}rez, Jim{\'e}nez and Lacomba \cite{perez2009periodic}.
 
 Problems like the Sitnikov problem for four bodies  were addressed more recently.
-In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$, where in place to have a Eulerian colinear configuration they had a Lagrangian equilateral triangle configuration for the primaries bodies, which are supposed to have the same mass $m_1=m_2=m_3$. Later, In \cite{baltagiannis2011families} Baltagiannis nad Papadakis considered more general masses and in \cite{pandey2013periodic} Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
-In \cite{zhao2015nonplanar}, Zhao and Zhang proved existence of periodic solutions for a problem similar to the one dealt with in \cite{soulis2008periodic}.  They used a variational approach. In the present paper we extend the analysis in \cite{zhao2015nonplanar} to the case of a colinear central configuration for the primaries.
+In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$, where in place to have a Eulerian collinear configuration they had a Lagrangian equilateral triangle configuration for the primaries bodies, which are supposed to have the same mass $m_1=m_2=m_3$. Later, In \cite{baltagiannis2011families} Baltagiannis nad Papadakis considered more general masses and in \cite{pandey2013periodic} Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
+In \cite{zhao2015nonplanar}, Zhao and Zhang proved existence of periodic solutions for a problem similar to the one dealt with in \cite{soulis2008periodic}.  They used a variational approach. In the present paper we extend the analysis in \cite{zhao2015nonplanar} to the case of a collinear central configuration for the primaries.
 In \cite{li2013characterization} Li, Zhang and Zhao studied a special type of
 restricted circular $N+1$-body problem  with equal masses for the primaries. 
 
@@ -189,7 +181,7 @@ can check and reproduce them easily.
 
 We start considering $n$ bodies, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $q_1(t),\ldots,q_n(t)$ are the coordinates (column vectors) of the bodies in some inertial Cartesian coordinate system. We denote by $r_{ij}=|q_i-q_j|$  the  Euclidean distance between $q_i$ and $q_j$. We can suppose without any loos generality, we can assume the center of mass   $c:=\sum_jm_jq_j/M$ ($M:=\sum_j m_j$) is fixed at the origin ($c=0$).
 
-We assume that these bodies are in a \emph{rigid motion}. We recall that a \emph{rigid  motion}, is a solution of motions equations with $r_{ij}$ constant.  It is known (see -buscar referencias ) that in a rigid motion is performed in a plane $\Pi$. We assume that $\Pi$ is the plane determined by the first two coordinates axes. Then a rigid motion has the form
+We assume that these bodies are in a \emph{rigid motion}. We recall that a \emph{rigid  motion}, is a solution of motions equations with $r_{ij}$ constant.  It is known (see -buscar referencias ) that a rigid motion is performed in a plane $\Pi$. We assume that $\Pi$ is the plane determined by the first two coordinates axes. Then a rigid motion has the form
 \[q_j(t)=Q(\nu t)q^0_j,\]
 where
 \[
@@ -206,7 +198,7 @@ where the \emph{potential function} $U$ is defined by:
  U(x)=\sum_{i<j}\frac{m_im_j}{r_{ij}},
 \end{equation}
 and $\nabla_j$ denotes the $3$-dimensional partial gradient with respect to $q_j$.
-According to \cite[Eq. (2.16)]{JaumeLlibre276} we have $\nu^2=\lambda$. The primaries bodies perform a periodic motion with period $T:=2\pi/\nu$ .
+According to \cite[Eq. (2.16)]{JaumeLlibre276} we have $\nu^2=\lambda$. Then the primaries bodies perform a periodic motion with period $T:=2\pi/\nu$ .
 
 We suppose that we have a massless particle with coordinates $q(t)=(x(t),y(t),z(t))\in\rr^3$. This particle does not disturb the rigid motion of  primaries.  We want to find conditions under which this particle perform a $T$-periodic motion on the third axis of coordinates.
 
@@ -214,6 +206,28 @@ The particle $q$ satisfies the Newtonian equations of motion
 \begin{equation}\label{eq:newton}
  \ddot{q}=\sum_{i=1}^n\frac{m_i(q_i-q)}{|q_i-q|^3},
 \end{equation}
+
+
+
+
+\begin{thm}\label{thm:prim} There exists a non-stationary  solution of \eqref{eq:newton} with $x(t)=y(t)=0$ if and only if $q^0_1,\ldots,q^ 0_n$ satisfy that for any $r>0$, such that the set
+\[F_r:=\{i:|q_i^ 0|=r\}\]
+is non empty, that
+\begin{equation}\label{eq:suma0}\sum_{i\in F_r}m_iq_i^ 0=0.\end{equation}
+i.e. every maximal equidistant from origin set of bodies has center of mass equal to $0$.
+\end{thm}
+
+
+We note that in order to get collisionless solutions of problem $P$ we need that no primary body is located in the center of mass. We call this configurations \emph{admissible}. In the following theorem we characterize all 3-4 bodies CC  satisfying condition in Theorem \ref{thm:prim} and without bodies in the center of mass. 
+
+
+\begin{thm}\label{thm:caracterizacion}
+The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC has two pairs of equal masses ($m_1=m_2$ and $m_3=m_4$), and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices.
+\end{thm}
+
+
+
+\section{Proofs}
 
 
 
@@ -263,17 +277,7 @@ which in turn is equivalent to $t_i\neq t_j$, $i\neq j$.
 \end{proof}
 
 
-
-
-
-
-\begin{thm} There exists a non-stationary  solution of \eqref{eq:newton} with $x(t)=y(t)=0$ if and only if $q^0_1,\ldots,q^ 0_n$ satisfy that for any $r>0$ such that the set
-\[F_r=\{i:|q_i^ 0|=r\}\]
-is non empty, then
-\begin{equation}\label{eq:suma0}\sum_{i\in F_r}m_iq_i^ 0=0.\end{equation}
-\end{thm}
-
-\begin{proof} We use a rotating coordinate system where the primaries are fixed. Concretely we  put
+\begin{proof} [Proof Theorem \ref{thm:prim}] We use a rotating coordinate system where the primaries are fixed. Concretely we  put
 \[\xi=Q(-\nu t)q.\]
 In this system the motion equations are
 \begin{equation}\label{eq:mov_rot}\ddot{\xi}+2\nu B\dot{\xi}+\nu^2 C\xi=\sum_{i=1}^n\frac{m_i(q_i^0-\xi)}{|q_i^0-\xi|^3},\end{equation}
@@ -302,6 +306,12 @@ Since we are considering a non-stationary solution, we have that $z(t)$ is not c
 Then, according to Lemma \ref{lem:1}, we obtain \eqref{eq:suma0}.
 \end{proof}
 
+
+\begin{proof}[Proof Theorem \ref{thm:caracterizacion}]
+For the case of 3-bodies, we note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
+
+In the caso of 4-bodies, we use
+\end{proof} 
 
 
 
