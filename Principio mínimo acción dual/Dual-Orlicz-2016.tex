@@ -299,51 +299,36 @@ The first order conditions  are
 \end{array}
 \right.
 \]
-These equations can be solved, among others, by the following sets (if $n>1$ infinite) of citical values: 
-a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. 
+These equations can be solved, among others, by the following two sets  of citical points: 
+a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. These sets are infinite when $d>1$. 
 Associated with these critical points we have the following critical values: a) $r^{p_1}/p_1$ and b) $r^{p_2}/p_2$.
 
-Now, suppose that  $x\neq 0$ and $y \neq 0$ then $|x|^2+|y|^2=r^2$ and $|y|=|x|^{\frac{p_1-2}{p_2-2}}$and $\lambda=-|x|^{p_1-2}$.
+We deal with $p_1\leq 2$ and $p_2\leq 2$ being one of them (suppose $p_2$) different from 2. The remaining cases can be treated with similar techniques. 
 
-In order to employ second order conditions for constrained problems,
-we define the tangent plane at the point $(x,y)\in \rr^{2n}$ as 
-$M=\{(z,w) \in \rr^{2n}: zx^T+wy^T=0\}$.
-%And, we are interested in knowing if the 
-%matrix of second partial derivatives 
-%$D^2 \Phi+ \lambda D^2 H$
-%, with respect to the vector $(x,y)\in  \rr^{2n}$, 
-%of 
-We also consider the Lagrangian $\mathcal{L}(x,y,\lambda)=\Phi(x,y)+\lambda H(x,y)$ being $H=0$ the constraint.
-And, we are interested in knowing how to behave the matrix 
-of second partial derivatives of $\mathcal L$
-with respect to the vector $(x,y)\in  \rr^{2n}$, given by $\mathcal{H}=D^2 \Phi+ \lambda D^2 H$,
+
+If $(x,y)$ is a critical point with $x\neq 0$ and $y \neq 0$ then  $|y|=|x|^{\frac{p_1-2}{p_2-2}}$ and $\lambda=-|x|^{p_1-2}$.  In order to employ second order conditions for constrained problems,
+we have to consider  the tangent plane at the point $(x,y)\in \rr^{2n}$, i.e. 
+$M=\{(z,w) \in \rr^{2n}: zx^T+wy^T=0\}$. We also consider the Lagrangian associated to the constrained problem: $L(x,y,\lambda)=\Phi(x,y)+\lambda H(x,y)$ being $H=0$ the constraint.
+And, we are interested in knowing how to behave the quadratic form associated to the matrix 
+of second partial derivatives $\mathcal{H}=D^2 \Phi+ \lambda D^2 H$ 
+with respect to the vector $(x,y)\in  \rr^{2n}$ 
 on the subspace $M$.
 
  
-We have to split the analysis in several cases according to the values of $p_1$ and $p_2$.
-
-First, we deal with $p_1\leq 2$ and $p_2\leq 2$ being one of them different from 2.
-
 We compute
 \[(z,w)\mathcal{H}(z,w)^T=
 %(z,w) (D^2\Phi+\lambda D^H) (z,w)^T=
-|\lambda| (zx^T)^2 [|x|^{-2})(p_1-2)+(p_2-2)|y|^{-2}],\]
-on the subspace $M$. 
-
-As there exists $(z,w)=(-y,x)$  such that $zx^t+wy^t=0$, we obtain that
-
-$(-y,x)\mathcal{H}(-y,x)^T=|\lambda||y|^2|x|^2[(p_1-2)|x|^{-2}+(p_2-2)|y|^{-2}]<0.$
+|\lambda| (zx^T)^2 [|x|^{-2}(p_1-2)+(p_2-2)|y|^{-2}],\]
+on the subspace $M$. We note that $(-y,x)\in M$ and $(-y,x)\mathcal{H}(-y,x)^T<0$.
  
 Then, by second order necessary conditions \cite[p.333]{luenberger2015linear}, 
-at $(x,y)$ there cannot be a minimum. Therefore, the minima occur at $x=0$ or $y=0$.
+at $(x,y)$ there cannot be a minimum. Therefore, the minima occur at $x=0$ or $y=0$, then $A_{\Phi}(x,y)=\min\{r^{p_1}/p_1, r^{p_2}/p_2\}$. 
 
-The remaining cases can be treated with similar techniques. 
-
-Finally, we conclude that 
+More generally, it holds that 
 \[
 K_1\min\{r^{p_1}, r^{p_2}\}\leq A_{\Phi}\leq K_2\max\{r^{p_1}, r^{p_2}\}
 \]
-with $K_1,K_2>0$.
+with $K_1,K_2>0$, for every $1<p_1,p_2<\infty$. 
 \end{example}
 
 
@@ -605,11 +590,10 @@ More concretely,  there exists a non decreasing function $A:\mathbb{R}^+\to\math
  $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
 \end{lem}
 
-Quiz\'as no sea necesaria la prueba, si dejamos  el comentario de arriba???
 
 \begin{proof}  Let $A \in C(\mathbb{R}^+,\mathbb{R}^+)$ be a  non decreasing, continuous function defined by  
-$\alpha(s):=\sup_{\|x\|\leq s, x \in \rr^d}|a(x)|$.  If $u \in \wphi_d$ then, by  \ref{eq:sobolev}, 
-\[a(u(x))\leq \alpha (\|u\|_{L^{\infty}})\leq 
+$\alpha(s):=\sup_{\|x\|\leq s, x \in \rr^d}|a(x)|$.  If $u \in \wphi_d$ then, by  \ref{eq:sobolev}, for a.e. $t\in [0,T]$
+\[a(u(t))\leq \alpha (\|u\|_{L^{\infty}})\leq 
 \alpha \left(
 A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\right)=: 
 A(\|u\sobnor).\]
@@ -624,7 +608,7 @@ Carath\'eodory and differentiable function satisfying
 \begin{equation}\label{eq:condicion-estructura}
 |\mathcal{L}(t,x,y)|+ |D_{x}\mathcal{L}(t,x,y)|+\Psi(D_{y}\mathcal{L}(t,x,y))
 \leq
-a(|x|)\left(b(t)+ \Phi(y)),
+a(|x|)(b(t)+ \Phi(y)),
 \end{equation}
 where  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $b\in L^1_1([0,T]) $, $\Phi$ and $\Psi$ are $N_{\infty}$-functions (complementary???? o en el teorema o nunca?)
 
@@ -632,8 +616,6 @@ Next, we deal with the differentiability of the action integral
 \begin{equation}\label{eq:integral_accion}
 I(u)=\int_{0}^T \mathcal{L}(t,u(t),\dot{u}(t))\ dt.
 \end{equation}
-
-PEDIMOS $\Psi \in \Delta_2$ de entrada y eliminamos la parte de la demicontinuidad????
 
 \begin{thm}\label{teo:diferenciabilidad}
 Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{eq:condicion-estructura}.
@@ -745,7 +727,7 @@ and a function $h\in L^1([0,T],\rr)$ such that
 $u_n\rightarrow u$ uniformly, $\dot{u}_n\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_n)\leq h\quad\text{a.e.}$ 
 As in the previous step, since $u_n$ is a convergent sequence, 
 Lemma \ref{lem:cota-a} implies that $a(|u_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
-Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n}$ instead of $u$, we have 
+Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n$ instead of $u$, we have 
 \begin{equation}\label{eq:Dy-suc}
   \Psi(D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n))   
 	\leq M (b+h)\in L^1.
@@ -823,14 +805,15 @@ we get
 \begin{split}
 |D_s H(s,t)|&=\left| D_{x}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v})\ccdot v +  
 \lambda D_{y}\mathcal{L}(t, u+s v, \dot{u}+s\dot{v})\ccdot\frac{\dot{v}}{\lambda}\right| \\
- & \leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\}\\
-&+ \lambda\left[\Psi(D_{y}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v}))+\Phi\left(\frac{\dot{v}}{\lambda}\right) \right]
+  & \leq M \left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\\
+ &\quad+ \lambda\left[\Psi(D_{y}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v}))+\Phi\left(\frac{\dot{v}}{\lambda}\right) \right]
 \\
-&\leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\}+
-\lambda M[ b(t)+ \Phi(\dot{u}+s\dot{v})]+\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
-\\&=
-M [ b(t)+ \Phi(\dot{u}+s\dot{v})] (|v|+\lambda) +\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
-\in L^1.
+ &\leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\right\}+
+ \lambda M[ b(t)+ \Phi(\dot{u}+s\dot{v})]+\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+ \\
+ &=
+ M [ b(t)+ \Phi(\dot{u}+s\dot{v})] (|v|+\lambda) +\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+ \in L^1.
 \end{split}
 \end{equation}
 
@@ -850,9 +833,6 @@ with a appropriate constant $C$.
 This completes the proof of the G\^ateaux differentiability of $I$. 
 
 
-
-
-LO QUE SIGUE NO IR\'IA ???? PORQUE TOMAR\'IAMOS $\Psi \in \Delta_2$
 
 \emph{Step 4. The operator $I':\domi  \to \left[\wphi_d
 \right]^* $ is demicontinuous.}
@@ -897,11 +877,11 @@ $v_n \to v$ a.e. where $D_y\mathcal{L}(\cdot,u,\dot{u})$.
 
 As  $\Psi\in\Delta_2$, there exists $c:\rr^+\to ???$ such that 
 $\Psi(\lambda x)\leq c(|\lambda|)\Psi(x)$. 
-Then, $\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|)\Psi(v_n-v)$ for every $\lambda \in \rr$.
+Then, $\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|^{-1})\Psi(v_n-v)$ for every $\lambda \in \rr$.
 
 Therefore, $\Psi(\frac{v_n-v}{\lambda})\to 0$ a.e. as $n \to \infty$ and 
-$\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|K\Psi(v_n)+\Psi(v))
-\leq c(|\lambda| K [m(t)+\Psi(v)])\in L^1$.
+$\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|^{-1})K\Psi(v_n)+\Psi(v))
+\leq c(|\lambda|^{-1}) K [m(t)+\Psi(v)])\in L^1$.
 
 Now, by Dominated Convergence Theorem, we get
 $
