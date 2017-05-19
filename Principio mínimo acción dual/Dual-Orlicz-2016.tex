@@ -48,7 +48,7 @@
 
 
 \title{Periodic solutions of
-Euler-Lagrange equations in an Orlicz-Sobolev space setting by the dual least action principle }
+Euler-Lagrange equations in an anisotropic Orlicz-Sobolev space setting  }
 \author{Sonia Acinas \thanks{SECyT-UNRC and  FCEyN-UNLPam}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
 Universidad Nacional de La Pampa\\
@@ -168,12 +168,69 @@ This paper deals with system  of equations of the type:
 \begin{equation}\label{ProbPrin-gral}
     \left\{%
 \begin{array}{ll}
-  \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+  \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right. ,\tag{$P_1$}
+\right.
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange systems of ordinary equations}.
+where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. 
+
+We suppose that $(t,x,y)\mapsto \mathcal{L}(t,x,y)$ is measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and 
+continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$.
+
+In this paper we will use anisotropic Orlicz space, more specifically we consider a convex function 
+$\Phi:\mathbb{R}^d\to [0,+\infty)$, satisfying $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and 
+ $\Phi(x)>0$ when $x\neq 0$. Therefore, from \cite[Cor. 2.35]{clarke2013functional} $\Phi$ is a continuous function. 
+Additionally, we assume that
+\begin{equation}\label{eq:N-sub-inf}
+\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty \tag{$N_{\infty}$}.
+\end{equation}
+Hereafter, we assume that $|\cdot|$ denotes the euclidean norm on $\rr^d$.
+
+Associated to $\Phi$ we have the \emph{complementary function} $\Psi$ which is defined by 
+\begin{equation}\label{eq:conjugada}
+ \Psi(\xi)=\sup\limits_{x\in\mathbb{R}^d} x\cdot \xi-\Phi(x)
+\end{equation}
+then, from the continuity of $\Phi$ and  \eqref{eq:N-sub-inf}, we have that $\Psi:\rr^d \to [0,\infty)$. 
+Moreover, it is easy to see that $\Psi$ is a convex function such that $\Psi(0)=0$, $\Psi(-\xi)=\Psi(\xi)$ and 
+ $\Psi(\xi)\to \infty$  when $|\xi|\to \infty$,  see \cite[Section 4.2]{clarke2013functional},  \cite[Chapter 2]{mawhin2010critical}
+
+
+The occurrence of Orlicz Spaces in this paper obeys to we will consider the 
+following structure condition on the lagrangian:
+\begin{equation}\label{eq:condicion-estructura}
+|\mathcal{L}(t,x,y)|+ |D_{x}\mathcal{L}(t,x,y)|+\Psi(D_{y}\mathcal{L}(t,x,y))
+\leq
+a(x)(b(t)+ \Phi\left(\frac{y}{\lambda})\right), \tag{$S$}
+\end{equation}
+for a.e. $t\in [0,T]$,
+where  $a\in C(\mathbb{R}^d,[0,+\infty))$, $b\in L^1_1([0,T],\rr) $.
+
+We point out that \eqref{eq:condicion-estructura} when $\Phi(x)=|x|^p/p$ for $1<p<\infty$, 
+(in this case $\Psi(\xi)=\xi^q/q$, $q=p/(p-1)$) is equivalent to the inequalities (a) of Theorem 1.4 of \cite{mawhin2010critical}.
+
+
+
+Let $F(t,x)$ be differentiable with respect to $x$ for a.e. $t\in [0,T]$. Suppose that $F$ satisfies the following conditions:
+\begin{enumerate}
+\labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla_x F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
+ \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
+\begin{equation}
+|F(t,x)| + |\nabla F(t,x)|  \leq a(x)b(t).
+\end{equation}
+In this inequality we assume that the function  $a:\rr^d \to [0,+\infty)$ is continuous and non decreasing and $0\leq b\in L^1([0,T],\rr)$.
+\end{enumerate}
+
+The following Lagrange function  
+\begin{equation}\label{eq:lagrange_cuad}
+\mathcal{L}(t,x,y)=\Phi(y)+F(t,x),
+\end{equation}
+satisfies \eqref{eq:condicion-estructura}.
+
+
+CUIDADO!!! PARA QUE SE VERIFIQUE LA ACOTACION DE LA DERIVADA con RESPECTO A Y, PARECE QUE ES NECESARIO AGREGAR UNA CONSTANTE EN LA CONDICION DE ESTRUCTURA!!!
+
+$\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange systems of ordinary equations}.
 
 This topic was deeply addressed for the several types of \emph{Lagrange functions}.  For example,
 \begin{equation}\label{eq:lagrange_cuad}
@@ -603,14 +660,6 @@ A(\|u\sobnor).\]
 
 HABR\'IA QUE VER D\'ONDE SE UBICA LA CONDICI\'ON DE ESTRUCTURA...QUIZ\'AS EN LA INTRODUCCI\'ON?....
 
-We assume that the \emph{Lagrangian} $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$ is 
-Carath\'eodory and differentiable function satisfying 
-\begin{equation}\label{eq:condicion-estructura}
-|\mathcal{L}(t,x,y)|+ |D_{x}\mathcal{L}(t,x,y)|+\Psi(D_{y}\mathcal{L}(t,x,y))
-\leq
-a(|x|)(b(t)+ \Phi(y)),
-\end{equation}
-where  $a\in C(\mathbb{R}^+,\mathbb{R}^+)$, $b\in L^1_1([0,T]) $, $\Phi$ and $\Psi$ are $N_{\infty}$-functions (complementary???? o en el teorema o nunca?)
 
 Next, we deal with the differentiability of the action integral 
 \begin{equation}\label{eq:integral_accion}
@@ -892,6 +941,11 @@ for every $\lambda>0$. Thus, $v_n \to v$ in $L^{\Psi}$.
 The continuity of $I'$  follows  from the continuity 
 of $D_{x}\mathcal{L}$ and $D_{y}\mathcal{L}$ using the formula \eqref{eq:DerAccion}.
 \end{proof}
+
+
+
+
+
 
 
 \section*{Acknowledgments}
