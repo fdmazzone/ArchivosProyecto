@@ -105,13 +105,15 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\epsi}{E^{\Phie}}
 \newcommand{\Phie}{\Phi^{*}}
 
-\newcounter{example}
+\newcounter{example}[section]
 
-\setcounter{example}{1}
+\setcounter{example}{0}
 
-
-\newenvironment{example}{\noindent\textbf{Example \arabic{example}}.}{\addtocounter{example}{1}}
-
+\makeatletter
+\renewcommand{\p@example}{\thesection.} % "prefix" for cross-referencing
+\makeatother
+%\newenvironment{example}{\noindent\textit{Example \arabic{example}}.}{\addtocounter{example}{1}}
+\newenvironment{example}{\refstepcounter{example}\noindent\textit{Example \arabic{section}.\arabic{example}}.}{ }
 
 
 
@@ -163,7 +165,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \section{Introduction}
 
 
-This paper deals with system  of equations of the type:
+In this paper we obtain existence of solutions for systems  of equations of the type:
 
 \begin{equation}\label{ProbPrin-gral}
     \left\{%
@@ -171,104 +173,127 @@ This paper deals with system  of equations of the type:
   \frac{d}{dt} D_{y}\mathcal{L}(t,u(t),u'(t))= D_{x}\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right.
+\right. \tag{$\b{P}$}
 \end{equation}
-where $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. 
+where the function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$ (called the \emph{Lagrange function} or \emph{lagrangian}) satisfying  that  it is measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. The unknown function  $u:[0,T]\to\rr^d$ is assumed absolutely continuous. 
 
-We suppose that $(t,x,y)\mapsto \mathcal{L}(t,x,y)$ is measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and 
-continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$.
+Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We suggest the article  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existences of solutions for systems like \eqref{ProbPrin-gral}. 
 
-In this paper we will use anisotropic Orlicz space, more specifically we consider a convex function 
-$\Phi:\mathbb{R}^d\to [0,+\infty)$, satisfying $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and 
- $\Phi(x)>0$ when $x\neq 0$. Therefore, from \cite[Cor. 2.35]{clarke2013functional} $\Phi$ is a continuous function. 
-Additionally, we assume that
+Through this article we said that  a function 
+$\Phi:\mathbb{R}^d\to [0,+\infty)$ is of $N_{\infty}$ class if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-y)=\Phi(y)$, 
+ $\Phi(y)>0$ when $y\neq 0$ and 
 \begin{equation}\label{eq:N-sub-inf}
-\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty \tag{$N_{\infty}$}.
+\lim_{|y|\to\infty}\frac{\Phi(y)}{|y|}=+\infty.
 \end{equation}
-Hereafter, we assume that $|\cdot|$ denotes the euclidean norm on $\rr^d$.
+where $|\cdot|$ denotes the euclidean norm on $\rr^d$. From \cite[Cor. 2.35]{clarke2013functional} a $N_{\infty}$ function is  continuous.  
 
-Associated to $\Phi$ we have the \emph{complementary function} $\Psi$ which is defined by 
+
+Associated to $\Phi$ we have the \emph{complementary function} $\Psi$ which is defined in $\xi\in\rr^d$ as
 \begin{equation}\label{eq:conjugada}
- \Psi(\xi)=\sup\limits_{x\in\mathbb{R}^d} x\cdot \xi-\Phi(x)
+ \Psi(\xi)=\sup\limits_{y\in\mathbb{R}^d} y\cdot \xi-\Phi(y)
 \end{equation}
 then, from the continuity of $\Phi$ and  \eqref{eq:N-sub-inf}, we have that $\Psi:\rr^d \to [0,\infty)$. 
 Moreover, it is easy to see that $\Psi$ is a convex function such that $\Psi(0)=0$, $\Psi(-\xi)=\Psi(\xi)$ and 
- $\Psi(\xi)\to \infty$  when $|\xi|\to \infty$,  see \cite[Section 4.2]{clarke2013functional},  \cite[Chapter 2]{mawhin2010critical}
+ $\Psi(\xi)\to \infty$  when $|\xi|\to \infty$,  see \cite[Section 4.2]{clarke2013functional},  \cite[Chapter 2]{mawhin2010critical}.
+
+Some examples of  $N_{\infty}$ functions are the following.
+
+  \begin{example}\label{ex:p-laplac}
+   $\Phi_p(y):=|y|^p/p$, for $1<p<\infty$.  In this case $\Psi(\xi)=|\xi|^q/q$, $q=p/(p-1)$.
+  \end{example}
+
+   \begin{example}
+     If $\Phi:\rr\to [0,+\infty)$ is a $N_{\infty}$  function on $\rr$ then $\overline{\Phi}(y)=\Phi(|y|)$ is a $N_{\infty}$  function on $\rr^d$. In this example, as in the previous one, the function $\Phi$ is \emph{radial}, i.e. the value of $\Phi(y)$ depends on the norm of $y$  and not on its direction. These cases are not authentically anisotropic.
+   \end{example}
 
 
+   \begin{example}\label{ex:pq-laplac}
+    An anisotropic function $\Phi(y)$ depends on the direction of $y$. For example, if  $1<p_1,p_2<\infty$, we define $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$   by
+\[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2}.\]
+Then $\Phi_{p_1,p_2}$ is a $N_{\infty}$ function.  In this case the complementary function is the function $\Phi_{q_1,q_2}$ with $q_i=p_i/(p_i-1)$. 
+
+More generally, if $\Phi_k:\rr^d\to [0,+\infty)$, $k=1,\ldots,n$, are $N_{\infty}$ functions, then $\Phi:\rr^d\times\cdots\times\rr^d\to [0,+\infty)$ defined by $\Phi(y_1,\ldots,y_n)=\Phi_1(y_1)+\cdots+\Phi_n(y_n)$  is a $N_{\infty}$ function. These functions are truly anistropic, i.e. $|x|=|y|$ does not implies that $\Phi(x)=\Phi(y)$.
+   \end{example}
+
+
+ 
+    \begin{example}
+          If $\Phi:\rr\to [0,+\infty)$ is a $N_{\infty}$ function and  $O\in GL(d,\rr)$, then $\Phi(y)=\Phi(Oy)$  is a $N_{\infty}$ function.
+    \end{example}
+
+ 
+
+    \begin{example}
+      An anisotropic $N_{\infty}$  function is not necessarily controlled by powers if it does not satisfy the $\Delta_2$ condition (see xxxxx). For example $\Phi:\rr^d:\to[0,+\infty)$ defined by $\Phi(y)=\exp(|y|)-1$ is $N_{\infty}$ function.
+    \end{example}
+
+
+
+
+ 
+
+
+ 
+ 
 The occurrence of Orlicz Spaces in this paper obeys to we will consider the 
 following structure condition on the lagrangian:
 \begin{equation}\label{eq:condicion-estructura}
-|\mathcal{L}(t,x,y)|+ |D_{x}\mathcal{L}(t,x,y)|+\Psi(D_{y}\mathcal{L}(t,x,y))
+|\mathcal{L}|+ |\nabla_{x}\mathcal{L}|+\Psi(\nabla_{y}\mathcal{L})
 \leq
-a(x)(b(t)+ \Phi\left(\frac{y}{\lambda})\right), \tag{$S$}
+a(x)\left\{b(t)+ \Phi\left(\frac{y}{\lambda}\right)\right\}, \tag{$\b{S}$}
 \end{equation}
 for a.e. $t\in [0,T]$,
-where  $a\in C(\mathbb{R}^d,[0,+\infty))$, $b\in L^1_1([0,T],\rr) $.
+where  $a\in C\left(\mathbb{R}^d,[0,+\infty)\right)$, $b\in L^1\left([0,T],[0,+\infty)\right) $.
 
-We point out that \eqref{eq:condicion-estructura} when $\Phi(x)=|x|^p/p$ for $1<p<\infty$, 
-(in this case $\Psi(\xi)=\xi^q/q$, $q=p/(p-1)$) is equivalent to the inequalities (a) of Theorem 1.4 of \cite{mawhin2010critical}.
+Our condition \eqref{eq:condicion-estructura} includes structure conditions that have previously been considered in the literature. For example, it is easy to see that, when $\Phi(x)$ is as in Example \ref{ex:p-laplac}, then  the condition \eqref{eq:condicion-estructura}  is equivalent to the structure condition in  \cite[Th. 1.4]{mawhin2010critical}.  If $\Phi$ is a radial $N_{\infty}$ function such that $\Psi$ satisfies tha $\Delta_2$ function (see xxxxxx) then \eqref{eq:condicion-estructura} is essentially equivalent to conditions  \cite[Eq. (2)-(4)]{ABGMS2015}.   If $\Phi$ is as in Example \ref{ex:pq-laplac} and $\mathcal{L}=\mathcal{L}(t,x_1,x_2,y_1,y_2)$ then Inequality \eqref{eq:condicion-estructura} is related to estructure conditions like 
+\cite[Lemma 3.1, Eq. (3.1)]{Tian2007192}. As can be seen, condition \eqref{eq:condicion-estructura} is a more compact expression than \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192} and moreover is more weaker, because  \eqref{eq:condicion-estructura} does not imply a control of 
+$|D_{y_1}L|$ independent of $y_2$.  We will return to this point later.
 
 
+An important example of lagrangian  is giving by:
 
-Let $F(t,x)$ be differentiable with respect to $x$ for a.e. $t\in [0,T]$. Suppose that $F$ satisfies the following conditions:
+\begin{equation}\label{eq:lagrange_phi}
+\mathcal{L}_{\Phi,F}(t,x,y):=\Phi(y)+F(t,x).
+\end{equation}
+Here the function $F(t,x)$, which is often referred to potential,  be differentiable with respect to $x$ for a.e. $t\in [0,T]$. Moreover $F$ satisfies the following conditions:
 \begin{enumerate}
 \labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla_x F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
  \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
 \begin{equation}
-|F(t,x)| + |\nabla F(t,x)|  \leq a(x)b(t).
+|F(t,x)| + |\nabla_x F(t,x)|  \leq a(x)b(t).
 \end{equation}
-In this inequality we assume that the function  $a:\rr^d \to [0,+\infty)$ is continuous and non decreasing and $0\leq b\in L^1([0,T],\rr)$.
+where  $a\in C\left(\rr^d,[0,+\infty)\right)$ and $0\leq b\in L^1([0,T],\rr)$.
 \end{enumerate}
 
-The following Lagrange function  
-\begin{equation}\label{eq:lagrange_cuad}
-\mathcal{L}(t,x,y)=\Phi(y)+F(t,x),
+The lagrangian $\mathcal{L}_{\Phi,F}$ satisfies condition  \eqref{eq:condicion-estructura}. In order to prove this, the only non trivial fact that we should to establishis is that $ \Psi(\nabla_{y}\mathcal{L})
+\leq
+a(x)\left\{b(t)+ \Phi\left({y}/{\lambda}\right)\right\}$. But, from inequality xxxx below, 
+$\Psi(\nabla_{y}\mathcal{L})=\Psi\left(\nabla\Phi(y)\right)\leq \Phi(2y)$.
+
+
+The laplacian $\mathcal{L}_{\Phi,F}$ leads to the system
+
+\begin{equation}\label{eq:ProbPhiLapla}
+    \left\{%
+\begin{array}{ll}
+  \frac{d}{dt} \nabla \Phi(u'(t))= \nabla_{x}F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
+    u(0)-u(T)=u'(0)-u'(T)=0,
+\end{array}%
+\right. \tag{$\b{P_{\Phi}}$}
 \end{equation}
-satisfies \eqref{eq:condicion-estructura}.
 
-
-CUIDADO!!! PARA QUE SE VERIFIQUE LA ACOTACION DE LA DERIVADA con RESPECTO A Y, PARECE QUE ES NECESARIO AGREGAR UNA CONSTANTE EN LA CONDICION DE ESTRUCTURA!!!
-
-$\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$, is called the \emph{Lagrange function} or \emph{lagrangian} and the unknown function  $u:[0,T]\to\rr^d$ is absolutely continuous. In other words, we are interested in  finding \emph{periodic weak solutions} of \emph{Euler-Lagrange systems of ordinary equations}.
-
-This topic was deeply addressed for the several types of \emph{Lagrange functions}.  For example,
-\begin{equation}\label{eq:lagrange_cuad}
-\mathcal{L}_{p,F}(t,x,y):=\frac{|y|^p}{p}+F(t,x),
-\end{equation}
-for $1<p<\infty$. For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{2,F}$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. Lagrange functions \eqref{eq:lagrange_cuad} for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic} and in this case \eqref{ProbPrin-gral}  is reduced to the $p$-laplacian system
+Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{\Phi,F}$, with $\Phi(x)=|x|^2/2$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. The case $\Phi(y)=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic}, among other papers, and in this case \eqref{eq:ProbPhiLapla} is reduced to the $p$-laplacian system
 \begin{equation}\label{ProbP-lapla}
     \left\{%
 \begin{array}{ll}
    \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0.
 \end{array}%
-\right.\tag{$P_2$}
+\right.\tag{$\b{P_p}$}
 \end{equation}
 
 
-In this context, it  is customary to call $F$ a  \emph{potential function}, and it is assumed that $F(t,x)$ is differentiable with respect to $x$ for a.e. $t\in [0,T]$ and the following conditions are verified:
-\begin{enumerate}
-\labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
- \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
-\begin{equation}
-|F(t,x)| + |\nabla F(t,x)|  \leq a(|x|)b(t).
-\end{equation}
-In this inequality we assume that the function  $a:[0,+\infty)\to [0,+\infty)$ is continuous and non decreasing and $0\leq b\in L^1([0,T],\rr)$.
-\end{enumerate}
-
-
-In the framework of anisotropic Sobolev-Orlicz spaces, we can study system of $p$-laplacian equations as the following example shows.
-
-
-\begin{example}\label{ex:phip1p2} Let $1<p_1,p_2<\infty$. We define $\Phi_{p_1,p_2}:\rr^n\times \rr^n\to\rr_+$   by
-\[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2}.\]
-where $|\cdot|$ is the Euclidean norm on $\rr^n$.
-And, we consider the following Lagrange function
-\[\mathcal{L}(t,x,y)=\Phi_{p_1,p_2}(y)+F(t,x).\]
-where $y=(y_1,y_2), x=(x_1,x_2)\in \rr^{2n}$...o algo as\'i?????
-
-Then the equations \eqref{ProbPrin-gral} become
+If $\Phi$ is as in Example \ref{ex:pq-laplac} and  $F:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function, then the equations \eqref{eq:ProbPhiLapla} become
 \begin{equation}\label{eq:sist-p_lapa}
     \left\{%
 \begin{array}{ll}
@@ -276,36 +301,102 @@ Then the equations \eqref{ProbPrin-gral} become
   \frac{d}{dt}\left(|u_2'|^{p_2-2}u_2'\right)=F_{x_2}(t,u) \quad \hbox{a.e.}\ t \in (0,T)\\
    u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right., \tag{$P_3$}
+\right., \tag{$\b{P_{p_1,p_2}}$}
 \end{equation}
+where $x=(x_1,x_2)\in\rr^d\times\rr^d$ and $u(t)=(u_1(t),u_2(t))\in\rr^d\times\rr^d$. In the literature, these equations are known as $(p_1,p_2)$-Laplacian system, see
+\cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some,li2014periodic}.
 
+In conclusion, the problem \eqref{ProbPrin-gral} with conditions \eqref{eq:condicion-estructura}  contains several problems that have been considered by many authors in the past. 
 
-
-\end{example}
-
-
-In the literature, these equations are known as $(p_1,p_2)$-Laplacian system, see
-\cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some}.
-
-
-
-In \cite{ABGMS2015} it is treated  the case of a lagrangian $\mathcal{L}$ which is lower bounded by a Lagrange function like
-\begin{equation}\label{eq:lagrange_phi}
-\mathcal{L}_{\Phi,F}(t,x,y):=\Phi(|y|)+F(t,x),
-\end{equation}
-where  $\Phi$ is an $N$-function (see section \ref{preliminares} for the definition of this concept).
 
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic Young functions $\Phi:\rr^n\to\rr_+$, i.e. functions such that $\Phi(x)$ depends on the direction of $x$, unlike the radial case where $\Phi(x)=\Phi(|x|)$.  References for  these topics are \cite{Orliczvectorial2005,Skaff1969, Desch2001}.
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969}.
 
 
 
-On the other hand, anisotropic Orlicz-Sobolev spaces allow us to simplify the writing, and they provide the natural frame for statements of the type \cite[Lemma 3.1]{Tian2007192}. This type of question motivated us to use these spaces.
+We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
+if there exist  constants $K>0$ and  $M\geq 0$ such that
+\begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x),
+\end{equation}
+for every $|x|\geq M$.
 
-Hereafter we denote  by $\mathbb{R}^+$  the set of all non negative real numbers. A function $\Phi:\mathbb{R}^d\to \mathbb{R}_+ $ is called an \emph{Young's function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-x)=\Phi(x)$ and $\Phi(x)\to +\infty$, when $|x|\to+\infty$. Additionally, we assume that  Young's functions which we deal with, satisfy that $\Phi(x)>0$ when $x\neq 0$. Following \cite{Orliczvectorial2005} we say that $\Phi$ is an $N_{\infty}$-function  if
-\[\lim_{|x|\to\infty}\frac{\Phi(x)}{|x|}=+\infty.\]
+
+
+ We denote by $\mathcal{M}:=\mathcal{M}\left([0,T],\rr^d\right)$, with $d\geq 1$,  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
+
+ Given  an $N_{\infty}$ function $\Phi$ we define the \emph{modular function} 
+$\rho_{\Phi}:\mathcal{M}\to \mathbb{R}^+\cup\{+\infty\}$ by
+\[\rho_{\Phi}(u):= \int_0^T \Phi(u)\ dt.\]
+
+Now, we introduce the \emph{Orlicz class} $C^{\Phi}=C^{\Phi}\left([0,T],\rr^d\right)$   by setting
+\begin{equation}\label{claseOrlicz}
+  C^{\Phi}:=\left\{u\in \mathcal{M} | \rho_{\Phi}(u)< \infty \right\}.
+\end{equation}
+The \emph{Orlicz space} $\lphi=L^{\Phi}\left([0,T],\rr^d\right)$ is the linear hull of $\claseor$;
+equivalently,
+\begin{equation}\label{espacioOrlicz}
+\lphi:=\left\{ u\in \mathcal{M}| \exists \lambda>0: \rho_{\Phi}(\lambda u) < \infty   \right\}.
+\end{equation}
+  The Orlicz space $\lphi$ equipped with the \emph{Luxemburg norm}
+\[
+\|  u  \orlnor:=\inf \left\{ \lambda\bigg| \rho_{\Phi}\left(\frac{v}{\lambda}\right) dt\leq 1\right\},
+\]
+is a Banach space. 
+
+
+The subspace $\ephi=\ephi\left([0,T],\rr^d\right)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}\left([0,T],\rr^d\right)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  (see \cite[Thm. 5.1]{Orliczvectorial2005}) $u\in\ephi$  if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2^{\infty}$ (see \cite[Thm. 5.2]{Orliczvectorial2005}). 
+
+A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 7.2]{Orliczvectorial2005}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
+\begin{equation}\label{holder}
+\int_0^Tv\cdot u\ dt\leq 2 \|u\orlnor\|v\|_{L^{\Psi}}.
+\end{equation}
+By $u\cdot v$ we denote the usual dot product in $\mathbb{R}^{d}$ between $u$ and $v$.
+
+We consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
+\[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}.\]
+This set is related to the Orlicz class $\claseor$ by means of inclusions, namely,
+\begin{equation}\label{eq:inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
+\end{equation}
+for any positive $r$. This relation is a trivial generalization of  \cite[Thm. 5.6]{Orliczvectorial2005}.
+If $\Phi \in \Delta_2^{\infty}$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
+ 
+As usual, if $(X,\|\cdot\|_X)$ is a normed space and $(Y,\|\cdot \|_Y)$ is a linear subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when there exists $C>0$ such that
+$\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lphi\hookrightarrow  \left[\lpsi\right]^*$, where a function $v\in\lphi$ is associated  to $\xi_v\in \left[\lpsi\right]^*$ being
+\begin{equation}\label{pairing}
+  \xi_v(u)=\langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
+\end{equation}
+
+We highlight the following result that is a consequence of Theorems 7.1 and 7.3 in  \cite{Orliczvectorial2005}.
+
+\begin{prop} If $\Psi$ satisfies the $\Delta_2^{\infty}$-condition then $\lphi\left([0,T],\rr^d\right)=\left[\lpsi\left([0,T],\rr^d\right)\right]^*$.  
+ 
+\end{prop}
+
+
+
+
+
+
+
+We define the \emph{Sobolev-Orlicz space} $\wphi$ by
+\[\wphi\left([0,T],\rr^d\right):=\left\{u| u\in AC\left([0,T],\rr^d\right) \hbox{ and } u'\in \lphi\left([0,T],\rr^d\right)\right\},\]
+where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absolutely continuous functions defined on $[0,T]$. The espace $\wphi\left([0,T],\rr^d\right)$ is a Banach space when equipped with the norm
+\begin{equation}\label{def-norma-orlicz-sob}
+\|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
+\end{equation}
+
+We introduce the following subspaces of $\wphi$
+%%
+\begin{equation}\label{def-esp-orlicz-sob-per}
+\begin{split}
+\wphie&=\{u\in\wphi|u'\in\ephi\},\\
+\wphie_T&=\{u\in\wphie|u(0)=u(T)\}.
+\end{split}
+\end{equation}
+
+
 
 Given a Young's function $\Phi$, we define function $A_{\Phi}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
@@ -319,7 +410,7 @@ Let us establish some elementary properties of $A_{\Phi}$ that we will use in th
  \item\label{it:prop2} $A_{\Phi}(s)/s$ is increasing,
  \item\label{it:prop3} $A_{\Phi}(|x|)$ is the \emph{greatest radial minorant} of 
  $\Phi(x)$,
- \item\label{it:prop4} $\Phi$ is $N_{\infty}$ if and only if $A_{\Phi}$ is.
+ \item\label{it:prop4} $\Phi$ is $N_{\infty}$ if and only if $\lim_{s\to+\infty} A_{\Phi}(s)/s=+\infty$.
 \end{enumerate}
 \end{prop}
 
@@ -337,165 +428,63 @@ Property in items \ref{it:prop3} and \ref{it:prop4} are obtained easily.
  
 \end{proof}
 
-\begin{example} We compute $A_{\Phi}$ for the function $\Phi=\Phi_{p_1,p_2}$ given in Example \eqref{ex:phip1p2}.
-
-We apply the method of Lagrange multipliers to solve the next minimization problem subject to a constraint
+\begin{example} We compute $A_{\Phi}$ for the function $\Phi=\Phi_{p_1,p_2}$ given in Example \eqref{ex:pq-laplac}. We apply the method of Lagrange multipliers (see \cite[Ch. 11]{luenberger2015linear}) to solve the next minimization problem subject to constraints
 \[
-G(r)=\min\left\{\Phi(x,y):|(x,y)|_2^2=r^2\right\}\].
+\left\{ \begin{array}{ll}
+  \hbox{minimize } \Phi_{p_1,p_2}(y_1,y_2)\\
+	 \hbox{subject to }|y_1|^2+|y_2|^2=r^2\\
+        \end{array}
+\right.
+.\]
 
 The first order conditions  are
-\[
+\begin{equation}\label{eq:mult_lagr}
 \left
 \{
 \begin{array}{ccc}
-|x|^{p_1-2}x+ \lambda x&=&0
+|y_1|^{p_1-2}y_1+ \lambda y_1&=&0
 \\
-|y|^{p_2-2}y+\lambda y&=&0
+|y_2|^{p_2-2}y_2+\lambda y_2&=&0
 \\
-|x|^2+|y|^2&=&r^2
+|y_1|^2+|y_2|^2&=&r^2
 \end{array}
 \right.
-\]
-These equations can be solved, among others, by the following two sets  of citical points: 
+\end{equation}
+These equations are solved, among others, by the following two sets  of citical points: 
 a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. These sets are infinite when $d>1$. 
 Associated with these critical points we have the following critical values: a) $r^{p_1}/p_1$ and b) $r^{p_2}/p_2$.
 
 We deal with $p_1\leq 2$ and $p_2\leq 2$ being one of them (suppose $p_2$) different from 2. The remaining cases can be treated with similar techniques. 
 
 
-If $(x,y)$ is a critical point with $x\neq 0$ and $y \neq 0$ then  $|y|=|x|^{\frac{p_1-2}{p_2-2}}$ and $\lambda=-|x|^{p_1-2}$.  In order to employ second order conditions for constrained problems,
-we have to consider  the tangent plane at the point $(x,y)\in \rr^{2n}$, i.e. 
-$M=\{(z,w) \in \rr^{2n}: zx^T+wy^T=0\}$. We also consider the Lagrangian associated to the constrained problem: $L(x,y,\lambda)=\Phi(x,y)+\lambda H(x,y)$ being $H=0$ the constraint.
-And, we are interested in knowing how to behave the quadratic form associated to the matrix 
-of second partial derivatives $\mathcal{H}=D^2 \Phi+ \lambda D^2 H$ 
-with respect to the vector $(x,y)\in  \rr^{2n}$ 
-on the subspace $M$.
-
- 
-We compute
-\[(z,w)\mathcal{H}(z,w)^T=
-%(z,w) (D^2\Phi+\lambda D^H) (z,w)^T=
-|\lambda| (zx^T)^2 [|x|^{-2}(p_1-2)+(p_2-2)|y|^{-2}],\]
-on the subspace $M$. We note that $(-y,x)\in M$ and $(-y,x)\mathcal{H}(-y,x)^T<0$.
- 
+If $(y_1,y_2)$ solve \eqref{eq:mult_lagr} with $y_1\neq 0$ and $y_2 \neq 0$ then  $|y_2|=|y_1|^{\frac{p_1-2}{p_2-2}}$ and $\lambda=-|y_1|^{p_1-2}$.  We use second order conditions for constrained problems.
+We have to consider  the tangent plane at the point $(y_1,y_2)\in \rr^{2n}$, i.e. 
+$M=\{(\xi,\eta) \in \rr^{2n}: \xi y_1^t+\eta y_2^T=0\}$. Let $L$ be the Lagrangian associated to the constrained problem: $L(y_1,y_2,\lambda)=\Phi(y_1,y_2)+\lambda H(y_1,y_2)$ being $H=0$ the constraint. We must analize the positivity of the quadratic form associated to the matrix  of second partial derivatives $\mathcal{H}=D^2 \Phi+ \lambda D^2 H$ 
+on the subspace $M$. By elementary computations we have for $(\xi,\eta)\in M$
+\[(\xi,\eta)^t\mathcal{H}(\xi,\eta)=
+|\lambda| (\xi^tx)^2 [|y_1|^{-2}(p_1-2)+(p_2-2)|y_2|^{-2}],\]
+on the subspace $M$. We note that $(-y_2,y_1)\in M$ and $(-y_2,y_1)^t\mathcal{H}(-y_2,y_1)<0$.
 Then, by second order necessary conditions \cite[p.333]{luenberger2015linear}, 
-at $(x,y)$ there cannot be a minimum. Therefore, the minima occur at $x=0$ or $y=0$, then $A_{\Phi}(x,y)=\min\{r^{p_1}/p_1, r^{p_2}/p_2\}$. 
+at $(y_1,y_2)$ there cannot be a minimum. Therefore, the only minima occur at $y_1=0$ or $y_2=0$, then 
+
+\[A_{\Phi}(x,y)=\min\{r^{p_1}/p_1, r^{p_2}/p_2\}.\] 
 
 More generally, it holds that 
 \[
-K_1\min\{r^{p_1}, r^{p_2}\}\leq A_{\Phi}\leq K_2\max\{r^{p_1}, r^{p_2}\}
+K_1\min\{r^{p_1}, r^{p_2}\}\leq A_{\Phi}\leq K_2\min\{r^{p_1}, r^{p_2}\}
 \]
 with $K_1,K_2>0$, for every $1<p_1,p_2<\infty$. 
 \end{example}
 
 
-
-
-
-We also say that $\Phi:\mathbb{R}^d\rightarrow \mathbb{R}^+$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
-if there exist  constants $K>0$ and  $M\geq 0$ such that
-\begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x),
-\end{equation}
-for every $|x|\geq M$.
-
-If $\Phi$ is a Young's function we define its \emph{Fenchel conjugate}   $\Phi^*:\mathbb{R}^d\to \mathbb{R}^+ $ by:
-\begin{equation}\label{eq:conjugada}
- \Phi^*(y)=\sup\limits_{x\in\mathbb{R}^d} x\cdot y-\Phi(x)
-\end{equation}
-
-
- We denote by $\mathcal{M}:=\mathcal{M}([0,T],\rr^d)$, with $d\geq 1$,  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$. For the set of functions $\mathcal{M}$, as for other similar sets, we will omit the reference to codomain $\mathbb{R}^d$ when $d=1$.
-
-
-Given  an $N$-function $\Phi$ we define the \emph{modular function} 
-$\rho_{\Phi}:\mathcal{M}\to \mathbb{R}^+\cup\{+\infty\}$ by
-\[\rho_{\Phi}(u):= \int_0^T \Phi(u)\ dt.\]
-Here $|\cdot|$ is the euclidean norm of $\mathbb{R}^d$.
-Now, we introduce the \emph{Orlicz class} $C^{\Phi}=C^{\Phi}([0,T],\rr^d)$   by setting
-\begin{equation}\label{claseOrlicz}
-  C^{\Phi}:=\left\{u\in \mathcal{M} | \rho_{\Phi}(u)< \infty \right\}.
-\end{equation}
-The \emph{Orlicz space} $\lphi=L^{\Phi}([0,T],\rr^d)$ is the linear hull of $\claseor$;
-equivalently,
-\begin{equation}\label{espacioOrlicz}
-\lphi:=\left\{ u\in \mathcal{M}| \exists \lambda>0: \rho_{\Phi}(\lambda u) < \infty   \right\}.
-\end{equation}
-  The Orlicz space $\lphi$ equipped with the \emph{Luxemburg norm}
-\[
-\|  u  \orlnor:=\inf \left\{ \lambda\bigg| \rho_{\Phi}\left(\frac{v}{\lambda}\right) dt\leq 1\right\},
-\]
-is a Banach space. By $u\b{\cdot} v$ we denote the usual dot product in $\mathbb{R}^{d}$ between $u$ and $v$.
-
-
-The subspace $\ephi=\ephi([0,T],\rr^d)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}([0,T],\rr^d)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  (see \cite[Thm. 5.1]{Orliczvectorial2005}) $u\in\ephi$  if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2^{\infty}$ (see \cite[Thm. 5.2]{Orliczvectorial2005}). Another alternative characterization of $\ephi$, which is particularly useful for us, is that $u\in\ephi$ if and only if $u$ has  \emph{absolutely continuous norm}, i.e.   if $E_n\subset [0,T]$, $n=1,2,\ldots$ then $\|\chi_{E_n}u\|\to 0$ when $|E_n|\to 0$.
-
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 4.1]{Skaff1969}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
-\begin{equation}\label{holder}
-\int_0^Tv\cdot u\ dt\leq 2 \|u\orlnor\|v\|_{L^{\Phie}}.
-\end{equation}
-
-
-Like in \cite{KR} we will consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
-\[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}.\]
-This set is related to the Orlicz class $\claseor$ by means of inclusions, namely,
-\begin{equation}\label{eq:inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
-\end{equation}
-for any positive $r$ (see \cite[Thm. 5.6]{Orliczvectorial2005}).
-If $\Phi \in \Delta_2^{\infty}$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
-
-Following to \cite{Desch2001} we introduce the next definition.
-
-\begin{defi} Let $u_n,u\in\lphi([0,T],\rr^d)$. We say that $u_n$ converges monotonically to $u$ if there exists $\alpha_n\in L^{\infty}([0,T],\rr)$, $n=1,2,\ldots$, such that $0\leq \alpha_n(t)\leq \alpha_{n+1}(t)$, $\alpha_n(t)\to 1$ a.e., when $n\to\infty$ and $u_n(t)=\alpha_n(t)u(t)$.
-
-\end{defi}
-
- 
-As usual, if $(X,\|\cdot\|_X)$ is a normed space and $(Y,\|\cdot \|_Y)$ is a linear subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when there exists $C>0$ such that
-$\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lpsi\hookrightarrow  \left[\lphi\right]^*$, where a function $v\in\lpsi$ is associated  to $\xi_v\in \left[\lphi\right]^*$ being
-\begin{equation}\label{pairing}
-  \xi_v(u)=\langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
-\end{equation}
- In  \cite[Thm 2.9]{Desch2001}  it was characterized a subspace of   $\left[\lphi\right]^*$ which can be identified with $\lpsi$.
-
- \begin{prop} Let $F\in\left[\lphi([0,T],\rr^d)\right]^*$. Then the following statements are equivalent
- \begin{enumerate}
-  \item $\xi\in \lpsi([0,T],\rr^d)$
-  \item $\xi$ satisfies the \emph{monotone convergence property}, which is if $u_n$ converges monotonically to $u$ then $\langle \xi,u_n\rangle\to \langle \xi,u\rangle$.
- \end{enumerate}
- \end{prop}
-
- If $\Phi \in \Delta_2^{\infty}$ and $\Phi$ is $N_{\infty}$ then $\lpsi([0,T],\rr^d)= \left[\lphi([0,T],\rr^d)\right]^*$  (see \cite[Thm. 2.9 , Thm. 2.10]{Desch2001}).
-
-% It is easy to see that, for every $N_{\infty}$ $\Phi$ we have that $L^{\infty}\hookrightarrow\lphi \hookrightarrow L^1$.
-
-
-
-
-We define the \emph{Sobolev-Orlicz space} $\wphi$ by
-\[\wphi([0,T],\rr^d):=\{u| u \hbox{ is absolutely continuous on $[0,T]$ and } u'\in \lphi([0,T],\rr^d)\}.\]
-$\wphi([0,T],\rr^d)$ is a Banach space when equipped with the norm
-\begin{equation}\label{def-norma-orlicz-sob}
-\|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
-\end{equation}
-And, we introduce the following subspaces of $\wphi$
-%%
-\begin{equation}\label{def-esp-orlicz-sob-per}
-\begin{split}
-\wphie&=\{u\in\wphi|u'\in\ephi\},\\
-\wphie_T&=\{u\in\wphie|u(0)=u(T)\}.
-\end{split}
-\end{equation}
-
-%
-%
- We will use repeatedly the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
+ As is customary, we will use the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
 
  The following lemma is an elementary generalization to anisotropic Sobolev-Orlicz spaces of known results of Sobolev spaces.
 
 
 
 \begin{lem}\label{lem:inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be a Young's 
-function and let $u\in\wphi([0,T],\rr^d)$. Let 
+function and let $u\in\wphi\left([0,T],\rr^d\right)$. Let 
 $A_{\Phi}: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. Then
 \begin{enumerate}
 \item\label{inclusion orlicz_item1} For every $s,t\in [0,T]$, $s\neq t$,
@@ -505,12 +494,12 @@ $A_{\Phi}: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. 
 \\
 & \| u\linf \leq A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{eq:sobolev}
 \end{align}
-\item We have $\widetilde{u}\in L^{\infty}([0,T],\rr^d)$ and
+\item We have $\widetilde{u}\in L^{\infty}\left([0,T],\rr^d\right)$ and
 \[
 \|\widetilde u \linf \leq T A_{\Phi}^{-1}\left(\frac{1}{T}\right)\|u'\orlnor
 \tag{Sobolev-Wirtinger's inequality}\label{wirtinger}
 \]
-\item\label{it:embeding} If $\Phi$ is $N_{\infty}$ then the space $\wphi([0,T],\rr^d)$ is compactly embedded in the space of continuous functions $C([0,T],\rr^d)$.
+\item\label{it:embeding} If $\Phi$ is $N_{\infty}$ then the space $\wphi\left([0,T],\rr^d\right)$ is compactly embedded in the space of continuous functions $C\left([0,T],\rr^d\right)$.
 \end{enumerate}
 \end{lem}
 
@@ -563,7 +552,7 @@ Therefore, from this and \eqref{wirtinger} we get
 
 
 In order to prove item 3, we take a bounded sequence
-$u_n$ in $\wphi([0,T],\rr^d)$. Since $\Phi$ is $N_{\infty}$, from Proposition \ref{prop:AsubPhi}\eqref{it:prop4}  we obtain $sA_{\Phi}^{-1}(1/s)\to 0$ when $s\to 0$. Therefore \eqref{in-sob-cont} implies that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C([0,T],\rr^d)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C([0,T],\rr^d)$ with $u_{n_k}\to u$ in $C([0,T],\rr^d)$.
+$u_n$ in $\wphi\left([0,T],\rr^d\right)$. Since $\Phi$ is $N_{\infty}$, from Proposition \ref{prop:AsubPhi}\eqref{it:prop4}  we obtain $sA_{\Phi}^{-1}(1/s)\to 0$ when $s\to 0$. Therefore \eqref{in-sob-cont} implies that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C\left([0,T],\rr^d\right)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C\left([0,T],\rr^d\right)$ with $u_{n_k}\to u$ in $C\left([0,T],\rr^d\right)$.
 
 \end{proof}
 
@@ -954,8 +943,10 @@ The authors are partially supported by a UNRC grant number 18/C417. The first au
 
 
 
- \bibliographystyle{apalike}
- \bibliography{biblio}
+% \bibliographystyle{apalike}
+ \bibliographystyle{plain}
+ 
+\bibliography{biblio}
 
 
 \end{document}
