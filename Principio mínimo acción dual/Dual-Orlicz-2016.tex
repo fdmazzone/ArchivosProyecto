@@ -177,11 +177,11 @@ In this paper we obtain existence of solutions for systems  of equations of the 
 \end{equation}
 where the function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$ (called the \emph{Lagrange function} or \emph{lagrangian}) satisfying  that  it is measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. The unknown function  $u:[0,T]\to\rr^d$ is assumed absolutely continuous. 
 
-Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We suggest the article  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existences of solutions for systems like \eqref{ProbPrin-gral}. 
+Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We suggest the articles  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces, see also \cite{chamra2017anisotropic}. These spaces allow us to unify and extend previous results on existences of solutions for systems like \eqref{ProbPrin-gral}. 
 
 Through this article we said that  a function 
-$\Phi:\mathbb{R}^d\to [0,+\infty)$ is of $N_{\infty}$ class if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(-y)=\Phi(y)$, 
- $\Phi(y)>0$ when $y\neq 0$ and 
+$\Phi:\mathbb{R}^d\to [0,+\infty)$ is of $N_{\infty}$ class if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(x)>0$ if $x\neq 0$ and $\Phi(-y)=\Phi(y)$, 
+ and 
 \begin{equation}\label{eq:N-sub-inf}
 \lim_{|y|\to\infty}\frac{\Phi(y)}{|y|}=+\infty.
 \end{equation}
@@ -194,7 +194,7 @@ Associated to $\Phi$ we have the \emph{complementary function} $\Psi$ which is d
 \end{equation}
 then, from the continuity of $\Phi$ and  \eqref{eq:N-sub-inf}, we have that $\Psi:\rr^d \to [0,\infty)$. 
 Moreover, it is easy to see that $\Psi$ is a convex function such that $\Psi(0)=0$, $\Psi(-\xi)=\Psi(\xi)$ and 
- $\Psi(\xi)\to \infty$  when $|\xi|\to \infty$,  see \cite[Section 4.2]{clarke2013functional},  \cite[Chapter 2]{mawhin2010critical}.
+$\Psi(\xi)\to \infty$  when $|\xi|\to \infty$,  see \cite[Section 4.2]{clarke2013functional},  \cite[Chapter 2]{mawhin2010critical}. Moreover $\Psi$ satisfies \eqref{eq:N-sub-inf} (see \cite[Th. 2.2]{Orliczvectorial2005}). i.e. $\Psi$ is $N_{\infty}$ function.
 
 Some examples of  $N_{\infty}$ functions are the following.
 
@@ -382,7 +382,7 @@ We highlight the following result that is a consequence of Theorems 7.1 and 7.3 
 
 We define the \emph{Sobolev-Orlicz space} $\wphi$ by
 \[\wphi\left([0,T],\rr^d\right):=\left\{u| u\in AC\left([0,T],\rr^d\right) \hbox{ and } u'\in \lphi\left([0,T],\rr^d\right)\right\},\]
-where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absolutely continuous functions defined on $[0,T]$. The espace $\wphi\left([0,T],\rr^d\right)$ is a Banach space when equipped with the norm
+where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absolutely continuous functions defined on $[0,T]$. The space $\wphi\left([0,T],\rr^d\right)$ is a Banach space when equipped with the norm
 \begin{equation}\label{def-norma-orlicz-sob}
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
