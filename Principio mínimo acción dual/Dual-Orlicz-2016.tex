@@ -313,15 +313,20 @@ In conclusion, the problem \eqref{ProbPrin-gral} with conditions \eqref{eq:condi
 
 In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969}.
 
+If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obtain that
+\begin{equation}\label{eq:escalar_ine}
+ \Phi(\lambda x)\leq \lambda\Phi(x),\quad \lambda\in[0,1],x\in\rr^d.
+\end{equation}
 
+One of the greatest difficulties when dealing with anisotropic Orlicz spaces is the lack of  monotony  with respect to the Euclidean norm, i.e. $|x|\leq |y|$ does not imply $\Phi(x)\leq\Phi(y)$. This problem is avoided if we consider functions whose values on a sphere are comparable (see\cite{Skaff1969}). However, from \eqref{eq:escalar_ine}, we see that  $N_{\infty}$ functions have the following form of radial monotony: $|x|\leq |y|$ and $y=\lambda x$ imply $\Phi(x)\leq\Phi(y)$. 
 
 We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
 if there exist  constants $K>0$ and  $M\geq 0$ such that
 \begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x),
 \end{equation}
-for every $|x|\geq M$.
+for every $|x|\geq M$. If $\Phi$ es a $\Delta_2$ function then $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001}), i.e. there exists $1<p<\infty$, $C>0$ and $M\geq 0$ such that
 
-
+\[\Phi(x)\leq C|x|^p,\quad |x|\geq  
 
  We denote by $\mathcal{M}:=\mathcal{M}\left([0,T],\rr^d\right)$, with $d\geq 1$,  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
 
@@ -396,12 +401,12 @@ We introduce the following subspaces of $\wphi$
 \end{equation}
 
 
-In order to find a modulus of continuity for functios in $\wphi$, and from there, to obtain compact embedding of $\whi$, we define the function $A_{\Phi}:\rr^+\to\rr^+$ by
+In order to find a modulus of continuity for functios in $\wphi$, and from there, to obtain compact embedding of $\wphi$, we define the function $A_{\Phi}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
 A_{\Phi}(s)=\min\left\{\Phi(x)\,\big|\,|x|=s\right\},
 \end{equation}
 
-Let us establish some elementary properties of $A_{\Phi}$ that we will use in this article.
+Let us establish some elementary properties of $A_{\Phi}$.
 \begin{prop}\label{prop:AsubPhi} The function $A_{\Phi}$ has the following properties:
 \begin{enumerate}
  \item\label{it:prop1} $A_{\Phi}$ is continuous,
