@@ -19,6 +19,7 @@
 \usepackage{xcolor}
 \usepackage{adjustbox}
 \usepackage{hyperref}
+\usepackage{pxfonts,txfonts}
 
 
 \newtheorem{thm}{Theorem}[section]
@@ -306,12 +307,11 @@ where $x=(x_1,x_2)\in\rr^d\times\rr^d$ and $u(t)=(u_1(t),u_2(t))\in\rr^d\times\r
 \cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some,li2014periodic}.
 
 In conclusion, the problem \eqref{ProbPrin-gral} with conditions \eqref{eq:condicion-estructura}  contains several problems that have been considered by many authors in the past. 
-
-
+Moreover, our results still improve some results on $(p_1,p_2)$-lamplacian since our structure conditions are less restrictive even in that particular case. 
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969}.
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2000local,chamra2017anisotropic,trudinger1974imbedding}.
 
 If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obtain that
 \begin{equation}\label{eq:escalar_ine}
@@ -324,9 +324,15 @@ We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\D
 if there exist  constants $K>0$ and  $M\geq 0$ such that
 \begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x),
 \end{equation}
-for every $|x|\geq M$. If $\Phi$ es a $\Delta_2$ function then $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001}), i.e. there exists $1<p<\infty$, $C>0$ and $M\geq 0$ such that
+for every $|x|\geq M$. If $\Phi$ es a $\Delta_2$ function then $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
 
-\[\Phi(x)\leq C|x|^p,\quad |x|\geq  
+\[\Phi(x)\leq C|x|^p,\quad |x|\geq r_0.\] 
+
+
+We consider that one of the most important aspects in considering $N_{\infty}$ functions is that it accounts for the Lagrange functions that present faster growth than powers, for example an exponential growth. Hence we consider it important to avoid imposing hypothesis that $\Phi$ to be $\Delta_2$. For some results we will need that $\Psi$ to be $\Delta_2$. 
+
+
+Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we wrtite $\Phi\strictif\Phi_2$, 
 
  We denote by $\mathcal{M}:=\mathcal{M}\left([0,T],\rr^d\right)$, with $d\geq 1$,  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
 
@@ -600,34 +606,34 @@ Then $h\in L^1([0,T],\rr)$.
 
 
 \section{Differentiability Gate\^aux of action integrals in anisotropic Orlicz spaces}
-In this section we give a brief introduction to superposition operators between anistropic Orlicz Spaces.  
-We apply these results to obtain Gate\^aux differentiability of                                                                                action integrals associated to lagrangian functions defined on Sobolev-Orlicz spaces.
-
-Henceforth we assume that  $f:[0,T]\times \rr^d\to\rr^d$is a \emph{Carath\'eodory function}, i.e.
-
-\begin{enumerate}
- \item[\namedlabel{eq:carathe}{(C)}] $f$ is measurable with respect to $t\in [0,T]$ for every  $x\in\rr^d$, and $f$ is a continuous function with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
-\end{enumerate}
-
-
-
-
-\begin{defi}
- For $f:[0,T]\times \rr^d\to\rr^d$  we denote by $\b{f}$ the Nemytskii (o superposition) operator defined for functions $u:[0,T]\to\rr^d$ by
-\[\b{f}u(t)=f(t,u(t))\]
-\end{defi}
-
-In the following Theorem we enumerate  some known properties for superposition operators defined on anisotropic Orlicz spaces of vector functions.   For the proofs see \cite{krasnosel2011integral} for scalar functions  and
-\cite{zbMATH04038592,zbMATH03983966,zbMATH03942215} for the generalization to  $\mathbb{R}^d$-valued  (moreover Banach spaces valued)  functions in a anisotropic Orlicz Spaces (moreover modular anisotropic spaces).
-
-\begin{thm} We assume that $f$ satisfies condition \eqref{eq:carathe} and that $\Phi_1,\Phi_2:\rr^d\to [0,+\infty)$ are anisotropic Young functions. Then
-\begin{enumerate}
- \item\label{it:measure}\emph{Measurability.}  The operator $\b{f}$ maps  measurable function into measurable functions
- \item\label{it:exten}\emph{Extensibility.}  If the operator $\b{f}$ acts from the ball $B_{L^{\Phi_1}}(r):=\{ u\in L^{\Phi_1}| \|u\|_{L^{\Phi_1}}<r\}$ into the space $L^{\Phi_2}$ or the space $E^{\Phi_2}$ then $\b{f}$ can be extended  from $\Pi(E^{\Phi_1},r)$ into space $L^{\Phi_2}$ or  $E^{\Phi_2}$, respectively.
- \item\label{it:exten}\emph{Continuity.} If the operator $\b{f}$ acts from $\Pi(E^{\Phi_1},r)$ into space $E^{\Phi_2}$, then $\b{f}$ is continuous.
-\end{enumerate}
-\end{thm}
-
+% In this section we give a brief introduction to superposition operators between anistropic Orlicz Spaces.  
+% We apply these results to obtain Gate\^aux differentiability of                                                                                action integrals associated to lagrangian functions defined on Sobolev-Orlicz spaces.
+% 
+% Henceforth we assume that  $f:[0,T]\times \rr^d\to\rr^d$is a \emph{Carath\'eodory function}, i.e.
+% 
+% \begin{enumerate}
+%  \item[\namedlabel{eq:carathe}{(C)}] $f$ is measurable with respect to $t\in [0,T]$ for every  $x\in\rr^d$, and $f$ is a continuous function with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
+% \end{enumerate}
+% 
+% 
+% 
+% 
+% \begin{defi}
+%  For $f:[0,T]\times \rr^d\to\rr^d$  we denote by $\b{f}$ the Nemytskii (o superposition) operator defined for functions $u:[0,T]\to\rr^d$ by
+% \[\b{f}u(t)=f(t,u(t))\]
+% \end{defi}
+% 
+% In the following Theorem we enumerate  some known properties for superposition operators defined on anisotropic Orlicz spaces of vector functions.   For the proofs see \cite{krasnosel2011integral} for scalar functions  and
+% \cite{zbMATH04038592,zbMATH03983966,zbMATH03942215} for the generalization to  $\mathbb{R}^d$-valued  (moreover Banach spaces valued)  functions in a anisotropic Orlicz Spaces (moreover modular anisotropic spaces).
+% 
+% \begin{thm} We assume that $f$ satisfies condition \eqref{eq:carathe} and that $\Phi_1,\Phi_2:\rr^d\to [0,+\infty)$ are anisotropic Young functions. Then
+% \begin{enumerate}
+%  \item\label{it:measure}\emph{Measurability.}  The operator $\b{f}$ maps  measurable function into measurable functions
+%  \item\label{it:exten}\emph{Extensibility.}  If the operator $\b{f}$ acts from the ball $B_{L^{\Phi_1}}(r):=\{ u\in L^{\Phi_1}| \|u\|_{L^{\Phi_1}}<r\}$ into the space $L^{\Phi_2}$ or the space $E^{\Phi_2}$ then $\b{f}$ can be extended  from $\Pi(E^{\Phi_1},r)$ into space $L^{\Phi_2}$ or  $E^{\Phi_2}$, respectively.
+%  \item\label{it:exten}\emph{Continuity.} If the operator $\b{f}$ acts from $\Pi(E^{\Phi_1},r)$ into space $E^{\Phi_2}$, then $\b{f}$ is continuous.
+% \end{enumerate}
+% \end{thm}
+% 
 
 
 Given a continuous function $a\in C(\mathbb{R}^n,\mathbb{R}^+)$, we define the composition operator $a:\mathcal{M}_d\to \mathcal{M}_d$ by $\b{a}(u)(x)= a(u(x))$.
