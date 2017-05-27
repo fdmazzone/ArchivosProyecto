@@ -19,7 +19,7 @@
 \usepackage{xcolor}
 \usepackage{adjustbox}
 \usepackage{hyperref}
-\usepackage{pxfonts,txfonts}
+
 
 
 \newtheorem{thm}{Theorem}[section]
@@ -105,6 +105,11 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Phie}}
 \newcommand{\Phie}{\Phi^{*}}
+
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
+
 
 \newcounter{example}[section]
 
@@ -325,14 +330,20 @@ if there exist  constants $K>0$ and  $M\geq 0$ such that
 \begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x),
 \end{equation}
 for every $|x|\geq M$. If $\Phi$ es a $\Delta_2$ function then $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
-
 \[\Phi(x)\leq C|x|^p,\quad |x|\geq r_0.\] 
-
 
 We consider that one of the most important aspects in considering $N_{\infty}$ functions is that it accounts for the Lagrange functions that present faster growth than powers, for example an exponential growth. Hence we consider it important to avoid imposing hypothesis that $\Phi$ to be $\Delta_2$. For some results we will need that $\Psi$ to be $\Delta_2$. 
 
 
-Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we wrtite $\Phi\strictif\Phi_2$, 
+Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we wrtite $\Phi_1\strictif\Phi_2$ if there exists non negative numbers $k$ and $r_0$ such that
+\begin{equation}\label{eq:orden} \Phi_1(x)\leq\Phi_2(kx),\quad |x|\geq r_0.\end{equation}
+For example if $\Phi$ is $\Delta_2$ then there exist $p\in (1,+\infty)$ such that $\Phi\strictif |x|^p$.  If for every $k>0$ there exists $r_0=r_0(k)>0$ such that \eqref{eq:orden} holds we write  $\Phi_1\llcurly\Phi_2$. 
+
+
+If a Lagrange functio $\mathcal
+
+
+
 
  We denote by $\mathcal{M}:=\mathcal{M}\left([0,T],\rr^d\right)$, with $d\geq 1$,  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
 
@@ -356,7 +367,7 @@ equivalently,
 is a Banach space. 
 
 
-The subspace $\ephi=\ephi\left([0,T],\rr^d\right)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}\left([0,T],\rr^d\right)$ of all $\mathbb{R}^d$-valued essentially bounded functions. It is shown that  (see \cite[Thm. 5.1]{Orliczvectorial2005}) $u\in\ephi$  if and only if $\rho_{\Phi}(\lambda u)<\infty$ for any $\lambda>0$. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2^{\infty}$ (see \cite[Thm. 5.2]{Orliczvectorial2005}). 
+The subspace $\ephi=\ephi\left([0,T],\rr^d\right)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}\left([0,T],\rr^d\right)$ of all $\mathbb{R}^d$-valued essentially bounded functions. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2^{\infty}$ (see \cite[Cor. 5.1]{Orliczvectorial2005}). 
 
 A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 7.2]{Orliczvectorial2005}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
 \begin{equation}\label{holder}
@@ -366,7 +377,7 @@ By $u\cdot v$ we denote the usual dot product in $\mathbb{R}^{d}$ between $u$ an
 
 We consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
 \[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}.\]
-This set is related to the Orlicz class $\claseor$ by means of inclusions, namely,
+This set is related to the Orlicz class $\claseor$ by the following inclusions
 \begin{equation}\label{eq:inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
 \end{equation}
 for any positive $r$. This relation is a trivial generalization of  \cite[Thm. 5.6]{Orliczvectorial2005}.
@@ -375,7 +386,7 @@ If $\Phi \in \Delta_2^{\infty}$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$
 As usual, if $(X,\|\cdot\|_X)$ is a normed space and $(Y,\|\cdot \|_Y)$ is a linear subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when there exists $C>0$ such that
 $\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lphi\hookrightarrow  \left[\lpsi\right]^*$, where a function $v\in\lphi$ is associated  to $\xi_v\in \left[\lpsi\right]^*$ being
 \begin{equation}\label{pairing}
-  \xi_v(u)=\langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
+  \langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
 \end{equation}
 
 We highlight the following result that is a consequence of Theorems 7.1 and 7.3 in  \cite{Orliczvectorial2005}.
@@ -384,6 +395,7 @@ We highlight the following result that is a consequence of Theorems 7.1 and 7.3 
  
 \end{prop}
 
+Consequently if $\Psi$ satisfies the $\Delta_2^{\infty}$-condition then $\lphi\left([0,T],\rr^d\right)$ can be equipped with the weak* topology.
 
 
 
@@ -400,10 +412,7 @@ where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absol
 We introduce the following subspaces of $\wphi$
 %%
 \begin{equation}\label{def-esp-orlicz-sob-per}
-\begin{split}
-\wphie&=\{u\in\wphi|u'\in\ephi\},\\
-\wphie_T&=\{u\in\wphie|u(0)=u(T)\}.
-\end{split}
+  \wphie =\{u\in\wphi|u'\in\ephi\},\quad \wphie_T=\{u\in\wphie|u(0)=u(T)\}.
 \end{equation}
 
 
@@ -437,7 +446,19 @@ Property in items \ref{it:prop3} and \ref{it:prop4} are obtained easily.
  
 \end{proof}
 
-\begin{example} We compute $A_{\Phi}$ for the function $\Phi=\Phi_{p_1,p_2}$ given in Example \eqref{ex:pq-laplac}. We apply the method of Lagrange multipliers (see \cite[Ch. 11]{luenberger2015linear}) to solve the next minimization problem subject to constraints
+\begin{example} Let $\Phi=\Phi_{p_1,p_2}$ be the function given in Example \eqref{ex:pq-laplac}.  We show that 
+ \[
+ K_1\min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\}\leq A_{\Phi}(r)\leq \min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\}
+\]
+for some $K>0$, for every $1<p_1,p_2<\infty$. The second inequality follows directly from definition of $A_{\Phi}$. For the first inequality, we note that $|(y_1,y_2)|=r$ implies that $|y_1|\geq r/2$ or $|y_2|\geq r/2$. Then 
+\begin{equation}\label{eq:aphi}\Phi_{p_1,p_2}(y_1,y_2)\geq K\min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\},\end{equation}
+with $K=\min\{2^{-p1},2^{-p_2}\}$. 
+ 
+  
+
+  Let us in a little digression to show that
+ \[A_{\Phi}(r)= \min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\},\]
+ when $1<p_1,p_2\leq 2$.   We apply the method of Lagrange multipliers (see \cite[Ch. 11]{luenberger2015linear}) to solve the next minimization problem subject to constraints
 \[
 \left\{ \begin{array}{ll}
   \hbox{minimize } \Phi_{p_1,p_2}(y_1,y_2)\\
@@ -463,7 +484,6 @@ These equations are solved, among others, by the following two sets  of citical 
 a) $|x|=r$, $y=0$ and $\lambda=-r^{p_1-2}$ and b) $x=0$, $|y|=r$ and $\lambda=-r^{p_2-2}$. These sets are infinite when $d>1$. 
 Associated with these critical points we have the following critical values: a) $r^{p_1}/p_1$ and b) $r^{p_2}/p_2$.
 
-We deal with $p_1\leq 2$ and $p_2\leq 2$ being one of them (suppose $p_2$) different from 2. The remaining cases can be treated with similar techniques. 
 
 
 If $(y_1,y_2)$ solve \eqref{eq:mult_lagr} with $y_1\neq 0$ and $y_2 \neq 0$ then  $|y_2|=|y_1|^{\frac{p_1-2}{p_2-2}}$ and $\lambda=-|y_1|^{p_1-2}$.  We use second order conditions for constrained problems.
@@ -472,18 +492,15 @@ $M=\{(\xi,\eta) \in \rr^{2n}: \xi y_1^t+\eta y_2^T=0\}$. Let $L$ be the Lagrangi
 on the subspace $M$. By elementary computations we have for $(\xi,\eta)\in M$
 \[(\xi,\eta)^t\mathcal{H}(\xi,\eta)=
 |\lambda| (\xi^tx)^2 [|y_1|^{-2}(p_1-2)+(p_2-2)|y_2|^{-2}],\]
-on the subspace $M$. We note that $(-y_2,y_1)\in M$ and $(-y_2,y_1)^t\mathcal{H}(-y_2,y_1)<0$.
+on the subspace $M$. We can assume that $p_1<2$ or $p_2<2$, otherwise the statement we intend to prove would be trivial. Under this assumption, we note that $(-y_2,y_1)\in M$ and $(-y_2,y_1)^t\mathcal{H}(-y_2,y_1)<0$.
 Then, by second order necessary conditions \cite[p.333]{luenberger2015linear}, 
-at $(y_1,y_2)$ there cannot be a minimum. Therefore, the only minima occur at $y_1=0$ or $y_2=0$, then 
+ there cannot be a minimum at $(y_1,y_2)$. Therefore follows \eqref{eq:aphi}.
 
-\[A_{\Phi}(x,y)=\min\{r^{p_1}/p_1, r^{p_2}/p_2\}.\] 
-
-More generally, it holds that 
-\[
-K_1\min\{r^{p_1}, r^{p_2}\}\leq A_{\Phi}\leq K_2\min\{r^{p_1}, r^{p_2}\}
-\]
-with $K_1,K_2>0$, for every $1<p_1,p_2<\infty$. 
+  
 \end{example}
+
+
+
 
 
  As is customary, we will use the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
