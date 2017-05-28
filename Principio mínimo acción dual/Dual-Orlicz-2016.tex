@@ -243,12 +243,12 @@ More generally, if $\Phi_k:\rr^d\to [0,+\infty)$, $k=1,\ldots,n$, are $N_{\infty
 The occurrence of Orlicz Spaces in this paper obeys to we will consider the 
 following structure condition on the lagrangian:
 \begin{equation}\label{eq:condicion-estructura}
-|\mathcal{L}|+ |\nabla_{x}\mathcal{L}|+\Psi(\nabla_{y}\mathcal{L})
+  |\mathcal{L}|+ |\nabla_{x}\mathcal{L}|+\Psi\left(\frac{\nabla_{y}\mathcal{L}}{\lambda}\right)
 \leq
-a(x)\left\{b(t)+ \Phi\left(\frac{y}{\lambda}\right)\right\}, \tag{$\b{S}$}
+a(x)\left\{b(t)+ \Phi\left(\frac{y}{\Lambda}\right)\right\}, \tag{$\b{S}$}
 \end{equation}
 for a.e. $t\in [0,T]$,
-where  $a\in C\left(\mathbb{R}^d,[0,+\infty)\right)$, $b\in L^1\left([0,T],[0,+\infty)\right) $.
+where  $a\in C\left(\mathbb{R}^d,[0,+\infty)\right)$, $b\in L^1\left([0,T],[0,+\infty)\right) $ and $\Lambda,\lambda>0$.
 
 Our condition \eqref{eq:condicion-estructura} includes structure conditions that have previously been considered in the literature. For example, it is easy to see that, when $\Phi(x)$ is as in Example \ref{ex:p-laplac}, then  the condition \eqref{eq:condicion-estructura}  is equivalent to the structure condition in  \cite[Th. 1.4]{mawhin2010critical}.  If $\Phi$ is a radial $N_{\infty}$ function such that $\Psi$ satisfies that $\Delta_2$ function  then \eqref{eq:condicion-estructura} is essentially equivalent????? to conditions  \cite[Eq. (2)-(4)]{ABGMS2015} (see xxxx mas abajo).   If $\Phi$ is as in Example \ref{ex:pq-laplac} and $\mathcal{L}=\mathcal{L}(t,x_1,x_2,y_1,y_2)$ is a lagrangian with $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\times\rr^d\times\rr^d\to\rr$ then inequality \eqref{eq:condicion-estructura} is related to estructure conditions like
 \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192}. As can be seen, condition \eqref{eq:condicion-estructura} is a more compact expression than \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192} and moreover   weaker, because  \eqref{eq:condicion-estructura} does not imply a control of
@@ -316,7 +316,7 @@ Moreover, our results still improve some results on $(p_1,p_2)$-lamplacian since
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2000local,chamra2017anisotropic,trudinger1974imbedding}.
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding}.
 
 If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obtain that
 \begin{equation}\label{eq:escalar_ine}
@@ -335,12 +335,22 @@ for every $|x|\geq M$. If $\Phi$ es a $\Delta_2$ function then $\Phi$ is bounded
 We consider that one of the most important aspects in considering $N_{\infty}$ functions is that it accounts for the Lagrange functions that present faster growth than powers, for example an exponential growth. Hence we consider it important to avoid imposing hypothesis that $\Phi$ to be $\Delta_2$. For some results we will need that $\Psi$ to be $\Delta_2$. 
 
 
-Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we wrtite $\Phi_1\strictif\Phi_2$ if there exists non negative numbers $k$ and $r_0$ such that
-\begin{equation}\label{eq:orden} \Phi_1(x)\leq\Phi_2(kx),\quad |x|\geq r_0.\end{equation}
-For example if $\Phi$ is $\Delta_2$ then there exist $p\in (1,+\infty)$ such that $\Phi\strictif |x|^p$.  If for every $k>0$ there exists $r_0=r_0(k)>0$ such that \eqref{eq:orden} holds we write  $\Phi_1\llcurly\Phi_2$. 
+Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we write $\Phi_1\strictif\Phi_2$ if there exists non negative numbers $k$ and $C$ such that
+\begin{equation}\label{eq:orden} \Phi_1(x)\leq C+\Phi_2(kx),\quad x\in\rr^d.\end{equation}
+For example if $\Phi$ is $\Delta_2$ then there exist $p\in (1,+\infty)$ such that $\Phi\strictif |x|^p$.  If for every $k>0$ there exists $C=C(k)>0$ such that \eqref{eq:orden} holds we write  $\Phi_1\llcurly\Phi_2$. 
+
+If $\Phi_1\strictif \Phi_2$ then $\Psi_2\strictif\Psi_1$ as the following simple computation proves 
+\[
+\begin{split}
+  \Psi_1(k\xi)&\geq \sup \left\{k\xi\cdot x-\Phi_2(kx)-C\right\}\\
+&=\sup \left\{\xi\cdot x-\Phi_2(x)\right\}-C\\
+&=\Psi_2\left(\xi\right)-C.
+\end{split}
+\]
 
 
-If a Lagrange functio $\mathcal
+As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ with other functions $b$, $a$ and constant $\Lambda$ and $\lambda$.  
+
 
 
 
@@ -402,19 +412,24 @@ Consequently if $\Psi$ satisfies the $\Delta_2^{\infty}$-condition then $\lphi\l
 
 
 
-We define the \emph{Sobolev-Orlicz space} $\wphi$ by
+We define the \emph{Sobolev-Orlicz space} $\wphi\left([0,T],\rr^d\right)$ by
 \[\wphi\left([0,T],\rr^d\right):=\left\{u| u\in AC\left([0,T],\rr^d\right) \hbox{ and } u'\in \lphi\left([0,T],\rr^d\right)\right\},\]
 where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absolutely continuous functions defined on $[0,T]$. The space $\wphi\left([0,T],\rr^d\right)$ is a Banach space when equipped with the norm
 \begin{equation}\label{def-norma-orlicz-sob}
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
 
-We introduce the following subspaces of $\wphi$
-%%
-\begin{equation}\label{def-esp-orlicz-sob-per}
-  \wphie =\{u\in\wphi|u'\in\ephi\},\quad \wphie_T=\{u\in\wphie|u(0)=u(T)\}.
-\end{equation}
+Anisotropic Sobolev-Orlicz spaces were treated in \cite{cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding}. Usually functions in Sobolev spaces are required to be weakly differentiable. In the particular and simplest case of functions of a variable, the weak differentiability implies absolute continuity. Hence we can assume $u\in AC\left([0,T],\rr^d\right)$ for functions $u\in\wphi\left([0,T],\rr^d\right)$.
+% 
+% 
+% We introduce the following subspaces of $\wphi$
+% %%
+% \begin{equation}\label{def-esp-orlicz-sob-per}
+%   \wphie =\{u\in\wphi|u'\in\ephi\},\quad \wphie_T=\{u\in\wphie|u(0)=u(T)\}.
+% \end{equation}
 
+
+As is well known, an active research topic in mathematical analysis are the Sobolev and Poncare inequalities. This topic have also been treated in the framework of Anisotropic Orlicz-Sobolev mainly in \cite{cianchi2000fully,cianchi2004optimal,trudinger1974imbedding} for several variables functions and in \cite{chamra2017anisotropic} for functions of one single variable, $\Phi$ and $\Psi$ functions of $\Delta_2^{\infty}$ class.   We do not know a reference for the embedding of Sobolev-Orlicz anisotropic spaces in the space of continuous functions when $\Phi$ or $\Psi$ are not $\Delta_2^{\infty}$. Below we present the results that we will require in this article and we show in detail the case of the incrustation in the space of continuous functions in the simple case of function of one variable.  
 
 In order to find a modulus of continuity for functios in $\wphi$, and from there, to obtain compact embedding of $\wphi$, we define the function $A_{\Phi}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
@@ -448,11 +463,11 @@ Property in items \ref{it:prop3} and \ref{it:prop4} are obtained easily.
 
 \begin{example} Let $\Phi=\Phi_{p_1,p_2}$ be the function given in Example \eqref{ex:pq-laplac}.  We show that 
  \[
- K_1\min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\}\leq A_{\Phi}(r)\leq \min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\}
+ K\min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\}\leq A_{\Phi}(r)\leq \min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\}
 \]
 for some $K>0$, for every $1<p_1,p_2<\infty$. The second inequality follows directly from definition of $A_{\Phi}$. For the first inequality, we note that $|(y_1,y_2)|=r$ implies that $|y_1|\geq r/2$ or $|y_2|\geq r/2$. Then 
-\begin{equation}\label{eq:aphi}\Phi_{p_1,p_2}(y_1,y_2)\geq K\min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\},\end{equation}
-with $K=\min\{2^{-p_1},2^{-p_2}\}$. 
+\begin{equation}\label{eq:aphi}\Phi_{p_1,p_2}(y_1,y_2)\geq \min\{2^{-p_1},2^{-p_2}\}\min\left\{\frac{r^{p_1}}{p_1}, \frac{r^{p_2}}{p_2}\right\}.\end{equation}
+ 
  
   
 
@@ -504,8 +519,6 @@ Then, by second order necessary conditions \cite[p.333]{luenberger2015linear},
 
 
  As is customary, we will use the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
-
- The following lemma is an elementary generalization to anisotropic Sobolev-Orlicz spaces of known results of Sobolev spaces.
 
 
 
