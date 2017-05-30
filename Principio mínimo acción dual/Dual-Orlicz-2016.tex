@@ -103,7 +103,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\ccdot}{\b{\cdot}}
 \renewcommand{\leq}{\leqslant} 
 \renewcommand{\geq}{\geqslant} 
-\newcommand{\epsi}{E^{\Phie}}
+\newcommand{\epsi}{E^{\Psi}}
 \newcommand{\Phie}{\Phi^{*}}
 
 
@@ -316,7 +316,8 @@ Moreover, our results still improve some results on $(p_1,p_2)$-lamplacian since
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding}.
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding,gwiazda2013anisotropic}.
+Note that, unlike in \cite{gwiazda2013anisotropic}, we do not require that $N_{\infty}$ functions be superlinear near from 0, i.e. $\Phi(x)/|x|\to 0$ when $|x|\to 0$. However, most of the results proved in \cite{gwiazda2013anisotropic} do not depend on this property.
 
 If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obtain that
 \begin{equation}\label{eq:escalar_ine}
@@ -399,13 +400,13 @@ $\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequal
   \langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
 \end{equation}
 
-We highlight the following result that is a consequence of Theorems 7.1 and 7.3 in  \cite{Orliczvectorial2005}.
+We highlight the following result (see \cite[Th. 3.3]{gwiazda2013anisotropic}).
 
-\begin{prop} If $\Psi$ satisfies the $\Delta_2^{\infty}$-condition then $\lphi\left([0,T],\rr^d\right)=\left[\lpsi\left([0,T],\rr^d\right)\right]^*$.  
+\begin{prop} $\lphi\left([0,T],\rr^d\right)=\left[\epsi\left([0,T],\rr^d\right)\right]^*$.
  
 \end{prop}
 
-Consequently if $\Psi$ satisfies the $\Delta_2^{\infty}$-condition then $\lphi\left([0,T],\rr^d\right)$ can be equipped with the weak* topology.
+Consequently  $\lphi\left([0,T],\rr^d\right)$ can be equipped with the weak* topology induced by $\epsi\left([0,T],\rr^d\right)$.
 
 
 
@@ -419,7 +420,7 @@ where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absol
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
 
-Anisotropic Sobolev-Orlicz spaces were treated in \cite{cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding}. Usually functions in Sobolev spaces are required to be weakly differentiable. In the particular and simplest case of functions of a variable, the weak differentiability implies absolute continuity. Hence we can assume $u\in AC\left([0,T],\rr^d\right)$ for functions $u\in\wphi\left([0,T],\rr^d\right)$.
+Anisotropic Sobolev-Orlicz spaces were treated in \cite{cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding}. Usually functions in Sobolev spaces are required to be weakly differentiable. In the particular and simplest case of functions of one variable, the weak differentiability implies absolute continuity. Hence we can assume $u\in AC\left([0,T],\rr^d\right)$ for functions $u\in\wphi\left([0,T],\rr^d\right)$.
 % 
 % 
 % We introduce the following subspaces of $\wphi$
@@ -517,6 +518,17 @@ Then, by second order necessary conditions \cite[p.333]{luenberger2015linear},
 
 
 
+ Recall that a function   $w:[0,+\infty)\to [0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example $w(s)=sA_{\Phi}^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
+\begin{equation}\label{w-holder}|u(t)-u(s)|\leq Cw(|t-s|).
+\end{equation}
+
+
+We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$ and it is a Banach space with norm
+\[\|u\|_{  C^w([0,T],\rr^d) }  :=\|u\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|u(t)-u(s)|}{w(|t-s|)}.\]
+
+
+
+
 
  As is customary, we will use the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
 
@@ -539,7 +551,7 @@ $A_{\Phi}: \rr^+ \to \rr^+$ be the function defined by \eqref{eq:inversa-gral}. 
   \Phi\left(\tilde{u}(t)\right)\leq\frac{1}{T} \int_0^T \Phi\left(Tu'(r)\right)dr.\tag{Poincar\'e-Wirtinger's inequality}
 \end{equation}
 
-\item\label{it:embeding} If $\Phi$ is $N_{\infty}$ then the space $\wphi\left([0,T],\rr^d\right)$ is compactly embedded in the space of continuous functions $C\left([0,T],\rr^d\right)$.
+\item\label{it:embeding} If $\Phi$ is $N_{\infty}$ then the space $\wphi\left([0,T],\rr^d\right)$ is compactly embedded in the space of  continuous functions $C([0,T],\rr^d)$.
 \end{enumerate}
 \end{lem}
 
@@ -570,7 +582,15 @@ Applying Jensen's inequality two times, we get
 \frac{1}{T}\int_0^T \frac{1}{|t-s|} \int_s^t\Phi\left(|t-s| u'(r)\right)drds
 \end{split}
 \end{equation*}
-From \eqref{eq:escalar_ine} we have that $\Phi(rx)/r$ is increasing with respecto to $r>0$ for $x\in\rr^d$ fix. Therefore, previous inequality  implies \eqref{eq:wirtinger}.
+From \eqref{eq:escalar_ine} we have that $\Phi(rx)/r$ is increasing with respecto to $r>0$ for $x\in\rr^d$ fix. Therefore, previous inequality  implies \eqref{eq:wirtinger}. If we apply this inequality to the function $\left(T\|u'\orlnor\right)^{-1}u$ we obtain
+\[\Phi\left(\frac{\tilde{u}(t)}{T\|u'\orlnor}\right)\leq\frac{1}{T}\int_0^T \Phi\left(\frac{u'(r)}{\|u'\orlnor}\right)dr\leq\frac{1}{T}.\]
+Using Proposition \ref{prop:AsubPhi}\eqref{it:prop3} we obtain $\tilde{u}\in L^{\infty}$ and
+\begin{equation}\label{eq:cotau'}
+ |\tilde{u}(t)|\leq TA_{\Phi}^{-1}\left(\frac{1}{T}\right)\|u'\orlnor.
+\end{equation}
+
+
+
 
 In order to prove the Sobolev's inequality, we note that, using Jensen's inequality and 
 the definition of $\|u\orlnor$, we obtain
@@ -579,23 +599,32 @@ the definition of $\|u\orlnor$, we obtain
 \]
 Then  by By Proposition \ref{prop:AsubPhi}\eqref{it:prop3} 
 \[|\overline{u}|\leq A_{\Phi}^{-1}\left(\frac{1}{T}\right) \|u\orlnor.\]
-Therefore, from this and \eqref{wirtinger} we get
+Therefore, from this and \eqref{eq:cotau'} we get
 
 \[\begin{split}
- \|u\linf &\leq |\overline{u}|+\|\tilde{u}\linf\\
- &\leq  
- A_{\Phi}^{-1}\left(\frac{1}{T}\right) \|u\orlnor+T A_{\Phi}^{-1}\left(\frac{1}{T}\right)\|u'\orlnor\\
- &\leq A_{\Phi}^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor
+ \|u\linf &\leq |\overline{u}|+\|\tilde{u}\linf\leq A_{\Phi}^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor
  \end{split}
  \]
  
-
-
-
-In order to prove item 3, we take a bounded sequence
-$u_n$ in $\wphi\left([0,T],\rr^d\right)$. Since $\Phi$ is $N_{\infty}$, from Proposition \ref{prop:AsubPhi}\eqref{it:prop4}  we obtain $sA_{\Phi}^{-1}(1/s)\to 0$ when $s\to 0$. Therefore \eqref{in-sob-cont} implies that $u_n$ are equicontinuous. Furthermore \eqref{sobolev} implies that $u_n$ is bounded in $C\left([0,T],\rr^d\right)$. Therefore by the Arzela-Ascoli Theorem we  obtain a subsequence $n_k$ and  $u\in C\left([0,T],\rr^d\right)$ with $u_{n_k}\to u$ in $C\left([0,T],\rr^d\right)$.
-
+\ref{in-sob-cont} and  \ref{eq:sobolev} imply that there exist $C_T>0$ with
+\[\|u\|_{  C^w([0,T],\rr^d) }\leq   C_T\|u\sobnor,\]
+i.e. $\wphi\left([0,T],\rr^d\right)\hookrightarrow C^w([0,T],\rr^d)$.
+As a consequence of Arzela-Ascoli Theorem
+ the embedding $C\left([0,T],\rr^d\right)\hookrightarrow C^w([0,T],\rr^d)$ is  compact. It was proved in  \cite[Prop. 5.13]{driver}   for the case $w(s)=|s|^{\alpha}$ with $0< \alpha\leq 1$. For  $w$  arbitrary, the proof follows with some obvious modifications. Consequently the embedding  $\wphi\left([0,T],\rr^d\right)\hookrightarrow C([0,T],\rr^d)$ is compact.
 \end{proof}
+
+
+Given a function $a:\mathbb{R}^d\to \mathbb{R}$, we define the composition operator $\b{a}:\mathcal{M}\to \mathcal{M}$ by $\b{a}(u)(x)= a(u(x))$.
+We will often use the following result whose proof can be performed as that of  Corollary 2.3 in \cite{ABGMS2015}.
+\begin{lem}\label{lem:cota-a}
+\label{a_bound} If $a\in C(\mathbb{R}^d,\mathbb{R}^+)$ then $\b{a}:\wphi\to L^{\infty}([0,T])$ is bounded.
+More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\infty)$ such that
+ $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
+\end{lem}
+
+
+
+
 
 
 \begin{lem}\label{segundo lema}
@@ -638,58 +667,6 @@ Then $h\in L^1([0,T],\rr)$.
 
 
 \section{Differentiability Gate\^aux of action integrals in anisotropic Orlicz spaces}
-% In this section we give a brief introduction to superposition operators between anistropic Orlicz Spaces.  
-% We apply these results to obtain Gate\^aux differentiability of                                                                                action integrals associated to lagrangian functions defined on Sobolev-Orlicz spaces.
-% 
-% Henceforth we assume that  $f:[0,T]\times \rr^d\to\rr^d$is a \emph{Carath\'eodory function}, i.e.
-% 
-% \begin{enumerate}
-%  \item[\namedlabel{eq:carathe}{(C)}] $f$ is measurable with respect to $t\in [0,T]$ for every  $x\in\rr^d$, and $f$ is a continuous function with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
-% \end{enumerate}
-% 
-% 
-% 
-% 
-% \begin{defi}
-%  For $f:[0,T]\times \rr^d\to\rr^d$  we denote by $\b{f}$ the Nemytskii (o superposition) operator defined for functions $u:[0,T]\to\rr^d$ by
-% \[\b{f}u(t)=f(t,u(t))\]
-% \end{defi}
-% 
-% In the following Theorem we enumerate  some known properties for superposition operators defined on anisotropic Orlicz spaces of vector functions.   For the proofs see \cite{krasnosel2011integral} for scalar functions  and
-% \cite{zbMATH04038592,zbMATH03983966,zbMATH03942215} for the generalization to  $\mathbb{R}^d$-valued  (moreover Banach spaces valued)  functions in a anisotropic Orlicz Spaces (moreover modular anisotropic spaces).
-% 
-% \begin{thm} We assume that $f$ satisfies condition \eqref{eq:carathe} and that $\Phi_1,\Phi_2:\rr^d\to [0,+\infty)$ are anisotropic Young functions. Then
-% \begin{enumerate}
-%  \item\label{it:measure}\emph{Measurability.}  The operator $\b{f}$ maps  measurable function into measurable functions
-%  \item\label{it:exten}\emph{Extensibility.}  If the operator $\b{f}$ acts from the ball $B_{L^{\Phi_1}}(r):=\{ u\in L^{\Phi_1}| \|u\|_{L^{\Phi_1}}<r\}$ into the space $L^{\Phi_2}$ or the space $E^{\Phi_2}$ then $\b{f}$ can be extended  from $\Pi(E^{\Phi_1},r)$ into space $L^{\Phi_2}$ or  $E^{\Phi_2}$, respectively.
-%  \item\label{it:exten}\emph{Continuity.} If the operator $\b{f}$ acts from $\Pi(E^{\Phi_1},r)$ into space $E^{\Phi_2}$, then $\b{f}$ is continuous.
-% \end{enumerate}
-% \end{thm}
-% 
-
-
-Given a continuous function $a\in C(\mathbb{R}^n,\mathbb{R}^+)$, we define the composition operator $a:\mathcal{M}_d\to \mathcal{M}_d$ by $\b{a}(u)(x)= a(u(x))$.
-
-We will often use the following result whose proof can be performed as that of  Corollary 2.3 in \cite{ABGMS2015}. 
-\begin{lem}\label{lem:cota-a}
-\label{a_bound} If $a\in C(\mathbb{R}^d,\mathbb{R}^+)$ then $\b{a}:\wphi\to L^{\infty}([0,T])$ is bounded. 
-More concretely,  there exists a non decreasing function $A:\mathbb{R}^+\to\mathbb{R}^+$ such that
- $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
-\end{lem}
-
-
-\begin{proof}  Let $A \in C(\mathbb{R}^+,\mathbb{R}^+)$ be a  non decreasing, continuous function defined by  
-$\alpha(s):=\sup_{\|x\|\leq s, x \in \rr^d}|a(x)|$.  If $u \in \wphi_d$ then, by  \ref{eq:sobolev}, for a.e. $t\in [0,T]$
-\[a(u(t))\leq \alpha (\|u\|_{L^{\infty}})\leq 
-\alpha \left(
-A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\right)=: 
-A(\|u\sobnor).\]
-\end{proof}
-
-
-
-HABR\'IA QUE VER D\'ONDE SE UBICA LA CONDICI\'ON DE ESTRUCTURA...QUIZ\'AS EN LA INTRODUCCI\'ON?....
-
 
 Next, we deal with the differentiability of the action integral 
 \begin{equation}\label{eq:integral_accion}
