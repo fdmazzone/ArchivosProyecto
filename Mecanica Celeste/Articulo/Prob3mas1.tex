@@ -219,9 +219,9 @@ i.e. every maximal equidistant from origin set of bodies has center of mass equa
 
 If condition \eqref{eq:suma0} holds then equation \eqref{eq:newton} is reduced to
 \begin{equation}\label{eq:eq_new_red}
- \ddot{z}=-\sum_{i=1 }^n\frac{m_iz}{(r_i^2+z^2)^{\frac32}}.
+ \ddot{z}=-\sum_{i=1 }^n\frac{m_iz}{(s_i^2+z^2)^{\frac32}},
 \end{equation}
-
+with  $s_i=|q_i^0|$.
 
 
 
@@ -232,9 +232,9 @@ CC is \emph{admissible} if it is non-collisional and satisfies \eqref{eq:suma0}.
 The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses are equal the CC is a square.
 \end{thm}
 
-\begin{thm}\label{thm:prin_ine} We assume that $q_1,\ldots,q_n$ is a admisible CC. A sufficient condition for that the problem $(P)$ has sotutions is that
+\begin{thm}\label{thm:prin_ine} We assume that $q_1,\ldots,q_n$ is a admisible CC. A sufficient condition for that the problem $(P)$ has non trivial sotutions is that
 \begin{equation}\label{eq:ine_prin}
- \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{|q_i|^3}\right)\left(\sum_{i=1}^nm_i|q_i|^2\right).
+ \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{s_i^3}\right)\left(\sum_{i=1}^nm_is_i^2\right).
 \end{equation}
 
 
@@ -341,7 +341,12 @@ In the case of 4-bodies, we have again that $\# F_r\geq 2$.  We consider two cas
 
 
 
-\begin{proof}[Proof Theorem \ref{thm:prin_ine}] We follows a similar argument that \cite{zhao2015nonplanar}. We prove the existence of solutions by means of variational techniques.
+\begin{proof}[Proof Theorem \ref{thm:prin_ine}] The following reasoning follows ideas developed in \cite{zhao2015nonplanar} and \cite{li2013characterization}.  We consider the action integral
+\[I(z)=\int_0^T\frac12|z'|^2+\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}dt,\]
+Then $T$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $I$ in the space $H^1_T([0,T],\rr)$ of the functions  absolutely continuous, $T$-periodic with $u'\in L^2([0,T],\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $I$ has minimum.  The functional $I$ is not coercive in $H^1_T([0,T],\rr)$,  this deficiency is drawn with symmetry techniques (see \cite{David-2004}). There is an action of the group $\mathbb{Z}_2$ on $H^1_T([0,T],\rr)$ defined by $(\bar{0}\cdot u)(t)=u(t)$ and $(\bar{1}\cdot u)(t)=-u(t+\frac{T}{2})$. The functional $I$ is $\mathbb{Z}_2$-invariant. We define the space of all $\mathbb{Z}_2$-symmetric funcions (assosiated to the italian symetry) \[\Lambda([0,T],\mathbb{R}):=\left\{ u\in H^1_T([0,T],\rr) | u(t)=-u\left(t+\frac{T}{2}\right)\right\}.\]
+Then a critical point of $I$ in $\Lambda([0,T],\mathbb{R})$ is a critical point of $I$ in $H^1_T([0,T],\rr)$ (see \cite{David-2004} and \cite{RichardPalais274}). Moreover, the funciontal $I$ restricted to $\Lambda$  is coercive. This follows from an obvious adaptation of proposition 4.1 of \cite{David-2004}.
+
+
 
 \end{proof}
 
