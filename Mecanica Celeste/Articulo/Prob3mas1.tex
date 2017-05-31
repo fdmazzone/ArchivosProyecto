@@ -250,7 +250,7 @@ The only 3-body admissible CC is the equilateral triangle with three equal masse
 
 
 
-\begin{lem}\label{lem:1} For $c>0$ we define the function $y_c(t):=(c+t)^{-3/2}$. If $0<t_1<t_2<\ldots<t_k$ then the functions $y_j(t):=y_{t_j}(t)$  are linearly independent on  each open interval   $I\subset \mathbb{R}^+$.
+\begin{lem}\label{lem:1} For $c>0$ we define the function $y_c(t):=(c+t)^{-3/2}$. If $0<t_1<t_2<\ldots<t_k$ then the functions $y_j(t):=y_{t_j}(t)$  are linearly independent on  each open interval   $\mathcal{I}\subset \mathbb{R}^+$.
 \end{lem}
 \begin{proof} It is sufficient to prove that Wronskian
 
@@ -261,7 +261,7 @@ The only 3-body admissible CC is the equilateral triangle with three equal masse
 			      \frac{d^{k-1}y_1}{dt^{k-1}}&  \cdots & \frac{d^{k-1}y_k}{dt^{k-1}}\\
                            \end{pmatrix}
 \]
-is not null on $I$.
+is not null on $\mathcal{I}$.
 
 Using induction is easy to show that
 \begin{equation}\label{eq:der_ind}\frac{d^iy_c}{dt^i}=\beta_{i}y_{c}^{\frac{2i+3}{3}},\quad\hbox{for some }\beta_{i}\neq 0, \hbox{ and for all }i=1,\ldots.
@@ -312,7 +312,7 @@ where
        0_{1\times 2} & 0\\
      \end{pmatrix},
 \]
-where $0_{n\times m}$ and $I_{n}$ denote the null $n\times m$ matrix  and the identity $n\times n$ matrix respectively. Assuming that the masless particle is moving on the $z$-axis then $\xi=q=(0,0,z)$ and the Coriolis and centrifugal forces,   $2\nu B\dot{\xi}$ and $\nu^2 C\xi$ respectively, are null. Therefore, taking account in the first two equation in \eqref{eq:mov_rot} and identifying the vectors $q_i^0$, $i=1,\ldots,n$ with vectors in $\rr^2$, we have
+where $0_{n\times m}$ and $\mathcal{I}_{n}$ denote the null $n\times m$ matrix  and the identity $n\times n$ matrix respectively. Assuming that the masless particle is moving on the $z$-axis then $\xi=q=(0,0,z)$ and the Coriolis and centrifugal forces,   $2\nu B\dot{\xi}$ and $\nu^2 C\xi$ respectively, are null. Therefore, taking account in the first two equation in \eqref{eq:mov_rot} and identifying the vectors $q_i^0$, $i=1,\ldots,n$ with vectors in $\rr^2$, we have
 \[
 \sum_{i=1}^n\frac{m_iq_i^0}{|q_i^0-\xi|^3}=0.
 \]
@@ -320,7 +320,7 @@ where $0_{n\times m}$ and $I_{n}$ denote the null $n\times m$ matrix  and the id
 Let $D=\{|q_i^0|: i=1,\ldots,n\}$.  Suppose that $D=\{r_1,\ldots,r_k\}$, with $r_i\neq r_j$ for $i\neq j$, and  $\{1,\ldots,n\}=F_1\cup \cdots\cup F_k$, where if $i\in F_j$ then $|q_i^0|=r_j$. Then
 \[\sum_{j=1}^k\left\{\frac{1}{(r_j^{2}+z^2)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0.\]
 
-Since we are considering a non-stationary solution, we have that $z(t)$ is not constant. Therefore there exists an interval $I\subset\rr^+$ where
+Since we are considering a non-stationary solution, we have that $z(t)$ is not constant. Therefore there exists an interval $\mathcal{I}\subset\rr^+$ where
 \[\sum_{j=1}^k\left\{\frac{1}{(r_j^{2}+s)^{3/2}}\sum_{i\in F_j}m_iq_i^0\right\}=0,\quad s\in I.\]
 Then, according to Lemma \ref{lem:1}, we obtain \eqref{eq:suma0}.
 
@@ -342,13 +342,22 @@ In the case of 4-bodies, we have again that $\# F_r\geq 2$.  We consider two cas
 
 
 \begin{proof}[Proof Theorem \ref{thm:prin_ine}] The following reasoning follows ideas developed in \cite{zhao2015nonplanar} and \cite{li2013characterization}.  We consider the action integral
-\[I(z)=\int_0^T\frac12|z'|^2+\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}dt,\]
-Then $T$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $I$ in the space $H^1_T([0,T],\rr)$ of the functions  absolutely continuous, $T$-periodic with $u'\in L^2([0,T],\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $I$ has minimum.  The functional $I$ is not coercive in $H^1_T([0,T],\rr)$,  this deficiency is drawn with symmetry techniques (see \cite{David-2004}). There is an action of the group $\mathbb{Z}_2$ on $H^1_T([0,T],\rr)$ defined by $(\bar{0}\cdot u)(t)=u(t)$ and $(\bar{1}\cdot u)(t)=-u(t+\frac{T}{2})$. The functional $I$ is $\mathbb{Z}_2$-invariant. We define the space of all $\mathbb{Z}_2$-symmetric funcions (assosiated to the italian symetry) \[\Lambda([0,T],\mathbb{R}):=\left\{ u\in H^1_T([0,T],\rr) | u(t)=-u\left(t+\frac{T}{2}\right)\right\}.\]
-Then a critical point of $I$ in $\Lambda([0,T],\mathbb{R})$ is a critical point of $I$ in $H^1_T([0,T],\rr)$ (see \cite{David-2004} and \cite{RichardPalais274}). Moreover, the funciontal $I$ restricted to $\Lambda$  is coercive. This follows from an obvious adaptation of proposition 4.1 of \cite{David-2004}.
+\[\mathcal{I}(z)=\int_0^T\frac12|z'|^2+\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}dt,\]
+Then $T$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $\mathcal{I}$ in the space $H^1_T([0,T],\rr)$ of the functions  absolutely continuous, $T$-periodic with $u'\in L^2([0,T],\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $\mathcal{I}$ has minimum.  The functional $\mathcal{I}$ is not coercive in $H^1_T([0,T],\rr)$,  this deficiency is drawn with symmetry techniques (see \cite{David-2004}). There is an action of the group $\mathbb{Z}_2$ on $H^1_T([0,T],\rr)$ defined by $(\bar{0}\cdot u)(t)=u(t)$ and $(\bar{1}\cdot u)(t)=-u(t+\frac{T}{2})$. The functional $\mathcal{I}$ is $\mathbb{Z}_2$-invariant. We define the space of all $\mathbb{Z}_2$-symmetric funcions (assosiated to the italian symetry) \[\Lambda([0,T],\mathbb{R}):=\left\{ u\in H^1_T([0,T],\rr) | u(t)=-u\left(t+\frac{T}{2}\right)\right\}.\]
+The funciontal $\mathcal{I}$ restricted to $\Lambda$  is coercive. This follows from an obvious adaptation of proposition 4.1 of \cite{David-2004}. We note that $F(z):=\sum_{i=1}^nm_i(s_i^2+z^2)^{-\frac{1}{2}}$ satisfies the condition $(A)$ in \cite[p. 12]{Mawhin2010}, then $\mathcal{I}$  is continuously differentiable and weakly lower semicontinuous on $H_{T}^1([0,T],\rr)$ (see \cite[p. 13]{Mawhin2010}). Therefore $\mathcal{I}$ has a minimum $u_0$ in $\Lambda([0,T],\mathbb{R})$. Then by the Palais' principle simmetric criticality,  $u_0$ is a critical point of $\mathcal{I}$ in $H^1_T([0,T],\rr)$ (see \cite{David-2004} and \cite{RichardPalais274}).
 
-
-
+We use the second variation $\delta^2 \mathcal{I}$ in order to show  that $u_0\nequiv 0$. It is well known (see \cite[Th. 1.3.1]{jost1998calculus}) that if $u_0$ is a minimum of $\mathcal{I}$ on $H^1_T([0,T],\rr)$  then $\delta^2 \mathcal{I} (u_0,\varphi)\geq 0$ for all $\varphi\in H^1_T([0,T],\rr)$. In our case
+\[\delta^2\mathcal{I}(0,\varphi)=\int_0^T |\varphi'|^2-\sum_{i=1}^{n}\frac{m_i}{r_i^3}\varphi^2 dt,\]
+(see \cite[Eq. 1.3.6]{jost1998calculus}). In particular for $\varphi(t)=\sin (\sqrt{\lambda}t)$ we have that
+\begin{equation}\label{eq:form.delta2}
+ \delta^2 \mathcal{I} (0,\varphi)=\left( \lambda-\sum_{i=1}^{n}\frac{m_i}{r_i^3} \right)\frac{\pi}{\sqrt{\lambda}}.
+\end{equation}
+Taking account that $\lambda=U(q_1,\ldots,q_n)/\sum_{i=1}^{n}m_i|q_i|^2$  (see \cite[p. 109]{JaumeLlibre276}),  \eqref{eq:form.delta2} and \eqref{eq:ine_prin} we obtain that $\delta^2\mathcal{I}(0,\varphi)<0$. It is sufficient  to guarantee that $u_0\equiv 0$ is not a minimum.
 \end{proof}
+
+
+
+
 
 
 
