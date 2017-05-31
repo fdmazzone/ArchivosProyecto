@@ -610,7 +610,7 @@ Therefore, from this and \eqref{eq:cotau'} we get
 \[\|u\|_{  C^w([0,T],\rr^d) }\leq   C_T\|u\sobnor,\]
 i.e. $\wphi\left([0,T],\rr^d\right)\hookrightarrow C^w([0,T],\rr^d)$.
 As a consequence of Arzela-Ascoli Theorem
- the embedding $C\left([0,T],\rr^d\right)\hookrightarrow C^w([0,T],\rr^d)$ is  compact. It was proved in  \cite[Prop. 5.13]{driver}   for the case $w(s)=|s|^{\alpha}$ with $0< \alpha\leq 1$. For  $w$  arbitrary, the proof follows with some obvious modifications. Consequently the embedding  $\wphi\left([0,T],\rr^d\right)\hookrightarrow C([0,T],\rr^d)$ is compact.
+ the embedding $C^w\left([0,T],\rr^d\right)\hookrightarrow C([0,T],\rr^d)$ is  compact. This was proved in  \cite[Prop. 5.13]{driver}   for the case $w(s)=|s|^{\alpha}$ with $0< \alpha\leq 1$. For  $w$  arbitrary, the proof follows with some obvious modifications. Consequently the embedding  $\wphi\left([0,T],\rr^d\right)\hookrightarrow C([0,T],\rr^d)$ is compact.
 \end{proof}
 
 
@@ -628,7 +628,7 @@ More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\i
 
 
 \begin{lem}\label{segundo lema}
-Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\Pi(\ephi,1)$ converging to  ${u}\in \Pi(\ephi,1)$  in the $\lphi$-norm. Then, there exist a subsequence
+Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\Pi(\ephi,\Lambda)$ converging to  ${u}\in \Pi(\ephi,\Lambda)$  in the $\lphi$-norm. Then, there exist a subsequence
 ${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ and $\Phi({u}_{n_k})\leq h\quad\text{a.e.}$
 \end{lem}
 
@@ -670,7 +670,7 @@ Then $h\in L^1([0,T],\rr)$.
 
 Next, we deal with the differentiability of the action integral 
 \begin{equation}\label{eq:integral_accion}
-I(u)=\int_{0}^T \mathcal{L}(t,u(t),\dot{u}(t))\ dt.
+I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
 
 \begin{thm}\label{teo:diferenciabilidad}
@@ -678,60 +678,53 @@ Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{
 Then the following statements hold:
 \begin{enumerate}
 \item \label{it:T1item1} \label{A1} The action integral given by \eqref{eq:integral_accion}
-is finitely defined on $\domi:=W^{1}\lphi\cap\{u|\dot{u}\in\Pi(\ephi,1)\}$.
+is finitely defined on the set $\domi_{\Lambda}:=W^{1}\lphi\cap\{u|u'\in\Pi(\ephi,\Lambda)\}$.
 
-\item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi$ and  its derivative $I'$ is demicontinuous from 
-$\domi$  into $\left[\wphi \right]^*$. Moreover, $I'$ is given by the following expression
+\item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi_{\Lambda}$ and  its derivative $I'$ is demicontinuous from 
+$\domi_{\lambda}$  into $\left[\wphi \right]^*$, i.e. $I'$ is continuous when $\domi_{\lambda}$ is equipped with the strong topology and   $\left[\wphi \right]^*$ with the weak* topology. Moreover, $I'$ is given by the following expression
 \begin{equation}\label{eq:DerAccion}
-\langle  I'(u),v\rangle= \int_0^T \left\{D_{x}\mathcal{L}\big(t,u,\dot{u}\big)\ccdot v
-+ D_{y}\mathcal{L}\big(t,u,\dot{u}\big)\ccdot\dot{v}\right\} \ dt.
+\langle  I'(u),v\rangle= \int_0^T \left\{D_{x}\mathcal{L}\big(t,u,u'\big)\ccdot v
++ D_{y}\mathcal{L}\big(t,u,u'\big)\ccdot v'\right\} \ dt.
 \end{equation}
 
-\item\label{it:T1item4}  If  $\Psi \in \Delta_2$ then 
-  $I'$ is continuous from $\domi$ into $\left[\wphi\right]^*$ when both spaces are equipped with the strong topology.
+\item\label{it:T1item4}  If  $\Psi \in \Delta^{\infty}_2$ then 
+  $I'$ is continuous from $\domi_{\Lambda}$ into $\left[\wphi\right]^*$ when both spaces are equipped with the strong topology.
 \end{enumerate}
 \end{thm}
 
 
 \begin{proof}
-Let $u\in \domi$.
-As 
-\begin{equation}\label{eq:inclusion3}
-\dot{u}\in\Pi(\ephi,1)\subset \claseor_1
-\end{equation}
-and \eqref{eq:inclusiones}, then $\Phi( \dot{u}(t)) \in L^1$.
-Now,
+Let $u\in \domi_{\Lambda}$. From \eqref{eq:inclusiones} we obtain $\Phi( u'(t)/\Lambda) \in L^1$.
+Now, from  \eqref{eq:condicion-estructura} and Lemma \ref{lem:cota-a} we have
  \begin{equation}\label{eq:cota-condicion-estructura}
-|\mathcal{L}(\cdot,u,\dot{u})|+ |D_{x}\mathcal{L}(\cdot,u,\dot{u})|
-+\Psi(D_{y}\mathcal{L}(\cdot,u,\dot{u}))
-\leq A(\|u\sobnor ) (b+ \Phi (\dot{u})) \in
+   \begin{split}
+|\mathcal{L}(t,u(t),u'(t))|&+ |D_{x}\mathcal{L}(t,u(t),u'(t))|
++\Psi\left(\frac{D_{y}\mathcal{L}(t,u,u')}{\lambda}\right)
+\\
+&\leq A(\|u\sobnor ) \left\{b(t)+ \Phi\left(\frac{u'(t)}{\Lambda}\right) \right\}\in
  L^1,
+\end{split}
 \end{equation}
-by  \eqref{eq:condicion-estructura} and Lemma \ref{lem:cota-a}.
-Thus item \eqref{it:T1item1} is proved.
+for every $u\in \domi_{\Lambda}$.
+Thus item \eqref{it:T1item1} is proved integrating this inequality.
 
 We split up the proof of item \ref{it:T1item3} into four steps.
 
-\noindent\emph{Step 1. The non linear operator  $u \mapsto D_{x}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ into $L^{1}([0,T])$ with the strong topology on both sets.} 
+\noindent\emph{Step 1. The non linear operator  $u \mapsto D_{x}\mathcal{L}(t,u,u')$ is continuous from $\domi_{\Lambda}$ into $L^{1}([0,T])$ with the strong topology on both sets.} 
 
 
-%If $u\in \domi$, from \eqref{eq:condicion-estructura} and \eqref{eq:inclusion3}, we obtain 
-%\begin{equation}\label{eq:DxL1}
-%|D_{x}\mathcal{L}(\cdot,u,\dot{u})|\leq A(\|u\sobnor) \left(b+\Phi\left(\dot{u})\right) \in L^1.
-%\end{equation}
 
-
-Let   $\{u_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\domi$  
-and let $u\in \domi$  such that $u_n\rightarrow u$ in $\wphi$.
+Let   $\{u_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\domi_{\Lambda}$  
+and let $u\in \domi_{\Lambda}$  such that $u_n\rightarrow u$ in $\wphi$.
 By \eqref{eq:sobolev}, we have 
 \[
-|u_n(t)-u(t)|\leq T A_{\Phi}^{-1}\left(\frac{1}{T}\right) \|u_n-u\orlnor
+|u_n(t)-u(t)|\leq C\|u_n-u\orlnor,
 \]
-then $u_n \to u$ uniformly.
-As $\dot{u}_n\rightarrow \dot{u}\in\domi$, by 
-  Lemma \ref{segundo lema}, there exist a subsequence of  $\dot{u}_{n_k}$ (again denoted $\dot{u}_{n_k}$) and a function  
+with $C=C(T)>0$. Then $u_n \to u$ uniformly.
+As $u'_n\rightarrow u'\in\domi_{\Lambda}$, by 
+  Lemma \ref{segundo lema}, there exist a subsequence of  $u'_{n_k}$ (again denoted $u'_{n_k}$) and a function  
 	$h\in L^1([0,T],\rr)$
-	such that  $\dot{u}_{n_k}\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_{n_k})\leq h\quad\text{a.e}$.  
+	such that  $u'_{n_k}\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_{n_k})\leq h\quad\text{a.e}$.  
 
 Since $u_{n_k}$, $k=1,2,\ldots,$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wphi$. 
 According to item \eqref{it:embeding} of   Lemma \ref{lem:inclusion orlicz}, 
@@ -739,25 +732,25 @@ According to item \eqref{it:embeding} of   Lemma \ref{lem:inclusion orlicz},
 there exists $M>0$ such that $\|\b{a}(u_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  
 From the previous facts and \eqref{eq:cota-condicion-estructura}, we get
 \begin{equation*}\label{eq:DxL1-bis}
-|D_{x}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})|\leq a(|u_{n_k}|)(b+\Phi(\dot{u}_{n_k}))\leq
+|D_{x}\mathcal{L}(\cdot,u_{n_k},u'_{n_k})|\leq a(|u_{n_k}|)(b+\Phi(u'_{n_k}))\leq
 M (b+h) \in L^1.
 \end{equation*}
 On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
-\[D_{x}\mathcal{L}(t,u_{n_k}(t),\dot{u}_{n_k}(t))\to D_{x}\mathcal{L}(t,u(t),\dot{u}(t))\quad\hbox{ for a.e. } t\in[0,T].\]
+\[D_{x}\mathcal{L}(t,u_{n_k}(t),u'_{n_k}(t))\to D_{x}\mathcal{L}(t,u(t),u'(t))\quad\hbox{ for a.e. } t\in[0,T].\]
 Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
 
 \noindent\emph{Step 2. The non linear operator   $u
- \mapsto  D_{y}\mathcal{L}(t,u,\dot{u})$ is continuous from $\domi$ with the strong topology  
+ \mapsto  D_{y}\mathcal{L}(t,u,u')$ is continuous from $\domi_{\Lambda}$ with the strong topology  
 into $\left[\lphi\right]^*$  with the weak$^*$ topology.}
 
- Let $u\in \domi$.  From  \eqref{eq:cota-condicion-estructura} it follows that 
+ Let $u\in \domi_{\Lambda}$.  From  \eqref{eq:cota-condicion-estructura} it follows that 
 %\begin{equation}\label{eq:DyLpsi}
-%\Psi(D_y\mathcal{L}(\cdot,u,\dot{u}))\leq a(|u|)(b+\Phi(\dot{u}))\in L^1
+%\Psi(D_y\mathcal{L}(\cdot,u,u'))\leq a(|u|)(b+\Phi(u'))\in L^1
 %\end{equation}
 %then
 \begin{equation}\label{eq:DyLpsi-clase}
-D_{y}\mathcal{L}(\cdot,u,\dot{u})\in C^{\Psi}.
+D_{y}\mathcal{L}(\cdot,u,u')\in C^{\Psi}.
 \end{equation}
 
 As\'i? o conviene poner la cota de $\Psi(D_y)$ expl\'icitamente???
@@ -768,59 +761,59 @@ $\lpsi\hookrightarrow  \left[\lphi\right]^*$ imply that the second member of
 
 
 
-Let $u_n,u\in \domi$ such that $u_n\to u$ in the norm of $\wphi$. 
-We must prove that  $D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n)\overset{w^*}{\rightharpoonup} 
-D_{y}\mathcal{L}(\cdot,u,\dot{u})$. 
+Let $u_n,u\in \domi_{\Lambda}$ such that $u_n\to u$ in the norm of $\wphi$. 
+We must prove that  $D_{y}\mathcal{L}(\cdot,u_n,u'_n)\overset{w^*}{\rightharpoonup} 
+D_{y}\mathcal{L}(\cdot,u,u')$. 
 On the contrary, there exist $v\in\lphi$, $\epsilon>0$ and a subsequence of $\{u_n\}$ (denoted  $\{u_n\}$ for simplicity)  such that
 \begin{equation}\label{cota_eps}
- \left| \langle D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n),v \rangle - 
-\langle  D_{y}\mathcal{L}(\cdot,u,\dot{u}),v \rangle\right|\geq \epsilon.
+ \left| \langle D_{y}\mathcal{L}(\cdot,u_n,u'_n),v \rangle - 
+\langle  D_{y}\mathcal{L}(\cdot,u,u'),v \rangle\right|\geq \epsilon.
 \end{equation}
 We have $u_n\rightarrow u$ in $\lphi$ and
-$\dot{u}_n\rightarrow \dot{u}$ in $\lphi$.
+$u'_n\rightarrow u'$ in $\lphi$.
  By Lemma \ref{segundo lema}, there exist a subsequence of $\{u_n\}$ (again denoted  $\{u_n\}$ for simplicity) 
 and a function $h\in L^1([0,T],\rr)$ such that 
-$u_n\rightarrow u$ uniformly, $\dot{u}_n\rightarrow \dot{u} \quad\text{a.e.}$ and $\Phi(\dot{u}_n)\leq h\quad\text{a.e.}$ 
+$u_n\rightarrow u$ uniformly, $u'_n\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_n)\leq h\quad\text{a.e.}$ 
 As in the previous step, since $u_n$ is a convergent sequence, 
 Lemma \ref{lem:cota-a} implies that $a(|u_n(t)|)$ is uniformly bounded by a certain constant $M>0$. 
 Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n$ instead of $u$, we have 
 \begin{equation}\label{eq:Dy-suc}
-  \Psi(D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n))   
+  \Psi(D_{y}\mathcal{L}(\cdot,u_n,u'_n))   
 	\leq M (b+h)\in L^1.
 \end{equation}
 As $v \in \lphi$ there exists $\lambda>0$ such that $\Phi(\frac{v}{\lambda})\in L^1$. 
 Now, by Young inequality and \eqref{eq:Dy-suc}, we have
 \begin{equation}\label{eq:Dy_lambda-Psi}
 \begin{split}
-&\lambda D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k})\ccdot \frac{v(t)}{\lambda} 
+&\lambda D_{y}\mathcal{L}(\cdot,u_{n_k},u'_{n_k})\ccdot \frac{v(t)}{\lambda} 
 \\
 &
 \leq 
-\lambda\left[\Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},\dot{u}_{n_k}))+\Phi\left(\frac{v}{\lambda}\right)\right]
+\lambda\left[\Psi(D_{y}\mathcal{L}(\cdot,u_{n_k},u'_{n_k}))+\Phi\left(\frac{v}{\lambda}\right)\right]
 \\
 &\leq \lambda M (b+h)+\lambda \Phi\left(\frac{v}{\lambda}\right)\in L^1
 \end{split}
 \end{equation}
   Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
 \begin{equation}\label{conv_debil}
-\int_0^T  D_{y}\mathcal{L}(t,u_{n_k},\dot{u}_{n_k})
+\int_0^T  D_{y}\mathcal{L}(t,u_{n_k},u'_{n_k})
 \ccdot  v \,dt 
 \to 
-\int_0^T D_{y}\mathcal{L}(t,u,\dot{u})\ccdot v\, dt \end{equation}
+\int_0^T D_{y}\mathcal{L}(t,u,u')\ccdot v\, dt \end{equation}
 which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
 \emph{Step 3.} We will prove \eqref{eq:DerAccion}. 
 %The proof follows similar lines as \cite[Thm. 1.4]{mawhin2010critical}. 
-For $u\in \domi$ and $0\neq v\in\wphi$, we define the function
-\[H(s,t):=\mathcal{L}(t,u(t)+s v(t),\dot{u}(t)+s\dot{v}(t)).\]
+For $u\in \domi_{\Lambda}$ and $0\neq v\in\wphi$, we define the function
+\[H(s,t):=\mathcal{L}(t,u(t)+s v(t),u'(t)+sv'(t)).\]
 
 %From \cite[Lemma 10.1]{KR} (or \cite[Thm. 5.5]{Orliczvectorial2005} ) 
 %we obtain that if $|u|\leq |v|$ then    $d(u,\ephi)\leq d(v,\ephi)$. Esto va????
 
-For  $|s|\leq s_0:=\min\{\left(1-d(\dot{u},\ephi)\right)/\|v\sobnor, 1-d(\dot{u},\ephi)\}$, 
+For  $|s|\leq s_0:=\min\{\left(1-d(u',\ephi)\right)/\|v\sobnor, 1-d(u',\ephi)\}$, 
 using triangle inequality we get 
 $
-d \left(\dot{u}+s \dot{v}, \ephi \right)<1$ and thus $\dot{u}+s\dot{v} \in \Pi(\ephi,1)$. 
+d \left(u'+s v', \ephi \right)<1$ and thus $u'+sv' \in \Pi(\ephi,1)$. 
 These facts imply, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
 that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
 
@@ -831,44 +824,44 @@ $
 then, by Lemma \ref{lem:cota-a}, there exists $M>0$ such that 
 $\|a(u+sv)\linf\leq M$.
 
-Let $\lambda>0$ such that $\Phi(\frac{\dot{v}}{\lambda})\in L^1$.
-On the other hand, if $\dot{v}\in\lphi$ and $|s|\leq s_0 \lambda^{-1}$,
+Let $\lambda>0$ such that $\Phi(\frac{v'}{\lambda})\in L^1$.
+On the other hand, if $v'\in\lphi$ and $|s|\leq s_0 \lambda^{-1}$,
 from the convexity and the parity of $\Phi$, we get
 \[
 \begin{split}
-&\Phi(\dot{u}+s\dot{v})=
-\Phi\left((1-s_0)\frac{\dot{u}}{1-s_0}+s_0 \frac{s}{s_0}\dot{v}\right)
+&\Phi(u'+sv')=
+\Phi\left((1-s_0)\frac{u'}{1-s_0}+s_0 \frac{s}{s_0}v'\right)
 \leq
-(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi\left(\frac{s}{s_0}\dot{v}\right)
+(1-s_0)\Phi\left(\frac{u'}{1-s_0}\right)+s_0 \Phi\left(\frac{s}{s_0}v'\right)
 \\
 &\leq
-(1-s_0)\Phi\left(\frac{\dot{u}}{1-s_0}\right)+s_0 \Phi\left(\frac{\dot{v}}{\lambda}\right)
+(1-s_0)\Phi\left(\frac{u'}{1-s_0}\right)+s_0 \Phi\left(\frac{v'}{\lambda}\right)
 \in L^1
 \end{split}
 \]
-As $\dot{u}\in\Pi(\ephi,1)$ then
+As $u'\in\Pi(\ephi,1)$ then
 \[
-d\left(\frac{\dot{u}}{1-s_0},E^{\Phi}\right)=\frac{1}{1-s_0}d(\dot{u}, E^{\Phi})<1
+d\left(\frac{u'}{1-s_0},E^{\Phi}\right)=\frac{1}{1-s_0}d(u', E^{\Phi})<1
 \]
-and therefore $\frac{\dot{u}}{1-s_0}\in C^\Phi$.
+and therefore $\frac{u'}{1-s_0}\in C^\Phi$.
 
 Now, applying \eqref{eq:cota-condicion-estructura}, \eqref{eq:Dy_lambda-Psi},  
 %the monotonicity of $\varphi$ and $\Phi$, 
-the fact that $v \in L^{\infty}$ and $\dot{v}\in\lphi$, 
+the fact that $v \in L^{\infty}$ and $v'\in\lphi$, 
 %and H\"older's inequality, 
 we get
 \begin{equation}\label{ctg}
 \begin{split}
-|D_s H(s,t)|&=\left| D_{x}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v})\ccdot v +  
-\lambda D_{y}\mathcal{L}(t, u+s v, \dot{u}+s\dot{v})\ccdot\frac{\dot{v}}{\lambda}\right| \\
-  & \leq M \left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\\
- &\quad+ \lambda\left[\Psi(D_{y}\mathcal{L}(t,u+sv,\dot{u}+s\dot{v}))+\Phi\left(\frac{\dot{v}}{\lambda}\right) \right]
+|D_s H(s,t)|&=\left| D_{x}\mathcal{L}(t,u+sv,u'+sv')\ccdot v +  
+\lambda D_{y}\mathcal{L}(t, u+s v, u'+sv')\ccdot\frac{v'}{\lambda}\right| \\
+  & \leq M \left[ b(t)+ \Phi(u'+sv')\right]|v|\\
+ &\quad+ \lambda\left[\Psi(D_{y}\mathcal{L}(t,u+sv,u'+sv'))+\Phi\left(\frac{v'}{\lambda}\right) \right]
 \\
- &\leq M \left\{\left[ b(t)+ \Phi(\dot{u}+s\dot{v})\right]|v|\right\}+
- \lambda M[ b(t)+ \Phi(\dot{u}+s\dot{v})]+\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+ &\leq M \left\{\left[ b(t)+ \Phi(u'+sv')\right]|v|\right\}+
+ \lambda M[ b(t)+ \Phi(u'+sv')]+\lambda \Phi\left(\frac{v'}{\lambda}\right)
  \\
  &=
- M [ b(t)+ \Phi(\dot{u}+s\dot{v})] (|v|+\lambda) +\lambda \Phi\left(\frac{\dot{v}}{\lambda}\right)
+ M [ b(t)+ \Phi(u'+sv')] (|v|+\lambda) +\lambda \Phi\left(\frac{v'}{\lambda}\right)
  \in L^1.
 \end{split}
 \end{equation}
@@ -876,13 +869,13 @@ we get
 Consequently, $I$ has a directional derivative and
 \[
 \langle I'(u),v \rangle=\frac{d}{ds}I(u+s v)\big|_{s=0}=\int_0^T  
-\left\{D_{x}\mathcal{L}(t,u,\dot{u})\ccdot v+ D_{y}\mathcal{L}(t,u,\dot{u})\ccdot \dot{v}\right\} \ dt.
+\left\{D_{x}\mathcal{L}(t,u,u')\ccdot v+ D_{y}\mathcal{L}(t,u,u')\ccdot v'\right\} \ dt.
 \]
 Moreover, from the previous formula, \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase}, and
 Lemma \ref{lem:inclusion orlicz}, we obtain
 \[
 |\langle I'(u),v \rangle| \leq \|D_{x}\mathcal{L}\|_{L^1} \| v\linf + 
-\|D_{y}\mathcal{L}\|_{\lpsi} \|\dot{v}\orlnor \leq C \|v\sobnor
+\|D_{y}\mathcal{L}\|_{\lpsi} \|v'\orlnor \leq C \|v\sobnor
 \]
 with a appropriate constant $C$.
 
@@ -890,26 +883,26 @@ This completes the proof of the G\^ateaux differentiability of $I$.
 
 
 
-\emph{Step 4. The operator $I':\domi  \to \left[\wphi_d
+\emph{Step 4. The operator $I':\domi_{\Lambda}  \to \left[\wphi_d
 \right]^* $ is demicontinuous.}
-This is a consequence  of the continuity of the mappings $u \mapsto D_{x}\mathcal{L}(t,u,\dot{u})$ and $u \mapsto
-D_{y}\mathcal{L}(t,u,\dot{u})$. Indeed, if $u_n,u\in \domi$ with $u_n\to u$ in the norm of $\wphi$ and $v \in
+This is a consequence  of the continuity of the mappings $u \mapsto D_{x}\mathcal{L}(t,u,u')$ and $u \mapsto
+D_{y}\mathcal{L}(t,u,u')$. Indeed, if $u_n,u\in \domi_{\Lambda}$ with $u_n\to u$ in the norm of $\wphi$ and $v \in
 \wphi$, then
 \[
 \begin{split}
-\left\langle  I'(u_{n}),v \right\rangle &= \int_0^T \left\{  D_{x}\mathcal{L}\left(t,u_n,\dot{u}_n\right)\ccdot
+\left\langle  I'(u_{n}),v \right\rangle &= \int_0^T \left\{  D_{x}\mathcal{L}\left(t,u_n,u'_n\right)\ccdot
 v +
- D_{y}\mathcal{L}\left(t,u_n,\dot{u}_n\right)\ccdot \dot{v}\right\} \ dt\\
-&\rightarrow \int_0^T \left\{ D_{x}\mathcal{L}\left(t,u,\dot{u}\right)\ccdot v+ 
-D_{y}\mathcal{L}\left(t,u,\dot{u}\right)\ccdot \dot{v}\right\} \ dt\\
+ D_{y}\mathcal{L}\left(t,u_n,u'_n\right)\ccdot v'\right\} \ dt\\
+&\rightarrow \int_0^T \left\{ D_{x}\mathcal{L}\left(t,u,u'\right)\ccdot v+ 
+D_{y}\mathcal{L}\left(t,u,u'\right)\ccdot v'\right\} \ dt\\
 &=\left\langle  I'(u),v \right\rangle.
 \end{split}
 \]
 
 
-In order to prove item  \ref{it:T1item4}, it is necessary to see that the maps $u\mapsto D_{x}\mathcal{L}(t,u,\dot{u})$  
-and $u\mapsto D_{y}\mathcal{L}(t,u,\dot{u})$  are norm continuous
-from $\domi $ into $L^1$ and
+In order to prove item  \ref{it:T1item4}, it is necessary to see that the maps $u\mapsto D_{x}\mathcal{L}(t,u,u')$  
+and $u\mapsto D_{y}\mathcal{L}(t,u,u')$  are norm continuous
+from $\domi_{\Lambda} $ into $L^1$ and
  $\lpsi$, respectively.  
 
 The continuity of the first map has already been proved in step 1. 
@@ -917,19 +910,19 @@ The continuity of the first map has already been proved in step 1.
 Si eliminamos la demicontinuidad del segundo item, hay que copiar 
 la continuidad de $D_x$ aqu\'i!!!
 
-Let $u_n, u \in \domi$ with $\|u_n- u\sobnor\to 0$.  
+Let $u_n, u \in \domi_{\Lambda}$ with $\|u_n- u\sobnor\to 0$.  
 
-Applying Lemma \ref{segundo lema} to $\dot{u}_n$, 
-there exists a subsequence (denoted $\dot{u}_n$ for simplicity)
+Applying Lemma \ref{segundo lema} to $u'_n$, 
+there exists a subsequence (denoted $u'_n$ for simplicity)
 such that
-$\dot{u}_n \in L^\Phi$ and a function  $h \in L^1$  such that  $\Psi(\dot{u}_n)\leq h$ and $\dot{u}_n \to \dot{u}$ a.e.
+$u'_n \in L^\Phi$ and a function  $h \in L^1$  such that  $\Psi(u'_n)\leq h$ and $u'_n \to u'$ a.e.
 
 Then, by \eqref{eq:Dy_lambda-Psi} we have
  $ \Psi(v_n) 
 	\leq m(t) \in L^1$
- being  $v_n:=D_{y}\mathcal{L}(\cdot,u_n,\dot{u}_n)$ and $m(t):= M (b+h)$. 
+ being  $v_n:=D_{y}\mathcal{L}(\cdot,u_n,u'_n)$ and $m(t):= M (b+h)$. 
 In addition, from the continuous differentiability of $\mathcal{L}$, we have that
-$v_n \to v$ a.e. where $D_y\mathcal{L}(\cdot,u,\dot{u})$.
+$v_n \to v$ a.e. where $D_y\mathcal{L}(\cdot,u,u')$.
 
 As  $\Psi\in\Delta_2$, there exists $c:\rr^+\to ???$ such that 
 $\Psi(\lambda x)\leq c(|\lambda|)\Psi(x)$. 
