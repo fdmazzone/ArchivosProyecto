@@ -121,8 +121,8 @@ Universidad Nacional de R\'{i}o Cuarto\\
 In this paper we discuss existence of periodic solutions for the following restricted nonplanar Newtonian $n+1$-body problem $P$ (see figure \ref{fig:conf_esp}):
 \begin{itemize}
  \item[$P_1$] We have $n$ primary bodies of masses $m_1,\ldots,m_n$ and an additional masless body.
- \item[$P_2$] The primary bodies are in a central  configuration rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is carried out in a plane $\Pi$.
- \item[$P_3$] The massless particle is moving periodically on the perpendicular line to $\Pi$ passing through the center of masses.
+ \item[$P_2$] The primary bodies are in a central  configuration rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is periodic and it is carried out in a plane $\Pi$.
+ \item[$P_3$] The massless particle is moving  on the perpendicular line to $\Pi$ passing through the center of masses, its motion is  periodic with the same period that the primaries. 
 \end{itemize}
 
 
@@ -232,7 +232,7 @@ CC is \emph{admissible} if it is non-collisional and satisfies \eqref{eq:suma0}.
 The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses are equal the CC is a square.
 \end{thm}
 
-\begin{thm}\label{thm:prin_ine} We assume that $q_1,\ldots,q_n$ is a admisible CC. A sufficient condition for that the problem $(P)$ has non trivial sotutions is that
+\begin{thm}\label{thm:prin_ine} We assume that $q_1,\ldots,q_n$ is a admisible CC. A necessary and sufficient condition for that the problem $(P)$ has non trivial sotutions is that
 \begin{equation}\label{eq:ine_prin}
  \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{s_i^3}\right)\left(\sum_{i=1}^nm_is_i^2\right).
 \end{equation}
@@ -353,6 +353,10 @@ We use the second variation $\delta^2 \mathcal{I}$ in order to show  that $u_0\n
  \delta^2 \mathcal{I} (0,\varphi)=\left( \lambda-\sum_{i=1}^{n}\frac{m_i}{r_i^3} \right)\frac{\pi}{\sqrt{\lambda}}.
 \end{equation}
 Taking account that $\lambda=U(q_1,\ldots,q_n)/\sum_{i=1}^{n}m_i|q_i|^2$  (see \cite[p. 109]{JaumeLlibre276}),  \eqref{eq:form.delta2} and \eqref{eq:ine_prin} we obtain that $\delta^2\mathcal{I}(0,\varphi)<0$. It is sufficient  to guarantee that $u_0\equiv 0$ is not a minimum.
+
+We prove now that \eqref{eq:ine_prin} is a necessary condition. We write \eqref{eq:eq_new_red}
+as $z''+q_1(t)z=0$ where $q_1(t)=\sum_{i=1}^{n} m_i \left(s_i^2 +z^2\right)^{-\frac32}$ and assume that $z$ is a periodic solucion of \eqref{eq:eq_new_red} with period $\frac{2\pi}{\sqrt{\lambda}}$. As $q_1(t)\geq \sum_{i=1}^{n} m_i s_i^{-3} $ for all $t\in \rr$, for the Strum's comparison theorem (see ),  the period of the function $z$ is  greater or equal than $2\pi \left(\sum_{i=1}^{n} m_i s_i^{-3}\right)^{-1}$, the period of the solution of $v''+\sum_{i=1}^{n} m_i s_i^{3}v=0$, i.e.  $\frac{2\pi}{\sqrt{\lambda}}\geq \left(2\pi \sum_{i=1}^{n} m_i s_i^{-3}\right)^{-1}$
+
 \end{proof}
 
 
