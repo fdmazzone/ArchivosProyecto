@@ -673,6 +673,9 @@ Next, we deal with the differentiability of the action integral
 I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
 \end{equation}
 
+In this direction, the following theorem is our main result. The proof of it follows the same lines as \cite[Th. 3.2]{ABGMS2015} but with some modifications by the lack of monotony of $\Phi$ with  respect to the euclidean norm and the fact that we do not have of the notion of absolutely continuous norm.
+
+
 \begin{thm}\label{teo:diferenciabilidad}
 Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{eq:condicion-estructura}.
 Then the following statements hold:
@@ -716,23 +719,18 @@ We split up the proof of item \ref{it:T1item3} into four steps.
 
 Let   $\{u_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\domi_{\Lambda}$  
 and let $u\in \domi_{\Lambda}$  such that $u_n\rightarrow u$ in $\wphi$.
-By \eqref{eq:sobolev}, we have 
-\[
-|u_n(t)-u(t)|\leq C\|u_n-u\orlnor,
-\]
-with $C=C(T)>0$. Then $u_n \to u$ uniformly.
+By \eqref{eq:sobolev},  $u_n \to u$ uniformly.
 As $u'_n\rightarrow u'\in\domi_{\Lambda}$, by 
-  Lemma \ref{segundo lema}, there exist a subsequence of  $u'_{n_k}$ (again denoted $u'_{n_k}$) and a function  
+  Lemma \ref{segundo lema}, there exist a subsequence of  $u'_{n}$ (again denoted $u'_{n}$) and a function  
 	$h\in L^1([0,T],\rr)$
-	such that  $u'_{n_k}\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_{n_k})\leq h\quad\text{a.e}$.  
+	such that  $u'_{n}\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_{n})\leq h\quad\text{a.e}$.  
 
-Since $u_{n_k}$, $k=1,2,\ldots,$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wphi$. 
-According to item \eqref{it:embeding} of   Lemma \ref{lem:inclusion orlicz}, 
-% and Lemma \eqref{lem:cota-a}, 
-there exists $M>0$ such that $\|\b{a}(u_{n_k})\|_{L^{\infty}} \leq M$, $k=1,2,\ldots$.  
+Since $u_{n}$, $n=1,2,\ldots,$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wphi$. 
+According to  Lemma \eqref{lem:cota-a}, 
+there exists $M>0$ such that $\|\b{a}(u_{n})\|_{L^{\infty}} \leq M$, $n=1,2,\ldots$.  
 From the previous facts and \eqref{eq:cota-condicion-estructura}, we get
 \begin{equation*}\label{eq:DxL1-bis}
-|D_{x}\mathcal{L}(\cdot,u_{n_k},u'_{n_k})|\leq a(|u_{n_k}|)(b+\Phi(u'_{n_k}))\leq
+|D_{x}\mathcal{L}(\cdot,u_{n},u'_{n})|\leq a(|u_{n}|)(b+\Phi(u'_{n}))\leq
 M (b+h) \in L^1.
 \end{equation*}
 On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
