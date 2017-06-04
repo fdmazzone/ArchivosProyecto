@@ -476,7 +476,7 @@ with $K_1,K_2>0$, for every $1<p_1,p_2<\infty$.
 \end{example}
 
 
- As is customary, we will use the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
+ As it is customary, we will use the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
 
  The following lemma is an elementary generalization to anisotropic Sobolev-Orlicz spaces of known results of Sobolev spaces.
 
@@ -612,8 +612,6 @@ Let $\lambda:=1-\sum_{n=0}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mat
 \begin{equation}\label{eq:serie} h(x)= \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{n=0}^{\infty}\lambda_n\Phi\left(\frac{u_{n+1}-u_n}{\lambda_n}\right).
 \end{equation}
 Note that $\sum_{n=0}^{\infty}\lambda_n+\lambda=1$, therefore for any $n=1,\ldots$
-
-
 \[
  \begin{split}
    \Phi(u_n) &=\Phi\left(  \lambda\frac{u_0}{\lambda}+   \sum_{j=0}^{n-1}\lambda_j\frac{u_{j+1}-u_j}{\lambda_j} \right)\\
@@ -630,6 +628,55 @@ On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
 Then $h\in L^1([0,T],\rr)$.
 
 
+\end{proof}
+
+
+
+
+DEMOSTRACION ALTERNATIVA PARA EL LEMA y con $\lambda$
+
+\begin{lem}\label{lem:segundo lema}
+Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\Pi(\ephi,\lambda)$ converging to  ${u}\in \Pi(\ephi,\lambda)$  in the $\lphi$-norm. Then, there exist a subsequence
+$\Phi(\frac{u_{n_k}}{\lambda})$ and a function $h\in L^1([0,T],\rr)$ such that
+ $\Phi(\frac{{u}_{n_k}}{\lambda})\rightarrow \Phi(\frac{u}{\lambda}) \quad\text{a.e.}$ and 
+$\Phi(\frac{{u}_{n_k}}{\lambda})\leq h\quad\text{a.e.}$
+\end{lem}
+
+
+\begin{proof}
+As $u \in \Pi(\ephi,\lambda)$, we consider  $\Lambda \in (0,\lambda)$. 
+In this way, $d(u,\ephi)<\Lambda<\lambda$ and, 
+taking into account \eqref{eq:inclusiones}, $\Phi(\frac{u}{\lambda})\in L^1([0,T],\rr)$.
+
+Applying \cite[Lemma 3.1]{chamra2017anisotropic} with $x+y=\frac{u_n}{\lambda}$, $x=\frac{u}{\lambda}$, 
+$k=\frac{\lambda}{\Lambda}$, $0<\epsilon<\frac{\Lambda}{\lambda}$ and 
+$C_{\epsilon}=\frac{\Lambda}{\epsilon(\lambda-\Lambda)}$, we have
+\begin{equation}\label{eq:conv-acot-l1}
+\begin{split}
+&\int_0^T \left|\Phi\left(\frac{u_n}{\lambda}\right)-\Phi\left(\frac{u}{\lambda}\right)\right|\,dt
+\\
+&\leq \epsilon \int_0^T \left|\Phi\left(\frac{u}{\lambda}\right)-\frac{\lambda}{\Lambda}\Phi\left(\frac{u}{\lambda}\right)\right|\,dt+
+2\int_0^T \Phi\left( \frac{\Lambda}{\epsilon(\lambda-\Lambda)}\frac{u_n-u}{\lambda}\right)\,dt.
+\end{split}
+\end{equation}
+Let $\eta>0$. Since $\Phi(\frac{u}{\lambda})\in L^1([0,T,\rr])$,  we can choose $\epsilon$ such that
+\begin{equation}\label{eq:cota-l1}
+\epsilon \int_0^T \left|\Phi\left(\frac{u}{\lambda}\right)-\frac{\lambda}{\Lambda}\Phi\left(\frac{u}{\lambda}\right)\right|\,dt
+<\eta.
+\end{equation}
+From the fact that $u_n \to u$ in the $L^{\Phi}$-norm, there exists $n_0$ such that 
+$\|u_n-u\orlnor <\epsilon^2(\lambda-\Lambda)$
+for every $n\geq n_0$. 
+Then, by the convexity of $\Phi$ and the definition of Orlicz norm, we get
+\begin{equation}\label{eq:cota-conv-orl}
+\int_0^T \Phi\left( \frac{\Lambda}{\epsilon(\lambda-\Lambda)}\frac{u_n-u}{\lambda}\right)\leq
+\epsilon\frac{\Lambda}{\lambda} \int_0^T\Phi\left( \frac{u_n-u}{\epsilon^2(\lambda-\Lambda)}\right)<\epsilon
+\end{equation} 
+Thus, from \eqref{eq:conv-acot-l1}, \eqref{eq:cota-l1} and \eqref{eq:cota-conv-orl}, 
+we obtain  that $\Phi(\frac{u_n}{\lambda})$ converges to $\Phi(\frac{u}{\lambda})$ in the $L^1$-norm.
+Now,  \cite[Thm. 4.9]{brezis2010functional} implies that there exist a subsequence $\Phi(\frac{u_{n_k}}{\lambda})$  
+and a function $h \in L^1([0,T],\rr)$ 
+such that $\Phi(\frac{u_{n_k}}{\lambda})\to \Phi(\frac{u}{\lambda})$ a.e. and  $\Phi(\frac{u_{n_k}}{\lambda})\leq h$ a.e.
 \end{proof}
 
 
