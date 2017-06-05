@@ -9,6 +9,7 @@
 \usepackage{mathabx}
 \usepackage{MnSymbol}
 \usepackage{fancyhdr}
+\usepackage{soul} 
 %\usepackage{times}
 
 %\usepackage[latin1]{inputenc}
@@ -41,7 +42,7 @@
 
 \title{Periodic solutions for a Sitnikov restricted $n+1$-body problem with primaries in rigid motion}
 \author{Gast\'on Beltritti \thanks{SECyT-UNRC and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas FÃ­sico-QuÃ­micas y Naturales\\
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
 \url{gbeltritti@exa.unrc.edu.ar}\\[3mm]
@@ -229,21 +230,29 @@ We note that in order to get collisionless solutions of problem $P$ we need that
 CC is \emph{admissible} if it is non-collisional and satisfies \eqref{eq:suma0}. In the following theorem we characterize all admisible configurations with 3 or 4 bodies.
 
 \begin{thm}\label{thm:caracterizacion}
-The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses are equal the CC is a square.
+The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses \textcolor{blue}{are equal??} \textcolor{red}{ lie in a common circle with center of mass at the origin} the CC is a \textcolor{red}{ equal mass} square .
 \end{thm}
 
 \begin{thm}\label{thm:prin_ine} We assume that $q_1,\ldots,q_n$ is a admisible CC. A necessary and sufficient condition for that the problem $(P)$ has non trivial sotutions is that
 \begin{equation}\label{eq:ine_prin}
  \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{s_i^3}\right)\left(\sum_{i=1}^nm_is_i^2\right).
 \end{equation}
-
-
-
 \end{thm}
 
+With the objective of studying the existence of solutions for the problem $P$, and taking into account the results of theorems \ref{thm:caracterizacion} and \ref{thm:prin_ine}, our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body.
+
+In \cite[Inequality $(41)$]{li2013characterization} it was already proven that for $n$ primary bodies of equal mass, which are arranged in the vertices of a regular polygon, the condition \eqref{eq:ine_prin} holds for $2\leq n \leq 472$. So we rest prove that condition \eqref{eq:ine_prin} is satisfied for the symetric collinear $4$-body CC, and for the CC forming a rhombus with equal masses in opposite vertices. Let's call these central configurations CCl and CCr respectively.
+
+\begin{thm}\label{thm:CC.3.4.satis.cond.adm}
+The central configurations CCl and CCr satisfy condition \eqref{eq:ine_prin}. 
+\end{thm}
+
+As a consequence of all  previous results we have that given an admissible CC of 3-body or 4-body,  the  problem $P$ has solution.
 
 
-
+\begin{thm}\label{thm:sol.perio.o.infinito}
+A non-trivial solution of the equation \eqref{eq:eq_new_red} is either periodic or  its norm tends to infinity when $t$ goes to infinity.
+\end{thm}
 
 
 \section{Proofs}
@@ -355,12 +364,67 @@ We use the second variation $\delta^2 \mathcal{I}$ in order to show  that $u_0\n
 Taking account that $\lambda=U(q_1,\ldots,q_n)/\sum_{i=1}^{n}m_i|q_i|^2$  (see \cite[p. 109]{JaumeLlibre276}),  \eqref{eq:form.delta2} and \eqref{eq:ine_prin} we obtain that $\delta^2\mathcal{I}(0,\varphi)<0$. It is sufficient  to guarantee that $u_0\equiv 0$ is not a minimum.
 
 We prove now that \eqref{eq:ine_prin} is a necessary condition. We write \eqref{eq:eq_new_red}
-as $z''+q_1(t)z=0$ where $q_1(t)=\sum_{i=1}^{n} m_i \left(s_i^2 +z^2\right)^{-\frac32}$ and assume that $z$ is a periodic solucion of \eqref{eq:eq_new_red} with period $\frac{2\pi}{\sqrt{\lambda}}$. As $q_1(t)\geq \sum_{i=1}^{n} m_i s_i^{-3} $ for all $t\in \rr$, for the Strum's comparison theorem (see ),  the period of the function $z$ is  greater or equal than $2\pi \left(\sum_{i=1}^{n} m_i s_i^{-3}\right)^{-1}$, the period of the solution of $v''+\sum_{i=1}^{n} m_i s_i^{3}v=0$, i.e.  $\frac{2\pi}{\sqrt{\lambda}}\geq \left(2\pi \sum_{i=1}^{n} m_i s_i^{-3}\right)^{-1}$
+as $z''+q_1(t)z=0$ where $q_1(t)=\sum_{i=1}^{n} m_i \left(s_i^2 +z^2\right)^{-\frac32}$ and we assume that $z$ is a periodic solution of \eqref{eq:eq_new_red} with period $\frac{2\pi}{\sqrt{\lambda}}$. As $q_1(t)\geq \sum_{i=1}^{n} m_i s_i^{-3} $ for all $t\in \rr$, from the Strum's comparison theorem (see PONER REFERENCIAS)  the period of the function $z$ is  greater \textcolor{red}{or equal} than  the period of every non-trivial solution of $v''+\sum_{i=1}^{n} m_i s_i^{3}v=0$, i.e. $\frac{2\pi}{\sqrt{\lambda}}\geq 2\pi \left(\sum_{i=1}^{n} m_i s_i^{-3}\right)^{-\frac12}$. Recalling that $\lambda=U(q_1,\ldots,q_n)/\sum_{i=1}^{n}m_i|q_i|^2$ we have that   \eqref{eq:ine_prin} holds.
+\end{proof}
 
+
+\begin{proof}[Proof Theorem \ref{thm:CC.3.4.satis.cond.adm}]
+
+Let's start by analyzing the central configuration CCr. We can suppose without loss of generality that $ q_1 = -q_3 = (0, y) $ for $ y> 0 $, $ q_2 = -q_4 = (1,0) $, $ m_1 = m_3 = M $, $ m_2 = m_4 = m $ and $ M> m $. Then, necessarily $ y <1 $ (see \cite{perez2007convex}). For this CC  the condition \eqref{eq:ine_prin} becomes
+\[\frac{M^2}{2y}+\frac{4Mm}{\sqrt{1+y^2}}+\frac{m^2}{2}<\left(\frac{2M}{y^3}+2m\right) \left(2My^2+2m\right).\]
+As $M^2/(2y)<4M^2/y$, $m^2/2<4m^2$ and $4Mm/\sqrt{1+y^2}<4Mm/y^3$ (since $y<1$), we have that the inequality holds.
+
+ Now consider the central configuration CCl.  Remark first that some of the following calculations were computed using a symbolic mathematics  software.  We can suppose without loss of generality that $q_1=-q_3=1$, $q_2=-q_4=x$ with $0<x<1$, and $m_1=m_3=\mu$, $m_2=m_4=1-\mu$, with $0<\mu<1$.  Then the inequality \eqref{eq:ine_prin} becomes
+\[\frac{2\mu(1-\mu)}{1-x} +\frac{2\mu(1-\mu)}{1+x}+\frac{\mu^2}{2}+\frac{(1-\mu)^2}{2x}<4\mu^2+4\mu(1-\mu)x^2+\frac{4\mu(1-\mu)}{x^3}+\frac{4(1-\mu)^2}{x}.\]
+As $ \frac{\mu ^ 2}{2} <4 \mu^2$ and $ \frac{(1-\mu)^2}{2x}< \frac{4(1-\mu)^2}{x} $ (without taking into account the term $4\mu(1- \mu)x^2$) we just have to show that
+\[\frac{2\mu(1-\mu)}{1-x} +\frac{2\mu(1-\mu)}{1+x}<\frac{4\mu(1-\mu)}{x^3},\]
+and this is equivalent to see that
+\begin{equation}\label{eq:ineq.4.cuerpos.alinea}
+\frac{x^3}{1-x^2}<2.
+\end{equation}
+The values of $x$ involved in the above inequality are such that the configuration for the vector mass $(\mu,1-\mu,1-\mu,\mu)$ is central, by Moulton \cite{moulton1910straight}, fixed a mass $\mu$ there is only one value $x$ satisfiying this condition. So, we can define $x(\mu)$ as such value of $x$. If we can see that the funcion $x(\mu)$ is a decreasing function, then we have that
+$\frac{x(\mu)^3}{1-x(\mu)^2}\leq \lim\limits_{\mu\to 0}\frac{x(\mu)^3}{1-x(\mu)^2}.$
+If also we demonstrate that 
+\begin{equation}\label{eq:ineq.4.cuerpos.lim0}
+\lim\limits_{\mu\to 0}\frac{x(\mu)^3}{1-x(\mu)^2}<2
+\end{equation} 
+we have tested \eqref {eq:ineq.4.cuerpos.alinea}. 
+
+Let's first prove that $x(\mu)$ is a decreasing function. The relationship between $\mu$ and $x$ follows from the fact that the bodies are in a central configuration. Therefore the equation 
+\[\frac{\mu}{4} - \frac{\mu}{x \left(x + 1\right)^{2}} + \frac{\mu}{x \left(- x + 1\right)^{2}} + \frac{- \mu + 1}{\left(x + 1\right)^{2}} + \frac{- \mu + 1}{\left(- x + 1\right)^{2}} - \frac{1}{x^{3}} \left(- \frac{\mu}{4} + \frac{1}{4}\right) = 0\]
+ must be satisfied, simplifying this expression we have 
+ \[\frac{p(\mu,x)}{q(\mu,x)}  = 0,\]
+ where $p(\mu,x)=\mu x^{7} - 10 \mu x^{5} + \mu x^{4} + 9 \mu x^{3} - 2 \mu x^{2} + \mu + 8 x^{5} - x^{4} + 8 x^{3} + 2 x^{2} - 1$ and $q(\mu,x)=4 x^{3} \left(x^{4} - 2 x^{2} + 1\right)$. So the relationship between $\mu$ and $x$ is given that $P(\mu,x)=0$. We can derive implicitly the last equation an we obtain 
+ \[\frac{dx}{d\mu}=\frac{Np(x)}{Dp(x,\mu)},\]
+ where $Np(x)=- \left(x - 1\right) \left(x + 1\right) \left(x^{5} - 9 x^{3} + x^{2} - 1\right)$ and  $Dp(x,\mu)=\mu x^2\left(7 x^{4} - 10 x^{2} + 51 \right) +\left(1- \mu \right) \left( 40 x^{4} + 20 x^{3}  + 4 x \right)$. The denominator $Dp(x,\mu)$ is clearly positive for $0<x<1$ and $0<\mu<1$. To prove that the numerator $Np(x)$ is negative let's see that the polynomial $x^{5} - 9 x^{3} + x^{2} - 1$ is negative for all $0 <x <1$. In fact, calculating their real roots with a software we have that these are  $-3.0483999$, $-0,449322$ and $2,94956549$, then it is easy to see that $x^{5} - 9 x^{3} + x^{2} - 1$ is negative in the interval $(0,1)$, hence $Np(x)<0$ for $0<x<1$. This implies that $\frac{dx}{d\mu}$ is negative for all $0<x<1$ and $0<\mu<1$.
+
+Let's see now that \eqref{eq:ineq.4.cuerpos.lim0} holds. Since $x(\mu)$ is a continuous function we need to prove $\frac{x(0)^3}{1-x(0)^2}<2$. For simplicity we will write $x$ instead of $x(0)$. This value $x$ is such that $p(0,x)=8 x^{5} - x^{4} + 8 x^{3} + 2 x^{2} - 1 = 0$,  then  $8 x^{5} + 8 x^{3} = \left(x^{2} - 1\right)^{2}$, and this implies that $8 x^{5} + 8 x^{3}<1$, hence $x^3<1/(8(x^2+1))<1/8$, $x^2<(1/8)^{\frac23}$ and
+\[\frac{x^3}{1-x^2}<\frac{1/8}{1-1/8^{\frac23}}=1/6<2,\]
+as we wanted to prove.
 \end{proof}
 
 
 
+\begin{proof}[Proof of Theorem \ref{thm:sol.perio.o.infinito}]
+
+
+
+Let $z$ be a solution of equation \eqref{eq:eq_new_red}.
+Multiplying this equation by $\dot{z}$ and integrating we obtain the following law of conservation of energy
+\begin{equation}\label{eq:conser.energ}
+\frac{|\dot{z}|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z^2\right)^{\frac12}}=E,
+\end{equation}
+where $E$ is the constant energy of the system.
+
+
+Suppose first that there exists a time $t_0$ such that $\dot{z}(t_0)=0$. As the equation \eqref{eq:eq_new_red} is autonomous we can assume without loss of generality that $\dot{z}(0)=0$. As $z$ is a non-trivial solution que have that $z(0)=A\neq 0$, we can suppose without of generality that $A>0$. By the equation \eqref{eq:eq_new_red}  we have that $z$ decreases for positive and near zero times, if at some instant of time after zero, say $\frac{T}{2}$, the particle returns to zero velocity then, by \eqref{eq:conser.energ}, $z\left(\frac{T}{2}\right)$ is equal to $-A$. For the symmetry and autonomy of the equation, if $\bar{z}$ denotes the trajectory of the particle from  $\frac{T}{2}$ we have $ \bar{z} (t) = - z (t) $, i.e. $z (t +\frac{T}{2}) = -z (t)$. Then, $ z (T) = - z \left(\frac{T}{2}\right) = A $ and $\dot{z} (T) = - \dot{z} \left(\frac{T}{2}\right) = 0 $, and so $z$ is periodic. If there is no time after zero such that $\dot{z}$ is null then $\dot{z}(t)<0$ and, by \eqref{eq:conser.energ}, $z(t)>-A$ for all $t\geq 0$. Therefore $z$ is a decreasing function and remains bounded. Hence  we have that $\lim\limits_{t\to \infty}z(t)=z_{\infty}$. As
+$\ddot{z}(h_t)=\frac{z(t+h)-2z(t)+z(t+h)}{h^2},$
+for some $h_t\in [t-h,t+h]$, if  $t$ goes to infinity we have that $\lim\limits_{t\to\infty}\ddot{z}(h_t)=0$.  Thus \[0=\lim\limits_{t\to 0}\sum_{i=1}^{n}\frac{m_i z(h_t)}{(s_i^2+z(h_t)^2)^{\frac12}},\] this implies that $\lim\limits_{t\to\infty}z(h_t)=0$. Therefore, as $z$ is a decreasing function,  $z(t)\geq 0$ for all $t\geq 0$, and by \eqref{eq:eq_new_red} we have that $\ddot{z}(t)\leq 0$ for all $t\geq 0$. This implies that $\dot{z}$ is a decreasing function, and how $\dot{z}< 0$ for $t>0$, it follows that $0>\dot{z}(1)\geq \dot{z}(t)$ for $t\geq 1$. By the mean value theorem, $\dot{z}(\bar{h}_t)=\frac{z(t+h)-z(t)}{h}$ for some $\bar{h}_t\in [t,t+h]$, therefore 
+\[\lim\limits_{t\to \infty}\dot{z}(\bar{h}_t)=\lim\limits_{t\to \infty}\frac{z(t+h)-z(t)}{h}=0,\]
+which is a contradiction.
+
+If there is no time $t$ such that $\dot{z}(t)=0$ ·then $\dot{z}$ has the same sign for every time. If we also suppose that $|z|$ is bounded, reasoning as in the previous case we can obtain a contracdition.
+\end{proof}
 
 
 
@@ -375,5 +439,3 @@ as $z''+q_1(t)z=0$ where $q_1(t)=\sum_{i=1}^{n} m_i \left(s_i^2 +z^2\right)^{-\f
 
 
 \end{document}
-
-
