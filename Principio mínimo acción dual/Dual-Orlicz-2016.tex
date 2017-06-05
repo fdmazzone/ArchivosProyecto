@@ -622,75 +622,34 @@ More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\i
  $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
 \end{lem}
 
+The following theorem will be used repeatedly. We adapted the proof of \cite[Lemma 2.5]{ABGMS2015} to the anisotropic case.    For an alternative approach see \cite{chamra2017anisotropic}.  
+
+
 \begin{lem}\label{segundo lema}
-Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\Pi(\ephi,\lambda)$ converging to  ${u}\in \Pi(\ephi,\lambda)$  in the $\lphi$-norm. Then, there exist a subsequence
+Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions  converging to  ${u}\in \Pi(\ephi,\lambda)$  in the $\lphi$-norm. Then, there exist a subsequence
 ${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ and $\Phi({u}_{n_k}/\lambda)\leq h\quad\text{a.e.}$
 \end{lem}
 
 \begin{proof}
-  Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exists   a subsequence of $u_n$ (again denoted $u_n$) and $0<r<\lambda$  such that $d(u_n,u_0)<r$. Let $ \overline{\lambda}\in (r,\lambda)$.  As a consequence of \eqref{eq:N-sub-inf}, we obtain that $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$. This fact impies that $u_n$ converges in measure to $u$. Therefore, we can to extract a subsequence (denoted $u_n$) such that $u_n\to u$ a.e. and
-\[\lambda_n:=\|{u}_{n+1}-{u}_{n}\orlnor<\frac{\lambda-\lambda_0}{2^n},\quad\hbox{for } n\geq 1.\]
-We can assume $\lambda_n>0$ for every $n=0,\ldots$.
+  Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exists   a subsequence of $u_n$ (again denoted $u_n$), $u_0\in\ephi$ and $0<r<\lambda$  such that $d(u_n,u_0)<r$, $n=1,\ldots$. Let $ \overline{\lambda}\in (r,\lambda)$.  As a consequence of \eqref{eq:N-sub-inf}, we obtain that $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$. This fact impies that $u_n$ converges in measure to $u$. Therefore, we can to extract a subsequence (denoted $u_n$) such that $u_n\to u$ a.e. and
+  \[\lambda_n:=\|{u}_{n+1}-{u}_{n}\orlnor<\frac{\lambda-\overline{\lambda}}{2^n},\quad\hbox{for } n\geq 1.\]
+We can assume $\lambda_n>0$ for every $n=1,\ldots$.
 
-Let $\lambda:=1-\sum_{n=0}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mathbb{R}$  by
-\begin{equation}\label{eq:serie} h(t)= \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{n=0}^{\infty}\lambda_n\Phi\left(\frac{u_{n+1}-u_n}{\lambda_n}\right).
+Let $\lambda_0:=\lambda-\sum_{n=1}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mathbb{R}$  by
+\begin{equation}\label{eq:serie} h(t)= \frac{\lambda_0}{\lambda}\Phi\left(\lambda\frac{u_0}{\lambda_0}\right)+\sum_{n=1}^{\infty}\frac{\lambda_n}{\lambda}\Phi\left(\lambda\frac{u_{n+1}-u_n}{\lambda_n}\right).
 \end{equation}
-Note that $\sum_{n=0}^{\infty}\lambda_n+\lambda=1$, therefore for any $n=1,\ldots$
+From the convexity and continuity of $\Phi$ we have for any $n=1,\ldots$
 
 
 \[
  \begin{split}
-   \Phi(u_n) &=\Phi\left(  \lambda\frac{u_0}{\lambda}+   \sum_{j=0}^{n-1}\lambda_j\frac{u_{j+1}-u_j}{\lambda_j} \right)\\
+   \Phi(u_n) &=\Phi\left(  u_0+   \sum_{j=0}^{n-1}u_{j+1}-u_j \right)\\
    &\leq
-   \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{j=0}^{n-1}\lambda_j\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right) \leq h
+   \frac{\lambda_0}{\lambda}\Phi\left(\lambda\frac{u_0}{\lambda}\right)+\sum_{j=0}^{n-1}\lambda_j\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right) \leq h
  \end{split}
 \]
-
- 
-\begin{lem}\label{segundo lema}
-Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\Pi(\ephi,\Lambda)$ converging to  ${u}\in \Pi(\ephi,\Lambda)$  in the $\lphi$-norm. Then, there exist a subsequence
-${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ and $\Phi({u}_{n_k})\leq h\quad\text{a.e.}$
-\end{lem}
-
- 
-Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$.
-On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
-\[
- \int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right)dt\leq 1.
-\]
-Then $h\in L^1([0,T],\rr)$.
- 
-
-
 \end{proof}
-\begin{proof}
-Since $d({u},\ephi)<1$ and ${u}_n$ converges to ${u}$, there exists $u_0\in\ephi$, a subsequence of $u_n$ (again denoted $u_n$) and $0<r<1$  such that $d(u_n,u_0)<r$. Let $\lambda_0\in (r,1)$.  By extracting more subsequences, if necessary, we can assume that $u_n\to u$ a.e. and
-\[\lambda_n:=\|{u}_{n+1}-{u}_{n}\orlnor<\frac{1-\lambda_0}{2^n},\quad\hbox{for } n\geq 1.\]
-We can assume $\lambda_n>0$ for every $n=0,\ldots$.
 
-Let $\lambda:=1-\sum_{n=0}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mathbb{R}$  by
-\begin{equation}\label{eq:serie} h(x)= \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{n=0}^{\infty}\lambda_n\Phi\left(\frac{u_{n+1}-u_n}{\lambda_n}\right).
-\end{equation}
-Note that $\sum_{n=0}^{\infty}\lambda_n+\lambda=1$, therefore for any $n=1,\ldots$
-
-
-\[
- \begin{split}
-   \Phi(u_n) &=\Phi\left(  \lambda\frac{u_0}{\lambda}+   \sum_{j=0}^{n-1}\lambda_j\frac{u_{j+1}-u_j}{\lambda_j} \right)\\
-   &\leq
-   \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{j=0}^{n-1}\lambda_j\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right) \leq h
- \end{split}
-\]
-
-Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$. 
-On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
-\[
- \int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right)dt\leq 1.
-\]
-Then $h\in L^1([0,T],\rr)$.
-
-
-\end{proof}
 
 
 
