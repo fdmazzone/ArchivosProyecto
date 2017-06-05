@@ -622,53 +622,39 @@ More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\i
  $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
 \end{lem}
 
-
-
-
-\begin{lem}\label{lem:segundo lema}
+\begin{lem}\label{segundo lema}
 Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\Pi(\ephi,\lambda)$ converging to  ${u}\in \Pi(\ephi,\lambda)$  in the $\lphi$-norm. Then, there exist a subsequence
-$\{u_{n_k}\}$ and a function $h\in L^1([0,T],\rr)$ such that
- $\Phi(\frac{{u}_{n_k}}{\lambda})\rightarrow \Phi(\frac{u}{\lambda}) \quad\text{a.e.}$ and
-$\Phi(\frac{{u}_{n_k}}{\lambda})\leq h\quad\text{a.e.}$
+${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ and $\Phi({u}_{n_k}/\lambda)\leq h\quad\text{a.e.}$
 \end{lem}
 
-
 \begin{proof}
-As $u \in \Pi(\ephi,\lambda)$, we consider  $\Lambda \in (0,\lambda)$.
-In this way, $d(u,\ephi)<\Lambda<\lambda$ and,
-taking into account \eqref{eq:inclusiones}, $\Phi(\frac{u}{\lambda})\in L^1([0,T],\rr)$.
+Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exists   a subsequence of $u_n$ (again denoted $u_n$) and $0<r<\lambda$  such that $d(u_n,u_0)<r$. Let $ \overline{\lambda_0\in (r,\lambda)$.  As a consequence of \eqref{eq:N-sub-inf}, we obtain that $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$. This fact impies that $u_n$ converges in measure to $u$. Therefore, we can to extract a subsequence (denoted $u_n$) such that $u_n\to u$ a.e. and
+\[\lambda_n:=\|{u}_{n+1}-{u}_{n}\orlnor<\frac{\lambda-\lambda_0}{2^n},\quad\hbox{for } n\geq 1.\]
+We can assume $\lambda_n>0$ for every $n=0,\ldots$.
 
-Applying \cite[Lemma 3.1]{chamra2017anisotropic} with $x+y=\frac{u_n}{\lambda}$, $x=\frac{u}{\lambda}$,
-$k=\frac{\lambda}{\Lambda}$, $0<\epsilon<\frac{\Lambda}{\lambda}$ and
-$C_{\epsilon}=\frac{\Lambda}{\epsilon(\lambda-\Lambda)}$, we have
-\begin{equation}\label{eq:conv-acot-l1}
-\begin{split}
-&\int_0^T \left|\Phi\left(\frac{u_n}{\lambda}\right)-\Phi\left(\frac{u}{\lambda}\right)\right|\,dt
-\\
-&\leq \epsilon \int_0^T \left|\Phi\left(\frac{u}{\lambda}\right)-\frac{\lambda}{\Lambda}\Phi\left(\frac{u}{\lambda}\right)\right|\,dt+
-2\int_0^T \Phi\left( \frac{\Lambda}{\epsilon(\lambda-\Lambda)}\frac{u_n-u}{\lambda}\right)\,dt.
-\end{split}
+Let $\lambda:=1-\sum_{n=0}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mathbb{R}$  by
+\begin{equation}\label{eq:serie} h(t)= \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{n=0}^{\infty}\lambda_n\Phi\left(\frac{u_{n+1}-u_n}{\lambda_n}\right).
 \end{equation}
-Let $\eta>0$. Since $\Phi(\frac{u}{\lambda})\in L^1([0,T,\rr])$,  we can choose $\epsilon$ such that
-\begin{equation}\label{eq:cota-l1}
-\epsilon \int_0^T \left|\Phi\left(\frac{u}{\lambda}\right)-\frac{\lambda}{\Lambda}\Phi\left(\frac{u}{\lambda}\right)\right|\,dt
-<\eta.
-\end{equation}
-From the fact that $u_n \to u$ in the $L^{\Phi}$-norm, there exists $n_0$ such that
-$\|u_n-u\orlnor <\epsilon^2(\lambda-\Lambda)$
-for every $n\geq n_0$.
-Then, by the convexity of $\Phi$ and the definition of Orlicz norm, we get
-\begin{equation}\label{eq:cota-conv-orl}
-\int_0^T \Phi\left( \frac{\Lambda}{\epsilon(\lambda-\Lambda)}\frac{u_n-u}{\lambda}\right)\leq
-\epsilon\frac{\Lambda}{\lambda} \int_0^T\Phi\left( \frac{u_n-u}{\epsilon^2(\lambda-\Lambda)}\right)<\epsilon
-\end{equation}
-Thus, from \eqref{eq:conv-acot-l1}, \eqref{eq:cota-l1} and \eqref{eq:cota-conv-orl},
-we obtain  that $\Phi(\frac{u_n}{\lambda})$ converges to $\Phi(\frac{u}{\lambda})$ in the $L^1$-norm.
-Now,  \cite[Thm. 4.9]{brezis2010functional} implies that there exist a subsequence $\Phi(\frac{u_{n_k}}{\lambda})$
-and a function $h \in L^1([0,T],\rr)$
-such that $\Phi(\frac{u_{n_k}}{\lambda})\to \Phi(\frac{u}{\lambda})$ a.e. and  $\Phi(\frac{u_{n_k}}{\lambda})\leq h$ a.e.
+Note that $\sum_{n=0}^{\infty}\lambda_n+\lambda=1$, therefore for any $n=1,\ldots$
+
+
+\[
+ \begin{split}
+   \Phi(u_n) &=\Phi\left(  \lambda\frac{u_0}{\lambda}+   \sum_{j=0}^{n-1}\lambda_j\frac{u_{j+1}-u_j}{\lambda_j} \right)\\
+   &\leq
+   \lambda\Phi\left(\frac{u_0}{\lambda}\right)+\sum_{j=0}^{n-1}\lambda_j\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right) \leq h
+ \end{split}
+\]
+
+Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda)\in L^1([0,T],\rr)$.
+On the other hand $\|u_{n+1}-u_n\orlnor \leq \lambda_n$, therefore
+\[
+ \int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right)dt\leq 1.
+\]
+Then $h\in L^1([0,T],\rr)$.
+
+
 \end{proof}
-
 \begin{proof}
 Since $d({u},\ephi)<1$ and ${u}_n$ converges to ${u}$, there exists $u_0\in\ephi$, a subsequence of $u_n$ (again denoted $u_n$) and $0<r<1$  such that $d(u_n,u_0)<r$. Let $\lambda_0\in (r,1)$.  By extracting more subsequences, if necessary, we can assume that $u_n\to u$ a.e. and
 \[\lambda_n:=\|{u}_{n+1}-{u}_{n}\orlnor<\frac{1-\lambda_0}{2^n},\quad\hbox{for } n\geq 1.\]
