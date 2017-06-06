@@ -745,10 +745,7 @@ into $\left[\lphi\right]^*$  with the weak$^*$ topology.}
 \end{equation}
 
 
-% 
-%  Note that \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase} and the imbeddings $\wphi \hookrightarrow L^{\infty}$ and  
-% $\lpsi\hookrightarrow  \left[\lphi\right]^*$ imply that the second member of
-% \eqref{eq:DerAccion} defines an element of $\left[\wphi\right]^*$.
+
 
 
 
@@ -772,39 +769,40 @@ Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n$ in
   \Psi\left(\frac{\nabla_y\mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)   
 	\leq M (b+h)\in L^1.
 \end{equation}
-As $v \in \lphi$ there exists $\lambda>0$ such that $\Phi(\frac{v}{\lambda})\in L^1$. 
+As $v \in \lphi$ there exists $\lambda_v>0$ such that $\Phi(v/\lambda_v)\in L^1$. 
 Now, by Young inequality and \eqref{eq:Dy-suc}, we have
 \begin{equation}\label{eq:Dy_lambda-Psi}
 \begin{split}
-&\lambda \nabla_y\mathcal{L}(\cdot,u_{n_k},u'_{n_k})\ccdot \frac{v(t)}{\lambda} 
+\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})\ccdot v(t) 
+&\leq 
+\lambda\lambda_v\left[\Psi\left(\frac{\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})}{\lambda}\right)+\Phi\left(\frac{v}{\lambda_v}\right)\right]
 \\
-&
-\leq 
-\lambda\left[\Psi(\nabla_y\mathcal{L}(\cdot,u_{n_k},u'_{n_k}))+\Phi\left(\frac{v}{\lambda}\right)\right]
-\\
-&\leq \lambda M (b+h)+\lambda \Phi\left(\frac{v}{\lambda}\right)\in L^1
+&\leq \lambda\lambda_v M (b+h)+\lambda\lambda_v  \Phi\left(\frac{v}{\lambda_v}\right)\in L^1
 \end{split}
 \end{equation}
   Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
 \begin{equation}\label{conv_debil}
-\int_0^T  \nabla_y\mathcal{L}(t,u_{n_k},u'_{n_k})
+\int_0^T  \nabla_y\mathcal{L}(t,u_{n},u'_{n})
 \ccdot  v \,dt 
 \to 
 \int_0^T \nabla_y\mathcal{L}(t,u,u')\ccdot v\, dt \end{equation}
 which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
 \emph{Step 3.} We will prove \eqref{eq:DerAccion}. 
-%The proof follows similar lines as \cite[Thm. 1.4]{mawhin2010critical}. 
+ Note that \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase} and the imbeddings $\wphi \hookrightarrow L^{\infty}$ and  
+$\lpsi\hookrightarrow  \left[\lphi\right]^*$ imply that the second member of
+\eqref{eq:DerAccion} defines an element of $\left[\wphi\right]^*$.
+
+The proof follows similar lines as \cite[Thm. 1.4]{mawhin2010critical}. 
 For $u\in \domi_{\Lambda}$ and $0\neq v\in\wphi$, we define the function
 \[H(s,t):=\mathcal{L}(t,u(t)+s v(t),u'(t)+sv'(t)).\]
 
-%From \cite[Lemma 10.1]{KR} (or \cite[Thm. 5.5]{Orliczvectorial2005} ) 
-%we obtain that if $|u|\leq |v|$ then    $d(u,\ephi)\leq d(v,\ephi)$. Esto va????
 
-For  $|s|\leq s_0:=\min\{\left(1-d(u',\ephi)\right)/\|v\sobnor, 1-d(u',\ephi)\}$, 
+
+For  $|s|\leq s_0:=\left(\Lambda-d(u',\ephi)\right)/\|v\sobnor$, 
 using triangle inequality we get 
 $
-d \left(u'+s v', \ephi \right)<1$ and thus $u'+sv' \in \Pi(\ephi,1)$. 
+d \left(u'+s v', \ephi \right)<\Lambda$ and thus $u'+sv' \in \Pi(\ephi,\Lambda)$. 
 These facts imply, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
 that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
 
@@ -812,27 +810,28 @@ We also have
 $
 \|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
 $
-then, by Lemma \ref{lem:cota-a}, there exists $M>0$ such that 
+then, by Lemma \ref{lem:cota-a}, there exists $M>0$, independent of $s$, such that 
 $\|a(u+sv)\linf\leq M$.
 
-Let $\lambda>0$ such that $\Phi(\frac{v'}{\lambda})\in L^1$.
-On the other hand, if $v'\in\lphi$ and $|s|\leq s_0 \lambda^{-1}$,
+We write $s_1=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$.
+On the other hand, if $v'\in\lphi$ and $|s|\leq s_1 \lambda_v^{-1}$,
 from the convexity and the parity of $\Phi$, we get
 \[
 \begin{split}
-&\Phi(u'+sv')=
-\Phi\left((1-s_0)\frac{u'}{1-s_0}+s_0 \frac{s}{s_0}v'\right)
+\Phi(u'+sv')&=
+\Phi\left((1-s_1)\frac{u'}{1-s_1}+s_1 \frac{s}{s_1}v'\right)\\
+&
 \leq
-(1-s_0)\Phi\left(\frac{u'}{1-s_0}\right)+s_0 \Phi\left(\frac{s}{s_0}v'\right)
+(1-s_1)\Phi\left(\frac{u'}{1-s_1}\right)+s_1 \Phi\left(\frac{s}{s_1}v'\right)
 \\
 &\leq
-(1-s_0)\Phi\left(\frac{u'}{1-s_0}\right)+s_0 \Phi\left(\frac{v'}{\lambda}\right)
+(1-s_1)\Phi\left(\frac{u'}{1-s_1}\right)+s_1 \Phi\left(\frac{v'}{\lambda}\right)
 \in L^1
 \end{split}
 \]
-As $u'\in\Pi(\ephi,1)$ then
+As $u'\in\Pi(\ephi,\Lambda)$ then
 \[
-d\left(\frac{u'}{1-s_0},E^{\Phi}\right)=\frac{1}{1-s_0}d(u', E^{\Phi})<1
+d\left(\frac{u'}{1-s_1},E^{\Phi}\right)=\frac{1}{1-s_1}d(u', E^{\Phi})<1
 \]
 and therefore $\frac{u'}{1-s_0}\in C^\Phi$.
 
