@@ -631,23 +631,33 @@ ${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k
 \end{lem}
 
 \begin{proof}
-  Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exists   a subsequence of $u_n$ (again denoted $u_n$), $u_0\in\ephi$ and $0<r<\lambda$  such that $d(u_n,u_0)<r$, $n=1,\ldots$. Let $ \overline{\lambda}\in (r,\lambda)$.  As a consequence of \eqref{eq:N-sub-inf}, we obtain that $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$. This fact impies that $u_n$ converges in measure to $u$. Therefore, we can to extract a subsequence (denoted $u_n$) such that $u_n\to u$ a.e. and
-  \[\lambda_n:=\|{u}_{n+1}-{u}_{n}\orlnor<\frac{\lambda-\overline{\lambda}}{2^n},\quad\hbox{for } n\geq 1.\]
+  Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exists   a subsequence of $u_n$ (again denoted $u_n$) and $u_0\in\ephi$ such that $d(u_n,u_0)<\lambda$, $n=1,\ldots$. As a consequence of \eqref{eq:N-sub-inf}, we obtain that $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$. This fact impies that $u_n$ converges in measure to $u$. Therefore, we can to extract a subsequence (denoted $u_n$) such that $u_n\to u$ a.e. and
+  \[\lambda_{n}:=\|{u}_{n}-{u}_{n-1}\orlnor<\frac{\lambda}{2^n},\quad\hbox{for } n\geq 1.\]
 We can assume $\lambda_n>0$ for every $n=1,\ldots$.
 
 Let $\lambda_0:=\lambda-\sum_{n=1}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mathbb{R}$  by
-\begin{equation}\label{eq:serie} h(t)= \frac{\lambda_0}{\lambda}\Phi\left(\lambda\frac{u_0}{\lambda_0}\right)+\sum_{n=1}^{\infty}\frac{\lambda_n}{\lambda}\Phi\left(\lambda\frac{u_{n+1}-u_n}{\lambda_n}\right).
+\begin{equation}\label{eq:serie} h(t)=  \frac{\lambda_0}{\lambda}\Phi\left(\frac{u_0}{\lambda_0}\right)+\sum_{j=0}^{\infty}\frac{\lambda_j}{\lambda}\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right).
 \end{equation}
-From the convexity and continuity of $\Phi$ we have for any $n=1,\ldots$
+ Since $\Phi(0)=0$ and from the convexity of $\Phi$ we have for any $n=1,\ldots$
 
 
 \[
  \begin{split}
-   \Phi(u_n) &=\Phi\left(  u_0+   \sum_{j=0}^{n-1}u_{j+1}-u_j \right)\\
+   \Phi\left(\frac{u_n}{\lambda}\right) &=\Phi\left(  \frac{u_0}{\lambda}+   \sum_{j=0}^{n-1}\frac{u_{j+1}-u_j}{\lambda} \right)\\
    &\leq
-   \frac{\lambda_0}{\lambda}\Phi\left(\lambda\frac{u_0}{\lambda}\right)+\sum_{j=0}^{n-1}\lambda_j\Phi\left(\frac{u_{j+1}-u_j}{\lambda_j}\right) \leq h
+   \frac{\lambda_0}{\lambda}\Phi\left(\frac{u_0}{\lambda_0}\right)+\sum_{j=0}^{n-1}\frac{\lambda_{j+1}}{\lambda}\Phi\left(\frac{u_{j+1}-u_j}{\lambda_{j+1}}\right) \leq h
  \end{split}
 \]
+
+Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace we have that $\Phi(u_0/\lambda_0)\in L^1([0,T],\rr)$.
+On the other hand $\|u_{j+1}-u_j\orlnor = \lambda_{j+1}$, therefore
+\[
+\int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_{j+1}}\right)dt\leq 1.
+\]
+Then $h\in L^1([0,T],\rr)$.
+
+
+
 \end{proof}
 
 
