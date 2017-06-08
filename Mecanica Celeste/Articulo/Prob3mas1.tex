@@ -42,7 +42,7 @@
 
 \title{Periodic solutions for a Sitnikov restricted $n+1$-body problem with primaries in rigid motion}
 \author{Gast\'on Beltritti \thanks{SECyT-UNRC and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales\\
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas FÃ­sico-QuÃ­micas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\
 (5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
 \url{gbeltritti@exa.unrc.edu.ar}\\[3mm]
@@ -119,11 +119,11 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 \section{Introduction}
-In this paper we discuss existence of periodic solutions for the following restricted nonplanar Newtonian $n+1$-body problem $P$ (see figure \ref{fig:conf_esp}):
+In this paper we study the following restricted  Newtonian $n+1$-body problem $P$ (see figure \ref{fig:conf_esp}):
 \begin{itemize}
- \item[$P_1$] We have $n$ primary bodies of masses $m_1,\ldots,m_n$ and an additional masless body.
+ \item[$P_1$] We have $n$ primary bodies of masses $m_1,\ldots,m_n$ and an additional massless body.
  \item[$P_2$] The primary bodies are in a central  configuration rigid motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is periodic and it is carried out in a plane $\Pi$.
- \item[$P_3$] The massless particle is moving  on the perpendicular line to $\Pi$ passing through the center of masses, its motion is  periodic with the same period that the primaries. 
+ \item[$P_3$] The massless particle is moving  on the perpendicular line to $\Pi$ passing through the center of masses.
 \end{itemize}
 
 
@@ -165,24 +165,22 @@ through the center of masses. Sitnikov obtained deep results about existence of 
  Llibre and Ortega \cite{llibre2008families}, P{\'e}rez, Jim{\'e}nez and Lacomba \cite{perez2009periodic}.
 
 Problems like the Sitnikov problem for four bodies  were addressed more recently.
-In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$, where in place to have a Eulerian collinear configuration they had a Lagrangian equilateral triangle configuration for the primaries bodies, which are supposed to have the same mass $m_1=m_2=m_3$. Later, In \cite{baltagiannis2011families} Baltagiannis nad Papadakis considered more general masses and in \cite{pandey2013periodic} Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
-In \cite{zhao2015nonplanar}, Zhao and Zhang proved existence of periodic solutions for a problem similar to the one dealt with in \cite{soulis2008periodic}.  They used a variational approach. In the present paper we extend the analysis in \cite{zhao2015nonplanar} to the case of a collinear central configuration for the primaries.
+In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$. They considered  a Lagrangian equilateral triangle configuration for the primaries bodies, which were supposed to have the same mass $m_1=m_2=m_3$. Later  in \cite{pandey2013periodic}, Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
+In \cite{zhao2015nonplanar}, Zhao and Zhang proved existence, by means of a variational approach, of periodic solutions for a problem similar to the one dealt in \cite{soulis2008periodic}.
 In \cite{li2013characterization} Li, Zhang and Zhao studied a special type of
-restricted circular $N+1$-body problem  with equal masses for the primaries. 
+restricted circular $N+1$-body problem  with equal masses for the primaries in a regular polygon configuration.
 
-Given that in our problem the primaries are no longer equidistant and their relative 
-position is determined by a polynomial equation of fifth degree, the calculations involved 
-here are tedious to reproduce completely and difficult for that the reader to check them 
-by hand. For this reason we have prepared a jupyter-notebook (see \cite{CalAux}) with some 
-of these calculations. With a little knowledge of Python-Sympy (see \cite{sympy}) the reader 
-can check and reproduce them easily.
+In the present paper we extend the analysis in \cite{zhao2015nonplanar} to the case of a collinear central configuration for the primaries.
+
+
+
 
 
 \section{Preliminaries and Main Results}
 
-We start considering $n$ bodies, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $q_1(t),\ldots,q_n(t)$ are the coordinates (column vectors) of the bodies in some inertial Cartesian coordinate system. We denote by $r_{ij}=|q_i-q_j|$  the  Euclidean distance between $q_i$ and $q_j$. We can suppose without any loos generality, we can assume the center of mass   $c:=\sum_jm_jq_j/M$ ($M:=\sum_j m_j$) is fixed at the origin ($c=0$).
+We start considering $n$  mass points, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $q_1(t),\ldots,q_n(t)$ are the coordinates (column vectors) of the bodies in some inertial Cartesian coordinate system. We denote by $r_{ij}=|q_i-q_j|$  the  Euclidean distance between $q_i$ and $q_j$. We can suppose, without any loos generality, that the center of mass   $c:=\sum_jm_jq_j/M$ ($M:=\sum_j m_j$) is fixed at the origin ($c=0$).
 
-We assume that these bodies are in a \emph{rigid motion}. We recall that a \emph{rigid  motion}, is a solution of motions equations with $r_{ij}$ constant.  It is known (see -buscar referencias ) that a rigid motion is performed in a plane $\Pi$. We assume that $\Pi$ is the plane determined by the first two coordinates axes. Then a rigid motion has the form
+We assume that these bodies are in a \emph{rigid motion}. We recall that a \emph{rigid  motion}, is a solution of motions equations with $r_{ij}$ constant.  It is known (see \cite{ AurelWintner272}) that a rigid motion is performed in a plane $\Pi$. We assume that $\Pi$ is the plane determined by the first two coordinates axes. Then a rigid motion has the form (see \cite{JaumeLlibre276})
 \[q_j(t)=Q(\nu t)q^0_j,\]
 where
 \[
@@ -201,22 +199,23 @@ where the \emph{potential function} $U$ is defined by:
 and $\nabla_j$ denotes the $3$-dimensional partial gradient with respect to $q_j$.
 According to \cite[Eq. (2.16)]{JaumeLlibre276} we have $\nu^2=\lambda$. Then the primaries bodies perform a periodic motion with period $T:=2\pi/\nu$ .
 
-We suppose that we have a massless particle with coordinates $q(t)=(x(t),y(t),z(t))\in\rr^3$. This particle does not disturb the rigid motion of  primaries.  We want to find conditions under which this particle perform a $T$-periodic motion on the third axis of coordinates.
+We suppose that we have a massless particle with coordinates $q(t)=(x(t),y(t),z(t))\in\rr^3$. This particle does not disturb the rigid motion of  primaries.  We want to find conditions under which this particle perform a $T$-periodic motion on the $z$ axis of coordinates.
 
 The particle $q$ satisfies the Newtonian equations of motion
 \begin{equation}\label{eq:newton}
  \ddot{q}=\sum_{i=1}^n\frac{m_i(q_i-q)}{|q_i-q|^3},
 \end{equation}
 
-
+A necessary and sufficient condition for the particle  has a non-trivial motion along the $z$ axis at all times is that the horizontal component of the gravitational force originated by the primaries is null. The following theorem characterize the initial configuration $(q_1^0,\ldots,q_n^0)$ with this property.
 
 
 \begin{thm}\label{thm:prim} There exists a non-stationary  solution of \eqref{eq:newton} with $x(t)=y(t)=0$ if and only if $q^0_1,\ldots,q^ 0_n$ satisfy that for any $r>0$, such that the set
 \[F_r:=\{i:|q_i^ 0|=r\}\]
 is non empty, that
 \begin{equation}\label{eq:suma0}\sum_{i\in F_r}m_iq_i^ 0=0.\end{equation}
-i.e. every maximal equidistant from origin set of bodies has center of mass equal to $0$.
+i.e. every maximal set of  bodies which are equidistant from origin has center of mass equal to $0$.
 \end{thm}
+We will show by means of an example that non-stationary assumption is necessary.
 
 If condition \eqref{eq:suma0} holds then equation \eqref{eq:newton} is reduced to
 \begin{equation}\label{eq:eq_new_red}
@@ -226,33 +225,61 @@ with  $s_i=|q_i^0|$.
 
 
 
+
+
+
+\begin{thm}\label{thm:sol.perio.o.infinito}
+A non-trivial solution of the equation \eqref{eq:eq_new_red} is either periodic or  its norm tends to infinity when $t$ goes to infinity. Moreover the escape velocity is \[\left(\sum_{i=1}^{n}\frac{2m_i}{\sqrt{s_i^2+z(0)^2}}\right)^{\frac12}.\]
+\end{thm}
+
+
 We note that in order to get collisionless solutions of problem $P$ we need that no primary body is located in the center of mass. We say that a
 CC is \emph{admissible} if it is non-collisional and satisfies \eqref{eq:suma0}. In the following theorem we characterize all admisible configurations with 3 or 4 bodies.
 
 \begin{thm}\label{thm:caracterizacion}
-The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses \textcolor{blue}{are equal??} \textcolor{red}{ lie in a common circle with center of mass at the origin} the CC is a \textcolor{red}{ equal mass} square .
+The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses  lie in a common circle with center of mass at the origin the CC is a  equal mass square.
 \end{thm}
 
-\begin{thm}\label{thm:prin_ine} We assume that $q_1,\ldots,q_n$ is a admisible CC. A necessary and sufficient condition for that the problem $(P)$ has non trivial sotutions is that
+If the equation \eqref{eq:eq_new_red} has a $kT$-periodic solution, where $T$ is the period for the primaries and $k$ is a positive integer, we say that the solution is  $kT$-synchronous.
+
+The following theorem characterize all the possible period for the massless particle.
+
+\begin{thm}\label{thm:prin_ine} We assume that $q_1^0,\ldots,q_n^0$ is a admisible CC. A necessary and sufficient condition for that the problem $(P)$ has non trivial $T_0$-periodic solutions is that
+\begin{equation}
+ \frac{4\pi^2}{T_0^2}<\sum_{i=1}^n\frac{m_i}{s_i^3}
+\end{equation}
+
+In particular, there is a $T$-synchronous solution if and only if
+
 \begin{equation}\label{eq:ine_prin}
  \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{s_i^3}\right)\left(\sum_{i=1}^nm_is_i^2\right).
 \end{equation}
 \end{thm}
 
-With the objective of studying the existence of solutions for the problem $P$, and taking into account the results of theorems \ref{thm:caracterizacion} and \ref{thm:prin_ine}, our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body.
+We observe that for all admissible CC there exists $kT$ synchronous solution (and therefore a periodic solution of the complete $n+1$-problem) when $k\in \mathbb{N}$ is  large enough.
 
-In \cite[Inequality $(41)$]{li2013characterization} it was already proven that for $n$ primary bodies of equal mass, which are arranged in the vertices of a regular polygon, the condition \eqref{eq:ine_prin} holds for $2\leq n \leq 472$. So we rest prove that condition \eqref{eq:ine_prin} is satisfied for the symetric collinear $4$-body CC, and for the CC forming a rhombus with equal masses in opposite vertices. Let's call these central configurations CCl and CCr respectively.
+The sufficiency of the condition $n\leq 472$ in the following corollary  was proved in \cite{li2013characterization}.
+
+\begin{cor}\label{cor:nleq472}
+We suppose that $q_1^0,\ldots,q_n^0$ is the equal masses regular polygon configuration  (this is an admisible CC). Then there exists a synchronous solution if and only if $n\leq 472$.
+\end{cor}
+
+
+
+
+Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body. In virtue of Corollary \ref{cor:nleq472} and Theorem \ref{thm:caracterizacion}  we rest prove that condition \eqref{eq:ine_prin} is satisfied for the symmetric collinear $4$-body CC, and for the CC forming a rhombus with equal masses in opposite vertices. Let's call these central configurations CCcl and CCr respectively.
+
+
 
 \begin{thm}\label{thm:CC.3.4.satis.cond.adm}
-The central configurations CCl and CCr satisfy condition \eqref{eq:ine_prin}. 
+The central configurations CCcl and CCr satisfy condition \eqref{eq:ine_prin}.
 \end{thm}
 
-As a consequence of all  previous results we have that given an admissible CC of 3-body or 4-body,  the  problem $P$ has solution.
+\begin{cor}
+For all  admissible CC of 3-body or 4-body  problem $P$ has a $T$-synchronous solution.
+\end{cor}
 
 
-\begin{thm}\label{thm:sol.perio.o.infinito}
-A non-trivial solution of the equation \eqref{eq:eq_new_red} is either periodic or  its norm tends to infinity when $t$ goes to infinity.
-\end{thm}
 
 
 \section{Proofs}
@@ -337,6 +364,54 @@ If  \eqref{eq:suma0} is satisfied then the force field $F$ acting on the masless
 particle carries the $z$ axis in itself. Therefore, from the existence and uniqueness theorem and other elementary properties of system of ODEs we obtain a solution  of \eqref{eq:newton} with $x(t)=y(t)=0$.  \end{proof}
 
 
+\begin{proof}[Proof Proposition \ref{prop:CCno.adm.sol.trivial}]
+Some of the following calculations were made with symbolic math software. Let's  consider a particular Euler's linear central configuration formed by three collinear bodies of mass $m_1 = 4-\mu$, $m_2 = 2 + \mu$, $m_3 = 1$, where $0<\mu<1$, and $q_1 = 0$, $q_2 = 1$ and $q_3 = 1 + r$ their respective positions, with $r$ such that
+\[ p(r,\mu)=0,\]
+where $p(r,\mu)=6 r^{5} +\left(- \mu + 16\right) r^{4}  +  \left(- 2 \mu + 14\right) r^{3}+ \left(- \mu - 5\right)  r^{2}+\left(- 2 \mu - 7\right) r - \mu - 3$. Note that as $p(0,\mu)=-\mu-3$ and $P(1,\mu)=-7\mu+21$ then, for all $0<\mu<1$, $r\in (0,1)$ .
+In this case the center of mass $C$ is equal to $\frac{\mu}{7} + \frac{r}{7} + \frac{3}{7}$, so $C\in (0,1)$. 
+
+We denote with $x$ the point between 0 and 1 where the sum of the forces that the primary bodies make on a massless particle located in that position is equal to zero. For this value of $x$ we have to
+$f(x)=0,$ where $f(x)= - \frac{4-\mu }{x^{2}}+\frac{\mu + 2}{\left(- x + 1\right)^{2}} + \frac{1}{\left(r - x + \right)^{2}}$.
+Note that the left side of the previous equation is an increasing function that tends to $-\infty$ when $x$ goes to 0, and tends to $+\infty$ when $x$ goes to 1, so there is a unique point $x\in (0,1)$, such that the equality holds.
+
+Then, if we want to have a trivial solution of the problem \eqref{eq:newton} then necessarily $C$ has to be equal to $x$. Let's see that there exists $ \mu \in (0,1) $ such that $ C = x $, i.e. $f(C)=0$. For this purpose, since $C$ is a continuous function with respect to $\mu$,  we need to see that there exists a value $\mu_1\in (0,1)$ such that $f (C) <0$  and   $ \mu_2\in (0,1) $ such that $ f (C)> 0 $.  The function $f(x)$ can be factorized as $$f(x)=\frac{Nf(x)}{Df(x)},$$ where $Nf(x)=2 \mu r^{2} x^{2} - 2 \mu r^{2} x + \mu r^{2} - 4 \mu r x^{3} + 8 \mu r x^{2} - 6 \mu r x + 2 \mu r + 2 \mu x^{4} - 6 \mu x^{3} + 7 \mu x^{2} - 4 \mu x + \mu - 2 r^{2} x^{2} + 8 r^{2} x - 4 r^{2} + 4 r x^{3} - 20 r x^{2} + 24 r x - 8 r - x^{4} + 10 x^{3} - 21 x^{2} + 16 x - 4$ and $Df(x)=x^{2} \left(x - 1\right)^{2} \left(r - x + 1\right)^{2}$. Note that  $Df(x)>0$ for all $x\in (0,1)$. If we consider $\mu=0$ and compute $Nf(C)$ we have that
+\[Nf(C)=\frac{r^{4}}{2401} + \frac{1514 r^{3}}{2401} + \frac{2245 r^{2}}{2401} + \frac{1110 r}{2401} + \frac{333}{2401}>0,\]
+on the other, hand if  $\mu=1$ then
+\[Nf(C)=- \frac{71 r^{4}}{2401} + \frac{1486 r^{3}}{2401} + \frac{401 r^{2}}{2401} - \frac{1480 r}{2401} - \frac{592}{2401}<0,\]
+because $0<r<1$. 
+\end{proof}
+
+
+\begin{proof}[Proof  Theorem \ref{thm:sol.perio.o.infinito}]
+
+
+
+Let $z$ be a solution of equation \eqref{eq:eq_new_red}.
+Multiplying this equation by $\dot{z}$ and integrating we obtain the following law of conservation of energy
+\begin{equation}\label{eq:conser.energ}
+\frac{|\dot{z}|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z^2\right)^{\frac12}}=E,
+\end{equation}
+where $E$ is the constant energy of the system.
+
+
+Suppose first that there exists a time $t_0$ such that $\dot{z}(t_0)=0$. As the equation \eqref{eq:eq_new_red} is autonomous we can assume without loss of generality that $\dot{z}(0)=0$. As $z$ is a non-trivial solution we have that $z(0)=A\neq 0$, we can suppose without of generality that $A>0$. By the equation \eqref{eq:eq_new_red}  we have that $z$ decreases for positive and near zero times, if at some instant of time after zero, say $\frac{\bar{T}}{2}$, the particle returns to zero velocity then, by \eqref{eq:conser.energ}, $z\left(\frac{\bar{T}}{2}\right)$ is equal to $-A$. For the symmetry and autonomy of the equation, if $\bar{z}$ denotes the trajectory of the particle from  $\frac{\bar{T}}{2}$ we have $ \bar{z} (t) = - z (t) $, i.e. $z (t +\frac{\bar{T}}{2}) = -z (t)$. Then, $ z (\bar{T}) = - z \left(\frac{\bar{T}}{2}\right) = A=z(0) $ and $\dot{z} (\bar{T}) = - \dot{z} \left(\frac{\bar{T}}{2}\right) = 0 =\dot{z}(0)$, and so $z$ is periodic. If there is no time after zero such 
+that $\dot{z}$ is null then $\dot{z}(t)<0$ and, by \eqref{eq:conser.energ}, $z(t)>-A$ for all $t\geq 0$. Therefore $z$ is a decreasing function and remains bounded. Hence  we have that $\lim\limits_{t\to \infty}z(t)=z_{\infty}$. As
+$\ddot{z}(h_t)=\frac{z(t+h)-2z(t)+z(t+h)}{h^2},$
+for some $h_t\in [t-h,t+h]$, if  $t$ goes to infinity we have that $\lim\limits_{t\to\infty}\ddot{z}(h_t)=0$.  Thus \[0=\lim\limits_{t\to 0}\sum_{i=1}^{n}\frac{m_i z(h_t)}{(s_i^2+z(h_t)^2)^{\frac32}},\] this implies that $\lim\limits_{t\to\infty}z(h_t)=0$. Therefore, as $z$ is a decreasing function,  $z(t)\geq 0$ for all $t\geq 0$, and by \eqref{eq:eq_new_red} we have that $\ddot{z}(t)\leq 0$ for all $t\geq 0$. This implies that $\dot{z}$ is a decreasing function, and how $\dot{z}< 0$ for $t>0$, it follows that $0>\dot{z}(1)\geq \dot{z}(t)$ for $t\geq 1$. By the mean value theorem, $\dot{z}(\bar{h}_t)=\frac{z(t+h)-z(t)}{h}$ for some $\bar{h}_t\in [t,t+h]$, therefore 
+\[\lim\limits_{t\to \infty}\dot{z}(\bar{h}_t)=\lim\limits_{t\to \infty}\frac{z(t+h)-z(t)}{h}=0,\]
+which is a contradiction.
+
+If there is no time $t$ such that $\dot{z}(t)=0$ Â·then $\dot{z}$ has the same sign all of the time. If we also suppose that $|z|$ is bounded, reasoning as in the previous case we can obtain a contracdition. 
+
+Let's now analyze the escape velocity. From \eqref{eq:conser.energ}, 
+\[\frac{|\dot{z}(t)|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z(t)^2\right)^{\frac12}}=\frac{|\dot{z}(0)|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z(0)^2\right)^{\frac12}},\]
+for all $t\in\rr$. If $\lim\limits_{t\to\infty}|z(t)|=\infty$ then, as $\dot{z}(t)$ does not change sign, we have that
+
+\begin{equation}\label{eq:vel.esc}
+\left(\sum_{i=1}^{n} \frac{2m_i}{\left(s_i^2+z(0)^2\right)^{\frac12}}\right)^{\frac12}\leq |\dot{z}(0)|.
+\end{equation}
+Coversely, if \eqref{eq:vel.esc} holds $|\dot{z}(t)|\geq C>0$ for all $t\in\rr$. Therefore, $\lim\limits_{t\to\infty}|z(t)|=\infty$. 
+\end{proof}
 
 
 \begin{proof}[Proof Theorem \ref{thm:caracterizacion}]
@@ -363,10 +438,42 @@ We use the second variation $\delta^2 \mathcal{I}$ in order to show  that $u_0\n
 \end{equation}
 Taking account that $\lambda=U(q_1,\ldots,q_n)/\sum_{i=1}^{n}m_i|q_i|^2$  (see \cite[p. 109]{JaumeLlibre276}),  \eqref{eq:form.delta2} and \eqref{eq:ine_prin} we obtain that $\delta^2\mathcal{I}(0,\varphi)<0$. It is sufficient  to guarantee that $u_0\equiv 0$ is not a minimum.
 
+
 We prove now that \eqref{eq:ine_prin} is a necessary condition. We write \eqref{eq:eq_new_red}
-as $z''+q_1(t)z=0$ where $q_1(t)=\sum_{i=1}^{n} m_i \left(s_i^2 +z^2\right)^{-\frac32}$ and we assume that $z$ is a periodic solution of \eqref{eq:eq_new_red} with period $\frac{2\pi}{\sqrt{\lambda}}$. As $q_1(t)\geq \sum_{i=1}^{n} m_i s_i^{-3} $ for all $t\in \rr$, from the Strum's comparison theorem (see PONER REFERENCIAS)  the period of the function $z$ is  greater \textcolor{red}{or equal} than  the period of every non-trivial solution of $v''+\sum_{i=1}^{n} m_i s_i^{3}v=0$, i.e. $\frac{2\pi}{\sqrt{\lambda}}\geq 2\pi \left(\sum_{i=1}^{n} m_i s_i^{-3}\right)^{-\frac12}$. Recalling that $\lambda=U(q_1,\ldots,q_n)/\sum_{i=1}^{n}m_i|q_i|^2$ we have that   \eqref{eq:ine_prin} holds.
+as $z''+q_1(z)z=0$ where $q_1(z)=\sum_{i=1}^{n} m_i \left(s_i^2 +z^2\right)^{-\frac32}$ and we assume that $z$ is a periodic solution of \eqref{eq:eq_new_red} with period $T$. As $q_1$ is an even function with respect to $z$ then $z(T/4)=0$. In fact, if $z(0)=A$ and $z(\bar{T})=0$, for some $\bar{T}$, then the function $w(t):=-z(\bar{T}-t)$ solves \eqref{eq:eq_new_red} with initial data $w(0)=-z(\bar{T})=0$ and $\dot{w}(0)=\dot{z}(\bar{T})$. Therefore $w(t)=z(t+\bar{T})$, i.e. $-z(\bar{T}-t)=z(t+\bar{T})$. Hence $-A=z(2\bar{T})$, this implies that $T=4\bar{T}$. 
+
+Let $\widetilde{T}$ be the period of the funcion $v$  that solves $v''+cv=0$,  where $c=\sum_{i=1}^{n}n_is_i^{-3}$, with initial data $v(0)=A$ and $\dot{v}(0)=0$. Then  $\bar{T}/4>\widetilde{T}/4$. In fact, 
+ reasoning for the absurd, we suppose that $0=z(\bar{T}/4)\leq v(\bar{T}/4)$. If $z(\bar{T}/4)< v(\bar{T}/4)$ then there is a time $t_0$ such that $z(t_0)=v(t_0)=z_0$ and $z(t)<v(t)$ for $t_0<t\leq\bar{T}/4$, hence for $t>t_0$
+\[\frac{v(t)-z(t)}{t-t_0}=\dot{v}(\xi)-\dot{z}(\xi),\]
+where $t_0<\xi<t$. On the other hand, 
+\begin{equation*}
+\begin{split}
+\frac{\dot{v}(\xi)-\dot{z}(\xi)}{\xi-t_0}&=\ddot{v}(t_0)-\ddot{z}(t_0)+\frac{o((\xi-t_0))}{\xi-t_0}\\
+&=(-cz_0+q_1(z_0)z_0)+\frac{o((\xi-t_0))}{\xi-t_0}\\
+&=(q_{1}(z_0)-c)z_0+\frac{o((\xi-t_0))}{\xi-t_0}\\
+&=\bar{c}z_0+\frac{o((\xi-t_0))}{\xi-t_0},
+\end{split}
+\end{equation*}
+where $\bar{c}$ is a negative constant. Then, for  $t$ close enough
+ to $t_0$ we have that $\dot{v}(\xi)-\dot{z}(\xi)<0$, and this implies that $v(t)-z(t)<0$ which is a contradiction.
+ Now, if $z(\bar{T}/4)= v(\bar{T}/4)$ and $z(t)<v(t)$ for all $0<t<\bar{T}/4$ we have that
+\begin{equation*}
+\begin{split}
+\dot{v}(t)-\dot{z}(t)&=(\ddot{v}(\xi)-\ddot{z}(\xi))t\\
+&=\left(-cv(\xi)+\sum_{i=1}^{n}\frac{m_i}{(s_i^2+z(\xi)^2)^{\frac32}}z(\xi)\right)t\\
+&=\frac{1}{v(\xi)} \left(-c+\sum_{i=1}^{n}\frac{m_i}{(s_i^2+z(\xi)^2)^{\frac32}}\frac{z(\xi)}{v(\xi)}\right) t\\
+&<0.
+\end{split}
+\end{equation*}
+Then $v(t)-z(t)$ is a decreasing function in $(0,\bar{T}/4)$, hence $v(\bar{T}/4)<z(\bar{T}/4)$, which is a contradiction.
+
+Now, if $z$ is a periodc solution of \eqref{eq:eq_new_red} with period equal to $\frac{2\pi}{\sqrt{\lambda}}$, then $\frac{2\pi}{\sqrt{\lambda}}>2\pi \left(\sum_{i=1}^n m_is_i^{-3}\right)^{-\frac12}$, and this inequality implies \eqref {eq:ine_prin}.
 \end{proof}
 
+
+\begin{proof}[Proof Corollary \ref{cor:nleq472}]
+Our condition \eqref{eq:ine_prin} is reduced to the inequality $(41)$ in \cite{li2013characterization}, where was proved that this inequality holds if and only if $n\leq 472$.
+\end{proof}
 
 \begin{proof}[Proof Theorem \ref{thm:CC.3.4.satis.cond.adm}]
 
@@ -380,13 +487,13 @@ As $ \frac{\mu ^ 2}{2} <4 \mu^2$ and $ \frac{(1-\mu)^2}{2x}< \frac{4(1-\mu)^2}{x
 \[\frac{2\mu(1-\mu)}{1-x} +\frac{2\mu(1-\mu)}{1+x}<\frac{4\mu(1-\mu)}{x^3},\]
 and this is equivalent to see that
 \begin{equation}\label{eq:ineq.4.cuerpos.alinea}
-\frac{x^3}{1-x^2}<2.
+\frac{x^3}{1-x^2}<1.
 \end{equation}
 The values of $x$ involved in the above inequality are such that the configuration for the vector mass $(\mu,1-\mu,1-\mu,\mu)$ is central, by Moulton \cite{moulton1910straight}, fixed a mass $\mu$ there is only one value $x$ satisfiying this condition. So, we can define $x(\mu)$ as such value of $x$. If we can see that the funcion $x(\mu)$ is a decreasing function, then we have that
 $\frac{x(\mu)^3}{1-x(\mu)^2}\leq \lim\limits_{\mu\to 0}\frac{x(\mu)^3}{1-x(\mu)^2}.$
 If also we demonstrate that 
 \begin{equation}\label{eq:ineq.4.cuerpos.lim0}
-\lim\limits_{\mu\to 0}\frac{x(\mu)^3}{1-x(\mu)^2}<2
+\lim\limits_{\mu\to 0}\frac{x(\mu)^3}{1-x(\mu)^2}<1
 \end{equation} 
 we have tested \eqref {eq:ineq.4.cuerpos.alinea}. 
 
@@ -394,37 +501,17 @@ Let's first prove that $x(\mu)$ is a decreasing function. The relationship betwe
 \[\frac{\mu}{4} - \frac{\mu}{x \left(x + 1\right)^{2}} + \frac{\mu}{x \left(- x + 1\right)^{2}} + \frac{- \mu + 1}{\left(x + 1\right)^{2}} + \frac{- \mu + 1}{\left(- x + 1\right)^{2}} - \frac{1}{x^{3}} \left(- \frac{\mu}{4} + \frac{1}{4}\right) = 0\]
  must be satisfied, simplifying this expression we have 
  \[\frac{p(\mu,x)}{q(\mu,x)}  = 0,\]
- where $p(\mu,x)=\mu x^{7} - 10 \mu x^{5} + \mu x^{4} + 9 \mu x^{3} - 2 \mu x^{2} + \mu + 8 x^{5} - x^{4} + 8 x^{3} + 2 x^{2} - 1$ and $q(\mu,x)=4 x^{3} \left(x^{4} - 2 x^{2} + 1\right)$. So the relationship between $\mu$ and $x$ is given that $P(\mu,x)=0$. We can derive implicitly the last equation an we obtain 
+ where $p(\mu,x)=\mu x^{7} - 10 \mu x^{5} + \mu x^{4} + 9 \mu x^{3} - 2 \mu x^{2} + \mu + 8 x^{5} - x^{4} + 8 x^{3} + 2 x^{2} - 1$ and $q(\mu,x)=4 x^{3} \left(x^{4} - 2 x^{2} + 1\right)$. So the relationship between $\mu$ and $x$ is given that $p(\mu,x)=0$. We can derive implicitly the last equation an we obtain 
  \[\frac{dx}{d\mu}=\frac{Np(x)}{Dp(x,\mu)},\]
  where $Np(x)=- \left(x - 1\right) \left(x + 1\right) \left(x^{5} - 9 x^{3} + x^{2} - 1\right)$ and  $Dp(x,\mu)=\mu x^2\left(7 x^{4} - 10 x^{2} + 51 \right) +\left(1- \mu \right) \left( 40 x^{4} + 20 x^{3}  + 4 x \right)$. The denominator $Dp(x,\mu)$ is clearly positive for $0<x<1$ and $0<\mu<1$. To prove that the numerator $Np(x)$ is negative let's see that the polynomial $x^{5} - 9 x^{3} + x^{2} - 1$ is negative for all $0 <x <1$. In fact, calculating their real roots with a software we have that these are  $-3.0483999$, $-0,449322$ and $2,94956549$, then it is easy to see that $x^{5} - 9 x^{3} + x^{2} - 1$ is negative in the interval $(0,1)$, hence $Np(x)<0$ for $0<x<1$. This implies that $\frac{dx}{d\mu}$ is negative for all $0<x<1$ and $0<\mu<1$.
 
-Let's see now that \eqref{eq:ineq.4.cuerpos.lim0} holds. Since $x(\mu)$ is a continuous function we need to prove $\frac{x(0)^3}{1-x(0)^2}<2$. For simplicity we will write $x$ instead of $x(0)$. This value $x$ is such that $p(0,x)=8 x^{5} - x^{4} + 8 x^{3} + 2 x^{2} - 1 = 0$,  then  $8 x^{5} + 8 x^{3} = \left(x^{2} - 1\right)^{2}$, and this implies that $8 x^{5} + 8 x^{3}<1$, hence $x^3<1/(8(x^2+1))<1/8$, $x^2<(1/8)^{\frac23}$ and
-\[\frac{x^3}{1-x^2}<\frac{1/8}{1-1/8^{\frac23}}=1/6<2,\]
+Let's see now that \eqref{eq:ineq.4.cuerpos.lim0} holds. Since $x(\mu)$ is a continuous function we need to prove $\frac{x(0)^3}{1-x(0)^2}<1$. For simplicity we will write $x$ instead of $x(0)$. This value $x$ is such that $p(0,x)=8 x^{5} - x^{4} + 8 x^{3} + 2 x^{2} - 1 = 0$,  then  $8 x^{5} + 8 x^{3} = \left(x^{2} - 1\right)^{2}$, and this implies that $8 x^{5} + 8 x^{3}<1$, hence $x^3<1/(8(x^2+1))<1/8$, $x^2<(1/8)^{\frac23}$ and
+\[\frac{x^3}{1-x^2}<\frac{1/8}{1-1/8^{\frac23}}=\frac16<1,\]
 as we wanted to prove.
 \end{proof}
 
 
 
-\begin{proof}[Proof of Theorem \ref{thm:sol.perio.o.infinito}]
-
-
-
-Let $z$ be a solution of equation \eqref{eq:eq_new_red}.
-Multiplying this equation by $\dot{z}$ and integrating we obtain the following law of conservation of energy
-\begin{equation}\label{eq:conser.energ}
-\frac{|\dot{z}|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z^2\right)^{\frac12}}=E,
-\end{equation}
-where $E$ is the constant energy of the system.
-
-
-Suppose first that there exists a time $t_0$ such that $\dot{z}(t_0)=0$. As the equation \eqref{eq:eq_new_red} is autonomous we can assume without loss of generality that $\dot{z}(0)=0$. As $z$ is a non-trivial solution que have that $z(0)=A\neq 0$, we can suppose without of generality that $A>0$. By the equation \eqref{eq:eq_new_red}  we have that $z$ decreases for positive and near zero times, if at some instant of time after zero, say $\frac{T}{2}$, the particle returns to zero velocity then, by \eqref{eq:conser.energ}, $z\left(\frac{T}{2}\right)$ is equal to $-A$. For the symmetry and autonomy of the equation, if $\bar{z}$ denotes the trajectory of the particle from  $\frac{T}{2}$ we have $ \bar{z} (t) = - z (t) $, i.e. $z (t +\frac{T}{2}) = -z (t)$. Then, $ z (T) = - z \left(\frac{T}{2}\right) = A $ and $\dot{z} (T) = - \dot{z} \left(\frac{T}{2}\right) = 0 $, and so $z$ is periodic. If there is no time after zero such that $\dot{z}$ is null then $\dot{z}(t)<0$ and, by \eqref{eq:conser.energ}, $z(t)>-A$ for all $t\geq 0$. Therefore $z$ is a decreasing function and remains bounded. Hence  we have that $\lim\limits_{t\to \infty}z(t)=z_{\infty}$. As
-$\ddot{z}(h_t)=\frac{z(t+h)-2z(t)+z(t+h)}{h^2},$
-for some $h_t\in [t-h,t+h]$, if  $t$ goes to infinity we have that $\lim\limits_{t\to\infty}\ddot{z}(h_t)=0$.  Thus \[0=\lim\limits_{t\to 0}\sum_{i=1}^{n}\frac{m_i z(h_t)}{(s_i^2+z(h_t)^2)^{\frac12}},\] this implies that $\lim\limits_{t\to\infty}z(h_t)=0$. Therefore, as $z$ is a decreasing function,  $z(t)\geq 0$ for all $t\geq 0$, and by \eqref{eq:eq_new_red} we have that $\ddot{z}(t)\leq 0$ for all $t\geq 0$. This implies that $\dot{z}$ is a decreasing function, and how $\dot{z}< 0$ for $t>0$, it follows that $0>\dot{z}(1)\geq \dot{z}(t)$ for $t\geq 1$. By the mean value theorem, $\dot{z}(\bar{h}_t)=\frac{z(t+h)-z(t)}{h}$ for some $\bar{h}_t\in [t,t+h]$, therefore 
-\[\lim\limits_{t\to \infty}\dot{z}(\bar{h}_t)=\lim\limits_{t\to \infty}\frac{z(t+h)-z(t)}{h}=0,\]
-which is a contradiction.
-
-If there is no time $t$ such that $\dot{z}(t)=0$ ·then $\dot{z}$ has the same sign for every time. If we also suppose that $|z|$ is bounded, reasoning as in the previous case we can obtain a contracdition.
-\end{proof}
 
 
 
