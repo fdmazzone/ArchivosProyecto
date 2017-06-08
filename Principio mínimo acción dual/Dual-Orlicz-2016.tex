@@ -814,24 +814,22 @@ then, by Lemma \ref{lem:cota-a}, there exists $M>0$, independent of $s$, such th
 $\|a(u+sv)\linf\leq M$.
 
 We write $s_1=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$.
-On the other hand, if $v'\in\lphi$ and $|s|\leq s_1 \lambda_v^{-1}$,
+On the other hand, if $v'\in\lphi$ and $|s|\leq s_1 \Lambda\lambda_v^{-1}$,
 from the convexity and the parity of $\Phi$, we get
 \[
 \begin{split}
-\Phi(u'+sv')&=
-\Phi\left((1-s_1)\frac{u'}{1-s_1}+s_1 \frac{s}{s_1}v'\right)\\
-&
+\Phi\left(\frac{u'+sv'}{\Lambda}\right)&
 \leq
-(1-s_1)\Phi\left(\frac{u'}{1-s_1}\right)+s_1 \Phi\left(\frac{s}{s_1}v'\right)
+(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{s}{s_1\Lambda}v'\right)
 \\
 &\leq
-(1-s_1)\Phi\left(\frac{u'}{1-s_1}\right)+s_1 \Phi\left(\frac{v'}{\lambda}\right)
+(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda}\right)
 \in L^1
 \end{split}
 \]
 As $u'\in\Pi(\ephi,\Lambda)$ then
 \[
-d\left(\frac{u'}{1-s_1},E^{\Phi}\right)=\frac{1}{1-s_1}d(u', E^{\Phi})<1
+d\left(\frac{u'}{(1-s_1)\Lambda},E^{\Phi}\right)=\frac{1}{(1-s_1)\Lambda}d(u', E^{\Phi})<1
 \]
 and therefore $\frac{u'}{1-s_0}\in C^\Phi$.
 
