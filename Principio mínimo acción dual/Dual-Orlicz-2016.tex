@@ -100,7 +100,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \renewcommand{\b}[1]{\boldsymbol{#1}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\nn}{\mathbb{N}}
-\newcommand{\ccdot}{\b{\cdot}}
+%\newcommand{\cdot}{\b{\cdot}}
 \renewcommand{\leq}{\leqslant} 
 \renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Psi}}
@@ -327,10 +327,22 @@ If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obt
 One of the greatest difficulties when dealing with anisotropic Orlicz spaces is the lack of  monotony  with respect to the Euclidean norm, i.e. $|x|\leq |y|$ does not imply $\Phi(x)\leq\Phi(y)$. This problem is avoided if we consider functions whose values on a sphere are comparable (see\cite{Skaff1969}). However, from \eqref{eq:escalar_ine}, we see that  $N_{\infty}$ functions have the following form of radial monotony: $|x|\leq |y|$ and $y=\lambda x$ imply $\Phi(x)\leq\Phi(y)$. 
 
 We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
-if there exist  constants $K>0$ and  $M\geq 0$ such that
-\begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x),
+if there exists a  constant $K>0$  such that
+\begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x)+1,
 \end{equation}
-for every $|x|\geq M$. If $\Phi$ es a $\Delta_2$ function then $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
+for every $x$.  
+We note that the $\Delta_2^{\infty}$ implies the following form of quasi-subadditivity. There exists $K>0$ such that for every $x,y\in \rr^d$
+\begin{equation}\label{eq:quasi-sub-aditividad}
+\Phi(x+y)\leq K (\Phi(x)+\Phi(y))+1.
+\end{equation}
+
+In addition, if $\Phi \in \Delta_2^{\infty}$, it holds that for any $\lambda>0$ there exists $c:\rr^+\to \rr^+$ such that 
+\begin{equation}\label{eq:delta2-lambda}
+\Phi(\lambda x)\leq c(\lambda)\Phi(x)+1. 
+\end{equation}
+
+
+If $\Phi$ is a $\Delta_2^{\infty}$ function, then $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
 \[\Phi(x)\leq C|x|^p,\quad |x|\geq r_0.\] 
 
 We consider that one of the most important aspects in considering $N_{\infty}$ functions is that it accounts for the Lagrange functions that present faster growth than powers, for example an exponential growth. Hence we consider it important to avoid imposing hypothesis that $\Phi$ to be $\Delta_2$. For some results we will need that $\Psi$ to be $\Delta_2$. 
@@ -682,8 +694,8 @@ is finitely defined on the set $\domi_{\Lambda}:=W^{1}\lphi\cap\{u|u'\in\Pi(\eph
 \item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi_{\Lambda}$ and  its derivative $I'$ is demicontinuous from 
 $\domi_{\Lambda}$  into $\left[\wphi \right]^*$, i.e. $I'$ is continuous when $\domi_{\Lambda}$ is equipped with the strong topology and   $\left[\wphi \right]^*$ with the weak* topology. Moreover, $I'$ is given by the following expression
 \begin{equation}\label{eq:DerAccion}
-\langle  I'(u),v\rangle= \int_0^T \left\{\nabla_x\mathcal{L}\big(t,u,u'\big)\ccdot v
-+ \nabla_y\mathcal{L}\big(t,u,u'\big)\ccdot v'\right\} \ dt.
+\langle  I'(u),v\rangle= \int_0^T \left\{\nabla_x\mathcal{L}\big(t,u,u'\big)\cdot v
++ \nabla_y\mathcal{L}\big(t,u,u'\big)\cdot v'\right\} \ dt.
 \end{equation}
 
 \item\label{it:T1item4}  If  $\Psi \in \Delta^{\infty}_2$ then 
@@ -767,13 +779,13 @@ Lemma \ref{lem:cota-a} implies that $a(u_n(t))$ is uniformly bounded by a certai
 Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n$ instead of $u$, we have 
 \begin{equation}\label{eq:Dy-suc}
   \Psi\left(\frac{\nabla_y\mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)   
-	\leq M (b+h)\in L^1.
+	\leq M (b+h)=:h_1\in L^1.
 \end{equation}
 As $v \in \lphi$ there exists $\lambda_v>0$ such that $\Phi(v/\lambda_v)\in L^1$. 
 Now, by Young inequality and \eqref{eq:Dy-suc}, we have
 \begin{equation}\label{eq:Dy_lambda-Psi}
 \begin{split}
-\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})\ccdot v(t) 
+\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})\cdot v(t)
 &\leq 
 \lambda\lambda_v\left[\Psi\left(\frac{\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})}{\lambda}\right)+\Phi\left(\frac{v}{\lambda_v}\right)\right]
 \\
@@ -783,9 +795,9 @@ Now, by Young inequality and \eqref{eq:Dy-suc}, we have
   Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
 \begin{equation}\label{conv_debil}
 \int_0^T  \nabla_y\mathcal{L}(t,u_{n},u'_{n})
-\ccdot  v \,dt 
+\cdot  v \,dt
 \to 
-\int_0^T \nabla_y\mathcal{L}(t,u,u')\ccdot v\, dt \end{equation}
+\int_0^T \nabla_y\mathcal{L}(t,u,u')\cdot v\, dt \end{equation}
 which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
 \emph{Step 3.} We will prove \eqref{eq:DerAccion}. 
@@ -806,52 +818,46 @@ d \left(u'+s v', \ephi \right)<\Lambda$ and thus $u'+sv' \in \Pi(\ephi,\Lambda)$
 These facts imply, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
 that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
 
-We also have 
+
+
+We write $s_1:=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$. As $u'\in\Pi(\ephi,\Lambda)$ then
+\[
+d\left(\frac{u'}{(1-s_1)\Lambda},E^{\Phi}\right)=\frac{1}{(1-s_1)\Lambda}d(u', E^{\Phi})<1
+\]
+and therefore $(1-s_1)^{-1}\Lambda^{-1}u'\in C^\Phi$. Hence,  if $v'\in\lphi$ and $|s|\leq s_1 \Lambda\lambda_v^{-1}$, from the convexity and the parity of $\Phi$, we get
+\begin{equation}\label{eq:cota-u+sv}
+\begin{split}
+\Phi\left(\frac{u'+sv'}{\Lambda}\right)&
+\leq
+(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{s}{s_1\Lambda}v'\right)
+\\
+&\leq
+(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda_v}\right)
+\in L^1
+\end{split}
+\end{equation}
+
+We also have
 $
 \|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
 $
-then, by Lemma \ref{lem:cota-a}, there exists $M>0$, independent of $s$, such that 
-$\|a(u+sv)\linf\leq M$.
-
-We write $s_1=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$.
-On the other hand, if $v'\in\lphi$ and $|s|\leq s_1 \lambda_v^{-1}$,
-from the convexity and the parity of $\Phi$, we get
-\[
-\begin{split}
-\Phi(u'+sv')&=
-\Phi\left((1-s_1)\frac{u'}{1-s_1}+s_1 \frac{s}{s_1}v'\right)\\
-&
-\leq
-(1-s_1)\Phi\left(\frac{u'}{1-s_1}\right)+s_1 \Phi\left(\frac{s}{s_1}v'\right)
-\\
-&\leq
-(1-s_1)\Phi\left(\frac{u'}{1-s_1}\right)+s_1 \Phi\left(\frac{v'}{\lambda}\right)
-\in L^1
-\end{split}
-\]
-As $u'\in\Pi(\ephi,\Lambda)$ then
-\[
-d\left(\frac{u'}{1-s_1},E^{\Phi}\right)=\frac{1}{1-s_1}d(u', E^{\Phi})<1
-\]
-and therefore $\frac{u'}{1-s_0}\in C^\Phi$.
-
-Now, applying \eqref{eq:cota-condicion-estructura}, \eqref{eq:Dy_lambda-Psi},  
-%the monotonicity of $\varphi$ and $\Phi$, 
-the fact that $v \in L^{\infty}$ and $v'\in\lphi$, 
-%and H\"older's inequality, 
+then, by Lemma \ref{lem:cota-a}, there exists $M>0$, independent of $s$, such that
+$\|a(u+sv)\linf\leq M$. Now, applying Young's Inequality,  \eqref{eq:cota-condicion-estructura},
+the fact that $v \in L^{\infty}$, \eqref{eq:cota-u+sv} and $\Phi(v'/\lambda_v)\in L_1$, 
 we get
 \begin{equation}\label{ctg}
 \begin{split}
-|D_s H(s,t)|&=\left| \nabla_x\mathcal{L}(t,u+sv,u'+sv')\ccdot v +  
-\lambda \nabla_y\mathcal{L}(t, u+s v, u'+sv')\ccdot\frac{v'}{\lambda}\right| \\
-  & \leq M \left[ b(t)+ \Phi(u'+sv')\right]|v|\\
- &\quad+ \lambda\left[\Psi(\nabla_y\mathcal{L}(t,u+sv,u'+sv'))+\Phi\left(\frac{v'}{\lambda}\right) \right]
+|D_s H(s,t)|&=\left| \nabla_x\mathcal{L}(t,u+sv,u'+sv')\cdot v +
+  \nabla_y\mathcal{L}(t, u+s v, u'+sv')\cdot v'\right| \\
+  & \leq M \left\{ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right\}|v|\\
+ &\quad+ \lambda\lambda_v\left\{\Psi\left(\frac{\nabla_y\mathcal{L}(t,u+sv,u'+sv')}{\lambda}\right)+\Phi\left(\frac{v'}{\lambda_v}\right) \right\}
 \\
- &\leq M \left\{\left[ b(t)+ \Phi(u'+sv')\right]|v|\right\}+
- \lambda M[ b(t)+ \Phi(u'+sv')]+\lambda \Phi\left(\frac{v'}{\lambda}\right)
- \\
- &=
- M [ b(t)+ \Phi(u'+sv')] (|v|+\lambda) +\lambda \Phi\left(\frac{v'}{\lambda}\right)
+ &\leq 
+%M \left\{\left[ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right]|v|\right\}+
+ %\lambda\lambda_v M[ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)]+\lambda \lambda_v \Phi\left(\frac{v'}{\lambda_v}\right)
+ %\\
+ %&=
+ M \left\{ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right\} (|v|+\lambda\lambda_v) +\lambda\lambda_v \Phi\left(\frac{v'}{\lambda}\right)
  \in L^1.
 \end{split}
 \end{equation}
@@ -859,7 +865,7 @@ we get
 Consequently, $I$ has a directional derivative and
 \[
 \langle I'(u),v \rangle=\frac{d}{ds}I(u+s v)\big|_{s=0}=\int_0^T  
-\left\{\nabla_x\mathcal{L}(t,u,u')\ccdot v+ \nabla_y\mathcal{L}(t,u,u')\ccdot v'\right\} \ dt.
+\left\{\nabla_x\mathcal{L}(t,u,u')\cdot v+ \nabla_y\mathcal{L}(t,u,u')\cdot v'\right\} \ dt.
 \]
 Moreover, from the previous formula, \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase}, and
 Lemma \ref{lem:inclusion orlicz}, we obtain
@@ -868,68 +874,30 @@ Lemma \ref{lem:inclusion orlicz}, we obtain
 \|\nabla_y\mathcal{L}\|_{\lpsi} \|v'\orlnor \leq C \|v\sobnor
 \]
 with a appropriate constant $C$.
-
 This completes the proof of the G\^ateaux differentiability of $I$. 
 
 
 
-\emph{Step 4. The operator $I':\domi_{\Lambda}  \to \left[\wphi_d
-\right]^* $ is demicontinuous.}
-This is a consequence  of the continuity of the mappings $u \mapsto \nabla_x\mathcal{L}(t,u,u')$ and $u \mapsto
-\nabla_y\mathcal{L}(t,u,u')$. Indeed, if $u_n,u\in \domi_{\Lambda}$ with $u_n\to u$ in the norm of $\wphi$ and $v \in
-\wphi$, then
-\[
-\begin{split}
-\left\langle  I'(u_{n}),v \right\rangle &= \int_0^T \left\{  \nabla_x\mathcal{L}\left(t,u_n,u'_n\right)\ccdot
-v +
- \nabla_y\mathcal{L}\left(t,u_n,u'_n\right)\ccdot v'\right\} \ dt\\
-&\rightarrow \int_0^T \left\{ \nabla_x\mathcal{L}\left(t,u,u'\right)\ccdot v+ 
-\nabla_y\mathcal{L}\left(t,u,u'\right)\ccdot v'\right\} \ dt\\
-&=\left\langle  I'(u),v \right\rangle.
-\end{split}
-\]
-
+The previous steps imply the demicontinuity of the operator $I':\domi_{\Lambda}  \to \left[\wphi_d
+\right]^* $.
 
 In order to prove item  \ref{it:T1item4}, it is necessary to see that the maps $u\mapsto \nabla_x\mathcal{L}(t,u,u')$  
 and $u\mapsto \nabla_y\mathcal{L}(t,u,u')$  are norm continuous
 from $\domi_{\Lambda} $ into $L^1$ and
  $\lpsi$, respectively.  
-
-The continuity of the first map has already been proved in step 1. 
-
-Si eliminamos la demicontinuidad del segundo item, hay que copiar 
-la continuidad de $D_x$ aqu\'i!!!
-
-Let $u_n, u \in \domi_{\Lambda}$ with $\|u_n- u\sobnor\to 0$.  
-
-Applying Lemma \ref{segundo lema} to $u'_n$, 
-there exists a subsequence (denoted $u'_n$ for simplicity)
-such that
-$u'_n \in L^\Phi$ and a function  $h \in L^1$  such that  $\Psi(u'_n)\leq h$ and $u'_n \to u'$ a.e.
-
-Then, by \eqref{eq:Dy_lambda-Psi} we have
- $ \Psi(v_n) 
-	\leq m(t) \in L^1$
- being  $v_n:=\nabla_y\mathcal{L}(\cdot,u_n,u'_n)$ and $m(t):= M (b+h)$. 
-In addition, from the continuous differentiability of $\mathcal{L}$, we have that
-$v_n \to v$ a.e. where $\nabla_y\mathcal{L}(\cdot,u,u')$.
-
-As  $\Psi\in\Delta_2$, there exists $c:\rr^+\to ???$ such that 
-$\Psi(\lambda x)\leq c(|\lambda|)\Psi(x)$. 
-Then, $\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|^{-1})\Psi(v_n-v)$ for every $\lambda \in \rr$.
-
-Therefore, $\Psi(\frac{v_n-v}{\lambda})\to 0$ a.e. as $n \to \infty$ and 
-$\Psi(\frac{v_n-v}{\lambda})\leq c(|\lambda|^{-1})K\Psi(v_n)+\Psi(v))
-\leq c(|\lambda|^{-1}) K [m(t)+\Psi(v)])\in L^1$.
-
-Now, by Dominated Convergence Theorem, we get
-$
-\int \Psi(\frac{v_n-v}{\lambda})\,dt \to 0
-$
-for every $\lambda>0$. Thus, $v_n \to v$ in $L^{\Psi}$.
-
-The continuity of $I'$  follows  from the continuity 
-of $\nabla_x\mathcal{L}$ and $\nabla_y\mathcal{L}$ using the formula \eqref{eq:DerAccion}.
+It remains to the continuity of the second map. 
+To this purpose, we take  $u_n, u \in \domi_{\Lambda}$, $n=1,2,\dots$, with $\|u_n- u\sobnor\to 0$.  
+As before, we can deduce there exist a subsequence (denoted $u'_n$ for simplicity) and $h_1 \in L^1$ such that \eqref{eq:Dy_lambda-Psi} holds and $u_n \to u$ a.e.
+ Since $\Psi\in\Delta_2$, 
+\begin{equation}
+\Psi(\nabla_y \mathcal{L}(\cdot,u_n,u'_n))\leq c(\lambda) \Psi\left(\frac{\nabla_y \mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)+1\leq c(\lambda)h_1+1=:h_2\in L^1
+\end{equation} 
+Then, from the quasi-subadditivity of $\Psi$ we have 
+\[\Psi\left(\nabla_y \mathcal{L}(\cdot,u_n,u'_n)-
+\nabla_y \mathcal{L}(\cdot,u,u')\right)\leq K (h_2+\Psi(\nabla_y \mathcal{L}(\cdot,u,u')))+1\].
+Now, by Dominated Convergence Theorem, we obtain that 
+$\nabla_y \mathcal{L}(\cdot,u_n,u'_n)$ is $\rho_{\Psi}$ modular convergent to $\nabla_y \mathcal{L}(\cdot,u,u')\right)$.
+Since $\Psi$ is $\Delta_2^{\infty}$, modular convergence implies norm convergence (see \cite{Skaff1969}).
 \end{proof}
 
 
