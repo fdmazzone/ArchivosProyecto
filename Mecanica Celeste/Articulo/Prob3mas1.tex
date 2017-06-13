@@ -165,7 +165,7 @@ through the center of masses. Sitnikov obtained deep results about existence of 
  Llibre and Ortega \cite{llibre2008families}, P{\'e}rez, Jim{\'e}nez and Lacomba \cite{perez2009periodic}.
 
 Problems like the Sitnikov problem for four bodies  were addressed more recently.
-In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$. They considered  a Lagrangian equilateral triangle configuration for the primaries bodies, which were supposed to have the same mass $m_1=m_2=m_3$. Later  in \cite{pandey2013periodic}, Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
+In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$. They considered  a Lagrangian equilateral triangle configuration for the primaries bodies, which were supposed to have the same mass $m_1=m_2=m_3$. In \cite{bountis2009stability} Papadakis and Bountis extend of results of \cite{soulis2008periodic} to $N-1$ primaries ($N\geq 4$) in a poligonal equal mass configuration. Later  in \cite{pandey2013periodic}, Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
 In \cite{zhao2015nonplanar}, Zhao and Zhang proved existence, by means of a variational approach, of periodic solutions for a problem similar to the one dealt in \cite{soulis2008periodic}.
 In \cite{li2013characterization} Li, Zhang and Zhao studied a special type of
 restricted circular $N+1$-body problem  with equal masses for the primaries in a regular polygon configuration.
@@ -226,13 +226,6 @@ with  $s_i=|q_i^0|$.
 
 
 
-
-
-\begin{thm}\label{thm:sol.perio.o.infinito}
-A non-trivial solution of the equation \eqref{eq:eq_new_red} is either periodic or  its norm tends to infinity when $t$ goes to infinity. Moreover the escape velocity is \[\left(\sum_{i=1}^{n}\frac{2m_i}{\sqrt{s_i^2+z(0)^2}}\right)^{\frac12}.\]
-\end{thm}
-
-
 We note that in order to get collisionless solutions of problem $P$ we need that no primary body is located in the center of mass. We say that a
 CC is \emph{admissible} if it is non-collisional and satisfies \eqref{eq:suma0}. In the following theorem we characterize all admisible configurations with 3 or 4 bodies.
 
@@ -244,16 +237,20 @@ If the equation \eqref{eq:eq_new_red} has a $kT$-periodic solution, where $T$ is
 
 The following theorem characterize all the possible period for the massless particle.
 
-\begin{thm}\label{thm:prin_ine} We assume that $q_1^0,\ldots,q_n^0$ is a admisible CC. A necessary and sufficient condition for that the problem $(P)$ has non trivial $T_0$-periodic solutions is that
+\begin{thm}\label{thm:prin_ine} We assume that $q_1^0,\ldots,q_n^0$ is a admisible CC.
+\begin{enumerate}
+ \item A non-trivial solution of the equation \eqref{eq:eq_new_red} is either periodic or  its norm tends to infinity when $t$ goes to infinity. The escape velocity for initial condition $z(0)$ is \[\left(\sum_{i=1}^{n}\frac{2m_i}{\sqrt{s_i^2+z(0)^2}}\right)^{\frac12}.\]
+ \item A necessary and sufficient condition for that equation \eqref{eq:eq_new_red} has non trivial $T_0$-periodic solutions is that
 \begin{equation}
  \frac{4\pi^2}{T_0^2}<\sum_{i=1}^n\frac{m_i}{s_i^3}
 \end{equation}
-
-In particular, there is a $T$-synchronous solution if and only if
+\item In particular, there is a $T$-synchronous solution if and only if
 
 \begin{equation}\label{eq:ine_prin}
  \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{s_i^3}\right)\left(\sum_{i=1}^nm_is_i^2\right).
 \end{equation}
+\end{enumerate}
+
 \end{thm}
 
 We observe that for all admissible CC there exists $kT$ synchronous solution (and therefore a periodic solution of the complete $n+1$-problem) when $k\in \mathbb{N}$ is  large enough.
@@ -371,7 +368,7 @@ where $p(r,\mu)=6 r^{5} +\left(- \mu + 16\right) r^{4}  +  \left(- 2 \mu + 14\ri
 In this case the center of mass $C$ is equal to $\frac{\mu}{7} + \frac{r}{7} + \frac{3}{7}$, so $C\in (0,1)$. 
 
 We denote with $x$ the point between 0 and 1 where the sum of the forces that the primary bodies make on a massless particle located in that position is equal to zero. For this value of $x$ we have to
-$f(x)=0,$ where $f(x)= - \frac{4-\mu }{x^{2}}+\frac{\mu + 2}{\left(- x + 1\right)^{2}} + \frac{1}{\left(r - x + \right)^{2}}$.
+$f(x)=0,$ where $f(x)= - \frac{4-\mu }{x^{2}}+\frac{\mu + 2}{\left(- x + 1\right)^{2}} + \frac{1}{\left(r - x + 1\right)^{2}}$.
 Note that the left side of the previous equation is an increasing function that tends to $-\infty$ when $x$ goes to 0, and tends to $+\infty$ when $x$ goes to 1, so there is a unique point $x\in (0,1)$, such that the equality holds.
 
 Then, if we want to have a trivial solution of the problem \eqref{eq:newton} then necessarily $C$ has to be equal to $x$. Let's see that there exists $ \mu \in (0,1) $ such that $ C = x $, i.e. $f(C)=0$. For this purpose, since $C$ is a continuous function with respect to $\mu$,  we need to see that there exists a value $\mu_1\in (0,1)$ such that $f (C) <0$  and   $ \mu_2\in (0,1) $ such that $ f (C)> 0 $.  The function $f(x)$ can be factorized as $$f(x)=\frac{Nf(x)}{Df(x)},$$ where $Nf(x)=2 \mu r^{2} x^{2} - 2 \mu r^{2} x + \mu r^{2} - 4 \mu r x^{3} + 8 \mu r x^{2} - 6 \mu r x + 2 \mu r + 2 \mu x^{4} - 6 \mu x^{3} + 7 \mu x^{2} - 4 \mu x + \mu - 2 r^{2} x^{2} + 8 r^{2} x - 4 r^{2} + 4 r x^{3} - 20 r x^{2} + 24 r x - 8 r - x^{4} + 10 x^{3} - 21 x^{2} + 16 x - 4$ and $Df(x)=x^{2} \left(x - 1\right)^{2} \left(r - x + 1\right)^{2}$. Note that  $Df(x)>0$ for all $x\in (0,1)$. If we consider $\mu=0$ and compute $Nf(C)$ we have that
@@ -381,17 +378,36 @@ on the other, hand if  $\mu=1$ then
 because $0<r<1$. 
 \end{proof}
 
+\begin{proof}[Proof Theorem \ref{thm:caracterizacion}]
+For the case of 3-bodies, we note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
+
+In the case of 4-bodies, we have again that $\# F_r\geq 2$.  We consider two cases, the first one  $|q_1|\neq|q_2|$.  Therefore we can suppose that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
+ $m_1=m_3$ and $m_2=m_4$.  We divide the plane in two cones by means of  the line $L$ joining $q_1$  and $q_3=-q_1$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in a open cone, then  $q_4$ is in the other one. But on the other hand \eqref{eq:suma0} implies $q_2=-q_4$, which is a contradiction. Then $q_2,q_4\in M$ or $q_2,q_4\in L$ (since $q_2=-q_4$ the case $q_2\in L$ and $q_4\in M$ is impossible). In the first case the CC is a rhombus with the larger masses closer to the origin (see  \cite{perez2007convex}). The second case we have a collinear CC which is also symmetric by  \eqref{eq:suma0}.
+ It remains to discuss the case of $|q_1|=|q_2|=|q_3|=|q_4|$. In this situation, in \cite{hampton2005co} was proved that the configuration is the equal mass square.
+\end{proof}
+
+
+\begin{proof}[Proof Theorem \ref{thm:prin_ine}]
+The second order equation \eqref{eq:eq_new_red} is consevative, therefore solutions conserve the energy
+\begin{equation}\label{eq:conser.energ}
+E:=\frac{|v|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z^2\right)^{\frac12}},
+\end{equation}
+i.e. $E(z(t),\dot{z}(t))$ is constant. An elementary analysis shows that the energy leves curves are non bounded when $E\geq 0$. Moreover for a fix energy $E$ we have two branch for velocity
+\[V=V(E,z)=\pm \sqrt{2E+2\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}}.\]
+We note that,  for $z,V\geq 0$, $V$ is dereasing with respectto $z$. And energy curve cut the $V$-axis at $\sqrt{2E+2\sum_{i=1}^n m_is_i^{-1}}$. An energy curve cut the $z$-axis only in the case that $E<0$. Therefore solutions with $E\geq 0$ correspond to unbounded motions.  Since that energy curves does not contain stationary points, solutions with $-\sum_{i=1}^n m_is_i^{-1}\leq E<0$ correspond to periodic motions (see picture)
+
+
+\end{proof}
+
+
+
 
 \begin{proof}[Proof  Theorem \ref{thm:sol.perio.o.infinito}]
 
 
 
-Let $z$ be a solution of equation \eqref{eq:eq_new_red}.
-Multiplying this equation by $\dot{z}$ and integrating we obtain the following law of conservation of energy
-\begin{equation}\label{eq:conser.energ}
-\frac{|\dot{z}|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z^2\right)^{\frac12}}=E,
-\end{equation}
-where $E$ is the constant energy of the system.
+
+
 
 
 Suppose first that there exists a time $t_0$ such that $\dot{z}(t_0)=0$. As the equation \eqref{eq:eq_new_red} is autonomous we can assume without loss of generality that $\dot{z}(0)=0$. As $z$ is a non-trivial solution we have that $z(0)=A\neq 0$, we can suppose without of generality that $A>0$. By the equation \eqref{eq:eq_new_red}  we have that $z$ decreases for positive and near zero times, if at some instant of time after zero, say $\frac{\bar{T}}{2}$, the particle returns to zero velocity then, by \eqref{eq:conser.energ}, $z\left(\frac{\bar{T}}{2}\right)$ is equal to $-A$. For the symmetry and autonomy of the equation, if $\bar{z}$ denotes the trajectory of the particle from  $\frac{\bar{T}}{2}$ we have $ \bar{z} (t) = - z (t) $, i.e. $z (t +\frac{\bar{T}}{2}) = -z (t)$. Then, $ z (\bar{T}) = - z \left(\frac{\bar{T}}{2}\right) = A=z(0) $ and $\dot{z} (\bar{T}) = - \dot{z} \left(\frac{\bar{T}}{2}\right) = 0 =\dot{z}(0)$, and so $z$ is periodic. If there is no time after zero such 
@@ -414,18 +430,10 @@ Coversely, if \eqref{eq:vel.esc} holds $|\dot{z}(t)|\geq C>0$ for all $t\in\rr$.
 \end{proof}
 
 
-\begin{proof}[Proof Theorem \ref{thm:caracterizacion}]
-For the case of 3-bodies, we note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
-
-In the case of 4-bodies, we have again that $\# F_r\geq 2$.  We consider two cases, the first one  $|q_1|\neq|q_2|$.  Therefore we can suppose that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
- $m_1=m_3$ and $m_2=m_4$.  We divide the plane in two cones by means of  the line $L$ joining $q_1$  and $q_3=-q_1$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in a open cone, then  $q_4$ is in the other one. But on the other hand \eqref{eq:suma0} implies $q_2=-q_4$, which is a contradiction. Then $q_2,q_4\in M$ or $q_2,q_4\in L$ (since $q_2=-q_4$ the case $q_2\in L$ and $q_4\in M$ is impossible). In the first case the CC is a rhombus with the larger masses closer to the origin (see  \cite{perez2007convex}). The second case we have a collinear CC which is also symmetric by  \eqref{eq:suma0}.
- It remains to discuss the case of $|q_1|=|q_2|=|q_3|=|q_4|$. In this situation, in \cite{hampton2005co} was proved that the configuration is the equal mass square.
-
-\end{proof} 
 
 
 
-\begin{proof}[Proof Theorem \ref{thm:prin_ine}] The following reasoning follows ideas developed in \cite{zhao2015nonplanar} and \cite{li2013characterization}.  We consider the action integral
+\begin{proof}[Alternitave Proof Theorem \ref{thm:prin_ine}] The following reasoning follows ideas developed in \cite{zhao2015nonplanar} and \cite{li2013characterization}.  We consider the action integral
 \[\mathcal{I}(z)=\int_0^T\frac12|z'|^2+\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}dt,\]
 Then $T$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $\mathcal{I}$ in the space $H^1_T([0,T],\rr)$ of the functions  absolutely continuous, $T$-periodic with $u'\in L^2([0,T],\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $\mathcal{I}$ has minimum.  The functional $\mathcal{I}$ is not coercive in $H^1_T([0,T],\rr)$,  this deficiency is drawn with symmetry techniques (see \cite{David-2004}). There is an action of the group $\mathbb{Z}_2$ on $H^1_T([0,T],\rr)$ defined by $(\bar{0}\cdot u)(t)=u(t)$ and $(\bar{1}\cdot u)(t)=-u(t+\frac{T}{2})$. The functional $\mathcal{I}$ is $\mathbb{Z}_2$-invariant. We define the space of all $\mathbb{Z}_2$-symmetric funcions (assosiated to the italian symetry) \[\Lambda([0,T],\mathbb{R}):=\left\{ u\in H^1_T([0,T],\rr) | u(t)=-u\left(t+\frac{T}{2}\right)\right\}.\]
 The funciontal $\mathcal{I}$ restricted to $\Lambda$  is coercive. This follows from an obvious adaptation of proposition 4.1 of \cite{David-2004}. We note that $F(z):=\sum_{i=1}^nm_i(s_i^2+z^2)^{-\frac{1}{2}}$ satisfies the condition $(A)$ in \cite[p. 12]{Mawhin2010}, then $\mathcal{I}$  is continuously differentiable and weakly lower semicontinuous on $H_{T}^1([0,T],\rr)$ (see \cite[p. 13]{Mawhin2010}). Therefore $\mathcal{I}$ has a minimum $u_0$ in $\Lambda([0,T],\mathbb{R})$. Then by the Palais' principle simmetric criticality,  $u_0$ is a critical point of $\mathcal{I}$ in $H^1_T([0,T],\rr)$ (see \cite{David-2004} and \cite{RichardPalais274}).
