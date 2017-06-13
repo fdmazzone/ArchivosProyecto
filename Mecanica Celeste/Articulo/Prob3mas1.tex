@@ -239,12 +239,17 @@ The following theorem characterize all the possible period for the massless part
 
 \begin{thm}\label{thm:prin_ine} We assume that $q_1^0,\ldots,q_n^0$ is a admisible CC.
 \begin{enumerate}
- \item A non-trivial solution of the equation \eqref{eq:eq_new_red} is either periodic or  its norm tends to infinity when $t$ goes to infinity. The escape velocity for initial condition $z(0)$ is \[\left(\sum_{i=1}^{n}\frac{2m_i}{\sqrt{s_i^2+z(0)^2}}\right)^{\frac12}.\]
- \item A necessary and sufficient condition for that equation \eqref{eq:eq_new_red} has non trivial $T_0$-periodic solutions is that
+ \item\label{1} A non-trivial solution of the equation \eqref{eq:eq_new_red} is either periodic or  its norm tends to infinity when $t$ goes to infinity. The escape velocity for initial condition $z(0)$ is
+
+ \begin{equation}\label{eq:vel.esc}
+ V_{Esc}=\left(\sum_{i=1}^{n}\frac{2m_i}{\sqrt{s_i^2+z(0)^2}}\right)^{\frac12}.
+ \end{equation}
+
+ \item\label{2} A necessary and sufficient condition for that equation \eqref{eq:eq_new_red} has non trivial $T_0$-periodic solutions is that
 \begin{equation}
  \frac{4\pi^2}{T_0^2}<\sum_{i=1}^n\frac{m_i}{s_i^3}
 \end{equation}
-\item In particular, there is a $T$-synchronous solution if and only if
+\item\label{3} In particular, there is a $T$-synchronous solution if and only if
 
 \begin{equation}\label{eq:ine_prin}
  \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{s_i^3}\right)\left(\sum_{i=1}^nm_is_i^2\right).
@@ -393,47 +398,48 @@ The second order equation \eqref{eq:eq_new_red} is consevative, therefore soluti
 E:=\frac{|v|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z^2\right)^{\frac12}},
 \end{equation}
 i.e. $E(z(t),\dot{z}(t))$ is constant. An elementary analysis shows that the energy leves curves are non bounded when $E\geq 0$. Moreover for a fix energy $E$ we have two branch for velocity
-\[V=V(E,z)=\pm \sqrt{2E+2\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}}.\]
-We note that,  for $z,V\geq 0$, $V$ is dereasing with respectto $z$. And energy curve cut the $V$-axis at $\sqrt{2E+2\sum_{i=1}^n m_is_i^{-1}}$. An energy curve cut the $z$-axis only in the case that $E<0$. Therefore solutions with $E\geq 0$ correspond to unbounded motions.  Since that energy curves does not contain stationary points, solutions with $-\sum_{i=1}^n m_is_i^{-1}\leq E<0$ correspond to periodic motions (see picture)
+\[v=v(E,z)=\pm \left(2E+2\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}\right)^{\frac12}.\]
+We note that,  for $z,v\geq 0$, $v$ is dereasing with respect to $z$. And energy curve cut the $v$-axis at $v_{E}=(2E+2\sum_{i=1}^n m_is_i^{-1})^{\frac12}$. An energy curve cut the $z$-axis, only in the case that $E<0$, at $z_{E}$ which satisfies $-\sum_{i=1}^n m_i (s_i^2+z_{E}^2)^{-\frac12}=E$. Therefore solutions with $E\geq 0$ correspond to unbounded motions.  Since that energy curves does not contain stationary points, solutions with $-\sum_{i=1}^n m_is_i^{-1}\leq E<0$ correspond to periodic motions (see Figure \ref{fig:conf_esp}). The case $E=0$ corresponds to the critical value that separates periodic of unbounded motions. From this we deduce the formula \eqref{eq:vel.esc}.
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.3]{figure_1.png}
+\caption{Energy level for two equal mass primaries}\label{fig:energy}
+\end{center}
+\end{figure}
 
-\end{proof}
-
-
-
-
-\begin{proof}[Proof  Theorem \ref{thm:sol.perio.o.infinito}]
-
-
-
-
-
-
-
-Suppose first that there exists a time $t_0$ such that $\dot{z}(t_0)=0$. As the equation \eqref{eq:eq_new_red} is autonomous we can assume without loss of generality that $\dot{z}(0)=0$. As $z$ is a non-trivial solution we have that $z(0)=A\neq 0$, we can suppose without of generality that $A>0$. By the equation \eqref{eq:eq_new_red}  we have that $z$ decreases for positive and near zero times, if at some instant of time after zero, say $\frac{\bar{T}}{2}$, the particle returns to zero velocity then, by \eqref{eq:conser.energ}, $z\left(\frac{\bar{T}}{2}\right)$ is equal to $-A$. For the symmetry and autonomy of the equation, if $\bar{z}$ denotes the trajectory of the particle from  $\frac{\bar{T}}{2}$ we have $ \bar{z} (t) = - z (t) $, i.e. $z (t +\frac{\bar{T}}{2}) = -z (t)$. Then, $ z (\bar{T}) = - z \left(\frac{\bar{T}}{2}\right) = A=z(0) $ and $\dot{z} (\bar{T}) = - \dot{z} \left(\frac{\bar{T}}{2}\right) = 0 =\dot{z}(0)$, and so $z$ is periodic. If there is no time after zero such 
-that $\dot{z}$ is null then $\dot{z}(t)<0$ and, by \eqref{eq:conser.energ}, $z(t)>-A$ for all $t\geq 0$. Therefore $z$ is a decreasing function and remains bounded. Hence  we have that $\lim\limits_{t\to \infty}z(t)=z_{\infty}$. As
-$\ddot{z}(h_t)=\frac{z(t+h)-2z(t)+z(t+h)}{h^2},$
-for some $h_t\in [t-h,t+h]$, if  $t$ goes to infinity we have that $\lim\limits_{t\to\infty}\ddot{z}(h_t)=0$.  Thus \[0=\lim\limits_{t\to 0}\sum_{i=1}^{n}\frac{m_i z(h_t)}{(s_i^2+z(h_t)^2)^{\frac32}},\] this implies that $\lim\limits_{t\to\infty}z(h_t)=0$. Therefore, as $z$ is a decreasing function,  $z(t)\geq 0$ for all $t\geq 0$, and by \eqref{eq:eq_new_red} we have that $\ddot{z}(t)\leq 0$ for all $t\geq 0$. This implies that $\dot{z}$ is a decreasing function, and how $\dot{z}< 0$ for $t>0$, it follows that $0>\dot{z}(1)\geq \dot{z}(t)$ for $t\geq 1$. By the mean value theorem, $\dot{z}(\bar{h}_t)=\frac{z(t+h)-z(t)}{h}$ for some $\bar{h}_t\in [t,t+h]$, therefore 
-\[\lim\limits_{t\to \infty}\dot{z}(\bar{h}_t)=\lim\limits_{t\to \infty}\frac{z(t+h)-z(t)}{h}=0,\]
-which is a contradiction.
-
-If there is no time $t$ such that $\dot{z}(t)=0$ ·then $\dot{z}$ has the same sign all of the time. If we also suppose that $|z|$ is bounded, reasoning as in the previous case we can obtain a contracdition. 
-
-Let's now analyze the escape velocity. From \eqref{eq:conser.energ}, 
-\[\frac{|\dot{z}(t)|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z(t)^2\right)^{\frac12}}=\frac{|\dot{z}(0)|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z(0)^2\right)^{\frac12}},\]
-for all $t\in\rr$. If $\lim\limits_{t\to\infty}|z(t)|=\infty$ then, as $\dot{z}(t)$ does not change sign, we have that
-
-\begin{equation}\label{eq:vel.esc}
-\left(\sum_{i=1}^{n} \frac{2m_i}{\left(s_i^2+z(0)^2\right)^{\frac12}}\right)^{\frac12}\leq |\dot{z}(0)|.
+Now we will prove the second item of the theorem. We consider a $T_0$-periodic solution ($E<0$).  As a consequence of the symmetries of the equation we have that the curve $t\mapsto (z(t),v(t))$, for $0\leq t\leq T_0/4$, joins the points $(0,v_{E})$ and $(z_E,0)$. Then, taking account \eqref{eq:conser.energ} we have that
+\begin{equation}
+ \begin{split}
+  \frac{T_0}{4}&=\frac{1}{\sqrt{2}}\int_0^{T_0/4}\left(E+\sum_{i=1}^n m_i (s_i^2+z^2)^{-\frac12}\right)^{-\frac12} z'(t) dt\\
+  &=\frac{1}{\sqrt{2}}\int_0^{z_E}\left(\sum_{i=1}^n m_i \left((s_i^2+z^2)^{-\frac12}-(s_i^2+z_E^2)^{-\frac12}\right)\right)^{-\frac12}dz\\
+  &=\frac{1}{\sqrt{2}}\int_0^{z_E} \left(z_E^2-z^2\right)^{-\frac12} f(z,z_E)dz\\
+  &=\frac{1}{\sqrt{2}}\int_0^1 \left(1-u^2\right)^{-\frac12} f(z_Eu,z_E)du,
+ \end{split}
 \end{equation}
-Coversely, if \eqref{eq:vel.esc} holds $|\dot{z}(t)|\geq C>0$ for all $t\in\rr$. Therefore, $\lim\limits_{t\to\infty}|z(t)|=\infty$. 
+where \[f(z,z_E)=\left(\sum_{i=1}^n m_i \left\{(s_i^2+z^2)(s_i^2+z_E^2)\right\}^{-\frac12} \left\{(s_i^2+z^2)^{-\frac12}+(s_i^2+z_E^2)^{-\frac12} \right\}\right)^{-\frac12}.\]
+We note that $f(z_Eu,z_E)$ is a increasing function with respect to $z_E$ for $u\in [0,1]$ fix. Additionaly
+\begin{equation*}
+ \lim\limits_{z_E \to 0}f(z_Eu,z_E)=\left(\sum_{i=1}^{n} \frac{m_i}{2s_i^3}\right)^{-\frac12} \quad \text{and}\quad  \lim\limits_{z_E \to \infty}f(z_Eu,z_E)=\infty.
+\end{equation*}
+Therefore, from the dominated convergence theorem and monotone convergence theorem we have that
+\[\lim\limits_{z_E\to 0}T_0=2\pi\left(\sum_{i=1}^{n} \frac{m_i}{s_i^3}\right)^{-\frac12}\quad \text{and}\quad \lim\limits_{z_E\to \infty}T_0=\infty.\]
+Finally,  since $T_0=T_0(z_E)$ is continuous and increasing respect to $z_E$ we conclude the afirmation in the item \ref{2}.
+
+
+
+The item \ref{3} is consequence that $T^2=4\pi^2 \sum_{i=1}^{n}m_i|q_i|^2/U$   (see \cite[p. 109]{JaumeLlibre276}).
 \end{proof}
 
 
 
 
 
-\begin{proof}[Alternitave Proof Theorem \ref{thm:prin_ine}] The following reasoning follows ideas developed in \cite{zhao2015nonplanar} and \cite{li2013characterization}.  We consider the action integral
+
+Let us to show a second proof of Theorem \ref{thm:prin_ine},  following arguments of \cite{zhao2015nonplanar} and \cite{li2013characterization}, based on variational principles and Sturm's comparison theorem.
+
+
+\begin{proof}[Alternitave Proof Theorem \ref{thm:prin_ine}]   We consider the action integral
 \[\mathcal{I}(z)=\int_0^T\frac12|z'|^2+\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}dt,\]
 Then $T$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $\mathcal{I}$ in the space $H^1_T([0,T],\rr)$ of the functions  absolutely continuous, $T$-periodic with $u'\in L^2([0,T],\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $\mathcal{I}$ has minimum.  The functional $\mathcal{I}$ is not coercive in $H^1_T([0,T],\rr)$,  this deficiency is drawn with symmetry techniques (see \cite{David-2004}). There is an action of the group $\mathbb{Z}_2$ on $H^1_T([0,T],\rr)$ defined by $(\bar{0}\cdot u)(t)=u(t)$ and $(\bar{1}\cdot u)(t)=-u(t+\frac{T}{2})$. The functional $\mathcal{I}$ is $\mathbb{Z}_2$-invariant. We define the space of all $\mathbb{Z}_2$-symmetric funcions (assosiated to the italian symetry) \[\Lambda([0,T],\mathbb{R}):=\left\{ u\in H^1_T([0,T],\rr) | u(t)=-u\left(t+\frac{T}{2}\right)\right\}.\]
 The funciontal $\mathcal{I}$ restricted to $\Lambda$  is coercive. This follows from an obvious adaptation of proposition 4.1 of \cite{David-2004}. We note that $F(z):=\sum_{i=1}^nm_i(s_i^2+z^2)^{-\frac{1}{2}}$ satisfies the condition $(A)$ in \cite[p. 12]{Mawhin2010}, then $\mathcal{I}$  is continuously differentiable and weakly lower semicontinuous on $H_{T}^1([0,T],\rr)$ (see \cite[p. 13]{Mawhin2010}). Therefore $\mathcal{I}$ has a minimum $u_0$ in $\Lambda([0,T],\mathbb{R})$. Then by the Palais' principle simmetric criticality,  $u_0$ is a critical point of $\mathcal{I}$ in $H^1_T([0,T],\rr)$ (see \cite{David-2004} and \cite{RichardPalais274}).
