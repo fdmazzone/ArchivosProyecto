@@ -100,7 +100,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \renewcommand{\b}[1]{\boldsymbol{#1}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\nn}{\mathbb{N}}
-\newcommand{\ccdot}{\b{\cdot}}
+%\newcommand{\cdot}{\b{\cdot}}
 \renewcommand{\leq}{\leqslant} 
 \renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Psi}}
@@ -682,8 +682,8 @@ is finitely defined on the set $\domi_{\Lambda}:=W^{1}\lphi\cap\{u|u'\in\Pi(\eph
 \item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi_{\Lambda}$ and  its derivative $I'$ is demicontinuous from 
 $\domi_{\Lambda}$  into $\left[\wphi \right]^*$, i.e. $I'$ is continuous when $\domi_{\Lambda}$ is equipped with the strong topology and   $\left[\wphi \right]^*$ with the weak* topology. Moreover, $I'$ is given by the following expression
 \begin{equation}\label{eq:DerAccion}
-\langle  I'(u),v\rangle= \int_0^T \left\{\nabla_x\mathcal{L}\big(t,u,u'\big)\ccdot v
-+ \nabla_y\mathcal{L}\big(t,u,u'\big)\ccdot v'\right\} \ dt.
+\langle  I'(u),v\rangle= \int_0^T \left\{\nabla_x\mathcal{L}\big(t,u,u'\big)\cdot v
++ \nabla_y\mathcal{L}\big(t,u,u'\big)\cdot v'\right\} \ dt.
 \end{equation}
 
 \item\label{it:T1item4}  If  $\Psi \in \Delta^{\infty}_2$ then 
@@ -773,7 +773,7 @@ As $v \in \lphi$ there exists $\lambda_v>0$ such that $\Phi(v/\lambda_v)\in L^1$
 Now, by Young inequality and \eqref{eq:Dy-suc}, we have
 \begin{equation}\label{eq:Dy_lambda-Psi}
 \begin{split}
-\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})\ccdot v(t) 
+\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})\cdot v(t)
 &\leq 
 \lambda\lambda_v\left[\Psi\left(\frac{\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})}{\lambda}\right)+\Phi\left(\frac{v}{\lambda_v}\right)\right]
 \\
@@ -783,9 +783,9 @@ Now, by Young inequality and \eqref{eq:Dy-suc}, we have
   Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
 \begin{equation}\label{conv_debil}
 \int_0^T  \nabla_y\mathcal{L}(t,u_{n},u'_{n})
-\ccdot  v \,dt 
+\cdot  v \,dt
 \to 
-\int_0^T \nabla_y\mathcal{L}(t,u,u')\ccdot v\, dt \end{equation}
+\int_0^T \nabla_y\mathcal{L}(t,u,u')\cdot v\, dt \end{equation}
 which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
 
 \emph{Step 3.} We will prove \eqref{eq:DerAccion}. 
@@ -806,16 +806,13 @@ d \left(u'+s v', \ephi \right)<\Lambda$ and thus $u'+sv' \in \Pi(\ephi,\Lambda)$
 These facts imply, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
 that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
 
-We also have 
-$
-\|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
-$
-then, by Lemma \ref{lem:cota-a}, there exists $M>0$, independent of $s$, such that 
-$\|a(u+sv)\linf\leq M$.
 
-We write $s_1=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$.
-On the other hand, if $v'\in\lphi$ and $|s|\leq s_1 \Lambda\lambda_v^{-1}$,
-from the convexity and the parity of $\Phi$, we get
+
+We write $s_1:=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$. As $u'\in\Pi(\ephi,\Lambda)$ then
+\[
+d\left(\frac{u'}{(1-s_1)\Lambda},E^{\Phi}\right)=\frac{1}{(1-s_1)\Lambda}d(u', E^{\Phi})<1
+\]
+and therefore $(1-s_1)^{-1}\Lambda^{-1}u'\in C^\Phi$. Hence,  if $v'\in\lphi$ and $|s|\leq s_1 \Lambda\lambda_v^{-1}$, from the convexity and the parity of $\Phi$, we get
 \[
 \begin{split}
 \Phi\left(\frac{u'+sv'}{\Lambda}\right)&
@@ -823,27 +820,25 @@ from the convexity and the parity of $\Phi$, we get
 (1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{s}{s_1\Lambda}v'\right)
 \\
 &\leq
-(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda}\right)
+(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda_v}\right)=:h_1
 \in L^1
 \end{split}
 \]
-As $u'\in\Pi(\ephi,\Lambda)$ then
-\[
-d\left(\frac{u'}{(1-s_1)\Lambda},E^{\Phi}\right)=\frac{1}{(1-s_1)\Lambda}d(u', E^{\Phi})<1
-\]
-and therefore $\frac{u'}{1-s_0}\in C^\Phi$.
 
-Now, applying \eqref{eq:cota-condicion-estructura}, \eqref{eq:Dy_lambda-Psi},  
-%the monotonicity of $\varphi$ and $\Phi$, 
+We also have
+$
+\|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
+$
+then, by Lemma \ref{lem:cota-a}, there exists $M>0$, independent of $s$, such that
+$\|a(u+sv)\linf\leq M$. Now, applying Young's Inequality,  \eqref{eq:cota-condicion-estructura},
 the fact that $v \in L^{\infty}$ and $v'\in\lphi$, 
-%and H\"older's inequality, 
 we get
 \begin{equation}\label{ctg}
 \begin{split}
-|D_s H(s,t)|&=\left| \nabla_x\mathcal{L}(t,u+sv,u'+sv')\ccdot v +  
-\lambda \nabla_y\mathcal{L}(t, u+s v, u'+sv')\ccdot\frac{v'}{\lambda}\right| \\
-  & \leq M \left[ b(t)+ \Phi(u'+sv')\right]|v|\\
- &\quad+ \lambda\left[\Psi(\nabla_y\mathcal{L}(t,u+sv,u'+sv'))+\Phi\left(\frac{v'}{\lambda}\right) \right]
+|D_s H(s,t)|&=\left| \nabla_x\mathcal{L}(t,u+sv,u'+sv')\cdot v +
+  \nabla_y\mathcal{L}(t, u+s v, u'+sv')\cdot v'\right| \\
+  & \leq M \left\{ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right\}|v|\\
+ &\quad+ \lambda\lambda_v\left[\Psi\left(\frac{\nabla_y\mathcal{L}(t,u+sv,u'+sv')}{\lambda}\right)+\Phi\left(\frac{v'}{\lambda}\right) \right]
 \\
  &\leq M \left\{\left[ b(t)+ \Phi(u'+sv')\right]|v|\right\}+
  \lambda M[ b(t)+ \Phi(u'+sv')]+\lambda \Phi\left(\frac{v'}{\lambda}\right)
@@ -857,7 +852,7 @@ we get
 Consequently, $I$ has a directional derivative and
 \[
 \langle I'(u),v \rangle=\frac{d}{ds}I(u+s v)\big|_{s=0}=\int_0^T  
-\left\{\nabla_x\mathcal{L}(t,u,u')\ccdot v+ \nabla_y\mathcal{L}(t,u,u')\ccdot v'\right\} \ dt.
+\left\{\nabla_x\mathcal{L}(t,u,u')\cdot v+ \nabla_y\mathcal{L}(t,u,u')\cdot v'\right\} \ dt.
 \]
 Moreover, from the previous formula, \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase}, and
 Lemma \ref{lem:inclusion orlicz}, we obtain
@@ -878,11 +873,11 @@ This is a consequence  of the continuity of the mappings $u \mapsto \nabla_x\mat
 \wphi$, then
 \[
 \begin{split}
-\left\langle  I'(u_{n}),v \right\rangle &= \int_0^T \left\{  \nabla_x\mathcal{L}\left(t,u_n,u'_n\right)\ccdot
+\left\langle  I'(u_{n}),v \right\rangle &= \int_0^T \left\{  \nabla_x\mathcal{L}\left(t,u_n,u'_n\right)\cdot
 v +
- \nabla_y\mathcal{L}\left(t,u_n,u'_n\right)\ccdot v'\right\} \ dt\\
-&\rightarrow \int_0^T \left\{ \nabla_x\mathcal{L}\left(t,u,u'\right)\ccdot v+ 
-\nabla_y\mathcal{L}\left(t,u,u'\right)\ccdot v'\right\} \ dt\\
+ \nabla_y\mathcal{L}\left(t,u_n,u'_n\right)\cdot v'\right\} \ dt\\
+&\rightarrow \int_0^T \left\{ \nabla_x\mathcal{L}\left(t,u,u'\right)\cdot v+
+\nabla_y\mathcal{L}\left(t,u,u'\right)\cdot v'\right\} \ dt\\
 &=\left\langle  I'(u),v \right\rangle.
 \end{split}
 \]
