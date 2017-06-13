@@ -331,19 +331,23 @@ if there exists a  constant $K>0$  such that
 \begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x)+1,
 \end{equation}
 for every $x$.  
-We note that the $\Delta_2^{\infty}$ implies the following form of quasi-subadditivity. There exists $K>0$ such that for every $x,y\in \rr^d$
+If $\Phi$ is a $\Delta_2^{\infty}$ function then $\Phi$ satisfies the following properties
+
+
+
+\begin{itemize}
+ \item \emph{Quasi-subadditivity.} There exists $K>0$ such that for every $x,y\in \rr^d$
 \begin{equation}\label{eq:quasi-sub-aditividad}
 \Phi(x+y)\leq K (\Phi(x)+\Phi(y))+1.
 \end{equation}
-
-In addition, if $\Phi \in \Delta_2^{\infty}$, it holds that for any $\lambda>0$ there exists $c:\rr^+\to \rr^+$ such that 
+\item  For any $\lambda>0$ there exists $c:\rr^+\to \rr^+$ such that
 \begin{equation}\label{eq:delta2-lambda}
-\Phi(\lambda x)\leq c(\lambda)\Phi(x)+1. 
+\Phi(\lambda x)\leq c(\lambda)\Phi(x)+1.
 \end{equation}
+\item $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
+\[\Phi(x)\leq C|x|^p,\quad |x|\geq r_0.\]
 
-
-If $\Phi$ is a $\Delta_2^{\infty}$ function, then $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
-\[\Phi(x)\leq C|x|^p,\quad |x|\geq r_0.\] 
+\end{itemize}
 
 We consider that one of the most important aspects in considering $N_{\infty}$ functions is that it accounts for the Lagrange functions that present faster growth than powers, for example an exponential growth. Hence we consider it important to avoid imposing hypothesis that $\Phi$ to be $\Delta_2$. For some results we will need that $\Psi$ to be $\Delta_2$. 
 
@@ -362,7 +366,7 @@ If $\Phi_1\strictif \Phi_2$ then $\Psi_2\strictif\Psi_1$ as the following simple
 \]
 
 
-As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ with other functions $b$, $a$ and constant $\Lambda$ and $\lambda$.  
+As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
 
 
 
@@ -833,9 +837,6 @@ and therefore $(1-s_1)^{-1}\Lambda^{-1}u'\in C^\Phi$. Hence,  if $v'\in\lphi$ an
 (1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{s}{s_1\Lambda}v'\right)
 \\
 &\leq
-<<<<<<< HEAD
-(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda_v}\right)=:h_1
-\in L^1
 (1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda_v}\right)
 \in L^1
 \end{split}
@@ -856,7 +857,6 @@ we get
   \nabla_y\mathcal{L}(t, u+s v, u'+sv')\cdot v'\right| \\
   & \leq M \left\{ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right\}|v|\\
  &\quad+ \lambda\lambda_v\left\{\Psi\left(\frac{\nabla_y\mathcal{L}(t,u+sv,u'+sv')}{\lambda}\right)+\Phi\left(\frac{v'}{\lambda_v}\right) \right\}
->>>>>>> origin/Sonia
 \\
  &\leq 
  M \left\{ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right\} (|v|+\lambda\lambda_v) +\lambda\lambda_v \Phi\left(\frac{v'}{\lambda}\right)
@@ -877,10 +877,6 @@ Lemma \ref{lem:inclusion orlicz}, we obtain
 \]
 with a appropriate constant $C$.
 This completes the proof of the G\^ateaux differentiability of $I$. 
-
-
-
-
 The previous steps imply the demicontinuity of the operator $I':\domi_{\Lambda}  \to \left[\wphi_d
 \right]^* $.
 
@@ -894,11 +890,11 @@ To this purpose, we take  $u_n, u \in \domi_{\Lambda}$, $n=1,2,\dots$, with $\|u
 As before, we can deduce there exist a subsequence (denoted $u'_n$ for simplicity) and $h_1 \in L^1$ such that \eqref{eq:Dy_lambda-Psi} holds and $u_n \to u$ a.e.
  Since $\Psi\in\Delta_2$, 
 \begin{equation}
-\Psi(\nabla_y \mathcal{L}(\cdot,u_n,u'_n))\leq c(\lambda) \Psi\left(\frac{\nabla_y \mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)+1\leq c(\lambda)h_1+1=:h_2\in L^1
+\Psi(\nabla_y \mathcal{L}(\cdot,u_n,u'_n))\leq c(\lambda) \Psi\left(\frac{\nabla_y \mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)+1\leq c(\lambda)h_1+1=:h_2\in L^1.
 \end{equation} 
 Then, from the quasi-subadditivity of $\Psi$ we have 
 \[\Psi\left(\nabla_y \mathcal{L}(\cdot,u_n,u'_n)-
-\nabla_y \mathcal{L}(\cdot,u,u')\right)\leq K (h_2+\Psi(\nabla_y \mathcal{L}(\cdot,u,u')))+1\].
+\nabla_y \mathcal{L}(\cdot,u,u')\right)\leq K (h_2+\Psi(\nabla_y \mathcal{L}(\cdot,u,u')))+1.\]
 Now, by Dominated Convergence Theorem, we obtain that 
 $\nabla_y \mathcal{L}(\cdot,u_n,u'_n)$ is $\rho_{\Psi}$ modular convergent to $\nabla_y \mathcal{L}\left(\cdot,u,u')\right)$.
 Since $\Psi$ is $\Delta_2^{\infty}$, modular convergence implies norm convergence (see \cite{Skaff1969}).
