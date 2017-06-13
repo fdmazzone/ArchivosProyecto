@@ -183,7 +183,7 @@ In this paper we obtain existence of solutions for systems  of equations of the 
 \end{equation}
 where the function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$ (called the \emph{Lagrange function} or \emph{lagrangian}) satisfying  that  it is measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. The unknown function  $u:[0,T]\to\rr^d$ is assumed absolutely continuous. 
 
-Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We suggest the articles  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces, see also \cite{chamra2017anisotropic}. These spaces allow us to unify and extend previous results on existences of solutions for systems like \eqref{ProbPrin-gral}. 
+Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We suggest the articles  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existences of solutions for systems like \eqref{ProbPrin-gral}.
 
 Through this article we say that  a function
 $\Phi:\mathbb{R}^d\to [0,+\infty)$ is of $N_{\infty}$ class if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(y)>0$ if $y\neq 0$ and $\Phi(-y)=\Phi(y)$,
@@ -264,7 +264,7 @@ Here the function $F(t,x)$, which is often referred to potential,  be differenti
 \begin{enumerate}
 \labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla_x F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
  \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
-\begin{equation}
+\begin{equation}\label{eq:phi-lagrange}
 |F(t,x)| + |\nabla_x F(t,x)|  \leq a(x)b(t).
 \end{equation}
 where  $a\in C\left(\rr^d,[0,+\infty)\right)$ and $0\leq b\in L^1([0,T],\rr)$.
@@ -276,7 +276,7 @@ a(x)\left\{b(t)+ \Phi\left({y}/{\lambda}\right)\right\}$. But, from inequality x
 $\Psi(\nabla_{y}\mathcal{L})=\Psi\left(\nabla\Phi(y)\right)\leq \Phi(2y)$.
 
 
-The laplacian $\mathcal{L}_{\Phi,F}$ leads to the system
+The laplacian $\mathcal{L}_{\Phi,F}$ leads to the problem
 
 \begin{equation}\label{eq:ProbPhiLapla}
     \left\{%
@@ -284,10 +284,11 @@ The laplacian $\mathcal{L}_{\Phi,F}$ leads to the system
   \frac{d}{dt} \nabla \Phi(u'(t))= \nabla_{x}F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right. \tag{$\b{P_{\Phi}}$}
+\right. .\tag{$\b{P_{\Phi}}$}
 \end{equation}
+The differential equation in the previous problem is called the \emph{anisotropic $\Phi$-Laplacian equation}.
 
-Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{ProbPrin-gral}, for the lagrangian $\mathcal{L}_{\Phi,F}$, with $\Phi(x)=|x|^2/2$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. The case $\Phi(y)=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic}, among other papers, and in this case \eqref{eq:ProbPhiLapla} is reduced to the $p$-laplacian system
+Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi(x)=|x|^2/2$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. The case $\Phi(y)=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic}, among other papers, and in this case \eqref{eq:ProbPhiLapla} is reduced to the $p$-laplacian system
 \begin{equation}\label{ProbP-lapla}
     \left\{%
 \begin{array}{ll}
@@ -902,8 +903,166 @@ Since $\Psi$ is $\Delta_2^{\infty}$, modular convergence implies norm convergenc
 
 
 
+\section{Existence of minimizers}
+
+For simplicity, from now on we will consider Lagrangian functions of the form \eqref{eq:lagrange_phi}. However, the results of this section extend without difficulty to any lagrangian $\mathcal{L}$ with $\mathcal{L}\geq \mathcal{L}_{\Phi,F}$ (see \cite{ABGMS2015}).
+
+\cite{tang1998periodic,wu1999periodic,zhao2004periodic}  \cite{tang2010periodic,
 
 
+
+
+
+
+We assume that there exist an $N_\infty$ function $\Phi_0$ such that $\Phi_0 \llcurly \Phi$,
+a function $a \in  L^1([0,T],\rr)$ such that $a\geq 1$ and a constant $M>0$ such that
+\begin{equation}\label{eq:cond-sub}
+\Psi_0(a^{-1}(t)\nabla_x F)\leq \Phi_0(x),\;|x|\geq M\,\tag{Sub}
+\end{equation}
+
+\begin{prop}
+Let $1<p<\infty$ and suppose that $F$ satisfies  \ref{item:condicion_a}. Then,
+\begin{equation}\label{eq:cond-sub-p}
+|\nabla_x F|\leq a(t)|x|^{p'_0-1}+b(t),\;for\; p'_0<p,
+\end{equation}
+ if and only if
+$F$ satisfies \eqref{eq:cond-sub} with $\Phi_0(x)=|x|^{p'}$ for all $p'\in(1,p)$.
+\end{prop}
+
+\begin{proof}
+Suppose that \eqref{eq:cond-sub} holds with $\Phi_0(x)=|x|^{p'}$ for $1<p'<p-1$. Then,
+\[
+(a^{-1}(t)|\nabla_x F|)^{q'_0}\leq |x|^{p'_0},\;for\; |x|\geq M
+\]
+As $F$ sastisfies \ref{item:condicion_a}, we have
+$|\nabla_x F|\leq b(t)\in L^1$ for $|x|\leq M$.
+
+PONEMOS SOLO b O Kb?? No confunde?
+
+Then,
+\[
+|\nabla_x F|\leq a |x|^{\frac{p'_0}{q'_0}}+b(t)\leq a|x|^{p'_0-1}+b(t)
+\]
+
+Now, we assume that $F$ satisfies \eqref{eq:cond-sub-p}. If $|x|\geq 1$, we have
+\[
+|\nabla_x F|\leq a(t)|x|^{p'_0-1}+b(t)\leq (a(t)+b(t))|x|^{\frac{p'_0}{q'_0}}
+\]
+which is condition \eqref{eq:cond-sub} with $a(t)+b(t)$ instead of $a(t)$.
+\end{proof}
+
+
+\begin{thm}\label{coercitividad-r}
+Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2^{\infty}$-condition.
+
+Let $F$ be a potential that satisfies \ref{item:condicion_c}, \ref{item:condicion_a} and the following conditions:
+\begin{enumerate}
+\item \eqref{eq:cond-sub} for some $N_{\infty}$ function $\Phi_0$ such that $\Phi_0\llcurly \Phi$
+\item
+\begin{equation}\label{eq:propiedad-coercividad-phi0}
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_0(2|x|)}=+\infty,
+\end{equation}
+for some $N$-function $\Psi_0$ complementary function of $\Phi_0$.
+\end{enumerate}
+
+EN LO QUE SIGUE, PONEMOS LA NUEVA CONDICION DE ESCTRUCTURA O DEFINIMOS UN CONJUNTO DONDE SE VERIFICAN
+ESAS CONDICIONES???
+
+Now,  if the lagrangian $\mathcal{L}(t,x,y)$ is strictly convex  with respect to $y\in\rr^d$,
+$\mathcal{L}\in {A}(a,b,c,\lambda,f,\Phi)$,
+$D_y\mathcal{L}(0,x,y)=D_y\mathcal{L}(T,x,y)$
+and \eqref{eq:control_inf} holds,
+then the problem \eqref{ProbPrin-gral} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
+\end{thm}
+
+
+FALTA UNA BUENA REVISION DE LO ESCRITO EN LA PRUEBA
+\begin{proof}
+By the decomposition $u=\overline{u}+\tilde{u}$,   Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$
+and \eqref{eq:aniso-sob-wir},
+we obtain
+\begin{equation}\label{eq:cota-dif-F}
+\begin{split}
+&\left|\int_0^T F(t,u)-F(t,\overline{u})\,dt\right|
+\leq \int_0^T \int_0^1 |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|\,ds\,dt
+\\
+&=\int_0^T a(t) \int_0^1 a^{-1}(t) |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|\,ds\,dt
+\\
+&\leq
+\int_0^T a(t) \int_0^1 \Psi_0(a^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u}))+\Phi_0(\tilde{u}(t))\,ds\,dt
+\\
+&\leq
+\int_0^T a(t)\left[\int_0^1 \Phi_0(\overline{u}+s\tilde{u})\,ds+\Phi_0(\tilde{u}(t))\right]\,dt
+\\
+&\leq
+\int_0^T a(t) (\Phi_0(2\overline{u})+2 \Phi_0(2\tilde{u}))\,dt
+\\
+&\leq C_1 \Phi_0(2\overline{u})+\int_0^T a(t)2\Phi_0(2 \tilde{u})\,dt
+\\
+&
+\leq C_1 \Phi_0(2\overline {u}) +C_2 \int_0^T \Phi_0 (C_T u'(t))\,dt
+\end{split}
+\end{equation}
+Then, by \eqref{eq:cota-dif-F} we get
+\begin{equation}
+\begin{split}
+&\int_0^T  \Phi(u')+F(t,u)\,dt=
+\int_0^T \{\Phi(u')+[F(t,u)-F(t,\overline{u})]+F(t,\overline{u})\}\,dt
+\\
+&\geq
+\int_0^T [\Phi(u')-C_2 \Phi_0(C_T u'(t))]\,dt-C_1\Phi_0(2 \overline{u})+\int_0^T F(t,\overline{u})\,dt
+\end{split}
+\end{equation}
+
+If $\|u\sobnor\to \infty$, then $\|u'\orlnor \to \infty$ or $|\overline{u}|\to \infty$.
+
+Now, if $|\overline{u}|\to \infty$, by hypothesis we have
+$\frac{1}{\Psi_0(2 \overline{u})}\int_0^\infty F(t,\overline{u})\,dt\to \infty$.
+
+If $\|u_n\orlnor \to \infty$ for a sequence $u_n$.
+
+Let $M>0$ such that $\frac{\Phi(x)}{C_2\Phi_0(C_Tx)}\geq 2$ for $|x|\geq M$.
+
+Set $A_n:=\{t\in [0,T]:|u'_n(t)|\geq M\}$.
+
+Now, if $\|u'_n\orlnor\to \infty$ then
+$\|u'_n\chi_{A_n}\orlnor\to \infty$ or $\|u'_n \chi_{A_n^C}\orlnor\to \infty$.
+
+As $\Phi$ is continuous, then $\Phi$ is bounded on
+$\overline{B}_r(0)=\{x\in \rr^n:|x|\leq r\}$
+
+Let $M_r:=\max\limits_{\overline{B}_r(0)} \Phi(x)$.
+
+As $M_r\to 0$ when $r\to 0$, we can choose $r$ such that $M_rT\leq 1$.
+
+Then
+$\int_0^T \Phi(\frac{u}{\frac{1}{r}\|u\linf})\,dt\leq M_rT\leq 1$
+and consequently
+$\|u\orlnor \leq r^{-1}\|u\linf$, i.e. $L^{\infty} \hookrightarrow L^\Phi$.
+Thus,
+$\|u'_n \chi_{A_n^C}\orlnor$ is bounded and $\|u'_n\chi_{A_n}\orlnor\to \infty$.
+
+By Ameniya norm, we have
+$\|u'_n\orlnor \leq 1+\int_{A_n} \Phi(u'_n)\,dt$, then
+\begin{equation}\label{eq:coer-an}
+\int_{A_n} \Phi(u'_n)\,dt\to \infty.
+\end{equation}
+
+Now, as $\frac{\Phi(x)}{2}\geq C_2\Phi_0$ for $|x|\geq M$, we have
+\begin{equation}
+\begin{split}
+&\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]\,dt
+\\
+&\geq
+\int_{A_n} [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]\,dt-C_2\int_{[0,T]/A_n} \Phi_0(C_Tu'_n)\,dt
+\\
+&\geq \frac{1}{2}\int_{A_n}\Phi(u'_n)\,dt-C_2T\max\{\Phi_0(x):\|x\|\leq C_TM\}.
+\end{split}
+\end{equation}
+Finally, by \eqref{eq:coer-an}, we conclude that
+$\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]\,dt\to \infty$
+
+\end{proof}
 
 
 \section*{Acknowledgments}
