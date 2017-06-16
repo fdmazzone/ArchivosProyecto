@@ -921,12 +921,29 @@ We say that $F$ satisfies condition \eqref{eq:cond-sub} if there exist an $N_{\i
 a function $a \in  L^1([0,T],\rr)$ such that $a\geq 1$ and a constant $M>0$ such that
 
 
-Let us take a moment to show that condition \eqref{eq:cond-sub} encompasses the sublinearity condition. 
-
 
 \begin{equation}\label{eq:cond-sub}
   \Psi_0(a^{-1}(t)\nabla_x F)\leq \Phi_0(x),\;|x|\geq M\,\tag{$\b{B}$}
 \end{equation}
+
+Let us take a moment to show that condition \eqref{eq:cond-sub} encompasses the sublinearity condition, for example, as it is formulated in \cite{li2014periodic} for the $(q,p)$-Laplacian. In \cite[Th. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a} and the condition \ref{item:condicion_h1} below. We write
+$p'=p/(p-1)$ for the Lebesgue conjugate exponent of $p$.
+\begin{enumerate}
+ \item[(H1)]\label{item:condicion_h1} Existen $f_i,g_i,h_i\in L^1([0,T],\rr_+)$, $\alpha_1\in [0,q-1)$, $\alpha_2 \in [0,p-1)$, $\beta_1\in [0,p/q')$ and $\beta_2\in [0,q/p')$ such that
+ \begin{equation*}
+  \begin{split}
+    |\nabla_{x_1}F(t,x_1,x_2)|\leq f_1(t)|x_1|^{\alpha_1}+f_2(t)|x_2|^{\beta_1}+h_1(t)\\
+    |\nabla_{x_2}F(t,x_1,x_2)|\leq f_2(t)|x_2|^{\alpha_2}+g_2(t)|x_1|^{\beta_2}+h_2(t)
+  \end{split}
+ \end{equation*}
+
+ Let us prove that \eqref{item:condicion_h1}$\Rightarrow$\ref{eq:cond-sub} where
+ $\Phi(x_1,x_2)=\Phi_{q,p}=|x_1|^q/q+|x_2|^p/p$ and $
+
+
+\end{enumerate}
+
+
 
 \begin{prop}
 Let $1<p<\infty$ and suppose that $F$ satisfies  \ref{item:condicion_a}. Then,
