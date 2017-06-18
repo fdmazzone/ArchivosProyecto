@@ -260,7 +260,7 @@ An important example of lagrangian  is giving by:
 \begin{equation}\label{eq:lagrange_phi}
 \mathcal{L}_{\Phi,F}(t,x,y):=\Phi(y)+F(t,x).
 \end{equation}
-Here the function $F(t,x)$, which is often referred to potential,  be differentiable with respect to $x$ for a.e. $t\in [0,T]$. Moreover $F$ satisfies the following conditions:
+Here $\Phi$ is assumed differentiable and the function $F(t,x)$, which is often referred to potential,  is differentiable with respect to $x$ for a.e. $t\in [0,T]$. Moreover $F$ satisfies the following conditions:
 \begin{enumerate}
 \labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla_x F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
  \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
@@ -272,7 +272,7 @@ where  $a\in C\left(\rr^d,[0,+\infty)\right)$ and $0\leq b\in L^1([0,T],\rr)$.
 
 The lagrangian $\mathcal{L}_{\Phi,F}$ satisfies condition  \eqref{eq:condicion-estructura}. In order to prove this, the only non trivial fact that we should to establishis is that $ \Psi(\nabla_{y}\mathcal{L})
 \leq
-a(x)\left\{b(t)+ \Phi\left({y}/{\lambda}\right)\right\}$. But, from inequality xxxx below, 
+a(x)\left\{b(t)+ \Phi\left({y}/{\Lambda}\right)\right\}$. But, from inequality \eqref{eq:ine-psi-phi'} below, 
 $\Psi(\nabla_{y}\mathcal{L})=\Psi\left(\nabla\Phi(y)\right)\leq \Phi(2y)$.
 
 
@@ -317,7 +317,7 @@ Moreover, our results still improve some results on $(p_1,p_2)$-lamplacian since
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding,gwiazda2013anisotropic}.
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding,gwiazda2013anisotropic}. For the theory of convex functions to see \cite{clarke2013functional}. 
 Note that, unlike in \cite{gwiazda2013anisotropic}, we do not require that $N_{\infty}$ functions be superlinear near from 0, i.e. $\Phi(x)/|x|\to 0$ when $|x|\to 0$. However, most of the results proved in \cite{gwiazda2013anisotropic} do not depend on this property.
 
 If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obtain that
@@ -326,6 +326,20 @@ If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obt
 \end{equation}
 
 One of the greatest difficulties when dealing with anisotropic Orlicz spaces is the lack of  monotony  with respect to the Euclidean norm, i.e. $|x|\leq |y|$ does not imply $\Phi(x)\leq\Phi(y)$. This problem is avoided if we consider functions whose values on a sphere are comparable (see\cite{Skaff1969}). However, from \eqref{eq:escalar_ine}, we see that  $N_{\infty}$ functions have the following form of radial monotony: $|x|\leq |y|$ and $y=\lambda x$ imply $\Phi(x)\leq\Phi(y)$. 
+
+The mutually complementary functions $N_{\infty}$ functions $\Phi$ and $\Psi$ satisfy the following importan relations (see \cite{clarke2013functional}): for any $x,y\in\rr^d$
+
+\begin{align}
+  x\cdot y&\leq \Phi(x)+\Psi(y)\tag{Fenchel's Inequality}\label{eq:young-ine}\\
+  x\cdot \nabla\Phi(x)&= \Phi(x)+\Psi(\nabla \Phi (x))\tag{Fenchel's Identity}\label{eq:young-id}
+\end{align}
+In \eqref{eq:young-id} we assume $\Phi$ differentiable. More generality \eqref{eq:young-id} holds when $\nabla \Phi (y)$ is replaced by elements in the subdifferential $\partial\Phi(y)$ of $\Phi$ (see \cite[Ex. 4.27]{clarke2013functional}).
+
+The following inequality  will be useful, it is consequence of that $(d/dt)\Phi(tx)$ is an non decreasing function of $t$. 
+
+
+\begin{equation}\label{eq:ine-psi-phi'}\Psi(\nabla \Phi (x))\leq  x\cdot \nabla\Phi(x) \leq\int_1^2 \frac{d}{dt}\Phi(tx)dt \leq\int_0^2\frac{d}{dt}\Phi(tx)dt=\Phi(2x).
+\end{equation}
 
 We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
 if there exists a  constant $K>0$  such that
@@ -365,6 +379,9 @@ If $\Phi_1\strictif \Phi_2$ then $\Psi_2\strictif\Psi_1$ as the following simple
 &=\Psi_2\left(\xi\right)-C.
 \end{split}
 \]
+
+
+
 
 
 As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
@@ -417,6 +434,13 @@ $\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequal
   \langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
 \end{equation}
 
+
+We suppose $u\in L^{\infty}([0,T],\rr^d)$. Since $\Phi$ is continuous, $\Phi$ is bounded on $\overline{B}_r(0)=\{x\in \rr^n:|x|\leq r\}$. Let $M_r:=\max_{\overline{B}_r(0)} \Phi(x)$. As $M_r\to 0$ when $r\to 0$, we can choose $r$ such that $M_rT\leq 1$. Then
+\[\int_0^T \Phi\left(\frac{ru}{\|u\linf}\right)dt\leq M_rT\leq 1\]
+and consequently
+$\|u\orlnor \leq r^{-1}\|u\linf$, i.e. $L^{\infty} \hookrightarrow L^\Phi$.
+
+
 We highlight the following result (see \cite[Th. 3.3]{gwiazda2013anisotropic}).
 
 \begin{prop} $\lphi\left([0,T],\rr^d\right)=\left[\epsi\left([0,T],\rr^d\right)\right]^*$.
@@ -447,7 +471,7 @@ Anisotropic Sobolev-Orlicz spaces were treated in \cite{cianchi2000fully,cianchi
 % \end{equation}
 
 
-As is well known, an active research topic in mathematical analysis are the Sobolev and Poincare inequalities. This topic have also been treated in the framework of Anisotropic Orlicz-Sobolev mainly in \cite{cianchi2000fully,cianchi2004optimal,trudinger1974imbedding} for several variables functions and in \cite{chamra2017anisotropic} for functions of one single variable, $\Phi$ and $\Psi$ functions of $\Delta_2^{\infty}$ class.   We do not know a reference for the embedding of Sobolev-Orlicz anisotropic spaces in the space of continuous functions when $\Phi$ or $\Psi$ are not $\Delta_2^{\infty}$. Below we present the results that we will require in this article and we show in detail the case of the incrustation in the space of continuous functions in the simple case of function of one variable.
+As is well known, an active research topic in mathematical analysis are the Sobolev and Poincare inequalities. This topic have also been treated in the framework of anisotropic Orlicz-Sobolev mainly in \cite{cianchi2000fully,cianchi2004optimal,trudinger1974imbedding} for several variables functions and in \cite{chamra2017anisotropic} for functions of one single variable, $\Phi$ and $\Psi$ functions of $\Delta_2^{\infty}$ class.   We do not know a reference for the embedding of Sobolev-Orlicz anisotropic spaces in the space of continuous functions when $\Phi$ or $\Psi$ are not $\Delta_2^{\infty}$. Below we present the results that we will require in this article and we show in detail the case of the incrustation in the space of continuous functions in the simple case of function of one variable.
 
 In order to find a modulus of continuity for functios in $\wphi$, and from there, to obtain compact embedding of $\wphi$, we define the function $A_{\Phi}:\rr^+\to\rr^+$ by
 \begin{equation}\label{eq:inversa-gral}
@@ -631,6 +655,17 @@ As a consequence of Arzela-Ascoli Theorem
 \end{proof}
 
 
+\begin{comentario}\label{com:equiv-norm} As consequence of Lemma \ref{lem:inclusion orlicz} we obtain that 
+  \[\|u\sobnor'=|\overline{u}|+\|u'\orlnor,\]
+  define a equivalent norm to $\|\cdots\sobnor$ on $\wphi([0,T],\rr^d)$. This affirmation is proved as follows.  On the one hand, by H\"older inequality \eqref{holder}
+  \[|\overline{u}|\leq \frac{2}{T}\|1\|_{L^{\Psi}}\|u\orlnor .\]
+  On the other hand, from the embedding $L^{\infty}\hookrightarrow \lphi$ and \eqref{eq:cotau'}
+  \[\|u\orlnor\leq C|\overline{u}|+C\|\tilde{u}\|_{L^{\infty}}\leq C\|u\sobnor'.\]
+  
+  
+\end{comentario}
+
+
 Given a function $a:\mathbb{R}^d\to \mathbb{R}$, we define the composition operator $\b{a}:\mathcal{M}\to \mathcal{M}$ by $\b{a}(u)(x)= a(u(x))$.
 We will often use the following result whose proof can be performed as that of  Corollary 2.3 in \cite{ABGMS2015}.
 \begin{lem}\label{lem:cota-a}
@@ -800,7 +835,7 @@ Now, by Young inequality and \eqref{eq:Dy-suc}, we have
   Finally, from the Lebesgue Dominated Convergence Theorem, we deduce
 \begin{equation}\label{conv_debil}
 \int_0^T  \nabla_y\mathcal{L}(t,u_{n},u'_{n})
-\cdot  v \,dt
+\cdot  v dt
 \to 
 \int_0^T \nabla_y\mathcal{L}(t,u,u')\cdot v\, dt \end{equation}
 which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
@@ -918,18 +953,18 @@ There are several restrictions that were explored in the past. The one we will s
 
 
 We say that $F$ satisfies condition \eqref{eq:cond-sub} if there exist an $N_{\infty}$ function $\Phi_0$, with $\Phi_0 \llcurly \Phi$,
-a function $a \in  L^1([0,T],\rr)$ such that $a\geq 1$ and a constant $M>0$ such that
+a function $d \in  L^1([0,T],\rr)$, witht $d\geq 1$, such that
 
 
 
 \begin{equation}\label{eq:cond-sub}
-  \Psi_0(a^{-1}(t)\nabla_x F)\leq \Phi_0(x),\;|x|\geq M\,\tag{$\b{B}$}
+  \Psi_0(d^{-1}(t)\nabla_x F)\leq \Phi_0(x)+1\tag{$\b{B}$}
 \end{equation}
 
-Let us take a moment to show that condition \eqref{eq:cond-sub} encompasses the sublinearity condition, for example, as it is formulated in \cite{li2014periodic} for the $(q,p)$-Laplacian. In \cite[Th. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a} and the condition \ref{item:condicion_h1} below. We write
-$p'=p/(p-1)$ for the Lebesgue conjugate exponent of $p$.
-\begin{enumerate}
- \item[(H1)]\label{item:condicion_h1} Existen $f_i,g_i,h_i\in L^1([0,T],\rr_+)$, $\alpha_1\in [0,q-1)$, $\alpha_2 \in [0,p-1)$, $\beta_1\in [0,p/q')$ and $\beta_2\in [0,q/p')$ such that
+Let us take a moment to show that condition \eqref{eq:cond-sub} encompasses the sublinearity condition, for example, as it is formulated in \cite{li2014periodic} for the $(p_1,p_2)$-Laplacian. We write
+$p'=p/(p-1)$ for the Lebesgue conjugate exponent of $p$. In \cite[Th. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a}.  As we have said, with these hypotheses, the Lagragian $\mathcal{L}=\Phi_{p_1,p_2}+F$ satisfies the structure condition \eqref{eq:condicion-estructura} and the Euler-Lagrange equations for $\mathcal{L}$ are the $(p_1,p_2)$-Laplacian equations. Additionally in \cite{li2014periodic} was used the condition \ref{item:condicion_h1} below. 
+\begin{enumerate}   
+  \labitem{(H1)}{item:condicion_h1} There exists $f_i,g_i,h_i\in L^1([0,T],\rr_+)$, $\alpha_1\in [0,p_1-1)$, $\alpha_2 \in [0,p_2-1)$, $\beta_1\in [0,p_2/p_1')$ and $\beta_2\in [0,p_1/p_2')$ such that
  \begin{equation*}
   \begin{split}
     |\nabla_{x_1}F(t,x_1,x_2)|\leq f_1(t)|x_1|^{\alpha_1}+f_2(t)|x_2|^{\beta_1}+h_1(t)\\
@@ -937,112 +972,69 @@ $p'=p/(p-1)$ for the Lebesgue conjugate exponent of $p$.
   \end{split}
  \end{equation*}
 
- Let us prove that \eqref{item:condicion_h1}$\Rightarrow$\ref{eq:cond-sub} where
- $\Phi(x_1,x_2)=\Phi_{q,p}=|x_1|^q/q+|x_2|^p/p$ and $
-
-
 \end{enumerate}
 
+It is easy to prove that \eqref{item:condicion_h1}$\Rightarrow$\eqref{eq:cond-sub} where
+$\Phi_0(x_1,x_2)=\Phi_{\overline{p}_1,\overline{p}_2}(x_2,x_2)=|x_1|^{\overline{p}_1}/\overline{p}_1+|x_2|^{\overline{p}_2}/\overline{p}_2$, where $\overline{p}_i$, $i=1,2$, are taken so that  $\alpha_i+1\leq \overline{p}_i<p_i$, $\beta_1<\overline{p}_2/\overline{p}_1'$, $\beta_2<\overline{p}_1/\overline{p}_2'$ and $d=C(1+\sum_i \{f_i+g_i+h_i\})\in L^1$, for $C>0$ large enough. 
 
 
-\begin{prop}
-Let $1<p<\infty$ and suppose that $F$ satisfies  \ref{item:condicion_a}. Then,
-\begin{equation}\label{eq:cond-sub-p}
-|\nabla_x F|\leq a(t)|x|^{p'_0-1}+b(t),\;for\; p'_0<p,
-\end{equation}
- if and only if
-$F$ satisfies \eqref{eq:cond-sub} with $\Phi_0(x)=|x|^{p'}$ for all $p'\in(1,p)$.
-\end{prop}
 
-\begin{proof}
-Suppose that \eqref{eq:cond-sub} holds with $\Phi_0(x)=|x|^{p'}$ for $1<p'<p-1$. Then,
-\[
-(a^{-1}(t)|\nabla_x F|)^{q'_0}\leq |x|^{p'_0},\;for\; |x|\geq M
-\]
-As $F$ sastisfies \ref{item:condicion_a}, we have
-$|\nabla_x F|\leq b(t)\in L^1$ for $|x|\leq M$.
+The following is our main result. 
 
-PONEMOS SOLO b O Kb?? No confunde?
 
-Then,
-\[
-|\nabla_x F|\leq a |x|^{\frac{p'_0}{q'_0}}+b(t)\leq a|x|^{p'_0-1}+b(t)
-\]
-
-Now, we assume that $F$ satisfies \eqref{eq:cond-sub-p}. If $|x|\geq 1$, we have
-\[
-|\nabla_x F|\leq a(t)|x|^{p'_0-1}+b(t)\leq (a(t)+b(t))|x|^{\frac{p'_0}{q'_0}}
-\]
-which is condition \eqref{eq:cond-sub} with $a(t)+b(t)$ instead of $a(t)$.
-\end{proof}
 
 
 \begin{thm}\label{coercitividad-r}
-Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2^{\infty}$-condition.
-
-Let $F$ be a potential that satisfies \ref{item:condicion_c}, \ref{item:condicion_a} and the following conditions:
-\begin{enumerate}
-\item \eqref{eq:cond-sub} for some $N_{\infty}$ function $\Phi_0$ such that $\Phi_0\llcurly \Phi$
-\item
+  Let $\Phi$ be an $N_{\infty}$-function whose complementary function $\Psi$ satisfies the $\Delta_2^{\infty}$-condition. Let $F$ be a potential that satisfies \ref{item:condicion_c}, \ref{item:condicion_a},\eqref{eq:cond-sub} and the following condition
 \begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_0(2|x|)}=+\infty,
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_0(2x)}=+\infty.
 \end{equation}
-for some $N$-function $\Psi_0$ complementary function of $\Phi_0$.
-\end{enumerate}
-
-EN LO QUE SIGUE, PONEMOS LA NUEVA CONDICION DE ESCTRUCTURA O DEFINIMOS UN CONJUNTO DONDE SE VERIFICAN
-ESAS CONDICIONES???
-
-Now,  if the lagrangian $\mathcal{L}(t,x,y)$ is strictly convex  with respect to $y\in\rr^d$,
-$\mathcal{L}\in {A}(a,b,c,\lambda,f,\Phi)$,
-$D_y\mathcal{L}(0,x,y)=D_y\mathcal{L}(T,x,y)$
-and \eqref{eq:control_inf} holds,
-then the problem \eqref{ProbPrin-gral} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
+Then the problem \eqref{eq:ProbPhiLapla} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
 \end{thm}
 
-
-FALTA UNA BUENA REVISION DE LO ESCRITO EN LA PRUEBA
-\begin{proof}
+\begin{proof} \emph{Step 1. The action integral is coercive}.
+  
+  
 By the decomposition $u=\overline{u}+\tilde{u}$,   Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$
-and \eqref{eq:aniso-sob-wir},
+and \eqref{eq:wirtinger},
 we obtain
 \begin{equation}\label{eq:cota-dif-F}
 \begin{split}
-&\left|\int_0^T F(t,u)-F(t,\overline{u})\,dt\right|
-\leq \int_0^T \int_0^1 |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|\,ds\,dt
+&\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
+\leq \int_0^T \int_0^1 |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|dsdt
 \\
-&=\int_0^T a(t) \int_0^1 a^{-1}(t) |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|\,ds\,dt
-\\
-&\leq
-\int_0^T a(t) \int_0^1 \Psi_0(a^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u}))+\Phi_0(\tilde{u}(t))\,ds\,dt
+&=\int_0^T d(t) \int_0^1 d^{-1}(t) |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|dsdt
 \\
 &\leq
-\int_0^T a(t)\left[\int_0^1 \Phi_0(\overline{u}+s\tilde{u})\,ds+\Phi_0(\tilde{u}(t))\right]\,dt
+\int_0^T d(t) \int_0^1 \Psi_0(d^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u}))+\Phi_0(\tilde{u})dsdt
 \\
 &\leq
-\int_0^T a(t) (\Phi_0(2\overline{u})+2 \Phi_0(2\tilde{u}))\,dt
+\int_0^T d(t)\left[\int_0^1 \left(\Phi_0(\overline{u}+s\tilde{u})ds+\Phi_0(\tilde{u})+1 \right)ds\right]dt
 \\
-&\leq C_1 \Phi_0(2\overline{u})+\int_0^T a(t)2\Phi_0(2 \tilde{u})\,dt
+&\leq
+\int_0^T d(t) (\Phi_0(2\overline{u})+2 \Phi_0(2\tilde{u})+1)dt
+\\
+&\leq C_1 \Phi_0(2\overline{u})+2\int_0^T d(t)\Phi_0(2 \tilde{u})dt+C_3
 \\
 &
-\leq C_1 \Phi_0(2\overline {u}) +C_2 \int_0^T \Phi_0 (C_T u'(t))\,dt
+\leq C_1 \Phi_0(2\overline {u}) +C_2 \int_0^T \Phi_0 (C_T u'(t))dt+C_3
 \end{split}
 \end{equation}
 Then, by \eqref{eq:cota-dif-F} we get
 \begin{equation}
 \begin{split}
-&\int_0^T  \Phi(u')+F(t,u)\,dt=
-\int_0^T \{\Phi(u')+[F(t,u)-F(t,\overline{u})]+F(t,\overline{u})\}\,dt
+&\int_0^T  \Phi(u')+F(t,u)dt=
+\int_0^T \{\Phi(u')+[F(t,u)-F(t,\overline{u})]+F(t,\overline{u})\}dt
 \\
 &\geq
-\int_0^T [\Phi(u')-C_2 \Phi_0(C_T u'(t))]\,dt-C_1\Phi_0(2 \overline{u})+\int_0^T F(t,\overline{u})\,dt
+\int_0^T [\Phi(u')-C_2 \Phi_0(C_T u')]dt-C_1\Phi_0(2 \overline{u})+\int_0^T F(t,\overline{u})dt-C_3
 \end{split}
 \end{equation}
 
-If $\|u\sobnor\to \infty$, then $\|u'\orlnor \to \infty$ or $|\overline{u}|\to \infty$.
+We suppose that $u_n\in\wphi$ with $\|u_n\wphi\to\infty$. From Remark \ref{com:equiv-norm}, we have that $\|u_u'\orlnor \to \infty$ or $|\overline{u}_n|\to \infty$.
 
 Now, if $|\overline{u}|\to \infty$, by hypothesis we have
-$\frac{1}{\Psi_0(2 \overline{u})}\int_0^\infty F(t,\overline{u})\,dt\to \infty$.
+$\frac{1}{\Psi_0(2 \overline{u})}\int_0^\infty F(t,\overline{u})dt\to \infty$.
 
 If $\|u_n\orlnor \to \infty$ for a sequence $u_n$.
 
@@ -1053,39 +1045,28 @@ Set $A_n:=\{t\in [0,T]:|u'_n(t)|\geq M\}$.
 Now, if $\|u'_n\orlnor\to \infty$ then
 $\|u'_n\chi_{A_n}\orlnor\to \infty$ or $\|u'_n \chi_{A_n^C}\orlnor\to \infty$.
 
-As $\Phi$ is continuous, then $\Phi$ is bounded on
-$\overline{B}_r(0)=\{x\in \rr^n:|x|\leq r\}$
-
-Let $M_r:=\max\limits_{\overline{B}_r(0)} \Phi(x)$.
-
-As $M_r\to 0$ when $r\to 0$, we can choose $r$ such that $M_rT\leq 1$.
-
-Then
-$\int_0^T \Phi(\frac{u}{\frac{1}{r}\|u\linf})\,dt\leq M_rT\leq 1$
-and consequently
-$\|u\orlnor \leq r^{-1}\|u\linf$, i.e. $L^{\infty} \hookrightarrow L^\Phi$.
 Thus,
 $\|u'_n \chi_{A_n^C}\orlnor$ is bounded and $\|u'_n\chi_{A_n}\orlnor\to \infty$.
 
 By Ameniya norm, we have
-$\|u'_n\orlnor \leq 1+\int_{A_n} \Phi(u'_n)\,dt$, then
+$\|u'_n\orlnor \leq 1+\int_{A_n} \Phi(u'_n)dt$, then
 \begin{equation}\label{eq:coer-an}
-\int_{A_n} \Phi(u'_n)\,dt\to \infty.
+\int_{A_n} \Phi(u'_n)dt\to \infty.
 \end{equation}
 
 Now, as $\frac{\Phi(x)}{2}\geq C_2\Phi_0$ for $|x|\geq M$, we have
 \begin{equation}
 \begin{split}
-&\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]\,dt
+&\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]dt
 \\
 &\geq
-\int_{A_n} [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]\,dt-C_2\int_{[0,T]/A_n} \Phi_0(C_Tu'_n)\,dt
+\int_{A_n} [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]dt-C_2\int_{[0,T]/A_n} \Phi_0(C_Tu'_n)dt
 \\
-&\geq \frac{1}{2}\int_{A_n}\Phi(u'_n)\,dt-C_2T\max\{\Phi_0(x):\|x\|\leq C_TM\}.
+&\geq \frac{1}{2}\int_{A_n}\Phi(u'_n)dt-C_2T\max\{\Phi_0(x):\|x\|\leq C_TM\}.
 \end{split}
 \end{equation}
 Finally, by \eqref{eq:coer-an}, we conclude that
-$\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]\,dt\to \infty$
+$\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]dt\to \infty$
 
 \end{proof}
 
