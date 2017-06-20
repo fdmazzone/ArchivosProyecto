@@ -34,7 +34,7 @@
 
 \makeatletter
 \newcommand{\labitem}[2]{%
-\def\@itemlabel{\textbf{#1}}
+\def\@itemlabel{#1}
 \item
 \def\@currentlabel{#1}\label{#2}}
 \makeatother
@@ -284,7 +284,7 @@ The laplacian $\mathcal{L}_{\Phi,F}$ leads to the problem
   \frac{d}{dt} \nabla \Phi(u'(t))= \nabla_{x}F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right. .\tag{$\b{P_{\Phi}}$}
+\right. .\tag{${P_{\Phi}}$}
 \end{equation}
 The differential equation in the previous problem is called the \emph{anisotropic $\Phi$-Laplacian equation}.
 
@@ -295,7 +295,7 @@ Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems th
    \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0.
 \end{array}%
-\right.\tag{$\b{P_p}$}
+\right.\tag{${P_p}$}
 \end{equation}
 
 
@@ -307,7 +307,7 @@ If $\Phi$ is as in Example \ref{ex:pq-laplac} and  $F:[0,T]\times\rr^d\times\rr^
   \frac{d}{dt}\left(|u_2'|^{p_2-2}u_2'\right)=F_{x_2}(t,u) \quad \hbox{a.e.}\ t \in (0,T)\\
    u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right., \tag{$\b{P_{p_1,p_2}}$}
+\right., \tag{${P_{p_1,p_2}}$}
 \end{equation}
 where $x=(x_1,x_2)\in\rr^d\times\rr^d$ and $u(t)=(u_1(t),u_2(t))\in\rr^d\times\rr^d$. In the literature, these equations are known as $(p_1,p_2)$-Laplacian system, see
 \cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some,li2014periodic}.
@@ -325,7 +325,9 @@ If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obt
  \Phi(\lambda x)\leq \lambda\Phi(x),\quad \lambda\in[0,1],x\in\rr^d.
 \end{equation}
 
-One of the greatest difficulties when dealing with anisotropic Orlicz spaces is the lack of  monotony  with respect to the Euclidean norm, i.e. $|x|\leq |y|$ does not imply $\Phi(x)\leq\Phi(y)$. This problem is avoided if we consider functions whose values on a sphere are comparable (see\cite{Skaff1969}). However, from \eqref{eq:escalar_ine}, we see that  $N_{\infty}$ functions have the following form of radial monotony: $|x|\leq |y|$ and $y=\lambda x$ imply $\Phi(x)\leq\Phi(y)$. 
+One of the greatest difficulties when dealing with anisotropic Orlicz spaces is the lack of  monotony  with respect to the Euclidean norm, i.e. $|x|\leq |y|$ does not imply $\Phi(x)\leq\Phi(y)$. This problem is avoided if we consider functions whose values on a sphere are comparable (see\cite{Skaff1969}). However, from \eqref{eq:escalar_ine}, we see that  $N_{\infty}$ functions have the following form of radial monotony: 
+
+\begin{equation}\label{eq:escalar_ine_2} 0<\lambda_1\leq \lambda_2, x\in\rr^d \Rightarrow \Phi(\lambda_1 x)\leq\Phi(\lambda_2 x).\end{equation} 
 
 The mutually complementary functions $N_{\infty}$ functions $\Phi$ and $\Psi$ satisfy the following importan relations (see \cite{clarke2013functional}): for any $x,y\in\rr^d$
 
@@ -342,22 +344,29 @@ The following inequality  will be useful, it is consequence of that $(d/dt)\Phi(
 \end{equation}
 
 We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
-if there exists a  constant $K>0$  such that
-\begin{equation}\label{delta2defi}\Phi(2x)\leq K \Phi(x)+1,
+if there exists a  constant $C>0$  such that
+\begin{equation}\label{delta2defi}\Phi(2x)\leq C \Phi(x)+1,
 \end{equation}
 for every $x$.  
+
+Throughout this article, we denote by $C=C(\lambda_1,\ldots,\lambda_n)$ a positive constant that may depend on $T$ and $\Phi$,  or other $N_{\infty}$ functions, and the parameters $\lambda_1,\ldots,\lambda_n$ . We assume that the value that $C$ represents may change in 
+different occurrences in the same chain of inequalities. 
+
+
+
+
 If $\Phi$ is a $\Delta_2^{\infty}$ function then $\Phi$ satisfies the following properties
 
 
 
 \begin{itemize}
- \item \emph{Quasi-subadditivity.} There exists $K>0$ such that for every $x,y\in \rr^d$
+ \item \emph{Quasi-subadditivity.} There exists $C>0$ such that for every $x,y\in \rr^d$
 \begin{equation}\label{eq:quasi-sub-aditividad}
-\Phi(x+y)\leq K (\Phi(x)+\Phi(y))+1.
+\Phi(x+y)\leq C (\Phi(x)+\Phi(y))+1.
 \end{equation}
-\item  For any $\lambda>0$ there exists $c:\rr^+\to \rr^+$ such that
+\item  For any $\lambda>0$ there exists $C:\rr^+\to \rr^+$ such that
 \begin{equation}\label{eq:delta2-lambda}
-\Phi(\lambda x)\leq c(\lambda)\Phi(x)+1.
+\Phi(\lambda x)\leq C(\lambda)\Phi(x)+1.
 \end{equation}
 \item $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
 \[\Phi(x)\leq C|x|^p,\quad |x|\geq r_0.\]
@@ -381,7 +390,13 @@ If $\Phi_1\strictif \Phi_2$ then $\Psi_2\strictif\Psi_1$ as the following simple
 \]
 
 
+If $\Psi$ is $\Delta_2^{\infty}$ then $\Phi$ satisfies that for every $0<r<1$ there exists $\lambda=\lambda(r)>0$ and $C=C(r)>0$ such that for every $x\in\rr^d$
 
+\begin{equation}\label{eq:nabla2}
+  \Phi(x)\leq \frac{r}{\lambda}\Phi(\lambda x)+C.
+\end{equation}
+
+DEMOSTRARLO
 
 
 As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
@@ -958,7 +973,7 @@ a function $d \in  L^1([0,T],\rr)$, witht $d\geq 1$, such that
 
 
 \begin{equation}\label{eq:cond-sub}
-  \Psi_0(d^{-1}(t)\nabla_x F)\leq \Phi_0(x)+1\tag{$\b{B}$}
+  \Psi(d^{-1}(t)\nabla_x F)\leq \Phi_0(x)+1\tag{$B$}
 \end{equation}
 
 Let us take a moment to show that condition \eqref{eq:cond-sub} encompasses the sublinearity condition, for example, as it is formulated in \cite{li2014periodic} for the $(p_1,p_2)$-Laplacian. We write
@@ -987,7 +1002,7 @@ The following is our main result.
 \begin{thm}\label{coercitividad-r}
   Let $\Phi$ be an $N_{\infty}$-function whose complementary function $\Psi$ satisfies the $\Delta_2^{\infty}$-condition. Let $F$ be a potential that satisfies \ref{item:condicion_c}, \ref{item:condicion_a},\eqref{eq:cond-sub} and the following condition
 \begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Psi_0(2x)}=+\infty.
+\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Phi_0(2x)}=+\infty.
 \end{equation}
 Then the problem \eqref{eq:ProbPhiLapla} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
 \end{thm}
@@ -995,31 +1010,34 @@ Then the problem \eqref{eq:ProbPhiLapla} has at least a solution which minimizes
 \begin{proof} \emph{Step 1. The action integral is coercive}.
   
   
-By the decomposition $u=\overline{u}+\tilde{u}$,   Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$
-and \eqref{eq:wirtinger},
-we obtain
+  Let $\lambda$ be any positive number with $\lambda>2\max\{T,1\}$. Since $\Phi_0\llcurly \Phi$ we obtain $C(\lambda)>0$ such that 
+  \begin{equation}\label{eq:cond_C}
+    \Phi_0(x)\leq \Phi\left(\frac{x}{2\lambda}\right)+C(\lambda),\quad  x\in\rr^d. 
+  \end{equation}
+By the decomposition $u=\overline{u}+\tilde{u}$, the absolutely continuity of $F(t,x+sy)$ with respect to $s\in\rr$,  Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$, \eqref{eq:escalar_ine_2}, \eqref{eq:cond_C}, \eqref{eq:wirtinger}  we obtain
 \begin{equation}\label{eq:cota-dif-F}
 \begin{split}
-&\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
-\leq \int_0^T \int_0^1 |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|dsdt
+J&:=\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
 \\
-&=\int_0^T d(t) \int_0^1 d^{-1}(t) |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|dsdt
-\\
-&\leq
-\int_0^T d(t) \int_0^1 \Psi_0(d^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u}))+\Phi_0(\tilde{u})dsdt
+&\leq \int_0^T \int_0^1 |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|dsdt
 \\
 &\leq
-\int_0^T d(t)\left[\int_0^1 \left(\Phi_0(\overline{u}+s\tilde{u})ds+\Phi_0(\tilde{u})+1 \right)ds\right]dt
+\lambda \int_0^T d(t) \int_0^1 \Psi\left(d^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u})\right)+\Phi\left(\frac{\tilde{u}}{\lambda}\right)dsdt
 \\
 &\leq
-\int_0^T d(t) (\Phi_0(2\overline{u})+2 \Phi_0(2\tilde{u})+1)dt
+\lambda\int_0^T d(t)\left[\int_0^1 \frac12\Phi_0(2\overline{u})+\frac12\Phi_0(2\tilde{u})ds+\Phi\left(\frac{\tilde{u}}{\lambda}\right)+1 ds\right]dt
 \\
-&\leq C_1 \Phi_0(2\overline{u})+2\int_0^T d(t)\Phi_0(2 \tilde{u})dt+C_3
+&\leq
+\lambda\int_0^T d(t)\left[\int_0^1 \Phi_0(2\overline{u})+2\Phi\left(\frac{\tilde{u}}{\lambda}\right)+C(\lambda) ds\right]dt
 \\
-&
-\leq C_1 \Phi_0(2\overline {u}) +C_2 \int_0^T \Phi_0 (C_T u'(t))dt+C_3
+&\leq C_1 \Phi_0(2\overline{u})+\lambda C_2 \int_0^T \Phi\left(\frac{Tu'(s)}{\lambda}\right)ds+C_1
 \end{split}
 \end{equation}
+where $C_2=C_2(\|d\|_{L^1})$ and $C_1=C_1(\|d\|_{L^1},\lambda)$.  
+
+
+
+
 Then, by \eqref{eq:cota-dif-F} we get
 \begin{equation}
 \begin{split}
