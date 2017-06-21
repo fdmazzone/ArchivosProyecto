@@ -498,7 +498,7 @@ A_{\Phi}(s)=\min\left\{\Phi(x)\,\big|\,|x|=s\right\},
 Let us establish some elementary properties of $A_{\Phi}$.
 \begin{prop}\label{prop:AsubPhi} The function $A_{\Phi}$ has the following properties:
 \begin{enumerate}
- \item\label{it:prop1} $A_{\Phi}$ is continuous,
+  \item\label{it:prop1} $A_{\Phi}$ is continuous and $A_{\Phi}(s)>0$, when $s>0$,
  \item\label{it:prop2} $A_{\Phi}(s)/s$ is increasing,
  \item\label{it:prop3} $A_{\Phi}(|x|)$ is the \emph{greatest radial minorant} of 
  $\Phi(x)$,
@@ -569,12 +569,14 @@ on the subspace $M$. By elementary computations we have for $(\xi,\eta)\in M$
 on the subspace $M$. We can assume that $p_1<2$ or $p_2<2$, otherwise the statement we intend to prove would be trivial. Under this assumption, we note that $(-y_2,y_1)\in M$ and $(-y_2,y_1)^t\mathcal{H}(-y_2,y_1)<0$.
 Then, by second order necessary conditions \cite[p.333]{luenberger2015linear}, 
  there cannot be a minimum at $(y_1,y_2)$. Therefore follows \eqref{eq:aphi}.
-
-  
 \end{example}
 
 
+Note that $A_{\Phi}$ is not  necessarily convex.  In some applications we overcome this lack by taking the \emph{greatest convex minorant } of $A_{\Phi}$. This function is defined as follows
 
+\begin{equation}\label{eq:fun_bphi} B_{\Phi}(s)=\sup\{\varphi(s)| \varphi\text{ es convex and } \varphi\leq A_{\Phi}\}.
+\end{equation}
+The function $B_{\Phi}$ is the greatest convex radial minorant of $\Phi$. Moreover $B_{\Phi}$ is $N^{\infty}$ function.  To justify this statement it would only be necessary to prove that $B_{\Phi(s)}>0$, when $s>0$ and  $B_{\Phi}(s)/s\to\infty$. We write, for $x\in\rr$, $x^+=\max\{x,0\}$. From Proposition \ref{prop:AsubPhi}\eqref{it:prop2} we obtain that $A_{\Phi}(s)\geq A_{\Phi}(s_0)(s-s_0)^+/s_0>0$, for $s>s_0$.   From this it follows that $B_{\Phi}(s)\geq A_{\Phi}(s_0)(s-s_0)^+/s_0>0$, when $s>0$ and that $\liminf_{s\to\infty} B_{\Phi}(s)/s\geq A_{\Phi}(s_0)/s_0$. Hence, from   Proposition \ref{prop:AsubPhi}\eqref{it:prop2} we obtain that $B_{\Phi}(s)/s\to\infty$.
 
  Recall that a function   $w:[0,+\infty)\to [0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example $w(s)=sA_{\Phi}^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
 \begin{equation}\label{w-holder}|u(t)-u(s)|\leq Cw(|t-s|).
