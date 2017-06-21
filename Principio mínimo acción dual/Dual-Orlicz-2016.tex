@@ -683,7 +683,8 @@ As a consequence of Arzela-Ascoli Theorem
   
   
 \end{comentario}
-
+ \begin{cor}\label{cor:unif_conv} Every bounded sequence $\{\b{u}_n\}$ in  $\wphi([0,T],\rr^d)$  has an uniformly convergent subsequence. 
+\end{cor}
 
 Given a function $a:\mathbb{R}^d\to \mathbb{R}$, we define the composition operator $\b{a}:\mathcal{M}\to \mathcal{M}$ by $\b{a}(u)(x)= a(u(x))$.
 We will often use the following result whose proof can be performed as that of  Corollary 2.3 in \cite{ABGMS2015}.
@@ -1093,10 +1094,13 @@ $\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]dt\to \infty$
 
 
 
-\emph{Step 2. $I$ is sequentially weakly
-  lower semicontinuous} 
+\emph{Step 2. If $u_n\to u$ uniformly and  $u_n'\rightharpoonup u'$ in $ \lphi([0,T],\rr^d)$ then
+$
+I(u)\leq\liminf_{n\to\infty}I(u_n)
+$.
+}  
 
-We assume that $u_n\rightharpoonup u $ in $\wphi([0,T],\rr^d)$. From the embedding $\lphi([0,T],\rr^d)\hookrightarrow L^1([0,T],\rr^d)$ we have the  $u_n'\rightharpoonup u' $ in $ L^1([0,T],\rr^d)$ and from 
+ From the embedding $\lphi([0,T],\rr^d)\hookrightarrow L^1([0,T],\rr^d)$ we have the  $u_n'\rightharpoonup u' $ in $ L^1([0,T],\rr^d)$.  
 
 
 
