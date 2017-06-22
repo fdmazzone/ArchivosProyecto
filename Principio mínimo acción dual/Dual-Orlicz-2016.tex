@@ -472,7 +472,20 @@ We highlight the following result (see \cite[Th. 3.3]{gwiazda2013anisotropic}).
 
 Consequently  $\lphi\left([0,T],\rr^d\right)$ can be equipped with the weak* topology induced by $\epsi\left([0,T],\rr^d\right)$.
 
-
+\begin{lem}\label{lem:deb*cerrado}
+$\ephi$ is weak* closed in $\lphi$.
+\end{lem}
+\begin{proof}
+ The space $E^{\Psi}([0,T],\rr^d)$ is separable (see \cite[Th. 6.3]{Orliczvectorial2005}).
+Let $S=\ephi\cap \{u \in \lphi|\|u\orlnor\leq 1\}$, then $S$ is closed in the norm $\|\cdot\orlnor$.
+Now, according to \cite[Cor. 5, p. 148]{rao1991theory} $S$ is weak* sequentially compact.
+Thus, $S$ is weak* sequentially closed because if $u_n\in S$ and
+$u_n \overset{*}{\rightharpoonup}u \in \lphi$, then  the weak* sequentially compactness implies the existence of $v \in S$ and a subsequence $u_{n_k}$ such that
+$u_{n_k}\overset{*}{\rightharpoonup}v$. Finally, by the uniqueness of   the limit, we get
+$u=v\in S$.
+As $\epsi$ is separable and $\lphi=\left[\epsi\right]^*$, the closed ball of $\{u \in \lphi | \|u\orlnor\leq 1\}$ of $\lphi$  is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
+Thus, $S$ is closed with respect to  the weak* topology. Now, by  Krein-Smulian theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi$ is weak* closed.
+\end{proof}
 
 
 
@@ -701,6 +714,11 @@ More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\i
 \end{lem}
 
 The following theorem will be used repeatedly. We adapted the proof of \cite[Lemma 2.5]{ABGMS2015} to the anisotropic case.    For an alternative approach see \cite{chamra2017anisotropic}.  
+
+
+
+
+
 
 
 \begin{lem}\label{segundo lema}
@@ -1066,13 +1084,17 @@ We suppose that $u_n\in\wphi$ with $\|u_n\sobnor\to\infty$. From Remark \ref{com
 
 
 
-\emph{Step 2. If $u_n\to u$ uniformly and  $u_n'\rightharpoonup u'$ in $ \lphi([0,T],\rr^d)$ then
+\emph{Step 2. The action integral $I$ is sequentially weakly lower semicontinuous, i.e. if  $u_n'\rightharpoonup u'$ in the weak topology of $ \wphi([0,T],\rr^d)$ then
 $
 I(u)\leq\liminf_{n\to\infty}I(u_n)
 $.
 }  
 
- From the embedding $\lphi([0,T],\rr^d)\hookrightarrow L^1([0,T],\rr^d)$ we have the  $u_n'\rightharpoonup u' $ in $ L^1([0,T],\rr^d)$.  
+
+Assume that $u_n\rightharpoonup u$ in  $ \wphi([0,T],\rr^d)$.  Without loss of generality, passing to subsequences, we may assume that the $\liminf$ is really a $\lim$ and, using Corollary \eqref{cor:unif_conv},  that  $u_n\to u$ uniformly and $u_n'\rightharpoonup u'$ in  $ \lphi([0,T],\rr^d)$. The embedding  $\lphi([0,T],\rr^d)\hookrightarrow L^1([0,T],\rr^d)$ implies that  $u_n'\rightharpoonup u' $ in $ L^1([0,T],\rr^d)$.  Now, applying \cite[Th. 3.6]{buttazzo1998one} we obtain $I(u)\leq \lim_{n\to\infty}I(u_n)$.
+
+\emph{Final step}
+
 
 
 
