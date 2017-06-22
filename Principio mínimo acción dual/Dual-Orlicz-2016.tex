@@ -393,10 +393,12 @@ If $\Phi_1\strictif \Phi_2$ then $\Psi_2\strictif\Psi_1$ as the following simple
 If $\Psi$ is $\Delta_2^{\infty}$ then $\Phi$ satisfies that for every $0<r<1$ there exists $\lambda=\lambda(r)>0$ and $C=C(r)>0$ such that for every $x\in\rr^d$
 
 \begin{equation}\label{eq:nabla2}
-  \Phi(x)\leq \frac{r}{\lambda}\Phi(\lambda x)+C.
+  \Phi(x)\leq \frac{r}{l}\Phi(l x)+C.
 \end{equation}
 
 DEMOSTRARLO
+
+Note that if $\lambda>0$ satisfies \eqref{eq:nabla2} and $\lambda'\geq\lambda$ then $\lambda'$ also satisfies \eqref{eq:nabla2}.
 
 
 As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
@@ -454,6 +456,12 @@ We suppose $u\in L^{\infty}([0,T],\rr^d)$. Since $\Phi$ is continuous, $\Phi$ is
 \[\int_0^T \Phi\left(\frac{ru}{\|u\linf}\right)dt\leq M_rT\leq 1\]
 and consequently
 $\|u\orlnor \leq r^{-1}\|u\linf$, i.e. $L^{\infty} \hookrightarrow L^\Phi$.
+
+Suppose $u\in\lphi([0,T],\rr^d)$ and consider $K:=\rho_{\Phi}(u)+1\geq 1$. Then from \eqref{eq:escalar_ine} we have $\rho_{\Phi}(K^{-1}u)\leq K^{-1}\rho_{\Phi}(u)\leq 1$. Therefore we conclude the following inequality
+\begin{equation}\label{eq:amemiya}
+ \|u\orlnor \leq \rho_{\Phi}(u)+1.
+\end{equation}
+
 
 
 We highlight the following result (see \cite[Th. 3.3]{gwiazda2013anisotropic}).
@@ -1015,7 +1023,7 @@ Then the problem \eqref{eq:ProbPhiLapla} has at least a solution which minimizes
     \Phi_0(x)\leq \Phi\left(\frac{x}{2\lambda}\right)+C(\lambda),\quad  x\in\rr^d. 
   \end{equation}
 By the decomposition $u=\overline{u}+\tilde{u}$, the absolutely continuity of $F(t,x+sy)$ with respect to $s\in\rr$,  Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$, \eqref{eq:escalar_ine_2}, \eqref{eq:cond_C}, \eqref{eq:wirtinger}  we obtain
-\begin{equation}\label{eq:cota-dif-F}
+\begin{equation*}\label{eq:cota-dif-F}
 \begin{split}
 J&:=\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
 \\
@@ -1032,59 +1040,24 @@ J&:=\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
 \\
 &\leq C_1 \Phi_0(2\overline{u})+\lambda C_2 \int_0^T \Phi\left(\frac{Tu'(s)}{\lambda}\right)ds+C_1
 \end{split}
-\end{equation}
-where $C_2=C_2(\|d\|_{L^1})$ and $C_1=C_1(\|d\|_{L^1},\lambda)$.  
-
-
-
-
-Then, by \eqref{eq:cota-dif-F} we get
+\end{equation*}
+where $C_2=C_2(\|d\|_{L^1})$ and $C_1=C_1(\|d\|_{L^1},\lambda)$.  Since $\Psi$ is $\Delta_2^{\infty}$ we can choose $\lambda$ large enough so that $l=\lambda T^{-1}$ satisfies  \eqref{eq:nabla2} for $r=\frac12 \min\{(C_2T)^{-1},1\}$. Choosing the parameters in this way we get
+\[
+ J\leq C_1 \Phi_0(2\overline{u})+\frac12 \int_0^T \Phi\left(u'(s)\right)ds+C_1
+\]
+Then
 \begin{equation}
 \begin{split}
-&\int_0^T  \Phi(u')+F(t,u)dt=
-\int_0^T \{\Phi(u')+[F(t,u)-F(t,\overline{u})]+F(t,\overline{u})\}dt
+I(u)&=\int_0^T  \Phi(u')+F(t,u)dt\\
+&= \int_0^T \{\Phi(u')+[F(t,u)-F(t,\overline{u})]+F(t,\overline{u})\}dt
 \\
 &\geq
-\int_0^T [\Phi(u')-C_2 \Phi_0(C_T u')]dt-C_1\Phi_0(2 \overline{u})+\int_0^T F(t,\overline{u})dt-C_3
+\frac12\int_0^T \Phi(u')dt-C_1\Phi_0(2 \overline{u})+\int_0^T F(t,\overline{u})dt-C_1
 \end{split}
 \end{equation}
 
-We suppose that $u_n\in\wphi$ with $\|u_n\wphi\to\infty$. From Remark \ref{com:equiv-norm}, we have that $\|u_u'\orlnor \to \infty$ or $|\overline{u}_n|\to \infty$.
+We suppose that $u_n\in\wphi$ with $\|u_n\sobnor\to\infty$. From Remark \ref{com:equiv-norm}, we have that $\|u_u'\orlnor \to \infty$ or $|\overline{u}_n|\to \infty$. In the first case, we have from \eqref{eq:amemiya} that $\rho_\Phi(u_n)\to\infty$ and hence  $I(u_n)\to\infty$. In the second case,  $I(u_n)\to\infty$ as consequence of \eqref{eq:propiedad-coercividad-phi0}.
 
-Now, if $|\overline{u}|\to \infty$, by hypothesis we have
-$\frac{1}{\Psi_0(2 \overline{u})}\int_0^\infty F(t,\overline{u})dt\to \infty$.
-
-If $\|u_n\orlnor \to \infty$ for a sequence $u_n$.
-
-Let $M>0$ such that $\frac{\Phi(x)}{C_2\Phi_0(C_Tx)}\geq 2$ for $|x|\geq M$.
-
-Set $A_n:=\{t\in [0,T]:|u'_n(t)|\geq M\}$.
-
-Now, if $\|u'_n\orlnor\to \infty$ then
-$\|u'_n\chi_{A_n}\orlnor\to \infty$ or $\|u'_n \chi_{A_n^C}\orlnor\to \infty$.
-
-Thus,
-$\|u'_n \chi_{A_n^C}\orlnor$ is bounded and $\|u'_n\chi_{A_n}\orlnor\to \infty$.
-
-By Ameniya norm, we have
-$\|u'_n\orlnor \leq 1+\int_{A_n} \Phi(u'_n)dt$, then
-\begin{equation}\label{eq:coer-an}
-\int_{A_n} \Phi(u'_n)dt\to \infty.
-\end{equation}
-
-Now, as $\frac{\Phi(x)}{2}\geq C_2\Phi_0$ for $|x|\geq M$, we have
-\begin{equation}
-\begin{split}
-&\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]dt
-\\
-&\geq
-\int_{A_n} [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]dt-C_2\int_{[0,T]/A_n} \Phi_0(C_Tu'_n)dt
-\\
-&\geq \frac{1}{2}\int_{A_n}\Phi(u'_n)dt-C_2T\max\{\Phi_0(x):\|x\|\leq C_TM\}.
-\end{split}
-\end{equation}
-Finally, by \eqref{eq:coer-an}, we conclude that
-$\int_0^T [\Phi(u'_n)-C_2 \Phi_0(C_T u'_n)]dt\to \infty$
 
 \end{proof}
 
