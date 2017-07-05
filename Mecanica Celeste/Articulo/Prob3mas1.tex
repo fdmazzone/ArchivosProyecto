@@ -263,7 +263,7 @@ We observe that for all admissible CC there exists $kT$ synchronous solution (an
 The sufficiency of the condition $n\leq 472$ in the following corollary  was proved in \cite{li2013characterization}.
 
 \begin{cor}\label{cor:nleq472}
-We suppose that $q_1^0,\ldots,q_n^0$ is the equal masses regular polygon configuration  (this is an admisible CC). Then there exists a synchronous solution if and only if $n\leq 472$.
+We suppose that $q_1^0,\ldots,q_n^0$ is the equal masses regular polygon configuration  (this is an admisible CC). Then there exists a synchronous solution if and only if $2\leq n\leq 472$.
 \end{cor}
 
 
@@ -467,7 +467,45 @@ We note that this second proof of Theorem \ref{thm:prin_ine} (\ref{2}), unlike t
 
 
 \begin{proof}[Proof Corollary \ref{cor:nleq472}]
-Our condition \eqref{eq:ine_prin} is reduced to the inequality $(41)$ in \cite{li2013characterization}, where was proved that this inequality holds if and only if $n\leq 472$.
+In this case $s_1=s_2=\cdots=s_n=:r$ and $m_1=m_2=\cdots=m_n=:m$. Then, from the law of cosines we obtain
+\[
+ \sum_{i<j}\frac{m_im_j}{r_{ij}}=\frac{nm^2}{4r}\sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}.
+\]
+Therefore the condition \eqref{eq:ine_prin} is equivalent to
+
+\begin{equation}\label{eq:ine_prin_LShShao}
+  \frac1n\sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}<4.
+\end{equation}
+
+This inequality was also derived by Li, J. et al. in \cite{li2013characterization}. In this paper the authors noted (performing calculations with computer) that inequality \eqref{eq:ine_prin_LShShao} holds true for $2\leq n\leq 472$. Let us prove that any other $n$ satisfies \eqref{eq:ine_prin_LShShao}.
+
+We suppose first that $n=2k$ is even. We note that
+
+$$ \sum_{j=1}^{2k-1}\frac{1}{\sin\left(\frac{j\pi}{2k}\right)}= \sum_{j=1}^{k-1}\frac{1}{\sin\left(\frac{j\pi}{2k}\right)}+1 +\sum_{j=k+1}^{2k-1}\frac{1}{\sin\left(\frac{j\pi}{2k}\right)},$$
+and
+$$ \sin\left(\frac{(k-j)\pi}{2k}\right)=\sin\left(\frac{(k+j)\pi}{2k}\right)=\cos\left(\frac{j\pi}{2k}\right).$$
+Therefore, $n$ does not satisfies \eqref{eq:ine_prin_LShShao} when
+
+\begin{equation}\label{eq:ine_prin_LShShao.2k}
+ \frac{1}{k}\sum_{j=1}^{k-1}\frac{1}{\cos\left(\frac{j\pi}{2k}\right)}+\frac{1}{2k}\geq 4.
+\end{equation}
+Since $1/\cos(x)$ is an increasing function on $[0,\pi/2)$ then
+
+$$ f\left(\frac{\pi}{2 }\frac{(k-1)}{k}  \right)=
+\int_0^{\frac{\pi}{2 }\frac{(k-1)}{k} }\frac{dx}{\cos x}
+\leq \frac{\pi}{2k}\sum_{j=1}^{k-1}\frac{1}{\cos\left(\frac{j\pi}{2k}\right)}, $$
+where
+$$f(x)=\log\sqrt{\frac{1+\sin(x)}{1-\sin(x)}}.$$
+Hence, the following inequality implies \eqref{eq:ine_prin_LShShao.2k}
+
+$$4\leq \frac{2}{\pi}f\left(\frac{\pi}{2 }\frac{(k-1)}{k}  \right) +\frac{1}{2k}:=g(k)$$
+An elementary analysis shows that $g(k)$ is an increasing function with respect to $k$, and $g(420)\approx 4.00032$. Consequently we have proved that if $n$ is even and satisfies \eqref{eq:ine_prin_LShShao} then $n\leq 840$.
+
+Reasoning in a similar way, we obtain an analogous result for the case $n$ odd.
+
+In this way we have proved that the inequality \eqref{eq:ine_prin_LShShao} is false for all $n$ greater than a certain $n_0$.
+
+The validity of the inequality \eqref{eq:ine_prin_LShShao}, for $n\leq n_0$, is easily established using computer. This gives the result that the inequality holds for all $n \leq 472$.
 \end{proof}
 
 \begin{proof}[Proof Theorem \ref{thm:CC.3.4.satis.cond.adm}]
