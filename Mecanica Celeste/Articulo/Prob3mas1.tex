@@ -269,7 +269,7 @@ We suppose that $q_1^0,\ldots,q_n^0$ is the equal masses regular polygon configu
 
 
 
-Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body. In virtue of Corollary \ref{cor:nleq472} and Theorem \ref{thm:caracterizacion}  we rest prove that condition \eqref{eq:ine_prin} is satisfied for the symmetric collinear $4$-body CC, and for the CC forming a rhombus with equal masses in opposite vertices. Let's call these central configurations CCcl and CCr respectively.
+Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body. In virtue of Corollary \ref{cor:nleq472} and Theorem \ref{thm:caracterizacion}  rest to prove that condition \eqref{eq:ine_prin} holds true for the symmetric collinear $4$-body CC, and for a non square CC forming a rhombus with equal masses in opposite vertices. Let's call these central configurations CCcl and CCr respectively.
 
 
 
@@ -386,8 +386,8 @@ because $0<r<1$.
 \begin{proof}[Proof Theorem \ref{thm:caracterizacion}]
 For the case of 3-bodies, we note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
 
-In the case of 4-bodies, we have again that $\# F_r\geq 2$.  We consider two cases, the first one  $|q_1|\neq|q_2|$.  Therefore we can suppose that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
- $m_1=m_3$ and $m_2=m_4$.  We divide the plane in two cones by means of  the line $L$ joining $q_1$  and $q_3=-q_1$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in a open cone, then  $q_4$ is in the other one. But on the other hand \eqref{eq:suma0} implies $q_2=-q_4$, which is a contradiction. Then $q_2,q_4\in M$ or $q_2,q_4\in L$ (since $q_2=-q_4$ the case $q_2\in L$ and $q_4\in M$ is impossible). In the first case the CC is a rhombus with the larger masses closer to the origin (see  \cite{perez2007convex}). The second case we have a collinear CC which is also symmetric by  \eqref{eq:suma0}.
+In the case of 4-bodies, we have again that $\# F_r\geq 2$ when $F_r\neq \emptyset$.  We consider two cases. We suppose first that  $|q_1|\neq|q_2|$.  Therefore we have that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
+ $m_1=m_3$, $m_2=m_4$, $q_1=-q_3$ and $q_2=-q_4$.  We divide the plane in two cones by means of  the line $L$ joining $q_1$  and $q_3$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in an open cone, then  $q_4$ is in the other one, which is a contradiction with the fact that $q_2=-q_4$. Then $q_2,q_4\in M$ or $q_2,q_4\in L$, i.e. the CC is a rhombus with equal masses in opposite vertices or is a symmetric colinear CC. From \cite[Theorem 2]{perez2007convex}  the CC is a rhombus with the larger masses closer to the origin (see  \cite{perez2007convex}). The second case we have a collinear CC which is also symmetric by  \eqref{eq:suma0}.
  It remains to discuss the case of $|q_1|=|q_2|=|q_3|=|q_4|$. In this situation, in \cite{hampton2005co} was proved that the configuration is the equal mass square.
 \end{proof}
 
@@ -477,35 +477,26 @@ Therefore the condition \eqref{eq:ine_prin} is equivalent to
   \frac1n\sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}<4.
 \end{equation}
 
-This inequality was also derived by Li, J. et al. in \cite{li2013characterization}. In this paper the authors noted (performing calculations with computer) that inequality \eqref{eq:ine_prin_LShShao} holds true for $2\leq n\leq 472$. Let us prove that any other $n$ satisfies \eqref{eq:ine_prin_LShShao}.
+This inequality was also derived by Li, J. et al. in \cite{li2013characterization}. In \cite{li2013characterization} the authors noted (performing calculations with computer) that inequality \eqref{eq:ine_prin_LShShao} holds true for $2\leq n\leq 472$. Let us prove that any other $n$ does not satisfies \eqref{eq:ine_prin_LShShao}.
 
-We suppose first that $n=2k$ is even. We note that
 
-$$ \sum_{j=1}^{2k-1}\frac{1}{\sin\left(\frac{j\pi}{2k}\right)}= \sum_{j=1}^{k-1}\frac{1}{\sin\left(\frac{j\pi}{2k}\right)}+1 +\sum_{j=k+1}^{2k-1}\frac{1}{\sin\left(\frac{j\pi}{2k}\right)},$$
-and
-$$ \sin\left(\frac{(k-j)\pi}{2k}\right)=\sin\left(\frac{(k+j)\pi}{2k}\right)=\cos\left(\frac{j\pi}{2k}\right).$$
-Therefore, $n$ does not satisfies \eqref{eq:ine_prin_LShShao} when
-
-\begin{equation}\label{eq:ine_prin_LShShao.2k}
- \frac{1}{k}\sum_{j=1}^{k-1}\frac{1}{\cos\left(\frac{j\pi}{2k}\right)}+\frac{1}{2k}\geq 4.
-\end{equation}
-Since $1/\cos(x)$ is an increasing function on $[0,\pi/2)$ then
-
-$$ f\left(\frac{\pi}{2 }\frac{(k-1)}{k}  \right)=
-\int_0^{\frac{\pi}{2 }\frac{(k-1)}{k} }\frac{dx}{\cos x}
-\leq \frac{\pi}{2k}\sum_{j=1}^{k-1}\frac{1}{\cos\left(\frac{j\pi}{2k}\right)}, $$
-where
-$$f(x)=\log\sqrt{\frac{1+\sin(x)}{1-\sin(x)}}.$$
-Hence, the following inequality implies \eqref{eq:ine_prin_LShShao.2k}
-
-$$4\leq \frac{2}{\pi}f\left(\frac{\pi}{2 }\frac{(k-1)}{k}  \right) +\frac{1}{2k}:=g(k)$$
-An elementary analysis shows that $g(k)$ is an increasing function with respect to $k$, and $g(420)\approx 4.00032$. Consequently we have proved that if $n$ is even and satisfies \eqref{eq:ine_prin_LShShao} then $n\leq 840$.
-
-Reasoning in a similar way, we obtain an analogous result for the case $n$ odd.
-
-In this way we have proved that the inequality \eqref{eq:ine_prin_LShShao} is false for all $n$ greater than a certain $n_0$.
-
-The validity of the inequality \eqref{eq:ine_prin_LShShao}, for $n\leq n_0$, is easily established using computer. This gives the result that the inequality holds for all $n \leq 472$.
+Using that $1/\sin (x)$ is a convex function on $[0,\pi]$ and composite trapezoid rule (see \cite{kincaid1991numerical}) we have that
+\[
+\begin{split}
+ \int_{\frac{\pi}{n}}^{\frac{n-1}{n}\pi}\frac{1}{\sin (x)}dx&\leq \frac{\pi}{2n}\left\{ \frac{1}{\sin(\frac{\pi}{n})} + \frac{1}{\sin(\frac{n-1}{n}\pi)} +2\sum_{j=2}^{n-2}\frac{1}{\sin(j\frac{\pi}{n})} \right\}\\
+ &=\frac{\pi}{n}\sum_{j=1}^{n-2}\frac{1}{\sin(j\frac{\pi}{n})}.
+\end{split}
+\]
+Therefore
+\[
+\begin{split}
+ \frac1n \sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}&\geq \frac{1}{\pi}\int_{\frac{\pi}{n}}^{\frac{\pi(n-1)}{n}}\frac{1}{\sin (x)}dx+\frac{1}{n\sin\left(\frac{n-1}{n}\pi\right)}\\
+ &=\left.\frac{1}{2\pi}\log \left( \frac{1-\cos(x)}{1+\cos(x)}\right)\right|_{\frac{\pi}{n}}^{\frac{n-1}{n}\pi}+\frac{1}{n\sin\left(\frac{\pi}{n}\right)}\\
+ &=\frac{1}{\pi}\left\{\log \left(\frac{1+\cos(\frac{\pi}{n})}{1-\cos(\frac{\pi}{n})}\right)+\frac{\pi/n}{\sin\left(\frac{\pi}{n}\right)}\right\}\\
+ &=:f\left(\frac{\pi}{n} \right).
+ \end{split}
+\]
+It is easy to see that $f(x)$ is a decreasing function on $(0,\pi/2)$. Moreover $f(\pi/842)\approx 4.0006>4$. Therefore, if $n\geq 842$ then $n$ does not satisfies inequality \eqref{eq:ine_prin_LShShao}. The validity of the inequality \eqref{eq:ine_prin_LShShao}, for $n\leq 841$, is easily checked using computer. This gives the result that the inequality holds for all $n \leq 472$.
 \end{proof}
 
 \begin{proof}[Proof Theorem \ref{thm:CC.3.4.satis.cond.adm}]
