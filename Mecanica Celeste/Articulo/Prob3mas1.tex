@@ -229,8 +229,23 @@ with  $s_i=|q_i^0|$.
 We note that in order to get collisionless solutions of problem $P$ we need that no primary body is located in the center of mass. We say that a
 CC is \emph{admissible} if it is non-collisional and satisfies \eqref{eq:suma0}. In the following theorem we characterize all admisible configurations with 3 or 4 bodies.
 
-\begin{thm}\label{thm:caracterizacion}
-The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses  lie in a common circle with center of mass at the origin the CC is a  equal mass square.
+
+\begin{thm}\label{thm:caracterizacion3}
+The only 3-body admissible CC is the equilateral triangle with three equal masses.
+\end{thm}
+
+
+
+
+\begin{thm}\label{thm:caracterizacion4}
+Let $\mathcal{A}$ be a 4-body central configuration. Then $\mathcal{A}$ is  admisible if and only if,  for a suitable enumeration  of bodies,   $q_1=-q_3$, $q_2=-q_4$, $m_1=m_2$,  $m_3=m_4$, and  it is of some of the following mutually exclusive types:
+\begin{description}
+\item[CCcl.]   collinear,
+\item[CCr.]  a rhombus with $r_{13}<r_{24}$ and $m_1>m_2$,
+\item[CCs.]  a square with four equal masses.
+\end{description}
+
+
 \end{thm}
 
 If the equation \eqref{eq:eq_new_red} has a $kT$-periodic solution, where $T$ is the period for the primaries and $k$ is a positive integer, we say that the solution is  $kT$-synchronous.
@@ -383,11 +398,18 @@ on the other, hand if  $\mu=1$ then
 because $0<r<1$. 
 \end{proof}
 
-\begin{proof}[Proof Theorem \ref{thm:caracterizacion}]
-For the case of 3-bodies, we note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
+\begin{proof}[Proof Theorem \ref{thm:caracterizacion3}]
+We note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
+\end{proof}
 
-In the case of 4-bodies, we have again that $\# F_r\geq 2$ when $F_r\neq \emptyset$.  We consider two cases. We suppose first that  $|q_1|\neq|q_2|$.  Therefore we have that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
- $m_1=m_3$, $m_2=m_4$, $q_1=-q_3$ and $q_2=-q_4$.  We divide the plane in two cones by means of  the line $L$ joining $q_1$  and $q_3$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in an open cone, then  $q_4$ is in the other one, which is a contradiction with the fact that $q_2=-q_4$. Then $q_2,q_4\in M$ or $q_2,q_4\in L$, i.e. the CC is a rhombus with equal masses in opposite vertices or is a symmetric colinear CC. From \cite[Theorem 2]{perez2007convex}  the CC is a rhombus with the larger masses closer to the origin (see  \cite{perez2007convex}). The second case we have a collinear CC which is also symmetric by  \eqref{eq:suma0}.
+
+
+\begin{proof}[Proof Theorem \ref{thm:caracterizacion4}]
+In this case have  that $\# F_r\geq 2$ when $F_r\neq \emptyset$.  We consider two cases.
+
+We suppose first that  $|q_1|\neq|q_2|$.  Therefore we have that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
+ $m_1=m_3$, $m_2=m_4$, $q_1=-q_3$ and $q_2=-q_4$.  We divide the plane in two cones $C_i$, $i=1,2$, by means of  the line $L$ joining $q_1$  and $q_3$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in $C_1$, then  $q_4$ is in $C_2$, and vice versa, which is a contradiction with the fact that $q_2=-q_4$. Then $q_2,q_4\in L$ or $q_2,q_4\in M$, i.e. $\mathcal{A}$ is collinear or is a rhombus with equal masses in opposite vertices. In the firs case $\mathcal{A}$ is of  CCcl type. In the second case, if $m_1>m_2$,   was proved in \cite[Eqs. $(3.44)$ and $(3.45)$]{long2002four} that $r_{13}<r_{24}$, hence $\mathcal{A}$ is of  CCr type. From \cite[Corollary 2]{perez2007convex} if $m_1=m_2$ then the configuration is a square witch is a contradiction with the fact that $|q_1|\neq|q_2|$.
+ 
  It remains to discuss the case of $|q_1|=|q_2|=|q_3|=|q_4|$. In this situation, in \cite{hampton2005co} was proved that the configuration is the equal mass square.
 \end{proof}
 
