@@ -229,8 +229,23 @@ with  $s_i=|q_i^0|$.
 We note that in order to get collisionless solutions of problem $P$ we need that no primary body is located in the center of mass. We say that a
 CC is \emph{admissible} if it is non-collisional and satisfies \eqref{eq:suma0}. In the following theorem we characterize all admisible configurations with 3 or 4 bodies.
 
-\begin{thm}\label{thm:caracterizacion}
-The only 3-body admissible CC is the equilateral triangle with three equal masses. In the case of 4-body, an admissible CC  has two pairs of equal masses and satisfies some of the following properties: it is collinear and symmetric around the center of mass or it is a rhombus with the equal masses in opposite vertices, being the minor masses near from origin. In the particular case that the four masses  lie in a common circle with center of mass at the origin the CC is a  equal mass square.
+
+\begin{thm}\label{thm:caracterizacion3}
+The only 3-body admissible CC is the equilateral triangle with three equal masses.
+\end{thm}
+
+
+
+
+\begin{thm}\label{thm:caracterizacion4}
+Let $\mathcal{A}$ be a 4-body central configuration. Then $\mathcal{A}$ is  admisible if and only if,  for a suitable enumeration  of bodies,   $q_1=-q_3$, $q_2=-q_4$, $m_1=m_2$,  $m_3=m_4$, and  it is of some of the following mutually exclusive types:
+\begin{description}
+\item[CCcl.]   collinear,
+\item[CCr.]  a rhombus with $r_{13}<r_{24}$ and $m_1>m_2$,
+\item[CCs.]  a square with four equal masses.
+\end{description}
+
+
 \end{thm}
 
 If the equation \eqref{eq:eq_new_red} has a $kT$-periodic solution, where $T$ is the period for the primaries and $k$ is a positive integer, we say that the solution is  $kT$-synchronous.
@@ -263,13 +278,13 @@ We observe that for all admissible CC there exists $kT$ synchronous solution (an
 The sufficiency of the condition $n\leq 472$ in the following corollary  was proved in \cite{li2013characterization}.
 
 \begin{cor}\label{cor:nleq472}
-We suppose that $q_1^0,\ldots,q_n^0$ is the equal masses regular polygon configuration  (this is an admisible CC). Then there exists a synchronous solution if and only if $n\leq 472$.
+We suppose that $q_1^0,\ldots,q_n^0$ is the equal masses regular polygon configuration  (this is an admisible CC). Then there exists a synchronous solution if and only if $2\leq n\leq 472$.
 \end{cor}
 
 
 
 
-Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body. In virtue of Corollary \ref{cor:nleq472} and Theorem \ref{thm:caracterizacion}  we rest prove that condition \eqref{eq:ine_prin} is satisfied for the symmetric collinear $4$-body CC, and for the CC forming a rhombus with equal masses in opposite vertices. Let's call these central configurations CCcl and CCr respectively.
+Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body. In virtue of Corollary \ref{cor:nleq472} and Theorem \ref{thm:caracterizacion}  rest to prove that condition \eqref{eq:ine_prin} holds true for the symmetric collinear $4$-body CC, and for a non square CC forming a rhombus with equal masses in opposite vertices. Let's call these central configurations CCcl and CCr respectively.
 
 
 
@@ -383,11 +398,18 @@ on the other, hand if  $\mu=1$ then
 because $0<r<1$. 
 \end{proof}
 
-\begin{proof}[Proof Theorem \ref{thm:caracterizacion}]
-For the case of 3-bodies, we note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
+\begin{proof}[Proof Theorem \ref{thm:caracterizacion3}]
+We note that the Theorem \ref{thm:prim} and the fact that the center of masses is an excluded position imply that if $F_r$ is not empty then $\# F_r\geq 2$. Hence an admissible 3-body CC consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, equation \eqref{eq:suma0} implies that every bodies has the same mass.
+\end{proof}
 
-In the case of 4-bodies, we have again that $\# F_r\geq 2$.  We consider two cases, the first one  $|q_1|\neq|q_2|$.  Therefore we can suppose that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
- $m_1=m_3$ and $m_2=m_4$.  We divide the plane in two cones by means of  the line $L$ joining $q_1$  and $q_3=-q_1$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in a open cone, then  $q_4$ is in the other one. But on the other hand \eqref{eq:suma0} implies $q_2=-q_4$, which is a contradiction. Then $q_2,q_4\in M$ or $q_2,q_4\in L$ (since $q_2=-q_4$ the case $q_2\in L$ and $q_4\in M$ is impossible). In the first case the CC is a rhombus with the larger masses closer to the origin (see  \cite{perez2007convex}). The second case we have a collinear CC which is also symmetric by  \eqref{eq:suma0}.
+
+
+\begin{proof}[Proof Theorem \ref{thm:caracterizacion4}]
+In this case have  that $\# F_r\geq 2$ when $F_r\neq \emptyset$.  We consider two cases.
+
+We suppose first that  $|q_1|\neq|q_2|$.  Therefore we have that $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
+ $m_1=m_3$, $m_2=m_4$, $q_1=-q_3$ and $q_2=-q_4$.  We divide the plane in two cones $C_i$, $i=1,2$, by means of  the line $L$ joining $q_1$  and $q_3$ together with its perpendicular bisector $M$.  From the Perpendicular Bisector Theorem (see \cite{moeckel1990central}), we have that if  $q_2$  is in $C_1$, then  $q_4$ is in $C_2$, and vice versa, which is a contradiction with the fact that $q_2=-q_4$. Then $q_2,q_4\in L$ or $q_2,q_4\in M$, i.e. $\mathcal{A}$ is collinear or is a rhombus with equal masses in opposite vertices. In the firs case $\mathcal{A}$ is of  CCcl type. In the second case, if $m_1>m_2$,   was proved in \cite[Eqs. $(3.44)$ and $(3.45)$]{long2002four} that $r_{13}<r_{24}$, hence $\mathcal{A}$ is of  CCr type. From \cite[Corollary 2]{perez2007convex} if $m_1=m_2$ then the configuration is a square witch is a contradiction with the fact that $|q_1|\neq|q_2|$.
+ 
  It remains to discuss the case of $|q_1|=|q_2|=|q_3|=|q_4|$. In this situation, in \cite{hampton2005co} was proved that the configuration is the equal mass square.
 \end{proof}
 
@@ -448,7 +470,8 @@ Using Sturm's Comparison Theorem (see \cite{birkhoff1989ordinary}) with equation
 
 Let $T_0>0$ satisfiying \eqref{eq:ine_T0-per-cond}. We consider the action integral
 \[\mathcal{I}(z)=\int_0^{T_0}\frac12|z'|^2+\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}dt,\]
-Then $T_0$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $\mathcal{I}$ in the space $H^1(\mathbb{T},\rr)$, where $\mathbb{T}=\rr/T_0\mathbb{Z}$, of the functions  absolutely continuous, $T_0$-periodic with $z'\in L^2(\mathbb{T},\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $\mathcal{I}$ has minimum.  The functional $\mathcal{I}$ is not coercive in $H^1(\mathbb{T},\rr)$,  this deficiency is drawn with symmetry techniques (see \cite{David-2004}). The group $\mathbb{Z}_2$ acts on $H^1(\mathbb{T},\rr)$ according to the following assignments $(\bar{0}\cdot z)(t)=z(t)$ and $(\bar{1}\cdot z)(t)=-z(t+\frac{T_0}{2})$. The functional $\mathcal{I}$ is $\mathbb{Z}_2$-invariant, i.e. $\mathcal{I}(g\cdot z)=\mathcal{I}(z)$. We define the space of all $\mathbb{Z}_2$-symmetric (this simmetry is called the italian simmetry) funcions \[\Lambda(\mathbb{T},\mathbb{R}):=\left\{ z\in H^1(\mathbb{T},\rr) | \forall g\in \mathbb{Z}_2 : z=g\cdot z \right\}.\]
+Then $T_0$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $\mathcal{I}$ in the space $H^1(\mathbb{T},\rr)$, where $\mathbb{T}=\rr/T_0\mathbb{Z}$, of the functions  absolutely continuous, $T_0$-periodic with $z'\in L^2(\mathbb{T},\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $\mathcal{I}$ has minimum.  The functional $\mathcal{I}$ is not coercive in $H^1(\mathbb{T},\rr)$,  this deficiency is drawn with symmetry techniques (see \cite{David-2004}). The group $\mathbb{Z}_2$ acts on $H^1(\mathbb{T},\rr)$ according to the following assignments $(\bar{0}\cdot z)(t)=z(t)$ and $(\bar{1}\cdot z)(t)=-z(t+\frac{T_0}{2})$. The functional $\mathcal{I}$ is $\mathbb{Z}_2$-invariant, i.e. $\mathcal{I}(g\cdot z)=\mathcal{I}(z)$. We define the space of all $\mathbb{Z}_2$-symmetric (this simmetry is called the italian simmetry) funcions \[\Lambda(\mathbb{T},\mathbb{R}):
+=\left\{ z\in H^1(\mathbb{T},\rr) | \forall g\in \mathbb{Z}_2 : z=g\cdot z \right\}.\]
 The funciontal $\mathcal{I}$ restricted to $\Lambda$  is coercive. This fact follows from an obvious adaptation of proposition 4.1 of \cite{David-2004}. We note that $F(z):=\sum_{i=1}^nm_i(s_i^2+z^2)^{-\frac{1}{2}}$ satisfies the condition $(A)$ in \cite[p. 12]{Mawhin2010}, then $\mathcal{I}$  is continuously differentiable and weakly lower semicontinuous on $H^1(\mathbb{T},\rr)$ (see \cite[p. 13]{Mawhin2010}). Therefore $\mathcal{I}$ has a minimum $z_0$ in $\Lambda(\mathbb{T},\mathbb{R})$. Then by the Palais' principle symmetric criticality,  $z_0$ is a critical point of $\mathcal{I}$ in $H^1(\mathbb{T},\rr)$ (see \cite{David-2004} and \cite{RichardPalais274}).
 
 We use the second variation $\delta^2 \mathcal{I}$ in order to show  that $z_0\nequiv 0$. It is well known (see \cite[Th. 1.3.1]{jost1998calculus}) that if $z_0$ is a minimum of $\mathcal{I}$ on $H^1(\mathbb{T},\rr)$  then $\delta^2 \mathcal{I} (z_0,\varphi)\geq 0$ for all $\varphi\in H^1(\mathbb{T},\rr)$. In our case
@@ -461,12 +484,41 @@ It is sufficient  to guarantee that $z_0\equiv 0$ is not a minimum.
 \end{proof}
 
 \begin{comentario}
-We note that this second proof of Theorem \ref{thm:prin_ine} (\ref{2}), unlike the first one, does not guarantee that $T_0$ is the minimum period for $z_0$. It could happen that $z_0$ had period $T_0/m$, with natural $m\in\mathbb{N}$. By the italian symmetry would have to occur that $m$ is odd.
+We note that this second proof of Theorem \ref{thm:prin_ine} (\ref{2}), unlike the first one, does not guarantee that $T_0$ is the minimum period for $z_0$. It could happen that $z_0$ had period $T_0/m$, with natural $m\in\mathbb{N}$. Because of Italian symmetry this $m$ should be odd.
 \end{comentario}
 
 
 \begin{proof}[Proof Corollary \ref{cor:nleq472}]
-Our condition \eqref{eq:ine_prin} is reduced to the inequality $(41)$ in \cite{li2013characterization}, where was proved that this inequality holds if and only if $n\leq 472$.
+In this case $s_1=s_2=\cdots=s_n=:r$ and $m_1=m_2=\cdots=m_n=:m$. Then, from the law of cosines we obtain
+\[
+ \sum_{i<j}\frac{m_im_j}{r_{ij}}=\frac{nm^2}{4r}\sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}.
+\]
+Therefore the condition \eqref{eq:ine_prin} is equivalent to
+
+\begin{equation}\label{eq:ine_prin_LShShao}
+  \frac1n\sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}<4.
+\end{equation}
+
+This inequality was also derived by Li, J. et al. in \cite{li2013characterization}. In \cite{li2013characterization} the authors noted (performing calculations with computer) that inequality \eqref{eq:ine_prin_LShShao} holds true for $2\leq n\leq 472$. Let us prove that any other $n$ does not satisfies \eqref{eq:ine_prin_LShShao}.
+
+
+Using that $1/\sin (x)$ is a convex function on $[0,\pi]$ and composite trapezoid rule (see \cite{kincaid1991numerical}) we have that
+\[
+\begin{split}
+ \int_{\frac{\pi}{n}}^{\frac{n-1}{n}\pi}\frac{1}{\sin (x)}dx&\leq \frac{\pi}{2n}\left\{ \frac{1}{\sin(\frac{\pi}{n})} + \frac{1}{\sin(\frac{n-1}{n}\pi)} +2\sum_{j=2}^{n-2}\frac{1}{\sin(j\frac{\pi}{n})} \right\}\\
+ &=\frac{\pi}{n}\sum_{j=1}^{n-2}\frac{1}{\sin(j\frac{\pi}{n})}.
+\end{split}
+\]
+Therefore
+\[
+\begin{split}
+ \frac1n \sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}&\geq \frac{1}{\pi}\int_{\frac{\pi}{n}}^{\frac{\pi(n-1)}{n}}\frac{1}{\sin (x)}dx+\frac{1}{n\sin\left(\frac{n-1}{n}\pi\right)}\\
+ &=\left.\frac{1}{2\pi}\log \left( \frac{1-\cos(x)}{1+\cos(x)}\right)\right|_{\frac{\pi}{n}}^{\frac{n-1}{n}\pi}+\frac{1}{n\sin\left(\frac{\pi}{n}\right)}\\
+ &=\frac{1}{\pi}\left\{\log \left(\frac{1+\cos(\frac{\pi}{n})}{1-\cos(\frac{\pi}{n})}\right)+\frac{\pi/n}{\sin\left(\frac{\pi}{n}\right)}\right\}\\
+ &=:f\left(\frac{\pi}{n} \right).
+ \end{split}
+\]
+It is easy to see that $f(x)$ is a decreasing function on $(0,\pi/2)$. Moreover $f(\pi/842)\approx 4.0006>4$. Therefore, if $n\geq 842$ then $n$ does not satisfies inequality \eqref{eq:ine_prin_LShShao}. The validity of the inequality \eqref{eq:ine_prin_LShShao}, for $n\leq 841$, is easily checked using computer. This gives the result that the inequality holds for all $n \leq 472$.
 \end{proof}
 
 \begin{proof}[Proof Theorem \ref{thm:CC.3.4.satis.cond.adm}]
