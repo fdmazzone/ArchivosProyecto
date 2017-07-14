@@ -51,16 +51,17 @@
 
 \title{Periodic solutions of
 Euler-Lagrange equations in an anisotropic Orlicz-Sobolev space setting  }
-\author{Sonia Acinas \thanks{SECyT-UNRC and  FCEyN-UNLPam}\\
+\author{
+ Fernando D. Mazzone \thanks{SECyT-UNRC, FCEyN-UNLPam and CONICET}\\
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
+Universidad Nacional de R\'{i}o Cuarto\\
+(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
+\url{fmazzone@exa.unrc.edu.ar} \\
+Sonia Acinas \thanks{SECyT-UNRC and  FCEyN-UNLPam}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
 Universidad Nacional de La Pampa\\
 (L6300CLB) Santa Rosa, La Pampa, Argentina\\
 \url{sonia.acinas@gmail.com}\\[3mm]
-Fernando D. Mazzone \thanks{SECyT-UNRC, FCEyN-UNLPam and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{fmazzone@exa.unrc.edu.ar}
 }
 
 \date{}
@@ -102,11 +103,12 @@ Universidad Nacional de R\'{i}o Cuarto\\
     \footnotetext{%
     %   2010 Mathematics Subject Classification
     %   http://www.ams.org/msc/
-    \textbf{2010  AMS Subject Classification.} Primary: .
-    Secondary: .
+    \textbf{2010  AMS Subject Classification.} Primary: 34C25.
+    Secondary: 34B15.
     }%
         \footnotetext{%
-    \textbf{Keywords and phrases.}  .
+    \textbf{Keywords and phrases.} 
+Periodic Solutions, \sep Orlicz Spaces, \sep  Euler-Lagrange,  \sep  Critical Points.   
     }%
     \endgroup
 %
@@ -115,8 +117,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 %
 
 \begin{abstract}
-
-
+In this paper we consider the problem of finding periodic solutions of certain Euler-Lagrange equations, which include, among others, equations involving the $p$-Laplace and, more generality, the $(p,q)$-Laplace operator. We employ the direct method of the calculus of variations in the framework of anisotropic Orlicz-Sobolev spaces. These spaces appear to be useful in formulating a unified theory of existence for the type of problem considered.
 \end{abstract}
 
 
@@ -126,7 +127,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 \pagestyle{fancy} \headheight 35pt \fancyhead{} \fancyfoot{}
 
-\fancyfoot[C]{\thepage} \fancyhead[CE]{\nouppercase{S. Acinas and F.D. Mazzone }} \fancyhead[CO]{\nouppercase{\section}}
+\fancyfoot[C]{\thepage} \fancyhead[CE]{\nouppercase{F.D. Mazzone   and S. Acinas}} \fancyhead[CO]{\nouppercase{\section}}
 
 \fancyhead[CO]{\nouppercase{\leftmark}}
 
@@ -147,82 +148,88 @@ In this paper we obtain existence of solutions for systems  of equations of the 
   \frac{d}{dt} \nabla_y\mathcal{L}(t,u(t),u'(t))= \nabla_x\mathcal{L}(t,u(t),u'(t)) \quad \hbox{a.e.}\ t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
-\right. \tag{$\b{P}$}
+\right. \tag{$P$}
 \end{equation}
-where the function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$ (called the \emph{Lagrange function} or \emph{lagrangian}) satisfying  that  it is measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. The unknown function  $u:[0,T]\to\rr^d$ is assumed absolutely continuous. 
+where the function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, $d\geq 1$ (hereinafter called the \emph{Lagrange function} or \emph{lagrangian}) satisfying  that  it is measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. The unknown function  $u:[0,T]\to\rr^d$ is assumed absolutely continuous. 
 
-Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We suggest the articles  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existences of solutions for systems like \eqref{ProbPrin-gral}.
+Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We suggest the article  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existence of solutions for systems like \eqref{ProbPrin-gral}.
 
 Through this article we say that  a function
-$\Phi:\mathbb{R}^d\to [0,+\infty)$ is of $N_{\infty}$ class if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(y)>0$ if $y\neq 0$ and $\Phi(-y)=\Phi(y)$,
+$\Phi:\mathbb{R}^d\to [0,+\infty)$ is a \emph{$N_{\infty}$ function} if $\Phi$ is convex, $\Phi(0)=0$, $\Phi(y)>0$ if $y\neq 0$, $\Phi(-y)=\Phi(y)$,
  and 
 \begin{equation}\label{eq:N-sub-inf}
-\lim_{|y|\to\infty}\frac{\Phi(y)}{|y|}=+\infty.
+\lim_{|y|\to\infty}\frac{\Phi(y)}{|y|}=+\infty,
 \end{equation}
 where $|\cdot|$ denotes the euclidean norm on $\rr^d$. From \cite[Cor. 2.35]{clarke2013functional} a $N_{\infty}$ function is  continuous.  
 
 
-Associated to $\Phi$ we have the \emph{complementary function} $\Phi^{\star}$ which is defined in $\xi\in\rr^d$ as
+Associated to $\Phi$ we have the \emph{complementary function} $\Phi^{\star}$ which is defined in $\zeta\in\rr^d$ as
 \begin{equation}\label{eq:conjugada}
- \Phi^{\star}(\xi)=\sup\limits_{y\in\mathbb{R}^d} y\cdot \xi-\Phi(y)
+ \Phi^{\star}(\zeta)=\sup\limits_{y\in\mathbb{R}^d} y\cdot \zeta-\Phi(y)
 \end{equation}
-then, from the continuity of $\Phi$ and  \eqref{eq:N-sub-inf}, we have that $\Phi^{\star}:\rr^d \to [0,\infty)$. 
-Moreover, it is easy to see that $\Phi^{\star}$ is a convex function such that $\Phi^{\star}(0)=0$, $\Phi^{\star}(-\xi)=\Phi^{\star}(\xi)$    \cite[Chapter 2]{mawhin2010critical}. Moreover $\Phi^{\star}$ satisfies \eqref{eq:N-sub-inf} (see \cite[Th. 2.2]{Orliczvectorial2005}). i.e. $\Phi^{\star}$ is $N_{\infty}$ function.
-
-It is possible to prove that $\Phi^{\star\star}=\Phi$.
+From the continuity of $\Phi$ and  \eqref{eq:N-sub-inf}, we have that $\Phi^{\star}:\rr^d \to [0,\infty)$. 
+The complementary function $\Phi^{\star}$ is a  $N_{\infty}$ function (see \cite[Chapter 2]{mawhin2010critical} and \cite[Th. 2.2]{Orliczvectorial2005}).  The Moreau Theorem (see \cite[Th. 4.21]{clarke2013functional}) implies that $\Phi^{\star\star}=\Phi$.
 
 Some examples of  $N_{\infty}$ functions are the following.
 
   \begin{example}\label{ex:p-laplac}
-   $\Phi_p(y):=|y|^p/p$, for $1<p<\infty$.  In this case $\Phi^{\star}(\xi)=|\xi|^q/q$, $q=p/(p-1)$.
+    $\Phi_p(y):=|y|^p/p$, for $1<p<\infty$.  In this case $\Phi^{\star}(\zeta)=|\zeta|^{p'}/{p'}$, $p':=p/(p-1)$.
   \end{example}
 
    \begin{example}
-     If $\Phi:\rr\to [0,+\infty)$ is a $N_{\infty}$  function on $\rr$ then $\overline{\Phi}(y)=\Phi(|y|)$ is a $N_{\infty}$  function on $\rr^d$. In this example, as in the previous one, the function $\Phi$ is \emph{radial}, i.e. the value of $\Phi(y)$ depends on the norm of $y$  and not on its direction. These cases are not authentically anisotropic.
+     If $\Phi:\rr\to [0,+\infty)$ is a $N_{\infty}$  function on $\rr$ then $\overline{\Phi}(y)=\Phi(|y|)$ is a $N_{\infty}$  function on $\rr^d$. In this example, as in the previous one, the function $\Phi$ is \emph{radial}, i.e. the value of $\Phi(y)$ depends only on the norm of $y$. These cases are not authentically anisotropic.
    \end{example}
 
 
    \begin{example}\label{ex:pq-laplac}
     An anisotropic function $\Phi(y)$ depends on the direction of $y$. For example, if  $1<p_1,p_2<\infty$, we define $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$   by
 \[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2}.\]
-Then $\Phi_{p_1,p_2}$ is a $N_{\infty}$ function.  In this case the complementary function is the function $\Phi_{q_1,q_2}$ with $q_i=p_i/(p_i-1)$. 
+Then $\Phi_{p_1,p_2}$ is a $N_{\infty}$ function.  In this case the complementary function is the function $\Phi_{p_1',p'_2}$. 
 
-More generally, if $\Phi_k:\rr^d\to [0,+\infty)$, $k=1,\ldots,n$, are $N_{\infty}$ functions, then $\Phi:\rr^d\times\cdots\times\rr^d\to [0,+\infty)$ defined by $\Phi(y_1,\ldots,y_n)=\Phi_1(y_1)+\cdots+\Phi_n(y_n)$  is a $N_{\infty}$ function. These functions are truly anisotropic, i.e. $|x|=|y|$ does not imply that $\Phi(x)=\Phi(y)$.
+More generally, if $\Phi_k:\rr^d\to [0,+\infty)$, $k=1,\ldots,n$, are $N_{\infty}$ functions, then $\Phi:\rr^d\times\cdots\times\rr^d\to [0,+\infty)$ defined by $\Phi(y_1,\ldots,y_n)=\Phi_1(y_1)+\cdots+\Phi_n(y_n)$  is a $N_{\infty}$ function.
    \end{example}
 
-
- 
-    \begin{example}
-          If $\Phi:\rr\to [0,+\infty)$ is a $N_{\infty}$ function and  $O\in GL(d,\rr)$, then $\Phi(y)=\Phi(Oy)$  is a $N_{\infty}$ function.
+ \begin{example}
+      When $\Phi$ does not satisfy the $\Delta_2$ condition (see \eqref{delta2defi} below), an anisotropic $N_{\infty}$  function is not necessarily controlled by powers functions. For example $\Phi:\rr^d:\to[0,+\infty)$ defined by $\Phi(y)=\exp(|y|)-1$ is $N_{\infty}$ function.
     \end{example}
 
  
-
     \begin{example}
-      An anisotropic $N_{\infty}$  function is not necessarily controlled by powers if it does not satisfy the $\Delta_2$ condition (see xxxxx). For example $\Phi:\rr^d:\to[0,+\infty)$ defined by $\Phi(y)=\exp(|y|)-1$ is $N_{\infty}$ function.
+      Let  $(d_1,\ldots,d_k)\in\mathbb{Z}^k_+$. Suppose that  $\Phi_j:\rr^{d_j}\to [0,+\infty)$, $j=1,\ldots k$,  are $N_{\infty}$ functions and that  $O_j\in L(\rr^{d},\rr^{d_j})$ are bounded linear functions  satisfying $\bigcap_{j=1}^k\ker O_j=\{0\}$. Then 
+      
+      \[\Phi(y):=\sum_{j=1}^k\Phi_j(O_jy)\]
+      is a $N_{\infty}$ function. 
+      
+      Let us briefly show that $\Phi$ satisfies \eqref{eq:N-sub-inf}. Suppose $|y_n|\to\infty$ and $\Phi(y_n)/|y_n|$ bounded. If for some $j=1,\ldots,k$ there exists  $\epsilon>0$ and a subsequence $n_s$ such that $|O_j(y_{n_s})|\geq \epsilon |y_{n_s}|$, then $\Phi_j(O_jy_{n_s})/|y_{n_s}|\to\infty$, contrary our assumption. Hence $O_j(y_n)/|y_n|\to 0$ when $n\to\infty$. Passing to a subsequence, we can assume that there exists $y\in\rr^d$ with $y_n/|y_n|\to y$. Then $y\in\ker O_j$ and $y\neq 0$, which is a contradiction.
+      
+     As a consequence the function $\Phi:\rr^d\times\rr^d\to [0,+\infty)$ defined by
+      \[\Phi(y_1,y_2)=e^{|y_1-y_2|}-1+|y_2|^p,\]
+      with $1<p<\infty$, is a $N_{\infty}$ function.
+      
+      
     \end{example}
 
+    We will find solutions of \eqref{ProbPrin-gral} for finding extreme points of the \emph{action integral} 
+\begin{equation}\label{eq:integral_accion}
+  I(u)=I_{\mathcal{L}}(u):=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.\tag{$IA$}
+\end{equation}
+
+   
 
 
+In order that $I$ is defined and be differentiable over certain Sobolev-Orlicz spaces (which we will define later) we need to introduce the following property.
 
- 
 
-
- 
- 
-The occurrence of Orlicz Spaces in this paper obeys to we will consider the 
-following structure condition on the lagrangian:
+\begin{defi} We say that a lagrangian $\mathcal{L}$ satisfies the condition \eqref{eq:condicion-estructura} if
 \begin{equation}\label{eq:condicion-estructura}
   |\mathcal{L}|+ |\nabla_{x}\mathcal{L}|+\Phi^{\star}\left(\frac{\nabla_{y}\mathcal{L}}{\lambda}\right)
 \leq
-a(x)\left\{b(t)+ \Phi\left(\frac{y}{\Lambda}\right)\right\}, \tag{$\b{S}$}
+a(x)\left[b(t)+ \Phi\left(\frac{y}{\Lambda}\right)\right], \tag{$S$}
 \end{equation}
 for a.e. $t\in [0,T]$,
 where  $a\in C\left(\mathbb{R}^d,[0,+\infty)\right)$, $b\in L^1\left([0,T],[0,+\infty)\right) $ and $\Lambda,\lambda>0$.
+\end{defi}
 
-Our condition \eqref{eq:condicion-estructura} includes structure conditions that have previously been considered in the literature. For example, it is easy to see that, when $\Phi(x)$ is as in Example \ref{ex:p-laplac}, then  the condition \eqref{eq:condicion-estructura}  is equivalent to the structure condition in  \cite[Th. 1.4]{mawhin2010critical}.  If $\Phi$ is a radial $N_{\infty}$ function such that $\Phi^{\star}$ satisfies that $\Delta_2$ function  then \eqref{eq:condicion-estructura} is essentially equivalent????? to conditions  \cite[Eq. (2)-(4)]{ABGMS2015} (see xxxx mas abajo).   If $\Phi$ is as in Example \ref{ex:pq-laplac} and $\mathcal{L}=\mathcal{L}(t,x_1,x_2,y_1,y_2)$ is a lagrangian with $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\times\rr^d\times\rr^d\to\rr$ then inequality \eqref{eq:condicion-estructura} is related to estructure conditions like
-\cite[Lemma 3.1, Eq. (3.1)]{Tian2007192}. As can be seen, condition \eqref{eq:condicion-estructura} is a more compact expression than \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192} and moreover   weaker, because  \eqref{eq:condicion-estructura} does not imply a control of
-$|D_{y_1}L|$ independent of $y_2$.  We will return to this point later.
 
 
 An important example of lagrangian  is giving by:
@@ -230,7 +237,7 @@ An important example of lagrangian  is giving by:
 \begin{equation}\label{eq:lagrange_phi}
 \mathcal{L}_{\Phi,F}(t,x,y):=\Phi(y)+F(t,x).
 \end{equation}
-Here $\Phi$ is assumed differentiable and the function $F(t,x)$, which is often referred to potential,  is differentiable with respect to $x$ for a.e. $t\in [0,T]$. Moreover $F$ satisfies the following conditions:
+Here $\Phi$ is assumed differentiable and  $F(t,x)$, which is often referred to potential,  is differentiable with respect to $x$ for a.e. $t\in [0,T]$. Moreover, it is usually assumed that $F$ satisfies the following conditions:
 \begin{enumerate}
 \labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla_x F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
  \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
@@ -244,13 +251,13 @@ where  $a\in C\left(\rr^d,[0,+\infty)\right)$ and $0\leq b\in L^1([0,T],\rr)$.
  The lagrangian $\mathcal{L}_{\Phi,F}$ satisfies condition  \eqref{eq:condicion-estructura}, for every $\Lambda<1$. In order to prove this, the only non trivial fact that we should to establishis is that $ \Phi^{\star}(\nabla_{y}\mathcal{L})
 \leq
 a(x)\left\{b(t)+ \Phi\left({y}/{\Lambda}\right)\right\}$. But, from inequality \eqref{eq:ine-psi-phi'} below, 
-$\Phi^{\star}(\nabla_{y}\mathcal{L})=\Phi^{\star}\left(\nabla\Phi(y)\right)\leq \Lambda(\Lambda-1)^{-1} \Phi(y/\Lambda )$, for every $\Lambda<1$.
+$\Phi^{\star}(\nabla_{y}\mathcal{L})=\Phi^{\star}\left(\nabla\Phi(y)\right)\leq \Lambda(1-\Lambda)^{-1} \Phi(y/\Lambda )$, for every $\Lambda<1$.
 \end{comentario}
 
 
 
 
-The laplacian $\mathcal{L}_{\Phi,F}$ leads to the problem
+The laplacian $\mathcal{L}_{\Phi,F}$ leads to the \emph{$\Phi$-Laplacian system}
 
 \begin{equation}\label{eq:ProbPhiLapla}
     \left\{%
@@ -260,20 +267,18 @@ The laplacian $\mathcal{L}_{\Phi,F}$ leads to the problem
 \end{array}%
 \right. .\tag{${P_{\Phi}}$}
 \end{equation}
-The differential equation in the previous problem is called the \emph{anisotropic $\Phi$-Laplacian equation}.
-
-Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi(x)=|x|^2/2$, through various methods: direct, dual action, minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1995periodic,tang1998periodic,wu1999periodic,tang2001periodic,zhao2004periodic}  to cite some examples. The case $\Phi(y)=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{Tian2007192,tang2010periodic}, among other papers, and in this case \eqref{eq:ProbPhiLapla} is reduced to the $p$-laplacian system
+Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi(x)=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi(y)=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}
 \begin{equation}\label{ProbP-lapla}
     \left\{%
 \begin{array}{ll}
-   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
+   \frac{d}{dt}\left(u'(t)|u'|^{p-2}\right) = \nabla_x F(t,u(t)) \quad \hbox{a.e.}\ t \in (0,T)\\
     u(0)-u(T)=u'(0)-u'(T)=0.
 \end{array}%
 \right.\tag{${P_p}$}
 \end{equation}
 
 
-If $\Phi$ is as in Example \ref{ex:pq-laplac} and  $F:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function, then the equations \eqref{eq:ProbPhiLapla} become
+If $\Phi$ is as in Example \ref{ex:pq-laplac} and  $F:[0,T]\times\rr^d\times\rr^d\to\rr$ is a Carath\'eodory function, then \eqref{eq:ProbPhiLapla} becomes
 \begin{equation}\label{eq:sist-p_lapa}
     \left\{%
 \begin{array}{ll}
@@ -284,34 +289,49 @@ If $\Phi$ is as in Example \ref{ex:pq-laplac} and  $F:[0,T]\times\rr^d\times\rr^
 \right., \tag{${P_{p_1,p_2}}$}
 \end{equation}
 where $x=(x_1,x_2)\in\rr^d\times\rr^d$ and $u(t)=(u_1(t),u_2(t))\in\rr^d\times\rr^d$. In the literature, these equations are known as $(p_1,p_2)$-Laplacian system, see
-\cite{yang2013existence,pasca2016periodic,yang2012periodic,pasca2010periodic,pacsca2010some,pasca2011some,li2014periodic}.
+\cite{li2014periodic,pasca2010periodic,pacsca2010some,pasca2011some,pasca2016periodic,yang2012periodic,yang2013existence}.
 
-In conclusion, the problem \eqref{ProbPrin-gral} with conditions \eqref{eq:condicion-estructura}  contains several problems that have been considered by many authors in the past. 
-Moreover, our results still improve some results on $(p_1,p_2)$-lamplacian since our structure conditions are less restrictive even in that particular case. 
+
+Our condition \eqref{eq:condicion-estructura} includes structure conditions that have previously been considered in the literature in the case of $p$-laplacian and $p_1,p_2$-laplacian systems. For example, it is easy to see that, when $\Phi(x)$ is as in Example \ref{ex:p-laplac}, then  the condition \eqref{eq:condicion-estructura}  is equivalent to the structure condition in  \cite[Th. 1.4]{mawhin2010critical}.  If $\Phi$ is a radial $N_{\infty}$ function such that $\Phi^{\star}$ satisfies that $\Delta_2$ function  then \eqref{eq:condicion-estructura} is related to conditions  \cite[Eq. (2)-(4)]{ABGMS2015}.   If $\Phi$ is as in Example \ref{ex:pq-laplac} and $\mathcal{L}=\mathcal{L}(t,x_1,x_2,y_1,y_2)$ is a lagrangian with $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\times\rr^d\times\rr^d\to\rr$ then inequality \eqref{eq:condicion-estructura} is related to estructure conditions like
+\cite[Lemma 3.1, Eq. (3.1)]{Tian2007192}. As can be seen, condition \eqref{eq:condicion-estructura} is a more compact expression than \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192} and moreover   weaker, because  \eqref{eq:condicion-estructura} does not imply a control of
+$|D_{y_1}L|$ independent of $y_2$. 
+
+
+In conclusion, the problems \eqref{ProbPrin-gral} and \eqref{eq:ProbPhiLapla} with conditions \eqref{eq:condicion-estructura}  contains several problems that have been considered by many authors in the past. 
+Moreover, our results still improve some results on $(p_1,p_2)$-Laplacian since our structure conditions are less restrictive even in that particular case.  
+For all this, we believe that Sobolev-Orlicz's anisotropic spaces can provide a suitable framework for unifying many known results and extending them to, for example, non-power-controlled Lagrangians. Another benefit of the present approach is that many properties on Lagrangians are expressed in a more compact way. 
+
+The paper is organized as follows. In section 2  we summarize some results, mainly known, about Orlicz and Orlicz-Sobolev spaces. In Theorem 3.1 of section 3 we establish conditions for the continuous differentiability of action integrals. In order to obtain existence of minimizers of action integrals it is necessary that the functional $I_{\mathcal{L}}$ be coercive. 
+In the past, several conditions on $F$ have been useful to obtain coercivity of $I_{\mathcal{L}}$. 
+In section 4 we will study the condition that in the literature was called sublinearity 
+(see \cite{tang1998periodic,wu1999periodic,zhao2004periodic} for the laplacian, \cite{li2015infinitely,tang2010periodic} for the $p$-laplacian and \cite{li2014periodic,pasca2010periodic,pacsca2010some,yang2013existence} for $(p,q)$-laplacian).  We contextualize the sublinearity within our framework (see \eqref{eq:cond-sub} below) and we  establish results of existence of minimizers of \eqref{eq:integral_accion} (Theorem \ref{coercitividad-r}) and of existence of solutions of \eqref{eq:ProbPhiLapla} (Theorem \ref{th:tor_prin}).
 
 \section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{preliminares}
 
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^n\to[0,+\infty)$.  References for  these topics are \cite{Desch2001,Orliczvectorial2005,Skaff1969,cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding,gwiazda2013anisotropic}. For the theory of convex functions to see \cite{clarke2013functional}. 
+In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^d\to[0,+\infty)$.  References for  these topics are \cite{chamra2017anisotropic,cianchi2000fully,cianchi2004optimal,Desch2001,gwiazda2013anisotropic,Orliczvectorial2005,Skaff1969,trudinger1974imbedding}. For the theory of convex functions in general we suggest \cite{clarke2013functional}. 
 Note that, unlike in \cite{gwiazda2013anisotropic}, we do not require that $N_{\infty}$ functions be superlinear near from 0, i.e. $\Phi(x)/|x|\to 0$ when $|x|\to 0$. However, most of the results proved in \cite{gwiazda2013anisotropic} do not depend on this property.
 
-If $\Phi$  is a $N_{\infty}$ function then from convexity and $\Phi(0)=0$ we obtain that
+If $\Phi$  is a $N_{\infty}$ function then from convexity and since $\Phi(0)=0$ we obtain that
 \begin{equation}\label{eq:escalar_ine}
  \Phi(\lambda x)\leq \lambda\Phi(x),\quad \lambda\in[0,1],x\in\rr^d.
 \end{equation}
 
-One of the greatest difficulties when dealing with anisotropic Orlicz spaces is the lack of  monotony  with respect to the Euclidean norm, i.e. $|x|\leq |y|$ does not imply $\Phi(x)\leq\Phi(y)$. This problem is avoided if we consider functions whose values on a sphere are comparable (see\cite{Skaff1969}). However, from \eqref{eq:escalar_ine}, we see that  $N_{\infty}$ functions have the following form of radial monotony: 
+One of the greatest difficulties when dealing with anisotropic Orlicz spaces is the lack of  monotony  with respect to the Euclidean norm, i.e. $|x|\leq |y|$ does not imply $\Phi(x)\leq\Phi(y)$. From \eqref{eq:escalar_ine} and since $\Phi(x)=\Phi(-x)$ , we see that  $N_{\infty}$ functions have the following form of radial monotony: 
 
-\begin{equation}\label{eq:escalar_ine_2} 0<\lambda_1\leq \lambda_2, x\in\rr^d \Rightarrow \Phi(\lambda_1 x)\leq\Phi(\lambda_2 x).\end{equation} 
+\begin{equation}\label{eq:escalar_ine_2} 0<|\lambda_1|\leq |\lambda_2|, x\in\rr^d \Rightarrow \Phi(\lambda_1 x)\leq\Phi(\lambda_2 x).\end{equation} 
 
-The mutually complementary functions $N_{\infty}$ functions $\Phi$ and $\Phi^{\star}$ satisfy the following importan relations (see \cite{clarke2013functional}): for any $x,y\in\rr^d$
+The mutually complementary $N_{\infty}$ functions $\Phi$ and $\Phi^{\star}$ satisfy the following importan relations (see \cite{clarke2013functional}): for any $x,y\in\rr^d$
 
 \begin{align}
-  x\cdot y&\leq \Phi(x)+\Phi^{\star}(y)\tag{Fenchel's Inequality}\label{eq:young-ine}\\
-  x\cdot \nabla\Phi(x)&= \Phi(x)+\Phi^{\star}(\nabla \Phi (x))\tag{Fenchel's Identity}\label{eq:young-id}
+  x\cdot y&\leq \Phi(x)+\Phi^{\star}(y)\label{eq:young-ine}\\
+  x\cdot \nabla\Phi(x)&= \Phi(x)+\Phi^{\star}(\nabla \Phi (x))\label{eq:young-id}
 \end{align}
-In \eqref{eq:young-id} we assume $\Phi$ differentiable. More generality \eqref{eq:young-id} holds when $\nabla \Phi (y)$ is replaced by elements in the subdifferential $\partial\Phi(y)$ of $\Phi$ (see \cite[Ex. 4.27]{clarke2013functional}).
+In \eqref{eq:young-id} we assume $\Phi$ differentiable. More generality \eqref{eq:young-id} holds when $\nabla \Phi (y)$ is replaced by elements in the subdifferential $\partial\Phi(y)$ of $\Phi$ (see \cite[Ex. 4.27]{clarke2013functional}). 
 
-The following inequality  will be useful, it is consequence of that $(d/dt)\Phi(tx)$ is an non decreasing function of $t$. Let $\Lambda$ any number bigger than 1. Then
+To avoid complications arising from considering non-differentiable functions $\Phi$, from now on we will assume $\Phi$ differentiable. 
+
+
+The following inequality  will be useful, it is consequence of \eqref{eq:young-id} and of that $(d/dt)\Phi(tx)=\nabla\Phi(tx)\cdot x$ is an non decreasing function of $t$. Let $\Lambda>1$. Then
 
 
 \begin{equation} \label{eq:ine-psi-phi'}
@@ -319,7 +339,7 @@ The following inequality  will be useful, it is consequence of that $(d/dt)\Phi(
      \Phi^{\star}(\nabla \Phi (x))\leq  x\cdot \nabla\Phi(x) \leq\frac{1}{\Lambda-1}\int_1^{\Lambda} \frac{d}{dt}\Phi(tx)dt \leq\frac{1}{\Lambda-1}\Phi(\Lambda x). \end{split}
 \end{equation}
 
-We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, denoted by $\Phi \in \Delta_2^{\infty}$,
+We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2^{\infty}$-condition}, it is denoted by $\Phi \in \Delta_2^{\infty}$,
 if there exists a  constant $C>0$  such that
 \begin{equation}\label{delta2defi}\Phi(2x)\leq C \Phi(x)+1,
 \end{equation}
@@ -331,7 +351,7 @@ different occurrences in the same chain of inequalities.
 
 
 
-If $\Phi$ is a $\Delta_2^{\infty}$ function then $\Phi$ satisfies the following properties
+If $\Phi\in\Delta_2^{\infty}$ then $\Phi$ satisfies the following properties:
 
 
 
@@ -344,17 +364,17 @@ If $\Phi$ is a $\Delta_2^{\infty}$ function then $\Phi$ satisfies the following 
 \begin{equation}\label{eq:delta2-lambda}
 \Phi(\lambda x)\leq C(\lambda)\Phi(x)+1.
 \end{equation}
-\item $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ and $r\geq 0$ such that
-\[\Phi(x)\leq C|x|^p,\quad |x|\geq r_0.\]
+\item $\Phi$ is bounded by powers functions (see \cite[Proof Lemma 2.4]{Desch2001} and \cite[Prop. 1]{cianchi2000local}), i.e. there exists $1<p<\infty$, $C>0$ asuch that
+\[\Phi(x)\leq C|x|^p+1.\]
 
 \end{itemize}
 
-We consider that one of the most important aspects in considering $N_{\infty}$ functions is that it accounts for the Lagrange functions that present faster growth than powers, for example an exponential growth. Hence we consider it important to avoid imposing hypothesis that $\Phi$ to be $\Delta_2$. For some results we will need that $\Phi^{\star}$ to be $\Delta_2$. 
+We consider that one of the most important aspects in considering $N_{\infty}$ functions is that it accounts for Lagrange functions with  faster growth than powers function, for example an exponential growth. From this point of view, it important to avoid imposing the hypothesis that $\Phi\in \Delta_2$. However, for some results we will need that $\Phi^{\star}\in\Delta_2$. 
 
 
-Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we write $\Phi_1\strictif\Phi_2$ if there exists non negative numbers $k$ and $C$ such that
+Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we write $\Phi_1\strictif\Phi_2$ if there exists  $k,C>0$ such that
 \begin{equation}\label{eq:orden} \Phi_1(x)\leq C+\Phi_2(kx),\quad x\in\rr^d.\end{equation}
-For example if $\Phi$ is $\Delta_2$ then there exist $p\in (1,+\infty)$ such that $\Phi\strictif |x|^p$.  If for every $k>0$ there exists $C=C(k)>0$ such that \eqref{eq:orden} holds we write  $\Phi_1\llcurly\Phi_2$. 
+For example, if $\Phi$ is $\Delta_2$ then there exist $p\in (1,+\infty)$ such that $\Phi\strictif |x|^p$.  If for every $k>0$ there exists $C=C(k)>0$ such that \eqref{eq:orden} holds we write  $\Phi_1\llcurly\Phi_2$. 
 
 If $\Phi_1\strictif \Phi_2$ then $\Phi^{\star}_2\strictif\Phi^{\star}_1$ as the following simple computation proves 
 \[
@@ -366,18 +386,23 @@ If $\Phi_1\strictif \Phi_2$ then $\Phi^{\star}_2\strictif\Phi^{\star}_1$ as the 
 \]
 
 
-If $\Phi^{\star}$ is $\Delta_2^{\infty}$ then $\Phi$ satisfies that for every $0<r<1$ there exists $l=l(r)>0$ and $C=C(r)>0$ such that for every $x\in\rr^d$
+
+As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
+
+
+
+If $\Phi^{\star}\in\Delta_2^{\infty}$ then $\Phi$ satisfies that for every $0<r<1$ there exists $l=l(r)>0$ and $C'=C'(r)>0$ 
 
 \begin{equation}\label{eq:nabla2}
-  \Phi(x)\leq \frac{r}{l}\Phi(l x)+C.
+  \Phi(x)\leq \frac{r}{l}\Phi(l x)+C',\quad x\in\rr^d.
 \end{equation}
 
-In fact, for $\lambda>1$ we have
+In fact, let $\lambda>1$ and suppose $C(\lambda)$ satisfying \eqref{eq:delta2-lambda}.  Then
 \[
 \begin{split}
 \Phi(x)&=\sup_{y \in \rr^d} \left\{x\cdot y -\Phi^{\star}(y)\right\}
 \\
-&=\sup_{y \in \rr^d} '\left\{\lambda x \cdot y -\Phi^{\star}(\lambda y)\right\}
+&=\sup_{y \in \rr^d} \left\{\lambda x \cdot y -\Phi^{\star}(\lambda y)\right\}
 \\
 &\geq C(\lambda) \sup_{y \in \rr^d} \left\{ \frac{\lambda}{C(\lambda)}x\cdot y-\Phi^{\star}(y)\right\}-1
 \\
@@ -385,13 +410,7 @@ In fact, for $\lambda>1$ we have
 \end{split}
 \]
 It is easy to prove that $1<\lambda\leq C(\lambda)$.
-Now, writing $r=\lambda^{-1}<1$, $l=\frac{C(\lambda)}{\lambda}\geq 1$ and $y=l^{-1}x$ we obtain \eqref{eq:nabla2}.
-
-Note that if $\lambda>0$ satisfies \eqref{eq:nabla2} and $\lambda'\geq\lambda$ then $\lambda'$ also satisfies \eqref{eq:nabla2}.
-
-
-As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
-
+Now, writing $C'=1/C$, $r=\lambda^{-1}<1$, $l=C(\lambda)/\lambda\geq 1$ and $y=l^{-1}x$ we obtain \eqref{eq:nabla2}.
 
 
 
@@ -435,7 +454,7 @@ for any positive $r$. This relation is a trivial generalization of  \cite[Thm. 5
 If $\Phi \in \Delta_2^{\infty}$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
  
 As usual, if $(X,\|\cdot\|_X)$ is a normed space and $(Y,\|\cdot \|_Y)$ is a linear subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when there exists $C>0$ such that
-$\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lphi\hookrightarrow  \left[\lpsi\right]^\star$, where a function $v\in\lphi$ is associated  to $\xi_v\in \left[\lpsi\right]^\star$ being
+$\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lphi\hookrightarrow  \left[\lpsi\right]^\star$, where a function $v\in\lphi$ is associated  to $\xi_v\in \left[\lpsi\right]^\star$ given by
 \begin{equation}\label{pairing}
   \langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt,
 \end{equation}
@@ -444,9 +463,9 @@ $\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequal
 We suppose $u\in L^{\infty}([0,T],\rr^d)$. Since $\Phi$ is continuous, $\Phi$ is bounded on $\overline{B}_r(0)=\{x\in \rr^n:|x|\leq r\}$. Let $M_r:=\max_{\overline{B}_r(0)} \Phi(x)$. As $M_r\to 0$ when $r\to 0$, we can choose $r$ such that $M_rT\leq 1$. Then
 \[\int_0^T \Phi\left(\frac{ru}{\|u\linf}\right)dt\leq M_rT\leq 1\]
 and consequently
-$\|u\orlnor \leq r^{-1}\|u\linf$, i.e. $L^{\infty} \hookrightarrow L^\Phi$.
+$\|u\orlnor \leq r^{-1}\|u\linf$, i.e. $L^{\infty} \hookrightarrow L^\Phi$. It is also easy to see that $L^\Phi \hookrightarrow L^1$ for any $N_{\infty}$ function $\Phi$.
 
-Suppose $u\in\lphi([0,T],\rr^d)$ and consider $K:=\rho_{\Phi}(u)+1\geq 1$. Then from \eqref{eq:escalar_ine} we have $\rho_{\Phi}(K^{-1}u)\leq K^{-1}\rho_{\Phi}(u)\leq 1$. Therefore we conclude the following inequality
+Suppose $u\in\lphi([0,T],\rr^d)$ and consider $K:=\rho_{\Phi}(u)+1\geq 1$. Then from \eqref{eq:escalar_ine} we have $\rho_{\Phi}(K^{-1}u)\leq K^{-1}\rho_{\Phi}(u)\leq 1$. Therefore we conclude the inequality
 \begin{equation}\label{eq:amemiya}
  \|u\orlnor \leq \rho_{\Phi}(u)+1.
 \end{equation}
@@ -460,7 +479,7 @@ We highlight the following result (see \cite[Th. 3.3]{gwiazda2013anisotropic}).
 \end{prop}
 
 
-Consequently  $\lphi\left([0,T],\rr^d\right)$ can be equipped with the weak$\star$ topology induced by $\epsi\left([0,T],\rr^d\right)$.
+As a consequence of previous proposition,  $\lphi\left([0,T],\rr^d\right)$ can be equipped with the weak$\star$ topology induced by $\epsi\left([0,T],\rr^d\right)$.
 
 
 
@@ -471,41 +490,42 @@ where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absol
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
 
-Anisotropic Sobolev-Orlicz spaces were treated in \cite{cianchi2000fully,cianchi2004optimal,chamra2017anisotropic,trudinger1974imbedding}. Usually functions in Sobolev spaces are required to be weakly differentiable. In the particular and simplest case of functions of one variable, the weak differentiability implies absolute continuity. Hence we can assume $u\in AC\left([0,T],\rr^d\right)$ for functions $u\in\wphi\left([0,T],\rr^d\right)$.
+Anisotropic Sobolev-Orlicz spaces were treated in \cite{chamra2017anisotropic,cianchi2000fully,cianchi2004optimal,trudinger1974imbedding}. Usually functions in Sobolev spaces are required to be weakly differentiable. In the particular and simplest case of functions of one variable, the weak differentiability implies absolute continuity. Hence we can assume, without losing generality, $u\in AC\left([0,T],\rr^d\right)$ in the definition of $\wphi\left([0,T],\rr^d\right)$.
 
 
 
-As is well known, an active research topic in mathematical analysis are the Sobolev and Poincare inequalities. This topic have also been treated in the framework of anisotropic Orlicz-Sobolev mainly in \cite{cianchi2000fully,cianchi2004optimal,trudinger1974imbedding} for several variables functions and in \cite{chamra2017anisotropic} for functions of one single variable, $\Phi$ and $\Phi^{\star}$ functions of $\Delta_2^{\infty}$ class.   We do not know a reference for the embedding of Sobolev-Orlicz anisotropic spaces in the space of continuous functions when $\Phi$ or $\Phi^{\star}$ are not $\Delta_2^{\infty}$. Below we present the results that we will require in this article and we show in detail the case of the incrustation in the space of continuous functions in the simple case of function of one variable.
+As is well known, an active research topic in mathematical analysis are the Sobolev and Poincare inequalities. This topic have also been treated in the framework of anisotropic Orlicz-Sobolev, mainly in \cite{cianchi2000fully,cianchi2004optimal,trudinger1974imbedding} for functions of several variables  and in \cite{chamra2017anisotropic} for functions of one single variable and $\Phi$ and $\Phi^{\star}$ functions of $\Delta_2^{\infty}$ class.   We do not know a reference for the embedding of Sobolev-Orlicz anisotropic spaces in the space of continuous functions when $\Phi$ or $\Phi^{\star}$ are not $\Delta_2^{\infty}$.
+
 
 We define the function $A_{\Phi}:\rr^d\to [0,+\infty)$ as the greatest convex radial minorant of $\Phi$, i.e.
 \begin{equation}\label{eq:inversa-gral}
-A_{\Phi}(x)=\sup\left\{\varphi(x) \right\},
+A_{\Phi}(x)=\sup\left\{\Psi(x) \right\},
 \end{equation}
-where the supremum is taken over all the convex, non negative, radial functions $\varphi$ with $\varphi(x)\leq \Phi(x)$.
+where the supremum is taken over all the convex, non negative and radial functions $\Psi$ with $\Psi(x)\leq \Phi(x)$.
 
-\begin{prop}\label{prop:AsubPhi}  $A_{\Phi}$ is a $N_{\infty}$ function.
+\begin{prop}\label{prop:AsubPhi}  $A_{\Phi}$ is a radial and $N_{\infty}$ function.
 \end{prop}
 
-\begin{proof} The convexity and radiality of $A_{\Phi}$ is a consequence of the fact that the supremum preserving these properties. It is only necessary to show that $A_{\Phi}(x)>0$, when $x\neq 0$ and  $A_{\Phi}(x)/|x|\to\infty$, when $|x|\to\infty$. We write, for $r\in\rr$, $r^+=\max\{r,0\}$. Since $\Phi$ is $N_{\infty}$ function  for every $k>0$ there exists $r_0>0$ such that  $\Phi(x)\geq k(|x|-r_0)^+$, for $|x|>r_0$.  Since $ k(|x|-r_0)^+$ is a non negative radial and convex function, it follows that $A_{\Phi}(x)\geq k(|x|-r_0)^+$. Therefore $\liminf_{|x|\to\infty} A_{\Phi}(s)/|x|\geq k$. This implies that   $\lim_{|x|\to\infty} A_{\Phi}(x)/|x|=\infty$.
+\begin{proof} The convexity and radiality of $A_{\Phi}$ is a consequence of the fact that the supremum preserving these properties. It is only necessary to show that $A_{\Phi}(x)>0$, when $x\neq 0$ and  $A_{\Phi}(x)/|x|\to\infty$, when $|x|\to\infty$. We write, for $r\in\rr$, $r^+=\max\{r,0\}$. Since $\Phi$ is $N_{\infty}$ function,  for every $k>0$ there exists $r_0>0$ such that  $\Phi(x)\geq k(|x|-r_0)^+$, for $|x|>r_0$.  Since $ k(|x|-r_0)^+$ is a non negative radial and convex function, it follows that $A_{\Phi}(x)\geq k(|x|-r_0)^+$. Therefore $\liminf_{|x|\to\infty} A_{\Phi}(s)/|x|\geq k$. This implies that   $\lim_{|x|\to\infty} A_{\Phi}(x)/|x|=\infty$.
 
 As $\Phi$ is a
 $N_{\infty}$ and continuous function, for every $r>0$ there exists $k(r)>0$ such that $\Phi(x)\geq k(r)|x|\geq k(r)(|x|-r)^+$, when $|x|\geq r$. This fact implies that $A_{\Phi}(x)>0$ for $x\neq 0$.
 \end{proof}
-
+By abuse of notation, we sometime identify $A_{\Phi}$ with a (invertible) function defined on $[0,+\infty)$. 
 \begin{cor}\label{cor:incr_aphi} $\lphi([0,T],\rr^d) \hookrightarrow L^{A_{\Phi}}([0,T],\rr^d)$.
 
 \end{cor}
-
-
-Recall that a function   $w:[0,+\infty)\to [0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example $w(s)=sA_{\Phi}^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$.  We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
-\begin{equation}\label{w-holder}|u(t)-u(s)|\leq Cw(|t-s|).
-\end{equation}
-
-
-We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$ and it is a Banach space with norm
-\[\|u\|_{  C^w([0,T],\rr^d) }  :=\|u\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|u(t)-u(s)|}{w(|t-s|)}.\]
-
-
+% 
+% 
+% Recall that a function   $w:[0,+\infty)\to [0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example $w(s)=sA_{\Phi}^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$. Here, by abuse of notation, we identify $A_{\Phi}$ with a function defined on $[0,+\infty)$.   We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
+% \begin{equation}\label{w-holder}|u(t)-u(s)|\leq Cw(|t-s|).
+% \end{equation}
+% 
+% 
+% We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$ and it is a Banach space with norm
+% \[\|u\|_{  C^w([0,T],\rr^d) }  :=\|u\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|u(t)-u(s)|}{w(|t-s|)}.\]
+% 
+% 
 
 
 
@@ -514,44 +534,41 @@ We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions
 
 
 \begin{lem}\label{lem:inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be a $N_{\infty}$
-function and let $u\in\wphi\left([0,T],\rr^d\right)$. Let 
+function and let \linebreak[4]$u\in\wphi\left([0,T],\rr^d\right)$. Let 
 $A_{\Phi}: \rr^d \to  [0,+\infty)$ be the isotropic function defined by \eqref{eq:inversa-gral}. Then
+ 
 \begin{enumerate}
-\item\label{inclusion orlicz_item1} For every $s,t\in [0,T]$, $s\neq t$,
-\begin{align}
- &|u(t)-u(s)| \leq
- \|u'\orlnor |s-t|A_{\Phi}^{-1}\left(\frac{1}{|s-t|}\right)\tag{Morrey's inequality}\label{in-sob-cont}
-\\
-& \| u\linf \leq A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{Sobolev's inequality}\label{eq:sobolev}
-\end{align}
-\item We have $\widetilde{u}\in L^{\infty}\left([0,T],\rr^d\right)$ and 
+  \item \emph{Morrey's inequality}.   For every $s,t\in [0,T]$, $s\neq t$
+  \begin{equation}
+   |u(t)-u(s)| \leq
+  |s-t|A_{\Phi}^{-1}\left(\frac{1}{|s-t|}\right)\|u'\orlnor\tag{M.I}\label{in-sob-cont}
+  \end{equation}
 
+  \item \emph{Sobolev's inequality}. 
+  \begin{equation}
+   \|u\linf \leq A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor\tag{S.I}\label{eq:sobolev}
+  \end{equation}
 
+  \item \emph{Poincar\'e-Wirtinger's inequality}. We have $\widetilde{u}\in L^{\infty}\left([0,T],\rr^d\right)$ and 
+    \begin{equation}\label{eq:wirtinger-iso}
+    \|\widetilde{u}\|_{L^{\infty}} \leq T A_{\Phi}^{-1}\left(\frac{1}{T}\right)\| u'\orlnor\tag{P-W.I}
+    \end{equation}
+    
+    \item\label{it:embeding} If $\Phi$ is $N_{\infty}$ then the space $\wphi\left([0,T],\rr^d\right)$ is compactly embedded in the space of  continuous functions $C([0,T],\rr^d)$.
+  \end{enumerate}
 
-\begin{equation}\label{eq:wirtinger-iso}
-\|\widetilde{u}\|_{L^{\infty}} \leq T A_{\Phi}^{-1}\left(\frac{1}{T}\right)\| u'\orlnor\tag{Poincar\'e-Wirtinger's inequality}
-\end{equation}
-
-
-
-
-
-
-
-\item\label{it:embeding} If $\Phi$ is $N_{\infty}$ then the space $\wphi\left([0,T],\rr^d\right)$ is compactly embedded in the space of  continuous functions $C([0,T],\rr^d)$.
-\end{enumerate}
 \end{lem}
 
-\begin{proof}  The statements in items 1.- 3. follow of \ref{cor:incr_aphi} and \cite[Lemma 2.1, Corollary 2.2]{ABGMS2015}.
+\begin{proof}  It is immediate consequence of Corollary \ref{cor:incr_aphi} and \cite[Lemma 2.1, Corollary 2.2]{ABGMS2015}.
 \end{proof}
 
-Lemma \ref{lem:inclusion orlicz} gives us estimates of isotropic norms.  The next anisotropic version of the Wirtinger-Poincare inequality will be useful.
+Lemma \ref{lem:inclusion orlicz} gives us estimates of isotropic norms of $u$. In these type of inequalities some information is lost.  The following result gives us an estimate that takes into account the anisotropic nature of the space $\wphi\left([0,T],\rr^d\right)$. The proof is similar to  the proof of  \cite[Th. 4.5]{chamra2017anisotropic}.
 
-\begin{lem}\label{lem:inclusion orliczII} Let $\Phi:\rr^d\to [0,+\infty)$ be a $N_{\infty}$
+\begin{lem}[Anisotropic Poincar\'e-Wirtinger's inequality]\label{lem:inclusion orliczII} Let $\Phi:\rr^d\to [0,+\infty)$ be a $N_{\infty}$
 function and let $u\in\wphi\left([0,T],\rr^d\right)$. Then
 
 \begin{equation}\label{eq:wirtinger}
-  \Phi\left(\tilde{u}(t)\right)\leq\frac{1}{T} \int_0^T \Phi\left(Tu'(r)\right)dr.\tag{anisotropic Poincar\'e-Wirtinger's inequality}
+  \Phi\left(\tilde{u}(t)\right)\leq\frac{1}{T} \int_0^T \Phi\left(Tu'(r)\right)dr.\tag{A.P-W.I}
 \end{equation}
 
 \end{lem}
@@ -590,7 +607,8 @@ More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\i
  $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
 \end{lem}
 
-The following theorem will be used repeatedly. We adapted the proof of \cite[Lemma 2.5]{ABGMS2015} to the anisotropic case.    For an alternative approach see \cite{chamra2017anisotropic}.  
+The following theorem will be used repeatedly. We adapted the proof of 
+\cite[Lemma 2.5]{ABGMS2015} to the anisotropic case.    For an alternative approach see \cite{chamra2017anisotropic}.  
 
 
 
@@ -604,7 +622,7 @@ ${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k
 \end{lem}
 
 \begin{proof}
-  Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exists   a subsequence of $u_n$ (again denoted $u_n$), $\overline{\lambda}\in (0,\lambda)$ and $u_0\in\ephi$ such that $d(u_n,u_0)<\overline{\lambda}$, $n=1,\ldots$. As a consequence of \eqref{eq:N-sub-inf}, we obtain that $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$. This fact impies that $u_n$ converges in measure to $u$. Therefore, we can to extract a subsequence (denoted $u_n$) such that $u_n\to u$ a.e. and
+  Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exists   a subsequence of $u_n$ (again denoted $u_n$), $\overline{\lambda}\in (0,\lambda)$ and $u_0\in\ephi$ such that $d(u_n,u_0)<\overline{\lambda}$, $n=1,\ldots$. Since $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$, the sequence $u_n$ converges in measure to $u$. Therefore, we can to extract a subsequence (denoted again $u_n$) such that $u_n\to u$ a.e. and
   \[\lambda_{n}:=\|{u}_{n}-{u}_{n-1}\orlnor<\frac{\lambda-\overline{\lambda}}{2^{n-1}},\quad\hbox{for } n\geq 2.\]
  We can assume $\lambda_n>0$ for every $n=1,\ldots$. We write $\lambda_1:=\|u_1-u_0\orlnor$ and  $\lambda_0:=\lambda-\sum_{n=1}^{\infty}\lambda_n$ and define $h:[0,T]\rightarrow\mathbb{R}$  by
  \begin{equation}\label{eq:serie} h(t)=  \frac{\lambda_0}{\lambda}\Phi\left(\frac{u_0}{\lambda_0}\right)+\sum_{j=0}^{\infty}\frac{\lambda_{j+1}}{\lambda}\Phi\left(\frac{u_{j+1}-u_j}{\lambda_{j+1}}\right).
@@ -637,12 +655,8 @@ Then $h\in L^1([0,T],\rr)$.
 
 \section{Differentiability Gate\^aux of action integrals in anisotropic Orlicz spaces}
 
-Next, we deal with the differentiability of the action integral 
-\begin{equation}\label{eq:integral_accion}
-I(u)=\int_{0}^T \mathcal{L}(t,u(t),u'(t))\ dt.
-\end{equation}
 
-In this direction, the following theorem is our main result. Its proof follows the same lines as \cite[Th. 3.2]{ABGMS2015} but with some modifications by the lack of monotony of $\Phi$ with  respect to the euclidean norm and the fact that we do not have the notion of absolutely continuous norm.
+The  proof of the following theorem follows the same lines as \cite[Th. 3.2]{ABGMS2015} but with some modifications by the lack of monotony of $\Phi$ with  respect to the euclidean norm and the fact that  the notion of absolutely continuous norm (used intensely in \cite[Th. 3.2]{ABGMS2015}) does not work very well in the framework of anisotropic Orlicz spaces.
 
 
 \begin{thm}\label{teo:diferenciabilidad}
@@ -655,8 +669,8 @@ is finitely defined on the set $\domi_{\Lambda}:=W^{1}\lphi\cap\{u|u'\in\Pi(\eph
 \item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi_{\Lambda}$ and  its derivative $I'$ is demicontinuous from 
 $\domi_{\Lambda}$  into $\left[\wphi \right]^{\star}$, i.e. $I'$ is continuous when $\domi_{\Lambda}$ is equipped with the strong topology and   $\left[\wphi \right]^{\star}$ with the weak${\star}$ topology. Moreover, $I'$ is given by the following expression
 \begin{equation}\label{eq:DerAccion}
-\langle  I'(u),v\rangle= \int_0^T \left\{\nabla_x\mathcal{L}\big(t,u,u'\big)\cdot v
-+ \nabla_y\mathcal{L}\big(t,u,u'\big)\cdot v'\right\} \ dt.
+\langle  I'(u),v\rangle= \int_0^T \left[\nabla_x\mathcal{L}\big(t,u,u'\big)\cdot v
++ \nabla_y\mathcal{L}\big(t,u,u'\big)\cdot v'\right] \ dt.
 \end{equation}
 
 \item\label{it:T1item4}  If  $\Phi^{\star} \in \Delta^{\infty}_2$ then 
@@ -673,11 +687,10 @@ Now, from  \eqref{eq:condicion-estructura} and Lemma \ref{lem:cota-a} we have
 |\mathcal{L}(t,u(t),u'(t))|&+ |\nabla_x\mathcal{L}(t,u(t),u'(t))|
 +\Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(t,u,u')}{\lambda}\right)
 \\
-&\leq A(\|u\sobnor ) \left\{b(t)+ \Phi\left(\frac{u'(t)}{\Lambda}\right) \right\}\in
+&\leq A(\|u\sobnor ) \left[b(t)+ \Phi\left(\frac{u'(t)}{\Lambda}\right) \right]\in
  L^1,
 \end{split}
 \end{equation}
-for every $u\in \domi_{\Lambda}$.
 Thus item \eqref{it:T1item1} is proved integrating this inequality.
 
 We split up the proof of item \ref{it:T1item3} into four steps.
@@ -694,12 +707,11 @@ As $u'_n\rightarrow u'\in\domi_{\Lambda}$, by
 	$h\in L^1([0,T],\rr)$
 	such that  $u'_{n}\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_{n}/\Lambda)\leq h\quad\text{a.e}$.  
 
-Since $u_{n}$, $n=1,2,\ldots,$ is a strong convergent sequence in $\wphi$, it is a bounded sequence in $\wphi$. 
-According to  Lemma \eqref{lem:cota-a}, 
+Since $u_{n}$, $n=1,2,\ldots,$ is a bounded sequence in $\wphi$, according to  Lemma \eqref{lem:cota-a}, 
 there exists $M>0$ such that $\|\b{a}(u_{n})\|_{L^{\infty}} \leq M$, $n=1,2,\ldots$.  
 From the previous facts and \eqref{eq:cota-condicion-estructura}, we get
 \begin{equation*}\label{eq:DxL1-bis}
-  |\nabla_x\mathcal{L}(\cdot,u_{n},u'_{n})|\leq a(u_{n})\left\{b+\Phi\left(\frac{u'_{n}}{\Lambda}\right)\right\}\leq
+  |\nabla_x\mathcal{L}(\cdot,u_{n},u'_{n})|\leq a(u_{n})\left[b+\Phi\left(\frac{u'_{n}}{\Lambda}\right)\right]\leq
 M (b+h) \in L^1.
 \end{equation*}
 On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
@@ -709,7 +721,7 @@ Applying the Dominated Convergence Theorem we conclude the proof of step 1.
 
 \noindent\emph{Step 2. The non linear operator   $u
  \mapsto  \nabla_y\mathcal{L}(\cdot,u,u')$ is continuous from $\domi_{\Lambda}$ with the strong topology  
-into $\left[\lphi\right]^{\star}$  with the weak$^{\star}$ topology.}
+into $\left[\lphi\right]^{\star}$  with the weak$\star$ topology.}
 
  Let $u\in \domi_{\Lambda}$.  From  \eqref{eq:cota-condicion-estructura} it follows that 
 
@@ -723,7 +735,7 @@ into $\left[\lphi\right]^{\star}$  with the weak$^{\star}$ topology.}
 
 
 Let $u_n,u\in \domi_{\Lambda}$ such that $u_n\to u$ in the norm of $\wphi$. 
-We must prove that  $\nabla_y\mathcal{L}(\cdot,u_n,u'_n)\overset{w^*}{\rightharpoonup} 
+We must prove that  $\nabla_y\mathcal{L}(\cdot,u_n,u'_n)\overset{w^\star}{\rightharpoonup} 
 \nabla_y\mathcal{L}(\cdot,u,u')$. 
 On the contrary, there exist $v\in\lphi$, $\epsilon>0$ and a subsequence of $\{u_n\}$ (denoted  $\{u_n\}$ for simplicity)  such that
 \begin{equation}\label{cota_eps}
@@ -731,11 +743,11 @@ On the contrary, there exist $v\in\lphi$, $\epsilon>0$ and a subsequence of $\{u
 \langle  \nabla_y\mathcal{L}(\cdot,u,u'),v \rangle\right|\geq \epsilon.
 \end{equation}
 We have $u_n\rightarrow u$ in $\lphi$ and
-$u'_n\rightarrow u'$ in $\lphi$.
- By Lemma \ref{segundo lema}, there exist a subsequence of $\{u_n\}$ (again denoted  $\{u_n\}$ for simplicity) 
+$u'_n\rightarrow u'\in\Pi(\ephi,\Lambda)$.
+ By Lemmas \ref{cor:unif_conv}  and \ref{segundo lema}, there exist a subsequence of $\{u_n\}$ (again denoted  $\{u_n\}$ for simplicity) 
 and a function $h\in L^1([0,T],\rr)$ such that 
-$u_n\rightarrow u$ uniformly, $u'_n\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_n/\lambda)\leq h\quad\text{a.e.}$ 
-As in the previous step, since $u_n$ is a convergent sequence, 
+$u_n\rightarrow u$ uniformly, $u'_n\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_n/\Lambda)\leq h\quad\text{a.e.}$ 
+As in the previous step,
 Lemma \ref{lem:cota-a} implies that $a(u_n(t))$ is uniformly bounded by a certain constant $M>0$. 
 Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n$ instead of $u$, we have 
 \begin{equation}\label{eq:Dy-suc}
@@ -772,21 +784,18 @@ For $u\in \domi_{\Lambda}$ and $0\neq v\in\wphi$, we define the function
 
 
 
-For  $|s|\leq s_0:=\left(\Lambda-d(u',\ephi)\right)/\|v\sobnor$, 
-using triangle inequality we get 
-$
-d \left(u'+s v', \ephi \right)<\Lambda$ and thus $u'+sv' \in \Pi(\ephi,\Lambda)$. 
-These facts imply, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
+For  $|s|\leq s_0:=\left(\Lambda-d(u',\ephi)\right)/\|v\sobnor$  we have that  $u'+sv' \in \Pi(\ephi,\Lambda)$. 
+This fact implies, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
 that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
 
 
 
-We write $s_1:=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$. As $u'\in\Pi(\ephi,\Lambda)$ then
+We write $s_1:=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$. As $u'\in\Pi(\ephi,\Lambda)$, then
 
 \[
 d\left(\frac{u'}{(1-s_1)\Lambda},E^{\Phi}\right)=\frac{1}{(1-s_1)\Lambda}d(u', E^{\Phi})<1
 \]
-and therefore $(1-s_1)^{-1}\Lambda^{-1}u'\in C^\Phi$. Hence,  if $v'\in\lphi$ and $|s|\leq s_1 \Lambda\lambda_v^{-1}$, from the convexity and the parity of $\Phi$, we get
+Consequently  $(1-s_1)^{-1}\Lambda^{-1}u'\in C^\Phi$. Hence,  if $v'\in\lphi$ and $|s|\leq s_1 \Lambda\lambda_v^{-1}$, from the convexity of $\Phi$ and \eqref{eq:escalar_ine_2}, we get
 \begin{equation}\label{eq:cota-u+sv}
 \begin{split}
 \Phi\left(\frac{u'+sv'}{\Lambda}\right)&
@@ -794,8 +803,8 @@ and therefore $(1-s_1)^{-1}\Lambda^{-1}u'\in C^\Phi$. Hence,  if $v'\in\lphi$ an
 (1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{s}{s_1\Lambda}v'\right)
 \\
 &\leq
-(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda_v}\right)
-\in L^1
+(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda_v}\right)\\
+&=:h(t) \in L^1
 \end{split}
 \end{equation}
 
@@ -813,11 +822,13 @@ we get
 \begin{split}
 |D_s H(s,t)|&=\left| \nabla_x\mathcal{L}(t,u+sv,u'+sv')\cdot v +
   \nabla_y\mathcal{L}(t, u+s v, u'+sv')\cdot v'\right| \\
-  & \leq M \left\{ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right\}|v|\\
- &\quad+ \lambda\lambda_v\left\{\Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(t,u+sv,u'+sv')}{\lambda}\right)+\Phi\left(\frac{v'}{\lambda_v}\right) \right\}
+  & \leq M \left[ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right]|v|\\
+ &\quad+ \lambda\lambda_v\left[\Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(t,u+sv,u'+sv')}{\lambda}\right)+\Phi\left(\frac{v'}{\lambda_v}\right) \right]
 \\
  &\leq 
- M \left\{ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right\} (|v|+\lambda\lambda_v) +\lambda\lambda_v \Phi\left(\frac{v'}{\lambda}\right)
+ M \left[ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right] \left(|v|+\lambda\lambda_v\right) +\lambda\lambda_v \Phi\left(\frac{v'}{\lambda_v}\right)\\
+  &\leq 
+ M \left( b(t)+h(t)\right) \left(|v|+\lambda\lambda_v\right)+\lambda\lambda_v \Phi\left(\frac{v'}{\lambda_v}\right)
  \in L^1.
 \end{split}
 \end{equation}
@@ -825,7 +836,7 @@ we get
 Consequently, $I$ has a directional derivative and
 \[
 \langle I'(u),v \rangle=\frac{d}{ds}I(u+s v)\big|_{s=0}=\int_0^T  
-\left\{\nabla_x\mathcal{L}(t,u,u')\cdot v+ \nabla_y\mathcal{L}(t,u,u')\cdot v'\right\} \ dt.
+\left[\nabla_x\mathcal{L}(t,u,u')\cdot v+ \nabla_y\mathcal{L}(t,u,u')\cdot v'\right] \ dt.
 \]
 Moreover, from the previous formula, \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase}, and
 Lemma \ref{lem:inclusion orlicz}, we obtain
@@ -839,13 +850,13 @@ The previous steps imply the demicontinuity of the operator $I':\domi_{\Lambda} 
 \right]^{\star} $.
 
 
-In order to prove item  \ref{it:T1item4}, it is necessary to see that the maps $u\mapsto \nabla_x\mathcal{L}(t,u,u')$  
+In order to prove item  \ref{it:T1item4}, it is necessary to see that the maps \linebreak[4]$u\mapsto \nabla_x\mathcal{L}(t,u,u')$  
 and $u\mapsto \nabla_y\mathcal{L}(t,u,u')$  are norm continuous
 from $\domi_{\Lambda} $ into $L^1$ and
  $\lpsi$, respectively.  
 It remains to the continuity of the second map. 
 To this purpose, we take  $u_n, u \in \domi_{\Lambda}$, $n=1,2,\dots$, with $\|u_n- u\sobnor\to 0$.  
-As before, we can deduce there exist a subsequence (denoted $u'_n$ for simplicity) and $h_1 \in L^1$ such that \eqref{eq:Dy_lambda-Psi} holds and $u_n \to u$ a.e.
+As before, we can deduce there exist a subsequence (denoted $u'_n$ for simplicity) and $h_1 \in L^1$ such that \eqref{eq:Dy-suc} holds and $u_n \to u$ a.e.
  Since $\Phi^{\star}\in\Delta_2$, 
 \begin{equation}
 \Phi^{\star}(\nabla_y \mathcal{L}(\cdot,u_n,u'_n))\leq c(\lambda) \Phi^{\star}\left(\frac{\nabla_y \mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)+1\leq c(\lambda)h_1+1=:h_2\in L^1.
@@ -854,7 +865,8 @@ Then, from the quasi-subadditivity of $\Phi^{\star}$ we have
 \[\Phi^{\star}\left(\nabla_y \mathcal{L}(\cdot,u_n,u'_n)-
 \nabla_y \mathcal{L}(\cdot,u,u')\right)\leq K (h_2+\Phi^{\star}(\nabla_y \mathcal{L}(\cdot,u,u')))+1.\]
 Now, by Dominated Convergence Theorem, we obtain that 
-$\nabla_y \mathcal{L}(\cdot,u_n,u'_n)$ is $\rho_{\Phi^{\star}}$ modular convergent to $\nabla_y \mathcal{L}\left(\cdot,u,u')\right)$.
+$\nabla_y \mathcal{L}(\cdot,u_n,u'_n)$ is $\rho_{\Phi^{\star}}$ modular convergent to $\nabla_y \mathcal{L}\left(\cdot,u,u')\right)$, i.e.
+$\rho_{\Phi^{\star}}(u_n-u)\to 0$. 
 Since $\Phi^{\star}$ is $\Delta_2^{\infty}$, modular convergence implies norm convergence (see \cite{Skaff1969}).
 \end{proof}
 
@@ -871,37 +883,30 @@ There are several restrictions that were explored in the past. The one we will s
 
 
 
-
-
-We say that $F$ satisfies condition \eqref{eq:cond-sub} if there exist an $N_{\infty}$ function $\Phi_0$, with $\Phi_0 \llcurly \Phi$,
-a function $d \in  L^1([0,T],\rr)$, witht $d\geq 1$, such that
-
-
+\begin{defi} Let $F:[0,T]\times \rr^d\to\rr$ be a functions satisfying \ref{item:condicion_c} and \ref{item:condicion_a}. We say that $F$ satisfies condition \eqref{eq:cond-sub} if there exist an $N_{\infty}$ function $\Phi_0$, with $\Phi_0 \llcurly \Phi$,
+a function $d \in  L^1([0,T],\rr)$, with $d\geq 1$, such that
 
 \begin{equation}\label{eq:cond-sub}
   \Phi^{\star}(d^{-1}(t)\nabla_x F)\leq \Phi_0(x)+1\tag{$B$}
 \end{equation}
+\end{defi}
 
-Let us take a moment to show that condition \eqref{eq:cond-sub} encompasses the sublinearity condition, for example, as it is formulated in \cite{li2014periodic} for the $(p_1,p_2)$-Laplacian. We write
-$p'=p/(p-1)$ for the Lebesgue conjugate exponent of $p$. In \cite[Th. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a}.  As we have said, with these hypotheses, the Lagragian $\mathcal{L}=\Phi_{p_1,p_2}+F$ satisfies the structure condition \eqref{eq:condicion-estructura} and the Euler-Lagrange equations for $\mathcal{L}$ are the $(p_1,p_2)$-Laplacian equations. Additionally in \cite{li2014periodic} was used the condition \ref{item:condicion_h1} below. 
+
+The condition \eqref{eq:cond-sub} encompasses the sublinearity condition. For example, in
+ \cite[Th. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a} and the following condition  (we recall that $p'=p/(p-1)$). 
 \begin{enumerate}   
-  \labitem{(H1)}{item:condicion_h1} There exists $f_i,g_i,h_i\in L^1([0,T],\rr_+)$, $\alpha_1\in [0,p_1/p_1')$, $\alpha_2 \in [0,p_2/p_2')$, $\beta_1\in [0,p_2/p_1')$ and $\beta_2\in [0,p_1/p_2')$ such that
+  \labitem{(H)}{item:condicion_h1} There exists $f_i,g_i,h_i\in L^1([0,T],\rr_+)$,  $\alpha_i\in [0,p_i/p_i')$, $i=1,2$,  $\beta_1\in [0,p_2/p_1')$ and $\beta_2\in [0,p_1/p_2')$ such that
  \begin{equation*}
-  \begin{split}
-    |\nabla_{x_1}F(t,x_1,x_2)|\leq f_1(t)|x_1|^{\alpha_1}+f_2(t)|x_2|^{\beta_1}+h_1(t)\\
-    |\nabla_{x_2}F(t,x_1,x_2)|\leq f_2(t)|x_2|^{\alpha_2}+g_2(t)|x_1|^{\beta_2}+h_2(t)
-  \end{split}
+    |\nabla_{x_i}F(t,x_1,x_2)|\leq f_i(t)|x_1|^{\alpha_i}+g_i(t)|x_2|^{\beta_i}+h_i(t),\quad i=1,2
  \end{equation*}
-
 \end{enumerate}
-
-It is easy to prove that \eqref{item:condicion_h1}$\Rightarrow$\eqref{eq:cond-sub} where
-$\Phi_0(x_1,x_2)=\Phi_{\overline{p}_1,\overline{p}_2}(x_2,x_2)=|x_1|^{\overline{p}_1}/\overline{p}_1+|x_2|^{\overline{p}_2}/\overline{p}_2$, where $\overline{p}_i$, $i=1,2$, are taken so that  $\max\{\alpha_1p_1',\beta_2p_2'\}\leq \overline{p}_1<p_1$ and $\max\{\alpha_2p_2',\beta_1p_1'\}\leq \overline{p}_2<p_2$ and  $d=C(1+\sum_i \{f_i+g_i+h_i\})\in L^1$, for $C>0$ large enough.
-
+It is easy to prove that \ref{item:condicion_h1}$\Rightarrow$\eqref{eq:cond-sub}, with 
+$\Phi_0(x_1,x_2)=\Phi_{\overline{p}_1,\overline{p}_2}(x_2,x_2)=|x_1|^{\overline{p}_1}/\overline{p}_1+|x_2|^{\overline{p}_2}/\overline{p}_2$, where $\overline{p}_i$, $i=1,2$, are taken so that  $\max\{\alpha_1p_1',\beta_2p_2'\}\leq \overline{p}_1<p_1$ and $\max\{\alpha_2p_2',\beta_1p_1'\}\leq \overline{p}_2<p_2$ and  $d=C(1+\sum_i \{f_i+g_i+h_i\})\in L^1$, with  $C>0$ chosen large enough.
 
 
 
-The following is our main result. 
+
+
 
 
 
@@ -919,7 +924,7 @@ Let $M$ be a weak${\star}$ closed subspace of $\lphi$ and let $V\subset C([0,T],
 \begin{proof} \emph{Step 1. The action integral is coercive}.
  
   
-  Let $\lambda$ be any positive number with $\lambda>2\max\{T,1\}$. Since $\Phi_0\llcurly \Phi$ we obtain $C(\lambda)>0$ such that 
+  Let $\lambda$ be any positive number with $\lambda>2\max\{T,1\}$. Since $\Phi_0\llcurly \Phi$ there exists $C(\lambda)>0$ such that 
   \begin{equation}\label{eq:cond_C}
     \Phi_0(x)\leq \Phi\left(\frac{x}{2\lambda}\right)+C(\lambda),\quad  x\in\rr^d. 
   \end{equation}
@@ -942,7 +947,7 @@ J&:=\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
 &\leq C_1 \Phi_0(2\overline{u})+\lambda C_2 \int_0^T \Phi\left(\frac{Tu'(s)}{\lambda}\right)ds+C_1
 \end{split}
 \end{equation*}
-where $C_2=C_2(\|d\|_{L^1})$ and $C_1=C_1(\|d\|_{L^1},\lambda)$.  Since $\Phi^{\star}$ is $\Delta_2^{\infty}$ we can choose $\lambda$ large enough so that $l=\lambda T^{-1}$ satisfies  \eqref{eq:nabla2} for $r=\frac12 \min\{(C_2T)^{-1},1\}$. Choosing the parameters in this way we get
+where $C_2=C_2(\|d\|_{L^1})$ and $C_1=C_1(\|d\|_{L^1},\lambda)$.  Since $\Phi^{\star}$ is $\Delta_2^{\infty}$ we can choose $\lambda$ large enough so that $l=\lambda T^{-1}$ satisfies  \eqref{eq:nabla2} for $r=\frac12 \min\{(C_2T)^{-1},1\}$. Thus we have
 \[
  J\leq C_1 \Phi_0(2\overline{u})+\frac12 \int_0^T \Phi\left(u'(s)\right)ds+C_1
 \]
@@ -958,7 +963,7 @@ I(u)&=\int_0^T  \Phi(u')+F(t,u)dt\\
 \end{split}
 \end{equation}
 
-We suppose that $u_n\in\wphi$ with $\|u_n\sobnor\to\infty$. From Remark \ref{com:equiv-norm}, we have that $\|u_u'\orlnor \to \infty$ or $|\overline{u}_n|\to \infty$. In the first case, we have from \eqref{eq:amemiya} that $\rho_\Phi(u_n)\to\infty$ and hence  $I(u_n)\to\infty$. In the second case,  $I(u_n)\to\infty$ as consequence of \eqref{eq:propiedad-coercividad-phi0}.
+We take $u_n\in\wphi$ with $\|u_n\sobnor\to\infty$. From Remark \ref{com:equiv-norm}, we can suppose that $\|u_n'\orlnor \to \infty$ or $|\overline{u}_n|\to \infty$ . In the first case, we have from \eqref{eq:amemiya} that $\rho_\Phi(u_n)\to\infty$ and hence  $I(u_n)\to\infty$. In the second case,  $I(u_n)\to\infty$ as consequence of \eqref{eq:propiedad-coercividad-phi0}.
 
 
 
@@ -973,14 +978,12 @@ $.
 
   Without loss of generality, passing to subsequences, we may assume that the $\liminf$ is really a $\lim$. The embedding  $\lphi([0,T],\rr^d)\hookrightarrow L^1([0,T],\rr^d)$ implies that  $u_n'\rightharpoonup u' $ in $ L^1([0,T],\rr^d)$.  Now, applying \cite[Th. 3.6]{buttazzo1998one} we obtain $I(u)\leq \lim_{n\to\infty}I(u_n)$.
 
-\emph{Step 3. Final step}
+\emph{Step 3. Final step.}
 The proof of the theorem is concluded with a usual argument. We take a minimizing sequence $u_n \in H$ of $I$. 
 From the coercivity of $I$ we have that $u_n$ is bounded in $\wphi([0,T],\rr^d)$. By Corollary \ref{cor:unif_conv}  (passing to subsequences) we can suppose that $u_n$ converges uniformly to a function $u\in V$. 
 On the other hand, $u'_n$ is bounded in $\lphi=\left[\epsi\right]^\star$. Thus,  
 since $E^{\Phi^{\star}}$ is separable (see \cite[Thm. 6.3]{Orliczvectorial2005}), it follows from \cite[Cor. 3.30]{brezis2010functional} 
-there exist a subsequence of $u'_n$ (we denote it $u'_n$ again) and $v \in M$ such that $u'_n\overset{\star}{\rightharpoonup}v$
-
-From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
+there exist a subsequence of $u'_n$ (we denote it $u'_n$ again) and $v \in M$ such that $u'_n\overset{\star}{\rightharpoonup}v$. From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 \[
 \int_0^T\varphi'\cdot u\ dt=\lim_{n\to\infty}\int_0^T\varphi'\cdot u_n \ dt=
 -\lim_{n\to\infty}\int_0^T\varphi\cdot u'_n\ dt=-\int_0^T\varphi\cdot v\ dt,
@@ -999,12 +1002,11 @@ Finally, the semicontinuity of $I$ implies that $u$ is a minimum of $I$.
 The next step is to obtain variational solutions of  \eqref{eq:ProbPhiLapla}. For this purpose we define the $C([0,T],\rr^d)$-closed linear set $V:=\{u\in C([0,T],\rr^d)|u(0)=u(T)\}$, $M:=\lphi([0,T],\rr^d)$ and $H$ as in Theorem \ref{coercitividad-r}.
 
 
-According to Remark \ref{com:lphi-satis S} and Theorem \ref{teo:diferenciabilidad} $I$ is G\^ateaux differentiable on $\wphi([0,T],\rr^d)\cap\{u| d(u',\ephi)<1\}$. Let $u$ be a minimum of $H$ and suppose that  $d(u',\ephi)<1$. By the Fermat's rule (see \cite[Prop. 4.12]{clarke2013functional}), $\langle I'(u),v\rangle=0$, for every $v\in H$. Therefore
+According to Remark \ref{com:lphi-satis S} and Theorem \ref{teo:diferenciabilidad}, $I$ is G\^ateaux differentiable on $\wphi([0,T],\rr^d)\cap\{u| d(u',\ephi)<1\}$. Let $u$ be a minimum and suppose that  $d(u',\ephi)<1$. By the Fermat's rule (see \cite[Prop. 4.12]{clarke2013functional}), $\langle I'(u),v\rangle=0$, for every $v\in H$. Therefore
 
 \begin{equation}\label{eq:der_deb}\int_0^T\nabla\Phi(u'(t))\cdot v'(t)dt=-\int_0^T \nabla_xF(t,u(t))\cdot v(t)dt.\end{equation}
 
-From condition \ref{item:condicion_a}, $\nabla_xF(t,u(t))\in L^1([0,T],\rr^d)$. Let $\Lambda>0$ be such that $d(u',\ephi)<\Lambda<1$. In virtue of \eqref{eq:ine-psi-phi'} and \eqref{eq:inclusiones} we have $\Phi^{\star}\left(\nabla\Phi\left(u'(t)\right)\right)\leq (\Lambda-1)^{-1}\Phi(\Lambda u'(t))\in L^1([0,T],\rr)$. Hence, by H\"older inequality
-$\nabla\Phi(u'(t))\cdot v' \in  L^1([0,T],\rr)$.  Identity \eqref{eq:inclusiones} holds for every $\varphi\in C^{\infty} ([0,T],\rr^d)$ with $\varphi(0)=\varphi(T)$. Using the \cite[Fundamental Lemma, p. 6]{mawhin2010critical} wee get that $\nabla\Phi(u'(t))$ is absolutely continuous and $(d/dt)\left(\nabla\Phi(u'(t))\right) = \nabla_xF(t,u(t))$, a.e. on $[0,T]$. Moreover, $\nabla\Phi(u'(0))=\nabla\Phi(u'(T))$. We can not move forward without assuming that $\Phi$ is \emph{strictly convex}, i.e. $\Phi(\lambda x+(1-\lambda)y)<
+From Theorem \ref{teo:diferenciabilidad}, $\nabla_xF(t,u(t))\in L^1([0,T],\rr^d)$ and  $\nabla\Phi\left(u'(t)\right)\in\linebreak\lpsi([0,T],\rr)\hookrightarrow L^1([0,T],\rr)$.  Identity \eqref{eq:der_deb} holds for every $v\in C^{\infty} ([0,T],\rr^d)$ with $v(0)=v(T)$. Using the \cite[Fundamental Lemma, p. 6]{mawhin2010critical} we get that $\nabla\Phi(u'(t))$ is absolutely continuous and $(d/dt)\left(\nabla\Phi(u'(t))\right) = \nabla_xF(t,u(t))$, a.e. on $[0,T]$. Moreover, $\nabla\Phi(u'(0))=\nabla\Phi(u'(T))$. We can not move forward without assuming that $\Phi$ is \emph{strictly convex}, i.e. $\Phi(\lambda x+(1-\lambda)y)<
 \lambda \Phi(x)+(1-\lambda)\Phi(y)$, when $\lambda\in (0,1)$. 
 It is  well known that, in this case $\nabla\Phi:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Ex. 4.17, p. 67]{clarke2013functional}). Hence, we coclude that $u'(0)=u'(T)$.  We have proved the following result.
 
@@ -1015,16 +1017,16 @@ It is  well known that, in this case $\nabla\Phi:\mathbb{R}^d\to\mathbb{R}^d$ is
  
 \end{comentario}
 
-\begin{comentario} The condition $d(u',\ephi)< 1$ is trivially satisfied when $\Phi$ is a $\Delta_2^{\infty}$ function, because, in this case, $\ephi([0,T],\rr^d)=\lphi([0,T],\rr^d)$. Therefore our Theorem \ref{th:tor_prin} implies existence of solutions for the system  \eqref{ProbP-lapla} and more generally for the system \eqref{eq:sist-p_lapa}. 
+\begin{comentario} The condition $d(u',\ephi)< 1$ is trivially satisfied when $\Phi$ is a $\Delta_2^{\infty}$ function, because, in this case, $\ephi([0,T],\rr^d)=\lphi([0,T],\rr^d)$. Therefore our Theorem \ref{th:tor_prin} implies existence of solutions, among others, for the system  \eqref{ProbP-lapla} and more generally for the system \eqref{eq:sist-p_lapa}. 
 \end{comentario}
 
 \begin{comentario} It seems that it is not possible to choose $M$ otherwise than as in
-the proof of Theorem  \ref{th:tor_prin}. The set $M$ must contain to $C^{\infty} ([0,T],\rr^d)$, 
-so that we are able to infer \eqref{eq:der_deb}. From there $M$ must contain $\ephi([0,T],\rr^d)$. But, it can be easily proved, this last set is weak$\star$ dense in $\lphi([0,T],\rr^d)$.
+the proof of Theorem  \ref{th:tor_prin}. The set $M$ must contain the space $C^{\infty} ([0,T],\rr^d)$ 
+so that we are able to infer \eqref{eq:der_deb}. Thus, $M$ must contain $\ephi([0,T],\rr^d)$. But, it can be  proved that $\ephi([0,T],\rr^d)$  is weak$\star$ dense in $\lphi([0,T],\rr^d)$.
 \end{comentario}
 
 \section*{Acknowledgments}
-The authors are partially supported by a UNRC grant number 18/C417. The first author is  partially supported by a  UNSL grant number 22/F223. 
+The authors are partially supported by  UNRC and UNLPam grants. The second author is  partially supported by a  UNSL grant. 
 
 
 
