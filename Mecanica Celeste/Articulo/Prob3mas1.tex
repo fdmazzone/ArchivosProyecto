@@ -11,7 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage{soul} 
 %\usepackage{times}
-
+\usepackage{tikz}
 %\usepackage[latin1]{inputenc}
 
 \usepackage{comment}
@@ -127,6 +127,47 @@ In this paper we study the following restricted  Newtonian $n+1$-body problem $P
  \item[$P_3$] The massless particle is moving  on the perpendicular line to $\Pi$ passing through the center of masses.
 \end{itemize}
 
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[xscale=.9, yscale=.9]
+				%Plano
+				\draw[black,  line width=.8pt] (-6,0,-4.5)--(3,0,-4.5);
+				\draw[black, line width=.8pt] (-3,0,5)--(7.5,0,5);
+				\draw[black, line width=.8pt] (-3,0,5)--(-6,0,-4.5);
+				\draw[black, line width=.8pt] (3,0,-4.5)--(7.5,0,5);
+				%Elipses
+				\draw[red,dashed] (0,0,0) ellipse (1cm and 0.5cm);
+				\draw[blue,dashed] (0,0,0) ellipse (3cm and 1.5cm);
+				%Cuerpos
+					\shade[ball color=red]  (0.955336489125606,0.14776010333067) circle (5 pt);
+					\node at (1.45,0.14) {$m_1$};
+					\shade[ball color=red]  (-0.955336489125606,-0.14776010333067) circle (5 pt);
+					\node at (-1.4,-0.15) {$m_2$};
+
+					\shade[ball color=blue]  (-0.886560619984019,1.43300473368841) circle (5 pt);
+					\node at (-0.6,1.1) {$m_3$};
+					\shade[ball color=blue]  (-2.03875669624302,-1.10039437629473)
+					 circle (5 pt);
+					\node at (-2.508,-1.2) {$m_4$};
+					\shade[ball color=blue]  (2.92531731622704,-0.332610357393683)
+					 circle (5 pt);
+					\node at (3.4,-0.4502) {$m_5$};
+					%eje z
+        \draw[black, dashed, line width=.8pt] (0,0,0)--(0,3,0);
+		\draw[black, dashed, line width=.8pt] (0,0,0)--(0,-3,0);
+				% particula sin masa
+		\draw[fill=black](0,2.5,0) circle (0.1 cm);
+		\node at (0.7,2.5,0) {$m_6\approx 0$};
+				%PI
+				\node at (6.3,0,4) {$\Pi$};
+
+				% CENTRO DE MASAS
+				\draw[fill=black](0,0,0) circle (0.05 cm);
+				\node at (-0.2,-0.2,0) {$c$};
+\end{tikzpicture}\caption{Six-body problem}\label{fig:conf_esp}
+\end{center}
+\end{figure}
+
 
 \begin{figure}[h]
  \begin{center}
@@ -173,7 +214,8 @@ Periodic solutions for generalized Sitnikov problems with primaries performing  
 
 
 In the present paper, after introducing preliminaries facts in Section \ref{sec:pre},   we
-obtain in Section \ref{sec:admisible.configuraciones} necessary and sufficient conditions on  configuration of primaries bodies in order  that the $z$-axis is invariant for the flow associated to the motion equations of the massless particle. For this type of configurations, that we call \emph{admissible}, the Sitnikov problem has sense.  In Section \ref{sec:addmisibles} we will find all admissible configurations for $n\leq 4$ primaries.  The Section \ref{sec:mas-mot} is devoted to describe all possible motion of the massless particle when the primaries are in a relative equilibrium (or rigid) motion. In this direction we observe that only are possible scape (both parabolic and hiperbolic) and periodic motions. Moreover, we will give a formula expressing the period of solutions  by means of integrals.  We prove in Corollary \ref{cor:sol.periodica.sist.completo} that the complete $n+1$-body system has  infinite quatity of periodic solutios. In Section  \ref{sec:sincro} we discuss the situation when the entire system has a solution with the same period that the rigid motion of primaries. Surprisingly this fact is related to the existence of certain pyramidal central configurations (see \cite{fayccal1996classification,faycaltesis,ouyang2004pyramidal} for the definition of this concept). Finally, in the last section, we study certain non admissible configurations which allows some particular solutions of problem $P$.
+obtain in Section \ref{sec:admisible.configuraciones} necessary and sufficient conditions on  configuration of primaries bodies in order  that the $z$-axis is invariant for the flow associated to the motion equations of the massless particle. For this type of configurations, that we call \emph{admissible}, the Sitnikov problem has sense.  In Section \ref{sec:addmisibles} we will find all admissible configurations for $n\leq 4$ primaries.  The Section \ref{sec:mas-mot} is devoted to describe all possible motion of the massless particle when the primaries are in a relative equilibrium (or rigid) motion. In this direction we observe that only are possible scape (both parabolic and hiperbolic) and periodic motions. Moreover, we will give a formula expressing the period of solutions  by means of integrals.  We prove in Corollary \ref{cor:sol.periodica.sist.completo} that the complete $n+1$-body system has  infinite quatity of periodic solutios. In Section  \ref{sec:sincro} we discuss the 
+situation when the entire system has a solution with the same period that the rigid motion of primaries. Surprisingly this fact is related to the existence of certain pyramidal central configurations (see \cite{fayccal1996classification,faycaltesis,ouyang2004pyramidal} for the definition of this concept). Finally, in the last section, we study certain non admissible configurations which allows some particular solutions of problem $P$.
 
 
 
