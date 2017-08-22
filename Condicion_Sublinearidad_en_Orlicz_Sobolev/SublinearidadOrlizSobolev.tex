@@ -308,12 +308,11 @@ $\wphi$ is a Banach space when equipped with the norm
 \begin{equation}\label{def-norma-orlicz-sob}
 \|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
 \end{equation}
-And, we introduce the following subspaces of $\wphi$
+And, we introduce the following subset of $\wphi$
 %%
 \begin{equation}\label{def-esp-orlicz-sob-per}
 \begin{split}
-\wphie&=\{u\in\wphi|u'\in\ephi\},\\
-\wphie_T&=\{u\in\wphie|u(0)=u(T)\}.
+\wphi_T&=\{u\in\wphi|u(0)=u(T)\}.
 \end{split}
 \end{equation}
 
@@ -347,7 +346,7 @@ The following simple  embedding lemma, whose proof can be found in \cite{ABGMS20
 We begin with a lemma which establishes the coercivity of the modular function $\rho_{\Phi}(u)$ with respect to certain functions of the Orlicz norm $\Phi_0(\|u\orlnor|)$. This lemma generalizes \cite[Lemma 5.2]{ABGMS2015} in two directions.
 Namely, certain power function is replaced by a more general $N$-function $\Phi_0$ and
 the $\Delta_2$-condition  on $\Psi$ is relaxed to $\Delta_2^{\infty}$.
-It is worth noting that the second improvement is more important that the first one.
+It is worth noting that the second improvement is more important than the first one.
 And, we present the result here since the lemma introduces a function $\Phi^*$ that will play a significant role in the statement of our main theorem.
 
 \begin{lem}\label{lem_coer}
@@ -388,7 +387,9 @@ $b\in L^1_1([0,T])$,  $c\in\lpsi_1([0,T])$ and  $f\in \ephi_1([0,T])$. We denote
 
 In \cite{ABGMS2015} it was shown that if $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$
 then there  exists the Gate\^aux derivative of the integral functional $I$ defined by \eqref{integral_accion},
-on the subspace \linebreak$\wphie([0,T],\rr^d)$. We observe that the condition \ref{item:condicion_a} on the potential $F$ is equivalent to say that $\mathcal{L}_{\Phi,F}\in \mathfrak{A}(a,b,0,1,0,\Phi)$.
+on the set
+\[\domi:=\{u\in\wphi([0,T],\rr^d): d(u',\ephi)<\lambda\}.\]
+We observe that the condition \ref{item:condicion_a} on the potential $F$ is equivalent to say that $\mathcal{L}_{\Phi,F}\in \mathfrak{A}(a,b,0,1,0,\Phi)$.
 
  Unlike what is usual in the literature, we do not assume the lagrangian $\mathcal{L}$  split into two terms,
 one of them function of $y$ and the other one function of $(t,x)$.
@@ -423,12 +424,15 @@ namely, we will consider inequalities like
 \end{equation}
 with $\Phi_0$  a differentiable $N$-function and $b_1,b_2 \in L^1([0,T])$.
 
+Next, we give our main result.  Here,  we will amend an
+erroneous assumption made in the end of the proof of  \cite[Thm. 6.2]{ABGMS2015}.
+There, it was assumed without discussion that  a minimum of  $I$ was on the domain of differentiability of $I$.
 
 
 \begin{thm}\label{coercitividad-r}
 Let $\Phi$ be an $N$-function whose complementary function $\Psi$ satisfies the $\Delta_2^{\infty}$-condition
-and suppose that $\Phi^*$ is given by Lemma \ref{lem_coer}.
-Let $F$ be a potential that satisfies \ref{item:condicion_c}, \ref{item:condicion_a} and
+and suppose that $\Phi^*$ is given by Lemma \ref{lem_coer}. Assume that the lagrangian $\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$ satisfies \eqref{eq:control_inf}, where
+the potential $F$ fulfills  \ref{item:condicion_c}, \ref{item:condicion_a} and
 the following conditions:
 \begin{enumerate}
  \item  \eqref{holder_cont-mu}  for some $N$-function  $\Phi_0$ such that $\Phi_0\llcurly\Phi^*$.
@@ -439,16 +443,16 @@ the following conditions:
 for some $N$-function $\Psi_1$ with complementary function $\Phi_1$ satisfying $\Phi_0\llcurly \Phi_1\llcurly \Phi^*$.
 \end{enumerate}
 
-Now,  if the lagrangian $\mathcal{L}(t,x,y)$ is strictly convex  with respect to $y\in\rr^d$,
-$\mathcal{L}\in \mathfrak{A}(a,b,c,\lambda,f,\Phi)$,
+Then the action integral $I$ has a minimum $u\in\wphi([0,T],\rr^d)$ such that $d(u',\ephi)\leq \lambda$. If $d(u',\ephi)< \lambda$, the lagrangian $\mathcal{L}(t,x,y)$ is strictly convex  with respect to $y\in\rr^d$ and
 $D_y\mathcal{L}(0,x,y)=D_y\mathcal{L}(T,x,y)$
-and \eqref{eq:control_inf} holds,
-then the problem \eqref{ProbPrin-gral} has at least a solution which minimizes the action integral $I$ on $\wphie_T$.
+then $u$ solves the problem \eqref{ProbPrin-gral}.
 
 \end{thm}
 
 
 
+\begin{comentario} If $\Phi\in\Delta_2^{\infty}$ the the condition  $d(u',\ephi)\leq \lambda$ is automatically satisfied.
+\end{comentario}
 
 
 
@@ -457,28 +461,6 @@ then the problem \eqref{ProbPrin-gral} has at least a solution which minimizes t
 
 \section{Proofs}\label{sec:proofs}
 
-
-
-\begin{lem}\label{lem:deb*cerrado}
-$\ephi$ is weak* closed in $\lphi$.
-\end{lem}
-
-
-\begin{proof}
-From \cite[Thm. 7, p. 110]{rao1991theory} we have that $\lphi=\left[\epsi\right]^*
-$.
-Then, $\lphi$ is a dual and therefore we are allowed to speak about the weak* topology of $\lphi$.
-Moreover, $\ephi
-$ is separable (see \cite[Thm. 1, p. 87]{rao1991theory}).
-Let $S=\ephi\cap \{u \in \lphi|\|u\orlnor\leq 1\}$, then $S$ is closed in the norm $\|\cdot\orlnor$.
-Now, according to \cite[Cor. 5, p. 148]{rao1991theory} $S$ is weak* sequentially compact.
-Thus, $S$ is weak* sequentially closed because if $u_n\in S$ and
-$u_n \overset{*}{\rightharpoonup}u \in \lphi$, then  the weak* sequentially compactness implies the existence of $v \in S$ and a subsequence $u_{n_k}$ such that
-$u_{n_k}\overset{*}{\rightharpoonup}v$. Finally, by the uniqueness of   the limit, we get
-$u=v\in S$.
-As $\epsi$ is separable and $\lphi=\left[\epsi\right]^*$, the closed ball of $\{u \in \lphi | \|u\orlnor\leq 1\}$ of $\lphi$  is  weak* metrizable (see \cite[Thm. 5.1, p. 138]{Conway1977}).
-Thus, $S$ is closed with respect to  the weak* topology. Now, by  Krein-Smulian theorem, \cite[Cor. 12.6, p. 165]{Conway1977} implies that $\ephi$ is weak* closed.
-\end{proof}
 
 The following result is analogous to some lemmata in $W^{1,p}$, see \cite[Lem. 1]{xu2007some}.
 \begin{lem}\label{infinito-a-prom-upunto}
@@ -723,10 +705,6 @@ respectively.
 
 
 
-Next, we give the proof of Theorem \ref{coercitividad-r}.  Here,  we will amend an
-erroneous assumption made in the end of the proof of  \cite[Thm. 6.2]{ABGMS2015}.
-There, it was assumed without discussion that  a minimum of  $I$ was on the domain of differentiability of $I$.
-We will avoid  this issue  minimizing $I$ on $\wphiet$, which is a weak* closed subspace  contained in the  domain of differentiability of $I$. Moreover, $\wphiet$ contains enough functions to a minimum of $I$ on $\wphiet$ solve \eqref{ProbPrin-gral}.
 \vspace{.4cm}
 
 \noindent\textbf{Proof. Theorem \ref{coercitividad-r} }. By the decomposition $u=\overline{u}+\tilde{u}$,   Cauchy-Schwarz's inequality
@@ -842,31 +820,32 @@ From the condition \ref{item:condicion_a}  on $F$, we have that on a bounded set
 also $J_{C_5,\Phi_0'}(u'_n)\geq 0$.
 Therefore,  $I(u_n)\to\infty$ as $\|u_n\sobnor\to\infty$ which contradicts the initial assumption on the behavior of $I(u_n)$.
 
-Let $\{u_n\}\subset \wphiet$  be a  minimizing sequence for the problem
-\linebreak $\inf\{I(u)|u\in\wphiet\}$.
-Since  $I(u_n)$, $n=1,2,\ldots$,  is upper bounded, the previous part of the proof shows that $\{u_n\}$ is norm bounded on $\wphie$. Hence, by virtue of  \cite[Cor. 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous (therefore in $\ephi_T$)  function $u$. As $u'_n \in \ephi$ is a norm bounded sequence in $\lphi$,
+Let $\{u_n\}\subset \wphi$  be a  minimizing sequence for the problem
+\linebreak $\inf\{I(u)|u\in\wphi\}$.
+Since  $I(u_n)$, $n=1,2,\ldots$,  is upper bounded, the previous part of the proof shows that $\{u_n\}$ is norm bounded. Hence, by virtue of  \cite[Cor. 2.2]{ABGMS2015}, we can assume, taking a subsequence if necessary, that $u_n$ converges uniformly to a $T$-periodic continuous   function $u$. As $\{u'_n\}$ is a norm bounded sequence in $\lphi$,
 there exists a subsequence, again denoted by $u'_n$, that converges to a function $v\in\lphi$ in the weak* topology of $\lphi$.
-Since $\ephi$ is weak* closed, by Lemma \ref{lem:deb*cerrado}, $v\in \ephi$.
 From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
 \[
 \int_0^T\xi'\cdot u\ dt=\lim_{n\to\infty}\int_0^T\xi'\cdot u_n \ dt=
 -\lim_{n\to\infty}\int_0^T\xi\cdot u'_n\ dt=-\int_0^T\xi\cdot v\ dt,
 \]
 for every $T$-periodic function $\xi\in C^{\infty}([0,T],\rr^d)\subset\epsi$.
-Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\wphiet$.
+Thus $v=u'$ a.e. $t\in [0,T]$ (see \cite[p. 6]{mawhin2010critical}) and $u\in\wphi([0,T],\rr^d)$.
 
 Now, taking into account the relations $\left[L^1\right]^*=L^{\infty}\subset  \epsi$ and $\lphi\subset L^1$, we have that $u'_n$ converges to $u'$ in the weak topology of $L^1$. Consequently,  from the semicontinuity of $I$ (see \cite[Lemma 6.1]{ABGMS2015})  we get
-\[I(u)\leq  \liminf_{n\to\infty}I(u_n)=\inf\limits_{v\in\wphie_T}I(v).\]
+\[I(u)\leq  \liminf_{n\to\infty}I(u_n)=\inf\limits_{v\in\wphi_T}I(v).\]
+Hence $u\in \wphiet$ is a minimun of $I$ on $\wphi_T$.
 
-Hence $u\in \wphiet$ is a minimun and, since $I$ is G\^ateaux differentiable on $\wphie$ (see  \cite[Thm. 3.2]{ABGMS2015}),
-therefore $I'(u)\in (\wphiet)^{\perp}$. Thus,
+For the second part of the theorem, assume that $u$ is a minimum of $I$ with $d(u',\ephi)<\lambda$.
+Since $I$ is G\^ateaux differentiable at $u$ (see  \cite[Thm. 3.2]{ABGMS2015}),
+therefore $I'(u)\in (\wphi_T)^{\perp}$. Thus,
 \[\int_0^T D_y\mathcal{L}(t,u(t),u'(t))\cdot v'(t)dt =-\int_0^T D_x\mathcal{L}(t,u(t),u'(t))\cdot v(t)dt,\]
-for every  $v\in \wphiet$.
+for every  $v\in \wphi_T$.
 From \cite[Eq. (26)]{ABGMS2015} we have
 \[D_y\mathcal{L}(t,u(t),u'(t))\in \lpsi([0,T],\rr^n)\hookrightarrow L^1([0,T],\rr^n);\]
 and,  from  \cite[Eq. (24)]{ABGMS2015}, it follows that $D_x\mathcal{L}(t,u(t),u'(t))\in L^1([0,T],\rr^n)$.
 Consequently, from \cite[p. 6]{mawhin2010critical}
-(note that $\wphiet$  includes the periodic test functions) we obtain the absolutely continuity of $D_y\mathcal{L}(t,u(t),u'(t))$ and that the differential equations in \eqref{ProbPrin-gral} are satisfied. The strict convexity of $\mathcal{L}(t,x,y)$ with respect to $y$ and the $T$-periodicity with respect to $t$ imply the boundary conditions in  \eqref{ProbPrin-gral} (see \cite[Thm. 4.1]{ABGMS2015}).\qed
+(note that $\wphi_T$  includes the periodic test functions) we obtain the absolutely continuity of $D_y\mathcal{L}(t,u(t),u'(t))$ and that the differential equations in \eqref{ProbPrin-gral} are satisfied. The strict convexity of $\mathcal{L}(t,x,y)$ with respect to $y$ and the $T$-periodicity with respect to $t$ imply the boundary conditions in  \eqref{ProbPrin-gral} (see \cite[Thm. 4.1]{ABGMS2015}).\qed
 
 
 
@@ -877,7 +856,7 @@ Consequently, from \cite[p. 6]{mawhin2010critical}
 so that the reader can appreciate the innovations that brings.
 
 
-The main novelty  of our work is that we obtain existence of solutions by the direct method of calculus of variations for lagrangian functions $\mathcal{L}(t,x,y)$ that do not satisfy a power-like grow condition on $y$.
+The main novelty  of our work is that we obtain existence of minima of $I$ associated with  lagrangian functions $\mathcal{L}(t,x,y)$ that do not satisfy a power-like grow condition on $y$.
 
 In fact, it is possible to apply Theorem \ref{coercitividad-r} to lagrangians $\mathcal{L}=\mathcal{L}(t,x,y)$ with  exponential grow on the variable $y$. For example, suppose that
   \[\mathcal{L}(t,x,y)=f(y)+F(t,x),\]
@@ -906,7 +885,7 @@ We note that this $F$ satisfies \ref{item:condicion_a} and \ref{item:condicion_c
 Now, we choose any $1<p_0$ with $p_0-1<\sigma<p_0$ and we take $p_1$ with $p_1>\sigma(\sigma-p_0+1)^{-1}$.
 Then, \eqref{eq:A6_ejem1}
  and \eqref {eq:ejem_propiedad-coercividad-phi0} hold.
-In conclusion, the system \eqref{ProbPrin-gral} has solution for the Lagrangian given by $\mathcal{L}(t,x,y)=f(y)+b(t)|x|^{\sigma}$ for any $1<\sigma$.
+In conclusion, the action integral $I$ associated with the Lagrangian $\mathcal{L}(t,x,y)=f(y)+b(t)|x|^{\sigma}$   has minimum for any $1<\sigma$.
 
 
 
@@ -1009,8 +988,7 @@ J.~B. Conway, A Course in Functional Analysis, Springer, USA, 1977.
 
 
 
- %\bibliographystyle{elsarticle-num}
- %\bibliography{biblio}
+
 
 
 \end{document}

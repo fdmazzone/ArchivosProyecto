@@ -41,7 +41,7 @@
 
 
 
-\title{Periodic solutions for a generalized Sitnikov problem with primaries in rigid motion}
+\title{A generalized Sitnikov problem with primary bodies in both homographic and rigid motions}
 \author{Gast\'on Beltritti \thanks{SECyT-UNRC and CONICET}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales\\
 Universidad Nacional de R\'{i}o Cuarto\
@@ -124,7 +124,7 @@ In this paper we study the following restricted  Newtonian $n+1$-body problem $P
 \begin{itemize}
  \item[$P_1$] We have $n$ primary bodies of masses $m_1,\ldots,m_n$ and an additional massless particle.
  \item[$P_2$] The primary bodies are in a homographic motion (see \cite[Section 2.9]{JaumeLlibre276}). This motion is carried out in a plane $\Pi$.
- \item[$P_3$] The massless particle is moving  on the perpendicular line to $\Pi$ passing through the center of masses.
+ \item[$P_3$] The massless particle is moving  on the perpendicular line to $\Pi$ passing through the center of masses of the primary bodies.
 \end{itemize}
 
 \begin{figure}[h]
@@ -139,25 +139,23 @@ In this paper we study the following restricted  Newtonian $n+1$-body problem $P
 				\draw[red,dashed] (0,0,0) ellipse (1cm and 0.5cm);
 				\draw[blue,dashed] (0,0,0) ellipse (3cm and 1.5cm);
 				%Cuerpos
-					\shade[ball color=red]  (0.955336489125606,0.14776010333067) circle (5 pt);
+					\shade[ball color=red]  (1,0) circle (5 pt);
 					\node at (1.45,0.14) {$m_1$};
-					\shade[ball color=red]  (-0.955336489125606,-0.14776010333067) circle (5 pt);
+					\shade[ball color=red]  (-1,0) circle (5 pt);
 					\node at (-1.4,-0.15) {$m_2$};
 
-					\shade[ball color=blue]  (-0.886560619984019,1.43300473368841) circle (5 pt);
-					\node at (-0.6,1.1) {$m_3$};
-					\shade[ball color=blue]  (-2.03875669624302,-1.10039437629473)
+					\shade[ball color=blue]  (3,0) circle (5 pt);
+					\node at (-3.5,0) {$m_3$};
+					\shade[ball color=blue]  (-3,0)
 					 circle (5 pt);
-					\node at (-2.508,-1.2) {$m_4$};
-					\shade[ball color=blue]  (2.92531731622704,-0.332610357393683)
-					 circle (5 pt);
-					\node at (3.4,-0.4502) {$m_5$};
+					\node at (3.5,0) {$m_4$};
+
 					%eje z
         \draw[black, dashed, line width=.8pt] (0,0,0)--(0,3,0);
 		\draw[black, dashed, line width=.8pt] (0,0,0)--(0,-3,0);
 				% particula sin masa
 		\draw[fill=black](0,2.5,0) circle (0.1 cm);
-		\node at (0.7,2.5,0) {$m_6\approx 0$};
+		\node at (0.7,2.5,0) {$m_5\approx 0$};
 				%PI
 				\node at (6.3,0,4) {$\Pi$};
 
@@ -169,54 +167,22 @@ In this paper we study the following restricted  Newtonian $n+1$-body problem $P
 \end{figure}
 
 
-\begin{figure}[h]
- \begin{center}
+Problems like the one presented above have been extensively discussed in the literature. In \cite{sitnikov1960existence} K. Sitnikov considered the problem of two body in a Keplerian elliptic motion and a massless particle moving in the perpendicular line to the orbital plane passing
+through the center of masses. Sitnikov obtained deep results about existence of solutions, for small $e>0$, with a chaotic behavior (see \cite[III(5)]{moser2016stable}). Periodic solutions for a Sitnikov configuration were considered in \cite{corbera2000periodic, corbera2002symmetric, llibre2008families,pustyl1990certain}.
 
 
-\setlength{\unitlength}{4cm}
-\begin{picture}(2.5, 1)(-.5, -.5)
-  \setlength{\unitlength}{2cm}
-    \put(.5,0){
-}
-  \setlength{\unitlength}{5cm}
-    \put(-.1,0){
-    \qbezier(0, 0)(0,.25)(.5, .25)
-  \qbezier(1.01, 0)(1.01,.25)(.5, .25)
-    \qbezier(0, 0)(0,-.25)(.5, -.25)
-  \qbezier(1.01, 0)(1.01,-.25)(.5, -.25)
-}
-\put(-.2,0){\line(1,0){1.2}}
-\put(-0.1,0){\circle*{.04}} \put(-0.19,-0.05){$m_1$}
-\put(0.65,-0.24){\circle*{.04}} \put(0.61,-0.2){$m_2$}
-\put(0.6,.235){\circle*{.04}}\put(0.55,.18){$m_3$}
-\put(0.5,0){\circle*{.03}}\put(0.44,-0.05){$c$}
-\put(0.5,-0.08){\line(0,1){.6}}
-\put(0.5,0.4){\circle*{.04}}\put(0.53,0.4){$m_4\approx 0$}
-\put(-.3,-0.3){\line(1,0){1.5}}
-\put(-.3,-0.3){\line(1,5){.12}}
-\put(1.2,-0.3){\line(-1,5){.12}}
-\put(-0.18,0.3){\line(1,0){1.26}}
-\put(1.1,-0.25){$\Pi$}
-\end{picture}\caption{Four-body problem with three primaries}\label{fig:conf_esp}
- \end{center}
-
-\end{figure}
-
-Problems like the one presented have been extensively discussed in the literature. In \cite{sitnikov1960existence} K. Sitnikov considered the problem of two body in a Keplerian elliptic motion, for small enough eccentricity $e>0$, and a massless particle moving in the perpendicular line to the orbital plane passing
-through the center of masses. Sitnikov obtained deep results about existence of solutions with a chaotic behavior (see \cite[III(5)]{moser2016stable}). Periodic solutions for a Sitnikov configuration were considered in \cite{pustyl1990certain, corbera2000periodic, corbera2002symmetric, llibre2008families}.
-
-
-Generalized circular Sitnikov problems ($n\geq 3$)   were addressed more recently.
-In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$. They considered  a Lagrangian equilateral triangle configuration for the primaries bodies, which were supposed to have the same mass $m_1=m_2=m_3$. In \cite{bountis2009stability} Papadakis and Bountis extend of results of \cite{soulis2008periodic} to $n$ primaries ($n\geq 3$) in a poligonal equal mass configuration. Later  in \cite{pandey2013periodic}, Pandey and Ahmad extend the analysis started in \cite{soulis2008periodic} to the case when the primaries are oblate (not mass points).
+Generalized circular Sitnikov problems, i.e. we have $n\geq 3$ primaries in a relative equilibrium motion,   were addressed more recently.
+In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$. They considered  a Lagrangian equilateral triangle configuration for the primary bodies, which were supposed to have the same mass $m_1=m_2=m_3$. In \cite{bountis2009stability} Papadakis and Bountis extended the results of \cite{soulis2008periodic} to $n$ primaries ($n\geq 3$) in a poligonal equal masses configuration. Later  in \cite{pandey2013periodic}, Pandey and Ahmad generalized  analysis started in \cite{soulis2008periodic} to the case with oblate primaries, i.e with space extended bodies.
 In \cite{li2013characterization} Li, Zhang and Zhao studied a special type of
-restricted circular $n+1$-body problem  with equal masses for the primaries in a regular polygon configuration. In the previous papers the primary bodies are in the vertices of a regular polygon. In \cite{marchesin2013spatial} Marchesin and Vidal studied the problem $P$ for a rigid motion  of primaries in a  rhomboidal configuration.
-Periodic solutions for generalized Sitnikov problems with primaries performing  no rigid motions were studied in \cite{rivera2013periodic, pustyl1990certain}. In \cite{bakker2015separating} Bakker and Simmons studied scape regions for the massless particle in a problem similar to $P$ for a certain type of periodic orbits for primaries.
+restricted circular $n+1$-body problem  with equal masses for the primaries in a regular polygon configuration. Periodic solutions for generalized Sitnikov problems with primaries performing  no rigid motions were studied in \cite{pustyl1990certain,rivera2013periodic}. In the previous papers the primary bodies are in the vertices of a regular polygon. In \cite{marchesin2013spatial} Marchesin and Vidal studied the problem $P$ for a rigid motion  of primaries in a  rhomboidal configuration.
+ In \cite{bakker2015separating} Bakker and Simmons studied scape regions for the massless particle in a problem similar to $P$ for a certain type of periodic orbits for primaries including non homographic motions.
 
 
 In the present paper, after introducing preliminaries facts in Section \ref{sec:pre},   we
-obtain in Section \ref{sec:admisible.configuraciones} necessary and sufficient conditions on  configuration of primaries bodies in order  that the $z$-axis is invariant for the flow associated to the motion equations of the massless particle. For this type of configurations, that we call \emph{admissible}, the Sitnikov problem has sense.  In Section \ref{sec:addmisibles} we will find all admissible configurations for $n\leq 4$ primaries.  The Section \ref{sec:mas-mot} is devoted to describe all possible motion of the massless particle when the primaries are in a relative equilibrium (or rigid) motion. In this direction we observe that only are possible scape (both parabolic and hiperbolic) and periodic motions. Moreover, we will give a formula expressing the period of solutions  by means of integrals.  We prove in Corollary \ref{cor:sol.periodica.sist.completo} that the complete $n+1$-body system has  infinite quatity of periodic solutios. In Section  \ref{sec:sincro} we discuss the 
-situation when the entire system has a solution with the same period that the rigid motion of primaries. Surprisingly this fact is related to the existence of certain pyramidal central configurations (see \cite{fayccal1996classification,faycaltesis,ouyang2004pyramidal} for the definition of this concept). Finally, in the last section, we study certain non admissible configurations which allows some particular solutions of problem $P$.
+obtain in Section \ref{sec:admisible.configuraciones} necessary and sufficient conditions on the configuration of primary bodies in order  that the $z$-axis to be invariant for the flow associated to the motion equations of the massless particle. For this type of configurations, that we call \emph{balanced}, the Sitnikov problem has sense.  In Section \ref{sec:addmisibles} we will find all balanced configurations for $n\leq 4$ primaries.  The Section \ref{sec:mas-mot} is devoted to describe all possible motion of the massless particle when the primaries are in a relative equilibrium (or rigid) motion. In this direction we observe that only are possible scape (both parabolic and hiperbolic) and periodic motions. Moreover, we will give a formula expressing the period of solutions  by means of integrals.  We prove in Corollary \ref{cor:sol.periodica.sist.completo} that the complete $n+1$-body system has  infinite quantity of periodic solutions. In Section  \ref{sec:sincro} we discuss the
+situation when the entire system has a solution with the same period that the rigid motion of primaries. We call it synchronous solution. Surprisingly this fact is related to the existence of certain pyramidal central configurations (for the definition of this concept see \cite{fayccal1996classification,faycaltesis,ouyang2004pyramidal}). Finally, in the last section, we study certain non balanced configurations which allows some particular solutions of problem $P$.
 
+In this paper we generalize and extend some results previously establish in the literature. For example our results in Section \ref{sec:mas-mot} generalize the results obtained by Marchesin and Vidal in \cite{marchesin2013spatial} for a rhomboidal configuration to any balanced configuration. In Section \ref{sec:sincro} we prove that there exists synchronous solutions for primaries in a regular poligonal equal mass configuration if and only if $2\leq n\leq 472$. The sufficient of this fact was established in \cite{li2013characterization}.
 
 
 \section{Preliminaries}\label{sec:pre}
@@ -272,7 +238,7 @@ It is well know that a  necessary and sufficient condition for that $L$ be invar
 
 \begin{defi}
 We say that a
-central configuration $q$ is \emph{admissible} if and only if satisfies that for any $r>0$, such that the set
+central configuration $q$ is \emph{balanced} if and only if satisfies that for any $r>0$, such that the set
 \[F_r:=\{i:|q_i|=r\}\]
 is non empty, then
 \begin{equation}\label{eq:suma0}\sum_{i\in F_r}m_iq_i=0.\end{equation}
@@ -281,7 +247,7 @@ i.e. every maximal set of  bodies which are equidistant from origin has center o
 
 
 
-\begin{thm}\label{thm:prim} $L$ is $f$-invariant for every $t$ if and only  $q$ is admissible.
+\begin{thm}\label{thm:prim} $L$ is $f$-invariant for every $t$ if and only  $q$ is balanced.
 \end{thm}
 
 For the proof of the previous theorem we need the following result
@@ -356,14 +322,14 @@ According to Lemma \ref{lem:1}, the last equation is equivalent to \eqref{eq:sum
 
 \section{Admissible collisionless configurations for $n\leq 4$}\label{sec:addmisibles}
 
-In this section we find all admissible collisionless configuration with $n\leq 4$. We observe that the collisionless condition for a configuration $q_1.\ldots,q_n$ implies that $q_i\neq 0$ for $i=1,\ldots,n$. From the fact that the center of masses is an excluded position we obtain
+In this section we find all balanced collisionless configuration with $n\leq 4$. We observe that the collisionless condition for a configuration $q_1.\ldots,q_n$ implies that $q_i\neq 0$ for $i=1,\ldots,n$. From the fact that the center of masses is an excluded position we obtain
 \begin{equation}\label{F_r.no.vac-->CF_r.geq2}
  F_r\neq \emptyset \Rightarrow \# F_r\geq 2.
 \end{equation}
 
 
 
-Trivially, a configuration of two point masses $m_1$ and $m_2$ is admissible if and only if $m_1=m_2$.
+Trivially, a configuration of two point masses $m_1$ and $m_2$ is balanced if and only if $m_1=m_2$.
 
 If $n=3$, from \eqref{F_r.no.vac-->CF_r.geq2}, the configuration consists of three equidistant bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, by equation \eqref{eq:suma0} and an elementary geometrical reazoning   we have that $m_1=m_2=m_3$.
 
@@ -677,7 +643,7 @@ It is easy to see that $f(x)$ is a decreasing function on $(0,\pi/2)$. Moreover 
 
 
 
-Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all admissible CC of 3-body or 4-body. Since we have already proved, in  Corollary \ref{cor:nleq472}, that \eqref{eq:ine_prin} holds for a equilateral triangle and square configurations of equal masses bodies, it only rest to prove, in virtue of Theorem \ref{thm:caracterizacion4}, the following result.
+Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied for all balanced CC of 3-body or 4-body. Since we have already proved, in  Corollary \ref{cor:nleq472}, that \eqref{eq:ine_prin} holds for a equilateral triangle and square configurations of equal masses bodies, it only rest to prove, in virtue of Theorem \ref{thm:caracterizacion4}, the following result.
 
 
 
@@ -733,7 +699,7 @@ As consequence of previous results there exist five-body $PCC's$ with $m_1,\ldot
 
 
 \begin{cor}
-For all  admissible CC of 3-body or 4-body  problem $P$ has a synchronous solution.
+For all  balanced CC of 3-body or 4-body  problem $P$ has a synchronous solution.
 \end{cor}
 
 
@@ -759,9 +725,9 @@ For all  admissible CC of 3-body or 4-body  problem $P$ has a synchronous soluti
 
 
 
-\section{Non admissible central configurations}
+\section{Non balanced central configurations}
 
-The following result shows a necessary condition for that  a non-admissible CC allows a solution of the problem $P$.
+The following result shows a necessary condition for that  a non-balanced CC allows a solution of the problem $P$.
 
 \begin{thm}\label{thm:no.admisible.movimiento}
 We suppose that $q$ is a non admisible CC and  that the primaries are in a homographic motion, i.e.  equation \eqref{eq:x_j=rtQtq_j} is satisfied. Assume that the massless particle is moving on the $z$-axis with position vector $x_0(t)=(0,0,z(t))$. Then, some of the following statement is satisfies:
@@ -788,7 +754,7 @@ With the same notation and following similar reasoning that in the proof of Theo
 \begin{equation}\label{eq:sumr.sumFr_miqi=0}
 \sum_{j=1}^k\left\{\frac{1}{(s_j^{2}+(z(t)/r(t))^2)^{3/2}}\sum_{i\in F_j}m_iq_i\right\}=0.
 \end{equation}
-If $z(t)/r(t)$  would be a non constant function then previous equation and Lemma \ref{lem:1} would imply that $q$ is admissible, which is a contradiction. Hence there exist $c\in \rr$ such that $z(t)=cr(t)$. Now, we have two cases.
+If $z(t)/r(t)$  would be a non constant function then previous equation and Lemma \ref{lem:1} would imply that $q$ is balanced, which is a contradiction. Hence there exist $c\in \rr$ such that $z(t)=cr(t)$. Now, we have two cases.
 
 \emph{Case 1:} $c=0$. Then $z\equiv 0$ and \eqref{eq:acel.centrmasa=0} follows from \eqref{eq:z/r}.
 
@@ -806,7 +772,7 @@ Therefore, if $d\neq 0$ then $\dot{r}(t)\equiv 0$, and this implies $\dot{z}(t)\
 
 
 \begin{ejemplo}
- We present an example of a $n+1$-body system satisfiying the situation described in the item \ref{it:z==0} of the Theorem \ref{thm:no.admisible.movimiento}, i.e. $q$ is a non admissible CC and $z(t)\equiv 0$.
+ We present an example of a $n+1$-body system satisfiying the situation described in the item \ref{it:z==0} of the Theorem \ref{thm:no.admisible.movimiento}, i.e. $q$ is a non balanced CC and $z(t)\equiv 0$.
 
  Let's  consider a particular Euler's linear central configuration formed by three collinear bodies of mass $m_1 = 4-\mu$, $m_2 = 2 + \mu$, $m_3 = 1$, where $0<\mu<1$, and $q_1 = 0$, $q_2 = 1$ and $q_3 = 1 + r$ their respective positions, with $r$ such that
 \[ p(r,\mu)=0,\]
@@ -825,7 +791,7 @@ because $0<r<1$.
 \end{ejemplo}
 
 \begin{comentario}
- The following question is posed. Is there some non admissible central configuration $q$ such that the $n+1$-body system perform the motion described in Theorem \ref{thm:no.admisible.movimiento}(2)?
+ The following question is posed. Is there some non balanced central configuration $q$ such that the $n+1$-body system perform the motion described in Theorem \ref{thm:no.admisible.movimiento}(2)?
 \end{comentario}
 
 
