@@ -96,18 +96,16 @@
   Size                     = {30366609 octets}
 }
 
-@ARTICLE{Moeckel:2014,
-AUTHOR = {Moeckel, R. },
-TITLE   = {{C}entral configurations},
-YEAR    = {2014},
-JOURNAL = {Scholarpedia},
-VOLUME  = {9},
-NUMBER  = {4},
-PAGES   = {10667},
-DOI     = {10.4249/scholarpedia.10667},
-NOTE    = {revision \#142886}
-}
+@Misc{CalAux,
+  Title                    = {Auxiliary Calculations},
 
+  Author                   = {Beltritti, Gast{\'o}n and Mazzone, Fernando and Oviedo, Martina},
+
+  Editor                   = {{GitHub}},
+  LastChecked              = {29.12.2016},
+  Originalyear             = {29.12.2016},
+  Url                      = {https://github.com/fdmazzone/ArchivosProyecto/blob/master/Mecanica%20Celeste/CalculosPaper.ipynb}
+}
 
 @Book{GerhardBeutler233,
   Title                    = {Methods of Celestial Mechanics: Volume I: Physical, Mathematical, and Numerical Principles},
@@ -252,28 +250,6 @@ NOTE    = {revision \#142886}
   Publisher                = {Elsevier}
 }
 
-
-@article{fayccal1996classification,
-  title={On the classification of pyramidal central configurations},
-  author={Fay{\c{c}}al, Nelly},
-  journal={Proceedings of the American Mathematical Society},
-  volume={124},
-  number={1},
-  pages={249--258},
-  year={1996}
-}
-
-@article{ouyang2004pyramidal,
-  title={Pyramidal central configurations and perverse solutions.},
-  author={Ouyang, Tiancheng and Xie, Zhifu and Zhang, Shiqing},
-  journal={Electronic Journal of Differential Equations (EJDE)[electronic only]},
-  volume={2004},
-  pages={Paper--No},
-  year={2004},
-  publisher={Southwest Texas State University, Department of Mathematics, San Marcos, TX; North Texas State University, Department of Mathematics, Denton}
-}
-
-
 @Book{FlorinDiacu257,
   Title                    = {Relative Equilibria of the Curved N-Body Problem},
   Author                   = {Florin Diacu},
@@ -292,6 +268,16 @@ NOTE    = {revision \#142886}
   Publisher                = {Springer},
   Year                     = {1993},
   Pages                    = {71--80}
+}
+
+@Article{fayccal1996classification,
+  Title                    = {On the classification of pyramidal central configurations},
+  Author                   = {Fay{\c{c}}al, Nelly},
+  Journal                  = {Proceedings of the American Mathematical Society},
+  Year                     = {1996},
+  Number                   = {1},
+  Pages                    = {249--258},
+  Volume                   = {124}
 }
 
 @PhdThesis{Faycaltesis,
@@ -556,6 +542,17 @@ NOTE    = {revision \#142886}
   Publisher                = {JSTOR}
 }
 
+@Article{ouyang2004pyramidal,
+  Title                    = {Pyramidal central configurations and perverse solutions.},
+  Author                   = {Ouyang, Tiancheng and Xie, Zhifu and Zhang, Shiqing},
+  Journal                  = {Electronic Journal of Differential Equations (EJDE)[electronic only]},
+  Year                     = {2004},
+  Pages                    = {Paper--No},
+  Volume                   = {2004},
+
+  Publisher                = {Southwest Texas State University, Department of Mathematics, San Marcos, TX; North Texas State University, Department of Mathematics, Denton}
+}
+
 @Article{perez2009periodic,
   Title                    = {On the periodic orbits of the circular double Sitnikov problem},
   Author                   = {P{\'e}rez, Hugo Jim{\'e}nez and Lacomba, Ernesto A},
@@ -633,6 +630,13 @@ NOTE    = {revision \#142886}
   Publisher                = {Elsevier}
 }
 
+@Book{rivera2012bifurcacion,
+  Title                    = {Bifurcaci{\'o}n de soluciones peri{\'o}dicas en el problema de Sitnikov},
+  Author                   = {Rivera Acevedo, Andr{\'e}s Mauricio},
+  Publisher                = {Granada: Universidad de Granada},
+  Year                     = {2012}
+}
+
 @Article{rivera2013periodic,
   Title                    = {Periodic Solutions in the Generalized {S}itnikov $(N+1)$-Body Problem},
   Author                   = {Rivera, Andr{\'e}s},
@@ -654,13 +658,6 @@ NOTE    = {revision \#142886}
 
   Languages                = {eng},
   Size                     = {19111372 octets}
-}
-
-@book{rivera2012bifurcacion,
-  title={Bifurcaci{\'o}n de soluciones peri{\'o}dicas en el problema de Sitnikov},
-  author={Rivera Acevedo, Andr{\'e}s Mauricio},
-  year={2012},
-  publisher={Granada: Universidad de Granada}
 }
 
 @Book{DonaldSaari263,
@@ -793,5 +790,10 @@ NOTE    = {revision \#142886}
   Volume                   = {2015},
 
   Publisher                = {Springer International Publishing}
+}
+
+@Electronic{,
+  Owner                    = {fernando},
+  Timestamp                = {2017.09.07}
 }
 
