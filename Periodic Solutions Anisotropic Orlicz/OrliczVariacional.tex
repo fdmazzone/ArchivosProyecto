@@ -88,7 +88,7 @@ Universidad Nacional de La Pampa\\
 \renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Phi^{\star}}}
 \newcommand{\Phie}{\Phi^{\star}}
-
+\newcommand{\lip}{\mathop{\rm Lip}}
 
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
@@ -166,7 +166,7 @@ The goal of this paper is to obtain existence of solutions for  the following pr
 \begin{equation}\label{eq:ProbPhiLapla}
     \left\{%
 \begin{array}{ll}
-  \frac{d}{dt} \nabla \Phi(u'(t))= \nabla_{x}F(t,u(t)), \quad \ t \in (0,T),\\
+  \frac{d}{dt} \nabla \Phi(u'(t))= \nabla_{x}F(t,u(t)), \quad \hbox{for a.e. } t \in (0,T),\\
     u(0)-u(T)=u'(0)-u'(T)=0,
 \end{array}%
 \right. .\tag{${P_{\Phi}}$}
@@ -177,12 +177,14 @@ The goal of this paper is to obtain existence of solutions for  the following pr
 
 
 
-Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}.  We will find solutions of \eqref{eq:ProbPhiLapla} for finding extreme points of the \emph{action integral} 
+Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}. 
+We suggest the article  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existence of solutions for systems like \eqref{eq:ProbPhiLapla}.
+ We will find solutions of \eqref{eq:ProbPhiLapla} for finding extreme points of the \emph{action integral} 
 \begin{equation}\label{eq:integral_accion}
   I(u):=\int_{0}^T \Phi(u'(t))+ F(t,u(t))\ dt.\tag{$IA$}
 \end{equation}
 
-We suggest the article  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existence of solutions for systems like \eqref{eq:ProbPhiLapla}.
+In what follows, we shall denote by $\mathcal{L}=\mathcal{L}_{\Phi,F}$ to the function $\Phi(y)+F(t,x)$, and we will call it \emph{Lagrangian}. 
 
 
   Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi_2(x):=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi_p(y):=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}.  If $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$  is defined by
@@ -484,11 +486,10 @@ Another immediate consequence of  Lemma \ref{lem:inclusion orlicz} is the follow
 
 \section{Existence of minimizers}\label{sec:existencia}
 
-For simplicity, from now on we will consider Lagrangian functions of the form \eqref{eq:lagrange_phi}, i.e.  $\mathcal{L}= \mathcal{L}_{\Phi,F}$. However, the results of this section extend without difficulty to any lagrangian $\mathcal{L}$ with $\mathcal{L}\geq \mathcal{L}_{\Phi,F}$ (see \cite{ABGMS2015}).
 
-It is well known that an important ingredient in the direct method of calculus of variations is the coercivity of action integrals. To obtain  coercivity for integral $I$ defined in  \eqref{eq:integral_accion} with $\mathcal{L}= \mathcal{L}_{\Phi,F}$, it is necessary to impose more restrictions on the potential $F$.
+It is well known that an important ingredient in the direct method of calculus of variations is the coercivity of action integrals. To obtain  coercivity for integral $I$, defined in  \eqref{eq:integral_accion}, it is necessary to impose more restrictions on the potential $F$.
 
-There are several restrictions that were explored in the past. The one we will study in this article is based on what is known in the literature as sublinearity (see \cite{tang1998periodic,wu1999periodic,zhao2004periodic} for the laplacian, \cite{tang2010periodic,li2015infinitely} for the $p$-laplacian and \cite{yang2013existence,li2014periodic,pasca2010periodic,pacsca2010some} for $(p,q)$-laplacian). In this article we will use another denomination for the sublinearity.
+There are several restrictions that were explored in the past. The one we will study in this article is based on what is known in the literature as sublinearity (see \cite{tang1998periodic,wu1999periodic,zhao2004periodic} for the laplacian, \cite{tang2010periodic,li2015infinitely} for the $p$-laplacian and \cite{yang2013existence,li2014periodic,pasca2010periodic,pacsca2010some} for $(p,q)$-laplacian). In this article we will use another denomination for this property.
 
 
 
@@ -502,7 +503,7 @@ a function $d \in  L^1([0,T],\rr)$, with $d\geq 1$, such that
 \end{defi}
 
 
-The condition \eqref{eq:cond-sub} encompasses the sublinearity condition. For example, in
+The condition \eqref{eq:cond-sub} encompasses the sublinearity condition as it was introduced in the context of $p$-laplacian or $(p_1,p_2)$-laplacian systems. For example, in
  \cite[Th. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a} and the following condition  (we recall that $p'=p/(p-1)$). 
 \begin{enumerate}   
   \labitem{(H)}{item:condicion_h1} There exists $f_i,g_i,h_i\in L^1([0,T],\rr_+)$,  $\alpha_i\in [0,p_i/p_i')$, $i=1,2$,  $\beta_1\in [0,p_2/p_1')$ and $\beta_2\in [0,p_1/p_2')$ such that
@@ -510,8 +511,8 @@ The condition \eqref{eq:cond-sub} encompasses the sublinearity condition. For ex
     |\nabla_{x_i}F(t,x_1,x_2)|\leq f_i(t)|x_1|^{\alpha_i}+g_i(t)|x_2|^{\beta_i}+h_i(t),\quad i=1,2
  \end{equation*}
 \end{enumerate}
-It is easy to prove that \ref{item:condicion_h1}$\Rightarrow$\eqref{eq:cond-sub}, with 
-$\Phi_0(x_1,x_2)=\Phi_{\overline{p}_1,\overline{p}_2}(x_2,x_2)=|x_1|^{\overline{p}_1}/\overline{p}_1+|x_2|^{\overline{p}_2}/\overline{p}_2$, where $\overline{p}_i$, $i=1,2$, are taken so that  $\max\{\alpha_1p_1',\beta_2p_2'\}\leq \overline{p}_1<p_1$ and $\max\{\alpha_2p_2',\beta_1p_1'\}\leq \overline{p}_2<p_2$ and  $d=C(1+\sum_i \{f_i+g_i+h_i\})\in L^1$, with  $C>0$ chosen large enough.
+It is easy to prove that \ref{item:condicion_h1}$\Rightarrow$\eqref{eq:cond-sub}, with $\Phi=\Phi_{p_1,p_2}$, 
+$\Phi_0=\Phi_{\overline{p}_1,\overline{p}_2}$, where $\overline{p}_i$, $i=1,2$, are taken so that  $\max\{\alpha_1p_1',\beta_2p_2'\}\leq \overline{p}_1<p_1$ and $\max\{\alpha_2p_2',\beta_1p_1'\}\leq \overline{p}_2<p_2$ and  $d=C(1+\sum_i \{f_i+g_i+h_i\})\in L^1$, with  $C>0$ chosen large enough.
 
 
 
@@ -538,7 +539,7 @@ Let $M$ be a weak${\star}$ closed subspace of $\lphi$ and let $V\subset C([0,T],
   \begin{equation}\label{eq:cond_C}
     \Phi_0(x)\leq \Phi\left(\frac{x}{2\lambda}\right)+C(\lambda),\quad  x\in\rr^d. 
   \end{equation}
-By the decomposition $u=\overline{u}+\tilde{u}$, the absolutely continuity of $F(t,x+sy)$ with respect to $s\in\rr$,  Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$, \eqref{eq:escalar_ine_2}, \eqref{eq:cond_C}, \eqref{eq:wirtinger}  we obtain
+By the decomposition $u=\overline{u}+\tilde{u}$, the absolutely continuity of $F(t,x+sy)$ with respect to $s\in\rr$,  Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$, \eqref{eq:escalar_ine_2}, \eqref{eq:cond_C} and \eqref{eq:wirtinger}  we obtain
 \begin{equation*}\label{eq:cota-dif-F}
 \begin{split}
 J&:=\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
@@ -546,13 +547,13 @@ J&:=\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
 &\leq \int_0^T \int_0^1 |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|dsdt
 \\
 &\leq
-\lambda \int_0^T d(t) \int_0^1 \Phi^{\star}\left(d^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u})\right)+\Phi\left(\frac{\tilde{u}}{\lambda}\right)dsdt
+\lambda \int_0^T d(t) \int_0^1 \left[ \Phi^{\star}\left(d^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u})\right)+\Phi\left(\frac{\tilde{u}}{\lambda}\right)\right]dsdt
 \\
 &\leq
-\lambda\int_0^T d(t)\left[\int_0^1 \frac12\Phi_0(2\overline{u})+\frac12\Phi_0(2\tilde{u})ds+\Phi\left(\frac{\tilde{u}}{\lambda}\right)+1 ds\right]dt
+\lambda\int_0^T d(t)\int_0^1\left[ \frac12\Phi_0(2\overline{u})+\frac12\Phi_0(2\tilde{u})ds+\Phi\left(\frac{\tilde{u}}{\lambda}\right)+1 \right]dsdt
 \\
 &\leq
-\lambda\int_0^T d(t)\left[\int_0^1 \Phi_0(2\overline{u})+2\Phi\left(\frac{\tilde{u}}{\lambda}\right)+C(\lambda) ds\right]dt
+\lambda\int_0^T d(t)\int_0^1\left[ \Phi_0(2\overline{u})+2\Phi\left(\frac{\tilde{u}}{\lambda}\right)+C(\lambda) \right]dsdt
 \\
 &\leq C_1 \Phi_0(2\overline{u})+\lambda C_2 \int_0^T \Phi\left(\frac{Tu'(s)}{\lambda}\right)ds+C_1
 \end{split}
@@ -604,16 +605,31 @@ $\lphi \hookrightarrow L^1$ and \cite[Thms. 2.3 and 2.17 ]{buttazzo1998one},
 we obtain $u\in \wphi$ and $v=u'$ a.e. $t\in [0,T]$.
 Hence, $u \in H$. 
 
-Finally, the semicontinuity of $I$ implies that $u$ is a minimum of $I$.
+Finally, the semicontinuity of $I$, established in step 2,  implies that $u$ is a minimum of $I$.
 \end{proof}
 
 
+\begin{comentario} The results of this section extend without difficulty to any Lagrangian $\mathcal{L}$ with $\mathcal{L}\geq \mathcal{L}_{\Phi,F}$ (see \cite{ABGMS2015}).
+\end{comentario}
 
-\section{Differentiability Gate\^aux of action integrals in anisotropic Orlicz spaces}\label{sec:diferenciabilidad}
+
+\section{Differentiability of solutions and Euler-Lagrange equations}\label{sec:diferenciabilidad}
+
+
+This section will address the question of when minimizers of $I$ are solutions of \eqref{eq:ProbPhiLapla}. It is classical result that minimizers, on an appropriate set, of action integral satisfying an a priori smothness condition (e.g. Lipschitz continuity) are solutions of \eqref{eq:ProbPhiLapla} (see \cite{buttazzo1998one}).  In Theorem \ref{th:tor_prin} we obtain a better a priori condition for the action integral under consideration.
+
+We denote by $\lip([0,T],\rr^d)$ the set of $\rr^d$-valued Lipschitz continuous functions defined on $[0,T]$. If $X\subset \lphi([0,T],\rr^d)$ and $u\in \lphi([0,T],\rr^d)$,  we denote by $d(u,X)$ the distance of $u$ to $X$ computed with respect  to the Luxemburg norm. We recall that  $u\in\lip([0,T],\rr^d)$ implies  $d(u',L^{\infty}([0,T],\rr^d))=0$. Te following is the main result of this section.
 
 
 
-In order that $I$ is defined and be differentiable over certain Sobolev-Orlicz spaces (which we will define later) we need to introduce the following property.
+
+\begin{thm}\label{th:tor_prin} Assume $\Phi$, $\Phi_0$ and $F$ as in Theorem \ref{coercitividad-r} and $\Phi$  strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi[0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',L^{\infty}([0,T],\rr^d))<1$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
+\end{thm}
+
+
+The proofs of previous results depends on the G\^ateaux differentiability of the action integral. We will consider a more general Lagrangian function $\mathcal{L}$.
+
+
 
 
 \begin{defi} We say that a lagrangian $\mathcal{L}$ satisfies the condition \eqref{eq:condicion-estructura} if
@@ -666,10 +682,9 @@ According to Remark \ref{com:lphi-satis S} and Theorem \ref{teo:diferenciabilida
 
 From Theorem \ref{teo:diferenciabilidad}, $\nabla_xF(t,u(t))\in L^1([0,T],\rr^d)$ and  $\nabla\Phi\left(u'(t)\right)\in\linebreak\lpsi([0,T],\rr)\hookrightarrow L^1([0,T],\rr)$.  Identity \eqref{eq:der_deb} holds for every $v\in C^{\infty} ([0,T],\rr^d)$ with $v(0)=v(T)$. Using the \cite[Fundamental Lemma, p. 6]{mawhin2010critical} we get that $\nabla\Phi(u'(t))$ is absolutely continuous and $(d/dt)\left(\nabla\Phi(u'(t))\right) = \nabla_xF(t,u(t))$, a.e. on $[0,T]$. Moreover, $\nabla\Phi(u'(0))=\nabla\Phi(u'(T))$. We can not move forward without assuming that $\Phi$ is \emph{strictly convex}, i.e. $\Phi(\lambda x+(1-\lambda)y)<
 \lambda \Phi(x)+(1-\lambda)\Phi(y)$, when $\lambda\in (0,1)$. 
-It is  well known that, in this case $\nabla\Phi:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Ex. 4.17, p. 67]{clarke2013functional}). Hence, we coclude that $u'(0)=u'(T)$.  We have proved the following result.
+It is  well known that, in this case $\nabla\Phi:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Ex. 4.17, p. 67]{clarke2013functional}). Hence, we coclude that $u'(0)=u'(T)$.  We have proved Theorem \ref{th:tor_prin}.
 
-\begin{thm}\label{th:tor_prin} Assume $\Phi$, $\Phi_0$ and $F$ as in Theorem \ref{coercitividad-r} and $\Phi$ is strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi[0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',\ephi)<1$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
-\end{thm}
+
 
 \begin{comentario} If $u$ is a minimum of $I$ on $H$ then  $d(u',\ephi)\leq 1$. This follows of  that $\rho_{\Phi}(u')<\infty$ and \eqref{eq:inclusiones}. Then, the possible minima of $I$ that do not satisfy the hypotheses of  Theorem \ref{th:tor_prin} lie in a nowhere dense set of the domain of $I$.
  
