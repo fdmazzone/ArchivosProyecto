@@ -618,21 +618,20 @@ Finally, the semicontinuity of $I$, established in step 2,  implies that $u$ is 
 
 This section will address the question of when minimizers of $I$ are solutions of \eqref{eq:ProbPhiLapla}. It is classical result that minimizers, on an appropriate set, of action integral satisfying an a priori smothness condition (e.g. Lipschitz continuity) are solutions of \eqref{eq:ProbPhiLapla} (see \cite{buttazzo1998one}).  In Theorem \ref{th:tor_prin} we obtain a better a priori condition for the action integral under consideration.
 
-We denote by $\lip([0,T],\rr^d)$ the set of $\rr^d$-valued Lipschitz continuous functions defined on $[0,T]$. If $X\subset \lphi([0,T],\rr^d)$ and $u\in \lphi([0,T],\rr^d)$,  we denote by $d(u,X)$ the distance of $u$ to $X$ computed with respect  to the Luxemburg norm. We recall that  $u\in\lip([0,T],\rr^d)$ implies  $d(u',L^{\infty}([0,T],\rr^d))=0$. Te following is the main result of this section.
+We denote by $\lip([0,T],\rr^d)$ the set of $\rr^d$-valued Lipschitz continuous functions defined on $[0,T]$. If $X\subset \lphi([0,T],\rr^d)$ and $u\in \lphi([0,T],\rr^d)$,  we denote by $d(u,X)$ the distance of $u$ to $X$ computed with respect  to the Luxemburg norm. We recall that  $u\in\lip([0,T],\rr^d)$ implies  $d(u',L^{\infty}([0,T],\rr^d))=0$. The following is the main result of this section.
 
 
 
 
-\begin{thm}\label{th:tor_prin} Assume $\Phi$, $\Phi_0$ and $F$ as in Theorem \ref{coercitividad-r} and $\Phi$  strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi[0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',L^{\infty}([0,T],\rr^d))<1$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
+\begin{thm}\label{th:tor_prin} Assume $\Phi$, $\Phi_0$ and $F$ as in Theorem \ref{coercitividad-r} and $\Phi$  strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi([0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',L^{\infty}([0,T],\rr^d))<1$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
 \end{thm}
 
 
-The proofs of previous results depends on the G\^ateaux differentiability of the action integral. We will consider a more general Lagrangian function $\mathcal{L}$.
+The proof of the previous theorem depends on the G\^ateaux differentiability of the action integral on the space $\wphi([0,T],\rr^d)$. We will consider a more general Lagrangian function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, which  is assumed  measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. We denote by $I=I_{\mathcal{L}}$ the action integral associated to $\mathcal{L}$. In order to obtain differentiability of $I$, it is necessary to impose some constraints on $\mathcal{L}$. In the paper \cite{chamra2017anisotropic}, Chmara and Maksymiuk  obtained differentiability assuming  a condition  similar to Definition \ref{def:estructura}. and that $\Phi\in\Delta_2\cap\nabla_2$. This last  condition allows to Chmara and Maksymiuk  a less technical proof of the differentiability. However, for our purposes the condition $\Phi\in\Delta_2$ is a very serious limitation,     since it leaves out of consideration functions that grow faster than powers. That is one of the greatest achievements of considering anisotropic Orlicz spaces according to our criterion.  For this reason, we present a proof  of the results obtained in \cite{chamra2017anisotropic} without the assumption $\Phi\in\Delta_2$. 
 
 
 
-
-\begin{defi} We say that a lagrangian $\mathcal{L}$ satisfies the condition \eqref{eq:condicion-estructura} if
+\begin{defi}\label{def:estructura} We say that a lagrangian $\mathcal{L}$ satisfies the condition \eqref{eq:condicion-estructura} if
 \begin{equation}\label{eq:condicion-estructura}
   |\mathcal{L}|+ |\nabla_{x}\mathcal{L}|+\Phi^{\star}\left(\frac{\nabla_{y}\mathcal{L}}{\lambda}\right)
 \leq
