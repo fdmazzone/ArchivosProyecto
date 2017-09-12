@@ -188,15 +188,26 @@ In what follows, we shall denote by $\mathcal{L}=\mathcal{L}_{\Phi,F}$ to the fu
 
 
   Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi_2(x):=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi_p(y):=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}.  If $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$  is defined by
-\[\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2},\] 
+\begin{equation}\label{eq:phip_1p_2}\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2},\end{equation}
 then \eqref{eq:ProbPhiLapla} becomes  $(p_1,p_2)$-Laplacian system, see
-\cite{li2014periodic,pasca2010periodic,pacsca2010some,pasca2011some,pasca2016periodic,yang2012periodic,yang2013existence}.
+\cite{li2014periodic,pasca2010periodic,pacsca2010some,pasca2011some,pasca2016periodic,yang2012periodic,yang2013existence}.  In a previous paper (see \cite{ABGMS2015}), we consider similar results in a isotropic Orlicz framework.
 
 
-Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some results on $(p_1,p_2)$-Laplacian systems since we obtain existence  of solutions for these systems under conditions less restrictive that the previously established.   
-For all this, we believe that Sobolev-Orlicz's anisotropic spaces can provide a suitable framework for unifying many known results. On the other hand, we consider that one of the most important aspects in our work  is considering functions $\Phi$  with  faster growth than powers function. For example we obtain existence for 
-\[XXXXX.\]  
-As far as we know, this type of result  are a novelty. In a previous paper (see \cite{ABGMS2015}), we consider similar results in a isotropic framework.
+Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some resul ts on $(p_1,p_2)$-Laplacian systems since we obtain existence  of solutions for they under conditions less restrictive that the previously established.   
+For all this, we believe that Sobolev-Orlicz's anisotropic spaces can provide a suitable framework for unifying many known results. On the other hand, we consider that one of the most important aspects in our work  is considering functions $\Phi$  with  faster growth than powers function. 
+
+\begin{example} As one example, we obtain existence for 
+\begin{equation}\label{eq:RandExample}
+    \left\{%
+\begin{array}{ll}
+  \frac{d}{dt} \left[u_1(t)e^{(u_1'(t))^2+(u_2'(t))^2}\right]= F_{x_1}(t,u(t)), \quad \hbox{for a.e. } t \in (0,T),\\
+   \frac{d}{dt} \left[u_2(t)e^{(u_1'(t))^2+(u_2'(t))^2}\right]= F_{x_2}(t,u(t)), \quad \hbox{for a.e. } t \in (0,T),\\
+    u(0)-u(T)=u'(0)-u'(T)=0,
+\end{array}%
+\right. ,
+\end{equation}
+where $p>1$ and $F$ is any function satisfying conditions \ref{item:condicion_c}, \ref{item:condicion_a}, \eqref{eq:cond-sub} and \eqref{eq:apriorilip} below. For example  $F(t,x)=P(t)Q(x)$, with $P$ and $Q$ polynomials satisfies those hypothesis (see Remark \ref{com:ejemplo} below).
+\end{example}
 
 The paper is organized as follows. In Section \ref{sec:preliminares}  we summarize some results, most known, about Orlicz and Orlicz-Sobolev spaces. In order to obtain existence of minimizers of action integrals it is necessary that the functional $I$ be coercive. 
 In the past, several conditions on $F$ have been useful to obtain coercivity of $I$ for the functions  $\Phi_p$ and $\Phi_{p_1,p_2}$ . 
@@ -266,16 +277,6 @@ The complementary function $\Phi^{\star}$ is a  $N_{\infty}$ function (see \cite
  
 \end{enumerate}
 
-
-
-
-The following inequality, which is valid for $\Lambda>1$,  will be useful, it is consequence of \eqref{eq:young-id} and of that $(d/dt)\Phi(tx)=\nabla\Phi(tx)\cdot x$ is an non decreasing function of $t$.  
-
-
-\begin{equation} \label{eq:ine-psi-phi'}
-  \begin{split}
-     \Phi^{\star}(\nabla \Phi (x))\leq  x\cdot \nabla\Phi(x) \leq\frac{1}{\Lambda-1}\int_1^{\Lambda} \frac{d}{dt}\Phi(tx)dt \leq\frac{1}{\Lambda-1}\Phi(\Lambda x). \end{split}
-\end{equation}
 
 We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2$-condition}, it is denoted by $\Phi \in \Delta_2$,
 if there exists a  constant $C>0$  such that
@@ -623,11 +624,15 @@ We denote by $\lip([0,T],\rr^d)$ the set of $\rr^d$-valued Lipschitz continuous 
 
 
 
-\begin{thm}\label{th:tor_prin} Assume $\Phi$, $\Phi_0$ and $F$ as in Theorem \ref{coercitividad-r} and $\Phi$  strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi([0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',L^{\infty}([0,T],\rr^d))<1$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
+\begin{thm}\label{th:tor_prin} Assume   $F$ as in Theorem \ref{coercitividad-r} and $\Phi$  strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi([0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',L^{\infty}([0,T],\rr^d))<1$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
 \end{thm}
 
 
-The proof of the previous theorem depends on the G\^ateaux differentiability of the action integral on the space $\wphi([0,T],\rr^d)$. We will consider a more general Lagrangian function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, which  is assumed  measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. We denote by $I=I_{\mathcal{L}}$ the action integral associated to $\mathcal{L}$. In order to obtain differentiability of $I$, it is necessary to impose some constraints on $\mathcal{L}$. In the paper \cite{chamra2017anisotropic}, Chmara and Maksymiuk  obtained differentiability assuming  a condition  similar to Definition \ref{def:estructura}. and that $\Phi\in\Delta_2\cap\nabla_2$. This last  condition allows to Chmara and Maksymiuk  a less technical proof of the differentiability. However, for our purposes the condition $\Phi\in\Delta_2$ is a very serious limitation,     since it leaves out of consideration functions that grow faster than powers. That is one of the greatest achievements of considering anisotropic Orlicz spaces according to our criterion.  For this reason, we present a proof  of the results obtained in \cite{chamra2017anisotropic} without the assumption $\Phi\in\Delta_2$. 
+The proof of the previous theorem depends on the G\^ateaux differentiability of the action integral on the space $\wphi([0,T],\rr^d)$. We will consider a more general Lagrangian function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, which  is assumed  measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable in $(x,y)$ for almost every $t \in [0,T]$. We consider 
+
+\begin{equation}\label{eq:integral_accion_gen} I(u)=I_{\mathcal{L}}(u)=\int_0^T\mathcal{L}(t,u(t),u'(t))dt\tag{$IG$}
+\end{equation}
+ the action integral associated to $\mathcal{L}$. In order to obtain differentiability of $I$, it is necessary to impose some constraints on $\mathcal{L}$. In the paper \cite{chamra2017anisotropic}, Chmara and Maksymiuk  obtained differentiability for $I$ on $\wphi$ assuming  a condition  similar to Definition \ref{def:estructura} and additionally that $\Phi\in\Delta_2\cap\nabla_2$. For our purposes the condition $\Phi\in\Delta_2$ is a very serious limitation     since it leaves out of consideration functions that grow faster than powers. That is one of the greatest achievements of considering anisotropic Orlicz spaces according to our criterion.  For this reason, we present a proof  of the results obtained in \cite{chamra2017anisotropic} without the assumption $\Phi\in\Delta_2$. When $\Phi\notin\Delta_2$, the  differentiability of $I$ is somewhat more delicate since the effective domain of $I$ is not the whole space $\wphi$. 
 
 
 
@@ -641,73 +646,41 @@ for a.e. $t\in [0,T]$,
 where  $a\in C\left(\mathbb{R}^d,[0,+\infty)\right)$, $b\in L^1\left([0,T],[0,+\infty)\right) $ and $\Lambda,\lambda>0$.
 \end{defi}
 
-Our condition \eqref{eq:condicion-estructura} includes structure conditions that have previously been considered in the literature in the case of $p$-laplacian and $p_1,p_2$-laplacian systems. For example, it is easy to see that, when $\Phi(x)$ is as in Example \ref{ex:p-laplac}, then  the condition \eqref{eq:condicion-estructura}  is equivalent to the structure condition in  \cite[Th. 1.4]{mawhin2010critical}.  If $\Phi$ is a radial $N_{\infty}$ function such that $\Phi^{\star}$ satisfies that $\Delta_2$ function  then \eqref{eq:condicion-estructura} is related to conditions  \cite[Eq. (2)-(4)]{ABGMS2015}.   If $\Phi$ is as in Example \ref{ex:pq-laplac} and $\mathcal{L}=\mathcal{L}(t,x_1,x_2,y_1,y_2)$ is a lagrangian with $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\times\rr^d\times\rr^d\to\rr$ then inequality \eqref{eq:condicion-estructura} is related to estructure conditions like
+Condition \eqref{eq:condicion-estructura} includes structure conditions that have previously been considered in the literature in the case of $p$-laplacian and $p_1,p_2$-laplacian systems. For example, it is easy to see that, when $\Phi(x)=\Phi_p(x)=|x|^p/p$, then  the condition \eqref{eq:condicion-estructura}  is equivalent to the structure condition in  \cite[Th. 1.4]{mawhin2010critical}.  If $\Phi$ is a radial $N_{\infty}$ function such that $\Phi^{\star}$ satisfies that $\Delta_2$ function  then \eqref{eq:condicion-estructura} is related to conditions  \cite[Eq. (2)-(4)]{ABGMS2015}.   If $\Phi=\Phi_{p_1,p_2}$ is as in Equation \eqref{eq:phip_1p_2} and $\mathcal{L}=\mathcal{L}(t,x_1,x_2,y_1,y_2)$ is a lagrangian with $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\times\rr^d\times\rr^d\to\rr$, then inequality \eqref{eq:condicion-estructura} is related to estructure conditions like
 \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192}. As can be seen, condition \eqref{eq:condicion-estructura} is a more compact expression than \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192} and moreover   weaker, because  \eqref{eq:condicion-estructura} does not imply a control of
 $|D_{y_1}L|$ independent of $y_2$. 
 
 
 
-As a consequence of the previous result, we obtain that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
+\begin{comentario} We leave to the reader the proof that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$ then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead to $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
+ \end{comentario}
 
 
-An important example of lagrangian  is giving by:
-
-\begin{equation}\label{eq:lagrange_phi}
-\mathcal{L}_{\Phi,F}(t,x,y):=\Phi(y)+F(t,x).
-\end{equation}
 
 
 \begin{comentario}\label{com:lphi-satis S}
- The lagrangian $\mathcal{L}_{\Phi,F}$ satisfies condition  \eqref{eq:condicion-estructura}, for every $\Lambda<1$. In order to prove this, the only non trivial fact that we should to establishis is that $ \Phi^{\star}(\nabla_{y}\mathcal{L})
+ The lagrangian $\mathcal{L}=\mathcal{L}_{\Phi,F}=\Phi(y)+F(t,x)$ satisfies condition  \eqref{eq:condicion-estructura}, for every $\Lambda<1$. In order to prove this, the only non trivial fact that we should to establishis is that $ \Phi^{\star}(\nabla_{y}\mathcal{L})
 \leq
-a(x)\left\{b(t)+ \Phi\left({y}/{\Lambda}\right)\right\}$. But, from inequality \eqref{eq:ine-psi-phi'} below, 
-$\Phi^{\star}(\nabla_{y}\mathcal{L})=\Phi^{\star}\left(\nabla\Phi(y)\right)\leq \Lambda(1-\Lambda)^{-1} \Phi(y/\Lambda )$, for every $\Lambda<1$.
+a(x)\left\{b(t)+ \Phi\left({y}/{\Lambda}\right)\right\}$. From  \eqref{eq:young-id} and of that $(d/dt)\Phi(tx)=\nabla\Phi(tx)\cdot x$ is an non decreasing function of $t$ we obtain  
+
+\[
+  \begin{split}
+     \Phi^{\star}(\nabla \Phi (x))\leq  x\cdot \nabla\Phi(x) \leq\frac{1}{\Lambda^{-1}-1}\int_1^{\Lambda^{-1}} \frac{d}{dt}\Phi(tx)dt \leq\frac{1}{\Lambda^{-1}-1}\Phi(\Lambda^{-1} x). \end{split}
+\]
+Therefore  $\Phi^{\star}(\nabla_{y}\mathcal{L})=\Phi^{\star}\left(\nabla\Phi(y)\right)\leq \Lambda(1-\Lambda)^{-1} \Phi(y/\Lambda )$, for every $\Lambda<1$. 
 \end{comentario}
-
-
-
-
-
-
-
-
-
-The next step is to obtain variational solutions of  \eqref{eq:ProbPhiLapla}. For this purpose we define the $C([0,T],\rr^d)$-closed linear set $V:=\{u\in C([0,T],\rr^d)|u(0)=u(T)\}$, $M:=\lphi([0,T],\rr^d)$ and $H$ as in Theorem \ref{coercitividad-r}.
-
-
-According to Remark \ref{com:lphi-satis S} and Theorem \ref{teo:diferenciabilidad}, $I$ is G\^ateaux differentiable on $\wphi([0,T],\rr^d)\cap\{u| d(u',\ephi)<1\}$. Let $u$ be a minimum and suppose that  $d(u',\ephi)<1$. By the Fermat's rule (see \cite[Prop. 4.12]{clarke2013functional}), $\langle I'(u),v\rangle=0$, for every $v\in H$. Therefore
-
-\begin{equation}\label{eq:der_deb}\int_0^T\nabla\Phi(u'(t))\cdot v'(t)dt=-\int_0^T \nabla_xF(t,u(t))\cdot v(t)dt.\end{equation}
-
-From Theorem \ref{teo:diferenciabilidad}, $\nabla_xF(t,u(t))\in L^1([0,T],\rr^d)$ and  $\nabla\Phi\left(u'(t)\right)\in\linebreak\lpsi([0,T],\rr)\hookrightarrow L^1([0,T],\rr)$.  Identity \eqref{eq:der_deb} holds for every $v\in C^{\infty} ([0,T],\rr^d)$ with $v(0)=v(T)$. Using the \cite[Fundamental Lemma, p. 6]{mawhin2010critical} we get that $\nabla\Phi(u'(t))$ is absolutely continuous and $(d/dt)\left(\nabla\Phi(u'(t))\right) = \nabla_xF(t,u(t))$, a.e. on $[0,T]$. Moreover, $\nabla\Phi(u'(0))=\nabla\Phi(u'(T))$. We can not move forward without assuming that $\Phi$ is \emph{strictly convex}, i.e. $\Phi(\lambda x+(1-\lambda)y)<
-\lambda \Phi(x)+(1-\lambda)\Phi(y)$, when $\lambda\in (0,1)$. 
-It is  well known that, in this case $\nabla\Phi:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Ex. 4.17, p. 67]{clarke2013functional}). Hence, we coclude that $u'(0)=u'(T)$.  We have proved Theorem \ref{th:tor_prin}.
-
-
-
-\begin{comentario} If $u$ is a minimum of $I$ on $H$ then  $d(u',\ephi)\leq 1$. This follows of  that $\rho_{\Phi}(u')<\infty$ and \eqref{eq:inclusiones}. Then, the possible minima of $I$ that do not satisfy the hypotheses of  Theorem \ref{th:tor_prin} lie in a nowhere dense set of the domain of $I$.
- 
-\end{comentario}
-
-\begin{comentario} The condition $d(u',\ephi)< 1$ is trivially satisfied when $\Phi$ is a $\Delta_2$ function, because, in this case, $\ephi([0,T],\rr^d)=\lphi([0,T],\rr^d)$. Therefore our Theorem \ref{th:tor_prin} implies existence of solutions, among others, for the system  \eqref{ProbP-lapla} and more generally for the system \eqref{eq:sist-p_lapa}. 
-\end{comentario}
-
-\begin{comentario} It seems that it is not possible to choose $M$ otherwise than as in
-the proof of Theorem  \ref{th:tor_prin}. The set $M$ must contain the space $C^{\infty} ([0,T],\rr^d)$ 
-so that we are able to infer \eqref{eq:der_deb}. Thus, $M$ must contain $\ephi([0,T],\rr^d)$. But, it can be  proved that $\ephi([0,T],\rr^d)$  is weak$\star$ dense in $\lphi([0,T],\rr^d)$.
-\end{comentario}
-
-
 
 Given a function $a:\mathbb{R}^d\to \mathbb{R}$, we define the composition operator $\b{a}:\mathcal{M}\to \mathcal{M}$ by $\b{a}(u)(x)= a(u(x))$.
 We will often use the following result whose proof can be performed as that of  Corollary 2.3 in \cite{ABGMS2015}.
+
+
 \begin{lem}\label{lem:cota-a}
 \label{a_bound} If $a\in C(\mathbb{R}^d,\mathbb{R}^+)$ then $\b{a}:\wphi\to L^{\infty}([0,T])$ is bounded.
 More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\infty)$ such that
  $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
 \end{lem}
 
-The following theorem will be used repeatedly. We adapted the proof of 
+The following lemma will be used repeatedly. We adapted the proof of 
 \cite[Lemma 2.5]{ABGMS2015} to the anisotropic case.    For an alternative approach see \cite{chamra2017anisotropic}.  
 
 
@@ -753,14 +726,14 @@ Then $h\in L^1([0,T],\rr)$.
 
 
 
-The  proof of the following theorem follows the same lines as \cite[Th. 3.2]{ABGMS2015} but with some modifications by the lack of monotony of $\Phi$ with  respect to the euclidean norm and the fact that  the notion of absolutely continuous norm (used intensely in \cite[Th. 3.2]{ABGMS2015}) does not work very well in the framework of anisotropic Orlicz spaces.
+The  proof of the following theorem follows the same lines as \cite[Th. 3.2]{ABGMS2015} but with some modifications by the lack of monotony of $\Phi$ with  respect to the euclidean norm and the fact that  the notion of absolutely continuous norm (used intensely in \cite[Th. 3.2]{ABGMS2015}) does not work very well in the framework of anisotropic Orlicz spaces when $\Phi$ is not $\Delta_2$.
 
 
 \begin{thm}\label{teo:diferenciabilidad}
 Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{eq:condicion-estructura}.
 Then the following statements hold:
 \begin{enumerate}
-\item \label{it:T1item1} \label{A1} The action integral given by \eqref{eq:integral_accion}
+\item \label{it:T1item1} \label{A1} The action integral given by \eqref{eq:integral_accion_gen}
 is finitely defined on the set $\domi_{\Lambda}:=W^{1}\lphi\cap\{u|u'\in\Pi(\ephi,\Lambda)\}$.
 
 \item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi_{\Lambda}$ and  its derivative $I'$ is demicontinuous from 
@@ -785,7 +758,7 @@ Now, from  \eqref{eq:condicion-estructura} and Lemma \ref{lem:cota-a} we have
 +\Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(t,u,u')}{\lambda}\right)
 \\
 &\leq A(\|u\sobnor ) \left[b(t)+ \Phi\left(\frac{u'(t)}{\Lambda}\right) \right]\in
- L^1,
+ L^1.
 \end{split}
 \end{equation}
 Thus item \eqref{it:T1item1} is proved integrating this inequality.
@@ -967,6 +940,52 @@ $\rho_{\Phi^{\star}}(u_n-u)\to 0$.
 Since $\Phi^{\star}$ is $\Delta_2$, modular convergence implies norm convergence (see \cite{Skaff1969}).
 \end{proof}
 
+
+
+
+
+
+
+
+\begin{proof}[\textbf{Proof Theorem \ref{th:tor_prin}}] We observe that $H=\{u\in \wphi | u\in V\text{ and } u'\in M\}$ where 
+\[V:=\{u\in C([0,T],\rr^d)|u(0)=u(T)\},\quad M:=\lphi([0,T],\rr^d),\]
+and $V$ is $C([0,T],\rr^d)$-closed. Therefore the functional $I$, given by \eqref{eq:integral_accion}, has a minimum $u$ on  $H$. Suppose that $d(u',L^{\infty})<1$.
+Since $d(u',\ephi)=d(u',L^{\infty})$, according to Remark \ref{com:lphi-satis S} and Theorem \ref{teo:diferenciabilidad}, $I$ is G\^ateaux differentiable at $u$. By the Fermat's rule (see \cite[Prop. 4.12]{clarke2013functional}), $\langle I'(u),v\rangle=0$, for every $v\in H$. Therefore
+
+\begin{equation}\label{eq:der_deb}\int_0^T\nabla\Phi(u'(t))\cdot v'(t)dt=-\int_0^T \nabla_xF(t,u(t))\cdot v(t)dt.\end{equation}
+
+From Theorem \ref{teo:diferenciabilidad}, $\nabla_xF(t,u(t))\in L^1([0,T],\rr^d)$ and  $\nabla\Phi\left(u'(t)\right)\in\linebreak\lpsi([0,T],\rr)\hookrightarrow L^1([0,T],\rr)$.  Identity \eqref{eq:der_deb} holds for every $v\in C^{\infty} ([0,T],\rr^d)$ with $v(0)=v(T)$. Using the \cite[Fundamental Lemma, p. 6]{mawhin2010critical} we get that $\nabla\Phi(u'(t))$ is absolutely continuous and $(d/dt)\left(\nabla\Phi(u'(t))\right) = \nabla_xF(t,u(t))$, a.e. on $[0,T]$. Moreover, $\nabla\Phi(u'(0))=\nabla\Phi(u'(T))$. Since  $\Phi$ is \emph{strictly convex},  then  $\nabla\Phi:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Ex. 4.17, p. 67]{clarke2013functional}). Hence, we conclude that $u'(0)=u'(T)$.  We have proved Theorem \ref{th:tor_prin}.
+\end{proof}
+
+
+
+\begin{comentario} If $u$ is a minimum of $I$ on $H$ then  $d(u',\ephi)\leq 1$. This follows of  that $\rho_{\Phi}(u')<\infty$ and \eqref{eq:inclusiones}. Then, the possible minima of $I$ that do not satisfy the hypotheses of  Theorem \ref{th:tor_prin} lie in a nowhere dense set of the domain of $I$.
+ 
+\end{comentario}
+
+\begin{comentario} The condition $d(u',L^{\infty})< 1$ is trivially satisfied when $\Phi$ is a $\Delta_2$ function, because, in this case, $L^{\infty}$ is dense in $\lphi([0,T],\rr^d)$. In particular our Theorem \ref{th:tor_prin} implies existence of solutions, among others, for the $(p_1,p_2)$-Laplacian system. 
+\end{comentario}
+
+
+It is possible to use the regularity theory in order to get  that minimizers $u$ of $I$ satisfy $u'\in L^{\infty}$. To cite one example, we have the following result.
+
+\begin{cor} Suppose $\Phi,F$ and $H$  as in Theorem \ref{th:tor_prin}. Additionaly suppose that
+$F(t,x)$ is differentiable with respect to $(t,x)$ and that 
+\begin{equation}\label{eq:apriorilip}\left| \frac{\partial}{\partial t} F(t,x)\right|  \leq a(x)b(t),\end{equation}
+with $a,b$ as in \eqref{eq:phi-lagrange}. 
+ If $u$ is a minimum of $I$ on the set $H$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
+ 
+\end{cor}
+
+\begin{proof} We note that $u$ is a minimum of $I$ on the set defined by a Diriclet boundary condition
+\[\{v\in\wphi([0,T],\rr^d)| v(0)=u(0), v(T)=u(T)\}\]
+Therefore we can apply Proposition 3.1 in \cite{clarke1985regularity} (see also remark follows it) and obtain $u'\in L^{\infty}$.
+\end{proof}
+
+\begin{comentario}\label{com:ejemplo} Returning to example of system \eqref{eq:RandExample},
+we note that the $N_{\infty}$ function $\Phi(y_1,y_2)=\exp(y_1^2+y_2^2)$ has a  complemetary function which is $\Delta_2$ (see \cite[p. 28]{KR}).   
+ 
+\end{comentario}
 
 \section*{Acknowledgments}
 The authors are partially supported by  UNRC and UNLPam grants. The second author is  partially supported by a  UNSL grant. 
