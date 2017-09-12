@@ -196,7 +196,7 @@ then \eqref{eq:ProbPhiLapla} becomes  $(p_1,p_2)$-Laplacian system, see
 Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some resul ts on $(p_1,p_2)$-Laplacian systems since we obtain existence  of solutions for they under conditions less restrictive that the previously established.   
 For all this, we believe that Sobolev-Orlicz's anisotropic spaces can provide a suitable framework for unifying many known results. On the other hand, we consider that one of the most important aspects in our work  is considering functions $\Phi$  with  faster growth than powers function. 
 
-\begin{example} As one example, we obtain existence for 
+\begin{example}\label{ex:RandEx} As one example, we obtain existence for 
 \begin{equation}\label{eq:RandExample}
     \left\{%
 \begin{array}{ll}
@@ -301,7 +301,7 @@ If $\Phi\in\Delta_2$ then $\Phi$ satisfies the following properties:
 
 Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following to \cite{trudinger1974imbedding} we write $\Phi_1\strictif\Phi_2$ if there exists  $k,C>0$ such that
 \begin{equation}\label{eq:orden} \Phi_1(x)\leq C+\Phi_2(kx),\quad x\in\rr^d.\end{equation}
-For example, if $\Phi$ is $\Delta_2$ then there exist $p =C(k)>0$ such that \eqref{eq:orden} holds we write  $\Phi_1\llcurly\Phi_2$.  We observe that  $\Phi_1\strictif \Phi_2$ implies that $\Phi^{\star}_2\strictif\Phi^{\star}_1$. 
+For example, if $\Phi$ is $\Delta_2$ then there exist $p\in (1,+\infty)$ such that $\Phi\strictif |x|^p$.  If for every $k>0$ there exists $C=C(k)>0$ such that \eqref{eq:orden} holds we write  $\Phi_1\llcurly\Phi_2$.  We observe that  $\Phi_1\strictif \Phi_2$ implies that $\Phi^{\star}_2\strictif\Phi^{\star}_1$. A similar affirmation holds for relation $\llcurly$. 
 
 
 
@@ -982,8 +982,8 @@ with $a,b$ as in \eqref{eq:phi-lagrange}.
 Therefore we can apply Proposition 3.1 in \cite{clarke1985regularity} (see also remark follows it) and obtain $u'\in L^{\infty}$.
 \end{proof}
 
-\begin{comentario}\label{com:ejemplo} Returning to example of system \eqref{eq:RandExample},
-we note that the $N_{\infty}$ function $\Phi(y_1,y_2)=\exp(y_1^2+y_2^2)$ has a  complemetary function which is $\Delta_2$ (see \cite[p. 28]{KR}).  In addition, for every $|(x_1,x_2)|^p 
+\begin{comentario}\label{com:ejemplo} Returning to the example of  system \eqref{eq:RandExample},
+we note that the $N_{\infty}$ function $\Phi(y_1,y_2)=\exp(y_1^2+y_2^2)$ has a  complemetary function which is $\Delta_2$ (see \cite[p. 28]{KR}).  In addition, for every $p>1$ we have $|(y_1,y_2)|^p \llcurly \Phi(y_1,y_2)$. Therefore $\Phie(y_1,y_2)\llcurly|(y_1,y_2)|^q $ for $q=p/(p-1)$. Consequently,  if $F(t,x_1,x_2)=P(t)Q(x_1,x_2)$, with $P$ and $Q$ polynomials, and $d(t):=C\max\{1,|P(t)|\}$  then $\Phie(d^{-1}(t)\nabla_xF)\leq |(x_1,x_2)|^q+1$,  where $p$ and $C$ are choosen large enough. Hence $\Phi$ and $F$ satisfies \eqref{eq:cond-sub} with $\Phi_0(y_1,y_2)=|(y_1,y_2)|^p$.  The conditions  \ref{item:condicion_c}, \ref{item:condicion_a}  and \eqref{eq:apriorilip} are proven in a direct way. This facts proves the afirmation Example \ref{ex:RandEx}.  
  
 \end{comentario}
 
