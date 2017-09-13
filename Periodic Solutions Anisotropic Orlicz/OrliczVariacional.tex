@@ -187,13 +187,13 @@ We suggest the article  \cite{Orliczvectorial2005} for definitions and main resu
 In what follows, we shall denote by $\mathcal{L}=\mathcal{L}_{\Phi,F}$ the function $\Phi(y)+F(t,x)$, and we will call it \emph{Lagrangian}. 
 
 
-  Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi_2(x):=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi_p(y):=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case, \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}.  If $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$  is defined by
+  Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi(x)=\Phi_2(x):=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi(x)=\Phi_p(y):=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case, \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}.  If $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$  is defined by
 \begin{equation}\label{eq:phip_1p_2}\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2},\end{equation}
 then \eqref{eq:ProbPhiLapla} becomes  $(p_1,p_2)$-laplacian system, see
 \cite{li2014periodic,pasca2010periodic,pacsca2010some,pasca2011some,pasca2016periodic,yang2012periodic,yang2013existence}.  In a previous paper (see \cite{ABGMS2015}), we consider similar results in an isotropic Orlicz framework.
 
 
-Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some resul ts on $(p_1,p_2)$-laplacian systems since we obtain existence  of solutions for they under  less restrictive conditions than the previously established. O QUITAR: than the previously established!!!.   
+Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some results on $(p_1,p_2)$-laplacian systems since we obtain existence  of solutions for they under  less restrictive conditions.
 For all this, we believe that anisotropic Sobolev-Orlicz spaces can provide a suitable framework to  unify many known results. On the other hand, we point out that one of the most important aspects in our work  is the possibility of dealing with  functions $\Phi$ that grow faster than power functions. 
 
 \begin{example}\label{ex:RandEx} As an example, we obtain existence of solutions for 
@@ -270,14 +270,14 @@ The complementary function $\Phi^{\star}$ is an  $N_{\infty}$ function (see \cit
  
 \begin{enumerate}
  \item[\namedlabel{eq:escalar_ine}{(P1)}]   $\Phi(\lambda x)\leq \lambda\Phi(x)$, for every  $\lambda\in[0,1],x\in\rr^d$;
- \item[\namedlabel{eq:escalar_ine_2}{(P2)}] if $ 0<|\lambda_1|\leq |\lambda_2|, x\in\rr^d$, then $\Phi(\lambda_1 x)\leq\Phi(\lambda_2 x);$
+ \item[\namedlabel{eq:escalar_ine_2}{(P2)}] if $ 0<|\lambda_1|\leq |\lambda_2| $, then $\Phi(\lambda_1 x)\leq\Phi(\lambda_2 x);$
   \item[\namedlabel{eq:young-ine}{(P3)}] $x\cdot y\leq \Phi(x)+\Phi^{\star}(y)$;
   \item[\namedlabel{eq:young-id}{(P4)}] $x\cdot \nabla\Phi(x)= \Phi(x)+\Phi^{\star}(\nabla \Phi (x))$.
  
  
 \end{enumerate}
 
-EN P3 Y P4, NO SE ACLARA DONDE VIVEN X E Y????
+
 
 We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2$-condition} and we denote  $\Phi \in \Delta_2$,
 if there exists a  constant $C>0$  such that
@@ -401,21 +401,10 @@ where the supremum is taken over all the convex, non negative and radial functio
 As $\Phi$ is an
 $N_{\infty}$ continuous function, for every $r>0$ there exists $k(r)>0$ such that $\Phi(x)\geq k(r)|x|\geq k(r)(|x|-r)^+$, when $|x|\geq r$. This fact implies that $A_{\Phi}(x)>0$ for $x\neq 0$.
 \end{proof}
-By abuse of notation, we sometimes identify $A_{\Phi}$ with a (an invertible) function defined on $[0,+\infty)$. 
+By abuse of notation, we sometimes identify $A_{\Phi}$ with a function defined on $[0,+\infty)$.  This function is invertible.
 \begin{cor}\label{cor:incr_aphi} $\lphi([0,T],\rr^d) \hookrightarrow L^{A_{\Phi}}([0,T],\rr^d)$.
 
 \end{cor}
-% 
-% 
-% Recall that a function   $w:[0,+\infty)\to [0,+\infty)$ is called  a \emph{modulus of continuity} if $w$ is a continuous increasing function which satisfies $w(0)=0$. For example $w(s)=sA_{\Phi}^{-1}(1/s)$ is a modulus of  continuity for every $N$-function $\Phi$. Here, by abuse of notation, we identify $A_{\Phi}$ with a function defined on $[0,+\infty)$.   We say that $u:[0,T]\to\rr^d$  has modulus of continuity $w$  when there exists a constant $C>0$ such that
-% \begin{equation}\label{w-holder}|u(t)-u(s)|\leq Cw(|t-s|).
-% \end{equation}
-% 
-% 
-% We denote by $C^w([0,T],\rr^d)$  the space of  $w$-H\"older continuous functions. This is the space of all functions satisfying \eqref{w-holder} for some $C>0$ and it is a Banach space with norm
-% \[\|u\|_{  C^w([0,T],\rr^d) }  :=\|u\|_{L^{\infty}}+\sup\limits_{t\neq s}\frac{|u(t)-u(s)|}{w(|t-s|)}.\]
-% 
-% 
 
 
 
@@ -505,7 +494,7 @@ a function $d \in  L^1([0,T],\rr)$, with $d\geq 1$, such that
 
 
 The condition \eqref{eq:cond-sub} encompasses the sublinearity condition as it was introduced in the context of $p$-laplacian or $(p_1,p_2)$-laplacian systems. For example, in
- \cite[Thm. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a} and the following condition  (we recall that $p'=p/(p-1)$). (LA ACLARACION SOBRE P' ESTA DESUBICADA)
+ \cite[Thm. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a} and the following condition  (we recall that $p'=p/(p-1)$).
 \begin{enumerate}   
   \labitem{(H)}{item:condicion_h1} There exist $f_i,g_i,h_i\in L^1([0,T],\rr_+)$,  $\alpha_i\in [0,p_i/p_i')$, $i=1,2$,  $\beta_1\in [0,p_2/p_1')$ and $\beta_2\in [0,p_1/p_2')$ such that
  \begin{equation*}
@@ -809,7 +798,7 @@ On the contrary, there exist $v\in\lphi$, $\epsilon>0$ and a subsequence of $\{u
 \langle  \nabla_y\mathcal{L}(\cdot,u,u'),v \rangle\right|\geq \epsilon.
 \end{equation}
 We have $u_n\rightarrow u$ in $\lphi$ and
-$u'_n\rightarrow u'$ with $u'\in\Pi(\ephi,\Lambda)$.????
+$u'_n\rightarrow u'$ with $u'\in\Pi(\ephi,\Lambda)$.
  By Lemmas \ref{cor:unif_conv}  and \ref{segundo lema}, there exist a subsequence of $\{u_n\}$ (again denoted  $\{u_n\}$ for simplicity) 
 and a function $h\in L^1([0,T],\rr)$ such that 
 $u_n\rightarrow u$ uniformly, $u'_n\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_n/\Lambda)\leq h\quad\text{a.e.}$ 
@@ -927,7 +916,7 @@ As before, we can deduce the existence of a subsequence (denoted $u'_n$ for simp
 \begin{equation}
 \Phi^{\star}(\nabla_y \mathcal{L}(\cdot,u_n,u'_n))\leq c(\lambda) \Phi^{\star}\left(\frac{\nabla_y \mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)+1\leq c(\lambda)h_1+1=:h_2\in L^1.
 \end{equation} 
-Then, from the quasi-subadditivity of $\Phi^{\star}$ \ref{eq:quasi-sub-aditividad}, we get 
+Then, from \ref{eq:quasi-sub-aditividad}, we get
 \[\Phi^{\star}\left(\nabla_y \mathcal{L}(\cdot,u_n,u'_n)-
 \nabla_y \mathcal{L}(\cdot,u,u')\right)\leq K (h_2+\Phi^{\star}(\nabla_y \mathcal{L}(\cdot,u,u')))+1.\]
 Now, by Lebesgue Dominated Convergence Theorem, we obtain 
