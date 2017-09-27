@@ -150,7 +150,7 @@ Let $\Phi:\mathbb{R}^d\to [0,+\infty)$ be  a differentiable, convex function suc
 where $|\cdot|$ denotes the euclidean norm on $\rr^d$. From now on, we say that $\Phi$ is an $N_{\infty}$ function if $\Phi$ satisfies the previous properties.
 
 For $T>0$, we assume that  $F:[0,T]\times\rr^d\to\rr^d$  ($F=F(t,x)$)
-  is a differentiable function  with respect to $x$ for a.e. $t\in [0,T]$ and $F(t,x)$ is measurable  with respect to $t$ for every $x\in\rr^d$ . Moreover, suppose that $F$ satisfies the following conditions:
+  is a differentiable function  with respect to $x$ for a.e. $t\in [0,T]$. Additionally, suppose that $F$ satisfies the following conditions:
 \begin{enumerate}
 \labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla_x F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
  \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
@@ -186,17 +186,13 @@ We suggest the article  \cite{Orliczvectorial2005} for definitions and main resu
 
 In what follows, we shall denote by $\mathcal{L}=\mathcal{L}_{\Phi,F}$ the function $\Phi(y)+F(t,x)$, and we will call it \emph{Lagrangian}. 
 
-
-  Problem \eqref{eq:ProbPhiLapla} contains, as a particular case, many problems that are usually considered in the literature.  For example, the classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi(x)=\Phi_2(x):=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi(x)=\Phi_p(y):=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case, \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}.  If $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$  is defined by
+The classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi(x)=\Phi_2(x):=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi(x)=\Phi_p(y):=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case, \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}.  If $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$  is defined by
 \begin{equation}\label{eq:phip_1p_2}\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2},\end{equation}
 then \eqref{eq:ProbPhiLapla} becomes  $(p_1,p_2)$-laplacian system, see
-\cite{li2014periodic,pasca2010periodic,pacsca2010some,pasca2011some,pasca2016periodic,yang2012periodic,yang2013existence}.  In a previous paper (see \cite{ABGMS2015}), we obtained similar results in an isotropic Orlicz framework.
-
-
-Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some results on $(p_1,p_2)$-laplacian systems since we obtain existence  of solutions for them under  less restrictive conditions.
+\cite{li2014periodic,pasca2010periodic,pacsca2010some,pasca2011some,pasca2016periodic,yang2012periodic,yang2013existence}.  In a previous paper (see \cite{ABGMS2015}), we obtained similar results in an isotropic Orlicz framework. Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some results on $(p_1,p_2)$-laplacian systems since we obtain existence  of solutions for them under  less restrictive conditions.
 For all this, we believe that anisotropic Sobolev-Orlicz spaces can provide a suitable framework to  unify many known results. On the other hand, we point out that one of the most important aspects in our work  is the possibility of dealing with  functions $\Phi$ that grow faster than power functions. 
 
-\begin{example}\label{ex:RandEx} As an example, we obtain existence of solutions for 
+\begin{example}\label{ex:RandEx} As an illustrative example, we obtain existence of solutions for
 \begin{equation}\label{eq:RandExample}
     \left\{%
 \begin{array}{ll}
@@ -206,7 +202,7 @@ For all this, we believe that anisotropic Sobolev-Orlicz spaces can provide a su
 \end{array}%
 \right. 
 \end{equation}
-where $p>1$ and $F$ is any function satisfying conditions \ref{item:condicion_c}, \ref{item:condicion_a}, \eqref{eq:cond-sub} and \eqref{eq:apriorilip} below. For example  $F(t,x)=P(t)Q(x)$, with $P$ and $Q$ polynomials satisfying those hypothesis (see Remark \ref{com:ejemplo} below).
+where  $F(t,x)=P(t)Q(x)$, with $P$ and $Q$ polynomials  (see Remark \ref{com:ejemplo} below).
 \end{example}
 
 The paper is organized as follows. In Section \ref{sec:preliminares},  we summarize some known results about Orlicz and Orlicz-Sobolev spaces. In order to obtain existence of minimizers of action integrals it is necessary that the functional $I$ be coercive. 
@@ -243,7 +239,7 @@ We can use the following example to obtain new $N_{\infty}$ functions from given
       \[\Phi(y):=\sum_{j=1}^k\Phi_j(O_jy)\]
       is an $N_{\infty}$ function. 
       
-      Let us briefly show that $\Phi$ satisfies \eqref{eq:N-sub-inf}. Suppose that $|y_n|\to\infty$ and $\Phi(y_n)/|y_n|$ is bounded. If for some $j=1,\ldots,k$ there exist  $\epsilon>0$ and a subsequence $n_s$ such that $|O_j(y_{n_s})|\geq \epsilon |y_{n_s}|$, then $\Phi_j(O_jy_{n_s})/|y_{n_s}|\to\infty$, contrary to our assumption. Hence $O_jy_n/|y_n|\to 0$ when $n\to\infty$. Passing to a subsequence, we can assume that there exists $y\in\rr^d$ such that  $y_n/|y_n|\to y$. Then $y\in\ker O_j$ and $y\neq 0$, which is a contradiction.
+      Let us briefly show that $\Phi$ satisfies \eqref{eq:N-sub-inf}. Suppose that $|y_n|\to\infty$ and $\Phi(y_n)/|y_n|$ is bounded. If for some $j=1,\ldots,k$ there exist  $\epsilon>0$ and a subsequence $n_s$ such that $|O_jy_{n_s}|\geq \epsilon |y_{n_s}|$, then $\Phi_j(O_jy_{n_s})/|y_{n_s}|\to\infty$, contrary to our assumption. Hence $O_jy_n/|y_n|\to 0$ when $n\to\infty$. Passing to a subsequence, we can assume that there exists $y\in\rr^d$ such that  $y_n/|y_n|\to y$. Then $y\in\ker O_j$ and $y\neq 0$, which is a contradiction.
       
      As a consequence, the function $\Phi:\rr^d\times\rr^d\to [0,+\infty)$ defined by
       \[\Phi(y_1,y_2)=e^{|y_1-y_2|}-1+|y_2|^p,\]
@@ -256,7 +252,7 @@ We can use the following example to obtain new $N_{\infty}$ functions from given
 
 
 
-Associated to $\Phi$ we have the \emph{complementary function} $\Phi^{\star}$ which is defined on $\zeta\in\rr^d$ as
+Associated to $\Phi$ we have the \emph{complementary function} $\Phi^{\star}$ which is defined at $\zeta\in\rr^d$ as
 \begin{equation}\label{eq:conjugada}
  \Phi^{\star}(\zeta)=\sup\limits_{y\in\mathbb{R}^d} y\cdot \zeta-\Phi(y).
 \end{equation}
@@ -346,7 +342,7 @@ A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (se
 By $u\cdot v$ we denote the usual dot product in $\mathbb{R}^{d}$ between $u$ and $v$.
 
 We consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
-\[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}.\]
+\[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}=\{u\in\lphi| d(u,L^{\infty})<r\}.\]
 This set is related to the Orlicz class $\claseor$ by the following inclusions
 \begin{equation}\label{eq:inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
 \end{equation}
@@ -404,7 +400,7 @@ where the supremum is taken over all the convex, non negative, radial functions 
 As $\Phi$ is an
 $N_{\infty}$ continuous function, for every $r>0$ there exists $k(r)>0$ such that $\Phi(x)\geq k(r)|x|\geq k(r)(|x|-r)^+$, when $|x|\geq r$. This fact implies that $A_{\Phi}(x)>0$ for $x\neq 0$.
 \end{proof}
-By abuse of notation, we sometimes identify $A_{\Phi}$ with a function defined on $[0,+\infty)$.  This function is invertible.
+By abuse of notation, we identify $A_{\Phi}$ with a function defined on $[0,+\infty)$.  This function is invertible.
 \begin{cor}\label{cor:incr_aphi} $\lphi([0,T],\rr^d) \hookrightarrow L^{A_{\Phi}}([0,T],\rr^d)$.
 
 \end{cor}
@@ -482,7 +478,7 @@ Another immediate consequence of  Lemma \ref{lem:inclusion orlicz} is the follow
 
 It is well known that an important ingredient in the direct method of the calculus of variations is the coercivity of action integrals. In order to obtain  coercivity for the action integral $I$, defined in  \eqref{eq:integral_accion}, it is necessary to impose more restrictions on the potential $F$.
 
-There are several restrictions that were explored in the past. The one we will study in this article is based on what is known in the literature as sublinearity (see \cite{tang1998periodic,wu1999periodic,zhao2004periodic} for the Laplacian, \cite{tang2010periodic,li2015infinitely} for the $p$-Laplacian and \cite{yang2013existence,li2014periodic,pasca2010periodic,pacsca2010some} for $(p,q)$-Laplacian). In the current article we will use another denomination for this property.
+There are several restrictions that were explored in the past. The one we will study in this article is based on what is known in the literature as sublinearity (see \cite{tang1998periodic,wu1999periodic,zhao2004periodic} for the Laplacian, \cite{tang2010periodic,li2015infinitely} for the $p$-Laplacian and \cite{yang2013existence,li2014periodic,pasca2010periodic,pacsca2010some} for $(p_1,p_2)$-Laplacian). In the current article we will use another denomination for this property.
 
 
 
@@ -491,7 +487,7 @@ There are several restrictions that were explored in the past. The one we will s
 a function $d \in  L^1([0,T],\rr)$, with $d\geq 1$, such that
 
 \begin{equation}\label{eq:cond-sub}
-  \Phi^{\star}(d^{-1}(t)\nabla_x F)\leq \Phi_0(x)+1.\tag{$B$}
+  \Phi^{\star}\left(\frac{\nabla_x F}{d(t)}\right)\leq \Phi_0(x)+1.\tag{$B$}
 \end{equation}
 \end{defi}
 
@@ -501,10 +497,13 @@ The condition \eqref{eq:cond-sub} encompasses the sublinearity condition as it w
 \begin{enumerate}   
   \labitem{(H)}{item:condicion_h1} There exist $f_i,g_i,h_i\in L^1([0,T],\rr_+)$,  $\alpha_i\in [0,p_i/p_i')$, $i=1,2$,  $\beta_1\in [0,p_2/p_1')$ and $\beta_2\in [0,p_1/p_2')$ such that
  \begin{equation*}
-    |\nabla_{x_i}F(t,x_1,x_2)|\leq f_i(t)|x_1|^{\alpha_i}+g_i(t)|x_2|^{\beta_i}+h_i(t),\quad i=1,2.
+    \begin{array}{cc}
+    |\nabla_{x_1}F(t,x_1,x_2)|&\leq f_1(t)|x_1|^{\alpha_1}+g_1(t)|x_2|^{\beta_1}+h_1(t),\\
+    |\nabla_{x_2}F(t,x_1,x_2)|&\leq f_2(t)|x_2|^{\alpha_2}+g_2(t)|x_1|^{\beta_2}+h_2(t).
+    \end{array}
  \end{equation*}
 \end{enumerate}
-It is easy to prove that \ref{item:condicion_h1} implies \eqref{eq:cond-sub}, with $\Phi=\Phi_{p_1,p_2}$, 
+We leave to the reader to prove that \ref{item:condicion_h1} implies \eqref{eq:cond-sub}, with $\Phi=\Phi_{p_1,p_2}$,
 $\Phi_0=\Phi_{\overline{p}_1,\overline{p}_2}$, where $\overline{p}_i$, $i=1,2$, are taken so that  $\max\{\alpha_1p_1',\beta_2p_2'\}\leq \overline{p}_1<p_1$ and $\max\{\alpha_2p_2',\beta_1p_1'\}\leq \overline{p}_2<p_2$ and  $d=C(1+\sum_i \{f_i+g_i+h_i\})\in L^1$, with  $C>0$ chosen large enough.
 
 
@@ -581,7 +580,7 @@ $.
 
   Without loss of generality, passing to subsequences, we may assume that the $\liminf$ is really a $\lim$. The embedding  $\lphi([0,T],\rr^d)\hookrightarrow L^1([0,T],\rr^d)$ implies that  $u_n'\rightharpoonup u' $ in $ L^1([0,T],\rr^d)$.  Now, applying \cite[Thm. 3.6]{buttazzo1998one} we obtain $I(u)\leq \lim_{n\to\infty}I(u_n)$.
 
-\emph{Step 3. Final step.}
+\emph{ Final step.}
 The proof of the theorem is concluded with a usual argument. We take a minimizing sequence $u_n \in H$ of $I$. 
 From the coercivity of $I$ we have that $u_n$ is bounded on $\wphi([0,T],\rr^d)$. By Corollary \ref{cor:unif_conv}  (passing to subsequences) we can suppose that $u_n$ converges uniformly to a function $u\in V$. 
 On the other hand, $u'_n$ is bounded on $\lphi=\left[\epsi\right]^\star$. Thus,  
@@ -605,10 +604,10 @@ Finally, the semicontinuity of $I$ that was established in step 2  implies that 
 \end{comentario}
 
 
-\section{Differentiability of solutions and Euler-Lagrange equations}\label{sec:diferenciabilidad}
+\section{Regularity of minimizers and solutions of Euler-Lagrange equations}\label{sec:diferenciabilidad}
 
 
-In this section, we will address the question of when minimizers of $I$ are solutions of \eqref{eq:ProbPhiLapla}. It is a classic result that minimizers, on an appropriate set, of action integral satisfying an a priori smothness condition (e.g. Lipschitz continuity) are solutions of \eqref{eq:ProbPhiLapla} (see \cite{buttazzo1998one}).  In Theorem \ref{th:tor_prin} we obtain a better a priori condition for the action integral under consideration.
+In this section, we will address the question of when minimizers of $I$ are solutions of the associated  Euler-Lagrange equations. It is a classic result that minimizers satisfying an a priori smothness condition (e.g. Lipschitz continuity) are solutions of them.  In Theorem \ref{th:tor_prin} we obtain a better a priori condition for the action integral under consideration.
 
 We denote by $\lip([0,T],\rr^d)$ the set of $\rr^d$-valued Lipschitz continuous functions defined on $[0,T]$. If $X\subset \lphi([0,T],\rr^d)$ and $u\in \lphi([0,T],\rr^d)$,  we denote by $d(u,X)$ the distance from $u$ to $X$ computed with respect  to the Luxemburg norm. We recall that  $u\in\lip([0,T],\rr^d)$ implies that $d(u',L^{\infty}([0,T],\rr^d))=0$. The following is the main result of this section.
 
@@ -618,11 +617,21 @@ We denote by $\lip([0,T],\rr^d)$ the set of $\rr^d$-valued Lipschitz continuous 
 \begin{thm}\label{th:tor_prin} Assume   that $F$ is as in Theorem \ref{coercitividad-r} and $\Phi$ is  strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi([0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',L^{\infty}([0,T],\rr^d))<1$, then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
 \end{thm}
 
+\begin{comentario} We observe that $H=\{u\in \wphi | u\in V\text{ and } u'\in M\}$ where
+\[V:=\{u\in C([0,T],\rr^d)|u(0)=u(T)\},\quad M:=\lphi([0,T],\rr^d),\]
+ and $V$ is $C([0,T],\rr^d)$-closed. Therefore, from the results of previous section  the functional $I$ given by \eqref{eq:integral_accion}, has a minimum $u$ on  $H$ and  $d(u',L^{\infty})\leq 1$. The last inequality   follows from  $\rho_{\Phi}(u')<\infty$ and \eqref{eq:inclusiones}. Then, the possible minima of $I$ that do not satisfy the hypotheses of  Theorem \ref{th:tor_prin} lie on the nowhere dense set $ \{u:d(u',L^{\infty})=1\}$ .
+
+
+
+
+\end{comentario}
+
+
 
 The proof of the previous theorem depends on the G\^ateaux differentiability of the action integral on the space $\wphi([0,T],\rr^d)$. We will deal with a more general lagrangian function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, which  is assumed  measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable at $(x,y)$ for almost every $t \in [0,T]$. We consider 
 \begin{equation}\label{eq:integral_accion_gen} I(u)=I_{\mathcal{L}}(u)=\int_0^T\mathcal{L}(t,u(t),u'(t))dt,\tag{$IG$}
 \end{equation}
- the action integral associated to $\mathcal{L}$. In order to obtain differentiability of $I$, it is necessary to impose some constraints on $\mathcal{L}$. In the paper \cite{chamra2017anisotropic}, Chmara and Maksymiuk  obtained differentiability for $I$ on $\wphi$ assuming  a similar condition  to Definition \ref{def:estructura} and additionally $\Phi\in\Delta_2\cap\nabla_2$. For our purpose, the condition $\Phi\in\Delta_2$ is a very serious limitation     since it leaves out of consideration functions that grow faster than power ones. According to our criterion, that is one of the greatest achievements of considering anisotropic Orlicz spaces.  For this reason, we present a proof  of the results obtained in \cite{chamra2017anisotropic} without the assumption $\Phi\in\Delta_2$. When $\Phi\notin\Delta_2$, the  differentiability of $I$ is somewhat more delicate since the effective domain of $I$ is not the whole space $\wphi$. 
+ the action integral associated to $\mathcal{L}$. In order to obtain differentiability of $I$, it is necessary to impose some constraints on $\mathcal{L}$. In the paper \cite{chamra2017anisotropic}, Chmara and Maksymiuk  obtained differentiability for $I$ on $\wphi$ assuming  a similar condition  to Definition \ref{def:estructura} and additionally $\Phi\in\Delta_2\cap\nabla_2$. For our purpose, the condition $\Phi\in\Delta_2$ is a very serious limitation     since it leaves out of consideration functions that grow faster than power ones. According to our criterion, including Lagrangians with a fast growth  than power functions  is one of the greatest achievements of this paper.  For this reason, we present a proof  of the results obtained in \cite{chamra2017anisotropic} without the assumption $\Phi\in\Delta_2$. When $\Phi\notin\Delta_2$, the  differentiability of $I$ is somewhat more delicate since the effective domain of $I$ is not the whole space $\wphi$.
 
 
 
@@ -930,9 +939,7 @@ Since $\Phi^{\star} \in \Delta_2$, modular convergence implies norm convergence 
 
 
 
-\begin{proof}[\textbf{Proof Theorem \ref{th:tor_prin}}] We observe that $H=\{u\in \wphi | u\in V\text{ and } u'\in M\}$ where 
-\[V:=\{u\in C([0,T],\rr^d)|u(0)=u(T)\},\quad M:=\lphi([0,T],\rr^d),\]
-and $V$ is $C([0,T],\rr^d)$-closed. Therefore, the functional $I$ given by \eqref{eq:integral_accion}, has a minimum $u$ on  $H$. Suppose that $d(u',L^{\infty})<1$.
+\begin{proof}[\textbf{Proof Theorem \ref{th:tor_prin}}] Suppose that $d(u',L^{\infty})<1$.
 Since $d(u',\ephi)=d(u',L^{\infty})$, according to Remark \ref{com:lphi-satis S} and Theorem \ref{teo:diferenciabilidad}, $I$ is G\^ateaux differentiable at $u$. By Fermat's rule (see \cite[Prop. 4.12]{clarke2013functional}), we have $\langle I'(u),v\rangle=0$ for every $v\in H$. Therefore
 
 \begin{equation}\label{eq:der_deb}\int_0^T\nabla\Phi(u'(t))\cdot v'(t)dt=-\int_0^T \nabla_xF(t,u(t))\cdot v(t)dt.\end{equation}
@@ -943,10 +950,6 @@ From Theorem \ref{teo:diferenciabilidad}, $\nabla_xF(t,u(t))\in L^1([0,T],\rr^d)
 
 
 
-\begin{comentario} If $u$ is a minimum of $I$ on $H$ then  $d(u',\ephi)\leq 1$. This follows from $\rho_{\Phi}(u')<\infty$ and \eqref{eq:inclusiones}. Then, the possible minima of $I$ that do not satisfy the hypotheses of  Theorem \ref{th:tor_prin} lie on a nowhere dense set of the domain of $I$.
- 
-\end{comentario}
-
 \begin{comentario} The condition $d(u',L^{\infty})< 1$ is trivially satisfied when $\Phi \in \Delta_2$ because, in this case, $L^{\infty}$ is dense in $\lphi([0,T],\rr^d)$. In particular, our Theorem \ref{th:tor_prin} implies existence of solutions, among others, for the $(p_1,p_2)$-laplacian system. 
 \end{comentario}
 
@@ -955,7 +958,7 @@ It is possible to use the regularity theory in order to get  that minimizers $u$
 \begin{cor} Let $\Phi,F$ and $H$ be as in Theorem \ref{th:tor_prin}. Additionally, suppose that
 $F(t,x)$ is differentiable with respect to $(t,x)$ and that 
 \begin{equation}\label{eq:apriorilip}\left| \frac{\partial}{\partial t} F(t,x)\right|  \leq a(x)b(t),\end{equation}
-with $a$ and $b$ as in \eqref{eq:phi-lagrange}. 
+with $a$ and $b$ as in \ref{item:condicion_a}.
  If $u$ is a minimum of $I$ on the set $H$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
  
 \end{cor}
@@ -966,7 +969,7 @@ Therefore, we can apply Proposition 3.1 in \cite{clarke1985regularity} (see also
 \end{proof}
 
 \begin{comentario}\label{com:ejemplo} Returning to the system \eqref{eq:RandExample} of Example \ref{ex:RandEx},
-we note that the $N_{\infty}$ function $\Phi(y_1,y_2)=\exp(y_1^2+y_2^2)$ has a  complementary function which satisfies the $\Delta_2$-condition (see \cite[p. 28]{KR}).  In addition, for every $p>1$ we have $|(y_1,y_2)|^p \llcurly \Phi(y_1,y_2)$. Therefore $\Phie(y_1,y_2)\llcurly|(y_1,y_2)|^q $ for $q=p/(p-1)$. Consequently,  if $F(t,x_1,x_2)=P(t)Q(x_1,x_2)$ with $P$ and $Q$ polynomials, and $d(t):=C\max\{1,|P(t)|\}$  then $\Phie(d^{-1}(t)\nabla_xF)\leq |(x_1,x_2)|^q+1$,  where $p$ and $C$ are chosen large enough. Hence $\Phi$ and $F$ satisfy \eqref{eq:cond-sub} with $\Phi_0(y_1,y_2)=|(y_1,y_2)|^p$.  The conditions  \ref{item:condicion_c}, \ref{item:condicion_a}  and \eqref{eq:apriorilip} can be proved in a direct way. All these facts show that the assessment of Example \ref{ex:RandEx} is true.  
+we note that the $N_{\infty}$ function $\Phi(y_1,y_2)=\exp(y_1^2+y_2^2)-1$ has a  complementary function which satisfies the $\Delta_2$-condition (see \cite[p. 28]{KR}).  In addition, for every $p>1$ we have $|(y_1,y_2)|^p \llcurly \Phi(y_1,y_2)$. Therefore $\Phie(y_1,y_2)\llcurly|(y_1,y_2)|^q $ for $q=p/(p-1)$. Consequently,  if $F(t,x_1,x_2)=P(t)Q(x_1,x_2)$ with $P$ and $Q$ polynomials, and $d(t):=C\max\{1,|P(t)|\}$  then $\Phie(d^{-1}(t)\nabla_xF)\leq |(x_1,x_2)|^q+1$,  where $p$ and $C$ are chosen large enough. Hence $\Phi$ and $F$ satisfy \eqref{eq:cond-sub} with $\Phi_0(y_1,y_2)=|(y_1,y_2)|^p$.  The conditions  \ref{item:condicion_c}, \ref{item:condicion_a}  and \eqref{eq:apriorilip} can be proved in a direct way. All these facts show that the assessment of Example \ref{ex:RandEx} is true.
  
 \end{comentario}
 
