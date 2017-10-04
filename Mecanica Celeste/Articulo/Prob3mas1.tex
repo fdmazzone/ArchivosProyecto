@@ -1,34 +1,18 @@
-\documentclass[twoside]{article}
+\documentclass[smallcondensed]{svjour3}
 
 
-%\usepackage{hyperref}
-\usepackage{amssymb,amsthm}
-\usepackage{amsmath}
-\usepackage{color}
-\usepackage{ esint }
-\usepackage{mathabx}
-\usepackage{MnSymbol}
-\usepackage{fancyhdr}
-\usepackage{soul} 
-%\usepackage{times}
-\usepackage{tikz}
-%\usepackage[latin1]{inputenc}
+%\documentclass[twoside]{article}
 
-\usepackage{comment}
-\usepackage{url}
-\usepackage{xcolor}
-\usepackage{adjustbox}
+
 \usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
 
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{lem}[thm]{Lemma}
+\usepackage{mathabx}
+\usepackage{tikz}
+\usepackage{url}
 
-\newtheorem{defi}[thm]{Definition}
-\newtheorem{prop}[thm]{Proposition}
-\theoremstyle{remark}
-\newtheorem{comentario}{Remark}
-\newtheorem{ejemplo}{Example}
+
 
 
 \makeatletter
@@ -41,38 +25,34 @@
 
 
 
-\title{A generalized Sitnikov problem with primary bodies in both homographic and rigid motions}
-\author{Gast\'on Beltritti \thanks{SECyT-UNRC and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{gbeltritti@exa.unrc.edu.ar}\\[3mm]
-Fernando D. Mazzone \thanks{SECyT-UNRC, FCEyN-UNLPam}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{fmazzone@exa.unrc.edu.ar}\\
-Martina G. Oviedo \thanks{SECyT-UNRC, CIN}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{martinagoviedo@gmail.com}
+\title{A generalized Sitnikov problem                                                                                                                                                                                                                                                                                                                                                                            }
+
+
+
+
+
+
+\author{Gast\'on Beltritti   \and Fernando Mazzone   \and Martina Oviedo  }
+
+\institute{G. Beltritti \at CONICET - Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales.
+Universidad Nacional de R\'{i}o Cuarto
+(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina\\
+\email{gbeltritti@exa.unrc.edu.ar}\\
+F. Mazzone \at CONICET - Dpto. de Matem\'atica, Facultad de Ciencias Exactas Físico-Químicas y Naturales.
+Universidad Nacional de R\'{i}o Cuarto
+(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina\\
+\email{fmazzone@exa.unrc.edu.ar}\\
+M. Oviedo \at
+ CONICET - Instituto de Investigaciones Matem\'aticas ``Luis A. Santal\'o''.
+ Facultad de Ciencias Exactas y Naturales-UBA.
+ (C1428EGA) – C.A.B.A., Argentina.\\
+\email{ moviedo@itba.edu.ar}
 }
 
-\date{}
 
 
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\nn}{\mathbb{N}}
-
-
-\newcounter{example}
-
-\setcounter{example}{1}
-
-
-\newenvironment{example}{\noindent\textit{Example} \arabic{example}.}{\addtocounter{example}{1}}
-
 
 
 
@@ -80,40 +60,16 @@ Universidad Nacional de R\'{i}o Cuarto\\
 
 
 \maketitle
-%
-% \begingroup%Locallizing the change to `thefootnote'.
-%     \renewcommand{\thefootnote}{}%Removing the footnote symbol.
-%     %
-%     \footnotetext{%
-%     %   2010 Mathematics Subject Classification
-%     %   http://www.ams.org/msc/
-%     \textbf{2010  AMS Subject Classification.} Primary: .
-%     Secondary: .
-%     }%
-%         \footnotetext{%
-%     \textbf{Keywords and phrases.}  .
-%     }%
-%     \endgroup
-%
-%
-%
-%
+
 
 \begin{abstract}
-In this paper we address a $n+1$-body gravitational problem governed by the Newton's laws, where $n$ primary bodies orbit on a plane $\Pi$ and a additional massless particle moves on the perpendicular line to $\Pi$ passing through the center of mass of the primary bodies. We find a condition for that the configuration described be possible. In the case that the primaries are in a rigid motion we classify all the motions of the massless particle. We study the situation when the massless particle has a periodic motion with the same minimal period of the primaries. We show that this fact is related with the existence of certain pyramidal central configuration.
+In this paper we address a $n+1$-body gravitational problem governed by the Newton's laws, where $n$ primary bodies orbit on a plane $\Pi$ and an additional massless particle moves on the perpendicular line to $\Pi$ passing through the center of mass of the primary bodies. We find a condition for that the configuration described be possible. In the case that the primaries are in a rigid motion we classify all the motions of the massless particle. We study the situation when the massless particle has a periodic motion with the same minimal period than primary bodies. We show that this fact is related with the existence of certain pyramidal central configuration.
 \end{abstract}
 
 
 
 
-\pagestyle{fancy} \headheight 35pt \fancyhead{} \fancyfoot{}
 
-\fancyfoot[C]{\thepage} \fancyhead[CE]{\nouppercase{G. Beltritti, F. Mazzone, M. Oviedo}} \fancyhead[CO]{\nouppercase{\section}}
-
-\fancyhead[CO]{\nouppercase{\leftmark}}
-
-
-%\tableofcontents
 
 
 
@@ -128,7 +84,7 @@ In this paper we study the following restricted  Newtonian $n+1$-body problem $P
 
 \begin{figure}[h]
 \begin{center}
-\begin{tikzpicture}[xscale=.9, yscale=.9]
+\begin{tikzpicture}[xscale=.8, yscale=.8]
 				%Plano
 				\draw[black,  line width=.8pt] (-6,0,-4.5)--(3,0,-4.5);
 				\draw[black, line width=.8pt] (-3,0,5)--(7.5,0,5);
@@ -141,10 +97,10 @@ In this paper we study the following restricted  Newtonian $n+1$-body problem $P
 					\shade[ball color=red]  (1,0) circle (5 pt);
 					\node at (1.45,0.14) {$m_1$};
 					\shade[ball color=red]  (-1,0) circle (5 pt);
-					\node at (-1.4,-0.15) {$m_2$};
+					\node at (-1.4,-0.15) {$m_3$};
 
 					\shade[ball color=blue]  (3,0) circle (5 pt);
-					\node at (-3.5,0) {$m_3$};
+					\node at (-3.5,0) {$m_2$};
 					\shade[ball color=blue]  (-3,0)
 					 circle (5 pt);
 					\node at (3.5,0) {$m_4$};
@@ -161,34 +117,38 @@ In this paper we study the following restricted  Newtonian $n+1$-body problem $P
 				% CENTRO DE MASAS
 				\draw[fill=black](0,0,0) circle (0.05 cm);
 				\node at (-0.2,-0.2,0) {$c$};
-\end{tikzpicture}\caption{Six-body problem}\label{fig:conf_esp}
+\end{tikzpicture}\caption{Five-body problem with primaries in a collinear configuration}\label{fig:conf_esp}
 \end{center}
 \end{figure}
 
 
 Problems like the one presented above have been extensively discussed in the literature. In \cite{sitnikov1960existence} K. Sitnikov considered the problem of two body in a Keplerian elliptic motion and a massless particle moving in the perpendicular line to the orbital plane passing
-through the center of mass. Sitnikov obtained deep results about existence of solutions, for small $e>0$, with a chaotic behavior (see \cite[III(5)]{moser2016stable}). Periodic solutions for a Sitnikov configuration were considered in \cite{corbera2000periodic, corbera2002symmetric, llibre2008families,pustyl1990certain}.
+through the center of mass. Sitnikov obtained deep results about existence of solutions, for small $e>0$, with a chaotic behavior (see \cite[III(5)]{moser2016stable}). Periodic solutions for a Sitnikov configuration were considered in
+\cite{corbera2000periodic,corbera2002symmetric,llibre2008families,pustyl1990certain}.
 
 
 Generalized circular Sitnikov problems, i.e. we have $n\geq 3$ primaries in a relative equilibrium motion,   were addressed more recently.
-In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$. They considered  a Lagrangian equilateral triangle configuration for the primary bodies, which were supposed to have the same mass $m_1=m_2=m_3$. In \cite{bountis2009stability} Papadakis and Bountis extended the results of \cite{soulis2008periodic} to $n$ primaries ($n\geq 3$) in a poligonal equal masses configuration. Later  in \cite{pandey2013periodic}, Pandey and Ahmad generalized  analysis started in \cite{soulis2008periodic} to the case with oblate primaries, i.e with space extended bodies.
+In \cite{soulis2008periodic} Soulis, Papadakis and Bountis studied existence, linear stability and bifurcations for a problem similar to $P$. They considered  a Lagrangian equilateral triangle configuration for the primary bodies, which were supposed to have the same mass $m_1=m_2=m_3$. In \cite{bountis2009stability} Papadakis and Bountis extended the results of \cite{soulis2008periodic} to $n$ primaries ($n\geq 3$) in a poligonal equal masses configuration. Later  in \cite{pandey2013periodic}, Pandey and Ahmad generalized  the analysis started in \cite{soulis2008periodic} to the case with oblate primaries.
 In \cite{li2013characterization} Li, Zhang and Zhao studied a special type of
-restricted circular $n+1$-body problem  with equal masses for the primaries in a regular polygon configuration. Periodic solutions for generalized Sitnikov problems with primaries performing  no rigid motions were studied in \cite{pustyl1990certain,rivera2013periodic}. In the previous papers the primary bodies are in the vertices of a regular polygon. In \cite{marchesin2013spatial} Marchesin and Vidal studied the problem $P$ for a rigid motion  of primaries in a  rhomboidal configuration.
- In \cite{bakker2015separating} Bakker and Simmons studied scape regions for the massless particle in a problem similar to $P$ for a certain type of periodic orbits for primaries including non homographic motions.
+restricted circular $n+1$-body problem  with equal masses for the primaries in a regular polygon configuration. Periodic solutions for generalized Sitnikov problems with primaries performing  no rigid motions were studied in \cite{pustyl1990certain,rivera2013periodic}. We emphasize that in
+\cite{bountis2009stability,li2013characterization,pandey2013periodic,pustyl1990certain,rivera2013periodic,soulis2008periodic} it is supposed that
+the primary bodies are in the vertices of a regular polygon.
+As far as we know the first non-polygonal configurations of primary bodies was considered in \cite{marchesin2013spatial} where  Marchesin and Vidal studied the problem $P$ for a rigid motion  of primaries in a  rhomboidal configuration.
+ In \cite{bakker2015separating} Bakker and Simmons studied scape regions for the massless particle in a problem similar to $P$ where the primaries performing certain type of periodic orbits including non homographic motions.
 
 
 In the present paper, after introducing preliminaries facts in Section \ref{sec:pre},   we
 obtain in Section \ref{sec:admisible.configuraciones} necessary and sufficient conditions on the configuration of primary bodies in order  that the $z$-axis to be invariant for the flow associated to the motion equations of the massless particle. For this type of configurations, that we call \emph{balanced}, the Sitnikov problem has sense.  In Section \ref{sec:addmisibles} we will find all balanced configurations for $n\leq 4$ primaries.  The Section \ref{sec:mas-mot} is devoted to describe all possible motion of the massless particle when the primaries are in a relative equilibrium (or rigid) motion. In this direction we observe that only are possible scape (both parabolic and hiperbolic) and periodic motions. Moreover, we will give a formula expressing the period of solutions  by means of integrals.  We prove in Corollary \ref{cor:sol.periodica.sist.completo} that the complete $n+1$-body system has  infinite quantity of periodic solutions. In Section  \ref{sec:sincro} we discuss the
-situation when the entire system has a solution with the same period that the rigid motion of primaries. We call it synchronous solution. Surprisingly this fact is related to the existence of certain pyramidal central configurations (for the definition of this concept see \cite{fayccal1996classification,faycaltesis,ouyang2004pyramidal}). Finally, in the last section, we study certain non balanced configurations which allows some particular solutions of problem $P$.
+situation when the entire system has a solution with the same period that the rigid motion of primaries. We call it \emph{synchronous solution}. Surprisingly the existence of synchronous solutions is related to the existence of certain pyramidal central configurations (for the definition of this concept see \cite{fayccal1996classification,faycaltesis,ouyang2004pyramidal}). Finally, in the last section, we study certain non balanced configurations which allows some particular solutions of problem $P$.
 
 In this paper we generalize and extend some results previously obtained. For example, our results in Section \ref{sec:mas-mot} concerning to balanced configurations   generalize the results  in \cite{marchesin2013spatial} established for rhomboidal configurations. In Section \ref{sec:sincro} we prove that there exists synchronous solutions for primaries in a regular poligonal equal mass configuration if and only if $2\leq n\leq 472$. The sufficient of this fact was established in \cite{li2013characterization}.
 
 
 \section{Preliminaries}\label{sec:pre}
 
-We start considering $n$  mass points, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $x_1(t),\ldots,x_n(t)$ are the coordinates of the bodies in some inertial Cartesian coordinate system.  We can suppose, without any loss generality, that the center of mass   $c:=\sum_jm_jx_j/M$ ($M:=\sum_j m_j$) is fixed at the origin ($c=0$).
+We start considering $n$  mass points, $n>2$, of masses $m_1,\ldots,m_n$ moving in a Euclidean 3-dimensional space according to Newton's laws of motion. We assume that $x_1(t),\ldots,x_n(t)$ are the coordinates of the bodies in some inertial Cartesian coordinate system.  We can suppose, without any loss generality, that the center of mass   $C:=\sum_jm_jx_j/M$ ($M:=\sum_j m_j$) is fixed at the origin ($C=0$).
 
-Initially we assume that the bodies are in a \emph{planar homographic motion} on the plane $\Pi$ (see \cite{JaumeLlibre276}). That means, assuming that  $\Pi$ is the plane determined by the first two coordinates axes, that
+Initially we assume that the bodies are in a \emph{planar homographic motion} on the plane $\Pi$ (see \cite{JaumeLlibre276}), where it is assumed that $\Pi$ is the plane determined by the first two coordinates axes. Concretely  we are assuming  that
 
 \begin{equation}\label{eq:x_j=rtQtq_j}
  x_j(t)=r(t)Q(\theta (t))q_j,
@@ -203,27 +163,27 @@ where
 \]
 and $q_j\in\Pi$, $j=1,\ldots,n$ are vectors in a planar \emph{central configuration} (CC) in $\Pi$. We recall the following definition of this concept (see \cite{JaumeLlibre276}).
 
-\begin{defi}\label{def:CC}
+\begin{definition}\label{def:CC}
 Let $q=(q_1,\ldots,q_n)$ be  a n-tuple of positions in $\rr^3$ and let $m=(m_1,\ldots,m_n)$ be a vector of masses. We say that $(q,m)$ is a central configuration if
 there exists $\lambda\in\rr$ such that
 \begin{equation}\label{eq:def.CC}
 \nabla_jU(q_1,\ldots,q_n)+\lambda m_jq_j=0,\quad j=1,\ldots,n.
 \end{equation}
-where the \emph{potential function} $U$ is defined by:
+where
 \begin{equation}\label{eq:potencial}
  U(q_1,\ldots,q_n)=\sum_{i<j}\frac{m_im_j}{r_{ij}},
 \end{equation}
-where $r_{ij}=|q_i-q_j|$ and $\nabla_j$ denotes the $3$-dimensional partial gradient with respect to $q_j$.
-\end{defi}
+ $r_{ij}=|q_i-q_j|$ and $\nabla_j$ denotes the $3$-dimensional partial gradient with respect to $q_j$.
+\end{definition}
 
-According to \cite[Eq. (2.16)]{JaumeLlibre276}  the functions $r(t)$ and $\theta (t)$ solves the two-dimensional Kepler problem in polar coordinates, i.e.
+According to \cite[Eq. (2.16)]{JaumeLlibre276}  the functions $r(t)$ and $\theta (t)$ solves the two-dimen\-sional Kepler problem in polar coordinates, i.e.
 \begin{equation}
  \begin{array}{rl}\label{eq:kepler.2.dim}
 \ddot{r}(t)-r(t)\dot{\theta}(t)^2 & = -\frac{\lambda}{r(t)^2}\\
 \frac{d }{dt}\left[ r(t)^2\dot{\theta}(t)\right] & =0.\\
 \end{array}
 \end{equation}
-In the particular case of \emph{rigid motion}, we have  $r(t)\equiv 1$ and $\theta (t)=\sqrt{\lambda }t +\theta(0)$. Therefore the primary bodies perform a periodic motion with period $T:=2\pi/\sqrt{\lambda }$.
+In the particular case of \emph{rigid motion}, we have  $r(t)\equiv 1$ and $\theta (t)=\sqrt{\lambda }t +\theta(0)$. In this case the primary bodies perform a periodic motion with minimal period $T:=2\pi/\sqrt{\lambda }$.
 
 Let $x_0(t)$ be the position of the massless particle.
 According to the Newtonian equations of motion $x_0$ satisfies
@@ -231,7 +191,7 @@ According to the Newtonian equations of motion $x_0$ satisfies
  \ddot{x}_0=\sum_{i=1}^n\frac{m_i(x_i-x_0)}{|x_i-x_0|^3}=:f(t,x_0).
 \end{equation}
 
-In the previous equation, we assume know the positions of the primaries. Therefore, this equation plus convenient initial conditions completely detemines the position of the particle.
+In the previous equation, we assume know the positions of the primaries. Therefore, this equation plus  initial conditions completely determines the position of the particle.
 
 
 
@@ -240,26 +200,26 @@ Henceforth we denote by $L$ the coordinate $z$ axis.
 It is well know that a  necessary and sufficient condition for that $L$ be invariant under the  flow associated to the non autonomous system  \eqref{eq:newton}, is that $f(t,L)\subset L$ for all $t$, i.e. $L$ is \emph{$f$-invariant} for every $t$.
 
 
-\begin{defi}
+\begin{definition}
 We say that a
 central configuration $(q,m)$ is \emph{balanced} if and only if $(q,m)$ satisfies that, for any $r>0$, such that the set
 \[F_r:=\{i:|q_i|=r\}\]
 is non empty, then
 \begin{equation}\label{eq:suma0}\sum_{i\in F_r}m_iq_i=0.\end{equation}
 i.e. every maximal set of  bodies which are equidistant from origin has center of mass equal to $0$.
-\end{defi}
+\end{definition}
 
 
 
-\begin{thm}\label{thm:prim} $L$ is $f$-invariant for every $t$ if and only if $(q,m)$ is balanced.
-\end{thm}
+\begin{theorem}\label{thm:prim} $L$ is $f$-invariant for every $t$ if and only if $(q,m)$ is balanced.
+\end{theorem}
 
 For the proof of the previous theorem we need the following result.
 
 
-\begin{lem}\label{lem:1} For $c>0$ we define the function $y_c(t):=(c+t)^{-3/2}$. If $0<t_1<t_2<\ldots<t_k$ then the functions $y_j(t):=y_{t_j}(t)$  are linearly independent on  each open interval   $I\subset \mathbb{R}^+$.
-\end{lem}
-\begin{proof} It is sufficient to prove that Wronskian
+\begin{lemma}\label{lem:1} For $c>0$ we define the function $y_c(t):=(c+t)^{-3/2}$. If $0<t_1<t_2<\ldots<t_k$ then the functions $y_j(t):=y_{t_j}(t)$  are linearly independent on  each open interval   $I\subset \mathbb{R}^+$.
+\end{lemma}
+\begin{proof} It is sufficient to prove that the Wronskian
 
  \[W:=W(y_1,\ldots,y_k)(t)=\det\begin{pmatrix}
 			      y_1 & \cdots & y_k\\
@@ -312,7 +272,7 @@ which in turn is equivalent to $t_i\neq t_j$, $i\neq j$.
 \begin{proof}[Proof of Theorem \ref{thm:prim}]
 The condition $f(t,L)\subset L$ for all $t$ is equivalent to
 \begin{equation}\label{eq:f(L)cL-->sum=0}
- \sum_{i=1}^n\frac{m_ir(t)Q(\theta (t))q_i}{\left(r(t)^2|q_i|^2+z^2\right)^{3/2}}=0,
+ \sum_{i=1}^n\frac{m_ir(t)Q(\theta (t))q_i}{\left(r(t)^2|q_i|^2+z^2\right)^{3/2}}=0\in\rr^2,
 \end{equation}
 for every $t,z\in \rr$.
 
@@ -326,49 +286,52 @@ According to Lemma \ref{lem:1}, the last equation is equivalent to \eqref{eq:sum
 
 \section{Balanced collisionless configurations for $n\leq 4$}\label{sec:addmisibles}
 
-In this section we find all balanced collisionless configurations with $n\leq 4$. In this context we understand that   $q_1.\ldots,q_n$ is a collisionless configuration  when $q_i\neq 0$ for $i=1,\ldots,n$. We note that despite this fact the system can have collisions in the case that the primaries have a homothetic collapsing motion.  From the fact that the center of mass is an excluded position we obtain
+In this section we find all balanced collisionless configurations with $n\leq 4$. Hereafter  we said that   $q_1,\ldots,q_n$ is a collisionless configuration  when $q_i\neq 0$ for $i=1,\ldots,n$. We note that despite this fact the system can have collisions, for example in the case when the primaries have a homothetic collapsing motion.  Since the center of mass is an excluded position a balanced configuration satisfies
 \begin{equation}\label{F_r.no.vac-->CF_r.geq2}
  F_r\neq \emptyset \Rightarrow \# F_r\geq 2.
 \end{equation}
 
 
 
-Trivially, a configuration of two point masses $m_1$ and $m_2$ is balanced if and only if $m_1=m_2$.
+It is atrivial fact that  two point masses $m_1$ and $m_2$ is balanced if and only if $m_1=m_2$.
 
-From \eqref{F_r.no.vac-->CF_r.geq2}, a $3$-body configuration consists of equidistant  bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle configuration. Now, by equation \eqref{eq:suma0} and an elementary geometrical reazoning   we have that $m_1=m_2=m_3$.
+From \eqref{F_r.no.vac-->CF_r.geq2}, a $3$-body balanced configuration consists of equidistant  bodies from the origin. Therefore, it must to be the Lagrangian equilateral triangle. Now, by equation \eqref{eq:suma0} and an elementary geometrical reazoning   we have that $m_1=m_2=m_3$.
 
 The case $n=4$ is more interesting. We include Definition \ref{def:bis.per} and Theorem \ref{thm:bisector.moeckel}, which are presented for the first time in  \cite{moeckel1990central}, for the reader's convenience.
 
-\begin{defi}\label{def:bis.per}
+\begin{definition}\label{def:bis.per}
 Let $q$ be a planar configuration. For each pair, $i$, $j$, the line
 containing $q_i$ and $q_j$ together with its perpendicular bisector form axes which
 divide the plane into four quadrants. The union of the first and third quadrants
 is an hourglass shaped region which will be called a `cone'; similarly,
 the second and fourth quadrants together form another cone. The phrase `open
 cone' refers to a cone minus the axes.
-\end{defi}
+\end{definition}
 
-\begin{thm}[Perpendicular Bisector Theorem]\label{thm:bisector.moeckel}
+\begin{theorem}[Perpendicular Bisector Theorem]\label{thm:bisector.moeckel}
 Let $(q,m)$ be a planar central configuration and let
 $q_i$ and $q_j$ be any two of its points. Then if one of the two open cones determined
 by the line through $q_i$ and $q_j$ and its perpendicular bisector contains points of
 the configuration, so does the other one.
-\end{thm}
+\end{theorem}
 
 Next we characterize all the $4$-body balanced collisionless configurations.
 
-\begin{thm}\label{thm:caracterizacion4}
-Let $(q,m)$ be a 4-body central configuration. Then $(q,m)$ is  balanced and collisionless if and only if,  for a suitable enumeration  of bodies,   $q_1=-q_3$, $q_2=-q_4$, $m_1=m_3$,  $m_2=m_4$, and  $q$ is of some of the following mutually exclusive types:
+\begin{theorem}\label{thm:caracterizacion4}
+Let $(q,m)$ be a 4-body central configuration. Then $(q,m)$ is  balanced and collisionless if and only if,  for a suitable enumeration  of bodies,   $q_1=-q_3$, $q_2=-q_4$, $m_1=m_3$,  $m_2=m_4$, and  $(q,m)$ is of some of the following mutually exclusive types:
 \begin{description}
 \item[CCcl.]   collinear,
 \item[CCr.]  a rhombus with $r_{13}<r_{24}$ and $m_1>m_2$,
 \item[CCs.]  a square with four equal masses.
 \end{description}
-\end{thm}
+\end{theorem}
 
 
 
 
+\begin{remark} In \cite{shoaib2011collinear} was studied central configurations of type CCcl, while that CCr configurations were addressed in \cite{long2002four} and \cite{perez2007convex}.
+
+\end{remark}
 
 
 
@@ -376,13 +339,13 @@ Let $(q,m)$ be a 4-body central configuration. Then $(q,m)$ is  balanced and col
 From \eqref{F_r.no.vac-->CF_r.geq2} we have to consider two cases.
 
 \emph{Case 1.}  $m_1\geq m_2$, $|q_1|\neq|q_2|$, $|q_1|=|q_3|$ and $|q_2|=|q_4|$. Now \eqref{eq:suma0} implies that
- $m_1=m_3$, $m_2=m_4$, $q_1=-q_3$ and $q_2=-q_4$.  We divide the plane in two cones $C_i$, $i=1,2$, by means of  the line $P$ joining $q_1$  and $q_3$ together with its perpendicular bisector $M$.  From Theorem \ref{thm:bisector.moeckel}, if  $q_2$  is in $C_1$, then  $q_4$ is in $C_2$, and vice versa. This is a contradiction with the fact that $q_2=-q_4$. Then $q_2,q_4\in P$ or $q_2,q_4\in M$, i.e. $q$ is collinear or is a rhombus with equal masses in opposite vertices. In the first case, $(q,m)$ is of  CCcl type. In the second case, if $m_1>m_2$,   was proved in \cite[Eqs. $(3.44)$ and $(3.45)$]{long2002four} that $r_{13}<r_{24}$. Hence $(q,m)$ is of  CCr type. From \cite[Corollary 2]{perez2007convex} if $m_1=m_2$ then the configuration is a square witch is a contradiction with the fact that $|q_1|\neq|q_2|$.
+ $m_1=m_3$, $m_2=m_4$, $q_1=-q_3$ and $q_2=-q_4$.  We divide the plane in two open cones $C_i$, $i=1,2$, by means of  the line $P$ joining $q_1$  and $q_3$ together with its perpendicular bisector $M$.  From Theorem \ref{thm:bisector.moeckel}, if  $q_2$  is in $C_1$, then  $q_4$ is in $C_2$, and vice versa. This is a contradiction with the fact that $q_2=-q_4$. Then $q_2,q_4\in P$ or $q_2,q_4\in M$, i.e. $q$ is collinear or is a rhombus with equal masses in opposite vertices. In the first case, $(q,m)$ is of  CCcl type. In the second case, if $m_1>m_2$,   was proved in \cite[Eqs. $(3.44)$ and $(3.45)$]{long2002four} that $r_{13}<r_{24}$. Hence $(q,m)$ is of  CCr type. From \cite[Corollary 2]{perez2007convex} if $m_1=m_2$ then the configuration is a square witch is a contradiction with the fact that $|q_1|\neq|q_2|$.
 
 \emph{Case 2.} $|q_1|=|q_2|=|q_3|=|q_4|$. In this situation,  was proved in \cite{hampton2005co} that the configuration is the equal mass square.
 \end{proof}
 
 \section{Massless particle motion}\label{sec:mas-mot}
-In this and next sections we suppose that the primary bodies are in a $T$-periodic rigid motion associated to a balanced collisionless $q$, i.e  $r(t)\equiv 1$ and from the remark follows \eqref{eq:kepler.2.dim}, $\theta (t)=\sqrt{\lambda}t$. Without loss of generality,  we have assumed here that $\theta(0)=0$. For the particle, we suppose that it is moving on $L$, i.e. $x_0(t)=(0,0,z(t))$. According to Theorem \ref{thm:prim}, $x_0$ is solution of \eqref{eq:newton}, if and only if $z(t)$ is solution of the autonomous equation
+In this and next sections we suppose that the primary bodies are in a $T$-periodic rigid motion associated to a balanced collisionless CC $(q,m)$, i.e  $r(t)\equiv 1$ and according to remark following equation \eqref{eq:kepler.2.dim}, $\theta (t)=\sqrt{\lambda}t$. Without loss of generality,  we have assumed here that $\theta(0)=0$. For the particle, we suppose that it is moving on $L$, i.e. $x_0(t)=(0,0,z(t))$. From Theorem \ref{thm:prim}, $x_0$ is solution of \eqref{eq:newton}, if and only if $z(t)$ is solution of the autonomous equation
 
 
 \begin{equation}\label{eq:eq_new_red}
@@ -390,13 +353,13 @@ In this and next sections we suppose that the primary bodies are in a $T$-period
 \end{equation}
 where $s_i=|q_i|$.
 
-We will analyze all possible motions for the massless particle $x_0$. In particular we will see that all motion is periodic or is a scape trayectory. We will find that there exists $T_0$-periodic solutions for all $T_0$ in an interval  $(\sigma(q),+\infty)$. This fact implies that there exists an infinity quantity of periodic solutions for the entire $n+1$-body system.
+We will analyze all possible motions for the massless particle $x_0$. In particular we will see that all motion is periodic or is a scape trayectory. We will find that there exists $T_0$-periodic solutions for all $T_0$ in an interval  $(\sigma(q,m),+\infty)$. This fact implies that there exists an infinity quantity of periodic solutions for the entire $n+1$-body system.
 
 
 
 
 
-The second order equation \eqref{eq:eq_new_red} is consevative, therefore solutions conserve the energy
+The second order equation \eqref{eq:eq_new_red} is conservative, therefore solutions conserve the energy
 \begin{equation}\label{eq:conser.energ}
 E(z,v):=\frac{|v|^2}{2}-\sum_{i=1}^{n} \frac{m_i}{\left(s_i^2+z^2\right)^{\frac12}},
 \end{equation}
@@ -405,9 +368,9 @@ i.e. $E(z(t),\dot{z}(t))$ is constant.
 
 
 Following \cite{VladimirI.Arnold229} (see also \cite{marchesin2013spatial})  we introduce the next concepts.
-\begin{defi}[Chazy, 1922]
+\begin{definition}[Chazy, 1922]
  A solution $z(t)$ of \eqref{eq:eq_new_red} such that  $\lim\limits_{t\to\infty}z(t)=\infty$ is called hyperbolic for $t\to \infty$ when $\lim\limits_{t\to\infty}\dot{z}(t)= z_{\infty}\neq 0$ and is called parabolic if $\lim\limits_{t\to\infty}\dot{z}(t)=0$.
-\end{defi}
+\end{definition}
 
 
 
@@ -416,23 +379,23 @@ Following \cite{VladimirI.Arnold229} (see also \cite{marchesin2013spatial})  we 
 
 The following theorem characterize all the possible motions for the massless particle.
 
-\begin{thm}\label{thm:prin_ine} We assume that $q$ is a balanced collisionless configuration and the primaries are in a rigid motion. Every solution of \eqref{eq:eq_new_red} is of some of the following types:
+\begin{theorem}\label{thm:prin_ine} We assume that $(q,m)$ is a balanced collisionless configuration and the primaries are in a rigid motion. Every solution of \eqref{eq:eq_new_red} is of some of the following types:
 \begin{enumerate}
 \item\label{1} Hyperbolic, when $E>0$,
 \item\label{2} Parabolic, when $E=0$,
 \item\label{3} Periodic, when $E_{min}:=-\sum_{i=1}^{n}\frac{m_i}{s_i}<E<0$.
 \item\label{4} Equilibrium solution when $E=E_{min}$.
 \end{enumerate}
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 We follow a standard argument for hamiltonian systems (see \cite{A}).
 
-We consider the level sets of $S(E)=\{(z,v):E(z,v)=E\}$, in the phase space $(z,v)$,  for different values of $E$. An elementary analysis shows that
+We consider the level sets $S(E)=\{(z,v):E(z,v)=E\}$, in the phase space $(z,v)$. An elementary analysis shows that
 \begin{itemize}
  \item If $E\geq 0$ then $S(E)$ is the union of two bounded graphs. They are symmetric with respect to $z$-axis, each of which is contained  in some semiplane $v> 0$ or $v<0$. The $v$-positive branch is the graph of a function $v(E,z)$, which  is decreasing with respect to $|z|$. Moreover, $\lim\limits_{|z|\to \infty}v(E,z)=\sqrt{2E}$.
 
- \item For every $E\geq E_{min}$, the energy curve cut the $v$-axis at $\pm(2E+2\sum_{i=1}^n m_is_i^{-1})^{\frac12}$.
+ \item For every $E\geq E_{min}$, the energy curve $S(E)$ cut the $v$-axis at the value $\pm(2E+2\sum_{i=1}^n m_is_i^{-1})^{\frac12}$.
 
  \item If $E_{min}<E<0$ then $S(E)$ is a simple closed curve symmetric with respecto to $z$ and $v$ axes.
 
@@ -441,7 +404,7 @@ We consider the level sets of $S(E)=\{(z,v):E(z,v)=E\}$, in the phase space $(z,
 
 In the figure  \ref{fig:conf_esp} we show the phase portrait for a rhomboidal configuration with masses $m_1=m_3=1$ and $m_2=m_4=0.5$.
 
-The function $\varphi(t)=(z(t),\dot{z}(t))$ solves the system $\dot{\varphi}(t)=F(\varphi(t))$, where $F(z,v)=(v,-\sum_{i=1}^{n}m_iz (s_i^2+z^2)^{-3/2})$. The only fixed point of $F$ is $(z,v)=(0,0)$. Therefore, the level surfaces $S(E)$, with $E\neq E_{min}$, do not contain stationary points. A well know argument implies that the trayectories $t\mapsto (z(t),\dot{z}(t))$  fill completely the energy curves.
+The function $\varphi(t)=(z(t),\dot{z}(t))$ solves the system $\dot{\varphi}(t)=F(\varphi(t))$, where \linebreak $F(z,v)=(v,-\sum_{i=1}^{n}m_iz (s_i^2+z^2)^{-3/2})$. The only fixed point of $F$ is $(z,v)=(0,0)$. Therefore, the level surfaces $S(E)$, with $E\neq E_{min}$, do not contain stationary points. Well know arguments imply that the trayectories $t\mapsto (z(t),\dot{z}(t))$ are defined in every time and   fill completely the connected component of the energy curves.
 
 We observe that any solution $z$ crosses the $v$-axis. On the other hand if $E\geq 0$ and $v(E,0)>0$ ($v(E,0)<0$) then $z(t)$ is increasing (decreasing) with respect to $t$. If $z(t)$ remained bounded when $t\to +\infty$, then there would be the limit $\zeta_{\infty}:=\lim\limits_{t\to\infty}z(t)$. This would imply  that $(\zeta_{\infty},0)$ is a fixed point of $F$, which is a contradiction.  As a consequence, if $E\geq 0$ then $|z(t)|\to \infty$ when $t\to  +\infty$. Moreover $\lim\limits_{t\to +\infty}\dot{z}(t)=\pm\sqrt{2E}$.  From this we conclude that the trayectory is hyperbolic when $E>0$ and it is parabolic in the case $E=0$.
 
@@ -450,13 +413,13 @@ In the case that $E_{min}<E<0$ we have that the trayectory is contained in a clo
 Finally if $E=E_{min}$ clearly we have that $z(t)\equiv 0$.
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.3]{figure_1.png}
-\caption{Energy level for a rhomboidal configuration with masses $m_1=m_3=1$ and $m_2=m_4=0.5$}\label{fig:energy}
+\includegraphics[scale=0.3]{figure_1.eps}
+\caption{Energy level for a rhomboidal configuration with masses $m_1=m_3=1$ and $m_2=m_4=0.5$.}\label{fig:energy}
 \end{center}
 \end{figure}
 \end{proof}
 
-\begin{thm}\label{thm:prop.periodos}
+\begin{theorem}\label{thm:prop.periodos}
 We denote by $T_0(E)$ the minimal period for a solution of \eqref{eq:eq_new_red} with $E_{min}<E<0$. Then
 \begin{enumerate}
  \item\label{it:T0.formula} for $z_E$ the only positive solution of $-\sum_{i=1}^n m_i (s_i^2+z_{E}^2)^{-\frac12}=E$
@@ -467,13 +430,13 @@ We denote by $T_0(E)$ the minimal period for a solution of \eqref{eq:eq_new_red}
  \item\label{it:T0.rango} $T_0\left((E_{min},0)\right)=(T_{min},+\infty)$, where  $T_{min}=2\pi\left(\sum_{i=1}^n\frac{m_i}{s_i^3} \right)^{-1/2}$.
 
  \end{enumerate}
-\end{thm}
+\end{theorem}
 
 \begin{proof}
-Let $E_{min}<E<0$ and let $z(t)$ be the only increasing solution with $z(0)=0$, $\dot{z}(0)>0$ and energy equal to $E$. Therefore $z(t)$ is $T_0(E)$-periodic. As a consequence of the symmetries of the equation we have that $z(T_0(E)/4)=z_E$. Then, taking account of \eqref{eq:conser.energ} we have that
+Let $E_{min}<E<0$ and let $z(t)$ be the only solution with $z(0)=0$, $\dot{z}(0)>0$ and energy equal to $E$. Therefore $z(t)$ is $T_0(E)$-periodic. As a consequence of the symmetries of the equation we have that $z(T_0(E)/4)=z_E$. Then, taking account  \eqref{eq:conser.energ} we have that
 \begin{equation*}
  \begin{split}
-  \frac{T_0}{4}&=\int_0^{T_0/4}\left(E+\sum_{i=1}^n m_i (s_i^2+z^2)^{-\frac12}\right)^{-\frac12} \dot{z}(t) dt\\
+  \frac{T_0}{4}&=\frac{1}{\sqrt{2}}\int_0^{T_0/4}\left(E+\sum_{i=1}^n m_i (s_i^2+z^2)^{-\frac12}\right)^{-\frac12} \dot{z} dt\\
   &=\frac{1}{\sqrt{2}}\int_{0}^{z_E} \left(E+\sum_{i=1}^n m_i (s_i^2+z^2)^{-\frac12}\right)^{-\frac12} dz,
  \end{split}
 \end{equation*}
@@ -499,13 +462,13 @@ Therefore, from the dominated convergence theorem and monotone convergence theor
 Finally,  since $T_0=T_0(z_E)$ is continuous and increasing respect to $z_E$, we conclude the afirmation in the item \ref{it:T0.rango}.
 \end{proof}
 
-\begin{comentario}
+\begin{remark}
  It si posible to use the classical theory of hamiltonian systems (see \cite{A}) to derive the formula \eqref{eq:form.T0E-periodo} (see \cite{acinas2014estimates} for this approach in a related problem).
-\end{comentario}
+\end{remark}
 
 
 
-\begin{comentario}
+\begin{remark}
 Let us to show a second proof of item \ref{it:T0.rango} of Theorem \ref{thm:prop.periodos}.
 
 The inequality $T_0>T_{min}$ is consequence of comparison Sturm's theorem applied to equations  $\ddot{z}+h(z)z=0$, where $h(z)=\sum_{i=1}^{n} m_i \left(s_i^2 +z^2\right)^{-3/2}$, and $\ddot{z}+\left(\sum_{i=1}^{n} m_i s_i^{-3}\right)z=0$. This prove that $T_0\left((E_{min},0)\right)\subset(T_{min},+\infty)$.
@@ -515,7 +478,8 @@ For the reverse inclusion  we  follow arguments of \cite{zhao2015nonplanar} and 
 
 Let $T_0>T_{min}$. We consider the action integral
 \[\mathcal{I}(z)=\int_0^{T_0}\frac12|\dot{z}|^2+\sum_{i=1}^n\frac{m_i}{\sqrt{s_i^2+z^2}}dt,\]
-Then $T_0$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $\mathcal{I}$ in the space $H^1(\mathbb{T},\rr)$, where $\mathbb{T}=\rr/T_0\mathbb{Z}$, of the functions  absolutely continuous, $T_0$-periodic with $\dot{z}\in L^2(\mathbb{T},\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $\mathcal{I}$ has minimum.  The functional $\mathcal{I}$ is not coercive in $H^1(\mathbb{T},\rr)$.  This deficiency is drawn with symmetry techniques (see \cite{David-2004}). The group $\mathbb{Z}_2$ acts on $H^1(\mathbb{T},\rr)$ according to the following assignments $(\bar{0}\cdot z)(t)=z(t)$ and $(\bar{1}\cdot z)(t)=-z(t+\frac{T_0}{2})$. The functional $\mathcal{I}$ is $\mathbb{Z}_2$-invariant, i.e. $\mathcal{I}(g\cdot z)=\mathcal{I}(z)$. We define the space of all $\mathbb{Z}_2$-symmetric (this simmetry is called the italian simmetry) funcions \[\Lambda(\mathbb{T},\mathbb{R}):
+Then $T_0$-periodic solutions of \eqref{eq:eq_new_red} are critical points of $\mathcal{I}$ in the space $H^1(\mathbb{T},\rr)$, where $\mathbb{T}=\rr/T_0\mathbb{Z}$, of the functions  absolutely continuous, $T_0$-periodic with $\dot{z}\in L^2(\mathbb{T},\rr)$ (see \cite[Cor. 1.1]{Mawhin2010}). We prove the existence of critical points by means of the direct method of calculus of variations, i.e. we will prove that $\mathcal{I}$ has a minimum.  The functional $\mathcal{I}$ is not coercive in $H^1(\mathbb{T},\rr)$.  This deficiency is drawn with symmetry techniques (see \cite{David-2004}). The group $\mathbb{Z}_2$ acts on $H^1(\mathbb{T},\rr)$ according to the following assignments $(\bar{0}\cdot z)(t)=z(t)$ and $(\bar{1}\cdot z)(t)=-z(t+\frac{T_0}{2})$. The functional $\mathcal{I}$ is $\mathbb{Z}_2$-invariant, i.e. $\mathcal{I}(g\cdot z)=\mathcal{I}(z)$. We define the space of all $\mathbb{Z}_2$-symmetric (this simmetry is called the italian simmetry) funcions \[\Lambda(\mathbb{T},\
+\mathbb{R}):
 =\left\{ z\in H^1(\mathbb{T},\rr) | \forall g\in \mathbb{Z}_2 : z=g\cdot z \right\}.\]
 The funciontal $\mathcal{I}$ restricted to $\Lambda$  is coercive. This fact follows from an obvious adaptation of Proposition 4.1 of \cite{David-2004}. We note that $F(z):=\sum_{i=1}^nm_i(s_i^2+z^2)^{-\frac{1}{2}}$ satisfies the condition $(A)$ in \cite[p. 12]{Mawhin2010}, then $\mathcal{I}$  is continuously differentiable and weakly lower semicontinuous on $H^1(\mathbb{T},\rr)$ (see \cite[p. 13]{Mawhin2010}). Therefore $\mathcal{I}$ has a minimum $z_0$ in $\Lambda(\mathbb{T},\mathbb{R})$. Then by the Palais' principle symmetric criticality,  $z_0$ is a critical point of $\mathcal{I}$ in $H^1(\mathbb{T},\rr)$ (see \cite{David-2004} and \cite{RichardPalais274}).
 
@@ -529,17 +493,17 @@ It is sufficient  to guarantee that $z_0\equiv 0$ is not a minimum.
 
 
 This second proof, unlike the first one, does not prove that $T_0$ is the minimum period for $z_0$. It could happen that $z_0$ had period $T_0/m$, with natural $m\in\mathbb{N}$. Because of Italian symmetry this $m$ should be odd.
-\end{comentario}
+\end{remark}
 
 
 
 
 
 
-\begin{cor}\label{cor:sol.periodica.sist.completo}
+\begin{corollary}\label{cor:sol.periodica.sist.completo}
 The complete $n+1$-body system has a infinity quantity of periodic solutions.
-\end{cor}
-\begin{proof}
+\end{corollary}
+\begin{proof} We recall that $T$ denotes minimal period of primaries motion.
 Let $l/m$  be a positive rational number with $Tl/m>T_{min}$. Then, there exists a solution of the entire system with period $lT$.
 \end{proof}
 
@@ -551,26 +515,26 @@ Let $l/m$  be a positive rational number with $Tl/m>T_{min}$. Then, there exists
 
 
 
-If the equation \eqref{eq:eq_new_red} has a $T$-periodic solution,  we say that the solution is \emph{synchronous}. In \cite{li2013characterization} was studied the existence of synchronous solutions for $n$ equal mass primary bodies in a regular polygon configuration.
+If the equation \eqref{eq:eq_new_red} has a $T$-periodic solution,  we say that the solution is \emph{synchronous}. In \cite{li2013characterization} was studied the problem of existence of synchronous solutions for $n$ equal mass primary bodies in a regular polygon configuration.
 
 In this section we establish a relation between the existence of synchronous solutions and the concept of pyramidal central configuration (see \cite{fayccal1996classification,faycaltesis,ouyang2004pyramidal}).
 
-\begin{defi}
+\begin{definition}
 A central configuration of $n+1$ mass point $q_0,\ldots,q_{n}$ in $\rr^{3}$  is called a pyramidal central configuration (PCC) if and only if $n$ points, we say $q_1,\ldots,q_n$, are in some plane $\Pi$ and $q_{0}\notin \Pi$.
-\end{defi}
+\end{definition}
 
 The following lemma was proved in \cite{ouyang2004pyramidal} (see also \cite{faycaltesis}).
-\begin{lem}[\cite{ouyang2004pyramidal}, Lemma 2.1]\label{lem:PCC}
+\begin{lemma}[\cite{ouyang2004pyramidal}, Lemma 2.1]\label{lem:PCC}
  Let $q_0,\ldots,q_{n}$ be a PCC such that $m_{0}$ is off the plane containing $m_1,\ldots,m_n$. If $m_{0}>0$ then $m_{0}$ is equidistant from $m_1,\ldots,m_n$.
-\end{lem}
+\end{lemma}
 
 We remark that the condition $m_{0}>0$ is important in the previous Lemma. We will show below examples of two PCC with $m_{0}=0$ which do not satisfy the conclusion of  Lemma \ref{lem:PCC}.
 
 
 
-\begin{prop}\label{cor:sol.sincronica}
-We assume that $q=q_1,\ldots,q_n$ is a balanced collisionless configuration and that the primaries are in a rigid motion. Then, there is a synchronous solution if and only if there exists $c\in \rr$ such that the points $q_0,\ldots,q_{n}$ associated to the masses $m_0,\ldots,m_{n}$, with $q_{0}=(0,0,c)$ and $m_{0}=0$, form a PCC.
-\end{prop}
+\begin{proposition}\label{cor:sol.sincronica}
+We assume that $q=q_1,\ldots,q_n$ is a balanced collisionless configuration and that the primaries are in a rigid motion. Then, there is a synchronous solution if and only if there exists $c\in \rr$ such that the points $(0,0,c),q_1,\ldots,q_{n}$ associated to the masses $0,m_1,\ldots,m_{n}$ form a PCC.
+\end{proposition}
 
 \begin{proof}
 We start assuming that there exist a synchronous solution. As a consequence of the Theorem \ref{thm:prop.periodos}(\ref{it:T0.rango}) and the fact that $T^2=4\pi^2/\lambda$ we have that
@@ -587,26 +551,25 @@ As $q_1,\ldots,q_n$ is a balanced configuration then
 \begin{equation}\label{eq:cond.CC2}
    \sum_{i=1}^{n}\frac{m_i q_i}{\left(s_i^2+c^2\right)^{3/2}}= (0,0).
 \end{equation}
-We define  $q_{0}:=(0,0,c)$ and $m_{0}=0$. The equations \eqref{eq:cond.CC1}, \eqref{eq:cond.CC2}  and the facts that $q_1,\ldots,q_n$ is a CC, with constant $\lambda$,  implies that $q_0,\ldots,q_{n}$ and $m_0,\ldots,m_{n}$  form a PCC.
-
+The equations \eqref{eq:cond.CC1}, \eqref{eq:cond.CC2}  and the facts that $q_1,\ldots,q_n$ is a CC, with constant $\lambda$ complete the proof.
 The proof of the reciprocal statement follows in a direct way.
 \end{proof}
 
-\begin{cor}
+\begin{corollary}
 We assume that $(q,m)$ is a balanced collisionless configuration and that the primaries are in a rigid motion. Then, there is a synchronous solution if and only if
  \begin{equation}\label{eq:ine_prin}
  \sum_{i<j}\frac{m_im_j}{r_{ij}}<\left(\sum_{i=1}^n\frac{m_i}{s_i^3}\right)\left(\sum_{i=1}^nm_is_i^2\right).
 \end{equation}
-\end{cor}
+\end{corollary}
 
 \begin{proof}
-The result is consequence of \eqref{eq:lamdbda<suma.si3} and the fact that $T^2=4\pi^2 \sum_{i=1}^{n}m_i|q_i|^2/U$   (see \cite[p. 109]{JaumeLlibre276}).
+The result is consequence of \eqref{eq:lamdbda<suma.si3} and the fact that $T^2=4\pi^2 \sum_{i=1}^{n}m_is_i^2/U$   (see \cite[p. 109]{JaumeLlibre276}).
 \end{proof}
 
 
-\begin{comentario}\label{com:sincronicas}
-We observe that if $(q,m)$  is a  balanced  CC  with constant $\lambda>0$, which satisfies \eqref{eq:ine_prin} and if $r,\mu>0$  then  $(rq,\mu m)$ is a CC with constant $\lambda \mu r^3$, and \eqref{eq:ine_prin} remains unchanged for the new positions $rq$ and the new masses $\mu m$. Consequently we can assume that a given length has any desired value. Then the equation \eqref{eq:eq_new_red} has a synchronous solutions if and only if the same equation, with $(rq,\mu m)$ instead $(q,m)$, has a synchronous solution.
-\end{comentario}
+\begin{remark}\label{com:sincronicas}
+We observe that if $(q,m)$  is a  balanced  CC  with constant $\lambda>0$, which satisfies \eqref{eq:ine_prin} and if $r,\mu>0$  then  $(rq,\mu m)$ is a CC with constant $\lambda \mu r^3$, and \eqref{eq:ine_prin} remains unchanged for the new positions $rq$ and the new masses $\mu m$. Consequently we can assume that any  length and  mass take any  desired value. Then the equation \eqref{eq:eq_new_red} has a synchronous solutions if and only if the same equation, with $(rq,\mu m)$ instead $(q,m)$, has a synchronous solution.
+\end{remark}
 
 
 
@@ -614,14 +577,14 @@ We observe that if $(q,m)$  is a  balanced  CC  with constant $\lambda>0$, which
 
 The sufficiency of the condition $n\leq 472$ in the following corollary  was proved in \cite{li2013characterization}.
 
-\begin{cor}\label{cor:nleq472}
-We suppose that $q$ is the equal masses regular polygon configuration  (this is an balanced CC). Then there exists a synchronous solution if and only if $2\leq n\leq 472$.
-\end{cor}
+\begin{corollary}\label{cor:nleq472}
+We suppose that $(q,m)$ is the equal masses regular polygon configuration  (this is an balanced CC). Then there exists a synchronous solution if and only if $2\leq n\leq 472$.
+\end{corollary}
 
 \begin{proof}
-In this case $s_1=s_2=\cdots=s_n=:r$ and $m_1=m_2=\cdots=m_n=:m$. Then, from the law of cosines we obtain
+In this case $s_1=s_2=\cdots=s_n=:r$ and $m_1=m_2=\cdots=m_n=:M$. Then, from the law of cosines we obtain
 \[
- \sum_{i<j}\frac{m_im_j}{r_{ij}}=\frac{nm^2}{4r}\sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}.
+ \sum_{i<j}\frac{m_im_j}{r_{ij}}=\frac{nM^2}{4r}\sum_{j=1}^{n-1}\frac{1}{\sin\left(\frac{j\pi}{n}\right)}.
 \]
 Therefore the condition \eqref{eq:ine_prin} is equivalent to
 
@@ -658,9 +621,9 @@ Our next objective is to verify that condition \eqref{eq:ine_prin} is satisfied 
 
 
 
-\begin{thm}\label{thm:CC.3.4.satis.cond.adm}
+\begin{theorem}\label{thm:CC.3.4.satis.cond.adm}
 The central configurations CCcl and CCr satisfy condition \eqref{eq:ine_prin}.
-\end{thm}
+\end{theorem}
 
 
 
@@ -678,7 +641,7 @@ and this is equivalent to see that
 \begin{equation}\label{eq:ineq.4.cuerpos.alinea}
 \frac{x^3}{1-x^2}<1.
 \end{equation}
-The values of $x$ involved in the above inequality are such that the configuration of positions $(-1,-x,x,1)$ and masses $(\mu,1-\mu,1-\mu,\mu)$ is central. By Moulton \cite{moulton1910straight}, fixed a mass $\mu$ there is only one value of $x$ satisfiying this condition. So, we can define $x(\mu)$ as such value of $x$.  We note that $h(x)=x^3/(1-x^2)$ is an increasing function with respect to $x\in (0,1)$ and $h(x)\leq 1$ for $x\in (0,3/4)$. Hence, if we could prove that $x(\mu)$ is a decreasing function and
+The values of $x$ involved in the above inequality are such that the configuration of positions $(-1,-x,x,1)$ and masses $(\mu,1-\mu,1-\mu,\mu)$ is central. It was shown in \cite{moulton1910straight} that given a mass $\mu$ there is only one value of $x$ satisfiying this condition (see also \cite{shoaib2011collinear}). So, we can define $x(\mu)$ as such value of $x$.  We note that $h(x)=x^3/(1-x^2)$ is an increasing function with respect to $x\in (0,1)$ and $h(x)< 1$ for $x\in (0,3/4)$. Hence, if we could prove that $x(\mu)$ is a decreasing function and
 \begin{equation}\label{eq:ineq.4.cuerpos.lim0}
 \lim\limits_{\mu\to 0}x(\mu)<3/4
 \end{equation}
@@ -698,18 +661,18 @@ Since $44x^2<51$ and $16 x^{9}  + 32 x^{7} + 12 x^{6} < 304 x^{5}$ for $x\in (0,
 
 
 
-Let's see now that \eqref{eq:ineq.4.cuerpos.lim0} holds. When $\mu$ goes to $0$, $x(\mu)$ converges to the only solution, $x(0)$, in the interval $(0,1)$, of the equation $8 x(0)^{5} - x(0)^{4} + 8 x(0)^{3} + 2 x(0)^{2} - 1=0$.  Then  $ 8 x(0)^{3} -1< 0$ which implies that $x(0)<3/4$ as we wanted to prove.
+Let's see now that \eqref{eq:ineq.4.cuerpos.lim0} holds. When $\mu$ goes to $0$, $x(\mu)$ converges to the only solution  in the interval $(0,1)$ of  equation $8 x(0)^{5} - x(0)^{4} + 8 x(0)^{3} + 2 x(0)^{2} - 1=0$.  Then  $ 8 x(0)^{3} -1< 0$ which implies that $x(0)<3/4$ as we wanted to prove.
 \end{proof}
 
 
-\begin{comentario}
+\begin{remark}
 As consequence of previous results there exist five-body $PCC's$ with $m_1,\ldots,m_4$  in a CCcl or CCr configuration and the mass $m_0=0$ is in the  line perpendicular to the  plane containing $m_1,\ldots,m_4$ and passing by the center of mass. These are examples of $PCC's$ wich does not verify the conclusion of Lemma \ref{lem:PCC}.
-\end{comentario}
+\end{remark}
 
 
-\begin{cor}
+\begin{corollary}
 For all  balanced CC of 3-body or 4-body, the  problem $P$ has a synchronous solution.
-\end{cor}
+\end{corollary}
 
 
 
@@ -738,7 +701,7 @@ For all  balanced CC of 3-body or 4-body, the  problem $P$ has a synchronous sol
 
 The following result shows a necessary condition for that  a non-balanced CC allows a solution of the problem $P$.
 
-\begin{thm}\label{thm:no.admisible.movimiento}
+\begin{theorem}\label{thm:no.admisible.movimiento}
 We suppose that $(q,m)$ is a non balanced CC and  that the primaries are in a homographic motion, i.e.  equation \eqref{eq:x_j=rtQtq_j} is satisfied. Assume that the massless particle is moving on the $z$-axis with position vector $x_0(t)=(0,0,z(t))$. Then, some of the following statements are satisfied:
 \begin{enumerate}
  \item\label{it:z==0} The massless particle is in a stationary motion and
@@ -748,7 +711,7 @@ We suppose that $(q,m)$ is a non balanced CC and  that the primaries are in a ho
  i.e. the positions $0,q_1,\ldots,q_n$ and the masses $0,m_1,\ldots,m_n$ are in a CC.
  \item\label{it:z=r} The $n+1$-body system is in a homothetic motion. i.e. $Q(\theta(t))$ in the equation \eqref{eq:x_j=rtQtq_j} is the identity matrix and $z(t)=cr(t)$, for some constant $c$. Moreover, the configuration $q_0,\ldots,q_n$ is a PCC, where $q_0=(0,0,c)$ and $m_0=0$.
 \end{enumerate}
-\end{thm}
+\end{theorem}
 
 \begin{proof}
  We recall the definition of the function $f$ and line $L$ from the Section \ref{sec:admisible.configuraciones}.
@@ -773,15 +736,15 @@ If $z(t)/r(t)$  would be a non constant function then previous equation and Lemm
 \end{equation}
 The second equality in \eqref{eq:kepler.2.dim} implies the Kepler's second law, i.e. there exists $d\in\rr$ such that $r^2\dot{\theta}\equiv d$. Replacing $\dot{\theta}$ in equation \eqref{eq:kepler=CC} and multiplying by $r(t)^3$ we obtain
 \begin{equation}\label{eq:r.sum-lambd=d}
--r(t)\left(\sum_{i=1}^{n}\frac{m_i}{(s_i^2+c^2)^{3/2}}+\lambda\right)=d^2.
+-r(t)\left(\sum_{i=1}^{n}\frac{m_i}{(s_i^2+c^2)^{3/2}}-\lambda\right)=d^2.
 \end{equation}
 Therefore, if $d\neq 0$ then $\dot{r}(t)\equiv 0$, and this implies $\dot{z}(t)\equiv 0$. As $z(t)$ is a constant function and it solves equation \eqref{eq:eq_new_red}, then $z(t)\equiv 0$. Hence we are in the case 1 again. Consequently we suppose $d=0$. Therefore $\theta(t)\equiv cte$ and the motion is homothetic. From \eqref{eq:sumr.sumFr_miqi=0} and \eqref{eq:r.sum-lambd=d} we deduce that in this new situation equation \eqref{eq:cond.CC1} and \eqref{eq:cond.CC2} hold. This, as in the proof of Proposition \ref{cor:sol.sincronica}, implies the desired result.
 \end{proof}
 
 
 
-\begin{ejemplo}
- We present an example of a $3+1$-body system satisfiying the situation described in the item \ref{it:z==0} of the Theorem \ref{thm:no.admisible.movimiento}, i.e. $q$ is a non balanced CC and $z(t)\equiv 0$. For this, it is sufficient to find a 4-body CC with a zero mass body located in the center of mass.
+\begin{example}
+ We present an example of a $3+1$-body system satisfiying the situation described in the item \ref{it:z==0} of the Theorem \ref{thm:no.admisible.movimiento}, i.e. $(q,m)$ is a non balanced CC and $z(t)\equiv 0$. For this, it is sufficient to find a 4-body CC with a zero mass body located in the center of mass.
 
  We start with a Euler's collinear central configuration formed by three primary bodies of masses $m_1 = 4-\mu$, $m_2 = 2 + \mu$ and $m_3 = 1$, where $0<\mu<1$, and positions, respect to a convenient $1$-dimensional coordinate system,  given by $q_1 = 0$, $q_2 = 1$ and $q_3 = 1 + r$. It is know (see \cite{Moeckel:2014}) that $r$ is the only positive solution of
 \[
@@ -794,26 +757,220 @@ We consider a massless particle with coordinate $x$. The acceleration resulting 
 \[
 f(x)= - \frac{4-\mu }{x^{2}}+\frac{\mu + 2}{\left(- x + 1\right)^{2}} + \frac{1}{\left(r - x + 1\right)^{2}}.
 \]
-Note that the left hand side of the previous equation is an increasing function that tends to $-\infty$ when $x$ goes to 0, and tends to $+\infty$ when $x$ goes to 1, so there is a unique point $\bar{x}=\bar{x}(\mu)\in (0,1)$ such that the equality $f(\bar{x})=0$. This point is an equilibrium for the gravitational field generated for the primaries.
+Note that the right hand side of the previous equation is an increasing function that tends to $-\infty$ when $x$ goes to 0, and tends to $+\infty$ when $x$ goes to 1, so there is a unique point $\bar{x}=\bar{x}(\mu)\in (0,1)$ such that the equality $f(\bar{x})=0$ holds. This point is an equilibrium for the gravitational field generated for the primaries.
 
-Let's see that there exists $ \mu \in (0,1) $ such that $ C(\mu) = \bar{x} $, i.e. $f(C)=0$. For this purpose, since $C$ is a continuous function with respect to $\mu$,  we need to see that there exists a value $\mu_1\in (0,1)$ such that $f (C) <0$  and   $ \mu_2\in (0,1) $ such that $ f (C)> 0 $.  The function $f(x)$ can be written as $$f(x)=\frac{Nf(x)}{Df(x)},$$ where $Df(x)=x^{2} \left(x - 1\right)^{2} \left(r - x + 1\right)^{2}$. Note that  $Df(x)>0$ for all $x\in (0,1)$. If we consider $\mu=0$ and compute $Nf(C)$ we have that
+Let's see that there exists $ \mu \in (0,1) $ such that $ C(\mu) = \bar{x} $, i.e. $f(C)=0$. For this purpose, since $C$ is a continuous function with respect to $\mu$,  we show that $f$ changes of sign on  $(0,1)$.  The function $f(x)$ can be written as $$f(x)=\frac{Nf(x)}{Df(x)},$$ where $Df(x)=x^{2} \left(x - 1\right)^{2} \left(r - x + 1\right)^{2}$. Note that  $Df(x)>0$ for all $x\in (0,1)$. If we consider $\mu=0$ and compute $Nf(C)$ we have that
 \[Nf(C)=\frac{r^{4}}{2401} + \frac{1514 r^{3}}{2401} + \frac{2245 r^{2}}{2401} + \frac{1110 r}{2401} + \frac{333}{2401}>0,\]
 on the other, hand if  $\mu=1$ then
 \[Nf(C)=- \frac{71 r^{4}}{2401} + \frac{1486 r^{3}}{2401} + \frac{401 r^{2}}{2401} - \frac{1480 r}{2401} - \frac{592}{2401}<0,\]
 because $0<r<1$.
-\end{ejemplo}
+\end{example}
 
-\begin{comentario}
- The following question is posed. Is there some non balanced central configuration $q$ such that the $n+1$-body system perform the motion described in Theorem \ref{thm:no.admisible.movimiento}(2)?
-\end{comentario}
-
-
+\begin{remark}
+ The following question is posed. Is there some non balanced central configuration $(q,m)$ such that the $n+1$-body system perform the motion described in Theorem \ref{thm:no.admisible.movimiento}(2)?
+\end{remark}
 
 
-\bibliographystyle{plainurl}
- %\bibliographystyle{apalike-url}
- \bibliography{mecanica_celeste}
+
+
+\def\cprime{$'$}
+\begin{thebibliography}{10}
+
+\bibitem{acinas2014estimates}
+S.~Acinas, G.~Giubergia, F.~Mazzone, and E.~Schwindt.
+\newblock On estimates for the period of solutions of equations involving the
+  $\varphi$-laplace operator.
+\newblock {\em Journal of Abstract Differential Equations and Applications},
+  5(1):21--34, 2014.
+
+\bibitem{A}
+V.~I. Arnol{\cprime}d.
+\newblock {\em Mathematical methods of classical mechanics}, volume~60 of {\em
+  Graduate Texts in Mathematics}.
+\newblock Springer-Verlag, New York, second edition, 1989.
+
+\bibitem{VladimirI.Arnold229}
+V.~I. Arnold, V.V. Kozlov, and A.~I. Neishtadt.
+\newblock {\em Mathematical Aspects of Classical and Celestial Mechanics}.
+\newblock Springer Science \& Business Media, jul 2007.
+
+\bibitem{bakker2015separating}
+L.~Bakker and S.~Simmons.
+\newblock A separating surface for {S}itnikov-like $n+ 1$-body problems.
+\newblock {\em Journal of Differential Equations}, 258(9):3063--3087, 2015.
+
+\bibitem{bountis2009stability}
+T~Bountis and KE~Papadakis.
+\newblock The stability of vertical motion in the n-body circular {S}itnikov
+  problem.
+\newblock {\em Celestial Mechanics and Dynamical Astronomy}, 104(1):205--225,
+  2009.
+
+\bibitem{corbera2000periodic}
+M.~Corbera and J.~Llibre.
+\newblock Periodic orbits of the {S}itnikov problem via a poincar{\'e} map.
+\newblock {\em Celestial Mechanics and Dynamical Astronomy}, 77(4):273--303,
+  2000.
+
+\bibitem{corbera2002symmetric}
+M.~Corbera and J.~Llibre.
+\newblock On symmetric periodic orbits of the elliptic {S}itnikov problem via
+  the analytic continuation method.
+\newblock {\em Contemporary Mathematics}, 292:91--128, 2002.
+
+\bibitem{fayccal1996classification}
+N.~Fay{\c{c}}al.
+\newblock On the classification of pyramidal central configurations.
+\newblock {\em Proceedings of the American Mathematical Society},
+  124(1):249--258, 1996.
+
+\bibitem{faycaltesis}
+N.~Fay\c{c}al.
+\newblock {\em On the classification of pyramidal central configurations}.
+\newblock PhD thesis, School of Mathematics and Mathematics and Statistics,
+  Carleton University, Ottawa, Canada., 1995.
+
+\bibitem{hampton2005co}
+M.~Hampton.
+\newblock Co-circular central configurations in the four-body problem.
+\newblock In {\em EQUADIFF 2003}, pages 993--998. World Scientific, 2005.
+
+\bibitem{jost1998calculus}
+J.~Jost and X.~Li-Jost.
+\newblock {\em Calculus of Variations}.
+\newblock Cambridge Studies in Advanced Mathematics. Cambridge University
+  Press, 1998.
+
+\bibitem{kincaid1991numerical}
+D.~Kincaid and W.~Cheney.
+\newblock {\em Numerical Analysis: Mathematics of Scientific Computing}.
+\newblock Brooks-Cole, 1991.
+
+\bibitem{li2013characterization}
+F.~Li, S.~Zhang, and X.~Zhao.
+\newblock The characterization of the variational minimizers for spatial
+  restricted ${N}+1$-body problems.
+\newblock {\em Abstract and Applied Analysis}, 2013(Article ID 845795), 2013.
+
+\bibitem{JaumeLlibre276}
+J.~Llibre, R.~Moeckel, and C.~Sim\'o.
+\newblock {\em Central Configurations, Periodic Orbits, and Hamiltonian
+  Systems}.
+\newblock Advanced Courses in Mathematics - CRM Barcelona. Birkh{\"{a}}user,
+  2015, nov 2015.
+
+\bibitem{llibre2008families}
+J.~Llibre and R.~Ortega.
+\newblock On the families of periodic orbits of the {S}itnikov problem.
+\newblock {\em SIAM Journal on Applied Dynamical Systems}, 7(2):561--576, 2008.
+
+\bibitem{long2002four}
+Y.~Long and S.~Sun.
+\newblock Four-body central configurations with some equal masses.
+\newblock {\em Archive for rational mechanics and analysis}, 162(1):25--44,
+  2002.
+
+\bibitem{marchesin2013spatial}
+M.~Marchesin and C.~Vidal.
+\newblock Spatial restricted rhomboidal five-body problem and horizontal
+  stability of its periodic solutions.
+\newblock {\em Celestial Mechanics and Dynamical Astronomy}, 115(3):261--279,
+  2013.
+
+\bibitem{Mawhin2010}
+J.~Mawhin and M.~Willem.
+\newblock {\em Critical Point Theory and Hamiltonian Systems}.
+\newblock Applied Mathematical Sciences. Springer, 1989.
+
+\bibitem{moeckel1990central}
+R.~Moeckel.
+\newblock On central configurations.
+\newblock {\em Mathematische Zeitschrift}, 205(1):499--517, 1990.
+
+\bibitem{Moeckel:2014}
+R.~Moeckel.
+\newblock {C}entral configurations.
+\newblock {\em Scholarpedia}, 9(4):10667, 2014.
+\newblock revision \#142886.
+\newblock \href {http://dx.doi.org/10.4249/scholarpedia.10667}
+  {\path{doi:10.4249/scholarpedia.10667}}.
+
+\bibitem{moser2016stable}
+J.~Moser.
+\newblock {\em Stable and Random Motions in Dynamical Systems: With Special
+  Emphasis on Celestial Mechanics}.
+\newblock Annals Mathematics Studies. Princeton University Press, 1973.
+
+\bibitem{moulton1910straight}
+F.~R. Moulton.
+\newblock The straight line solutions of the problem of n bodies.
+\newblock {\em The Annals of Mathematics}, 12(1):1--17, 1910.
+
+\bibitem{ouyang2004pyramidal}
+T.~Ouyang, Z.~Xie, and S.~Zhang.
+\newblock Pyramidal central configurations and perverse solutions.
+\newblock {\em Electronic Journal of Differential Equations (EJDE)[electronic
+  only]}, 2004:Paper--No, 2004.
+
+\bibitem{RichardPalais274}
+R.~S. Palais.
+\newblock The principle of symmetric criticality.
+\newblock {\em Communications in Mathematical Physics}, 69(1):19--30, 1979.
+
+\bibitem{pandey2013periodic}
+L.P. Pandey and I.~Ahmad.
+\newblock Periodic orbits and bifurcations in the {S}itnikov four-body problem
+  when all primaries are oblate.
+\newblock {\em Astrophysics and Space Science}, 345(1):73--83, 2013.
+
+\bibitem{perez2007convex}
+E.~Perez-Chavela and M.~Santoprete.
+\newblock Convex four-body central configurations with some equal masses.
+\newblock {\em Archive for rational mechanics and analysis}, 185(3):481--494,
+  2007.
+
+\bibitem{pustyl1990certain}
+L.D. Pustyl'nikov.
+\newblock On certain final motions in the $n$-body problem.
+\newblock {\em Journal of Applied Mathematics and Mechanics}, 54(2):272--274,
+  1990.
+
+\bibitem{rivera2013periodic}
+A.~Rivera.
+\newblock Periodic solutions in the generalized {S}itnikov $(n+1)$-body
+  problem.
+\newblock {\em SIAM Journal on Applied Dynamical Systems}, 12(3):1515--1540,
+  2013.
+
+\bibitem{shoaib2011collinear}
+Muhammad Shoaib and Ibrahima Faye.
+\newblock Collinear equilibrium solutions of four-body problem.
+\newblock {\em Journal of Astrophysics and Astronomy}, 32(3):411--423, 2011.
+
+\bibitem{sitnikov1960existence}
+K.~{S}itnikov.
+\newblock The existence of oscillatory motions in the three-body problem.
+\newblock In {\em Dokl. Akad. Nauk SSSR}, volume 133, pages 303--306, 1960.
+
+\bibitem{soulis2008periodic}
+P.S. Soulis, K.E. Papadakis, and T.~Bountis.
+\newblock Periodic orbits and bifurcations in the {S}itnikov four-body problem.
+\newblock {\em Celestial Mechanics and Dynamical Astronomy}, 100(4):251--266,
+  2008.
+
+\bibitem{David-2004}
+D.~L.~Ferrario; S.Terracini.
+\newblock On the existence of collisionless equivariant minimizers for the
+  classical $n$-body problem.
+\newblock {\em Inventiones mathematicae}, 155, 02 2004.
+
+\bibitem{zhao2015nonplanar}
+X.~Zhao and S.~Zhang.
+\newblock Nonplanar periodic solutions for spatial restricted 3-body and 4-body
+  problems.
+\newblock {\em Boundary Value Problems}, 2015(1):1, 2015.
+
+\end{thebibliography}
 
 
 \end{document}
-9
