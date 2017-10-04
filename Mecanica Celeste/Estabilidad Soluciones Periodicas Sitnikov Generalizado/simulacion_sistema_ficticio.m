@@ -1,23 +1,22 @@
 
-function [pos,vel]=simulacion_sistema_ficticio(efemerides_epocas,posicion_ini,GM)
+function [pos,vel]=simulacion_sistema_ficticio%(efemerides_epocas,posicion_ini,GM)
 
 
-
+GM=[3,3];
 
 funcion=@fuerza_nb;
 
 
 %%%Colocacion
 Integrador=@colocacion_nb_adap; 
-parametros_Integrador.orden=12;
-parametros_Integrador.paso=.0001;
+parametros_Integrador.paso=1;
 parametros_Integrador.tol=1e-19;
 parametros_Integrador.orden=10;
 parametros_Integrador.iter=2;
 
-%%multipaso
+%multipaso
 % Integrador=@multipaso_nb_implicito;
-% parametros_Integrador.paso=.01;
+% parametros_Integrador.paso=.001;
 % parametros_Integrador.orden=12;
 % cantidad_cuerpos_menores=0;
 
@@ -27,20 +26,20 @@ parametros_Integrador.mensaje='Integrando';
 %%====================================================
 funcion_datos= sistema_ficticio(GM);
 
-Jini=efemerides_epocas(1);
+Jini=0;
+efemerides_epocas=Jini+(0:.01:40)';
 
 
+% A=reshape(posicion_ini',[3,length(GM)-2]);
+% A=A([2 1 3],:);
+% A(1,:)=-A(1,:);
+% velocidad_ini=.75*A(:)';
+% posicion_ini=[posicion_ini,[0,0,0]];
+% velocidad_ini=[velocidad_ini,[0 0 1]];
 
-A=reshape(posicion_ini',[3,length(GM)-2]);
-A=A([2 1 3],:);
-A(1,:)=-A(1,:);
-velocidad_ini=.75*A(:)';
-posicion_ini=[posicion_ini,[0,0,0]];
-velocidad_ini=[velocidad_ini,[0 0 1]];
+posicion_ini=[5 0 0 -5 0 0 ];
+velocidad_ini=[0 .3873 0 0 -.3873 0];
 
-%posicion_ini=[5 0 0 10 0 0];
-%velocidad_ini=[0 .005  0 0 .00005  0];
-% efemerides_epocas=Jini+(0:1:3600)';
 [pos,vel]=Integrador(funcion,funcion_datos,efemerides_epocas,posicion_ini,velocidad_ini,Jini,parametros_Integrador);
 pos=pos';
 l3=length(efemerides_epocas);
