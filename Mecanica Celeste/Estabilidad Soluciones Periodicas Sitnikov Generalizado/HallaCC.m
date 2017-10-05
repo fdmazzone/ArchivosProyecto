@@ -25,15 +25,16 @@ X=X-repmat(B,[1,size(X,2)]);
 
 
 function AX=AX(X)
-    diferencias=X(:,Ind(:,1))-X(:,Ind(:,2));
-    r=(sum(diferencias.^2,1).^(-1.5));
-    AXb=r(Indicador);
-    AXb=diag(m)*reshape(AXb, [ l(2)-1 l(2)])';
+    diferencias=X(:,Ind(:,1))-X(:,Ind(:,2)); %se forman todas las diferencias
+    r=(sum(diferencias.^2,1).^(-1.5)); %se calcula r_ij^(-3/2)
+    AXb=r(Indicador); % [r_12,r_13,....,t_i1, r_21,r_23,.....] en un gran fila
+    AXb=diag(m)*reshape(AXb, [ l(2)-1 l(2)])'; %multiplicamos 
+    %por masas y agrupamos en en un matriz #cant_cuerpos x #cant_cuerpos-1 
     A=sum(AXb,2);
     AXb=[-A,AXb];
     AXb=AXb';
-    AX=AXb(I')';
-    AX=X-X*AX;
+    AX=AXb(I')'; %permutacion para llevar los elemntos "negativos" a la diagonal
+    AX=X+X*AX;
 end
 
 end

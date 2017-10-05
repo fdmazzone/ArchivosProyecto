@@ -7,34 +7,40 @@ function Estructura= sistema_ficticio(GM1);
 
 %%%% Definicion de parametros del sistema para la funcion fuerza
 
-Estructura.cantidad_planetas=length(GM1)-1;
+NroCuerpos=length(GM1);
 
 
-I=1:1:Estructura.cantidad_planetas+1;
-Estructura.indices=nchoosek(I,2);
+I=1:1:NroCuerpos;
+pares=nchoosek(I,2);
 
 
-Estructura.Indicador=[];
-for indi=2:Estructura.cantidad_planetas+1
-    Iaux=find(Estructura.indices(:,1)==indi);
-    Jaux=find(Estructura.indices(:,2)==indi);
-    Estructura.Indicador=[Estructura.Indicador,[Jaux',Iaux']];
+Indicador=[];
+for indi=1:NroCuerpos
+    Iaux=find(pares(:,1)==indi);
+    Jaux=find(pares(:,2)==indi);
+    Indicador=[Indicador,[Jaux',Iaux']];
 end
 
 
 
 
-Estructura.GM=zeros( Estructura.cantidad_planetas,Estructura.cantidad_planetas^2);
+GM=zeros( NroCuerpos,NroCuerpos*(NroCuerpos-1));
 columna=1;
-for j=1:Estructura.cantidad_planetas-1
-    Estructura.GM(j,columna:columna+Estructura.cantidad_planetas-1)=[-GM1(1:j),GM1(j+2:end)];
-    columna=columna+Estructura.cantidad_planetas;
+GM(1,columna:columna+NroCuerpos-2)=GM1(2:end);
+columna=columna+NroCuerpos-1;
+for j=2:NroCuerpos-1
+    GM(j,columna:columna+NroCuerpos-2)=[-GM1(1:j-1),GM1(j+1:end)];
+    columna=columna+NroCuerpos-1;
 end
-Estructura.GM(Estructura.cantidad_planetas,columna:columna+Estructura.cantidad_planetas-1)=-GM1(1:end-1);
-columna=columna+Estructura.cantidad_planetas;
+GM(NroCuerpos,columna:columna+NroCuerpos-2)=-GM1(1:end-1);
 
 
-Estructura.GM=Estructura.GM(1:Estructura.cantidad_planetas,1:Estructura.cantidad_planetas^2);
 
 
-Estructura.GM=sparse(Estructura.GM);
+
+
+Estructura.GM=sparse(GM);
+
+Estructura.cantidad_planetas=NroCuerpos;
+Estructura.Indicador=Indicador;
+Estructura.indices=pares;
