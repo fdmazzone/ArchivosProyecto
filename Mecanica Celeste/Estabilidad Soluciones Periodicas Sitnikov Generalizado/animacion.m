@@ -13,7 +13,7 @@ for j=1:l(1);
     set(h{j},'Erase','xor');
 end
 
-long=2;
+long=5;
 axis([-long long -long long -long long])
 plot3(0,0,0,'.','MarkerSize',1,'Color','y')
 set(gca,'Color','k')
