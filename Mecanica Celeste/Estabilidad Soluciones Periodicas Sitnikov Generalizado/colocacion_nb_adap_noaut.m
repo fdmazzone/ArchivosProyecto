@@ -60,7 +60,6 @@ Matriz_iteracion=Matriz_iteracion(1:orden-1,1:orden-1);
 Matriz_diferencias=Matriz_diferencias(1:orden-1,1:orden-1);
 Matriz=Matriz_iteracion*Matriz_diferencias;
 
-
 l=[2:orden];
 exponentes=repmat(l,[orden-1,1]);
 j=(0:orden-2)';
