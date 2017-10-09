@@ -13,7 +13,7 @@
 %% en efemerides_epocas                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [posicion_out,velocidad_out]=colocacion_nb_adap(funcion,funcion_datos,efemerides_epocas,posicion,velocidad,Jini,parametros)
+function [posicion_out,velocidad_out]=colocacion_nb_adap_noaut(funcion,funcion_datos,efemerides_epocas,posicion,velocidad,Jini,parametros)
 
 %%%Extraccion parametros
 
@@ -93,16 +93,17 @@ colocacion_epocas_fin=Jini+delta_t;
 colocacion_epocas=(colocacion_epocas_ini:delta_t/(orden-2):colocacion_epocas_fin)';
 
 estado_epocas=ones(orden-1,1)*posicion+(colocacion_epocas-colocacion_epocas_ini)*velocidad...
-    +.5*(colocacion_epocas-colocacion_epocas_ini).^2*funcion(posicion,funcion_datos);
+    +.5*(colocacion_epocas-colocacion_epocas_ini).^2*...
+    funcion(efemerides_epocas(1),posicion,funcion_datos);
 
-matriz_fuerza=funcion(estado_epocas,funcion_datos);
+matriz_fuerza=funcion(colocacion_epocas,estado_epocas,funcion_datos);
 
 taylor_2_term=ones(orden-1,1)*posicion+(colocacion_epocas-Jini)*velocidad;
 
 for indi=2:1:(orden-1)
     C=Matriz*matriz_fuerza;
     estado_epocas=taylor_2_term+delta_t^2*matriz_epocas_escala*C;
-    matriz_fuerza=funcion(estado_epocas,funcion_datos);
+    matriz_fuerza=funcion(colocacion_epocas,estado_epocas,funcion_datos);
 end
 %%Si hay epocas de las efemerides dentro la almacenamos
 
@@ -171,7 +172,7 @@ while indice_out<=cant
     
     
    while iteraciones<=iteraciones_pasos
-        matriz_fuerza=funcion(estado_epocas,funcion_datos);
+        matriz_fuerza=funcion(colocacion_epocas,estado_epocas,funcion_datos);
         C=Matriz*matriz_fuerza;
         estado_epocas=ones(orden-1,1)*posicion...
             +(colocacion_epocas-colocacion_epocas_ini)*velocidad...
