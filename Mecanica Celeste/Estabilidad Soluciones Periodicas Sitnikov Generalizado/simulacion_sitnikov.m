@@ -20,17 +20,17 @@ funcion=@fuerza_primarios;
 
 
 %%%Colocacion
-% Integrador=@colocacion_nb_adap_noaut; 
-% parametros_Integrador.paso=1;
-% parametros_Integrador.tol=1e-15;
-% parametros_Integrador.orden=5;
-% parametros_Integrador.iter=2;
+Integrador=@colocacion_nb_adap_noaut; 
+parametros_Integrador.paso=.01;
+parametros_Integrador.tol=5e-13;
+parametros_Integrador.orden=12;
+parametros_Integrador.iter=2;
 
 %multipaso
-Integrador=@multipaso_nb_implicito_noaut;
-parametros_Integrador.paso=.001;
-parametros_Integrador.orden=12;
-cantidad_cuerpos_menores=0;
+% Integrador=@multipaso_nb_implicito_noaut;
+% parametros_Integrador.paso=.001;
+% parametros_Integrador.orden=12;
+% cantidad_cuerpos_menores=0;
 
 parametros_Integrador.mensaje='Integrando';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

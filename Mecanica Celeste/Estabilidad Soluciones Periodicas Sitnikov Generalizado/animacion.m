@@ -13,12 +13,12 @@ for j=1:l(1);
     set(h{j},'Erase','xor');
 end
 
-long=7;
+long=2;
 axis([-long long -long long -long long])
 plot3(0,0,0,'.','MarkerSize',1,'Color','y')
 set(gca,'Color','k')
 axis square
-view([0,90])
+view([45,45])
 grid off
 hold off
 indice_cuadro=1;
