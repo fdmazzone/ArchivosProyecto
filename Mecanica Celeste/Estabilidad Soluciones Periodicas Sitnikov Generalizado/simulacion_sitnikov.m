@@ -22,9 +22,9 @@ funcion=@fuerza_primarios;
 %%%Colocacion
 Integrador=@colocacion_nb_adap_noaut; 
 parametros_Integrador.paso=.01;
-parametros_Integrador.tol=5e-13;
+parametros_Integrador.tol=5e-22;
 parametros_Integrador.orden=12;
-parametros_Integrador.iter=2;
+parametros_Integrador.iter=3;
 
 %multipaso
 % Integrador=@multipaso_nb_implicito_noaut;
