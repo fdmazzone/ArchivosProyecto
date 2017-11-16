@@ -1,0 +1,125 @@
+\documentclass[a4paper,10pt,draft]{article}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb,color,enumerate}
+\usepackage[matrix,arrow]{xy}
+\usepackage{graphicx}
+\usepackage [spanish]{babel}
+\usepackage[latin1]{inputenc} % Caracteres con acentos.
+\usepackage[spanish]{babel} % Titulos en español.
+\usepackage{color}
+
+
+
+\newtheorem{lem}{Lema}
+\newtheorem{teo}{Teorema}
+
+%...............................................................................
+
+\begin{document}
+
+Hipótesis Generales:
+
+\begin{enumerate}
+ \item $X$ espacio de Banach separable
+ \item $\phi: X \rightarrow \mathbb{R}$ $N_{\infty}$ función
+ \item $(T; \tau ; \mu )$ espacio de medida finito $\mu(T)< \infty$
+ \item $F: \tau $x$ X \rightarrow \mathbb{R}$, función medible para cada $x \in X$ (medible respecto a la variable tiempo)
+ \item $f_t = F(t,.)$ es localmente Lipschitz.
+ \item $ \forall x$, $ \forall \xi \in \partial{f_t}(x)$, $  \exists $$ \lambda, \Lambda > 0$ tal que:
+
+      \[\phi^* \Big(\frac{\xi}{\lambda}\Big) \leq C \Big(\phi \Big(\frac{x}{\Lambda}\Big)+ b(t)\Big)\]
+			
+			con $b(t) \in L^1(T;[0,\infty))$
+			
+\end{enumerate}
+
+Observación: Veamos que la Hipótesis B del libro de Clarke (Pág 83), está incluida en esta nueva hipótesis, cuando tomamos $\phi(x)=||x||_{X}^p$.
+Nuestra hipótesis $6$, tomando la función $\phi$ como dijimos anteriormente, $b(t)=\frac{1}{\Lambda^p}$, entonces $\phi^*(\xi)=||\xi||_{X^*}^q$. Así nuestra hipótesis $6$ se escribe
+
+\[ \frac{||\xi||_{X^*}^q}{\lambda^q} \leq C \Big(\frac{||x||_{X}^p}{\Lambda^p} +\frac{1}{\Lambda^p} \Big)\]
+elevando todo a la $\frac{1}{q}$
+ 
+\[ \frac{||\xi||_{X^*}}{\lambda} \leq C_1 \Big(\frac{||x||_{X}^p}{\Lambda^p} +\frac{1}{\Lambda^p}\Big)^\frac{1}{q}\leq C_2 \Big(\frac{||x||_{X}^{\frac{p}{q}}}{\Lambda^\frac{p}{q}} +\frac{1}{\Lambda^\frac{p}{q}} \Big) \leq \frac{C_2}{\Lambda^{(p-1)}} (||x||_X^{(p-1)}+1)\] 
+
+Así, obetenemos que 
+
+\[||\xi||_{X*} \leq C_3 (||x||_X^{(p-1)}+1)\]
+
+Luego se cumple la Hipótesis B.
+
+Ahora, reciprocamente, si se cumple la Hipótesis B entonces tenemos
+
+\[||\xi||_{X*} \leq C (||x||_X^{(p-1)}+1)\]
+
+elevando la desigualdad anterior a la $q$
+
+\[||\xi||_{X*}^q \leq C (||x||_X^{(p-1)}+1)^q \leq C_1 (||x||_X^{(p-1)q}+1)= C_1 (||x||_X^{p}+1)\]
+
+Así tomando $ \Lambda=1$, $\lambda=1$ y $b(t)=1$ se cumple nuestra hipótesis $6$.
+
+
+\begin{lem}
+Bajo las hipótesis anteriores, la función \[ F(x)= \int_T{f_t(x(t)) d\mu(t)}\] es globalmente Lipschitz sobre conjuntos acotados de $X$.
+\end{lem}
+
+\textbf{Dem:}
+Como $f_t$ es localmente Lipschitz, entonces por el Teorema del Valor Medio (teo $10.17$ pág $201$, libro de Clarke), $\exists z \in (u;x)$ :
+\[ f_t(u(t))-f_t(x(t)) = < \xi_t ; u(t)-x(t)>\] donde $\xi_t \in \partial f_t(z)$ 
+
+\textcolor{red}{como $f_t$ es medible (respecto a la variable temporal), entonces $< \xi_t ; u(t)-x(t)>$ también es una función medible respecto de $t$.}
+
+Entonces 
+
+\[\begin{array}{lcl}
+\Big| \int_T{f_t(u(t))-f_t(x(t)) d\mu(t)}\Big| &=& \Big|\int_T{<\xi_t ; u(t)-x(t)> d\mu(t)}\Big| \\
+							&=& \Big|\int_T{<\frac{\xi_t}{\lambda} \lambda ; \frac{u(t)-x(t)}{||u(t)-x(t)||_{L^\phi}}||u(t)-x(t)||_{L^\phi}> d\mu(t)}\Big| \\
+							&\leq& \Big| \lambda ||u(t)-x(t)||_{L^\phi} \Big(\int_T{\phi^*\Big( \frac{\xi_t}{\lambda}\Big) d\mu(t)} +\int_T{\phi \Big( \frac{u(t)-x(t)}{||u(t)-x(t)||_{L^\phi}}}\Big) d\mu(t) \Big)  \Big| \\
+							& \leq & |\lambda| ||u(t)-x(t)||_{L^\phi} \Big( \int_T{C \Big (\phi\Big( \frac{z}{\Lambda} \Big) + b(t)\Big) d\mu(t)}  + \int_T{\phi\Big( \frac{u(t)-x(t)}{||u(t)-x(t)||_{L^\phi}}\Big) d\mu(t)}\Big)
+\end{array}
+\]
+
+donde hemos utilizado la hipótesis y la desigualdad de Young.
+
+Como sabemos que $z= \alpha u(t) + (1- \alpha) x(t)$ entonces usando la convexidad de $\phi$ obtenemos: \[\phi \Big( \frac{z}{\Lambda}\Big) =\phi \Big( \frac{\alpha u(t) + (1- \alpha) x(t)}{\Lambda}\Big) \leq \alpha \phi \Big( \frac{u(t)}{\Lambda} \Big) + (1- \alpha)\phi \Big( \frac{x(t)}{\Lambda} \Big) \]
+
+Como $\phi (\frac{u(t)}{\Lambda})$ y $ \phi (\frac{x(t)}{\Lambda}) \in \textcolor{red}{L^1}$ \textcolor{red}{(Fernando y Sonia)} y $\int_T{\phi\Big( \frac{u(t)-x(t)}{||u(t)-x(t)||_{L^\phi}}\Big) d\mu(t)} \leq 1$
+
+Entonces llegamos a:
+\[ |F(u(t))-F(x(t))| \leq |\lambda| ||u(t)-x(t)||_{L^\phi} \Big( C \alpha \int_T{ \phi \Big( \frac{u(t)}{\Lambda} \Big) d\mu(t)} + C (1- \alpha) \int_T{\phi \Big( \frac{x(t)}{\Lambda} \Big) d\mu(t)} + C\int_T{b(t) d\mu(t)} +  1  \Big)   \]
+
+Es decir: \[ |F(u(t))-F(x(t))| \leq K ||u(t)-x(t)||_{L^\phi} \]
+
+Luego es Lipschitz.
+
+\begin{teo}
+Bajo las hipótesis $1-6 $ tenemos que:
+\[ \partial f(x) \subset \int_T{\partial f_t(x(t)) d\mu(t)}\]
+\end{teo}
+
+\textbf{Dem:}
+ Veamos que $\int_T{f_t^0(x(t); v(t))d\mu(t)} \geq f^0(x(t), v(t)) \geq <\xi,(t)> \forall v \in \textcolor{red}{X}, \xi \in \partial f(x(t))$.
+
+Por el Lema anterior $f(x(t)) = \int_T{f_t(x(t)) d\mu(t)}$ es Lipschitz, 
+\[ | f(y(t))-f(x(t))| \leq K || y(t)-x(t)||_{L^\phi}\].
+
+Sea $\xi \in \partial f(x)$ y sea $v(t) \in \textcolor{red}{X}$ entonces
+\[ f^0(x(t), v(t))= \limsup\limits_{y\rightarrow x, \lambda \downarrow 0} \int_T \frac{ f_t (y(t)+ \lambda v(t))- f_t(y(t))}{\lambda}\]
+
+El límite superior se alcanza en una subsucesión
+
+\[  \limsup\limits_{y_n\rightarrow x, \lambda_n \downarrow 0} \int_T \frac{ f_t (y_n(t)+ \lambda_n v(t))- f_t(y_n(t))}{\lambda_n}  \]
+
+En el límite anterior podemos usar Fatou ya que:
+
+
+\[\begin{split}
+\Big| \frac{ f_t (y_n(t)+ \lambda_n v(t))- f_t(y_n(t))}{\lambda_n} \Big| &= |<\xi_{n,t};v(t)>| \\
+                  % & = & |\lambda| |<\frac{\xi_{n,t}}{\lambda}, v(t)>|
+								% & \leq & |\lambda| \Big( \phi^* \Big( \frac{\xi_{n,t}}{\lambda}\Big) + \phi (v(t))\Big)
+\end{split}
+\]
+
+
+
+
+\end{document}
