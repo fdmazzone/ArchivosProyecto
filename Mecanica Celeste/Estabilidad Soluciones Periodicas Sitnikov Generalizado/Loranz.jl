@@ -1,6 +1,5 @@
-f(β,σ)=β+σ
 g = @ode_def LorenzExample begin
-  dx = f(β,σ)*(y-x)
+  dx = σ*(y-x)
   dy = x*(ρ-z) - y
   dz = x*y - β*z
 end σ=>10.0 ρ=>28.0 β=(8/3)

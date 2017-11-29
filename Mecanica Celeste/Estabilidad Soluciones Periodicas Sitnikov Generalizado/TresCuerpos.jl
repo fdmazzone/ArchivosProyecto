@@ -31,3 +31,4 @@ sol = solve(prob_ode_trescuerpos,Tsit5(),reltol=1e-12,abstol=1e-12)
 #gui()
 #plotly()
 #plot(sol,vars=(1,2,3))
+
