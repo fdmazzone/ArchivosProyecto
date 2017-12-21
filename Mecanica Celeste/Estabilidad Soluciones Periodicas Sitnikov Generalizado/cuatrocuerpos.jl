@@ -18,15 +18,14 @@ Fuerza3c = (t,u,du) -> begin
 end
 #Altura máxima de la partícula
 
-#function CoefEst(z₀)
-function CoefEst(v₀)
+function CoefEst(z₀)
+#function CoefEst(v₀)
 #Periodo de la partícula
-  print(v₀)
-  E=v₀^2/2-2
-  #E=-(z₀^2+1/4)^(-.5)
-  z₀=  v₀*sqrt(8-v₀^2 )/(4-v₀^2 )/2
+  #E=v₀^2/2-2
+  E=-(z₀^2+1/4)^(-.5)
+  #z₀=  v₀*sqrt(8-v₀^2 )/(4-v₀^2 )/2
   f(z)=1/sqrt(E+1/sqrt(1/4+z^2))
-  T₀=quadgk(f,0,z₀-1e-12)
+  T₀=quadgk(f,0,z₀-1e-10)
   T= T₀[1]/2^.5
   # Sistema no lineal
 
@@ -61,7 +60,7 @@ function CoefEst(v₀)
   return (a₁,a₂,T)
 end
 #
-v=linspace(.1,	2-1e5,	100)
+v=linspace(5,	6,	600)
 k=length(v)
 a₁=Array{Float64}(k)
 a₂ =Array{Float64}(k)
