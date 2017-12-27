@@ -3,11 +3,10 @@
 
 # Three Body
 
-const μ = 0.5
-const μ′ = 1 - μ
-const q₁=0.5
-const ν=1
-const q₂=-0.5
+μ = 0.5
+μ′ = 1 - μ
+ν=1
+q₂=-0.5
 M=[1 0 0 0;0 -1 0 0; 0 0 -1 0;0 0 0 1]
 u1=eye(4)
 Fuerza3c = (t,u,du) -> begin
@@ -18,13 +17,13 @@ Fuerza3c = (t,u,du) -> begin
 end
 #Altura máxima de la partícula
 
-#function CoefEst(z₀)
-function CoefEst(v₀)
+function CoefEst(z₀)
+#function CoefEst(v₀)
 #Periodo de la partícula
-  print(v₀)
-  E=v₀^2/2-2
-  #E=-(z₀^2+1/4)^(-.5)
-  z₀=  v₀*sqrt(8-v₀^2 )/(4-v₀^2 )/2
+
+  #E=v₀^2/2-2
+  E=-(z₀^2+1/4)^(-.5)
+  #z₀=  v₀*sqrt(8-v₀^2 )/(4-v₀^2 )/2
   f(z)=1/sqrt(E+1/sqrt(1/4+z^2))
   T₀=quadgk(f,0,z₀-1e-12)
   T= T₀[1]/2^.5
@@ -55,16 +54,16 @@ function CoefEst(v₀)
   #Coeficientes de estabilidad
   p=-trace(G)
   q=.5*(p^2-trace(G^2))
-  Δ=√(p^2-4(q-2))
+  Δ=sqrtm(p^2-4(q-2))
   a₁=.5*(p+Δ)
   a₂=.5*(p-Δ)
   return (a₁,a₂,T)
 end
 #
-v=linspace(.1,	2-1e5,	100)
+v=linspace(5,	6,	2000)
 k=length(v)
-a₁=Array{Float64}(k)
-a₂ =Array{Float64}(k)
+a₁=Array{Complex{Float64}}(k)
+a₂ =Array{Complex{Float64}}(k)
 T =Array{Float64}(k)
 for i=1:k
   a₁[i],a₂[i],T[i]=CoefEst(v[i])
