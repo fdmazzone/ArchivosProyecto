@@ -89,10 +89,10 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \renewcommand{\leq}{\leqslant} 
 \renewcommand{\geq}{\geqslant} 
 \newcommand{\epsi}{E^{\Phi^{\star}}}
-\newcommand{\Phie}{\Psi}%{\Phi^{\star}}
+\newcommand{\Phie}{\Phi^{\star}}
 \newcommand{\lip}{\mathop{\rm Lip}}
-\newcommand{\phih}{\overline{\Phi}}
-\newcommand{\phihe}{\overline{\Psi}}
+\newcommand{\phih}{\hat{\Phi}}
+\newcommand{\phihe}{\hat{\Phi}^\star}
 
 
 
@@ -186,14 +186,14 @@ Let $\Gamma_0(\rr^d)=\{F:\rr^d\to (-\infty,+\infty]
 
 The Fenchel conjugate of $F$ is given by
 \[
-F^*(p)=\sup\limits_{q \in \rr^d} \left\langle p,q\right\rangle-F(q)
+F^\star(p)=\sup\limits_{q \in \rr^d} \left\langle p,q\right\rangle-F(q)
 \]
 The Fenchel conjugate satisfies the following properties:
 \begin{enumerate}
-\item $F^* \in \Gamma_0(\rr^d)$
-\item If $F\leq G$, then  $G^* \leq F^*$.
+\item $F^\star \in \Gamma_0(\rr^d)$
+\item If $F\leq G$, then  $G^\star \leq F^\star$.
 \item If $G(q)=\alpha F(\beta q)+\sigma$ with $\alpha,\beta,\sigma>0$ then
-$G^*(p)=\alpha F^*(\frac{p}{\beta \alpha})-\sigma$
+$G^\star(p)=\alpha F^\star(\frac{p}{\beta \alpha})-\sigma$
 \end{enumerate}
 
 Let $\Phi:\mathbb{R}^d\to [0,+\infty)$ be  a differentiable, convex function such that $\Phi(0)=0$, $\Phi(q)>0$ if $q\neq 0$, $\Phi(-q)=\Phi(q)$,
@@ -203,7 +203,7 @@ Let $\Phi:\mathbb{R}^d\to [0,+\infty)$ be  a differentiable, convex function suc
 \end{equation}
 where $|\cdot|$ denotes the euclidean norm on $\rr^d$. From now on, we say that $\Phi$ is an $G$-function if $\Phi$ satisfies the previous properties.
 
-We write $\Psi$ for the Fenchel conjugate of $\Phi$.
+We write $\Phie$ for the Fenchel conjugate of $\Phi$.
 
 We do not assume  that $\Phi$ and $\Phi'$ satisfy the $\Delta_2$-condition.
 
@@ -220,29 +220,33 @@ non negative  constants $\beta,\gamma$ such that
 \end{equation}
 Now, if $p \in \partial F(q)$ then 
 \begin{equation}\label{eq:trans-grad-aniso}
-\Psi(p)\leq \Phi(2q)+2(\beta+\gamma).
+\Phie(p)\leq \Phi(2q)+2(\beta+\gamma).
 \end{equation}
 \end{prop}
 
 \begin{proof}
 If $p \in \partial F(q)$, from \cite[Thm. 2.2, p.33]{mawhin2010critical}, 
 \begin{equation}\label{eq:trans-grad}
-F^*(p)=\langle p,q \rangle-F(q)
+F^\star(p)=\langle p,q \rangle-F(q)
 \end{equation}
 Conjugating \eqref{eq:cotas-F-aniso}, we have
 \begin{equation}\label{eq:trans-conj}
-F^*(p)\geq \Psi(p)-\gamma.
+F^\star(p)\geq \Phie(p)-\gamma.
 \end{equation}
 From Young's inequality, we get
 \begin{equation}\label{eq:trans-young}
-\langle p,q \rangle =\frac{1}{2} \langle p,2q \rangle \leq \frac{1}{2 }\Psi(p)+\frac{1}{2}\Phi(2q)
+\langle p,q \rangle =\frac{1}{2} \langle p,2q \rangle \leq \frac{1}{2 }\Phie(p)+\frac{1}{2}\Phi(2q)
 \end{equation}
 By \cref{eq:cotas-F-aniso,eq:trans-grad,eq:trans-conj,eq:trans-young}, we get
 \[
-\Psi(p)\leq \frac{1}{2}\Psi(p)+\frac{1}{2}\Phi(2q)+\beta+\gamma
+\Phie(p)\leq \frac{1}{2}\Phie(p)+\frac{1}{2}\Phi(2q)+\beta+\gamma
 \]
 which implies \eqref{eq:trans-grad-aniso}
 \end{proof}
+
+\begin{comentario} Inequality \eqref{eq:trans-grad-aniso} is a few better than the corresponding in \cite[Prop. 2.2]{mawhin2010critical} because the the case of power function  we obtain $(\beta+\gamma)^{1/p}$, meanwhile in \cite{mawhin2010critical} appears $(\beta+\gamma)^{1/(p-1)}$ .
+
+\end{comentario}
 
 
 \section{Optimal bounds for a symplectic bilinear form}
@@ -251,26 +255,33 @@ We  consider the  Euclidean space $\rr^{2d}$ equipped with the standard  symplec
 
 \[\Omega(u,v):=\langle Ju,v\rangle .\]
 
+\textcolor{red}{As Jakub observed we can not consider any $G$-function on the symplectic manifold $\rr^{2n}$. I thinkthat the following can be the appropriate form of the $G$-function defined on the symplectic manifold $\rr^{2n}$}
 
-Let $\Phi$ a $G$-function. We consider the \emph{symplectic $G$-function} $\phih$ defined symplectic manifold $\rr^{2d}$
-\[\phih(u)=\phih(q,p):= \Phi(q)+\Phie(p).\]
+\begin{defi}
+ Let $\phih$ a $G$-function defined in the symplectic manifold $\rr^{2n}$. We say that  $\phih$ is a \emph{symplectic $G$-function} if
 
-\textcolor{red}{I think the $\phih$ is the appropriate form of the $G$-function defined on the symplectic manifold $\rr^{2n}$}
-
-The $G$-function $\phih$ has the following important property
-
-\begin{equation}\label{eq:J-phi1}
+ \begin{equation}\label{eq:J-phi1}
  \phih(Ju)= \phihe(u).
 \end{equation}
 
-and 
+
+\end{defi}
+
+\begin{example} Let $\Phi:\rr^d\to [0,+\infty)$ be  a $G$-function. Then the $G$-function
+\[\phih(u)=\phih(q,p):= \Phi(q)+\Phie(p).\]
+is a symplectic $G$-function.
+\end{example}
+
+\textcolor{red}{PROBLEM 0: It is the previous the general form of any symplectic $G$-function? It is possible to find other example of these functions?}
+
+We note that if $\phih$ is symplectic then
 
 \begin{equation}\label{eq:J-phi2}
  \nabla\phih(Ju)= J\phihe(u).
 \end{equation}
 Here we are agreeing that $\nabla\Phi$ is a column vector.
 
-As a consequence of \eqref{eq:J-phi1}, the matrix $J$ induce a isometry  between the spaces $L^{\phih}([0,T],\rr^{2d})$ and $L^{\phihe}([0,T],\rr^{2d})$.  Therefore we can extend $\Omega$ to a bilinear form $\overline{\Omega}$  on $L^{\phih}([0,T],\rr^{2d})$ of the following way
+As a consequence of \eqref{eq:J-phi1}, the matrix $J$ induce a isometry  between the spaces $L^{\phih}([0,T],\rr^{2d})$ and $L^{\phihe}([0,T],\rr^{2d})$.  Therefore we candefine  a bilinear form $\overline{\Omega}$  on $L^{\phih}([0,T],\rr^{2d})$ of the following way
 
 \[\overline{\Omega}(u,v):=\int_0^T\Omega(u, v) dt,\quad u,v\in L^{\phih}([0,T],\rr^{2d})\]
 
@@ -283,12 +294,13 @@ We are interested in to find bounds of the quadratic functional $\Theta$ of the 
 \begin{equation}\label{eq:IneQuad}
  \theta(u)\geq -C\int_0^T\phih\left(\dot{u}\right)dt,
 \end{equation}
-for $u\in W^1L^{\phih}([0,T],\rr^{2d})$. It is important to get the best constant $C$ in previous inequality because this constant imposes  restrictions to the Hamiltonian $H$.  We call to the best constant in \eqref{eq:IneQuad} $C_{\Phi}$
+for $u\in W^1L^{\phih}([0,T],\rr^{2d})$. It is important to get the best constant $C$ in previous inequality because this constant imposes  restrictions to the Hamiltonian $H$. 
 
-If $\Phi(q)=|q|^2/2$ was proved in \cite[Prop. 3.2]{mawhin2010critical} that $C_{\Phi,1}=T/\pi$.  Below we prove that this is the optimal one.  In \cite[Lem. 3.3]{Tian2007192} was proved that \eqref{eq:IneQuad} holds for $\Phi(q)=|q|^{\alpha}/\alpha$, $1<\alpha<\infty$ and $C_{\Phi}=2T$. Since this constant is not equal to $T/\pi$ when $\alpha=2$ it is not optimal.
+If $\Phi(q)=|q|^2/2$ was proved in \cite[Prop. 3.2]{mawhin2010critical} \eqref{eq:IneQuad} holds width $C=T/\pi$.  Below we prove that this is the optimal constant satisfying \eqref{eq:IneQuad}.   Meanwhile in \cite[Lem. 3.3]{Tian2007192} 
+was proved that $C_{\Phi}=2T$ satisfies \eqref{eq:IneQuad} when $\Phi(q)=|q|^{\alpha}/\alpha$, $1<\alpha<\infty$. Since this constant is not equal to $T/\pi$ when $\alpha=2$, it is not optimal.
 
 \begin{prop}
- Let $\Phi:\rr^d\to [0,+\infty)$ be any $G$-function and $\phih$. Then  \eqref{eq:IneQuad} holds for  and $C=2T^{-1}$ for every  $u\in W^1L^{\phih}([0,T],\rr^{2d})$.
+ Let $\phih$ be any symplectic $G$-function. Then  \eqref{eq:IneQuad} holds for  and $C=2T^{-1}$ for every  $u\in W^1L^{\phih}([0,T],\rr^{2d})$.
 \end{prop}
 
  \begin{proof} Let  $u\in W^1L^{\phih}([0,T],\rr^{2d})$. As is usual we write $u=\tilde{u}+\overline{u}$ where
@@ -299,7 +311,7 @@ If $\Phi(q)=|q|^2/2$ was proved in \cite[Prop. 3.2]{mawhin2010critical} that $C_
  \[
  \begin{split}
   \int_0^T\Omega\left(\dot{u},u\right)dt &=T\int_0^T\left\langle J\dot{u},T^{-1}\tilde{u}\right\rangle dt\\
-  &\geq -T\left\{ \int_0^T\overline{\Psi}(J\dot{u})dt + \int_0^T\phih(T^{-1}\tilde{u})dt \right\}\\
+  &\geq -T\left\{ \int_0^T\phihe(J\dot{u})dt + \int_0^T\phih(T^{-1}\tilde{u})dt \right\}\\
   &\geq -2T\left\{ \int_0^T\phih(\dot{u})dt \right\}
   \end{split}
  \]
@@ -317,6 +329,64 @@ There is not a explicit formula as in the Hilbert setting.
 \newline
 PROBLEM 1. We can get a better constant taking this $\overline{u}$???}
 
+ We call to the best constant in \eqref{eq:IneQuad} $C_{\Phi}$, i.e.
+ 
+\begin{equation}\label{eq:C-optima}
+C_{\Phi}=-\inf\left\{\left.\frac{\int_0^T\langle J\dot{u},u\rangle dt}{\int_0^T\phih(\dot{u})dt}\right|
+u\in \wphit([0,T],\rr^{2d})\right\}
+ \end{equation}
+ 
+ 
+For the following result we need the theory of indices of $G$-functions, see \cite{fiorenza1997indices,Maligranda} for a complete treatment in the case of $N$-functions defined on $\rr$. The results are easily extended to the anisotropic setting.
+We denote by $\alpha_{\Phi}$ and $\beta_{\Phi}$ the so called  \emph{Matuszewska-Orlicz indices} of the function $\Phi$, which are defined next
+\begin{equation}\label{MO_indices}
+    \alpha_{\Phi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)} \right ) }{\log(t)},\quad
+    \beta_{\Phi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)}\right )}{\log(t)}.
+\end{equation}
+We have that $1\leq \alpha_{\Phi}\leq \beta_{\Phi}\leq +\infty$. The relation $\beta_{\Phi}<\infty$ holds true if and only if $\Phi$ is a
+$\Delta_2$-function. The indices satisfy the following relation
+\begin{equation}\label{inv_indices}
+    \frac{1}{\alpha_{\Phi}}+\frac{1}{\beta_{\Phie}}=1.
+\end{equation}
+Therefore if $\Phie$ is a $\Delta_2$-function (\textcolor{red}{I mean $\Delta_2$ as globally $\Delta_2$}) then $\alpha_{\Phi}>1$. We recall the following result of \cite{ABGMS2015}.
+
+\begin{lem}\label{lem_coer} Let $\Phi$ be a  $G$-functions. If $\Phie \in \Delta_2$ globally, then  for any $0<\mu<\alpha_{\Phi}$,
+\begin{equation}\label{coer_modular} \lim\limits_{\|\b{u}\orlnor \to \infty} \frac{\int_0^T\Phi\left(\frac{\b{u}}{\Lambda}\right)dt}{\|\b{u}\orlnor^{\mu}}=+\infty.
+\end{equation}
+
+\end{lem}
+
+Let $\phih$ is symplectic and define $\Phi_i,\Psi_i:\rr^d\to [0,+\infty)$, for $i=1,2$ by
+$\Phi_1(q):=\phih(q,0)=\phihe(0,q)=:\Psi_2(q)$ and $\Phi_2(p):=\phih(0,p)=\phihe(p,0)=:\Psi_1(p)$. Moreover
+\[\begin{split}
+   \Phi_1^\star(p_1)&=\sup\limits_{q_1\in\rr^d}\left\{ q_1\cdot p_1-\phih(q_1,0) \right\}\\
+   &\leq\sup\limits_{u\in\rr^{2d}}\left\{ (p_1,0)\cdot u-\phih(u) \right\}\\
+   &= \phihe(p_1,0)=\Psi_1(p_1)
+  \end{split}
+\]
+
+
+
+\begin{thm}\label{thm:C-opt-hamil} Suppose that $u\in \wphit([0,T],\rr^{2d})$ attains the minimum in \eqref{eq:C-optima}, then $\lambda=2/C_{\Phi}$ is the first eigenvalue and $u$ the corresponding eigenfunction of the following problem.
+\begin{equation}\label{eq:eigen_prob}
+\left\{
+\begin{array}{l}
+ \frac{d}{dt}\nabla\Phie(\dot{u})+\lambda\nabla\Phie(\lambda u)=0\\
+ u(0)=u(T), \, \int_0^T\nabla\Phie (\lambda u)dt=0
+\end{array}
+\right.\tag{Eig}
+\end{equation}
+\begin{proof} 
+ 
+\end{proof}
+
+
+
+
+
+
+ 
+\end{thm}
 
 
 
@@ -326,11 +396,7 @@ PROBLEM 1. We can get a better constant taking this $\overline{u}$???}
 
 
 
-
-
-
-
-Now, we produce a generalization of \cite[Thm. 2.3, pp.]{mawhin2010critical}.
+\section{Differentiability of Hamiltonian dual action}
 
 \begin{thm}
 Suppose that 
@@ -382,7 +448,7 @@ We consider the Lagrangian
 \begin{equation}
 \mathcal{L}(t,v,\xi)=\frac{1}{2}\langle J\xi,v\rangle + H^*(t,\xi)
 \end{equation}
-and we have to prove that there exist $\Lambda_0>\lambda_0<0$
+and we have to prove that there exist $\Lambda_0>\lambda_0>0$
 such that 
 \begin{equation}\label{eq:cota-L-gradL-conj}
 |\mathcal{L}|+|\nabla_v\mathcal{L}|+\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq
@@ -392,7 +458,7 @@ We start with $|\mathcal{L}|$. From \eqref{eq:cotaH*-phi},
 \[
 |\mathcal{L}|\leq \frac{1}{2} |\langle J\xi,v\rangle|+H^*(t,\xi)\leq \frac{1}{2}|\xi||v|+\Phi(\Lambda \xi)+\beta(t). 
 \]
-Since $\frac{\Phi(x)}{|x|}\to \infty$ as $|x|\to \infty$, there exists $C>0$ such that $|x|\leq \Phi(|x|)+C$ for all $x \in \rr^d$. 
+Since $\frac{\Phi(x)}{|x|}\to \infty$ as $|x|\to \infty$, there exists $C>0$ such that $|x|\leq \Phi(x)+C$ for all $x \in \rr^d$.
 Then, 
 \[
 |\mathcal{L}|\leq \frac{1}{2} \frac{|v|}{\Lambda}\left(\Phi( \Lambda \xi)+C\right)+\Phi(\Lambda \xi)+\beta(t)
@@ -408,7 +474,7 @@ Now, we treat $|\nabla_v \mathcal{L}|$ and we get
 which is also an estimate of the desired type.
 
 Finally, we deal with $\Phi(\nabla_{\xi}\mathcal{L}{\lambda_0})$. 
-As $\Phi^*$ is a convex, pair??? function, we have
+As $\Phi^*$ is a convex, even function, we have
 \[\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)=
 \Phi^*\left(\frac{-\frac{1}{2}Jv}{\lambda_0}+\frac{\nabla H^*(t,\xi)}{\lambda_0}\right)
 \leq
