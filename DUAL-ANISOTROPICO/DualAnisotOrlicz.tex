@@ -91,8 +91,7 @@ Universidad Nacional de R\'{i}o Cuarto\\
 \newcommand{\epsi}{E^{\Phi^{\star}}}
 \newcommand{\Phie}{\Phi^{\star}}
 \newcommand{\lip}{\mathop{\rm Lip}}
-\newcommand{\phih}{\hat{\Phi}}
-\newcommand{\phihe}{\hat{\Phi}^\star}
+
 
 
 
@@ -244,7 +243,7 @@ By \cref{eq:cotas-F-aniso,eq:trans-grad,eq:trans-conj,eq:trans-young}, we get
 which implies \eqref{eq:trans-grad-aniso}
 \end{proof}
 
-\begin{comentario} Inequality \eqref{eq:trans-grad-aniso} is a few better than the corresponding in \cite[Prop. 2.2]{mawhin2010critical} because the the case of power function  we obtain $(\beta+\gamma)^{1/p}$, meanwhile in \cite{mawhin2010critical} appears $(\beta+\gamma)^{1/(p-1)}$ .
+\begin{comentario}\label{com:mejora_desi} Inequality \eqref{eq:trans-grad-aniso} is a few better than the corresponding in \cite[Prop. 2.2]{mawhin2010critical} because the the case of power function  we obtain $(\beta+\gamma)^{1/p}$, meanwhile in \cite{mawhin2010critical} appears $(\beta+\gamma)^{1/(p-1)}$ .
 
 \end{comentario}
 
@@ -258,32 +257,32 @@ We  consider the  Euclidean space $\rr^{2d}$ equipped with the standard  symplec
 \textcolor{red}{As Jakub observed we can not consider any $G$-function on the symplectic manifold $\rr^{2n}$. I thinkthat the following can be the appropriate form of the $G$-function defined on the symplectic manifold $\rr^{2n}$}
 
 \begin{defi}
- Let $\phih$ a $G$-function defined in the symplectic manifold $\rr^{2n}$. We say that  $\phih$ is a \emph{symplectic $G$-function} if
+ Let $\Phi$ a $G$-function defined in the symplectic manifold $\rr^{2n}$. We say that  $\Phi$ is a \emph{symplectic $G$-function} if
 
  \begin{equation}\label{eq:J-phi1}
- \phih(Ju)= \phihe(u).
+ \Phi(Ju)= \Phie(u).
 \end{equation}
 
 
 \end{defi}
 
 \begin{example} Let $\Phi:\rr^d\to [0,+\infty)$ be  a $G$-function. Then the $G$-function
-\[\phih(u)=\phih(q,p):= \Phi(q)+\Phie(p).\]
+\[\Phi(u)=\Phi(q,p):= \Phi(q)+\Phie(p).\]
 is a symplectic $G$-function.
 \end{example}
 
 \textcolor{red}{PROBLEM 0: It is the previous the general form of any symplectic $G$-function? It is possible to find other example of these functions?}
 
-We note that if $\phih$ is symplectic then
+We note that if $\Phi$ is symplectic then
 
 \begin{equation}\label{eq:J-phi2}
- \nabla\phih(Ju)= J\phihe(u).
+ \nabla\Phi(Ju)= J\Phie(u).
 \end{equation}
 Here we are agreeing that $\nabla\Phi$ is a column vector.
 
-As a consequence of \eqref{eq:J-phi1}, the matrix $J$ induce a isometry  between the spaces $L^{\phih}([0,T],\rr^{2d})$ and $L^{\phihe}([0,T],\rr^{2d})$.  Therefore we candefine  a bilinear form $\overline{\Omega}$  on $L^{\phih}([0,T],\rr^{2d})$ of the following way
+As a consequence of \eqref{eq:J-phi1}, the matrix $J$ induce a isometry  between the spaces $L^{\Phi}([0,T],\rr^{2d})$ and $L^{\Phie}([0,T],\rr^{2d})$.  Therefore we candefine  a bilinear form $\overline{\Omega}$  on $L^{\Phi}([0,T],\rr^{2d})$ of the following way
 
-\[\overline{\Omega}(u,v):=\int_0^T\Omega(u, v) dt,\quad u,v\in L^{\phih}([0,T],\rr^{2d})\]
+\[\overline{\Omega}(u,v):=\int_0^T\Omega(u, v) dt,\quad u,v\in L^{\Phi}([0,T],\rr^{2d})\]
 
 We consider the following functional
 
@@ -292,38 +291,38 @@ We consider the following functional
 We are interested in to find bounds of the quadratic functional $\Theta$ of the following type
 
 \begin{equation}\label{eq:IneQuad}
- \theta(u)\geq -C\int_0^T\phih\left(\dot{u}\right)dt,
+ \theta(u)\geq -C\int_0^T\Phi\left(\dot{u}\right)dt,
 \end{equation}
-for $u\in W^1L^{\phih}([0,T],\rr^{2d})$. It is important to get the best constant $C$ in previous inequality because this constant imposes  restrictions to the Hamiltonian $H$. 
+for $u\in W^1L^{\Phi}([0,T],\rr^{2d})$. It is important to get the best constant $C$ in previous inequality because this constant imposes  restrictions to the Hamiltonian $H$. 
 
 If $\Phi(q)=|q|^2/2$ was proved in \cite[Prop. 3.2]{mawhin2010critical} \eqref{eq:IneQuad} holds width $C=T/\pi$.  Below we prove that this is the optimal constant satisfying \eqref{eq:IneQuad}.   Meanwhile in \cite[Lem. 3.3]{Tian2007192} 
 was proved that $C_{\Phi}=2T$ satisfies \eqref{eq:IneQuad} when $\Phi(q)=|q|^{\alpha}/\alpha$, $1<\alpha<\infty$. Since this constant is not equal to $T/\pi$ when $\alpha=2$, it is not optimal.
 
 \begin{prop}
- Let $\phih$ be any symplectic $G$-function. Then  \eqref{eq:IneQuad} holds for  and $C=2T^{-1}$ for every  $u\in W^1L^{\phih}([0,T],\rr^{2d})$.
+ Let $\Phi$ be any symplectic $G$-function. Then  \eqref{eq:IneQuad} holds for  and $C=2T^{-1}$ for every  $u\in W^1L^{\Phi}([0,T],\rr^{2d})$.
 \end{prop}
 
- \begin{proof} Let  $u\in W^1L^{\phih}([0,T],\rr^{2d})$. As is usual we write $u=\tilde{u}+\overline{u}$ where
+ \begin{proof} Let  $u\in W^1L^{\Phi}([0,T],\rr^{2d})$. As is usual we write $u=\tilde{u}+\overline{u}$ where
  \[\overline{u}=\frac{1}{T}\int_0^Tu(t)dt.\]
  From \cite[Lem. 2.4]{MA2017} we have that
- \[\int_0^T\phih(\tilde{u})dt\leq\int_0^T\phih(T\dot{u})dt.\]
+ \[\int_0^T\Phi(\tilde{u})dt\leq\int_0^T\Phi(T\dot{u})dt.\]
  Then by Young's inequality and using \eqref{eq:J-phi1}
  \[
  \begin{split}
   \int_0^T\Omega\left(\dot{u},u\right)dt &=T\int_0^T\left\langle J\dot{u},T^{-1}\tilde{u}\right\rangle dt\\
-  &\geq -T\left\{ \int_0^T\phihe(J\dot{u})dt + \int_0^T\phih(T^{-1}\tilde{u})dt \right\}\\
-  &\geq -2T\left\{ \int_0^T\phih(\dot{u})dt \right\}
+  &\geq -T\left\{ \int_0^T\Phie(J\dot{u})dt + \int_0^T\Phi(T^{-1}\tilde{u})dt \right\}\\
+  &\geq -2T\left\{ \int_0^T\Phi(\dot{u})dt \right\}
   \end{split}
  \]
  \end{proof}
 
-\textcolor{red}{ Clearly the cosntant $2/T$ is far to be optimal. A possible way of improve $C$ is consider other average $\overline{u}$. The mean value that it was used is the standard condered in the literature. But this value is apropriate for el Hilbert setting $\Phi(q)=|q|^2/2$. In this case, the value of $\overline{u}$ is the nearest (in the $L^2$-norm) constant vector to $u$. For a arbitrary $G$ function, it seem more reasonable consider    the nearest constant vector to $u$ respect to the $\phih $-integral, i.e.
+\textcolor{red}{ Clearly the cosntant $2/T$ is far to be optimal. A possible way of improve $C$ is consider other average $\overline{u}$. The mean value that it was used is the standard condered in the literature. But this value is apropriate for el Hilbert setting $\Phi(q)=|q|^2/2$. In this case, the value of $\overline{u}$ is the nearest (in the $L^2$-norm) constant vector to $u$. For a arbitrary $G$ function, it seem more reasonable consider    the nearest constant vector to $u$ respect to the $\Phi $-integral, i.e.
 \[
- \int_0^T\phih(u-\overline{u})dt\leq \int_0^T\phih(u-u_0)dt,\quad\hbox{for every } u_0\in\rr^{2n}
+ \int_0^T\Phi(u-\overline{u})dt\leq \int_0^T\Phi(u-u_0)dt,\quad\hbox{for every } u_0\in\rr^{2n}
 \]
 Equivalently $\overline{u}$ is characterizate by
 \[
- \int_0^T\nabla\phih(u-\overline{u})dt=0.
+ \int_0^T\nabla\Phi(u-\overline{u})dt=0.
 \]
 There is not a explicit formula as in the Hilbert setting.
 \newline
@@ -332,14 +331,29 @@ PROBLEM 1. We can get a better constant taking this $\overline{u}$???}
  We call to the best constant in \eqref{eq:IneQuad} $C_{\Phi}$, i.e.
  
 \begin{equation}\label{eq:C-optima}
-C_{\Phi}=-\inf\left\{\left.\frac{\int_0^T\langle J\dot{u},u\rangle dt}{\int_0^T\phih(\dot{u})dt}\right|
-u\in \wphit([0,T],\rr^{2d})\right\}
+C_{\Phi}=-\inf\left\{\left.\frac{\int_0^T\langle J\dot{u},u\rangle dt}{\int_0^T\Phi(\dot{u})dt}\right|
+u\in W^1L^{\Phi}\left([0,T],\rr^{2d}\right)\right\}
  \end{equation}
  
  
+\begin{prop} The relation $C_{\Phi}=C_{\Phie}$ holds for every symplectic $\Phi$. 
+ \end{prop}
+ 
+ \begin{proof} Since $\Phi$ is symplectic if $u=Jv$
+ \[
+      \frac{\int_0^T\langle J\dot{u},u\rangle dt}{\int_0^T\Phi(\dot{u})dt}
+      =
+      \frac{\int_0^T\langle -\dot{v},Jv\rangle dt}{\int_0^T\Phi(J\dot{v})dt}
+      =\frac{\int_0^T\langle J\dot{v},v\rangle dt}{\int_0^T\Phie(\dot{v})dt}.
+   \]
+ Using that $u\mapsto Ju$ is invertible from $W^1L^{\Phie}([0,T],\rr^{2d})$ into $W^1L^{\Phi}([0,T],\rr^{2d})$ the statement follows taking infimum in previous equality.
+  
+ \end{proof}
+
+ 
 For the following result we need the theory of indices of $G$-functions, see \cite{fiorenza1997indices,Maligranda} for a complete treatment in the case of $N$-functions defined on $\rr$. The results are easily extended to the anisotropic setting.
 We denote by $\alpha_{\Phi}$ and $\beta_{\Phi}$ the so called  \emph{Matuszewska-Orlicz indices} of the function $\Phi$, which are defined next
-\begin{equation}\label{MO_indices}
+\begin{equation}\label{eq:MO_indices}
     \alpha_{\Phi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)} \right ) }{\log(t)},\quad
     \beta_{\Phi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)}\right )}{\log(t)}.
 \end{equation}
@@ -348,7 +362,22 @@ $\Delta_2$-function. The indices satisfy the following relation
 \begin{equation}\label{inv_indices}
     \frac{1}{\alpha_{\Phi}}+\frac{1}{\beta_{\Phie}}=1.
 \end{equation}
-Therefore if $\Phie$ is a $\Delta_2$-function (\textcolor{red}{I mean $\Delta_2$ as globally $\Delta_2$}) then $\alpha_{\Phi}>1$. We recall the following result of \cite{ABGMS2015}.
+Therefore if $\Phie$ is a $\Delta_2$-function (\textcolor{red}{I mean $\Delta_2$ as globally $\Delta_2$}) then $\alpha_{\Phi}>1$. 
+
+
+We observe that if $\Phi$ is symplectic then $\Phi\in\Delta_2$ implies $\Phie\in\Delta_2$.  It is well known   that if $\Phi$  and $\Phie$ are $\Delta_2$-function, then $\Phi$ is controlled by above and below
+ by power functions.  More concretely, for every $\epsilon>0$ there exists a
+constant $K=K(\Phi,\epsilon)$ and $p_0,p_1$ with $1<\alpha_{\Phi}-\epsilon<p_1\leq p_2<\beta_{\Phi}+\epsilon<\infty$ such that, for every $t,u\geq 0$,
+\begin{equation}\label{delta2-potencias}
+    K^{-1}\min\big\{t^{p_2},t^{p_1} \big\}\Phi(u)\leq \Phi(t u)\leq
+    K\max\big\{t^{p_2},t^{p_1} \big\}\Phi(u).
+\end{equation}
+
+
+
+
+
+We recall the following result of \cite{ABGMS2015}.
 
 \begin{lem}\label{lem_coer} Let $\Phi$ be a  $G$-functions. If $\Phie \in \Delta_2$ globally, then  for any $0<\mu<\alpha_{\Phi}$,
 \begin{equation}\label{coer_modular} \lim\limits_{\|\b{u}\orlnor \to \infty} \frac{\int_0^T\Phi\left(\frac{\b{u}}{\Lambda}\right)dt}{\|\b{u}\orlnor^{\mu}}=+\infty.
@@ -356,14 +385,7 @@ Therefore if $\Phie$ is a $\Delta_2$-function (\textcolor{red}{I mean $\Delta_2$
 
 \end{lem}
 
-Let $\phih$ is symplectic and define $\Phi_i,\Psi_i:\rr^d\to [0,+\infty)$, for $i=1,2$ by
-$\Phi_1(q):=\phih(q,0)=\phihe(0,q)=:\Psi_2(q)$ and $\Phi_2(p):=\phih(0,p)=\phihe(p,0)=:\Psi_1(p)$. Moreover
-\[\begin{split}
-   \Phi_1^\star(p_1)&=\sup\limits_{q_1\in\rr^d}\left\{ q_1\cdot p_1-\phih(q_1,0) \right\}\\
-   &\leq\sup\limits_{u\in\rr^{2d}}\left\{ (p_1,0)\cdot u-\phih(u) \right\}\\
-   &= \phihe(p_1,0)=\Psi_1(p_1)
-  \end{split}
-\]
+
 
 
 
@@ -398,24 +420,27 @@ $\Phi_1(q):=\phih(q,0)=\phihe(0,q)=:\Psi_2(q)$ and $\Phi_2(p):=\phih(0,p)=\phihe
 
 \section{Differentiability of Hamiltonian dual action}
 
-\begin{thm}
-Suppose that 
+\begin{thm}\label{thm:DiffDualAct}
+Suppose that $\Phi:\rr^{2d}\to [0,+\infty)$ is a differentiable $G$-function, not necessarily symplectic. Additionally
 \begin{enumerate}
 \item \label{it:h1-prop-H}
 $H:[0,T]\times\rr^{2d}\to \rr$ is measurable in $t$, continuously differentiable with respect to $u$.
 \item \label{it:h2-cotaH-conjphi}there exist $\beta, \gamma \in L^1([0,T],\rr)$, $\Lambda>\lambda>0$ such that
 \begin{equation}\label{eq:cota-H-phi-conj}
-\Phi^*\left(\frac{u}{\Lambda}\right)-\beta(t)\leq H(t,u) \leq \Phi^*\left(\frac{u}{\lambda}\right)+\gamma(t)
+\Phi^{\star}\left(\frac{u}{\Lambda}\right)-\beta(t)\leq H(t,u) \leq \Phi^{\star}\left(\frac{u}{\lambda}\right)+\gamma(t)
 \end{equation}
 \end{enumerate}
 Then there exists $\Lambda_0$ such that the dual action
-\[
-\chi(v)=\int_0^T \frac{1}{2} \langle J\dot{v},v\rangle+H^*(t,\dot{v})\,dt
-\]
-is continuously differentiable in $\wphit([0,T],\rr^d) \cap \{u|d(\dot{u},L^{\infty})<\Lambda_0\}$.
+\begin{equation}\label{eq:DualAct}
+ \chi(v)=\int_0^T \frac{1}{2} \langle J\dot{v},v\rangle+H^{\star}(t,\dot{v})  dt
+\end{equation}
+
+
+
+is continuously differentiable in $\wphit([0,T],\rr^{2d}) \cap \{u|d(\dot{u},L^{\infty})<\Lambda_0\}$.
 
 If $v$ is a critical point of $\chi$ with $d(\dot{v},L^{\infty})<\Lambda_0$, the function defined by 
-$u(t)=\nabla  H^*(t,\dot{v})$
+$u(t)=\nabla  H^{\star}(t,\dot{v})$
 solves 
 \[
 \left\{\begin{array} {lll}
@@ -431,13 +456,13 @@ u(t)&=&u(T)
 \begin{proof}
 Conjugating \ref{it:h2-cotaH-conjphi} we obtain
 \begin{equation}\label{eq:cotaH*-phi}
-\Phi(\lambda u)-\gamma(t)\leq H^*(t,v)\leq \Phi(\Lambda v)+\beta(t)
+\Phi(\lambda u)-\gamma(t)\leq H^{\star}(t,v)\leq \Phi(\Lambda v)+\beta(t)
 \end{equation}
-Since $H^*$ is smooth, we have $\partial_vH^*(t,v)=\{\nabla_v H^*(t,v)\}$.
-Applying Proposition \ref{prop: cota-conj-phi} with $F=H^*$, $\Phi(\Lambda v)$ instead of $\Phi(u)$
-and $u=\nabla H^*(t,v) \in \partial_v H(t,v)$, inequality \eqref{eq:cota-H-phi-conj} becomes
+Since $H^{\star}$ is smooth, we have $\partial_vH^{\star}(t,v)=\{\nabla_v H^{\star}(t,v)\}$.
+Applying Proposition \ref{prop: cota-conj-phi} with $F=H^{\star}$, $\Phi(\Lambda v)$ instead of $\Phi(u)$
+and $u=\nabla H^{\star}(t,v) \in \partial_v H(t,v)$, inequality \eqref{eq:cota-H-phi-conj} becomes
 \begin{equation}\label{eq:main-phiconj-phi}
-\Phi^*\left(\frac{\nabla H^*(t,v)}{\Lambda}\right)\leq \Phi(2\Lambda v)+2(\beta+\gamma).
+\Phi^{\star}\left(\frac{\nabla H^{\star}(t,v)}{\Lambda}\right)\leq \Phi(2\Lambda v)+2(\beta+\gamma).
 \end{equation}
 which will be the main inequality in the proof.
 
@@ -446,17 +471,17 @@ differentiability.
 
 We consider the Lagrangian 
 \begin{equation}
-\mathcal{L}(t,v,\xi)=\frac{1}{2}\langle J\xi,v\rangle + H^*(t,\xi)
+\mathcal{L}(t,v,\xi)=\frac{1}{2}\langle J\xi,v\rangle + H^{\star}(t,\xi)
 \end{equation}
 and we have to prove that there exist $\Lambda_0>\lambda_0>0$
 such that 
 \begin{equation}\label{eq:cota-L-gradL-conj}
-|\mathcal{L}|+|\nabla_v\mathcal{L}|+\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq
+|\mathcal{L}|+|\nabla_v\mathcal{L}|+\Phi^{\star}\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq
 a(v)\left(b(t)+\Phi\left(\frac{\xi}{\Lambda_0}\right)\right)
 \end{equation}
 We start with $|\mathcal{L}|$. From \eqref{eq:cotaH*-phi}, 
 \[
-|\mathcal{L}|\leq \frac{1}{2} |\langle J\xi,v\rangle|+H^*(t,\xi)\leq \frac{1}{2}|\xi||v|+\Phi(\Lambda \xi)+\beta(t). 
+|\mathcal{L}|\leq \frac{1}{2} |\langle J\xi,v\rangle|+H^{\star}(t,\xi)\leq \frac{1}{2}|\xi||v|+\Phi(\Lambda \xi)+\beta(t). 
 \]
 Since $\frac{\Phi(x)}{|x|}\to \infty$ as $|x|\to \infty$, there exists $C>0$ such that $|x|\leq \Phi(x)+C$ for all $x \in \rr^d$.
 Then, 
@@ -474,20 +499,20 @@ Now, we treat $|\nabla_v \mathcal{L}|$ and we get
 which is also an estimate of the desired type.
 
 Finally, we deal with $\Phi(\nabla_{\xi}\mathcal{L}{\lambda_0})$. 
-As $\Phi^*$ is a convex, even function, we have
-\[\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)=
-\Phi^*\left(\frac{-\frac{1}{2}Jv}{\lambda_0}+\frac{\nabla H^*(t,\xi)}{\lambda_0}\right)
+As $\Phi^{\star}$ is a convex, even function, we have
+\[\Phi^{\star}\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)=
+\Phi^{\star}\left(\frac{-\frac{1}{2}Jv}{\lambda_0}+\frac{\nabla H^{\star}(t,\xi)}{\lambda_0}\right)
 \leq
-\frac{1}{2} \Phi^*\left(\frac{Jv}{\lambda_0}\right)+
-\frac{1}{2}\Phi^*\left(\frac{2 \nabla H^*(t,\xi)}{\lambda_0}\right).
+\frac{1}{2} \Phi^{\star}\left(\frac{Jv}{\lambda_0}\right)+
+\frac{1}{2}\Phi^{\star}\left(\frac{2 \nabla H^{\star}(t,\xi)}{\lambda_0}\right).
 \]
 We choose $\frac{2}{\lambda_0}=\frac{1}{\Lambda}$ with $\Lambda$ as in \eqref{eq:main-phiconj-phi} and 
 we finally have
 \begin{equation}\label{eq:cota-conj-grad}
 \begin{split}
-\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq 
-\Phi^*\left(\frac{Jv}{2\Lambda}\right)+\Phi(2\Lambda\xi)+2(\beta+\gamma)=\\
-\max\left\{\Phi^*\left(\frac{Jv}{2\Lambda}\right),1\right\}
+\Phi^{\star}\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq 
+\Phi^{\star}\left(\frac{Jv}{2\Lambda}\right)+\Phi(2\Lambda\xi)+2(\beta+\gamma)=\\
+\max\left\{\Phi^{\star}\left(\frac{Jv}{2\Lambda}\right),1\right\}
 \left[\Phi(2\Lambda\xi)+2(\beta+\gamma)\right]
 \end{split}
 \end{equation}
@@ -503,11 +528,85 @@ If $v \in \wphit([0,T],\rr^d)$ is a critical point of $\chi$ with $d(\dot{v},L^{
 then, from equations (21) of \cite{MA2017} we obtain
 \[
 0=\int_0^T \frac{1}{2} \langle J\dot{v},h\rangle-\frac{1}{2} \langle \dot{h},Jv \rangle
-+\langle \nabla H^*(t,\dot{v}),\dot{h} \rangle.
++\langle \nabla H^{\star}(t,\dot{v}),\dot{h} \rangle.
 \]
 The rest of the proof follows as in \cite{mawhin2010critical}.
 
 \end{proof}
+
+\section{Existence periodic solutions Hamiltonian system}
+
+The following theorem extend  to a quite general function $\Phi$ the result in \cite[Th. 3.1]{mawhin2010critical} formulated for $\Phi_2(u)=|u|^2/2$. Even more, our result improves a little bit  \cite[Th. 3.1]{mawhin2010critical} in the sense that we obtain existence for $\Phi_2$ when the functions, introduced below, $l$ and $\gamma$ are in $L^2$ and $L^1$ respectively instead that $L^4$ and $L^2$  which is assumed in
+\cite[Th. 3.1]{mawhin2010critical}. This little improvement is due to the observation in Remark \ref{com:mejora_desi}.
+
+\begin{thm} Suppose that $\Phi$ is a symplectic $G$-function and
+\begin{enumerate}
+ \labitem{H1)}{it:hip1}   Exists $\xi\in\lpsi([0,T],\rr^{2d})$ such that 
+ \[H(t,u)\geq \langle \xi(t), u\rangle.
+  \]
+ \labitem{H2)}{it:hip2} There exists $\alpha\in (0,C_{\Phi})$ ($C_{\Phi}$ is   defined in \eqref{eq:C-optima}) such that for every $(t,u)\in [0,T]\times\rr^{2d}$
+ \[
+  H(t,u)\leq \frac{1}{\alpha}\Phi\left( \alpha u\right)+\gamma(t).
+ \]
+ \labitem{H3)}{it:hip3} 
+ \[
+  \int_0^TH(t,u)dt\to+\infty,\quad\hbox{when } |u|\to+\infty.
+ \]
+
+\end{enumerate}
+
+Then xxxxxxxxxxxxxxxxxx
+
+\end{thm}
+
+\begin{proof} Let $\delta$ be a positive number such that $\alpha+\delta<C_{\Phi}^{-1}$. Note that from  \eqref{delta2-potencias}  we have that
+\[\frac{K}{\alpha+\delta}\Phi\left( (\alpha+\delta) u\right)-
+  \frac{1}{\alpha}\Phi\left( \alpha u\right)\geq  \frac{K_1}{\alpha}\Phi\left( \alpha u\right), \]
+where $K_1=\left[ (\alpha+\delta)/\alpha\right]^{p_1-1}-1>0$ and $K, p_2$ are the constants in \eqref{delta2-potencias}. The constat $K_1$  depends only on $\alpha,\delta$ and $\Phi$. 
+
+
+We define
+\[
+  H_{\delta}(t,u)= \frac{K_1}{\alpha}\Phi\left( \alpha u\right)+H(t,u)
+\]
+ 
+
+Let $\lambda=\min\{1,K_1/2\}$. Then by \ref{it:hip1}, Young inequality and since $0<\lambda\leq 1$ we have
+\begin{equation}\label{eq:CotaSupH}
+ \begin{split}
+    H_{\delta}(t,u)  &\geq  \frac{K_1}{\alpha}\Phi\left( \alpha u\right)-\left| \frac{1}{\alpha} \left\langle \frac{\xi(t)}{\lambda}, \lambda\alpha u(t)\right\rangle \right|  \\
+    &\geq  \frac{K_1}{\alpha}\Phi\left( \alpha u\right)- \frac{1}{\alpha} \Phie\left(\frac{\xi(t)}{\lambda}\right) -\frac{1}{\alpha}\Phi\left( \lambda\alpha u(t)\right)  \\
+    &\geq  \frac{K_1}{2\alpha}\Phi\left( \alpha u\right)- \frac{1}{\alpha} \Phie\left(\frac{\xi(t)}{\lambda}\right)
+  \end{split} 
+\end{equation}
+
+On the other hand
+\begin{equation}\label{eq:CotaInfH}
+  H_{\delta}(t,u)  \leq  \frac{K}{\alpha+\delta}\Phi\left( (\alpha+\delta) u\right)+\gamma(t)
+\end{equation}
+
+
+The perturbed Hamiltonian $H_{\delta}$ verifies the assumptions of Theorem \ref{thm:DiffDualAct}. Moreover, since $\Phi\in\Delta_2\cap \nabla_2$ we have that the dual action
+
+\begin{equation}\label{eq:DualActDelta}
+ \chi_{\delta}(v)=\int_0^T \frac{1}{2} \langle J\dot{v},v\rangle+H_{\delta}^{\star}(t,\dot{v})  dt
+\end{equation}
+is continuously differentiable in $ W^1\lpsi_T([0,T],\rr^{2d})$. 
+
+On the other hand
+
+\[
+  \chi_{\delta}(v)\geq \left(\frac{1}{\alpha+\delta}-C_{\Phi} \right) \int_0^T\Phi(v)dt-\gamma_0
+\]
+
+
+\end{proof}
+
+
+
+
+
+
 
 
 \section*{Acknowledgments}
