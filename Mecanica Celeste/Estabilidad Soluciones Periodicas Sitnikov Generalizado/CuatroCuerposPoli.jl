@@ -60,7 +60,7 @@ function CoefEst(z₀)
   return (a₁,a₂,T)
 end
 #
-v=linspace(5,	6,	2000)
+v=linspace(0.1,	6,	2000)
 k=length(v)
 a₁=Array{Complex{Float64}}(k)
 a₂ =Array{Complex{Float64}}(k)
