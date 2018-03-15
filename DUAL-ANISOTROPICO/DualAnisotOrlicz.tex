@@ -813,7 +813,7 @@ The rest of the proof follows as in \cite{mawhin2010critical}.
 The following theorem extend  to a quite general function $\Phi$ the result in \cite[Th. 3.1]{mawhin2010critical} formulated for $\Phi_2(u)=|u|^2/2$. Even more, our result improves a little bit  \cite[Th. 3.1]{mawhin2010critical} in the sense that we obtain existence for $\Phi_2$ when the functions, introduced below, $l$ and $\gamma$ are in $L^2$ and $L^1$ respectively instead that $L^4$ and $L^2$  which is assumed in
 \cite[Th. 3.1]{mawhin2010critical}. This little improvement is due to the observation in Remark \ref{com:mejora_desi}.
 
-\begin{thm} Suppose that $\Phi$ is a symplectic $G$-function and
+\begin{thm}\label{thm:solution-ham} Suppose that $\Phi$ is a symplectic $G$-function and
 \begin{enumerate}
  \labitem{H1)}{it:hip1}   Exists $\xi\in\lpsi([0,T],\rr^{2d})$ such that 
  \[H(t,u)\geq \langle \xi(t), u\rangle.
@@ -878,8 +878,95 @@ On the other hand
 
 
 
+\section{Symplectic functions-Meeting 2018/03/08}
 
 
+Let $\Psi:\rr^{2n}\to \rr$ be an anisotropic function.
+We say that $\Psi$ is symplectic if $\Psi^*(Ju)\prec \Psi(u)$.
+
+Given $u=(q,p)\in \rr^{2n}$ and $\Phi:\rr^n \to \rr$, 
+Jakub define $\hat{\Phi}:\rr^{2n}\to \rr$ by
+\[
+\hat{\Phi}(q,p)=\Phi(q)+\Phi^*(p)
+\]
+with $\Phi^* \prec \Phi$.
+
+\begin{prop}
+$\hat{\Phi}$ is symplectic.
+\end{prop}
+
+\begin{proof}
+We have ${\hat\Phi}^*(q,p)=\Phi^*(q)+\Phi^*(p)$, then 
+${\hat \Phi}^*(Ju)=\Phi^*(p)+\Phi^*(-q)\prec \Phi(q)+\Phi(p)=\hat{\Phi}(u)$.
+\end{proof}
+
+Fernando suggests  $\overline{\Phi}(q,p)=\Phi(q)+\Phi^*(p)$.
+
+\begin{prop}
+$\overline \Phi$ is symplectic.
+\end{prop}
+
+\begin{proof}
+We have $\Phi^*(q,p)=\Phi(p)+\Phi^*(q)$, then 
+$\overline{\Phi}^*(Ju)=\Phi(-q)+\Phi^*(p)=\overline{\Phi}(u)$.
+\end{proof}
+
+\begin{thm}
+$J$ induces an embedding of $L^{\Phi^*}([0,T],\rr^{2n})$
+into $L^{\Phi}([0,T],\rr^{2n})$ when $\Psi$ is symplectic.
+\end{thm}
+
+\begin{proof}
+As $\Psi$ is symplectic, there exist $k,c$ such that
+$
+\Psi^*(Ju)<\Psi(ku)+c
+$
+then 
+\[
+\int \Psi^*\left(\frac{Ju}{k \lambda}\right) \leq cT+\int \Psi\left(\frac{u}{\lambda}\right)<\infty
+\]
+
+If $\|u\|_{L^{\Psi}}=1$, then $\int \Psi(u)\leq 1$ and
+\[
+\int \Psi^*\left(\frac{Ju}{k}\right) \leq cT+1 
+\]
+As $\Psi^*$ is convex, we have 
+\[
+\int \Psi^*\left(\frac{Ju}{(cT+1) \lambda}\right) 
+\leq \frac{1}{cT+1} \int \Psi^*\left(\frac{Ju}{k}\right)\leq 1
+\]
+then 
+\[
+\|Ju \|_{L^{\Psi^*}}\leq (cT+1)k:=c_0
+\]
+Finally, for any $u$, 
+\[
+\|Ju\|_{L^{\Psi^*}}\leq c_0\|u\|_{L^{\Psi}}.
+\]
+\end{proof}
+
+Algo como lo siguiente est\'a antes en este archivo. 
+
+\begin{cor}
+If $
+\Omega(u,v)=\int Kv\cdot u
+$
+and $\Psi$ is symplectic, then $\Omega$ is well defined in $L^{\psi} \times L^{\Psi}$.
+\end{cor}
+
+{ \bf Assumption:}
+ 
+For any $\Lambda>0$ there exists $C_{\Phi,\Lambda}$ such that
+\[
+\Omega(\dot{u},u)\geq -C_{\Psi,\Lambda} \int \Psi\left(\frac{u}{\Lambda}\right)
+\]
+
+The assumption is true when $\Psi \in \Delta_2$.
+
+\subsection{
+Generalization of Thm. 3.1 of \cite{mawhin2010critical}}
+
+Thm. \ref{thm:solution-ham} taking $\xi \in E^{\Psi}([0,T],\rr^{2n})$.
 
 
 
