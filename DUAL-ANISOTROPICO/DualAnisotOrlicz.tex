@@ -10,6 +10,7 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{cleveref}
+\usepackage{color}
 
 
 
@@ -52,19 +53,19 @@
 
 %%%%%%%%%%%%%%%% Title 
 
-\title{Dual method in an anisotropic Orlicz-Sobolev space setting}
-\author{
- Fernando D. Mazzone \thanks{SECyT-UNRC, FCEyN-UNLPam and CONICET}\\
-Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
-Universidad Nacional de R\'{i}o Cuarto\\
-(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
-\url{fmazzone@exa.unrc.edu.ar} \\
+\title{Clarke dual method for Hamiltonian systems with non standard grow}
+\author{(In alphabetical order)\\[3mm]
 Sonia Acinas \thanks{SECyT-UNRC,  FCEyN-UNLPam and UNSL}\\
 Dpto. de Matem\'atica, Facultad de Ciencias Exactas y Naturales\\
 Universidad Nacional de La Pampa\\
 (L6300CLB) Santa Rosa, La Pampa, Argentina\\
 \url{sonia.acinas@gmail.com}\\[3mm]
-Jakub....
+Jakub Maksymiuk \\[3mm]
+ Fernando D. Mazzone \thanks{SECyT-UNRC, FCEyN-UNLPam and CONICET}\\
+Dpto. de Matem\'atica, Facultad de Ciencias Exactas, F\'{\i}sico-Qu\'{\i}micas y Naturales\\
+Universidad Nacional de R\'{i}o Cuarto\\
+(5800) R\'{\i}o Cuarto, C\'ordoba, Argentina,\\
+\url{fmazzone@exa.unrc.edu.ar} \\
 }
 
 \date{}
@@ -90,6 +91,9 @@ Jakub....
 \newcommand{\epsi}{E^{\Phi^{\star}}}
 \newcommand{\Phie}{\Phi^{\star}}
 \newcommand{\lip}{\mathop{\rm Lip}}
+
+
+
 
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
@@ -121,8 +125,8 @@ Periodic Solutions,  Orlicz Spaces,   Euler-Lagrange,   Critical Points.
 %
 
 \begin{abstract}
-In this paper we consider the problem of finding periodic solutions of certain Euler-Lagrange equations .....blablabla
-%which include, among others, equations involving the $p$-Laplace operator and, more generally, the $(p,q)$-Laplace operator. We employ the direct method of the calculus of variations in the framework of anisotropic Orlicz-Sobolev spaces. These spaces appear to be useful in formulating a unified theory of existence of solutions for such a problem.
+In this paper we consider the problem of finding periodic solutions of certain Hamiltonian systems .....blablabla
+
 \end{abstract}
 
 
@@ -143,24 +147,25 @@ In this paper we consider the problem of finding periodic solutions of certain E
 Let $H:[0,T]\times \rr^d\times \rr^d \to \rr$. 
 We are looking for periodic solutions of the Hamiltonian system
 \begin{equation}\label{eq:ham-sis-qp}
-\left\{\begin{array}{lll}
-\dot{q}(t)&=&D_zH(t,q(t),p(t))\\
-\dot{p}(t)&=&-D_xH(t,q(t),p(t))\\
-p(0)&=&p(T)\\
-q(0)&=&q(T)
+\left\{\begin{array}{ll}
+\dot{q}(t)&=D_pH(t,q(t),p(t))\\
+\dot{p}(t)&=-D_qH(t,q(t),p(t))\\
+p(0)&=p(T)\hbox{ , } q(0)=q(T)
 \end{array}
 \right.
 \end{equation}
-for $t \in [0,T]$.
+for $t \in [0,T]$. \textcolor{red}{I think that, like in \cite{Mawhin2010}, is better to present the Hamiltonian problem as the main problem}
 
-An alternative writing of \eqref{eq:ham-sis-qp} using the combined variable $u=(q,p)$ and the symplectic matrix 
-$J=
+
+An alternative writing of \eqref{eq:ham-sis-qp} using the combined variable $u=(q,p)$ and the canonical symplectic matrix 
+
+\[J=
 \begin{pmatrix}
-0&-I_{d\times d}
+0&I_{d\times d}
 \\
-I_{d\times d}&0
+-I_{d\times d}&0
 \end{pmatrix}
-$
+\]
 is the following 
 \begin{equation}
 \dot{u}=J \nabla H(t,u(t))
@@ -171,6 +176,7 @@ J\dot{u}=- \nabla H(t,u(t))
 \end{equation}
 where $\nabla H$ is the gradient of $H$ with respect to the combined variable.
 
+\section{Preliminaries}
 We will use some basic concepts of convex analysis that we list below.
 
 Let $\Gamma_0(\rr^d)=\{F:\rr^d\to (-\infty,+\infty]
@@ -179,25 +185,29 @@ Let $\Gamma_0(\rr^d)=\{F:\rr^d\to (-\infty,+\infty]
 
 The Fenchel conjugate of $F$ is given by
 \[
-F^*(v)=\sup\limits_{u \in \rr^d} \left\langle v,u\right\rangle-F(u)
+F^\star(p)=\sup\limits_{q \in \rr^d} \left\langle p,q\right\rangle-F(q)
 \]
 The Fenchel conjugate satisfies the following properties:
 \begin{enumerate}
-\item $F^* \in \Gamma_0(\rr^d)$
-\item If $F\leq G$, then  $G^* \leq F^*$.
-\item If $G(u)=\alpha F(\beta u)+\sigma$ with $\alpha,\beta,\sigma>0$ then
-$G^*(v)=\alpha F^*(\frac{v}{\beta \alpha})-\sigma$
+\item $F^\star \in \Gamma_0(\rr^d)$
+\item If $F\leq G$, then  $G^\star \leq F^\star$.
+\item If $G(q)=\alpha F(\beta q)+\sigma$ with $\alpha,\beta,\sigma>0$ then
+$G^\star(p)=\alpha F^\star(\frac{p}{\beta \alpha})-\sigma$
 \end{enumerate}
 
-Let $\Phi:\mathbb{R}^d\to [0,+\infty)$ be  a differentiable, convex function such that $\Phi(0)=0$, $\Phi(y)>0$ if $y\neq 0$, $\Phi(-y)=\Phi(y)$,
+Let $\Phi:\mathbb{R}^d\to [0,+\infty)$ be  a differentiable, convex function such that $\Phi(0)=0$, $\Phi(q)>0$ if $q\neq 0$, $\Phi(-q)=\Phi(q)$,
  and
 \begin{equation}\label{eq:N-sub-inf}
-\lim_{|y|\to\infty}\frac{\Phi(y)}{|y|}=+\infty,
+\lim_{|q|\to\infty}\frac{\Phi(q)}{|q|}=+\infty,
 \end{equation}
-where $|\cdot|$ denotes the euclidean norm on $\rr^d$. From now on, we say that $\Phi$ is an $N_{\infty}$ function if $\Phi$ satisfies the previous properties.
+where $|\cdot|$ denotes the euclidean norm on $\rr^d$. From now on, we say that $\Phi$ is an $G$-function if $\Phi$ satisfies the previous properties.
+
+We write $\Phie$ for the Fenchel conjugate of $\Phi$.
 
 We do not assume  that $\Phi$ and $\Phi'$ satisfy the $\Delta_2$-condition.
 
+
+We denote by  $\partial F(q)$ the subdifferential of $F$ in the sense of convex analysis (see \cite{clarke1990optimization,clarke2013functional})
 
 The next result is a generalization of \cite[Prop. 2.2, p.34]{mawhin2010critical}
 
@@ -205,54 +215,232 @@ The next result is a generalization of \cite[Prop. 2.2, p.34]{mawhin2010critical
 Let $F \in  \Gamma_0(\rr^d)$. Suppose that there exist an anisotropic function $\Phi$ and
 non negative  constants $\beta,\gamma$ such that
 \begin{equation}\label{eq:cotas-F-aniso}
--\beta \leq F(u) \leq \Phi(u)+\gamma, \mbox{ for all } u \in \rr^d. 
+-\beta \leq F(q) \leq \Phi(q)+\gamma, \mbox{ for all } q \in \rr^d. 
 \end{equation}
-Now, if $v \in \partial F(u)$ then 
+Now, if $p \in \partial F(q)$ then 
 \begin{equation}\label{eq:trans-grad-aniso}
-\Phi^*(v)\leq \Phi(2u)+2(\beta+\gamma).
+\Phie(p)\leq \Phi(2q)+2(\beta+\gamma).
 \end{equation}
 \end{prop}
 
 \begin{proof}
-If $v \in \partial F(u)$, from \cite[Thm. 2.2, p.33]{mawhin2010critical}, 
+If $p \in \partial F(q)$, from \cite[Thm. 2.2, p.33]{mawhin2010critical}, 
 \begin{equation}\label{eq:trans-grad}
-F^*(v)=\langle v,u \rangle-F(u)
+F^\star(p)=\langle p,q \rangle-F(q)
 \end{equation}
 Conjugating \eqref{eq:cotas-F-aniso}, we have
 \begin{equation}\label{eq:trans-conj}
-F^*(v)\geq \Phi^*(v)-\gamma.
+F^\star(p)\geq \Phie(p)-\gamma.
 \end{equation}
 From Young's inequality, we get
 \begin{equation}\label{eq:trans-young}
-\langle v,u \rangle =\frac{1}{2} \langle v,2u \rangle \leq \frac{1}{2 }\Phi^*(v)+\frac{1}{2}\Phi(2u)
+\langle p,q \rangle =\frac{1}{2} \langle p,2q \rangle \leq \frac{1}{2 }\Phie(p)+\frac{1}{2}\Phi(2q)
 \end{equation}
 By \cref{eq:cotas-F-aniso,eq:trans-grad,eq:trans-conj,eq:trans-young}, we get
 \[
-\Phi^*(v)\leq \frac{1}{2}\Phi^*(v)+\frac{1}{2}\Phi(2u)+\beta\gamma
+\Phie(p)\leq \frac{1}{2}\Phie(p)+\frac{1}{2}\Phi(2q)+\beta+\gamma
 \]
 which implies \eqref{eq:trans-grad-aniso}
 \end{proof}
 
-Now, we produce a generalization of \cite[Thm. 2.3, p.]{mawhin2010critical}.
+\begin{comentario}\label{com:mejora_desi} Inequality \eqref{eq:trans-grad-aniso} is a few better than the corresponding in \cite[Prop. 2.2]{mawhin2010critical} because the the case of power function  we obtain $(\beta+\gamma)^{1/p}$, meanwhile in \cite{mawhin2010critical} appears $(\beta+\gamma)^{1/(p-1)}$ .
 
-\begin{thm}
-Suppose that 
+\end{comentario}
+
+
+\section{Optimal bounds for a symplectic bilinear form}
+
+We  consider the  Euclidean space $\rr^{2d}$ equipped with the standard  symplectic structure given by bilinear canonical symplectic 2-form
+
+\[\Omega(u,v):=\langle Ju,v\rangle .\]
+
+\textcolor{red}{As Jakub observed we can not consider any $G$-function on the symplectic manifold $\rr^{2n}$. I thinkthat the following can be the appropriate form of the $G$-function defined on the symplectic manifold $\rr^{2n}$}
+
+\begin{defi}
+ Let $\Phi$ a $G$-function defined in the symplectic manifold $\rr^{2n}$. We say that  $\Phi$ is a \emph{symplectic $G$-function} if
+
+ \begin{equation}\label{eq:J-phi1}
+ \Phi(Ju)= \Phie(u).
+\end{equation}
+
+
+\end{defi}
+
+\begin{example} Let $\Phi:\rr^d\to [0,+\infty)$ be  a $G$-function. Then the $G$-function
+\[\Phi(u)=\Phi(q,p):= \Phi(q)+\Phie(p).\]
+is a symplectic $G$-function.
+\end{example}
+
+\textcolor{red}{PROBLEM 0: It is the previous the general form of any symplectic $G$-function? It is possible to find other example of these functions?}
+
+We note that if $\Phi$ is symplectic then
+
+\begin{equation}\label{eq:J-phi2}
+ \nabla\Phi(Ju)= J\Phie(u).
+\end{equation}
+Here we are agreeing that $\nabla\Phi$ is a column vector.
+
+As a consequence of \eqref{eq:J-phi1}, the matrix $J$ induce a isometry  between the spaces $L^{\Phi}([0,T],\rr^{2d})$ and $L^{\Phie}([0,T],\rr^{2d})$.  Therefore we candefine  a bilinear form $\overline{\Omega}$  on $L^{\Phi}([0,T],\rr^{2d})$ of the following way
+
+\[\overline{\Omega}(u,v):=\int_0^T\Omega(u, v) dt,\quad u,v\in L^{\Phi}([0,T],\rr^{2d})\]
+
+We consider the following functional
+
+\[\Theta(u):=\overline{\Omega}(u,\dot{u}).\]
+
+We are interested in to find bounds of the quadratic functional $\Theta$ of the following type
+
+\begin{equation}\label{eq:IneQuad}
+ \theta(u)\geq -C\int_0^T\Phi\left(\dot{u}\right)dt,
+\end{equation}
+for $u\in W^1L^{\Phi}([0,T],\rr^{2d})$. It is important to get the best constant $C$ in previous inequality because this constant imposes  restrictions to the Hamiltonian $H$. 
+
+If $\Phi(q)=|q|^2/2$ was proved in \cite[Prop. 3.2]{mawhin2010critical} \eqref{eq:IneQuad} holds width $C=T/\pi$.  Below we prove that this is the optimal constant satisfying \eqref{eq:IneQuad}.   Meanwhile in \cite[Lem. 3.3]{Tian2007192} 
+was proved that $C_{\Phi}=2T$ satisfies \eqref{eq:IneQuad} when $\Phi(q)=|q|^{\alpha}/\alpha$, $1<\alpha<\infty$. Since this constant is not equal to $T/\pi$ when $\alpha=2$, it is not optimal.
+
+\begin{prop}
+ Let $\Phi$ be any symplectic $G$-function. Then  \eqref{eq:IneQuad} holds for  and $C=2T^{-1}$ for every  $u\in W^1L^{\Phi}([0,T],\rr^{2d})$.
+\end{prop}
+
+ \begin{proof} Let  $u\in W^1L^{\Phi}([0,T],\rr^{2d})$. As is usual we write $u=\tilde{u}+\overline{u}$ where
+ \[\overline{u}=\frac{1}{T}\int_0^Tu(t)dt.\]
+ From \cite[Lem. 2.4]{MA2017} we have that
+ \[\int_0^T\Phi(\tilde{u})dt\leq\int_0^T\Phi(T\dot{u})dt.\]
+ Then by Young's inequality and using \eqref{eq:J-phi1}
+ \[
+ \begin{split}
+  \int_0^T\Omega\left(\dot{u},u\right)dt &=T\int_0^T\left\langle J\dot{u},T^{-1}\tilde{u}\right\rangle dt\\
+  &\geq -T\left\{ \int_0^T\Phie(J\dot{u})dt + \int_0^T\Phi(T^{-1}\tilde{u})dt \right\}\\
+  &\geq -2T\left\{ \int_0^T\Phi(\dot{u})dt \right\}
+  \end{split}
+ \]
+ \end{proof}
+
+\textcolor{red}{ Clearly the cosntant $2/T$ is far to be optimal. A possible way of improve $C$ is consider other average $\overline{u}$. The mean value that it was used is the standard condered in the literature. But this value is apropriate for el Hilbert setting $\Phi(q)=|q|^2/2$. In this case, the value of $\overline{u}$ is the nearest (in the $L^2$-norm) constant vector to $u$. For a arbitrary $G$ function, it seem more reasonable consider    the nearest constant vector to $u$ respect to the $\Phi $-integral, i.e.
+\[
+ \int_0^T\Phi(u-\overline{u})dt\leq \int_0^T\Phi(u-u_0)dt,\quad\hbox{for every } u_0\in\rr^{2n}
+\]
+Equivalently $\overline{u}$ is characterizate by
+\[
+ \int_0^T\nabla\Phi(u-\overline{u})dt=0.
+\]
+There is not a explicit formula as in the Hilbert setting.
+\newline
+PROBLEM 1. We can get a better constant taking this $\overline{u}$???}
+
+ We call to the best constant in \eqref{eq:IneQuad} $C_{\Phi}$, i.e.
+ 
+\begin{equation}\label{eq:C-optima}
+C_{\Phi}=-\inf\left\{\left.\frac{\int_0^T\langle J\dot{u},u\rangle dt}{\int_0^T\Phi(\dot{u})dt}\right|
+u\in W^1L^{\Phi}\left([0,T],\rr^{2d}\right)\right\}
+ \end{equation}
+ 
+ 
+\begin{prop} The relation $C_{\Phi}=C_{\Phie}$ holds for every symplectic $\Phi$. 
+ \end{prop}
+ 
+ \begin{proof} Since $\Phi$ is symplectic if $u=Jv$
+ \[
+      \frac{\int_0^T\langle J\dot{u},u\rangle dt}{\int_0^T\Phi(\dot{u})dt}
+      =
+      \frac{\int_0^T\langle -\dot{v},Jv\rangle dt}{\int_0^T\Phi(J\dot{v})dt}
+      =\frac{\int_0^T\langle J\dot{v},v\rangle dt}{\int_0^T\Phie(\dot{v})dt}.
+   \]
+ Using that $u\mapsto Ju$ is invertible from $W^1L^{\Phie}([0,T],\rr^{2d})$ into $W^1L^{\Phi}([0,T],\rr^{2d})$ the statement follows taking infimum in previous equality.
+  
+ \end{proof}
+
+ 
+For the following result we need the theory of indices of $G$-functions, see \cite{fiorenza1997indices,Maligranda} for a complete treatment in the case of $N$-functions defined on $\rr$. The results are easily extended to the anisotropic setting.
+We denote by $\alpha_{\Phi}$ and $\beta_{\Phi}$ the so called  \emph{Matuszewska-Orlicz indices} of the function $\Phi$, which are defined next
+\begin{equation}\label{eq:MO_indices}
+    \alpha_{\Phi}:=\lim\limits_{t\to 0^{+}}\frac{\log \left (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)} \right ) }{\log(t)},\quad
+    \beta_{\Phi}:=\lim\limits_{t\to +\infty}\frac{\log \left  (\sup\limits_{u>0}\frac{\Phi(t u)}{\Phi(u)}\right )}{\log(t)}.
+\end{equation}
+We have that $1\leq \alpha_{\Phi}\leq \beta_{\Phi}\leq +\infty$. The relation $\beta_{\Phi}<\infty$ holds true if and only if $\Phi$ is a
+$\Delta_2$-function. The indices satisfy the following relation
+\begin{equation}\label{inv_indices}
+    \frac{1}{\alpha_{\Phi}}+\frac{1}{\beta_{\Phie}}=1.
+\end{equation}
+Therefore if $\Phie$ is a $\Delta_2$-function (\textcolor{red}{I mean $\Delta_2$ as globally $\Delta_2$}) then $\alpha_{\Phi}>1$. 
+
+
+We observe that if $\Phi$ is symplectic then $\Phi\in\Delta_2$ implies $\Phie\in\Delta_2$.  It is well known   that if $\Phi$  and $\Phie$ are $\Delta_2$-function, then $\Phi$ is controlled by above and below
+ by power functions.  More concretely, for every $\epsilon>0$ there exists a
+constant $K=K(\Phi,\epsilon)$ and $p_0,p_1$ with $1<\alpha_{\Phi}-\epsilon<p_1\leq p_2<\beta_{\Phi}+\epsilon<\infty$ such that, for every $t,u\geq 0$,
+\begin{equation}\label{delta2-potencias}
+    K^{-1}\min\big\{t^{p_2},t^{p_1} \big\}\Phi(u)\leq \Phi(t u)\leq
+    K\max\big\{t^{p_2},t^{p_1} \big\}\Phi(u).
+\end{equation}
+
+
+
+
+
+We recall the following result of \cite{ABGMS2015}.
+
+\begin{lem}\label{lem_coer} Let $\Phi$ be a  $G$-functions. If $\Phie \in \Delta_2$ globally, then  for any $0<\mu<\alpha_{\Phi}$,
+\begin{equation}\label{coer_modular} \lim\limits_{\|\b{u}\orlnor \to \infty} \frac{\int_0^T\Phi\left(\frac{\b{u}}{\Lambda}\right)dt}{\|\b{u}\orlnor^{\mu}}=+\infty.
+\end{equation}
+
+\end{lem}
+
+
+
+
+
+\begin{thm}\label{thm:C-opt-hamil} Suppose that $u\in \wphit([0,T],\rr^{2d})$ attains the minimum in \eqref{eq:C-optima}, then $\lambda=2/C_{\Phi}$ is the first eigenvalue and $u$ the corresponding eigenfunction of the following problem.
+\begin{equation}\label{eq:eigen_prob}
+\left\{
+\begin{array}{l}
+ \frac{d}{dt}\nabla\Phie(\dot{u})+\lambda\nabla\Phie(\lambda u)=0\\
+ u(0)=u(T), \, \int_0^T\nabla\Phie (\lambda u)dt=0
+\end{array}
+\right.\tag{Eig}
+\end{equation}
+\begin{proof} 
+ 
+\end{proof}
+
+
+
+
+
+
+ 
+\end{thm}
+
+
+
+
+
+
+
+
+
+\section{Differentiability of Hamiltonian dual action}
+
+\begin{thm}\label{thm:DiffDualAct}
+Suppose that $\Phi:\rr^{2d}\to [0,+\infty)$ is a differentiable $G$-function, not necessarily symplectic. Additionally
 \begin{enumerate}
 \item \label{it:h1-prop-H}
 $H:[0,T]\times\rr^{2d}\to \rr$ is measurable in $t$, continuously differentiable with respect to $u$.
 \item \label{it:h2-cotaH-conjphi}there exist $\beta, \gamma \in L^1([0,T],\rr)$, $\Lambda>\lambda>0$ such that
 \begin{equation}\label{eq:cota-H-phi-conj}
-\Phi^*\left(\frac{u}{\Lambda}\right)-\beta(t)\leq H(t,u) \leq \Phi^*\left(\frac{u}{\lambda}\right)+\gamma(t)
+\Phi^{\star}\left(\frac{u}{\Lambda}\right)-\beta(t)\leq H(t,u) \leq \Phi^{\star}\left(\frac{u}{\lambda}\right)+\gamma(t)
 \end{equation}
 \end{enumerate}
 Then there exists $\Lambda_0$ such that the dual action
-\[
-\chi(v)=\int_0^T \frac{1}{2} \langle J\dot{v},v\rangle+H^*(t,\dot{v})\,dt
-\]
-is continuously differentiable in $\wphit([0,T],\rr^d) \cap \{u|d(\dot{u},L^{\infty})<\Lambda_0\}$.
+\begin{equation}\label{eq:DualAct}
+ \chi(v)=\int_0^T \frac{1}{2} \langle J\dot{v},v\rangle+H^{\star}(t,\dot{v})  dt
+\end{equation}
+
+
+
+is continuously differentiable in $\wphit([0,T],\rr^{2d}) \cap \{u|d(\dot{u},L^{\infty})<\Lambda_0\}$.
 
 If $v$ is a critical point of $\chi$ with $d(\dot{v},L^{\infty})<\Lambda_0$, the function defined by 
-$u(t)=\nabla  H^*(t,\dot{v})$
+$u(t)=\nabla  H^{\star}(t,\dot{v})$
 solves 
 \[
 \left\{\begin{array} {lll}
@@ -268,13 +456,13 @@ u(t)&=&u(T)
 \begin{proof}
 Conjugating \ref{it:h2-cotaH-conjphi} we obtain
 \begin{equation}\label{eq:cotaH*-phi}
-\Phi(\lambda u)-\gamma(t)\leq H^*(t,v)\leq \Phi(\Lambda v)+\beta(t)
+\Phi(\lambda u)-\gamma(t)\leq H^{\star}(t,v)\leq \Phi(\Lambda v)+\beta(t)
 \end{equation}
-Since $H^*$ is smooth, we have $\partial_vH^*(t,v)=\{\nabla_v H^*(t,v)\}$.
-Applying Proposition \ref{prop: cota-conj-phi} with $F=H^*$, $\Phi(\Lambda v)$ instead of $\Phi(u)$
-and $u=\nabla H^*(t,v) \in \partial_v H(t,v)$, inequality \eqref{eq:cota-H-phi-conj} becomes
+Since $H^{\star}$ is smooth, we have $\partial_vH^{\star}(t,v)=\{\nabla_v H^{\star}(t,v)\}$.
+Applying Proposition \ref{prop: cota-conj-phi} with $F=H^{\star}$, $\Phi(\Lambda v)$ instead of $\Phi(u)$
+and $u=\nabla H^{\star}(t,v) \in \partial_v H(t,v)$, inequality \eqref{eq:cota-H-phi-conj} becomes
 \begin{equation}\label{eq:main-phiconj-phi}
-\Phi^*\left(\frac{\nabla H^*(t,v)}{\Lambda}\right)\leq \Phi(2\Lambda v)+2(\beta+\gamma).
+\Phi^{\star}\left(\frac{\nabla H^{\star}(t,v)}{\Lambda}\right)\leq \Phi(2\Lambda v)+2(\beta+\gamma).
 \end{equation}
 which will be the main inequality in the proof.
 
@@ -283,19 +471,19 @@ differentiability.
 
 We consider the Lagrangian 
 \begin{equation}
-\mathcal{L}(t,v,\xi)=\frac{1}{2}\langle J\xi,v\rangle + H^*(t,\xi)
+\mathcal{L}(t,v,\xi)=\frac{1}{2}\langle J\xi,v\rangle + H^{\star}(t,\xi)
 \end{equation}
-and we have to prove that there exist $\Lambda_0>\lambda_0<0$
+and we have to prove that there exist $\Lambda_0>\lambda_0>0$
 such that 
 \begin{equation}\label{eq:cota-L-gradL-conj}
-|\mathcal{L}|+|\nabla_v\mathcal{L}|+\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq
+|\mathcal{L}|+|\nabla_v\mathcal{L}|+\Phi^{\star}\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq
 a(v)\left(b(t)+\Phi\left(\frac{\xi}{\Lambda_0}\right)\right)
 \end{equation}
 We start with $|\mathcal{L}|$. From \eqref{eq:cotaH*-phi}, 
 \[
-|\mathcal{L}|\leq \frac{1}{2} |\langle J\xi,v\rangle|+H^*(t,\xi)\leq \frac{1}{2}|\xi||v|+\Phi(\Lambda \xi)+\beta(t). 
+|\mathcal{L}|\leq \frac{1}{2} |\langle J\xi,v\rangle|+H^{\star}(t,\xi)\leq \frac{1}{2}|\xi||v|+\Phi(\Lambda \xi)+\beta(t). 
 \]
-Since $\frac{\Phi(x)}{|x|}\to \infty$ as $|x|\to \infty$, there exists $C>0$ such that $|x|\leq \Phi(|x|)+C$ for all $x \in \rr^d$. 
+Since $\frac{\Phi(x)}{|x|}\to \infty$ as $|x|\to \infty$, there exists $C>0$ such that $|x|\leq \Phi(x)+C$ for all $x \in \rr^d$.
 Then, 
 \[
 |\mathcal{L}|\leq \frac{1}{2} \frac{|v|}{\Lambda}\left(\Phi( \Lambda \xi)+C\right)+\Phi(\Lambda \xi)+\beta(t)
@@ -311,20 +499,20 @@ Now, we treat $|\nabla_v \mathcal{L}|$ and we get
 which is also an estimate of the desired type.
 
 Finally, we deal with $\Phi(\nabla_{\xi}\mathcal{L}{\lambda_0})$. 
-As $\Phi^*$ is a convex, pair??? function, we have
-\[\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)=
-\Phi^*\left(\frac{-\frac{1}{2}Jv}{\lambda_0}+\frac{\nabla H^*(t,\xi)}{\lambda_0}\right)
+As $\Phi^{\star}$ is a convex, even function, we have
+\[\Phi^{\star}\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)=
+\Phi^{\star}\left(\frac{-\frac{1}{2}Jv}{\lambda_0}+\frac{\nabla H^{\star}(t,\xi)}{\lambda_0}\right)
 \leq
-\frac{1}{2} \Phi^*\left(\frac{Jv}{\lambda_0}\right)+
-\frac{1}{2}\Phi^*\left(\frac{2 \nabla H^*(t,\xi)}{\lambda_0}\right).
+\frac{1}{2} \Phi^{\star}\left(\frac{Jv}{\lambda_0}\right)+
+\frac{1}{2}\Phi^{\star}\left(\frac{2 \nabla H^{\star}(t,\xi)}{\lambda_0}\right).
 \]
 We choose $\frac{2}{\lambda_0}=\frac{1}{\Lambda}$ with $\Lambda$ as in \eqref{eq:main-phiconj-phi} and 
 we finally have
 \begin{equation}\label{eq:cota-conj-grad}
 \begin{split}
-\Phi^*\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq 
-\Phi^*\left(\frac{Jv}{2\Lambda}\right)+\Phi(2\Lambda\xi)+2(\beta+\gamma)=\\
-\max\left\{\Phi^*\left(\frac{Jv}{2\Lambda}\right),1\right\}
+\Phi^{\star}\left(\frac{\nabla_{\xi}\mathcal{L}}{\lambda_0}\right)\leq 
+\Phi^{\star}\left(\frac{Jv}{2\Lambda}\right)+\Phi(2\Lambda\xi)+2(\beta+\gamma)=\\
+\max\left\{\Phi^{\star}\left(\frac{Jv}{2\Lambda}\right),1\right\}
 \left[\Phi(2\Lambda\xi)+2(\beta+\gamma)\right]
 \end{split}
 \end{equation}
@@ -340,806 +528,78 @@ If $v \in \wphit([0,T],\rr^d)$ is a critical point of $\chi$ with $d(\dot{v},L^{
 then, from equations (21) of \cite{MA2017} we obtain
 \[
 0=\int_0^T \frac{1}{2} \langle J\dot{v},h\rangle-\frac{1}{2} \langle \dot{h},Jv \rangle
-+\langle \nabla H^*(t,\dot{v}),\dot{h} \rangle.
++\langle \nabla H^{\star}(t,\dot{v}),\dot{h} \rangle.
 \]
 The rest of the proof follows as in \cite{mawhin2010critical}.
 
 \end{proof}
 
+\section{Existence periodic solutions Hamiltonian system}
 
-DE AC\'A EN ADELANTE, EL ART\'ICULO \cite{AM2017}!!!
+The following theorem extend  to a quite general function $\Phi$ the result in \cite[Th. 3.1]{mawhin2010critical} formulated for $\Phi_2(u)=|u|^2/2$. Even more, our result improves a little bit  \cite[Th. 3.1]{mawhin2010critical} in the sense that we obtain existence for $\Phi_2$ when the functions, introduced below, $l$ and $\gamma$ are in $L^2$ and $L^1$ respectively instead that $L^4$ and $L^2$  which is assumed in
+\cite[Th. 3.1]{mawhin2010critical}. This little improvement is due to the observation in Remark \ref{com:mejora_desi}.
 
-
-\section{Introduction}
-
-Let $\Phi:\mathbb{R}^d\to [0,+\infty)$ be  a differentiable, convex function such that $\Phi(0)=0$, $\Phi(y)>0$ if $y\neq 0$, $\Phi(-y)=\Phi(y)$,
- and
-\begin{equation}\label{eq:N-sub-inf}
-\lim_{|y|\to\infty}\frac{\Phi(y)}{|y|}=+\infty,
-\end{equation}
-where $|\cdot|$ denotes the euclidean norm on $\rr^d$. From now on, we say that $\Phi$ is an $N_{\infty}$ function if $\Phi$ satisfies the previous properties.
-
-For $T>0$, we assume that  $F:[0,T]\times\rr^d\to\rr^d$  ($F=F(t,x)$)
-  is a differentiable function  with respect to $x$ for a.e. $t\in [0,T]$. Additionally, suppose that $F$ satisfies the following conditions:
+\begin{thm} Suppose that $\Phi$ is a symplectic $G$-function and
 \begin{enumerate}
-\labitem{(C)}{item:condicion_c} $F$ and its gradient $\nabla_x F$, with respect to $x\in\rr^d$,  are  Carath\'eodory functions, i.e. they are measurable functions with respect to $t\in [0,T]$, for every  $x\in\rr^d$, and they are continuous functions with  respect to  $x\in\rr^d$ for a.e. $t \in [0,T]$.
- \labitem{(A)}{item:condicion_a}  For   a.e. $t\in [0,T]$, it holds that
-\begin{equation}\label{eq:phi-lagrange}
-|F(t,x)| + |\nabla_x F(t,x)|  \leq a(x)b(t),
-\end{equation}
-where  $a\in C\left(\rr^d,[0,+\infty)\right)$ and $0\leq b\in L^1([0,T],\rr)$.
-\end{enumerate}
-
-
-The goal of this paper is to obtain existence of solutions for  the following problem:
-
-\begin{equation}\label{eq:ProbPhiLapla}
-    \left\{%
-\begin{array}{ll}
-  \frac{d}{dt} \nabla \Phi(u'(t))= \nabla_{x}F(t,u(t)), \quad \hbox{for a.e. } t \in (0,T),\\
-    u(0)-u(T)=u'(0)-u'(T)=0.
-\end{array}%
-\right. \tag{${P_{\Phi}}$}
-\end{equation}
-
-
-
-
-
-
-Our approach involves the direct method of the calculus of variations in the framework of \emph{anisotropic Orlicz-Sobolev spaces}. 
-We suggest the article  \cite{Orliczvectorial2005} for definitions and main results on anisotropic Orlicz spaces. These spaces allow us to unify and extend previous results on existence of solutions for systems like \eqref{eq:ProbPhiLapla}.
- We will find solutions of \eqref{eq:ProbPhiLapla} by finding extreme points of the \emph{action integral} 
-\begin{equation}\label{eq:integral_accion}
-  I(u):=\int_{0}^T \Phi(u'(t))+ F(t,u(t))\ dt.\tag{$IA$}
-\end{equation}
-
-In what follows, we shall denote by $\mathcal{L}=\mathcal{L}_{\Phi,F}$ the function $\Phi(y)+F(t,x)$, and we will call it \emph{Lagrangian}. 
-
-The classic book  \cite{mawhin2010critical} deals mainly with problem \eqref{eq:ProbPhiLapla} with $\Phi(x)=\Phi_2(x):=|x|^2/2$, through various methods: direct, dual, saddle points,  minimax, etc. The results in \cite{mawhin2010critical} were extended and improved in several articles,  see  \cite{tang1998periodic,tang2001periodic,tang1995periodic,wu1999periodic,zhao2004periodic}  to cite some examples. The case $\Phi(x)=\Phi_p(y):=|y|^p/p$, for arbitrary $1<p<\infty$ were considered in  \cite{tang2010periodic,Tian2007192}, among other papers. In this case, \eqref{eq:ProbPhiLapla} is reduced to the \emph{$p$-laplacian system}.  If $\Phi_{p_1,p_2}:\rr^d\times \rr^d\to [0,+\infty)$  is defined by
-\begin{equation}\label{eq:phip_1p_2}\Phi_{p_1,p_2}(y_1,y_2):=\frac{|y_1|^{p_1}}{p_1}+\frac{|y_2|^{p_2}}{p_2},\end{equation}
-then \eqref{eq:ProbPhiLapla} becomes  $(p_1,p_2)$-laplacian system, see
-\cite{li2014periodic,pasca2010periodic,pacsca2010some,pasca2011some,pasca2016periodic,yang2012periodic,yang2013existence}.  In a previous paper (see \cite{ABGMS2015}), we obtained similar results in an isotropic Orlicz framework. Hence \eqref{eq:ProbPhiLapla}  contains several problems that have been considered by many authors in the past. Our results still improve some results on $(p_1,p_2)$-laplacian systems since we obtain existence  of solutions for them under  less restrictive conditions.
-For all this, we believe that anisotropic Sobolev-Orlicz spaces can provide a suitable framework to  unify many known results. On the other hand, we point out that one of the most important aspects in our work  is the possibility of dealing with  functions $\Phi$ that grow faster than power functions. 
-
-\begin{example}\label{ex:RandEx} As an illustrative example, we obtain existence of solutions for
-\begin{equation}\label{eq:RandExample}
-    \left\{%
-\begin{array}{ll}
-  \frac{d}{dt} \left[u_1(t)e^{(u_1'(t))^2+(u_2'(t))^2}\right]= F_{x_1}(t,u(t)), \quad \hbox{for a.e. } t \in (0,T),\\
-   \frac{d}{dt} \left[u_2(t)e^{(u_1'(t))^2+(u_2'(t))^2}\right]= F_{x_2}(t,u(t)), \quad \hbox{for a.e. } t \in (0,T),\\
-    u(0)-u(T)=u'(0)-u'(T)=0,
-\end{array}%
-\right. 
-\end{equation}
-where  $F(t,x)=P(t)Q(x)$, with $P$ and $Q$ polynomials  (see Remark \ref{com:ejemplo} below).
-\end{example}
-
-The paper is organized as follows. In Section \ref{sec:preliminares},  we summarize some known results about Orlicz and Orlicz-Sobolev spaces. In order to obtain existence of minimizers of action integrals it is necessary that the functional $I$ be coercive. 
-In the past, several conditions on $F$ have been useful to obtain coercivity of $I$ for the functions  $\Phi_p$ and $\Phi_{p_1,p_2}$ . 
-In this paper  we investigate the condition that in the literature was called sublinearity 
-(see \cite{tang1998periodic,wu1999periodic,zhao2004periodic} for the laplacian, \cite{li2015infinitely,tang2010periodic} for the $p$-laplacian and \cite{li2014periodic,pasca2010periodic,pacsca2010some,yang2013existence} for $(p_1,p_2)$-laplacian). In Section \ref{sec:existencia},  we contextualize the sublinearity within our framework (see \eqref{eq:cond-sub} below) and we  establish results of existence of minimizers of \eqref{eq:integral_accion}  in Theorem \ref{coercitividad-r}.   In  Section \ref{sec:diferenciabilidad},  we establish conditions under which a minimum of \eqref{eq:integral_accion}  is a solution of \eqref{eq:ProbPhiLapla}.
-
-   
-
-
-
-
-
-
-
-
-
-
-\section{Anisotropic Orlicz and Orlicz-Sobolev spaces}\label{sec:preliminares}
-
-In this section, we give a short introduction to  Orlicz and Orlicz-Sobolev spaces of vector valued functions associated to anisotropic $N_{\infty}$ functions $\Phi:\rr^d\to[0,+\infty)$.  References for  these topics are \cite{chamra2017anisotropic,cianchi2000fully,cianchi2004optimal,Desch2001,gwiazda2013anisotropic,Orliczvectorial2005,Skaff1969,trudinger1974imbedding}. For the theory of convex functions in general we suggest \cite{clarke2013functional}. 
-Note that, unlike in \cite{gwiazda2013anisotropic}, we do not require that $N_{\infty}$ functions be superlinear near  0, i.e. $\Phi(x)/|x|\to 0$ when $|x|\to 0$. However, most of the results proved in \cite{gwiazda2013anisotropic} do not depend on this property. 
-
-If $\Phi(y)$ is an $N_{\infty}$  function which depends on $|y|$ ($\Phi(y)=\overline{\Phi}(|y|)$), then we say that $\Phi$ is \emph{radial}. 
-
-We can use the following example to obtain new $N_{\infty}$ functions from given $N_{\infty}$ ones. 
- 
-
-
- 
-    \begin{example}
-      Let  $(d_1,\ldots,d_k)\in\mathbb{Z}^k_+$. Suppose that  $\Phi_j:\rr^{d_j}\to [0,+\infty)$, $j=1,\ldots k$,  are $N_{\infty}$ functions and  $O_j\in L(\rr^{d},\rr^{d_j})$ are bounded linear functions  satisfying $\bigcap_{j=1}^k\ker O_j=\{0\}$. Then 
-      
-      \[\Phi(y):=\sum_{j=1}^k\Phi_j(O_jy)\]
-      is an $N_{\infty}$ function. 
-      
-      Let us briefly show that $\Phi$ satisfies \eqref{eq:N-sub-inf}. Suppose that $|y_n|\to\infty$ and $\Phi(y_n)/|y_n|$ is bounded. If for some $j=1,\ldots,k$ there exist  $\epsilon>0$ and a subsequence $n_s$ such that $|O_jy_{n_s}|\geq \epsilon |y_{n_s}|$, then $\Phi_j(O_jy_{n_s})/|y_{n_s}|\to\infty$, contrary to our assumption. Hence $O_jy_n/|y_n|\to 0$ when $n\to\infty$. Passing to a subsequence, we can assume that there exists $y\in\rr^d$ such that  $y_n/|y_n|\to y$. Then $y\in\ker O_j$ and $y\neq 0$, which is a contradiction.
-      
-     As a consequence, the function $\Phi:\rr^d\times\rr^d\to [0,+\infty)$ defined by
-      \[\Phi(y_1,y_2)=e^{|y_1-y_2|}-1+|y_2|^p,\]
-      with $1<p<\infty$ is an $N_{\infty}$ function.
-      
-      
-    \end{example}
-
- 
-
-
-
-Associated to $\Phi$ we have the \emph{complementary function} $\Phi^{\star}$ which is defined at $\zeta\in\rr^d$ as
-\begin{equation}\label{eq:conjugada}
- \Phi^{\star}(\zeta)=\sup\limits_{y\in\mathbb{R}^d} y\cdot \zeta-\Phi(y).
-\end{equation}
-From the continuity of $\Phi$ and  \eqref{eq:N-sub-inf}, we also have that $\Phi^{\star}:\rr^d \to [0,\infty)$. 
-The complementary function $\Phi^{\star}$ is an  $N_{\infty}$ function (see \cite[Ch. 2]{mawhin2010critical} and \cite[Thm. 2.2]{Orliczvectorial2005}).  Now, Moreau Theorem (see \cite[Thm. 4.21]{clarke2013functional}) implies that $\Phi^{\star\star}=\Phi$.
-
-    
-    
- Some useful properties which are satisfied by $N_{\infty}$ functions are:
- 
- 
-\begin{enumerate}
- \item[\namedlabel{eq:escalar_ine}{(P1)}]   $\Phi(\lambda x)\leq \lambda\Phi(x)$, for every  $\lambda\in[0,1],x\in\rr^d$;
- \item[\namedlabel{eq:escalar_ine_2}{(P2)}] if $ 0<|\lambda_1|\leq |\lambda_2| $, then $\Phi(\lambda_1 x)\leq\Phi(\lambda_2 x);$
-  \item[\namedlabel{eq:young-ine}{(P3)}] $x\cdot y\leq \Phi(x)+\Phi^{\star}(y)$;
-  \item[\namedlabel{eq:young-id}{(P4)}] $x\cdot \nabla\Phi(x)= \Phi(x)+\Phi^{\star}(\nabla \Phi (x))$.
- 
- 
-\end{enumerate}
-
-
-
-We say that  $\Phi:\mathbb{R}^d\rightarrow [0,+\infty)$ satisfies the  \emph{$\Delta_2$-condition} and we denote  $\Phi \in \Delta_2$,
-if there exists a  constant $C>0$  such that
-\begin{equation}\label{delta2defi}\Phi(2x)\leq C \Phi(x)+1,\quad x\in\rr^d.
-\end{equation}
-
-
-Throughout this article, we denote by $C=C(\lambda_1,\ldots,\lambda_n)$ a positive constant that may depend on $T$, $\Phi$ (or another $N_{\infty}$ functions) and the parameters $\lambda_1,\ldots,\lambda_n$ . We assume that the value that $C$ represents may change in 
-different occurrences in the same chain of inequalities. 
-
-
-
-
-If $\Phi$ satisfies the $\Delta_2$-condition, then $\Phi$ satisfies the following properties:
-\begin{enumerate}
- \item[\namedlabel{eq:quasi-sub-aditividad}{(P5)}] There exists $C>0$ such that for every $x,y\in \rr^d$, $\Phi(x+y)\leq C (\Phi(x)+\Phi(y))+1.$
-\item[\namedlabel{{eq:delta2-lambda}}{(P6)}]  For any $\lambda>1$ there exists $C(\lambda)>0$ such that $\Phi(\lambda x)\leq C(\lambda)\Phi(x)+1.$
-\item [\namedlabel{{eq:delta2-power}}{(P7)}] There exist $1<p<\infty$ and $C>0$ such that $\Phi(x)\leq C|x|^p+1$.
+ \labitem{H1)}{it:hip1}   Exists $\xi\in\lpsi([0,T],\rr^{2d})$ such that 
+ \[H(t,u)\geq \langle \xi(t), u\rangle.
+  \]
+ \labitem{H2)}{it:hip2} There exists $\alpha\in (0,C_{\Phi})$ ($C_{\Phi}$ is   defined in \eqref{eq:C-optima}) such that for every $(t,u)\in [0,T]\times\rr^{2d}$
+ \[
+  H(t,u)\leq \frac{1}{\alpha}\Phi\left( \alpha u\right)+\gamma(t).
+ \]
+ \labitem{H3)}{it:hip3} 
+ \[
+  \int_0^TH(t,u)dt\to+\infty,\quad\hbox{when } |u|\to+\infty.
+ \]
 
 \end{enumerate}
 
+Then xxxxxxxxxxxxxxxxxx
 
-Let $\Phi_1$ and $\Phi_2$ be   $N_{\infty}$ functions. Following  \cite{trudinger1974imbedding}, we write $\Phi_1\strictif\Phi_2$ if there exist  $k,C>0$ such that
-\begin{equation}\label{eq:orden} \Phi_1(x)\leq C+\Phi_2(kx),\quad x\in\rr^d.\end{equation}
-For example, if $\Phi \in \Delta_2$ then there exists $p\in (1,+\infty)$ such that $\Phi\strictif |x|^p$.  If for every $k>0$ there exists $C=C(k)>0$ such that \eqref{eq:orden} holds, we write  $\Phi_1\llcurly\Phi_2$.  We observe that  $\Phi_1\strictif \Phi_2$ implies that $\Phi^{\star}_2\strictif\Phi^{\star}_1$. A similar assertion holds for relation $\llcurly$. 
-
-
-
-If $\Phi^{\star}\in\Delta_2$ then $\Phi$ satisfies the \emph{$\nabla_2$-condition}, i.e.  for every $0<r<1$ there exist $l=l(r)>0$ and $C'=C'(r)>0$ such that 
-\begin{equation}\label{eq:nabla2}
-  \Phi(x)\leq \frac{r}{l}\Phi(l x)+C',\quad x\in\rr^d.
-\end{equation}
-
-
-
-
-
- We denote by $\mathcal{M}:=\mathcal{M}\left([0,T],\rr^d\right)$, with $d\geq 1$,  the set of all measurable functions (i.e. functions which are limits of simple functions)  defined on $[0,T]$ with values on $\mathbb{R}^d$ and  we write $u=(u_1,\dots,u_d)$ for  $u\in \mathcal{M}$.
-
- Given  an $N_{\infty}$ function $\Phi$ we define the \emph{modular function} 
-$\rho_{\Phi}:\mathcal{M}\to \mathbb{R}^+\cup\{+\infty\}$ by
-\[\rho_{\Phi}(u):= \int_0^T \Phi(u)\ dt.\]
-
-Now, we introduce the \emph{Orlicz class} $C^{\Phi}=C^{\Phi}\left([0,T],\rr^d\right)$   by setting
-\begin{equation}\label{claseOrlicz}
-  C^{\Phi}:=\left\{u\in \mathcal{M} | \rho_{\Phi}(u)< \infty \right\}.
-\end{equation}
-The \emph{Orlicz space} $\lphi=L^{\Phi}\left([0,T],\rr^d\right)$ is the linear hull of $\claseor$;
-equivalently,
-\begin{equation}\label{espacioOrlicz}
-\lphi:=\left\{ u\in \mathcal{M}| \exists \lambda>0: \rho_{\Phi}(\lambda u) < \infty   \right\}.
-\end{equation}
-  The Orlicz space $\lphi$ equipped with the \emph{Luxemburg norm}
-\[
-\|  u  \orlnor:=\inf \left\{ \lambda\bigg| \rho_{\Phi}\left(\frac{v}{\lambda}\right) dt\leq 1\right\},
-\]
-is a Banach space. 
-
-
-The subspace $\ephi=\ephi\left([0,T],\rr^d\right)$ is defined as the closure in $\lphi$ of the subspace $L^{\infty}\left([0,T],\rr^d\right)$ of all $\mathbb{R}^d$-valued essentially bounded functions. The equality $\lphi=\ephi$ is true if and only if $\Phi\in\Delta_2$ (see \cite[Cor. 5.1]{Orliczvectorial2005}). 
-
-A generalized version of \emph{H\"older's inequality} holds in Orlicz spaces (see \cite[Thm. 7.2]{Orliczvectorial2005}). Namely, if $u\in\lphi$ and $v\in\lpsi$ then $u\cdot v\in L^1$ and
-\begin{equation}\label{holder}
-\int_0^Tv\cdot u\ dt\leq 2 \|u\orlnor\|v\|_{L^{\Phi^{\star}}}.
-\end{equation}
-By $u\cdot v$ we denote the usual dot product in $\mathbb{R}^{d}$ between $u$ and $v$.
-
-We consider the subset $\Pi(\ephi,r)$ of $\lphi$ given by
-\[\Pi(\ephi,r):=\{u\in\lphi| d(u,\ephi)<r\}=\{u\in\lphi| d(u,L^{\infty})<r\}.\]
-This set is related to the Orlicz class $\claseor$ by the following inclusions
-\begin{equation}\label{eq:inclusiones}\Pi(\ephi, r )\subset r \claseor\subset\overline{\Pi(\ephi,r)}
-\end{equation}
-for any positive $r$. This relation is a trivial generalization of  \cite[Thm. 5.6]{Orliczvectorial2005}.
-If $\Phi \in \Delta_2$,  then the sets $\lphi$, $\ephi$, $\Pi(\ephi,r)$ and $\claseor$ are equal.
- 
-As usual, if $(X,\|\cdot\|_X)$ is a normed space and $(Y,\|\cdot \|_Y)$ is a linear subspace of $X$,  we write $Y\hookrightarrow X$ and we say that $Y$ is \emph{embedded} in $X$  when there exists $C>0$ such that
-$\|y\|_X\leq C\|y\|_Y$ for any $y\in Y$.  With this notation, H\"older's inequality states that  $\lphi\hookrightarrow  \left[\lpsi\right]^\star$, where a function $v\in\lphi$ is associated  to $\xi_v\in \left[\lpsi\right]^\star$ given by
-\begin{equation}\label{pairing}
-  \langle \xi_v,u\rangle=\int_0^Tv\cdot u\ dt.
-\end{equation}
-
-It is easy to prove that $L^{\infty} \hookrightarrow L^\Phi\hookrightarrow L^1$ for any $N_{\infty}$ function $\Phi$.
-
-Suppose $u\in\lphi([0,T],\rr^d)$ and consider $K:=\rho_{\Phi}(u)+1\geq 1$. Then, from \ref{eq:escalar_ine} we have $\rho_{\Phi}(K^{-1}u)\leq K^{-1}\rho_{\Phi}(u)\leq 1$. Therefore, we conclude 
-\begin{equation}\label{eq:amemiya}
- \|u\orlnor \leq \rho_{\Phi}(u)+1.
-\end{equation}
-
-
-
-%We highlight the following result (see \cite[Thm. 3.3]{gwiazda2013anisotropic}).
-
-%\begin{prop} $\lphi\left([0,T],\rr^d\right)=\left[\epsi\left([0,T],\rr^d\right)\right]^{\star}$.
- 
-%\end{prop}
-
-
-%As a consequence of previous proposition,  
-We highlight that $\lphi\left([0,T],\rr^d\right)$ can be equipped with the weak$\star$ topology induced by $\epsi\left([0,T],\rr^d\right)$ because 
-$\lphi\left([0,T],\rr^d\right)=\left[\epsi\left([0,T],\rr^d\right)\right]^{\star}$ (see \cite[Thm. 3.3]{gwiazda2013anisotropic}).
-
-
-
-We define the \emph{Sobolev-Orlicz space} $\wphi\left([0,T],\rr^d\right)$ by
-\[\wphi\left([0,T],\rr^d\right):=\left\{u| u\in AC\left([0,T],\rr^d\right) \hbox{ and } u'\in \lphi\left([0,T],\rr^d\right)\right\},\]
-where $AC\left([0,T],\rr^d\right)$ denotes the space of all $\rr^d$ valued absolutely continuous functions defined on $[0,T]$. The space $\wphi\left([0,T],\rr^d\right)$ is a Banach space when equipped with the norm
-\begin{equation}\label{def-norma-orlicz-sob}
-\|  u  \|_{\wphi}= \|  u  \|_{\lphi} + \|u'\orlnor.
-\end{equation}
-
-
-%We define 
-Let the function $A_{\Phi}:\rr^d\to [0,+\infty)$ be the greatest convex radial minorant of $\Phi$, i.e.
-\begin{equation}\label{eq:inversa-gral}
-A_{\Phi}(x)=\sup\left\{\Psi(x) \right\},
-\end{equation}
-where the supremum is taken over all the convex, non negative, radial functions $\Psi$ with $\Psi(x)\leq \Phi(x)$.
-
-\begin{prop}\label{prop:AsubPhi}  $A_{\Phi}$ is a radial and $N_{\infty}$ function.
-\end{prop}
-
-\begin{proof} The convexity and radiality of $A_{\Phi}$ is a consequence of the fact that the supremum preserves these properties. Then, it is only necessary to show that $A_{\Phi}(x)>0$ when $x\neq 0$, and  $A_{\Phi}(x)/|x|\to\infty$, when $|x|\to\infty$. We write, for $r\in\rr$, $r^+=\max\{r,0\}$. Since $\Phi$ is an $N_{\infty}$ function,  for every $k>0$ there exists $r_0>0$ such that  $\Phi(x)\geq k(|x|-r_0)^+$, for $|x|>r_0$.  As $ k(|x|-r_0)^+$ is a non negative, radial, convex function, it follows that $A_{\Phi}(x)\geq k(|x|-r_0)^+$. Therefore $\liminf_{|x|\to\infty} A_{\Phi}(x)/|x|\geq k$ and consequently   $\lim_{|x|\to\infty} A_{\Phi}(x)/|x|=\infty$.
-
-As $\Phi$ is an
-$N_{\infty}$ continuous function, for every $r>0$ there exists $k(r)>0$ such that $\Phi(x)\geq k(r)|x|\geq k(r)(|x|-r)^+$, when $|x|\geq r$. This fact implies that $A_{\Phi}(x)>0$ for $x\neq 0$.
-\end{proof}
-By abuse of notation, we identify $A_{\Phi}$ with a function defined on $[0,+\infty)$.  This function is invertible.
-\begin{cor}\label{cor:incr_aphi} $\lphi([0,T],\rr^d) \hookrightarrow L^{A_{\Phi}}([0,T],\rr^d)$.
-
-\end{cor}
-
-
-
- As is customary, we will use the decomposition $u=\overline{u}+\widetilde{u}$ for a function $u\in L^1([0,T])$  where $\overline{u} =\frac1T\int_0^T u(t)\ dt$ and $\widetilde{u}=u-\overline{u}$.
-
-
-
-\begin{lem}\label{lem:inclusion orlicz} Let $\Phi:\rr^d\to [0,+\infty)$ be an $N_{\infty}$
-function and let \linebreak[4]$u\in\wphi\left([0,T],\rr^d\right)$. Let 
-$A_{\Phi}: \rr^d \to  [0,+\infty)$ be the isotropic function defined by \eqref{eq:inversa-gral}. Then:
- 
-\begin{enumerate}
-  \item \emph{Morrey's inequality}.   For every $s,t\in [0,T]$, $s\neq t$
-  \begin{equation}
-   |u(t)-u(s)| \leq
-  |s-t|A_{\Phi}^{-1}\left(\frac{1}{|s-t|}\right)\|u'\orlnor.\tag{M.I}\label{in-sob-cont}
-  \end{equation}
-
-  \item \emph{Sobolev's inequality}. 
-  \begin{equation}
-   \|u\linf \leq A_\Phi^{-1}\left(\frac{1}{T}\right)\max\{1,T\}\|u\sobnor.\tag{S.I}\label{eq:sobolev}
-  \end{equation}
-
-  \item \emph{Poincar\'e-Wirtinger's inequality}. We have $\widetilde{u}\in L^{\infty}\left([0,T],\rr^d\right)$ and 
-    \begin{equation}\label{eq:wirtinger-iso}
-    \|\widetilde{u}\|_{L^{\infty}} \leq T A_{\Phi}^{-1}\left(\frac{1}{T}\right)\| u'\orlnor.\tag{P-W.I}
-    \end{equation}
-    
-    \item\label{it:embeding} If $\Phi$ is an $N_{\infty}$ function, then the space $\wphi\left([0,T],\rr^d\right)$ is compactly embedded in the space of  continuous functions $C([0,T],\rr^d)$.
-  \end{enumerate}
-
-\end{lem}
-
-\begin{proof}  It is an immediate consequence of Corollary \ref{cor:incr_aphi} and \cite[Lemma 2.1, Cor. 2.2]{ABGMS2015}.
-\end{proof}
-
-Lemma \ref{lem:inclusion orlicz} gives us estimates for isotropic norms of $u$. In these type of inequalities some information is lost.  The following result gives us an estimate that takes into account the anisotropic nature of the space $\wphi\left([0,T],\rr^d\right)$. The proof is similar to  that of  \cite[Thm. 4.5]{chamra2017anisotropic}.
-
-\begin{lem}[Anisotropic Poincar\'e-Wirtinger's inequality]\label{lem:inclusion orliczII} Let $\Phi:\rr^d\to [0,+\infty)$ be an $N_{\infty}$
-function and let $u\in\wphi\left([0,T],\rr^d\right)$. Then
-
-\begin{equation}\label{eq:wirtinger}
-  \Phi\left(\tilde{u}(t)\right)\leq\frac{1}{T} \int_0^T \Phi\left(Tu'(r)\right)dr.\tag{A.P-W.I}
-\end{equation}
-
-\end{lem}
-
-\begin{proof}  Applying Jensen's inequality twice, we get
-\begin{equation*}
-\begin{split}
-\Phi(\tilde{u}(t))&=\Phi\left(\frac{1}{T}\int_0^T \left(u(t)-u(s)\right) ds\right)\\
-&\leq\frac{1}{T}\int_0^T \Phi(u(t)-u(s))ds\\
-&\leq \frac{1}{T}\int_0^T \Phi\left(\int_s^t |t-s| u'(r)\frac{dr}{|t-s|}\right)ds\\
-&\leq 
-\frac{1}{T}\int_0^T \frac{1}{|t-s|} \int_s^t\Phi\left(|t-s| u'(r)\right)drds.
-\end{split}
-\end{equation*}
-From \ref{eq:escalar_ine} we have that $\Phi(rx)/r$ is increasing with respecto to $r>0$ for a fixed $x\in\rr^d$. Therefore, previous inequality  implies \eqref{eq:wirtinger}.
-\end{proof}
-
-
-\begin{comentario}\label{com:equiv-norm} As a consequence of Lemma \ref{lem:inclusion orlicz}, we obtain that 
-  \[\|u\sobnor'=|\overline{u}|+\|u'\orlnor,\]
-  defines an equivalent norm to $\|\cdot\sobnor$ on $\wphi([0,T],\rr^d)$.   
-\end{comentario}
-Another immediate consequence of  Lemma \ref{lem:inclusion orlicz} is the following result.
- \begin{cor}\label{cor:unif_conv} Every bounded sequence $\{u_n\}$ in  $\wphi([0,T],\rr^d)$  has an uniformly convergent subsequence. 
-\end{cor}
-
-\section{Existence of minimizers}\label{sec:existencia}
-
-
-It is well known that an important ingredient in the direct method of the calculus of variations is the coercivity of action integrals. In order to obtain  coercivity for the action integral $I$, defined in  \eqref{eq:integral_accion}, it is necessary to impose more restrictions on the potential $F$.
-
-There are several restrictions that were explored in the past. The one we will study in this article is based on what is known in the literature as sublinearity (see \cite{tang1998periodic,wu1999periodic,zhao2004periodic} for the Laplacian, \cite{tang2010periodic,li2015infinitely} for the $p$-Laplacian and \cite{yang2013existence,li2014periodic,pasca2010periodic,pacsca2010some} for $(p_1,p_2)$-Laplacian). In the current article we will use another denomination for this property.
-
-
-
-
-\begin{defi} Let $F:[0,T]\times \rr^d\to\rr$ be a function satisfying \ref{item:condicion_c} and \ref{item:condicion_a}. We say that $F$ satisfies condition \eqref{eq:cond-sub} if there exist an $N_{\infty}$ function $\Phi_0$, with $\Phi_0 \llcurly \Phi$ and
-a function $d \in  L^1([0,T],\rr)$, with $d\geq 1$, such that
-
-\begin{equation}\label{eq:cond-sub}
-  \Phi^{\star}\left(\frac{\nabla_x F}{d(t)}\right)\leq \Phi_0(x)+1.\tag{$B$}
-\end{equation}
-\end{defi}
-
-
-The condition \eqref{eq:cond-sub} encompasses the sublinearity condition as it was introduced in the context of $p$-laplacian or $(p_1,p_2)$-laplacian systems. For example, in
- \cite[Thm. 1.1.]{li2014periodic} Li, Ou and Tang considered a potential $F:[0,T]\times\rr^d\times\rr^d\to\rr$ satisfying \ref{item:condicion_c} and \ref {item:condicion_a} and the following condition  (we recall that $p'=p/(p-1)$).
-\begin{enumerate}   
-  \labitem{(H)}{item:condicion_h1} There exist $f_i,g_i,h_i\in L^1([0,T],\rr_+)$,  $\alpha_i\in [0,p_i/p_i')$, $i=1,2$,  $\beta_1\in [0,p_2/p_1')$ and $\beta_2\in [0,p_1/p_2')$ such that
- \begin{equation*}
-    \begin{array}{cc}
-    |\nabla_{x_1}F(t,x_1,x_2)|&\leq f_1(t)|x_1|^{\alpha_1}+g_1(t)|x_2|^{\beta_1}+h_1(t),\\
-    |\nabla_{x_2}F(t,x_1,x_2)|&\leq f_2(t)|x_2|^{\alpha_2}+g_2(t)|x_1|^{\beta_2}+h_2(t).
-    \end{array}
- \end{equation*}
-\end{enumerate}
-We leave to the reader to prove that \ref{item:condicion_h1} implies \eqref{eq:cond-sub}, with $\Phi=\Phi_{p_1,p_2}$,
-$\Phi_0=\Phi_{\overline{p}_1,\overline{p}_2}$, where $\overline{p}_i$, $i=1,2$, are taken so that  $\max\{\alpha_1p_1',\beta_2p_2'\}\leq \overline{p}_1<p_1$ and $\max\{\alpha_2p_2',\beta_1p_1'\}\leq \overline{p}_2<p_2$ and  $d=C(1+\sum_i \{f_i+g_i+h_i\})\in L^1$, with  $C>0$ chosen large enough.
-
-
-
-
-
-
-
-
-
-\begin{thm}\label{coercitividad-r}
-  Let $\Phi$ be an $N_{\infty}$-function whose complementary function $\Phi^{\star}$ satisfies the $\Delta_2$-condition. Let $F$ be a potential that satisfies \ref{item:condicion_c}, \ref{item:condicion_a},\eqref{eq:cond-sub} and the following condition
-\begin{equation}\label{eq:propiedad-coercividad-phi0}
-\lim_{|x|\to\infty}\frac{\int_{0}^{T}F(t,x)\ dt}{\Phi_0(2x)}=+\infty.
-\end{equation}
-Let $M$ be a weak${\star}$ closed subspace of $\lphi$ and let $V\subset C([0,T],\rr^d)$ be closed in the $C([0,T],\rr^d)$-strong topology. Then  $I$ attains a minimum on $H=\{u\in \wphi | u\in V\text{ and } u'\in M\}$.
 \end{thm}
 
+\begin{proof} Let $\delta$ be a positive number such that $\alpha+\delta<C_{\Phi}^{-1}$. Note that from  \eqref{delta2-potencias}  we have that
+\[\frac{K}{\alpha+\delta}\Phi\left( (\alpha+\delta) u\right)-
+  \frac{1}{\alpha}\Phi\left( \alpha u\right)\geq  \frac{K_1}{\alpha}\Phi\left( \alpha u\right), \]
+where $K_1=\left[ (\alpha+\delta)/\alpha\right]^{p_1-1}-1>0$ and $K, p_2$ are the constants in \eqref{delta2-potencias}. The constat $K_1$  depends only on $\alpha,\delta$ and $\Phi$. 
 
 
-\begin{proof} \emph{Step 1. The action integral is coercive}.
+We define
+\[
+  H_{\delta}(t,u)= \frac{K_1}{\alpha}\Phi\left( \alpha u\right)+H(t,u)
+\]
  
-  
-  Let $\lambda$ be any positive number with $\lambda>2\max\{T,1\}$. Since $\Phi_0\llcurly \Phi$ there exists $C(\lambda)>0$ such that 
-  \begin{equation}\label{eq:cond_C}
-    \Phi_0(x)\leq \Phi\left(\frac{x}{2\lambda}\right)+C(\lambda),\quad  x\in\rr^d. 
-  \end{equation}
-By the decomposition $u=\overline{u}+\tilde{u}$, the absolutely continuity of $F(t,x+sy)$ with respect to $s\in\rr$,  Young's inequality, \eqref{eq:cond-sub}, the convexity of $\Phi_0$, \ref{eq:escalar_ine_2}, \eqref{eq:cond_C} and \eqref{eq:wirtinger}  we obtain
-\begin{equation*}\label{eq:cota-dif-F}
-\begin{split}
-J&:=\left|\int_0^T F(t,u)-F(t,\overline{u})dt\right|
-\\
-&\leq \int_0^T \int_0^1 |\nabla_x F(t,\overline{u}+s\tilde{u})\tilde{u}|dsdt
-\\
-&\leq
-\lambda \int_0^T d(t) \int_0^1 \left[ \Phi^{\star}\left(d^{-1}(t)\nabla_xF(t,\overline{u}+s\tilde{u})\right)+\Phi\left(\frac{\tilde{u}}{\lambda}\right)\right]dsdt
-\\
-&\leq
-\lambda\int_0^T d(t)\int_0^1\left[ \frac12\Phi_0(2\overline{u})+\frac12\Phi_0(2\tilde{u})ds+\Phi\left(\frac{\tilde{u}}{\lambda}\right)+1 \right]dsdt
-\\
-&\leq
-\lambda\int_0^T d(t)\int_0^1\left[ \Phi_0(2\overline{u})+2\Phi\left(\frac{\tilde{u}}{\lambda}\right)+C(\lambda) \right]dsdt
-\\
-&\leq C_1 \Phi_0(2\overline{u})+\lambda C_2 \int_0^T \Phi\left(\frac{Tu'(s)}{\lambda}\right)ds+C_1,
-\end{split}
-\end{equation*}
-where $C_2=C_2(\|d\|_{L^1})$ and $C_1=C_1(\|d\|_{L^1},\lambda)$.  Since $\Phi^{\star} \in \Delta_2$ we can choose $\lambda$ large enough so that $l=\lambda T^{-1}$ satisfies  \eqref{eq:nabla2} for $r=\frac12 \min\{(C_2T)^{-1},1\}$. Thus, we have
-\[
- J\leq C_1 \Phi_0(2\overline{u})+\frac12 \int_0^T \Phi\left(u'(s)\right)ds+C_1.
-\]
-Then
-\begin{equation}
-\begin{split}
-I(u)&=\int_0^T  \Phi(u')+F(t,u)dt\\
-&= \int_0^T \{\Phi(u')+[F(t,u)-F(t,\overline{u})]+F(t,\overline{u})\}dt
-\\
-&\geq
-\frac12\int_0^T \Phi(u')dt-C_1\Phi_0(2 \overline{u})+\int_0^T F(t,\overline{u})dt-C_1
-\end{split}
-\end{equation}
 
-We take $u_n\in\wphi$ with $\|u_n\sobnor\to\infty$. From Remark \ref{com:equiv-norm}, we can suppose that $\|u_n'\orlnor \to \infty$ or $|\overline{u}_n|\to \infty$ . In the first case,from \eqref{eq:amemiya}  we have  that $\rho_\Phi(u_n)\to\infty$ and hence  $I(u_n)\to\infty$. In the second case,  $I(u_n)\to\infty$ as a consequence of \eqref{eq:propiedad-coercividad-phi0}.
-
-
-
-
-
-\emph{Step 2. Suppose that $u_n\to u$ uniformly and $u_n'\overset{\star}{\rightharpoonup} u'$ in $\lphi([0,T],\rr^d)$ then
-$
-I(u)\leq\liminf_{n\to\infty}I(u_n)
-$.
-}  
-
-
-  Without loss of generality, passing to subsequences, we may assume that the $\liminf$ is really a $\lim$. The embedding  $\lphi([0,T],\rr^d)\hookrightarrow L^1([0,T],\rr^d)$ implies that  $u_n'\rightharpoonup u' $ in $ L^1([0,T],\rr^d)$.  Now, applying \cite[Thm. 3.6]{buttazzo1998one} we obtain $I(u)\leq \lim_{n\to\infty}I(u_n)$.
-
-\emph{ Final step.}
-The proof of the theorem is concluded with a usual argument. We take a minimizing sequence $u_n \in H$ of $I$. 
-From the coercivity of $I$ we have that $u_n$ is bounded on $\wphi([0,T],\rr^d)$. By Corollary \ref{cor:unif_conv}  (passing to subsequences) we can suppose that $u_n$ converges uniformly to a function $u\in V$. 
-On the other hand, $u'_n$ is bounded on $\lphi=\left[\epsi\right]^\star$. Thus,  
-since $E^{\Phi^{\star}}$ is separable (see \cite[Thm. 6.3]{Orliczvectorial2005}), from \cite[Cor. 3.30]{brezis2010functional} 
-it follows that there exist a subsequence of $u'_n$ (we denote it $u'_n$ again) and $v \in M$ such that $u'_n\overset{\star}{\rightharpoonup}v$. From this fact and the uniform convergence of $u_n$ to $u$, we obtain that
-\[
-\int_0^T\varphi'\cdot u\ dt=\lim_{n\to\infty}\int_0^T\varphi'\cdot u_n \ dt=
--\lim_{n\to\infty}\int_0^T\varphi\cdot u'_n\ dt=-\int_0^T\varphi\cdot v\ dt,
-\]
-for every function $\varphi\in C^{\infty}([0,T],\rr^d)\subset\epsi$ with $\varphi(0)= \varphi(T)=0$.
-Thus, $u$ has a  derivative in the weak sense in $\lphi$. Taking account of 
-$\lphi \hookrightarrow L^1$ and \cite[Thms. 2.3 and 2.17 ]{buttazzo1998one}, 
-we obtain $u\in \wphi$ and $v=u'$ a.e. $t\in [0,T]$.
-Hence, $u \in H$. 
-
-Finally, the semicontinuity of $I$ that was established in step 2  implies that $u$ is a minimum of $I$.
-\end{proof}
-
-
-\begin{comentario} The results of this section can be extended without difficulty to any Lagrangian $\mathcal{L}$ with $\mathcal{L}\geq \mathcal{L}_{\Phi,F}$ (see \cite{ABGMS2015}).
-\end{comentario}
-
-
-\section{Regularity of minimizers and solutions of Euler-Lagrange equations}\label{sec:diferenciabilidad}
-
-
-In this section, we will address the question of when minimizers of $I$ are solutions of the associated  Euler-Lagrange equations. It is a classic result that minimizers satisfying an a priori smothness condition (e.g. Lipschitz continuity) are solutions of them.  In Theorem \ref{th:tor_prin} we obtain a better a priori condition for the action integral under consideration.
-
-We denote by $\lip([0,T],\rr^d)$ the set of $\rr^d$-valued Lipschitz continuous functions defined on $[0,T]$. If $X\subset \lphi([0,T],\rr^d)$ and $u\in \lphi([0,T],\rr^d)$,  we denote by $d(u,X)$ the distance from $u$ to $X$ computed with respect  to the Luxemburg norm. We recall that  $u\in\lip([0,T],\rr^d)$ implies that $d(u',L^{\infty}([0,T],\rr^d))=0$. The following is the main result of this section.
-
-
-
-
-\begin{thm}\label{th:tor_prin} Assume   that $F$ is as in Theorem \ref{coercitividad-r} and $\Phi$ is  strictly convex. If $u$ is a minimum of $I$ on the set $H=\{u\in\wphi([0,T],\rr^d)| u(0)=u(T)\}$ and $d(u',L^{\infty}([0,T],\rr^d))<1$, then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
-\end{thm}
-
-\begin{comentario} We observe that $H=\{u\in \wphi | u\in V\text{ and } u'\in M\}$ where
-\[V:=\{u\in C([0,T],\rr^d)|u(0)=u(T)\},\quad M:=\lphi([0,T],\rr^d),\]
- and $V$ is $C([0,T],\rr^d)$-closed. Therefore, from the results of previous section  the functional $I$ given by \eqref{eq:integral_accion}, has a minimum $u$ on  $H$ and  $d(u',L^{\infty})\leq 1$. The last inequality   follows from  $\rho_{\Phi}(u')<\infty$ and \eqref{eq:inclusiones}. Then, the possible minima of $I$ that do not satisfy the hypotheses of  Theorem \ref{th:tor_prin} lie on the nowhere dense set $ \{u:d(u',L^{\infty})=1\}$ .
-
-
-
-
-\end{comentario}
-
-
-
-The proof of the previous theorem depends on the G\^ateaux differentiability of the action integral on the space $\wphi([0,T],\rr^d)$. We will deal with a more general lagrangian function $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\to\rr$, which  is assumed  measurable in $t$ for each $(x,y)\in \rr^d\times\rr^d$ and  continuously differentiable at $(x,y)$ for almost every $t \in [0,T]$. We consider 
-\begin{equation}\label{eq:integral_accion_gen} I(u)=I_{\mathcal{L}}(u)=\int_0^T\mathcal{L}(t,u(t),u'(t))dt,\tag{$IG$}
-\end{equation}
- the action integral associated to $\mathcal{L}$. In order to obtain differentiability of $I$, it is necessary to impose some constraints on $\mathcal{L}$. In the paper \cite{chamra2017anisotropic}, Chmara and Maksymiuk  obtained differentiability for $I$ on $\wphi$ assuming  a similar condition  to Definition \ref{def:estructura} and additionally $\Phi\in\Delta_2\cap\nabla_2$. For our purpose, the condition $\Phi\in\Delta_2$ is a very serious limitation     since it leaves out of consideration functions that grow faster than power ones. According to our criterion, including Lagrangians with a fast growth  than power functions  is one of the greatest achievements of this paper.  For this reason, we present a proof  of the results obtained in \cite{chamra2017anisotropic} without the assumption $\Phi\in\Delta_2$. When $\Phi\notin\Delta_2$, the  differentiability of $I$ is somewhat more delicate since the effective domain of $I$ is not the whole space $\wphi$.
-
-
-
-\begin{defi}\label{def:estructura} We say that a Lagrangian $\mathcal{L}$ satisfies the condition \eqref{eq:condicion-estructura} if
-\begin{equation}\label{eq:condicion-estructura}
-  |\mathcal{L}|+ |\nabla_{x}\mathcal{L}|+\Phi^{\star}\left(\frac{\nabla_{y}\mathcal{L}}{\lambda}\right)
-\leq
-a(x)\left[b(t)+ \Phi\left(\frac{y}{\Lambda}\right)\right], \tag{$S$}
-\end{equation}
-for a.e. $t\in [0,T]$,
-where  $a\in C\left(\mathbb{R}^d,[0,+\infty)\right)$, $b\in L^1\left([0,T],[0,+\infty)\right) $ and $\Lambda,\lambda>0$.
-\end{defi}
-
-Condition \eqref{eq:condicion-estructura} includes structure conditions that have  been previously considered in the literature in the case of $p$-laplacian and $(p_1,p_2)$-laplacian systems. For example, it is easy to see that, when $\Phi(x)=\Phi_p(x)=|x|^p/p$, then  condition \eqref{eq:condicion-estructura}  is equivalent to the structure conditions in  \cite[Thm. 1.4]{mawhin2010critical}.  If $\Phi$ is a radial $N_{\infty}$ function such that $\Phi^{\star}$ satisfies  the $\Delta_2$-condition,  then \eqref{eq:condicion-estructura} is related to conditions  \cite[Eq. (2)-(4)]{ABGMS2015}.   If $\Phi=\Phi_{p_1,p_2}$ is as in Equation \eqref{eq:phip_1p_2} and $\mathcal{L}=\mathcal{L}(t,x_1,x_2,y_1,y_2)$ is a Lagrangian with $\mathcal{L}:[0,T]\times\rr^d\times\rr^d\times\rr^d\times\rr^d\to\rr$, then inequality \eqref{eq:condicion-estructura} is related to structure conditions like
-\cite[Lemma 3.1, Eq. (3.1)]{Tian2007192}. As can be seen, condition \eqref{eq:condicion-estructura} is a more compact expression than \cite[Lemma 3.1, Eq. (3.1)]{Tian2007192} and moreover   weaker, because  \eqref{eq:condicion-estructura} does not imply a control of
-$|D_{y_1}L|$ independent of $y_2$. 
-
-
-
-\begin{comentario} We leave to the reader the proof of the fact that if a Lagrange function $\mathcal{L}$ satisfies structure condition \eqref{eq:condicion-estructura} and $\Phi\strictif \Phi_0$, then $\mathcal{L}$ satisfies \eqref{eq:condicion-estructura} with $\Phi_0$ instead of $\Phi$ and possibly with other functions $b$, $a$ and constants $\Lambda$ and $\lambda$.
- \end{comentario}
-
-
-
-
-\begin{comentario}\label{com:lphi-satis S}
- The Lagrangian $\mathcal{L}=\mathcal{L}_{\Phi,F}=\Phi(y)+F(t,x)$ satisfies condition  \eqref{eq:condicion-estructura}, for every $\Lambda<1$. In order to prove this, the only non trivial fact that we should establish is that $ \Phi^{\star}(\nabla_{y}\mathcal{L})
-\leq
-a(x)\left\{b(t)+ \Phi\left({y}/{\Lambda}\right)\right\}$. From  \ref{eq:young-id} and the fact that $(d/dt)\Phi(tx)=\nabla\Phi(tx)\cdot x$ is an non decreasing function of $t$, we obtain  
-
-\[
-  \begin{split}
-     \Phi^{\star}(\nabla \Phi (x))\leq  x\cdot \nabla\Phi(x) \leq\frac{1}{\Lambda^{-1}-1}\int_1^{\Lambda^{-1}} \frac{d}{dt}\Phi(tx)dt \leq\frac{1}{\Lambda^{-1}-1}\Phi(\Lambda^{-1} x). \end{split}
-\]
-Therefore  $\Phi^{\star}(\nabla_{y}\mathcal{L})=\Phi^{\star}\left(\nabla\Phi(y)\right)\leq \Lambda(1-\Lambda)^{-1} \Phi(y/\Lambda )$, for every $\Lambda<1$. 
-\end{comentario}
-
-Given a function $a:\mathbb{R}^d\to \mathbb{R}$, we define the composition operator $\b{a}:\mathcal{M}\to \mathcal{M}$ by $\b{a}(u)(x)= a(u(x))$.
-We will often use the following result whose proof can be performed as that of  Corollary 2.3 in \cite{ABGMS2015}.
-
-
-\begin{lem}\label{lem:cota-a}
-\label{a_bound} If $a\in C(\mathbb{R}^d,\mathbb{R}^+)$ then $\b{a}:\wphi\to L^{\infty}([0,T])$ is bounded.
-More concretely,  there exists a non decreasing function $A:[0,+\infty)\to[0,+\infty)$ such that
- $\|\b{a}(u)\|_{L^{\infty}([0,T])}\leq A(\|u\|_{\wphi})$.
-\end{lem}
-
-The following lemma will be applied several times. We adapted the proof of 
-\cite[Lemma 2.5]{ABGMS2015} to the anisotropic case.    For an alternative approach, we  suggest \cite{chamra2017anisotropic}.  
-
-
-
-
-
-
-
-\begin{lem}\label{segundo lema}
-Let  $\{{u}_n\}_{n\in \mathbb{N}}$ be a sequence of  functions  converging to  ${u}\in \Pi(\ephi,\lambda)$  in the $\lphi$-norm. Then, there exist a subsequence
-${u}_{n_k}$ and a real valued function $h\in L^1([0,T],\rr)$ such that ${u}_{n_k}\rightarrow {u} \quad\text{a.e.}$ and $\Phi({u}_{n_k}/\lambda)\leq h\quad\text{a.e.}$
-\end{lem}
-
-\begin{proof}
-  Since $d({u},\ephi)<\lambda$ and ${u}_n$ converges to ${u}$, there exist   a subsequence of $u_n$ (again denoted $u_n$), $\overline{\lambda}\in (0,\lambda)$ and $u_0\in\ephi$ such that $d(u_n,u_0)<\overline{\lambda}$, $n=1,\ldots$. As $\lphi\left([0,T],\rr^d\right)\hookrightarrow L^1\left([0,T],\rr^d\right)$, the sequence $u_n$ converges in measure to $u$. Therefore, we can extract a subsequence (denoted again $u_n$) such that $u_n\to u$ a.e. and
-  \[\lambda_{n}:=\|{u}_{n}-{u}_{n-1}\orlnor<\frac{\lambda-\overline{\lambda}}{2^{n-1}},\quad\hbox{for } n\geq 2.\]
- We can assume $\lambda_n>0$ for every $n=1,\ldots$. We write $\lambda_1:=\|u_1-u_0\orlnor$ and  $\lambda_0:=\lambda-\sum_{n=1}^{\infty}\lambda_n$, and  we define $h:[0,T]\rightarrow\mathbb{R}$  by
- \begin{equation}\label{eq:serie} h(t)=  \frac{\lambda_0}{\lambda}\Phi\left(\frac{u_0}{\lambda_0}\right)+\sum_{j=0}^{\infty}\frac{\lambda_{j+1}}{\lambda}\Phi\left(\frac{u_{j+1}-u_j}{\lambda_{j+1}}\right).
-\end{equation}
- As $\Phi(0)=0$ and  $\Phi$ is a convex function, we have for any $n=1,\ldots$
-\[
+Let $\lambda=\min\{1,K_1/2\}$. Then by \ref{it:hip1}, Young inequality and since $0<\lambda\leq 1$ we have
+\begin{equation}\label{eq:CotaSupH}
  \begin{split}
-   \Phi\left(\frac{u_n}{\lambda}\right) &=\Phi\left(  \frac{u_0}{\lambda}+   \sum_{j=0}^{n-1}\frac{u_{j+1}-u_j}{\lambda} \right)\\
-   &\leq
-   \frac{\lambda_0}{\lambda}\Phi\left(\frac{u_0}{\lambda_0}\right)+\sum_{j=0}^{n-1}\frac{\lambda_{j+1}}{\lambda}\Phi\left(\frac{u_{j+1}-u_j}{\lambda_{j+1}}\right) \leq h.
- \end{split}
-\]
-
-Since $u_0\in\ephi\subset \claseor$ and $\ephi$ is a subspace, we get that $\Phi(u_0/\lambda_0)\in L^1([0,T],\rr)$.
-On the other hand, $\|u_{j+1}-u_j\orlnor = \lambda_{j+1}$ and therefore
-\[
-\int_0^T\Phi\left(\frac{u_{j+1}-u_j}{\lambda_{j+1}}\right)dt\leq 1.
-\]
-Then $h\in L^1([0,T],\rr)$. \end{proof}
-
-
-
-
-
-The  proof of the following theorem follows the same lines as \cite[Thm. 3.2]{ABGMS2015}, but with some modifications due to the lack of monotonicity of $\Phi$ with  respect to the euclidean norm and the fact that  the notion of absolutely continuous norm (used intensely in \cite[Thm. 3.2]{ABGMS2015}) does not work very well in the framework of anisotropic Orlicz spaces when $\Phi \notin \Delta_2$.
-
-
-\begin{thm}\label{teo:diferenciabilidad}
-Let $\mathcal{L}$ be a differentiable Carath\'eodory function satisfying \eqref{eq:condicion-estructura}.
-Then the following statements hold:
-\begin{enumerate}
-\item \label{it:T1item1} \label{A1} The action integral given by \eqref{eq:integral_accion_gen}
-is finitely defined on the set $\domi_{\Lambda}:=W^{1}\lphi\cap\{u|u'\in\Pi(\ephi,\Lambda)\}$.
-
-\item\label{it:T1item3} The function  $I$ is G\^ateaux differentiable on $\domi_{\Lambda}$ and  its derivative $I'$ is demicontinuous from 
-$\domi_{\Lambda}$  into $\left[\wphi \right]^{\star}$, i.e. $I'$ is continuous when $\domi_{\Lambda}$ is equipped with the strong topology and   $\left[\wphi \right]^{\star}$ with the weak${\star}$ topology. Moreover, $I'$ is given by the following expression
-\begin{equation}\label{eq:DerAccion}
-\langle  I'(u),v\rangle= \int_0^T \left[\nabla_x\mathcal{L}\big(t,u,u'\big)\cdot v
-+ \nabla_y\mathcal{L}\big(t,u,u'\big)\cdot v'\right] \ dt.
+    H_{\delta}(t,u)  &\geq  \frac{K_1}{\alpha}\Phi\left( \alpha u\right)-\left| \frac{1}{\alpha} \left\langle \frac{\xi(t)}{\lambda}, \lambda\alpha u(t)\right\rangle \right|  \\
+    &\geq  \frac{K_1}{\alpha}\Phi\left( \alpha u\right)- \frac{1}{\alpha} \Phie\left(\frac{\xi(t)}{\lambda}\right) -\frac{1}{\alpha}\Phi\left( \lambda\alpha u(t)\right)  \\
+    &\geq  \frac{K_1}{2\alpha}\Phi\left( \alpha u\right)- \frac{1}{\alpha} \Phie\left(\frac{\xi(t)}{\lambda}\right)
+  \end{split} 
 \end{equation}
 
-\item\label{it:T1item4}  If  $\Phi^{\star} \in \Delta_2$ then 
-  $I'$ is continuous from $\domi_{\Lambda}$ into $\left[\wphi\right]^{\star}$ when both spaces are equipped with the strong topology.
-\end{enumerate}
-\end{thm}
-
-
-\begin{proof}
-Let $u\in \domi_{\Lambda}$. From \eqref{eq:inclusiones} we obtain that $\Phi( u'(t)/\Lambda) \in L^1$.
-Now, from  \eqref{eq:condicion-estructura} and Lemma \ref{lem:cota-a}, we have
- \begin{equation}\label{eq:cota-condicion-estructura}
-   \begin{split}
-|\mathcal{L}(t,u(t),u'(t))|&+ |\nabla_x\mathcal{L}(t,u(t),u'(t))|
-+\Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(t,u,u')}{\lambda}\right)
-\\
-&\leq A(\|u\sobnor ) \left[b(t)+ \Phi\left(\frac{u'(t)}{\Lambda}\right) \right]\in
- L^1.
-\end{split}
-\end{equation}
-Thus, by integrating this inequality item \eqref{it:T1item1} is proved.
-
-We split up the proof of item \ref{it:T1item3} into four steps.
-
-\noindent\emph{Step 1. The non linear operator  $u \mapsto \nabla_x\mathcal{L}(\cdot,u,u')$ is continuous from $\domi_{\Lambda}$ into $L^{1}([0,T])$ with the strong topology on both sets.} 
-
-
-
-Let   $\{u_n\}_{n\in \mathbb{N}}$ be a sequence of  functions in $\domi_{\Lambda}$  
-and let $u\in \domi_{\Lambda}$  such that $u_n\rightarrow u$ in $\wphi$.
-By \eqref{eq:sobolev},  $u_n \to u$ uniformly.
-As $u'_n\rightarrow u'\in\domi_{\Lambda}$, by 
-  Lemma \ref{segundo lema}, there exist a subsequence of  $u'_{n}$ (again denoted $u'_{n}$) and a function  
-	$h\in L^1([0,T],\rr)$
-	such that  $u'_{n}\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_{n}/\Lambda)\leq h\quad\text{a.e}$.  
-
-Since $u_{n}$, $n=1,2,\ldots,$ is a bounded sequence in $\wphi$, according to  Lemma \ref{lem:cota-a}, 
-there exists $M>0$ such that $\|\b{a}(u_{n})\|_{L^{\infty}} \leq M$, $n=1,2,\ldots$.  
-From the previous facts and \eqref{eq:cota-condicion-estructura}, we get
-\begin{equation*}\label{eq:DxL1-bis}
-  |\nabla_x\mathcal{L}(\cdot,u_{n},u'_{n})|\leq a(u_{n})\left[b+\Phi\left(\frac{u'_{n}}{\Lambda}\right)\right]\leq
-M (b+h) \in L^1.
-\end{equation*}
-On the other hand, by the continuous differentiability of $\mathcal{L}$, we have
-\[\nabla_x\mathcal{L}(t,u_{n_k}(t),u'_{n_k}(t))\to \nabla_x\mathcal{L}(t,u(t),u'(t))\quad\hbox{ for a.e. } t\in[0,T].\]
-Applying Lebesgue Dominated Convergence Theorem we conclude the proof of step 1.
-
-
-\noindent\emph{Step 2. The non linear operator   $u
- \mapsto  \nabla_y\mathcal{L}(\cdot,u,u')$ is continuous from $\domi_{\Lambda}$ with the strong topology  
-into $\left[\lphi\right]^{\star}$  with the weak$\star$ topology.}
-
- Let $u\in \domi_{\Lambda}$.  From  \eqref{eq:cota-condicion-estructura}, it follows that 
-\begin{equation}\label{eq:DyLpsi-clase}
-\nabla_y\mathcal{L}(\cdot,u,u')\in \lambda C^{\Phi^{\star}}\left([0,T],\rr^d\right)\subset\lpsi\left([0,T],\rr^d\right)\subset\left[\lphi\left([0,T],\rr^d\right)\right]^{\star}.
+On the other hand
+\begin{equation}\label{eq:CotaInfH}
+  H_{\delta}(t,u)  \leq  \frac{K}{\alpha+\delta}\Phi\left( (\alpha+\delta) u\right)+\gamma(t)
 \end{equation}
 
 
+The perturbed Hamiltonian $H_{\delta}$ verifies the assumptions of Theorem \ref{thm:DiffDualAct}. Moreover, since $\Phi\in\Delta_2\cap \nabla_2$ we have that the dual action
 
-
-
-
-Let $u_n,u\in \domi_{\Lambda}$ such that $u_n\to u$ in the norm of $\wphi$. 
-We must prove that  $\nabla_y\mathcal{L}(\cdot,u_n,u'_n)\overset{w^\star}{\rightharpoonup} 
-\nabla_y\mathcal{L}(\cdot,u,u')$. 
-On the contrary, there exist $v\in\lphi$, $\epsilon>0$ and a subsequence of $\{u_n\}$ (denoted  $\{u_n\}$ for simplicity)  such that
-\begin{equation}\label{cota_eps}
- \left| \langle \nabla_y\mathcal{L}(\cdot,u_n,u'_n),v \rangle - 
-\langle  \nabla_y\mathcal{L}(\cdot,u,u'),v \rangle\right|\geq \epsilon.
+\begin{equation}\label{eq:DualActDelta}
+ \chi_{\delta}(v)=\int_0^T \frac{1}{2} \langle J\dot{v},v\rangle+H_{\delta}^{\star}(t,\dot{v})  dt
 \end{equation}
-We have $u_n\rightarrow u$ in $\lphi$ and
-$u'_n\rightarrow u'$ with $u'\in\Pi(\ephi,\Lambda)$.
- By Lemmas \ref{cor:unif_conv}  and \ref{segundo lema}, there exist a subsequence of $\{u_n\}$ (again denoted  $\{u_n\}$ for simplicity) 
-and a function $h\in L^1([0,T],\rr)$ such that 
-$u_n\rightarrow u$ uniformly, $u'_n\rightarrow u' \quad\text{a.e.}$ and $\Phi(u'_n/\Lambda)\leq h\quad\text{a.e.}$ 
-As in the previous step,
-Lemma \ref{lem:cota-a} implies that $a(u_n(t))$ is uniformly bounded by a certain constant $M>0$. 
-Therefore,   from inequality  \eqref{eq:cota-condicion-estructura} with $u_n$ instead of $u$, we have 
-\begin{equation}\label{eq:Dy-suc}
-  \Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)   
-	\leq M (b+h)=:h_1\in L^1.
-\end{equation}
-As $v \in \lphi$ there exists $\lambda_v>0$ such that $\Phi(v/\lambda_v)\in L^1$. 
-Now, by Young's inequality and \eqref{eq:Dy-suc}, we have
-\begin{equation}\label{eq:Dy_lambda-Psi}
-\begin{split}
-\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})\cdot v(t)
-&\leq 
-\lambda\lambda_v\left[\Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(\cdot,u_{n},u'_{n})}{\lambda}\right)+\Phi\left(\frac{v}{\lambda_v}\right)\right]
-\\
-&\leq \lambda\lambda_v M (b+h)+\lambda\lambda_v  \Phi\left(\frac{v}{\lambda_v}\right)\in L^1.
-\end{split}
-\end{equation}
-  Finally, from  Lebesgue Dominated Convergence Theorem, we deduce
-\begin{equation}\label{conv_debil}
-\int_0^T  \nabla_y\mathcal{L}(t,u_{n},u'_{n})
-\cdot  v dt
-\to 
-\int_0^T \nabla_y\mathcal{L}(t,u,u')\cdot v\, dt, \end{equation}
-which contradicts the inequality \eqref{cota_eps}. This completes the proof of step 2.
+is continuously differentiable in $ W^1\lpsi_T([0,T],\rr^{2d})$. 
 
-\emph{Step 3.} We will prove \eqref{eq:DerAccion}. 
- Note that \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase} and the imbeddings $\wphi \hookrightarrow L^{\infty}$ and  
-$\lpsi\hookrightarrow  \left[\lphi\right]^{\star}$ imply that the second member of
-\eqref{eq:DerAccion} defines an element of $\left[\wphi\right]^{\star}$.
-
-The proof follows similar lines as \cite[Thm. 1.4]{mawhin2010critical}. 
-For $u\in \domi_{\Lambda}$ and $0\neq v\in\wphi$, we define the function
-\[H(s,t):=\mathcal{L}(t,u(t)+s v(t),u'(t)+sv'(t)).\]
-
-
-
-For  $|s|\leq s_0:=\left(\Lambda-d(u',\ephi)\right)/\|v\sobnor$  we have that  $u'+sv' \in \Pi(\ephi,\Lambda)$. 
-This fact implies, in virtue of Theorem \ref{teo:diferenciabilidad} item \ref{it:T1item1}, 
-that $I(u+s v)$ is well defined and finite for $|s|\leq s_0$. 
-
-
-
-We write $s_1:=\min\{s_0,1-d(u',\ephi)/\Lambda\}$. Let $\lambda_v>0$ such that $\Phi(v'/\lambda_v)\in L^1$. As $u'\in\Pi(\ephi,\Lambda)$, then
+On the other hand
 
 \[
-d\left(\frac{u'}{(1-s_1)\Lambda},E^{\Phi}\right)=\frac{1}{(1-s_1)\Lambda}d(u', E^{\Phi})<1,
+  \chi_{\delta}(v)\geq \left(\frac{1}{\alpha+\delta}-C_{\Phi} \right) \int_0^T\Phi(v)dt-\gamma_0
 \]
-and consequently  $(1-s_1)^{-1}\Lambda^{-1}u'\in C^\Phi$. Hence,  if $v'\in\lphi$ and $|s|\leq s_1 \Lambda\lambda_v^{-1}$, from the convexity of $\Phi$ and \ref{eq:escalar_ine_2}, we get
-\begin{equation}\label{eq:cota-u+sv}
-\begin{split}
-\Phi\left(\frac{u'+sv'}{\Lambda}\right)&
-\leq
-(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{s}{s_1\Lambda}v'\right)
-\\
-&\leq
-(1-s_1)\Phi\left(\frac{u'}{(1-s_1)\Lambda}\right)+s_1 \Phi\left(\frac{v'}{\lambda_v}\right)\\
-&=:h(t) \in L^1.
-\end{split}
-\end{equation}
 
 
-
-We also have
-$
-\|u+sv\sobnor\leq \|u\sobnor+s_0\|v\sobnor;
-$
-then, by Lemma \ref{lem:cota-a}, there exists $M>0$ independent of $s$, such that
-$\|a(u+sv)\linf\leq M$. Now, applying Young's inequality,  \eqref{eq:cota-condicion-estructura},
-the fact that $v \in L^{\infty}$, \eqref{eq:cota-u+sv} and $\Phi(v'/\lambda_v)\in L_1$, 
-we get
-\begin{equation}\label{ctg}
-\begin{split}
-|D_s H(s,t)|&=\left| \nabla_x\mathcal{L}(t,u+sv,u'+sv')\cdot v +
-  \nabla_y\mathcal{L}(t, u+s v, u'+sv')\cdot v'\right| \\
-  & \leq M \left[ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right]|v|\\
- &\quad+ \lambda\lambda_v\left[\Phi^{\star}\left(\frac{\nabla_y\mathcal{L}(t,u+sv,u'+sv')}{\lambda}\right)+\Phi\left(\frac{v'}{\lambda_v}\right) \right]
-\\
- &\leq 
- M \left[ b(t)+ \Phi\left(\frac{u'+sv'}{\Lambda}\right)\right] \left(|v|+\lambda\lambda_v\right) +\lambda\lambda_v \Phi\left(\frac{v'}{\lambda_v}\right)\\
-  &\leq 
- M \left( b(t)+h(t)\right) \left(|v|+\lambda\lambda_v\right)+\lambda\lambda_v \Phi\left(\frac{v'}{\lambda_v}\right)
- \in L^1.
-\end{split}
-\end{equation}
-
-Consequently, $I$ has a directional derivative and
-\[
-\langle I'(u),v \rangle=\frac{d}{ds}I(u+s v)\big|_{s=0}=\int_0^T  
-\left[\nabla_x\mathcal{L}(t,u,u')\cdot v+ \nabla_y\mathcal{L}(t,u,u')\cdot v'\right] \ dt.
-\]
-Moreover, from the previous formula, \eqref{eq:cota-condicion-estructura},  \eqref{eq:DyLpsi-clase} and
-Lemma \ref{lem:inclusion orlicz}, we obtain
-\[
-|\langle I'(u),v \rangle| \leq \|\nabla_x\mathcal{L}\|_{L^1} \| v\linf + 
-\|\nabla_y\mathcal{L}\|_{\lpsi} \|v'\orlnor \leq C \|v\sobnor,
-\]
-with an appropriate constant $C$.
-This completes the proof of the G\^ateaux differentiability of $I$. 
-The previous steps imply the demicontinuity of the operator $I':\domi_{\Lambda}  \to \left[\wphi_d
-\right]^{\star} $.
-
-
-In order to prove item  \ref{it:T1item4}, it is necessary to see that the maps \linebreak[4]$u\mapsto \nabla_x\mathcal{L}(t,u,u')$  
-and $u\mapsto \nabla_y\mathcal{L}(t,u,u')$  are norm continuous
-from $\domi_{\Lambda} $ into $L^1$ and
- $\lpsi$, respectively.  
-It remains to prove the continuity of the second map. 
-To this purpose, we take  $u_n, u \in \domi_{\Lambda}$, $n=1,2,\dots$, with $\|u_n- u\sobnor\to 0$.  
-As before, we can deduce the existence of a subsequence (denoted $u'_n$ for simplicity) and $h_1 \in L^1$ such that \eqref{eq:Dy-suc} holds and $u_n \to u$ a.e.
- Since $\Phi^{\star}\in\Delta_2$, we have 
-\begin{equation}
-\Phi^{\star}(\nabla_y \mathcal{L}(\cdot,u_n,u'_n))\leq c(\lambda) \Phi^{\star}\left(\frac{\nabla_y \mathcal{L}(\cdot,u_n,u'_n)}{\lambda}\right)+1\leq c(\lambda)h_1+1=:h_2\in L^1.
-\end{equation} 
-Then, from \ref{eq:quasi-sub-aditividad}, we get
-\[\Phi^{\star}\left(\nabla_y \mathcal{L}(\cdot,u_n,u'_n)-
-\nabla_y \mathcal{L}(\cdot,u,u')\right)\leq K (h_2+\Phi^{\star}(\nabla_y \mathcal{L}(\cdot,u,u')))+1.\]
-Now, by Lebesgue Dominated Convergence Theorem, we obtain 
-$\nabla_y \mathcal{L}(\cdot,u_n,u'_n)$ is $\rho_{\Phi^{\star}}$ modular convergent to $\nabla_y \mathcal{L}\left(\cdot,u,u')\right)$, i.e.
-$\rho_{\Phi^{\star}}(u_n-u)\to 0$. 
-Since $\Phi^{\star} \in \Delta_2$, modular convergence implies norm convergence (see \cite{Skaff1969}).
 \end{proof}
 
 
@@ -1148,40 +608,6 @@ Since $\Phi^{\star} \in \Delta_2$, modular convergence implies norm convergence 
 
 
 
-
-\begin{proof}[\textbf{Proof Theorem \ref{th:tor_prin}}] Suppose that $d(u',L^{\infty})<1$.
-Since $d(u',\ephi)=d(u',L^{\infty})$, according to Remark \ref{com:lphi-satis S} and Theorem \ref{teo:diferenciabilidad}, $I$ is G\^ateaux differentiable at $u$. By Fermat's rule (see \cite[Prop. 4.12]{clarke2013functional}), we have $\langle I'(u),v\rangle=0$ for every $v\in H$. Therefore
-
-\begin{equation}\label{eq:der_deb}\int_0^T\nabla\Phi(u'(t))\cdot v'(t)dt=-\int_0^T \nabla_xF(t,u(t))\cdot v(t)dt.\end{equation}
-
-From Theorem \ref{teo:diferenciabilidad}, $\nabla_xF(t,u(t))\in L^1([0,T],\rr^d)$ and  $\nabla\Phi\left(u'(t)\right)\in\linebreak\lpsi([0,T],\rr)\hookrightarrow L^1([0,T],\rr)$.  Identity \eqref{eq:der_deb} holds for every $v\in C^{\infty} ([0,T],\rr^d)$ with $v(0)=v(T)$. Using 
-\cite[Fundamental Lemma, p. 6]{mawhin2010critical}, we get that $\nabla\Phi(u'(t))$ is absolutely continuous and $(d/dt)\left(\nabla\Phi(u'(t))\right) = \nabla_xF(t,u(t))$ a.e. on $[0,T]$. Moreover, $\nabla\Phi(u'(0))=\nabla\Phi(u'(T))$. Since  $\Phi$ is \emph{strictly convex},  then  $\nabla\Phi:\mathbb{R}^d\to\mathbb{R}^d$ is a one-to-one map  (see, e.g. \cite[Ex. 4.17, p. 67]{clarke2013functional}). Hence, we conclude that $u'(0)=u'(T)$. Finally, Theorem \ref{th:tor_prin} is proven.
-\end{proof}
-
-
-
-\begin{comentario} The condition $d(u',L^{\infty})< 1$ is trivially satisfied when $\Phi \in \Delta_2$ because, in this case, $L^{\infty}$ is dense in $\lphi([0,T],\rr^d)$. In particular, our Theorem \ref{th:tor_prin} implies existence of solutions, among others, for the $(p_1,p_2)$-laplacian system. 
-\end{comentario}
-
-It is possible to use the regularity theory in order to get  that minimizers $u$ of $I$ satisfy $u'\in L^{\infty}$. To cite one example, we have the following result.
-
-\begin{cor} Let $\Phi,F$ and $H$ be as in Theorem \ref{th:tor_prin}. Additionally, suppose that
-$F(t,x)$ is differentiable with respect to $(t,x)$ and that 
-\begin{equation}\label{eq:apriorilip}\left| \frac{\partial}{\partial t} F(t,x)\right|  \leq a(x)b(t),\end{equation}
-with $a$ and $b$ as in \ref{item:condicion_a}.
- If $u$ is a minimum of $I$ on the set $H$ then $u$ is solution of \eqref{eq:ProbPhiLapla}. 
- 
-\end{cor}
-
-\begin{proof} We note that $u$ is a minimum of $I$ on the set defined by a Dirichlet boundary condition
-\[\{v\in\wphi([0,T],\rr^d)| v(0)=u(0), v(T)=u(T)\}.\]
-Therefore, we can apply Proposition 3.1 in \cite{clarke1985regularity} (see also the following remark) and we obtain $u'\in L^{\infty}$.
-\end{proof}
-
-\begin{comentario}\label{com:ejemplo} Returning to the system \eqref{eq:RandExample} of Example \ref{ex:RandEx},
-we note that the $N_{\infty}$ function $\Phi(y_1,y_2)=\exp(y_1^2+y_2^2)-1$ has a  complementary function which satisfies the $\Delta_2$-condition (see \cite[p. 28]{KR}).  In addition, for every $p>1$ we have $|(y_1,y_2)|^p \llcurly \Phi(y_1,y_2)$. Therefore $\Phie(y_1,y_2)\llcurly|(y_1,y_2)|^q $ for $q=p/(p-1)$. Consequently,  if $F(t,x_1,x_2)=P(t)Q(x_1,x_2)$ with $P$ and $Q$ polynomials, and $d(t):=C\max\{1,|P(t)|\}$  then $\Phie(d^{-1}(t)\nabla_xF)\leq |(x_1,x_2)|^q+1$,  where $p$ and $C$ are chosen large enough. Hence $\Phi$ and $F$ satisfy \eqref{eq:cond-sub} with $\Phi_0(y_1,y_2)=|(y_1,y_2)|^p$.  The conditions  \ref{item:condicion_c}, \ref{item:condicion_a}  and \eqref{eq:apriorilip} can be proved in a direct way. All these facts show that the assessment of Example \ref{ex:RandEx} is true.
- 
-\end{comentario}
 
 \section*{Acknowledgments}
 The authors are partially supported by  UNRC and UNLPam grants. The second author is  partially supported by a  UNSL grant. 
