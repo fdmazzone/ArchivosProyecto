@@ -263,6 +263,280 @@ We  consider the  Euclidean space $\rr^{2d}$ equipped with the standard  symplec
  \Phi(Ju)= \Phie(u).
 \end{equation}
 
+<<<<<<< HEAD
+
+
+\section{Optimal constant in Poincar\'e-Wirtinger inequality }
+
+
+\section{$L^p$ case}
+Let $u \in H^{1,p}_T ([0,T],\rr^d)$. Then
+\begin{equation}
+\int_0^T |u-\overline{u}|^{p'}\,dt\leq C_p T^p \int_0^T |u'|^p\,dt
+\end{equation}
+where the optimal constant satisfies
+\begin{equation}\label{eq:def-cp}
+\begin{split}
+C_p^{-1}:=
+\inf
+\left\{
+T^p \frac{\int_0^T |u'|^p\,dt}{\int_0^T |u-\overline{u}|^p\,dt}| u\in H^{1,p}_T
+\right\}=
+\\
+\inf
+\left\{
+T^p \frac{\int_0^T |u'|^p\,dt}{\int_0^T |u|^p\,dt}| u\in H^{1,p}_T,\;\int_0^T u\,dt=0
+\right\}
+\end{split}
+\end{equation}
+ 
+\begin{lem}
+$C_p$ given by \eqref{eq:def-cp} is independent of $T$.
+\end{lem}
+
+\begin{proof}
+Let $T\neq T'$. If $u$  is a function such that 
+\begin{equation}
+C_p^{-1}(T)+\epsilon> T^p \frac{\int_0^T |u'|^p\,dt}{\int_0^T |u|^p\,dt}
+\end{equation}  
+Performing the change of variable $s=\frac{T'}{T}t$ and calling $r=\frac{T}{T´}$, we have
+\begin{equation}
+T^p \frac{\int_0^T |u'(t)|^p\,dt}{\int_0^T |u(t)|^p\,dt}=
+T^p \frac{\int_0^T |u'(rs)|^p\,ds}{\int_0^T |u(rs)|^p\,dt}=
+(T')^p \frac{\int_0^T |v'(s)|^p\,ds}{\int_0^T |v(s)|^p\,dt}\geq C_p^{-1}(T')
+\end{equation}
+where $v(s)=u(rs)$. Therefore, $C_p^{-1}(T')\leq C_p^{-1}(T)$ and consequently $C_p(T')=C_p(T)$.
+\end{proof}
+
+\begin{lem}
+\begin{equation}
+C_p^{-1}=\inf \left\{T^p \int_0^T |u'|^p\,dt | u\in H^{1,p}_T,\;\int_0^T u\,dt=0, 
+\int_0^T |u|^p\,dt=1\right\}
+\end{equation}
+\end{lem}
+\begin{proof}
+The existence of a minimum follows as usual by means of a minimizing sequence. 
+
+More details....?
+
+We employ the method of Lagrange multipliers to solve an optimization problem with constraints. 
+We will look for critical points of 
+\begin{equation}
+I=\int_0^T |u'|^p\,dt-\lambda \int_0^T |u|^p\,dt+\mu \cdot \int_0^T u\,dt,\;\; u\in H^{1,p}_T 
+\end{equation}
+The G\^ateaux derivative of the functional is given by
+\begin{equation}
+\begin{split}
+\left\langle I'(u),v\right\rangle=
+\int_0^T p |u'|^{p-2}u'\cdot v'\,dt-p\lambda \int_0^T |u|^{p-2}u\cdot v\,dt+ \mu \int_0^T v\,dt=
+\\
+\int_0^T \left\{\frac{d}{dt}(p |u'|^{p-2}u')-p\lambda |u|^{p-2}u+\mu\right\}\cdot v\,dt+p |u'|^{p-2}u'\cdot v|_0^T=0
+\end{split}
+\end{equation}
+Since $v$ is an arbitrary function, we choose $v$ such that $v(0)=v(T)=0$ and we obtain 
+\begin{equation}\label{eq:int-nulo}
+\frac{d}{dt}(p |u'|^{p-2}u')-p\lambda |u|^{p-2}u+\mu=0 \;\;a.e.
+\end{equation}
+This fact implies that 
+$p |u'|^{p-2}u'\cdot v|_0^T=0 \; \forall v \in H^{1,p}_T$, that is
+ \begin{equation}
+[p |u'(T)|^{p-2}u'(T)-p|u'(0)|^{p-2}u'(0)]\cdot v(0)=0.
+\end{equation}
+Then $u'(T)=u'(0)$. 
+Now, integrating \eqref{eq:int-nulo}, we get
+\[
+p\lambda \int_0^T |u|^{p-2}u\,dt+\mu T=0.
+\]
+If $p=2$ then $\mu=0$ and 
+\[
+\left\{
+\begin{array}{lll}
+u''+ \lambda u&=&0\\
+u(0)&=&u(T)\\
+\int_0^T u\,dt&=&0
+\end{array}
+\right.
+\]
+The normalized solution is
+$u(t)=\cos(\sqrt\lambda t)u_0+\sin(\sqrt\lambda t)u_1$
+with $u_0,u_1\in \rr^d$.
+
+As $u(0)=u(T)$ and $u'(0)=u'(T)$, 
+the function $u(t)$ has minimal  period $\frac{2\pi}{\sqrt \lambda}$ and it solves the second order ODE 
+$u''+ \lambda u=0$
+
+Then $u(0)=u(T)$, $u'(0)=u'(T)$ imply that the function $u$ has period T.
+
+\'Esto ....
+
+As $u \neq 0$, we have $k \frac{2\pi}{\sqrt \lambda}=T$ with $k=1,3,\dots$.
+Then $\lambda=k^2 \frac{4\pi^2}{T^2}$.
+
+Now, if $u_k(t)=\cos(\frac{2k\pi}{T}t)u_0+\sin(\frac{2k\pi}{T}t)u_1$, then 
+\[
+\begin{split}
+1=&\int_0^T |u_k|^2\,dt
+\\
+=&\int_0^T \left[\cos\left(\frac{2k\pi}{T}t\right)\right]^2\,dt |u_0|^2+
+\int_0^T \left[\sin\left(\frac{2k\pi}{T}t\right)\right]^2\,dt |u_1|^2
+\\
++&\int_0^T \cos\left(\frac{2k\pi}{T}t\right)\sin\left(\frac{2k\pi}{T}t\right)\,dt\; u_0\cdot u_1
+\\
+=&\frac{T}{2} (|u_0|^2+|u_1|^2)
+\end{split}
+\]
+and 
+\[
+\begin{split}
+&T^2 \int_0^T |u'_k|^2\,dt
+\\
+&=T^2 \left(\frac{2k\pi}{t}\right)^2
+\left\{
+\int_0^T \left[\sin\left(\frac{2k\pi t}{T}\right)\right]^2|u_0|^2+
+\int_0^T \left[\cos\left(\frac{2k\pi t}{T}\right)\right]^2|u_1|^2+
+0
+\right\}
+\\
+&=
+\left(\frac{2k\pi}{t}\right)^2\frac{T}{2}(|u_0|^2+|u_1|^2)
+\\
+&=
+4k^2\pi^2
+\end{split}
+\]
+The minimum occurs when $k=1$ and we get $C_2^{-1}=4\pi^2$.
+Then, 
+$\int_0^T |u|^2\,dt\leq \frac{T^2}{4\pi^2} \int_0^T |u'|^2\,dt$
+
+Or...
+
+From $u''+\lambda u=0$, we have $u'' u+\lambda u^2=0$ and integrating over $[0,T]$ we obtain
+$0=\int_0^Tu''u+\lambda \int_0^t u^2=-\int_0^T (u')^2+\lambda \int_0^T u^2 +u'u|_0^T=
+-\int_0^T (u')^2+\lambda \int_0^T u^2 +u'(T)u(T)-u'(0)u(0)=
+-\int_0^T (u')^2+\lambda \int_0^T u^2 $, then 
+$\frac{4 \pi^2 k}{T^2}=\lambda=\frac{\int_0^T (u')^2}{\int_0^T u^2}=\frac{1}{C_2}$ 
+The minimum value is attained at $k=1$ and therefore $C_2=\frac{T^2}{4\pi^2}$.
+\end{proof}
+
+
+
+\section{$L^{\Phi}$ case where $\Phi:\rr^d \to \rr$ is an anisotropic function}
+
+
+Now, we are looking for the optimal constant $C(\Phi, T)$ such that
+\begin{equation}
+\int_0^T \Phi(u-\overline{u_{\Phi}})\,dt\leq
+C(\Phi, T) \int_0^T\Phi(u')\,dt\;\; u \in \wphit
+\end{equation}
+
+Then, 
+\begin{equation}
+\int_0^T \Phi(u-\overline{u}_{\Phi})\,dt\leq
+C(\Phi, T) \int_0^T\Phi(u-a)\,dt\;\; \forall a  \in \rr^d 
+\end{equation}
+where $a=\overline{u}_{\Phi}$ is the unique vector of $\rr^d$ such that
+\begin{equation}
+\int_0^T \nabla \Phi(u-a)\,dt=0.
+\end{equation}  
+Thus, 
+$C^{-1}=\inf\left\{
+\frac{\int_0^T \Phi(u')\,dt}{\int_0^T \Phi(u-\overline{u}_{\Phi})}| u \in \wphit
+\right\}$
+Let $v=u-\overline{u}_{\Phi}$, $v'=u'$ and $\overline{v}_{\Phi}=0$ then
+\begin{equation}
+\lambda:=C^{-1}=\inf \left\{
+\frac{\int_0^T \Phi(u')\,dt}{\int_0^T \Phi(u)\,dt}|u \in \wphit, \int_0^T \nabla \Phi(u)\,dt=0
+\right\}
+\end{equation}
+Let 
+\begin{equation}
+L(u,u')=\frac{\int_0^T \Phi(u')\,dt}{\int_0^T \Phi(u)\,dt}-\mu \cdot\int_0^T \nabla \Phi(u)\,dt
+\end{equation}
+with $\mu \in \rr^d$. 
+By G\^ateaux derivative we have
+\begin{equation}
+0=\frac{\int_0^T \Phi(u)\,dt \int_0^T \nabla\Phi(u')\cdot v'\,dt-
+\int_0^T \Phi(u')\,dt \int_0^T \nabla \Phi(u)\cdot v\,dt}{(\int_0^T \Phi(u)\,dt)^2}-\mu \int_0^T D^2\Phi(u)\cdot v \,dt
+\end{equation}
+then 
+\begin{equation}
+\begin{split}
+0=\int_0^T \nabla\Phi(u')\cdot v'\,dt-\lambda \int_0^T \nabla \Phi(u)\cdot v\,dt-
+\int_0^T \Phi(u)\,dt \mu \cdot\int_0^T D^2\Phi(u)\cdot v \,dt=
+\\
+\int_0^T \left\{
+-\frac{d}{dt}\nabla\Phi(u')-\lambda \nabla\Phi(u)
+\right\} \cdot v\,dt+\nabla\Phi(u')\cdot v|_0^T-\int_0^T \Phi(u)\,dt\, \mu \cdot\int_0^T D^2\Phi(u)\cdot v \,dt=
+\\
+\int_0^T \left\{
+-\frac{d}{dt}\nabla\Phi(u')-\lambda \nabla\Phi(u)
+ -\int_0^T \Phi(u)\,dt \,\mu \cdot D^2\Phi(u)\right\}\cdot v \,dt+\nabla\Phi(u')\cdot v|_0^T
+\end{split}
+\end{equation}
+$\forall v \in \wphit$. 
+
+Now, we consider any $v \in W_0^1L^{\Phi}$ and we get
+\begin{equation}\label{eq:ed-phi-aniso}
+-\frac{d}{dt}\nabla\Phi(u')-\lambda \nabla\Phi(u)
+ -\int_0^T \Phi(u)\,dt\, \mu \cdot D^2\Phi(u)=0
+\end{equation}
+%+\nabla\Phi(u')=0$. 
+Then, 
+\[
+ \nabla\Phi(u') v|_0^T=0\;\;\forall v \in \wphit,
+\]
+that is
+\[
+ \{\nabla\Phi(u'(T))-\nabla\Phi(u'(0))\}\cdot v(0)=0
+\]
+for any $v \in \wphit$. 
+Thus,  $\nabla\Phi(u'(T))=\nabla\Phi(u'(0))$
+
+As $\Phi$ is strictly convex, then $\nabla \Phi$ is injective and consequently $u'(T)=u'(0)$.
+
+
+Post-multiplying \eqref{eq:ed-phi-aniso} by $\mu^t$ and integrating over $[0,T]$, we get
+\begin{equation}
+0=\int_0^T -\frac{d}{dt} \nabla \Phi(u')\,dt \cdot \mu^t
+-\lambda \int_0^T \nabla \Phi(u)\,dt \cdot \mu^t-\int_0^T\Phi(u)\,dt \int_0^T \mu\cdot D^2\Phi(u)\,dt\cdot \mu^t
+\end{equation}
+with $\nabla\Phi(u'(T))=\nabla\Phi(u'(0))$.
+
+We know that $\mu\cdot D^2\Phi(u)\cdot\mu^t=0$ iff $\mu=0$. And, as $\int_0^T \Phi(u)\,dt\neq 0$, then 
+$\int_0^T\Phi(u)\,dt \int_0^T \mu\cdot D^2\Phi(u)\cdot\mu^t\,dt\cdot =0$ implies that $\mu=0$.
+
+Therefore, 
+\begin{equation}
+\left\{
+\begin{array}{l}
+\frac{d}{dt} \nabla \Phi(u')+\lambda \nabla\Phi(u)=0
+\\
+u(0)=u(T),\;u'(0)=u'(T),\;\int_0^T \nabla \Phi(u)\,dt=0
+\end{array}
+\right.
+\end{equation}
+
+
+
+If $\Phi(u)=\frac{|u|^p}{p}$ and $u \in \rr$. We know that 
+$T=\frac{4\pi (p-1)^{\frac{1}{p}}}{p \sin(\frac{\pi}{p})\lambda^{\frac{1}{p}}}k$ for $k=+1,+2,\dots$.
+
+
+
+
+Cuestiones a resolver: 
+\begin{enumerate}
+\item Qu\'e dejar? Caso p o caso $\Phi$?
+\item En  el caso $\Phi$? Analizamos la existencia en detalle?
+\item Consideramos el caso $\Phi(x_1,\dots,x_d)=\Phi(x_1)+\dots+\Phi(x_d)$?
+\end{enumerate}
+
+
+
+
+DE AC\'A EN ADELANTE, EL ART\'ICULO \cite{AM2017}!!!
+=======
+>>>>>>> 7865ca1219784178f66213c4aeaeda276846b5ea
 
 \end{defi}
 
@@ -539,7 +813,7 @@ The rest of the proof follows as in \cite{mawhin2010critical}.
 The following theorem extend  to a quite general function $\Phi$ the result in \cite[Th. 3.1]{mawhin2010critical} formulated for $\Phi_2(u)=|u|^2/2$. Even more, our result improves a little bit  \cite[Th. 3.1]{mawhin2010critical} in the sense that we obtain existence for $\Phi_2$ when the functions, introduced below, $l$ and $\gamma$ are in $L^2$ and $L^1$ respectively instead that $L^4$ and $L^2$  which is assumed in
 \cite[Th. 3.1]{mawhin2010critical}. This little improvement is due to the observation in Remark \ref{com:mejora_desi}.
 
-\begin{thm} Suppose that $\Phi$ is a symplectic $G$-function and
+\begin{thm}\label{thm:solution-ham} Suppose that $\Phi$ is a symplectic $G$-function and
 \begin{enumerate}
  \labitem{H1)}{it:hip1}   Exists $\xi\in\lpsi([0,T],\rr^{2d})$ such that 
  \[H(t,u)\geq \langle \xi(t), u\rangle.
@@ -604,8 +878,95 @@ On the other hand
 
 
 
+\section{Symplectic functions-Meeting 2018/03/08}
 
 
+Let $\Psi:\rr^{2n}\to \rr$ be an anisotropic function.
+We say that $\Psi$ is symplectic if $\Psi^*(Ju)\prec \Psi(u)$.
+
+Given $u=(q,p)\in \rr^{2n}$ and $\Phi:\rr^n \to \rr$, 
+Jakub define $\hat{\Phi}:\rr^{2n}\to \rr$ by
+\[
+\hat{\Phi}(q,p)=\Phi(q)+\Phi^*(p)
+\]
+with $\Phi^* \prec \Phi$.
+
+\begin{prop}
+$\hat{\Phi}$ is symplectic.
+\end{prop}
+
+\begin{proof}
+We have ${\hat\Phi}^*(q,p)=\Phi^*(q)+\Phi^*(p)$, then 
+${\hat \Phi}^*(Ju)=\Phi^*(p)+\Phi^*(-q)\prec \Phi(q)+\Phi(p)=\hat{\Phi}(u)$.
+\end{proof}
+
+Fernando suggests  $\overline{\Phi}(q,p)=\Phi(q)+\Phi^*(p)$.
+
+\begin{prop}
+$\overline \Phi$ is symplectic.
+\end{prop}
+
+\begin{proof}
+We have $\Phi^*(q,p)=\Phi(p)+\Phi^*(q)$, then 
+$\overline{\Phi}^*(Ju)=\Phi(-q)+\Phi^*(p)=\overline{\Phi}(u)$.
+\end{proof}
+
+\begin{thm}
+$J$ induces an embedding of $L^{\Phi^*}([0,T],\rr^{2n})$
+into $L^{\Phi}([0,T],\rr^{2n})$ when $\Psi$ is symplectic.
+\end{thm}
+
+\begin{proof}
+As $\Psi$ is symplectic, there exist $k,c$ such that
+$
+\Psi^*(Ju)<\Psi(ku)+c
+$
+then 
+\[
+\int \Psi^*\left(\frac{Ju}{k \lambda}\right) \leq cT+\int \Psi\left(\frac{u}{\lambda}\right)<\infty
+\]
+
+If $\|u\|_{L^{\Psi}}=1$, then $\int \Psi(u)\leq 1$ and
+\[
+\int \Psi^*\left(\frac{Ju}{k}\right) \leq cT+1 
+\]
+As $\Psi^*$ is convex, we have 
+\[
+\int \Psi^*\left(\frac{Ju}{(cT+1) \lambda}\right) 
+\leq \frac{1}{cT+1} \int \Psi^*\left(\frac{Ju}{k}\right)\leq 1
+\]
+then 
+\[
+\|Ju \|_{L^{\Psi^*}}\leq (cT+1)k:=c_0
+\]
+Finally, for any $u$, 
+\[
+\|Ju\|_{L^{\Psi^*}}\leq c_0\|u\|_{L^{\Psi}}.
+\]
+\end{proof}
+
+Algo como lo siguiente est\'a antes en este archivo. 
+
+\begin{cor}
+If $
+\Omega(u,v)=\int Kv\cdot u
+$
+and $\Psi$ is symplectic, then $\Omega$ is well defined in $L^{\psi} \times L^{\Psi}$.
+\end{cor}
+
+{ \bf Assumption:}
+ 
+For any $\Lambda>0$ there exists $C_{\Phi,\Lambda}$ such that
+\[
+\Omega(\dot{u},u)\geq -C_{\Psi,\Lambda} \int \Psi\left(\frac{u}{\Lambda}\right)
+\]
+
+The assumption is true when $\Psi \in \Delta_2$.
+
+\subsection{
+Generalization of Thm. 3.1 of \cite{mawhin2010critical}}
+
+Thm. \ref{thm:solution-ham} taking $\xi \in E^{\Psi}([0,T],\rr^{2n})$.
 
 
 
