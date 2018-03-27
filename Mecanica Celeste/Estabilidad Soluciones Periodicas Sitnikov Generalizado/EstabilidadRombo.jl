@@ -66,13 +66,13 @@ function CoefEst(z₀)
   q=.5*(p^2-trace(G^2))
 
   Δ=sqrtm(p^2-4(q-2))
-
+# pensar definición a_1 y a_2 para que sean funciones suaves
   a₁=.5*(p+Δ)
   a₂=.5*(p-Δ)
   return (a₁,a₂,T,Δ)
 end
 #
-v=linspace(1.3,	5.13,	500)
+v=linspace(59,	60,	1000)
 k=length(v)
 a₁=Array{Complex{Float64}}(k)
 a₂ =Array{Complex{Float64}}(k)
