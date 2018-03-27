@@ -3,6 +3,7 @@
 
 # Three Body
 n=3
+@assert n>0 "Cantidad de cuerpos negativo"
 θ=pi/n
 Rₙ=1/(2*sin(θ))
 m=(2*(sin(θ))^3*(sum(1/(sin(i*θ)) for i in 1:n-1)))^(-1)
