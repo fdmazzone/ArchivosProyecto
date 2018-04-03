@@ -15,6 +15,7 @@ m₂=4*α^2*(-8*α^2+α*(α^4-2*α^2+1)-8)*(α^4-2*α^2+1)/(128*α^3*(α^2+1)+(�
 M=[1 0 0 0;0 -1 0 0; 0 0 -1 0;0 0 0 1]
 u1=eye(4)
 
+#Asi se programa las funciones para el solver F(du, variable independet , param, var. indepent.)
 function Fuerza3c(du,u,p,t)
   r₁ = (s₁^2 +u[1]^2)^(3/2)
   r₂ = (s₂^2 +u[1]^2)^(3/2)
