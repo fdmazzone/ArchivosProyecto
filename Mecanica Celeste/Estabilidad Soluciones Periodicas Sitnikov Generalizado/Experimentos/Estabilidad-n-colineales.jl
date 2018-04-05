@@ -4,8 +4,11 @@
 # CC colineales general
 
 
+
+
 function Estabilidad(m,s,v) #CARGAR SOLO LAS POSICIONES POSITIVAS
 
+# m=HallaMasas(s)
 # proveemos m=vetor de masas, s=vector de posiciones
 #CARGAR SOLO LAS POSICIONES POSITIVAS
 #v=linspace(10.3,	15.13,	1000), vector de posiciones iniciaeles
@@ -18,7 +21,7 @@ T =Array{Float64}(k)
 for i=1:k
   a₁[i],a₂[i],T[i],Δ[i]=CoefEst(v[i])
 end
-print("todo biene")
+
     return (a₁, a₂, Δ, T)
 end
 
