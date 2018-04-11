@@ -1,10 +1,10 @@
 function [pos,vel]=simulacion_sitnikov(primarios_config,efemerides_epocas,...
     posicion_ini,velocidad_ini)
 %%%%%%%%%%%Ejemplo de Uso%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%% m=[2,2,2];
-% m=ones(1,15);
-% X0=poligono(15);
-% % X0=[1 0; -sqrt(3)/2 -1/2;-sqrt(3)/2 +1/2]';
+% % m=[2,2,2];
+% m=ones(1,3);
+%% X0=poligono(15);
+% X0=[1 0; -sqrt(3)/2 -1/2;-sqrt(3)/2 +1/2]';
 % X=HallaCC(X0,m);
 % X(3,:)=zeros([1,15]);
 % J=[ 0 -1 0;1 0 0;0 0 0];

@@ -10,23 +10,34 @@ for j=1:l(1);
     
     h{j}=plot3(pos(j,1),pos(j,2),pos(j,3),...
         '.','MarkerSize',20,'Color',color(j,:));
-    set(h{j},'Erase','xor');
+    %set(h{j},'Erase','xor');
 end
 
 long=2;
 axis([-long long -long long -long long])
-plot3(0,0,0,'.','MarkerSize',1,'Color','y')
+%plot3(0,0,0,'.','MarkerSize',10,'Color','y')
+
+r=norm(pos(1,:,1));
+theta=0:.01:2*pi;
+circ=r*[cos(theta);sin(theta);zeros(1,length(theta))];
+plot3(circ(1,:),circ(2,:),circ(3,:))
+
+
 set(gca,'Color','k')
 axis square
 view([45,45])
 grid off
 hold off
 indice_cuadro=1;
-nombrejpg=num2str(indice_cuadro);
-falta=5-length(nombrejpg);
+%nombrejpg=num2str(indice_cuadro);
+%falta=5-length(nombrejpg);
 
-nombrejpg=[repmat('0',[1,falta]),nombrejpg,'.jpg'];
-eval(['print -djpeg ',nombrejpg]) ;
+%nombrejpg=[repmat('0',[1,falta]),nombrejpg,'.jpg'];
+%eval(['print -djpeg ',nombrejpg]) ;
+nombrejpg=['ani-',num2str(indice_cuadro),'.jpg'];
+
+saveas(gcf,nombrejpg)
+
 indice_cuadro=indice_cuadro+1;
 
 
@@ -34,17 +45,14 @@ for j=1:size(pos_rot,3);
    drawnow
    pos=squeeze(pos_rot(:,:,j));
    for k=1:l(1);
-    set(h{k},'XData',pos(:,1),'YData',pos(:,2),'Zdata',pos(:,3),'Color',color(k,:));
+    set(h{k},'XData',pos(k,1),'YData',pos(k,2),'Zdata',pos(k,3),'Color',color(k,:));
    end
 %     
-%    nombrejpg=num2str(indice_cuadro);
-%    falta=5-length(nombrejpg);
-%    
-%    nombrejpg=[repmat('0',[1,falta]),nombrejpg,'.jpg'];
-%    eval(['print -djpeg ',nombrejpg]) ;
-%    indice_cuadro=indice_cuadro+1;
-   M(j) = getframe;
-
+% 
+%   M(j) = getframe;
+   nombrejpg=['ani-',num2str(indice_cuadro),'.jpg'];
+   saveas(gcf,nombrejpg)
+    indice_cuadro=indice_cuadro+1;
 end
  %movie(M,1,100);
 %movie2avi(M,'JupTroy.avi','compression','Cinepak');
