@@ -17,10 +17,10 @@ long=2;
 axis([-long long -long long -long long])
 %plot3(0,0,0,'.','MarkerSize',10,'Color','y')
 
-r=norm(pos(1,:,1));
-theta=0:.01:2*pi;
-circ=r*[cos(theta);sin(theta);zeros(1,length(theta))];
-plot3(circ(1,:),circ(2,:),circ(3,:))
+% r=norm(pos(1,:,1));
+% theta=0:.01:2*pi;
+% circ=r*[cos(theta);sin(theta);zeros(1,length(theta))];
+% plot3(circ(1,:),circ(2,:),circ(3,:))
 
 
 set(gca,'Color','k')
