@@ -3,14 +3,17 @@
 
 # Three Body
 
-α=2.4
+alpha=0.4
 
 
-s₁=1
-s₂=α
+s₁=alpha
+s₂=1
 #Revisar
-m₁=4*(α^4-2*α^2+1)*(17*α^4-2*α^2+1)/(128*α^3*(α^2+1)+(α^4-2*α^2+1)^2)
-m₂=4*α^2*(-8*α^2+α*(α^4-2*α^2+1)-8)*(α^4-2*α^2+1)/(128*α^3*(α^2+1)+(α^4-2*α^2+1)^2)
+m₁=4*alpha^3*(alpha^4 - 2*alpha^2 + 1)*(alpha^4 - 2*alpha^2 + 17)/(128*alpha^3*(alpha^2 + 1) + (alpha^4 - 2*alpha^2 + 1)^2)
+
+m₂=4*(alpha^4 - 2*alpha^2 + 1)*(alpha^4 - 8*alpha^3*(alpha^2 + 1) - 2*alpha^2 + 1)/(128*alpha^3*(alpha^2 + 1) + (alpha^4 - 2*alpha^2 + 1)^2)
+print(m₁)
+print(m₂)
 # -------
 M=[1 0 0 0;0 -1 0 0; 0 0 -1 0;0 0 0 1]
 u1=eye(4)
@@ -77,7 +80,7 @@ function CoefEst(z₀)
   return (a₁,a₂,T,Δ)
 end
 #
-v=linspace(10.3,	15.13,	1000)
+v=linspace(10.3,	15.13,	100)
 k=length(v)
 a₁=Array{Complex{Float64}}(k)
 a₂ =Array{Complex{Float64}}(k)
