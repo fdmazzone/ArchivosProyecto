@@ -353,10 +353,10 @@ and $\Psi$ is symplectic, then $\Omega$ is well defined in $L^{\psi} \times L^{\
 
 \begin{thm}
 Let $\Phi$ be a symplectic G-function. 
-There exist  $C_{\Phi},C$ and $\Lambda>0$ such that for every $u \in W_T^1L^{\Phi}([0,T],\rr^{2n})$
+There exist  $C_{\Phi},C_1$ and $\Lambda>0$ such that for every $u \in W_T^1L^{\Phi}([0,T],\rr^{2n})$
 we have
 \begin{equation}\label{eq:cotaJu}
-\Omega(\dot{u},u):=\int_0^T J\dot{u}\cdot u\,dt\geq -C_{\Phi}\int_0^T \Phi\left(\frac{\dot{u}}{\Lambda}\right)\,dt-C
+\Omega(\dot{u},u):=\int_0^T J\dot{u}\cdot u\,dt\geq -C_{\Phi}\int_0^T \Phi\left(\frac{\dot{u}}{\Lambda}\right)\,dt-C_1
 \end{equation}
 \end{thm}
 
@@ -369,7 +369,7 @@ Let  $u\in W^1L^{\Phi}([0,T],\rr^{2n})$. As usual we write $u=\tilde{u}+\overlin
 \int_0^T\Phi(\tilde{u})dt\leq\int_0^T\Phi(T\dot{u})dt.
  \end{equation}
 
-By Young's inequality, the fact that a G-function is even and \eqref{eq:PoinW-ineq}, we obtain
+By Young's inequality, the fact that a $\Phi$ is a simplectic G-function and \eqref{eq:PoinW-ineq}, we obtain
 %the inequality
  %\[\int_0^T\Phi(\tilde{u})dt\leq\int_0^T\Phi(T\dot{u})dt.\]
 %given by \cite[Lem. 2.4]{MA2017}, we get
@@ -511,13 +511,13 @@ The following theorem extend  to a quite general function $\Phi$ the result in \
 
 \begin{thm}\label{thm:solution-ham} Suppose that $\Phi$ is a symplectic $G$-function and
 \begin{enumerate}
- \labitem{H1)}{it:hip1}   Exists $\xi\in\lpsi([0,T],\rr^{2n})$ such that for every $u \in \rr^{2n}$ 
+ \labitem{H1)}{it:hip1}   There exists $\xi\in E^{\Phi}([0,T],\rr^{2n})$ such that for every $u \in \rr^{2n}$ 
 and a.e. $t \in [0,T]$
  \[H(t,u)\geq \langle \xi(t), u\rangle.
   \]
 	
  \labitem{H2)}{it:hip2} There exists $\Lambda_0$ \textcolor[rgb]{1,0,0}{(indicar d\'onde vive en funci\'on de $C_{\Phi^{\star}}$???)} 
-and $\alpha \in L^1 $
+and $\alpha \in L^1([0,T],\rr) $
 such that, for every $(t,u)\in [0,T]\times\rr^{2n}$ and a.e. $t \in [0,T]$, we have
 
  \[
@@ -604,7 +604,7 @@ From \eqref{eq:CotaH*} and \eqref{eq:cotaJu}, we have
 \[
   \chi_{\epsilon}(v)\geq 
 	-\frac{C_{\Phi^{\star}}}{2} \int_0^T \Phi^{\star} (T\dot{v})\,dt+(1+r)\int_0^T \Phi^{\star}
-	\left(\frac{\Lambda_0 \dot{v}}{1+r}\right)\,dt-\int_0^T \alpha(t)\,dt-\frac{C}{2}T
+	\left(\frac{\Lambda_0 \dot{v}}{1+r}\right)\,dt-\int_0^T \alpha(t)\,dt-\frac{C_1}{2}T
 \]
 
 \textcolor[rgb]{1,0,0}{En el papel, no aparece el 2 dividiendo. No ser\'ia necesario, porque acotar\'iamos por -1, pero no recuerdo  
@@ -619,16 +619,16 @@ Thus,
 \begin{split}
   \chi_{\epsilon}(v)\geq 
 	-\frac{C_{\Phi^{\star}}}{2} \int_0^T \Phi^{\star} (T\dot{v})\,dt+\frac{\Lambda_0}{T}\int_0^T \Phi^{\star}
-	\left(T\dot{v}\right)\,dt-\int_0^T \alpha(t)\,dt-\frac{C}{2}T
+	\left(T\dot{v}\right)\,dt-\int_0^T \alpha(t)\,dt-\frac{C_1}{2}T
 	\\
 	=	\left(-\frac{C_{\Phi^{\star}}}{2}+\frac{\Lambda_0}{T}\right) \int_0^T \Phi^{\star} (T\dot{v})\,dt
-		-\int_0^T \alpha(t)\,dt-\frac{C}{2}T
+		-\int_0^T \alpha(t)\,dt-\frac{C_1}{2}T
 		\\
 		> \left(-\frac{C_{\Phi^{\star}}}{2}+C_{\Phi^{\star}}\right)\int_0^T \Phi^{\star} (T\dot{v})\,dt
-		-\int_0^T \alpha(t)\,dt-\frac{C}{2}T
+		-\int_0^T \alpha(t)\,dt-\frac{C_1}{2}T
 		\\
 		=\frac{C_{\Phi^{\star}}}{2}\int_0^T \Phi^{\star} (T\dot{v})\,dt
-		-\int_0^T \alpha(t)\,dt-\frac{C}{2}T
+		-\int_0^T \alpha(t)\,dt-\frac{C_1}{2}T
 				\end{split}
 \]
 \textcolor[rgb]{1,0,0}{No creo que sea necesario tanto detalle en la cuenta anterior, 
