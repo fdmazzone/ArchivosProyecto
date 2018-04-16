@@ -15,7 +15,8 @@ v_per=sqrt((1+e)/(1-e)/a);
  figure;
  hold on;
  efemerides_epocas=(0:T:1000*T)';
- for j=.1:.1:1.5
+ for j=.1:.01:2.05
+     
      X(3,3)=j;
      [pos,vel]=simulacion_sistema_ficticio(m,efemerides_epocas,X(:)',V(:)');
      part=squeeze(pos(3,3,:));

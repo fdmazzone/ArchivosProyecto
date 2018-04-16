@@ -13,7 +13,7 @@ for j=1:l(1);
     %set(h{j},'Erase','xor');
 end
 
-long=1;
+long=1.5;
 axis([-long long -long long -2.1 2.1])
 %plot3(0,0,0,'.','MarkerSize',10,'Color','y')
 
@@ -25,7 +25,7 @@ axis([-long long -long long -2.1 2.1])
 PosPri2=squeeze(pos_rot(2,:,:));
 plot3(PosPri1(1,:),PosPri1(2,:),PosPri1(3,:))
 plot3(PosPri2(1,:),PosPri2(2,:),PosPri2(3,:))
-% 
+% % 
 % PosPri3=squeeze(pos_rot(3,:,1:50));
 % PosPri4=squeeze(pos_rot(4,:,1:50));
 % plot3(PosPri3(1,:),PosPri3(2,:),PosPri3(3,:))
@@ -45,7 +45,7 @@ indice_cuadro=1;
 %eval(['print -djpeg ',nombrejpg]) ;
 nombrejpg=['ani-',num2str(indice_cuadro),'.jpg'];
 
-saveas(gcf,nombrejpg)
+%saveas(gcf,nombrejpg)
 
 indice_cuadro=indice_cuadro+1;
 
@@ -60,7 +60,7 @@ for j=1:size(pos_rot,3);
 % 
 %   M(j) = getframe;
    nombrejpg=['ani-',num2str(indice_cuadro),'.jpg'];
-   saveas(gcf,nombrejpg)
+   %saveas(gcf,nombrejpg)
     indice_cuadro=indice_cuadro+1;
 end
  %movie(M,1,100);
