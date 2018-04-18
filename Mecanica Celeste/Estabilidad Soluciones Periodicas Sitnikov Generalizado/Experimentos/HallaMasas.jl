@@ -7,7 +7,7 @@ function ColinealInv(x)
   for i=1:l
     A[i,i]=0
   end
-  return A, A\(-x')
+  return A\(-x')
 end
 #x=.01:.01:.99
 #y=.01:.01:.99
