@@ -21,10 +21,10 @@ axis([-long long -long long -2.1 2.1])
 % theta=0:.01:2*pi;
 % circ=r*[cos(theta);sin(theta);zeros(1,length(theta))];
 % plot3(circ(1,:),circ(2,:),circ(3,:))
- PosPri1=squeeze(pos_rot(1,:,:));
-PosPri2=squeeze(pos_rot(2,:,:));
-plot3(PosPri1(1,:),PosPri1(2,:),PosPri1(3,:))
-plot3(PosPri2(1,:),PosPri2(2,:),PosPri2(3,:))
+%  PosPri1=squeeze(pos_rot(1,:,:));
+% PosPri2=squeeze(pos_rot(2,:,:));
+% plot3(PosPri1(1,:),PosPri1(2,:),PosPri1(3,:))
+% plot3(PosPri2(1,:),PosPri2(2,:),PosPri2(3,:))
 % % 
 % PosPri3=squeeze(pos_rot(3,:,1:50));
 % PosPri4=squeeze(pos_rot(4,:,1:50));
