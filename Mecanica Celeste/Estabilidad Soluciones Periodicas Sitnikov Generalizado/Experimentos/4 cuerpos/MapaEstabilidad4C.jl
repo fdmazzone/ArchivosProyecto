@@ -7,39 +7,42 @@
 function MapaEstabilidad4C(x,v)
 #x=linspace(0.01,0.41,50)
 #v=linspace(50,60,50)
-
-bb=Array{Bool}(size(v)[1],1)
-
-for i in x
-    m=ColinealInv([-1 -i  i 1])
+l=size(v)[1]
+k=size(x)[1]
 
 
-    (a₁,a₂,T,Δ)=Estabilidad(m[3:4],[i 1], v)
-    aa=isreal.(Δ).*(abs.(a₁).<=2).*(abs.(a₂).<=2)
-    bb=hcat(bb,aa)
-    #print(aa)
+cc=Array{Bool}(l,k)
+A₁=Array{Complex{Float64}}(l,k)
+A₂=Array{Complex{Float64}}(l,k)
+
+for j in 1:k
+    print(j/k*100,"% de avance")
+    m=ColinealInv([-1 -x[j]  x[j] 1])
+
+
+    (a₁,a₂,T,Δ)=Estabilidad(m[3:4],[x[j] 1], v)
+    cc[:,j]=isreal.(Δ).*(abs.(a₁).<=2).*(abs.(a₂).<=2)
+    A₁[:,j]=a₁
+    A₂[:,j]=a₂
 end
-cc=bb[:,2:size(x)[1]+1];
-#cc[2,2]=true
-xgrid=repmat(x',size(v)[1],1);
-vgrid = repmat(v,1,size(x)[1]);
+
+print(size(x))
+
+print(size(v))
+
+
+xgrid=repmat(x',l,1);
+vgrid = repmat(v,1,k);
+
+
 xestable=xgrid[cc];
 vestable=vgrid[cc] ;
-fig, ax=subplots()
-
-#ax[:contourf](lambdagrid,vgrid,  cc1', [0.5,1], colors="red", linewidth=2.0)
-#for i in 1:size(x)[1]
- #   intest=v[cc[:,i]]
-  #  xi=x[i]*ones(size(intest))
-    ax[:scatter](xestable,vestable,color="black", marker=:.)
-#end
 
 
-xlabel("x")
-ylabel("v")
-
-#ax[:text](.41,.41,L"p_1")
-
-return xestable, vestable
-title("Stability Map")
+#fig, ax=subplots()
+#ax[:scatter](xestable,vestable,color="black", marker=:.)
+#xlabel(L"x")
+#ylabel(L"z(0)")
+#title("Stability Map")
+return xestable, vestable,A₁,A₂
 end
