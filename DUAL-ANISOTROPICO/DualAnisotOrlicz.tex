@@ -561,12 +561,12 @@ By \ref{it:hip1}, Young's inequality and the convexity of $\Phi$, we have
  \begin{split}
     H_{\epsilon}(t,u)  &\geq \left\langle \xi(t), u \right\rangle +\Phi(\epsilon u)
 		\\
-				&\geq -\Phi^{\star}\left(\frac{\Lambda_0}{r\epsilon} \xi(t)\right)-\Phi(r\epsilon u)+\Phi(\epsilon u)
+				&\geq -\Phi^{\star}\left(\frac{1}{r\epsilon} \xi(t)\right)-\Phi(r\epsilon u)+\Phi(\epsilon u)
 		\\
-		    &\geq  \Phi((1-r)\epsilon u)+\beta(t)
+		    &\geq  \Phi((1-r)\epsilon u)-\beta(t)
 				  \end{split} 
 \end{equation}
-where $\beta(t):= \frac{\Lambda_0}{r\epsilon} \xi(t)\in L^1$. 
+where $\beta(t):=\Phi^{\star}( \frac{1}{r\epsilon} \xi(t))\in L^1$. 
 
 On the other hand
 \begin{equation}\label{eq:CotaInfH}
@@ -608,7 +608,7 @@ From \eqref{eq:CotaH*} and \eqref{eq:cotaJu}, we have
 \]
 
 \textcolor[rgb]{1,0,0}{En el papel, no aparece el 2 dividiendo. No ser\'ia necesario, porque acotar\'iamos por -1, pero no recuerdo  
-si esa era la idea o fue un olvido. En la cuenta final, no molesta genera problemas dejar el 2.
+si esa era la idea o fue un olvido. En la cuenta final, no  genera problemas dejar el 2.
 }
 
 Let $\Lambda_0 \geq \max \{(1+r)T, C_{\Phi^{\star}}T\}$, then 
