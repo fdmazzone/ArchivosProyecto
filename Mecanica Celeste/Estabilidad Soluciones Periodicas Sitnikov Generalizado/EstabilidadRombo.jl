@@ -12,7 +12,7 @@ m₂=4*λ^3*(1+λ^2)^(3/2)*(8-(1+λ^2)^(3/2))/(64*λ^3-(1+λ^2)^3)
 M=[1 0 0 0;0 -1 0 0; 0 0 -1 0;0 0 0 1]
 u1=eye(4)
 
-Fuerza3c = (t,u,du) -> begin
+function Fuerza3c(du,u,p,t)
   r₁ = (a^2 +u[1]^2)^(3/2)
   r₂ = (b^2 +u[1]^2)^(3/2)
   du[1] = u[2]
@@ -53,7 +53,7 @@ function CoefEst(z₀)
   A(t)=[0 0 1 0;0 0 0 1; F₁(t) 0 0 2; 0 F₂(t) -2 0 ]
 
   #Sistema Ecuaciones Variacionales
-  variacional(t,u)=A(t)*u
+    variacional(u,p,t)=A(t)*u
 
 
   prob_ode_variacional = ODEProblem(variacional,u1,tspan)
@@ -72,7 +72,7 @@ function CoefEst(z₀)
   return (a₁,a₂,T,Δ)
 end
 #
-v=linspace(59,	60,	1000)
+v=linspace(1.5,	5.13,	100)
 k=length(v)
 a₁=Array{Complex{Float64}}(k)
 a₂ =Array{Complex{Float64}}(k)

@@ -1,10 +1,11 @@
-#Problema tres cuerpos
-#using OrdinaryDiffEq, Plots, QuadGK
+#El input de esta función  son un vector de masas y posiciones de una CC. Como la configuracion debe ser admisible se supone que hay una cantidad par y solo hay que sumuinistrar un vector de masas correspondiente a posiciones positivas. El centro de masa se supone que es el origen.
+#m= vector de masas correspondiente a las posiciones positivas.
+#s= vector de posiciones positivas
+#v=vector de posiciones iniciales de la partícula no grave.La velocidad inicial se supone cero.
 
-# CC colineales general
+#El método numerico usado para resolver las ecuaciones, es el que Julia elige por defecto.
 
-
-
+# Requiere using DifferentialEquations, QuadGK, y HallaMasas.jl
 
 function Estabilidad(m,s,v) #CARGAR SOLO LAS POSICIONES POSITIVAS
 
@@ -19,7 +20,7 @@ a₂ =Array{Complex{Float64}}(k)
 T =Array{Float64}(k)
 Δ =Array{Complex{Float64}}(k)
 for i=1:k
-  a₁[i],a₂[i],T[i],Δ[i]=CoefEst(v[i])
+  a₁[i],a₂[i],T[i],Δ[i]=CoefEst(m,s,v[i])
 end
 
     return (a₁, a₂, Δ, T)
@@ -27,6 +28,10 @@ end
 
 #Asi se programa las funciones para el solver F(du, variable independet , param, var. indepent.)
 function Fuerza3c(du,u,p,t)
+
+     m=p[1]
+    s=p[2]
+
   r = (s.^2 +u[1]^2).^(1.5)
   du[1] = u[2]
   du[2] = sum(m./r)*(-2*u[1])
@@ -34,7 +39,7 @@ function Fuerza3c(du,u,p,t)
 
 #Altura máxima de la partícula
 
-function CoefEst(z₀)
+function CoefEst(m,s,z₀)
     M=[1 0 0 0;0 -1 0 0; 0 0 -1 0;0 0 0 1]
     u1=eye(4)
 #function CoefEst(v₀)
@@ -57,8 +62,8 @@ f(z)=1/sqrt(E+2sum(m./sqrt.(s.^2+z^2)))
   #u0 = [0,v₀]
   tspan = (0.0,T)
 
-  prob_ode_trescuerpos = ODEProblem(Fuerza3c,u0,tspan)
-  sol = solve(prob_ode_trescuerpos,TsitPap8())
+  prob_ode_trescuerpos = ODEProblem(Fuerza3c,u0,tspan,[m,s])
+  sol = solve(prob_ode_trescuerpos)
   #Matríz Variacional
 
   Φ(t)=s.^2+(sol(t)[1])^2
@@ -94,4 +99,3 @@ F₁(t)=F₂(t)+6*sum(m.*(s.^2.*Φ(t).^(-2.5)))
   a₂=.5*(p-Δ)
   return (a₁,a₂,T,Δ)
 end
-#
