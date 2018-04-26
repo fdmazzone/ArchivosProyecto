@@ -14,7 +14,7 @@ for j=1:l(1);
 end
 
 long=1.5;
-axis([-long long -long long -2.1 2.1])
+axis([-long long -long long -3.1 3.1])
 %plot3(0,0,0,'.','MarkerSize',10,'Color','y')
 
 % r=norm(pos(1,:,1));

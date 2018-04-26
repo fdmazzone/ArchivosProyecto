@@ -20,7 +20,7 @@ a₂ =Array{Complex{Float64}}(k)
 T =Array{Float64}(k)
 Δ =Array{Complex{Float64}}(k)
 for i=1:k
-  a₁[i],a₂[i],T[i],Δ[i]=CoefEst(m,s,v[i])
+  a₁[i],a₂[i],Δ[i],T[i]=CoefEst(m,s,v[i])
 end
 
     return (a₁, a₂, Δ, T)
@@ -40,6 +40,7 @@ function Fuerza3c(du,u,p,t)
 #Altura máxima de la partícula
 
 function CoefEst(m,s,z₀)
+
     M=[1 0 0 0;0 -1 0 0; 0 0 -1 0;0 0 0 1]
     u1=eye(4)
 #function CoefEst(v₀)
@@ -97,5 +98,5 @@ F₁(t)=F₂(t)+6*sum(m.*(s.^2.*Φ(t).^(-2.5)))
 
   a₁=.5*(p+Δ)
   a₂=.5*(p-Δ)
-  return (a₁,a₂,T,Δ)
+  return (a₁,a₂,Δ,T)
 end

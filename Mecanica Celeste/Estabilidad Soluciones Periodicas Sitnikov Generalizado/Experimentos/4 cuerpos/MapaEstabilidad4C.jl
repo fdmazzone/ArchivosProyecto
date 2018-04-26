@@ -18,8 +18,6 @@ A₂=Array{Complex{Float64}}(l,k)
 for j in 1:k
     print(j/k*100,"% de avance")
     m=ColinealInv([-1 -x[j]  x[j] 1])
-
-
     (a₁,a₂,T,Δ)=Estabilidad(m[3:4],[x[j] 1], v)
     cc[:,j]=isreal.(Δ).*(abs.(a₁).<=2).*(abs.(a₂).<=2)
     A₁[:,j]=a₁
